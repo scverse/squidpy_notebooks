@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - uses: mstachniuk/ci-skip@v1
+        with:
+          fail-fast: true
+          exit-code: 0
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions
+
+      - name: Linting
+        run: |
+          tox -e lint
+
+      - name: Testing
+        run: |
+          tox
+        env:
+          PLATFORM: ubuntu-latest
+
+  regenerate:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions
+
+      - name: Regenerate documentation
+        run:
+          tox -e docs
+        env:
+          PLATFORM: ubuntu-latest
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: '[ci skip] Regenerate tutorials/examples'
+          file_pattern: docs/source/auto_* docs/source/gen_modules/backreferences/*
+          commit_options: '--no-verify'
+          commit_user_name: 'CI'
+          skip_dirty_check: true
+
+      - name: Request documentation rebuild
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: |
+          echo "TODO: request doc rebuild..."
+          # TODO: update the secrets
+          # curl -X POST -d "branches=master" -d "token=$RTD_TOKEN" "$RTD_WEBHOOK"
+        # env:
+          # RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
+          # RTD_WEBHOOK: ${{ secrets.RTD_WEBHOOK }}
