@@ -31,6 +31,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # TODO: print sha for RD?
+      - name: Get the triggering event
+        run: |
+          echo "${{ github.event_name }} ${{ github.event.action }}"
       - uses: actions/checkout@v2
         with:
           fetch-depth: '0'
@@ -71,15 +75,11 @@ jobs:
   regenerate:
     # TODO: needs to be checked, esp. `github.ref` in case of workflow_dispatch
     # The branch or tag ref that triggered the workflow. For example, refs/heads/feature-branch-1. If neither a branch or tag is available for the event type, the variable will not exist.
-    if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
+    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
     needs: test
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      # TODO: print sha where we're coming from if workflow dispatch?
-      - name: Get the triggering event
-        run: |
-          echo "${{ github.event_name }} ${{ github.event.action }}"
       - uses: actions/checkout@v2
         with:
           # TODO: https://github.com/stefanzweifel/git-auto-commit-action#example  will this work with WD?
