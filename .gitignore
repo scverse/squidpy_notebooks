@@ -130,3 +130,11 @@ dmypy.json
 
 # editor
 .idea
+
+# gallery
+# this is for function name mapping
+docs/source/auto_*/**/*.pickle
+# we always want to recreate the files when building docskle
+docs/source/auto_*/**/*.md5
+# we don't want to download the files
+docs/source/auto_*/**/*.py
