@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  workflow_dispatch:
+    types: [rebuild]
   pull_request:
     branches:
       - main
@@ -55,13 +57,24 @@ jobs:
           PLATFORM: ubuntu-latest
 
   regenerate:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # TODO: needs to be checked, esp. `github.ref` in case of workflow_dispatch
+    # The branch or tag ref that triggered the workflow. For example, refs/heads/feature-branch-1. If neither a branch or tag is available for the event type, the variable will not exist.
+    # is `squidpy` triggers this, it should be only from `master`, that's why we need to rename main -> master here
+    # uncomment the below if once it's done
+    # if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/main'
+    # might not work
+    if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     needs: test
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
+      # TODO: print sha where we're coming from if workflow dispatch?
+      - name: Get the triggering event
+        run: |
+          - echo "${{ github.event_name }} ${{ github.event.action }}"
       - uses: actions/checkout@v2
         with:
+          # TODO: https://github.com/stefanzweifel/git-auto-commit-action#example  will this work with WD?
           ref: ${{ github.head_ref }}
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -90,7 +103,7 @@ jobs:
       - name: Regenerate documentation
         run:
           tox -e docs
-          tox -e lint || true  # try to fix any issues
+          tox -e lint || true  # try to fix any issues with newly generated files
         env:
           PLATFORM: ubuntu-latest
 
@@ -108,8 +121,5 @@ jobs:
         if: success()  #steps.auto-commit-action.outputs.changes_detected == 'true'
         run: |
           echo "TODO: request doc rebuild..."
-          # curl -X POST -d "branches=master" -d "token=$RTD_TOKEN" "$RTD_WEBHOOK"
-        # TODO: update the secrets
-        # env:
-          # RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
-          # RTD_WEBHOOK: ${{ secrets.RTD_WEBHOOK }}
+          # TODO: update the secrets
+          # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
