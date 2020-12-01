@@ -71,7 +71,7 @@ jobs:
       # TODO: print sha where we're coming from if workflow dispatch?
       - name: Get the triggering event
         run: |
-          - echo "${{ github.event_name }} ${{ github.event.action }}"
+          echo "${{ github.event_name }} ${{ github.event.action }}"
       - uses: actions/checkout@v2
         with:
           # TODO: https://github.com/stefanzweifel/git-auto-commit-action#example  will this work with WD?
