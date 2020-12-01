@@ -49,9 +49,9 @@ See tutorial at :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.101 seconds)
+   **Total running time of the script:** ( 0 minutes  0.986 seconds)
 
-**Estimated memory usage:**  144 MB
+**Estimated memory usage:**  143 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_dummy.py:
