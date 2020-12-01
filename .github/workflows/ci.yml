@@ -5,10 +5,10 @@ on:
     types: [rebuild]
   pull_request:
     branches:
-      - main
+      - master
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test:
@@ -59,11 +59,7 @@ jobs:
   regenerate:
     # TODO: needs to be checked, esp. `github.ref` in case of workflow_dispatch
     # The branch or tag ref that triggered the workflow. For example, refs/heads/feature-branch-1. If neither a branch or tag is available for the event type, the variable will not exist.
-    # is `squidpy` triggers this, it should be only from `master`, that's why we need to rename main -> master here
-    # uncomment the below if once it's done
-    # if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/main'
-    # might not work
-    if: (github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
     needs: test
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -115,9 +111,8 @@ jobs:
           skip_dirty_check: true
 
       - name: Request documentation rebuild
-        # TODO: if docs are always built on the main repo, reomve success and uncomment
-        # otherwise keep as it is
-        if: success()  #steps.auto-commit-action.outputs.changes_detected == 'true'
+        # TODO: if docs are always built on the main repo, remove success() and uncomment otherwise keep as it is
+        if: success()  # steps.auto-commit-action.outputs.changes_detected == 'true'
         run: |
           echo "TODO: request doc rebuild..."
           # TODO: update the secrets
