@@ -98,13 +98,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tox tox-gh-actions pre-commit
-          pre-commit install
+          pip install tox tox-gh-actions
 
       - name: Regenerate documentation
         run:
           tox -e docs
-          tox -e lint || true  # try to fix any issues with newly generated files
         env:
           PLATFORM: ubuntu-latest
 
