@@ -63,7 +63,7 @@ jobs:
     # uncomment the below if once it's done
     # if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/main'
     # might not work
-    if: ((github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    if: (github.event_name == 'workflow_dispatch' && github.event.action == 'rebuild') || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     needs: test
     timeout-minutes: 10
     runs-on: ubuntu-latest
