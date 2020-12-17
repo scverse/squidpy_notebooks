@@ -14,6 +14,6 @@ adata = sc.datasets.blobs()
 adata
 
 # %%
-# This is a new cell. We can reference the docs as :func:`squidpy.graph.moran`.
+# This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 # Note than any such references or code usage will be automatically linked under that function.
 # See tutorial at :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`.
