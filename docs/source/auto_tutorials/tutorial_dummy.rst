@@ -52,7 +52,7 @@ Initialize the :mod:`anndata` object.
 
 
 
-This is a new cell. We can reference the docs as :func:`squidpy.graph.moran`.
+This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 Note than any such references or code usage will be automatically linked under that function.
 See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
@@ -60,7 +60,7 @@ See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 .. code-block:: default
 
     adata.obsm["spatial"] = np.stack([r.randint(0, 500, 200), r.randint(0, 500, 200)], axis=1)
-    # sp.graph.spatial_connectivity(adata, obsm="spatial", n_rings=2)  # TODO
+    # sp.gr.spatial_connectivity(adata, obsm="spatial", n_rings=2)  # TODO
     adata
 
 
@@ -82,7 +82,7 @@ See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.234 seconds)
+   **Total running time of the script:** ( 0 minutes  0.284 seconds)
 
 **Estimated memory usage:**  9 MB
 

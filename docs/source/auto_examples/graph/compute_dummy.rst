@@ -42,16 +42,16 @@ All examples should be prefixed with either **compute_** or **plot_**.
 
 
 
-This is a new cell. We can reference the docs as :func:`squidpy.graph.moran`.
+This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 Note than any such references or code usage will be automatically linked under that function.
 See tutorial at :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.986 seconds)
+   **Total running time of the script:** ( 0 minutes  1.623 seconds)
 
-**Estimated memory usage:**  143 MB
+**Estimated memory usage:**  141 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_dummy.py:
