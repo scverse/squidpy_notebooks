@@ -93,7 +93,11 @@ class ExplicitSubsectionOrder(_SortKey):
 
     def __call__(self, filename: str) -> int:
         src_file = os.path.normpath(os.path.join(self.src_dir, filename))
-        return self._order[Path(src_file)]
+        # TODO: once all examples are in order, remove me
+        try:
+            return self._order[Path(src_file)]
+        except KeyError:
+            return 0
 
     def __repr__(self) -> str:
         return f"<{self.__class__.__name__}: {repr(dict(self._order))}>"
