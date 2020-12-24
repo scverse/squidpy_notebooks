@@ -1,9 +1,9 @@
-import os
 from abc import ABCMeta
 from glob import glob
 from logging import warning
 from pathlib import Path
 from textwrap import indent
+import os
 
 _test_template = """
 def _test(self):

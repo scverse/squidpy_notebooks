@@ -2,8 +2,9 @@
 This is a dummy tutorial
 ------------------------
 """
-import numpy as np
 from anndata import AnnData
+
+import numpy as np
 
 # import squidpy as sp  # TODO: import me once it's public
 
