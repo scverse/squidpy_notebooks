@@ -27,7 +27,7 @@ jobs:
 
   lint:
     needs: init
-    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == false)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
   # could be moved to test, but it's better to fail early
   download:
     needs: init
-    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == false)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -173,7 +173,7 @@ jobs:
   rebuild_docs:
     needs: regenerate
     # TODO: if: always()?
-    if: needs.regenerate.outputs.needs_rebuild == 'true'
+    if: needs.regenerate.outputs.needs_rebuild == true
     runs-on: ubuntu-latest
     steps:
       - name: Request documentation rebuild
