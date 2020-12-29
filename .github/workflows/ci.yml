@@ -74,7 +74,7 @@ jobs:
 
       # TODO: will most likely also need Python/R setup - if so, cache also their requirements
       - name: Download datasets
-        if: steps.data-cache.outputs.cache-hit == 'false'
+        if: steps.data-cache.outputs.cache-hit == false
         run: |
           .scripts/download/install_requirements.sh
           .scripts/download/download_data.sh
