@@ -58,10 +58,30 @@ jobs:
         run: |
           tox -e check-docs
 
-  # test/regenration can be combined into 1 step, making it <=2x fast, but highly coupled
-  test:
+  download:
     needs: init
     if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore data cache
+        id: data-cache
+        uses: actions/cache@v2
+        with:
+          path: examples/.data/
+          # TODO: also cache requirements once we know what they are
+          key: data-${{ runner.os }}-${{ hashFiles('**/.scripts/download/download_data.sh') }}-${{ hashFiles('**/.scripts/download/install_requirements.sh') }}
+          restore-keys: |
+            data-${{ runner.os }}-${{ hashFiles('**/.scripts/download/download_datasets.sh') }}-
+
+      - name: Download datasets
+        if: steps.data-cache.outputs.cache-hit == 'false'
+        run: |
+          ./.scripts/download/install_requirements.sh
+          ./.scripts/download/download_datasets.sh
+
+  # test/regeneration can be combined into 1 step, making it <=2x fast, but highly coupled
+  test:
+    needs: download
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -81,7 +101,7 @@ jobs:
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Cache pip
+      - name: Restore pip cache
         uses: actions/cache@v2
         with:
           path: ${{ steps.pip-cache-dir.outputs.dir }}

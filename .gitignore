@@ -132,6 +132,7 @@ dmypy.json
 .idea
 
 # gallery
+examples/.data
 # this is for function name mapping
 docs/source/auto_*/**/*.pickle
 # we always want to recreate the files when building docskle
