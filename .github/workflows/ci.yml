@@ -71,7 +71,7 @@ jobs:
             data-${{ runner.os }}-${{ hashFiles('**/download_datasets.sh') }}-
 
       - name: Download datasets
-        if: steps.data-cache.outputs.cache-hit = 'false'
+        if: steps.data-cache.outputs.cache-hit != 'true'
         run: |
           .scripts/download/install_requirements.sh
           .scripts/download/download_datasets.sh
