@@ -55,23 +55,24 @@ jobs:
         run: |
           tox -e lint
 
+  # could be moved to test, but it's better to fail early
   download:
     needs: init
     if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
       - name: Restore data cache
         id: data-cache
         uses: actions/cache@v2
         with:
-          path: examples/.data/
-          # TODO: also cache requirements once we know what they are
-          key: data-${{ runner.os }}-${{ hashFiles('**/download_data.sh', '**/install_requirements.sh') }}
+          # TODO: limit the extensions, like .h5ad, .tiff, etc. once we know the data
+          path: ~/.cache/squidpy
+          key: data-${{ hashFiles('**/download/*.sh') }}
 
-      - name: Print out cache hit
-        run: |
-          echo "${{ steps.data-cache.outputs.cache-hit }}"
-
+      # TODO: will most likely also need Python/R setup - if so, cache also their requirements
       - name: Download datasets
         if: steps.data-cache.outputs.cache-hit == 'false'
         run: |
