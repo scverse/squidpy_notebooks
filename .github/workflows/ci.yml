@@ -25,13 +25,66 @@ jobs:
           commit-filter: '[ci skip];[ci-skip];[skip ci];[skip-ci]'
           commit-filter-separator: ';'
 
-  test:
+  lint:
     needs: init
-    if: ${{ needs.init.outputs.skip == 'false' }}
+    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: precommit-${{ env.pythonLocation }}-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            precommit-${{ env.pythonLocation }}-
+            precommit-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox
+
+      - name: Linting
+        run: |
+          tox -e lint
+
+  # could be moved to test, but it's better to fail early
+  download:
+    needs: init
+    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - name: Restore data cache
+        id: data-cache
+        uses: actions/cache@v2
+        with:
+          # TODO: limit the extensions, like .h5ad, .tiff, etc. once we know the data
+          path: ~/.cache/squidpy
+          key: data-${{ hashFiles('**/download/*.sh') }}
+
+      # TODO: will most likely also need Python/R setup - if so, cache also their requirements
+      - name: Download datasets
+        if: steps.data-cache.outputs.cache-hit != 'true'
+        run: |
+          .scripts/download/install_requirements.sh
+          .scripts/download/download_data.sh
+
+  # test/regeneration can be combined into 1 step, making it <=2x fast, but highly coupled
+  test:
+    needs: download
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      # TODO: print sha for RD?
       - name: Get the triggering event
         run: |
           echo "${{ github.event_name }} ${{ github.event.action }}"
@@ -44,27 +97,22 @@ jobs:
           python-version: 3.8
 
       - name: Get pip cache dir
-        id: pip-cache
+        id: pip-cache-dir
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Cache pip
+      - name: Restore pip cache
         uses: actions/cache@v2
         with:
-          path: |
-            ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          path: ${{ steps.pip-cache-dir.outputs.dir }}
+          key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            pip-${{ runner.os }}-
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install tox tox-gh-actions
-
-      - name: Linting
-        run: |
-          tox -e lint
 
       - name: Testing
         run: |
@@ -73,16 +121,13 @@ jobs:
           PLATFORM: ubuntu-latest
 
   regenerate:
-    # TODO: needs to be checked, esp. `github.ref` in case of workflow_dispatch
-    # The branch or tag ref that triggered the workflow. For example, refs/heads/feature-branch-1. If neither a branch or tag is available for the event type, the variable will not exist.
+    # TODO: needs to be checked, esp. `github.ref` in case of a workflow_dispatch
     if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
-    needs: test
-    timeout-minutes: 10
+    needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          # TODO: https://github.com/stefanzweifel/git-auto-commit-action#example  will this work with WD?
           ref: ${{ github.head_ref }}
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -90,15 +135,14 @@ jobs:
           python-version: 3.8
 
       - name: Get pip cache dir
-        id: pip-cache
+        id: pip-cache-dir
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
 
       - name: Cache pip
         uses: actions/cache@v2
         with:
-          path: |
-            ${{ steps.pip-cache.outputs.dir }}
+          path: ${{ steps.pip-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
@@ -109,24 +153,26 @@ jobs:
           pip install tox tox-gh-actions
 
       - name: Regenerate documentation
-        run:
-          tox -e docs
+        # currently, squidpy is a requirement, but it's private, so we can't easily download it
+        # check-docs build the examples, as a side effect, docs creates the docs and lint fixes any created files
+        run: |
+          echo "TODO: Regenerating docs..."
+        # tox -e check-docs,docs,lint
         env:
           PLATFORM: ubuntu-latest
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v4.8.0
         with:
-          # changes from auto-commit will not trigger another workflow, [ci skip] is for safety reasons
-          commit_message: '[ci skip] [auto] Regenerate tutorials/examples'
-          file_pattern: docs/source/auto_* docs/source/gen_modules/backreferences/*
+          commit_message: '[auto] Regenerate tutorials/examples'
+          file_pattern: 'docs/source/auto_* docs/source/gen_modules/backreferences/*'
           commit_user_name: 'CI'
-          skip_dirty_check: true
+          skip_dirty_check: false
+          skip_fetch: true
 
       - name: Request documentation rebuild
-        # TODO: if docs are always built on the main repo, remove success() and uncomment otherwise keep as it is
-        if: success()  # steps.auto-commit-action.outputs.changes_detected == 'true'
+        # TODO: if: always()?
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         run: |
-          echo "TODO: request doc rebuild..."
-          # TODO: update the secrets
-          # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+          echo "TODO: update rebuild secrets..."
+        # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
