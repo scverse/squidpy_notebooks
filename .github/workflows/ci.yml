@@ -66,15 +66,17 @@ jobs:
         with:
           path: examples/.data/
           # TODO: also cache requirements once we know what they are
-          key: data-${{ runner.os }}-${{ hashFiles('**/download_data.sh') }}-${{ hashFiles('**/install_requirements.sh') }}
-          restore-keys: |
-            data-${{ runner.os }}-${{ hashFiles('**/download_datasets.sh') }}-
+          key: data-${{ runner.os }}-${{ hashFiles('**/download_data.sh', '**/install_requirements.sh') }}
+
+      - name: Print out cache hit
+        run: |
+          echo "${{ steps.data-cache.outputs.cache-hit }}"
 
       - name: Download datasets
-        if: steps.data-cache.outputs.cache-hit != 'true'
+        if: steps.data-cache.outputs.cache-hit == 'false'
         run: |
           .scripts/download/install_requirements.sh
-          .scripts/download/download_datasets.sh
+          .scripts/download/download_data.sh
 
   # test/regeneration can be combined into 1 step, making it <=2x fast, but highly coupled
   test:
