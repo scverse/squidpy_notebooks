@@ -54,9 +54,6 @@ jobs:
       - name: Linting
         run: |
           tox -e lint
-      - name: Documentation check
-        run: |
-          tox -e check-docs
 
   download:
     needs: init
@@ -69,15 +66,15 @@ jobs:
         with:
           path: examples/.data/
           # TODO: also cache requirements once we know what they are
-          key: data-${{ runner.os }}-${{ hashFiles('**/.scripts/download/download_data.sh') }}-${{ hashFiles('**/.scripts/download/install_requirements.sh') }}
+          key: data-${{ runner.os }}-${{ hashFiles('**/download_data.sh') }}-${{ hashFiles('**/install_requirements.sh') }}
           restore-keys: |
-            data-${{ runner.os }}-${{ hashFiles('**/.scripts/download/download_datasets.sh') }}-
+            data-${{ runner.os }}-${{ hashFiles('**/download_datasets.sh') }}-
 
       - name: Download datasets
-        if: steps.data-cache.outputs.cache-hit == 'false'
+        if: steps.data-cache.outputs.cache-hit = 'false'
         run: |
-          ./.scripts/download/install_requirements.sh
-          ./.scripts/download/download_datasets.sh
+          .scripts/download/install_requirements.sh
+          .scripts/download/download_datasets.sh
 
   # test/regeneration can be combined into 1 step, making it <=2x fast, but highly coupled
   test:
@@ -156,7 +153,7 @@ jobs:
 
       - name: Regenerate documentation
         run: |
-          tox -e docs
+          tox -e check-docs,docs
         env:
           PLATFORM: ubuntu-latest
 
