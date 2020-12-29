@@ -36,12 +36,22 @@ version = "TODO"  # f"master ({squidpy.__version__})"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinx.ext.intersphinx",
     "sphinx_gallery.gen_gallery",
     "sphinx_last_updated_by_git",
     "sphinx_copybutton",
     "edit_on_github",
 ]
 
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    # TODO: uncomment once the docs are up
+    # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
+    # TODO: remove me if if not used
+    "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
+    "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "napari": ("https://napari.org/docs/dev/", None),
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
