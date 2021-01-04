@@ -1,6 +1,6 @@
 # TODO: below should be removed and handled by above installation
 astropy
 esda
-libpysal
 # git+https://github.com/theislab/squidpy
-scanpy
+git+https://github.com/theislab/scanpy@master
+libpysal
