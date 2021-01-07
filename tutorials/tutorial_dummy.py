@@ -3,10 +3,13 @@ This is a dummy tutorial
 ------------------------
 """
 from anndata import AnnData
+import squidpy as sp
 
 import numpy as np
 
-# import squidpy as sp  # TODO: import me once it's public
+# %%
+# Get the version.
+sp.__version__
 
 # %%
 # Initialize the :mod:`anndata` object.
@@ -19,5 +22,5 @@ adata
 # Note than any such references or code usage will be automatically linked under that function.
 # See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 adata.obsm["spatial"] = np.stack([r.randint(0, 500, 200), r.randint(0, 500, 200)], axis=1)
-# sp.gr.spatial_connectivity(adata, obsm="spatial", n_rings=2)  # TODO
+sp.gr.spatial_neighbors(adata, spatial_key="spatial", n_rings=2)
 adata
