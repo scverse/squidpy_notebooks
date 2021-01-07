@@ -21,15 +21,15 @@
 This is a dummy tutorial
 ------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 5-11
+.. GENERATED FROM PYTHON SOURCE LINES 5-10
 
 .. code-block:: default
 
     from anndata import AnnData
+    import squidpy as sp
 
     import numpy as np
 
-    import squidpy as sp
 
 
 
@@ -37,12 +37,11 @@ This is a dummy tutorial
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
+.. GENERATED FROM PYTHON SOURCE LINES 11-12
 
 Get the version.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-15
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
 
 .. code-block:: default
 
@@ -63,11 +62,11 @@ Get the version.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 15-16
 
 Initialize the :mod:`anndata` object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-21
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -91,13 +90,13 @@ Initialize the :mod:`anndata` object.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 21-24
 
 This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 Note than any such references or code usage will be automatically linked under that function.
 See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-28
+.. GENERATED FROM PYTHON SOURCE LINES 24-27
 
 .. code-block:: default
 
@@ -126,9 +125,9 @@ See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.657 seconds)
+   **Total running time of the script:** ( 0 minutes  0.624 seconds)
 
-**Estimated memory usage:**  232 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_dummy.py:
