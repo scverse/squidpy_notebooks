@@ -1,178 +1,178 @@
 name: CI
 
 on:
-  repository_dispatch:
-    types: [rebuild]
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+    repository_dispatch:
+        types: [rebuild]
+    pull_request:
+        branches:
+        -   master
+    push:
+        branches:
+        -   master
 
 jobs:
-  init:
-    runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - id: ci-skip-step
-        uses: mstachniuk/ci-skip@master
-        with:
-          commit-filter: '[ci skip];[ci-skip];[skip ci];[skip-ci]'
-          commit-filter-separator: ';'
+    init:
+        runs-on: ubuntu-latest
+        outputs:
+            skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
+        steps:
+        -   uses: actions/checkout@v2
+            with:
+                fetch-depth: 0
+        -   id: ci-skip-step
+            uses: mstachniuk/ci-skip@master
+            with:
+                commit-filter: '[ci skip];[ci-skip];[skip ci];[skip-ci]'
+                commit-filter-separator: ;
 
-  lint:
-    needs: init
-    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+    lint:
+        needs: init
+        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+        runs-on: ubuntu-latest
+        steps:
+        -   uses: actions/checkout@v2
+            with:
+                fetch-depth: 0
+        -   name: Set up Python
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.8
 
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pre-commit
-          key: precommit-${{ env.pythonLocation }}-${{ hashFiles('.pre-commit-config.yaml') }}
-          restore-keys: |
-            precommit-${{ env.pythonLocation }}-
-            precommit-
+        -   uses: actions/cache@v2
+            with:
+                path: ~/.cache/pre-commit
+                key: precommit-${{ env.pythonLocation }}-${{ hashFiles('.pre-commit-config.yaml') }}
+                restore-keys: |
+                    precommit-${{ env.pythonLocation }}-
+                    precommit-
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install tox
+        -   name: Install dependencies
+            run: |
+                python -m pip install --upgrade pip
+                pip install tox
 
-      - name: Linting
-        run: |
-          tox -e lint
+        -   name: Linting
+            run: |
+                tox -e lint
 
   # could be moved to test, but it's better to fail early
-  download:
-    needs: init
-    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
-      - name: Restore data cache
-        id: data-cache
-        uses: actions/cache@v2
-        with:
+    download:
+        needs: init
+        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
+        runs-on: ubuntu-latest
+        steps:
+        -   uses: actions/checkout@v2
+            with:
+                fetch-depth: '0'
+        -   name: Restore data cache
+            id: data-cache
+            uses: actions/cache@v2
+            with:
           # TODO: limit the extensions, like .h5ad, .tiff, etc. once we know the data
-          path: ~/.cache/squidpy
-          key: data-${{ hashFiles('**/download/*.sh') }}
+                path: ~/.cache/squidpy
+                key: data-${{ hashFiles('**/download/*.sh') }}
 
       # TODO: will most likely also need Python/R setup - if so, cache also their requirements
-      - name: Download datasets
-        if: steps.data-cache.outputs.cache-hit != 'true'
-        run: |
-          .scripts/download/install_requirements.sh
-          .scripts/download/download_data.sh
+        -   name: Download datasets
+            if: steps.data-cache.outputs.cache-hit != 'true'
+            run: |
+                .scripts/download/install_requirements.sh
+                .scripts/download/download_data.sh
 
   # test/regeneration can be combined into 1 step, making it <=2x fast, but highly coupled
-  test:
-    needs: download
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Get the triggering event
-        run: |
-          echo "${{ github.event_name }} ${{ github.event.action }}"
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+    test:
+        needs: download
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+        -   name: Get the triggering event
+            run: |
+                echo "${{ github.event_name }} ${{ github.event.action }}"
+        -   uses: actions/checkout@v2
+            with:
+                fetch-depth: '0'
+        -   name: Set up Python 3.8
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.8
 
-      - name: Get pip cache dir
-        id: pip-cache-dir
-        run: |
-          echo "::set-output name=dir::$(pip cache dir)"
+        -   name: Get pip cache dir
+            id: pip-cache-dir
+            run: |
+                echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Restore pip cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.pip-cache-dir.outputs.dir }}
-          key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            pip-${{ runner.os }}-
+        -   name: Restore pip cache
+            uses: actions/cache@v2
+            with:
+                path: ${{ steps.pip-cache-dir.outputs.dir }}
+                key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+                restore-keys: |
+                    pip-${{ runner.os }}-
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install tox tox-gh-actions
+        -   name: Install dependencies
+            run: |
+                python -m pip install --upgrade pip
+                pip install tox tox-gh-actions
 
-      - name: Testing
-        run: |
-          tox
-        env:
-          PLATFORM: ubuntu-latest
+        -   name: Testing
+            # TODO: remove -q once squidpy is public
+            run: |
+                tox -q
+            env:
+                PLATFORM: ubuntu-latest
+                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
-  regenerate:
-    # TODO: needs to be checked, esp. `github.ref` in case of a workflow_dispatch
-    if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
-    needs: [lint, test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+    regenerate:
+        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
+        needs: [lint, test]
+        runs-on: ubuntu-latest
+        steps:
+        -   uses: actions/checkout@v2
+            with:
+                ref: ${{ github.head_ref }}
+        -   name: Set up Python 3.8
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.8
 
-      - name: Get pip cache dir
-        id: pip-cache-dir
-        run: |
-          echo "::set-output name=dir::$(pip cache dir)"
+        -   name: Get pip cache dir
+            id: pip-cache-dir
+            run: |
+                echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Cache pip
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.pip-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+        -   name: Cache pip
+            uses: actions/cache@v2
+            with:
+                path: ${{ steps.pip-cache-dir.outputs.dir }}
+                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+                restore-keys: |
+                    ${{ runner.os }}-pip-
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install tox tox-gh-actions
+        -   name: Install dependencies
+            run: |
+                python -m pip install --upgrade pip
+                pip install tox tox-gh-actions
 
-      - name: Regenerate documentation
-        # currently, squidpy is a requirement, but it's private, so we can't easily download it
-        # check-docs build the examples, as a side effect, docs creates the docs and lint fixes any created files
-        run: |
-          echo "TODO: Regenerating docs..."
-        # tox -e check-docs,docs,lint
-        env:
-          PLATFORM: ubuntu-latest
+        -   name: Regenerate documentation
+            # TODO: remove -q once squidpy is public
+            run: |
+                tox -q -e check-docs,docs,lint
+            env:
+                PLATFORM: ubuntu-latest
+                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4.8.0
-        with:
-          commit_message: '[auto] Regenerate tutorials/examples'
-          file_pattern: 'docs/source/auto_* docs/source/gen_modules/backreferences/*'
-          commit_user_name: 'CI'
-          skip_dirty_check: false
-          skip_fetch: true
+        -   name: Commit changes
+            uses: stefanzweifel/git-auto-commit-action@v4.8.0
+            with:
+                commit_message: '[auto] Regenerate tutorials/examples'
+                file_pattern: docs/source/auto_* docs/source/gen_modules/backreferences/*
+                commit_user_name: CI
+                skip_dirty_check: false
+                skip_fetch: true
 
-      - name: Request documentation rebuild
-        # TODO: if: always()?
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: |
-          echo "TODO: update rebuild secrets..."
-        # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+        -   name: Request documentation rebuild
+            # TODO: if: always()?
+            if: steps.auto-commit-action.outputs.changes_detected == 'true'
+            run: |
+                echo "TODO: update rebuild secrets..."
+            # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"

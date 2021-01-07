@@ -4,41 +4,46 @@ fail_fast: false
 default_language_version:
     python: python3
 default_stages:
-    - commit
-    - push
+-   commit
+-   push
 minimum_pre_commit_version: 2.7.1
-exclude: "docs/source/auto_.*"
+exclude: docs/source/auto_.*
 repos:
 -   repo: https://github.com/psf/black
     rev: 20.8b1
     hooks:
-        - id: black
-          additional_dependencies: ["toml"]
+    -   id: black
+        additional_dependencies: [toml]
 -   repo: https://github.com/timothycrosley/isort
     rev: 5.6.4
     hooks:
-        - id: isort
-          additional_dependencies: ["toml"]
+    -   id: isort
+        additional_dependencies: [toml]
+-   repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v1.6.1
+    hooks:
+    -   id: pretty-format-yaml
+        args: [--autofix, --indent, '4']
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.3.0
     hooks:
-    - id: check-docstring-first
-    - id: end-of-file-fixer
-    - id: check-added-large-files
-    - id: trailing-whitespace
-    - id: check-merge-conflict
-    - id: check-case-conflict
-    - id: check-symlinks
-    - id: check-yaml
-    - id: check-ast
-    - id: fix-encoding-pragma
-      args: [--remove]  # for Python3 codebase, it's not necessary
-    - id: requirements-txt-fixer
+    -   id: check-docstring-first
+    -   id: end-of-file-fixer
+    -   id: check-added-large-files
+    -   id: trailing-whitespace
+    -   id: check-merge-conflict
+    -   id: check-case-conflict
+    -   id: check-symlinks
+    -   id: check-yaml
+    -   id: check-ast
+    -   id: fix-encoding-pragma
+        args: [--remove] # for Python3 codebase, it's not necessary
+    -   id: requirements-txt-fixer
 -   repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:
-    - id: flake8
-      additional_dependencies: ["flake8-docstrings", "flake8-comprehensions", "flake8-bugbear"]
+    -   id: flake8
+        additional_dependencies: [flake8-docstrings, flake8-comprehensions, flake8-bugbear]
 -   repo: https://github.com/asottile/blacken-docs
     rev: v1.8.0
     hooks:
