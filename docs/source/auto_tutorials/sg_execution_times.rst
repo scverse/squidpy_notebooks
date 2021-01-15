@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:00.530** total execution time for **auto_tutorials** files:
+**00:00.546** total execution time for **auto_tutorials** files:
 
 +--------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py` (``tutorial_dummy.py``) | 00:00.530 | 9.3 MB |
+| :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py` (``tutorial_dummy.py``) | 00:00.546 | 9.3 MB |
 +--------------------------------------------------------------------------+-----------+--------+

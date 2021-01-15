@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:01.564** total execution time for **auto_examples_graph** files:
+**00:01.253** total execution time for **auto_examples_graph** files:
 
 +-----------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_graph_compute_dummy.py` (``compute_dummy.py``) | 00:01.564 | 157.4 MB |
+| :ref:`sphx_glr_auto_examples_graph_compute_dummy.py` (``compute_dummy.py``) | 00:01.253 | 153.4 MB |
 +-----------------------------------------------------------------------------+-----------+----------+
