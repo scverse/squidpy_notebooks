@@ -3,6 +3,7 @@ memory_profiler>=0.57.0
 pypandoc
 sphinx>=3.3.0
 sphinx_copybutton
-sphinx_gallery
+sphinx_gallery>=0.8.2
 sphinx_last_updated_by_git
 sphinx_rtd_theme
+sphinxcontrib-spelling
