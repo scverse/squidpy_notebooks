@@ -15,7 +15,7 @@ from pathlib import Path
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import squidpy  # TODO
+import squidpy
 from sphinx_gallery.sorting import ExplicitOrder, _SortKey
 
 sys.path.insert(0, os.path.abspath("_ext"))
@@ -24,10 +24,10 @@ needs_sphinx = "3.0"
 # -- Project information -----------------------------------------------------
 
 project = "Squidpy"
-author = "TODO"  # squidpy.__author__
+author = squidpy.__author__
 copyright = f"{datetime.now():%Y}, {author}."
 release = "master"
-version = "TODO"  # f"master ({squidpy.__version__})"
+version = f"{release} ({squidpy.__version__})"
 
 
 # -- General configuration ---------------------------------------------------
@@ -59,6 +59,15 @@ source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
+# spelling
+spelling_lang = "en_US"
+spelling_warning = True
+spelling_word_list_filename = "spelling_wordlist.txt"
+spelling_add_pypi_package_names = True
+spelling_show_suggestions = True
+# see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
+spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
@@ -82,6 +91,12 @@ def reset_matplotlib(_gallery_conf, _fname):
     plt.rcdefaults()
     mpl.rcParams["savefig.bbox"] = "tight"
     mpl.rcParams["savefig.transparent"] = True
+
+
+def reset_scanpy(_gallery_conf, _fname):
+    import scanpy as sc
+
+    sc.set_figure_params(facecolor="white", figsize=(8, 8))
 
 
 example_dir = Path(__file__).parent.parent.parent / "examples"
@@ -114,11 +129,11 @@ class ExplicitSubsectionOrder(_SortKey):
 
 
 sphinx_gallery_conf = {
-    "image_scrapers": "matplotlib",  # TODO: napari scraper
+    "image_scrapers": "matplotlib",
     "reset_modules": (
         "seaborn",
         reset_matplotlib,
-        # TODO: reset scanpy/napari
+        reset_scanpy,
     ),
     "filename_pattern": f"{os.path.sep}(plot_|compute_|tutorial_)",
     "examples_dirs": [example_dir, tutorial_dir],
@@ -141,11 +156,13 @@ sphinx_gallery_conf = {
         "images",
         "thumbnails",
         "-o3",
-    ),  # TODO: CI needs to install optipng
+    ),
+    "remove_config_comments": True,
     "inspect_global_variables": False,
     "backreferences_dir": "gen_modules/backreferences",
     "doc_module": "squidpy",
     "download_all_examples": False,
+    "show_signature": False,
     "pypandoc": True,  # convert rST to md when downloading notebooks
 }
 

@@ -3,7 +3,7 @@
 Squidpy notebooks
 =================
 
-Tutorials for squidpy.
+Tutorials for Squidpy.
 
 .. TODO: fix the :target:s in PyPI and Docs
 
