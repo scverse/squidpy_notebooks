@@ -16,13 +16,13 @@ cell-segmentation depends on the quality of your tissue images.
 In this example we use the DAPI stain of a fluorescence dataset that clearly shows the nuclei to do the segmentation.
 For harder cases, you may want to provide your own pre-trained segmentation model.
 
-See :ref:`sphx_glr_auto_examples_image_compute_segment_he.py` for an example of how to
+See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
 calculate a cell-segmentation of an H&E stain.
 """
 
+# import modules
 import os
 
-# import modules
 import squidpy as sq
 
 import numpy as np
@@ -30,24 +30,21 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# get spatial dataset including hires tissue image
-# set path to dataset
-BASE_PATH = "/Users/hannah.spitzer/projects/spatial_scanpy/data"
-dataset_folder = os.path.join(BASE_PATH, "2020_10XFluoVisium_HumanBrain1_giovanni.palla")
-# load data
-adata, img = sq.read_visium_data(dataset_folder)
+# load fluorescence tissue image
+img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.tiff"))
+
 
 # %%
 # We crop a smaller image to segment.
 # This is only to speed things up, :func:`squidpy.im.segment_img` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
-crop = img.crop_corner(10000, 10000, 500, 500)
+crop = img.crop_corner(1000, 1000, 1000, 1000)
 
 # %%
 # The tissue image in this dataset contains four fluorescence stains.
 # The first one is DAPI, which we will use for the nuclei-segmentation.
 
-fig, axes = plt.subplots(1, 4, figsize=(10, 20))
+fig, axes = plt.subplots(1, 3, figsize=(10, 20))
 for i, ax in enumerate(axes):
     ax.imshow(crop["image"][:, :, i])
     ax.axis("off")
@@ -83,7 +80,7 @@ print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))
 fig, axes = plt.subplots(1, 2, figsize=(10, 20))
 axes[0].imshow(crop["image"][:, :, 0])
 axes[0].set_title("DAPI")
-axes[1].imshow(crop["segmented_watershed"], cmap="jet")
+axes[1].imshow(crop["segmented_watershed"], cmap="jet", interpolation="none")
 axes[1].set_title("segmentation")
 for ax in axes:
     ax.axis("off")

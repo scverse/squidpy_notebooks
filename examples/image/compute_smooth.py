@@ -20,18 +20,14 @@ import squidpy as sq
 
 import matplotlib.pyplot as plt
 
-# get spatial dataset including hires tissue image
-# set path to dataset
-BASE_PATH = "/Users/hannah.spitzer/projects/spatial_scanpy/data"
-dataset_folder = os.path.join(BASE_PATH, "20191205_10XVisium_MouseBrainCoronal_giovanni.palla")
-# load data
-img = sq.im.ImageContainer(os.path.join(dataset_folder, "V1_Adult_Mouse_Brain_image.tif"))
+# load H&E stained tissue image
+img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
 
 # %%
 # First, we crop a smaller image to smooth.
 # This is only to speed things up, :func:`squidpy.im.process_img` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
-crop = img.crop_corner(4000, 4000, 250, 250)
+crop = img.crop_corner(0, 0, 500, 500)
 
 # %%
 # Smooth the image with ``"sigma" = 2``.

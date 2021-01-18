@@ -4,7 +4,7 @@ Advanced Cell-segmentation for H&E stains
 
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
 For a general example of how to use :func:`squidpy.im.segment_img`
-see :ref:`sphx_glr_auto_examples_image_compute_segment.py`.
+see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
 Here, we attempt to segment a noisy H&E stain.
 Note that we only provide very basic segmentation models.
@@ -22,15 +22,10 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# get spatial dataset including hires tissue image
-# set path to dataset
-BASE_PATH = "/Users/hannah.spitzer/projects/spatial_scanpy/data"
-dataset_folder = os.path.join(BASE_PATH, "20191205_10XVisium_MouseBrainCoronal_giovanni.palla")
-adata, img = sq.read_visium_data(dataset_folder)
-
-# %%
-# We crop a smaller image to segment
-crop = img.crop_corner(5000, 5000, 500, 500)
+# load H&E stained tissue image
+img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
+# crop a smaller image to segment
+crop = img.crop_corner(0, 0, 1000, 1000)
 
 # %%
 # Before segmenting the image, we add some preprocessing using :func:`squidpy.im.process_img`.
@@ -40,7 +35,7 @@ sq.im.process_img(crop, img_id="image", processing="gray")
 sq.im.process_img(crop, img_id="image_gray", processing="smooth", processing_kwargs={"sigma": 4})
 
 # plot the result
-fig, axes = plt.subplots(1, 3, figsize=(5, 15))
+fig, axes = plt.subplots(1, 3, figsize=(8, 15))
 for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
     ax.imshow(np.squeeze(crop[img_id]))
     ax.set_title(img_id)
@@ -67,7 +62,7 @@ sq.im.segment_img(
 
 # %%
 # The segmented crop is saved in the layer `segmented_watershed`.
-# This behavour can be shanged with the arguments ``copy`` and ``key_added``.
+# This behavour can be changed with the arguments ``copy`` and ``key_added``.
 # The result of the segmentation is a label image that can be used to extract features
 # like number of cells from the image.
 print(crop)
@@ -76,7 +71,7 @@ print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))
 fig, axes = plt.subplots(1, 2, figsize=(10, 20))
 axes[0].imshow(crop["image_gray_smooth"][:, :, 0])
 axes[0].set_title("H&E")
-axes[1].imshow(crop["segmented_watershed"][:, :, 0], cmap="jet")
+axes[1].imshow(crop["segmented_watershed"][:, :, 0], cmap="jet", interpolation="none")
 axes[1].set_title("segmentation")
 for ax in axes:
     ax.axis("off")
