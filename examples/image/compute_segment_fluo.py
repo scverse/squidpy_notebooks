@@ -63,11 +63,11 @@ sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50)
 # Since we are segmenting the first channel, we will set ``channel_idx = 0``.
 # With the argument ``model_group` we specify the model that we'd like to use for the segmentation.
 # In our case this is ``"watershed"``.
-# With ``model_kwargs`` we can provide keyword arguments to the segmentation model.
+# With ``kwargs`` we can provide keyword arguments to the segmentation model.
 # For watershed, we need to set the threshold, ``thresh = 50000``, as determined above.
 # In addition, we can specify if the values greater of equal than the threshold should be in the mask (default)
 # or if the values larger or equal to the thershold should be in the mask (``geq=False``).
-sq.im.segment_img(img=crop, img_id="image", model_group="watershed", channel_idx=0, model_kwargs={"thresh": 50000})
+sq.im.segment_img(img=crop, img_id="image", model_group="watershed", channel_idx=0, thresh=50000)
 
 # %%
 # The segmented crop is saved in the layer `segmented_watershed`.

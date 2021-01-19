@@ -50,7 +50,7 @@ sq.im.calculate_image_features(
             "channels": [0, 1],
         }
     },
-    key="summary_features",
+    key_added="summary_features",
     mask_circle=True,
 )
 

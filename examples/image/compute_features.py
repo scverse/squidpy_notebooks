@@ -61,11 +61,11 @@ sc.pl.spatial(adata, add_outline=True)
 # - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 # - specify how the crops used for feature calculation look like using ``kwargs``,
 # - specify parallelization options using ``n_jobs``, ``backend``, ``show_progress_bar``, and
-# - specify how the data that is returned using ``key``, ``copy``.
+# - specify how the data that is returned using ``key_added``, ``copy``.
 #
 # Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-sq.im.calculate_image_features(adata, img, features="summary", key="features")
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features")
 
 # show the calculated features
 print(f"calculated features: {list(adata.obsm['features'].columns)}")
@@ -86,7 +86,7 @@ sc.pl.spatial(sq.pl.extract(adata, "features"), color=[None, "summary_quantile_0
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 
 # extract features by using 4 jobs
-sq.im.calculate_image_features(adata, img, features="summary", key="features", n_jobs=4)
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
 
 # %%
 # ## Specify crop appearance
@@ -107,17 +107,17 @@ sq.im.calculate_image_features(adata, img, features="summary", key="features", n
 adata_sml = adata[0:50].copy()
 
 # calculate default features
-sq.im.calculate_image_features(adata_sml, img, features=["summary", "texture", "histogram"], key="features")
+sq.im.calculate_image_features(adata_sml, img, features=["summary", "texture", "histogram"], key_added="features")
 # calculate features with masking
 sq.im.calculate_image_features(
-    adata_sml, img, features=["summary", "texture", "histogram"], key="features_masked", mask_circle=True
+    adata_sml, img, features=["summary", "texture", "histogram"], key_added="features_masked", mask_circle=True
 )
 # calculate features with scaling and larger context
 sq.im.calculate_image_features(
     adata_sml,
     img,
     features=["summary", "texture", "histogram"],
-    key="features_scaled",
+    key_added="features_scaled",
     mask_circle=True,
     size=2,
     scale=0.5,

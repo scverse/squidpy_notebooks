@@ -32,7 +32,7 @@ crop = img.crop_corner(0, 0, 1000, 1000)
 # convert to grayscale
 sq.im.process_img(crop, img_id="image", processing="gray")
 # smooth image
-sq.im.process_img(crop, img_id="image_gray", processing="smooth", processing_kwargs={"sigma": 4})
+sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
 
 # plot the result
 fig, axes = plt.subplots(1, 3, figsize=(8, 15))
@@ -55,10 +55,8 @@ sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes[1])
 # We segment :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
 # Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
 # we need to indicate the model that it should treat lower-intensity values as foreground.
-# We do this by specifying the ``geq = False`` in the ``model_kwargs``.
-sq.im.segment_img(
-    img=crop, img_id="image_gray_smooth", model_group="watershed", model_kwargs={"thresh": 0.28, "geq": False}
-)
+# We do this by specifying the ``geq = False`` in the ``kwargs``.
+sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
 
 # %%
 # The segmented crop is saved in the layer `segmented_watershed`.

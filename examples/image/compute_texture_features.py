@@ -40,7 +40,7 @@ adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_c
 
 # calculate texture features and save in key "texture_features"
 sq.im.calculate_image_features(
-    adata, img, features="texture", key="texture_features_2", dtype="uint8", show_progress_bar=False, size=2
+    adata, img, features="texture", key_added="texture_features_2", dtype="uint8", show_progress_bar=False, size=2
 )
 # %%
 # The result is stored in `adata.obsm['texture_features']`

@@ -33,7 +33,7 @@ adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_c
 
 # calculate histogram features and save in key "histogram_features"
 sq.im.calculate_image_features(
-    adata, img, features="histogram", features_kwargs={"histogram": {"bins": 3}}, key="histogram_features"
+    adata, img, features="histogram", features_kwargs={"histogram": {"bins": 3}}, key_added="histogram_features"
 )
 
 # %%
