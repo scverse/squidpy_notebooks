@@ -148,7 +148,7 @@ jobs:
         -   name: Regenerate documentation
             # TODO: remove -q once squidpy is public
             run: |
-                tox -q -e check-docs,docs,lint
+                tox -q -e docs,check-docs
             env:
                 PLATFORM: ubuntu-latest
                 SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
