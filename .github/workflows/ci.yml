@@ -79,11 +79,14 @@ jobs:
                 key: data-${{ hashFiles('**/download_data.py') }}
         # this is slightly unnecessary, since the examples/tutorial themselves will download the data
         -   name: Download datasets
+            # TODO: remove -q once squidpy is public
             if: steps.data-cache.outputs.cache-hit != 'true'
             run: |
                 python -m pip install --upgrade pip
                 pip install tox
-                tox -e download-data
+                tox -e download-data -q
+            env:
+                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
     test:
         needs: download
