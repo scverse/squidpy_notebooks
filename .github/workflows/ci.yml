@@ -93,6 +93,10 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
+        -   name: Verify cache files are present
+            run: |
+                ls ~/.cache/squidpy
+                exit 1
         -   name: Get the triggering event
             run: |
                 echo "${{ github.event_name }} ${{ github.event.action }}"
