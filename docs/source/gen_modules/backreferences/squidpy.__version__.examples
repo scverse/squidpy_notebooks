@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.__version__``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy tutorial">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_dummy_thumb.png
+     :alt: This is a dummy tutorial
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
