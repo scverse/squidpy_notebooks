@@ -153,6 +153,12 @@ jobs:
                 PLATFORM: ubuntu-latest
                 SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
+        -   name: Forcibly add generated files
+            # git-auto-commit-action does not support this
+            run: |
+                git add --force -- docs/source/auto_* docs/source/gen_modules/backreferences/*
+                git status -s -- add docs/source/auto_* docs/source/gen_modules/backreferences/*
+
         -   name: Commit changes
             uses: stefanzweifel/git-auto-commit-action@v4.8.0
             with:
