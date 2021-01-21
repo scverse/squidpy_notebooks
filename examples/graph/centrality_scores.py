@@ -26,7 +26,7 @@ sq.gr.spatial_neighbors(adata)
 # %%
 # Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`
 
-sq.pl.centrality_scores(adata, "cell type")
+sq.gr.centrality_scores(adata, "cell type")
 
 # %%
 # and visualize results with :func:`squidpy.pl.centrality_scores`.
