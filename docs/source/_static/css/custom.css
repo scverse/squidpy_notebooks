@@ -1,3 +1,7 @@
+.wy-nav-content {
+    max-width: 950px;
+}
+
 .highlight {
     background: #f1f5fb!important;
 }

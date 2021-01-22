@@ -48,7 +48,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     # TODO: uncomment once the docs are up
     # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
-    # TODO: remove me if if not used
+    # TODO: remove me if not used
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
@@ -60,12 +60,15 @@ source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
+suppress_warnings = ["ref.citation"]  # ignore not referenced citations
+
 # spelling
 spelling_lang = "en_US"
 spelling_warning = True
 spelling_word_list_filename = "spelling_wordlist.txt"
 spelling_add_pypi_package_names = True
 spelling_show_suggestions = True
+spelling_exclude_patterns = ["references.rst"]
 # see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
 spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
 
