@@ -1,15 +1,7 @@
-:orphan:
 
 
-
-.. _sphx_glr_auto_tutorials:
-
-Tutorials
-=========
-
-This README describes the tutorials.
-
-
+Examples using ``squidpy.__version__``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -26,12 +18,6 @@ This README describes the tutorials.
 
     </div>
 
+.. only:: not html
 
-.. toctree::
-   :hidden:
-
-   /auto_tutorials/tutorial_dummy
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
+ * :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`

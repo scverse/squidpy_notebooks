@@ -1,4 +1,4 @@
 Plot
 ----
 
-This readme should describe the plotting gallery.
+This README should describe the plotting gallery.

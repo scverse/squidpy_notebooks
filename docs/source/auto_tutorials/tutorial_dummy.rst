@@ -21,15 +21,15 @@
 This is a dummy tutorial
 ------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 5-11
+.. GENERATED FROM PYTHON SOURCE LINES 5-10
 
 .. code-block:: default
 
     from anndata import AnnData
+    import squidpy as sp
 
     import numpy as np
 
-    # import squidpy as sp  # TODO: import me once it's public
 
 
 
@@ -37,12 +37,36 @@ This is a dummy tutorial
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 11-12
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
+Get the version.
+
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
+
+.. code-block:: default
+
+    sp.__version__
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    '0.0.0'
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 15-16
 
 Initialize the :mod:`anndata` object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-17
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -66,18 +90,18 @@ Initialize the :mod:`anndata` object.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-21
+.. GENERATED FROM PYTHON SOURCE LINES 21-24
 
 This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 Note than any such references or code usage will be automatically linked under that function.
 See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-24
+.. GENERATED FROM PYTHON SOURCE LINES 24-27
 
 .. code-block:: default
 
     adata.obsm["spatial"] = np.stack([r.randint(0, 500, 200), r.randint(0, 500, 200)], axis=1)
-    # sp.gr.spatial_connectivity(adata, obsm="spatial", n_rings=2)  # TODO
+    sp.gr.spatial_neighbors(adata, spatial_key="spatial", n_rings=2)
     adata
 
 
@@ -92,16 +116,18 @@ See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 
     AnnData object with n_obs × n_vars = 200 × 100
         obs: 'cluster'
+        uns: 'spatial_neighbors'
         obsm: 'spatial'
+        obsp: 'spatial_connectivities', 'spatial_distances'
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.711 seconds)
+   **Total running time of the script:** ( 0 minutes  0.475 seconds)
 
-**Estimated memory usage:**  7 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_dummy.py:
