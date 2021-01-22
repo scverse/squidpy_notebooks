@@ -23,21 +23,17 @@ import matplotlib.pyplot as plt
 img = sq.datasets.visium_hne_image_crop()
 
 # %%
-# First, we crop a smaller image to smooth.
-# This is only to speed things up, :func:`squidpy.im.process_img` can also process very large images
-# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
-crop = img.crop_corner(0, 0, 500, 500)
-
-# %%
 # Smooth the image with ``sigma = 2``.
 # With the argument ``img_id`` we can select the image layer that should be processed.
 # By default, the resulting image is saved in the layer ``image_smooth`.
 # This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
-sq.im.process_img(crop, img_id="image", processing="smooth", sigma=2)
+sq.im.process_img(img, img_id="image", processing="smooth", sigma=2)
 
 # %%
-# Now we can plot the result
+# Now we can look at the result on a cropped part of the image.
+crop = img.crop_corner(0, 0, 200, 200)
+
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(crop["image"])
 axes[0].set_title("original")
