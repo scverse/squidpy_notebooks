@@ -32,7 +32,7 @@ This allows us to set the width of the gaussian kernel, ``sigma``, used for smoo
 See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
 :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-26
+.. GENERATED FROM PYTHON SOURCE LINES 17-27
 
 .. code-block:: default
 
@@ -44,31 +44,22 @@ See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
     import matplotlib.pyplot as plt
 
     # load H&E stained tissue image
-    img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
+    img = sq.datasets.visium_hne_image_crop()
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/rasterio/__init__.py:221: NotGeoreferencedWarning: Dataset has no geotransform set. The identity matrix may be returned.
-      s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 27-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-31
 
 First, we crop a smaller image to smooth.
 This is only to speed things up, :func:`squidpy.im.process_img` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
 
 .. code-block:: default
 
@@ -81,19 +72,19 @@ This is only to speed things up, :func:`squidpy.im.process_img` can also process
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-38
 
-Smooth the image with ``"sigma" = 2``.
+Smooth the image with ``sigma = 2``.
 With the argument ``img_id`` we can select the image layer that should be processed.
 By default, the resulting image is saved in the layer ``image_smooth`.
 This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 .. code-block:: default
 
 
-    sq.im.process_img(crop, img_id="image", processing="smooth", sigma = 2)
+    sq.im.process_img(crop, img_id="image", processing="smooth", sigma=2)
 
 
 
@@ -111,24 +102,26 @@ This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 Now we can plot the result
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-47
+.. GENERATED FROM PYTHON SOURCE LINES 43-50
 
 .. code-block:: default
 
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image"])
+    axes[0].set_title("original")
     axes[1].imshow(crop["image_smooth"])
+    axes[1].set_title("smoothed")
     for ax in axes:
         ax.axis("off")
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
-    :alt: compute smooth
+    :alt: original, smoothed
     :class: sphx-glr-single-img
 
 
@@ -138,9 +131,9 @@ Now we can plot the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.490 seconds)
+   **Total running time of the script:** ( 0 minutes  17.834 seconds)
 
-**Estimated memory usage:**  267 MB
+**Estimated memory usage:**  117 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

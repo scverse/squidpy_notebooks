@@ -32,10 +32,11 @@ Use ``features = 'histogram'`` to calculate the features.
 This will internally call :meth:`squidpy.im.ImageContainer.get_histogram_features`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
+
 - ``bins``: Number of bins of the histogram. Default is 10
 - ``v_range``: Range on which values are binned. Default is the whole image range
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-26
+.. GENERATED FROM PYTHON SOURCE LINES 22-29
 
 .. code-block:: default
 
@@ -53,19 +54,19 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-28
+.. GENERATED FROM PYTHON SOURCE LINES 30-31
 
 Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-39
+.. GENERATED FROM PYTHON SOURCE LINES 31-42
 
 .. code-block:: default
 
 
 
     # get spatial dataset including hires tissue image
-    img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.tiff"))
-    adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.h5ad"))
+    img = sq.datasets.visium_fluo_image_crop()
+    adata = sq.datasets.visium_fluo_adata_crop()
 
     # calculate histogram features and save in key "histogram_features"
     sq.im.calculate_image_features(
@@ -76,23 +77,14 @@ Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of ch
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/rasterio/__init__.py:221: NotGeoreferencedWarning: Dataset has no geotransform set. The identity matrix may be returned.
-      s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+The result is stored in ``adata.obsm['histogram_features']``
 
-The result is stored in `adata.obsm['histogram_features']`
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 44-47
 
 .. code-block:: default
 
@@ -204,7 +196,7 @@ The result is stored in `adata.obsm['histogram_features']`
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-50
+.. GENERATED FROM PYTHON SOURCE LINES 48-53
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image.
 With these features we can e.g. apreciate the detailled distribution of
@@ -212,17 +204,17 @@ intensity values of channel 0 (DAPI stain) on the different bins.
 
 TODO: reference to interactive plotting
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-57
+.. GENERATED FROM PYTHON SOURCE LINES 53-60
 
 .. code-block:: default
 
 
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
     sc.pl.spatial(
         sq.pl.extract(adata, "histogram_features"),
         color=[None, "histogram_ch_0_bin_0", "histogram_ch_0_bin_1", "histogram_ch_0_bin_2"],
         bw=True,
     )
+
 
 
 
@@ -237,9 +229,9 @@ TODO: reference to interactive plotting
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.793 seconds)
+   **Total running time of the script:** ( 0 minutes  23.757 seconds)
 
-**Estimated memory usage:**  814 MB
+**Estimated memory usage:**  823 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:

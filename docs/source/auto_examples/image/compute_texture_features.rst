@@ -34,11 +34,12 @@ Use ``features = 'texture'`` to calculate the features.
 This will internally call :meth:`squidpy.im.ImageContainer.get_texture_features`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
+
 - ``distances``: Distances that are taken into account for finding repeating patterns
 - ``angles``: Range on which values are binned. Default is the whole image range
 - ``props``: Texture features that are extracted from the GLCM
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-29
+.. GENERATED FROM PYTHON SOURCE LINES 25-32
 
 .. code-block:: default
 
@@ -56,23 +57,23 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-36
+.. GENERATED FROM PYTHON SOURCE LINES 33-39
 
 Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
-Here, we need to cast the image crops from uint16 to uint8 (by using ``dtype="uint8"``) before calculating the
-texture features, because `skimage.feature.greycomatrix` does not support values above 255.
+Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype="uint8"``) before calculating the
+texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
 Note that for texture features it may make sense to compute them over a larger crop size to include more context,
 e.g., ``size=2`` or ``size=4`` which will extract crops with double or four times the radius than the original
 visium spot size.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-45
+.. GENERATED FROM PYTHON SOURCE LINES 39-48
 
 .. code-block:: default
 
 
     # get spatial dataset including hires tissue image
-    img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.tiff"))
-    adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.h5ad"))
+    img = sq.datasets.visium_fluo_image_crop()
+    adata = sq.datasets.visium_fluo_adata_crop()
 
     # calculate texture features and save in key "texture_features"
     sq.im.calculate_image_features(
@@ -82,23 +83,14 @@ visium spot size.
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/rasterio/__init__.py:221: NotGeoreferencedWarning: Dataset has no geotransform set. The identity matrix may be returned.
-      s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 49-50
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-47
+The result is stored in ``adata.obsm['texture_features']``
 
-The result is stored in `adata.obsm['texture_features']`
-
-.. GENERATED FROM PYTHON SOURCE LINES 47-50
+.. GENERATED FROM PYTHON SOURCE LINES 50-53
 
 .. code-block:: default
 
@@ -516,7 +508,7 @@ The result is stored in `adata.obsm['texture_features']`
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-56
+.. GENERATED FROM PYTHON SOURCE LINES 54-59
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 Here, we show the contrast feature for channels 0 and 1.
@@ -524,16 +516,17 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 TODO: reference to interactive plotting
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-62
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 .. code-block:: default
 
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
+
     sc.pl.spatial(
         sq.pl.extract(adata, "texture_features_2"),
         color=[None, "texture_contrast_ch_0_dist_1_angle_0.00", "texture_contrast_ch_1_dist_1_angle_0.00"],
         bw=True,
     )
+
 
 
 
@@ -548,9 +541,9 @@ TODO: reference to interactive plotting
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  47.095 seconds)
+   **Total running time of the script:** ( 0 minutes  47.359 seconds)
 
-**Estimated memory usage:**  811 MB
+**Estimated memory usage:**  889 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

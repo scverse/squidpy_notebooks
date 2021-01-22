@@ -32,6 +32,7 @@ See also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
 The extracted crops are then used to compute features.
 We provide different feature extractors that are described in more detail in the following examples:
+
 - summary statistics of each color channel
   (:ref:`sphx_glr_auto_examples_image_compute_summary_features.py`)
 - texture features based on repeating patterns
@@ -41,11 +42,10 @@ We provide different feature extractors that are described in more detail in the
 - number and size of objects from a binary segmentation layer
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-42
+.. GENERATED FROM PYTHON SOURCE LINES 28-43
 
 .. code-block:: default
 
-    # import modules
     import os
 
     import squidpy as sq
@@ -58,32 +58,23 @@ We provide different feature extractors that are described in more detail in the
     import matplotlib.pyplot as plt
 
     # get spatial dataset including hires tissue image
-    img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
-    adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.h5ad"))
+    img = sq.datasets.visium_hne_image_crop()
+    adata = sq.datasets.visium_hne_adata_crop()
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/rasterio/__init__.py:221: NotGeoreferencedWarning: Dataset has no geotransform set. The identity matrix may be returned.
-      s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-46
+.. GENERATED FROM PYTHON SOURCE LINES 44-47
 
 The high resolution tissue image is contained in ``img['image']``,
 and the spot locations in tissue image pixel-space are located in ``adata.obsm['spatial']``.
 We can plot the spots overlayed on a lower-resolution version of the tissue image contained in adata.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-53
+.. GENERATED FROM PYTHON SOURCE LINES 47-54
 
 .. code-block:: default
 
@@ -122,14 +113,15 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-67
+.. GENERATED FROM PYTHON SOURCE LINES 55-69
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
-This function takes both `adata` and `img` as input, and will write the resulting ``obs x features`` matrix to
+This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
 ``adata.obsm[key]``.
 It contains several arguments to modify its behaviour.
 With these arguments you can
+
 - specify the image used for feature calculation using ``img_id``,
 - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 - specify how the crops used for feature calculation look like using ``kwargs``,
@@ -138,7 +130,7 @@ With these arguments you can
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-74
+.. GENERATED FROM PYTHON SOURCE LINES 69-76
 
 .. code-block:: default
 
@@ -147,7 +139,7 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
 
     # show the calculated features
     print(f"calculated features: {list(adata.obsm['features'].columns)}")
-    print(adata.obsm["features"].head())
+    adata.obsm["features"].head()
 
 
 
@@ -160,31 +152,120 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
  .. code-block:: none
 
     calculated features: ['summary_quantile_0.9_ch_0', 'summary_quantile_0.5_ch_0', 'summary_quantile_0.1_ch_0', 'summary_quantile_0.9_ch_1', 'summary_quantile_0.5_ch_1', 'summary_quantile_0.1_ch_1', 'summary_quantile_0.9_ch_2', 'summary_quantile_0.5_ch_2', 'summary_quantile_0.1_ch_2']
-                        summary_quantile_0.9_ch_0  summary_quantile_0.5_ch_0  ...  summary_quantile_0.5_ch_2  summary_quantile_0.1_ch_2
-    AAAGACCCAAGTCGCG-1                      140.0                      112.0  ...                      115.0                       90.0
-    AAAGGGATGTAGCAAG-1                      144.0                      114.0  ...                      111.0                       88.0
-    AAAGTCACTGATGTAA-1                      139.0                      115.0  ...                      118.0                       93.0
-    AAATGGCATGTCTTGT-1                      138.0                      109.0  ...                      111.0                       85.0
-    AAATGGTCAATGTGCC-1                      146.0                      113.0  ...                      113.0                       89.0
-
-    [5 rows x 9 columns]
 
 
+.. raw:: html
 
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>summary_quantile_0.9_ch_0</th>
+          <th>summary_quantile_0.5_ch_0</th>
+          <th>summary_quantile_0.1_ch_0</th>
+          <th>summary_quantile_0.9_ch_1</th>
+          <th>summary_quantile_0.5_ch_1</th>
+          <th>summary_quantile_0.1_ch_1</th>
+          <th>summary_quantile_0.9_ch_2</th>
+          <th>summary_quantile_0.5_ch_2</th>
+          <th>summary_quantile_0.1_ch_2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAAGACCCAAGTCGCG-1</th>
+          <td>140.0</td>
+          <td>112.0</td>
+          <td>78.0</td>
+          <td>108.0</td>
+          <td>80.0</td>
+          <td>53.0</td>
+          <td>140.0</td>
+          <td>115.0</td>
+          <td>90.0</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>144.0</td>
+          <td>114.0</td>
+          <td>90.0</td>
+          <td>107.0</td>
+          <td>77.0</td>
+          <td>56.0</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>88.0</td>
+        </tr>
+        <tr>
+          <th>AAAGTCACTGATGTAA-1</th>
+          <td>139.0</td>
+          <td>115.0</td>
+          <td>84.0</td>
+          <td>121.0</td>
+          <td>94.0</td>
+          <td>66.0</td>
+          <td>141.0</td>
+          <td>118.0</td>
+          <td>93.0</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>138.0</td>
+          <td>109.0</td>
+          <td>74.0</td>
+          <td>101.0</td>
+          <td>71.0</td>
+          <td>45.0</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>85.0</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>146.0</td>
+          <td>113.0</td>
+          <td>84.0</td>
+          <td>112.0</td>
+          <td>77.0</td>
+          <td>53.0</td>
+          <td>144.0</td>
+          <td>113.0</td>
+          <td>89.0</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 77-81
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
 
 Here, we plot the median value of channel 0 (``summary_quantile_0.5_ch_0``).
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 81-84
 
 .. code-block:: default
 
 
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
     sc.pl.spatial(sq.pl.extract(adata, "features"), color=[None, "summary_quantile_0.5_ch_0"])
 
 
@@ -198,13 +279,14 @@ Here, we plot the median value of channel 0 (``summary_quantile_0.5_ch_0``).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-87
+.. GENERATED FROM PYTHON SOURCE LINES 85-89
 
-## Speed up feature extraction
+Speed up feature extraction
+---------------------------
 Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-91
+.. GENERATED FROM PYTHON SOURCE LINES 89-93
 
 .. code-block:: default
 
@@ -219,22 +301,23 @@ Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-104
+.. GENERATED FROM PYTHON SOURCE LINES 94-107
 
-## Specify crop appearance
+Specify crop appearance
+-----------------------
 Features are extracted from image crops that are centered on the visium spots
 (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
 By default, the crops have the same size as the spot, are not scaled and not masked.
-We can use the `mask_circle`, `scale`, and `size` arguments to change how the crops are generated.
+We can use the ``mask_circle``, ``scale``, and ``size`` arguments to change how the crops are generated.
 
-- Use `mask_circle=True, scale=1, size=1`, if you would like to get features that are calculated only from tissue
+- Use ``mask_circle=True, scale=1, size=1``, if you would like to get features that are calculated only from tissue
   in a visium spot
-- Use `scale=X`, with `X < 1`, if you would like to downscale the crop before extracting the features
-- Use `size=X`, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
+- Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
+- Use ``size=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
 
 Let us extract masked and scaled features and compare them
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-132
+.. GENERATED FROM PYTHON SOURCE LINES 107-138
 
 .. code-block:: default
 
@@ -261,10 +344,13 @@ Let us extract masked and scaled features and compare them
     )
 
     # plot distribution of median for different cropping options
-    sns.distplot(adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"], label="features")
-    sns.distplot(adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"], label="features_masked")
-    sns.distplot(adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"], label="features_scaled")
-    _ = plt.legend()
+    _ = sns.displot({'features':
+                 adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"],
+                 'features_masked':
+                 adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"],
+                 'features_scaled':
+                 adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"]},
+               kind='kde')
 
 
 
@@ -282,26 +368,20 @@ Let us extract masked and scaled features and compare them
 
     /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
       res = method(*args, **kwargs)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-      warnings.warn(msg, FutureWarning)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-      warnings.warn(msg, FutureWarning)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-      warnings.warn(msg, FutureWarning)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-134
+.. GENERATED FROM PYTHON SOURCE LINES 139-140
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  41.068 seconds)
+   **Total running time of the script:** ( 0 minutes  45.982 seconds)
 
-**Estimated memory usage:**  284 MB
+**Estimated memory usage:**  336 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

@@ -1,3 +1,4 @@
+# %%
 """
 Texture features
 ----------------
@@ -15,35 +16,34 @@ Use ``features = 'texture'`` to calculate the features.
 This will internally call :meth:`squidpy.im.ImageContainer.get_texture_features`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
+
 - ``distances``: Distances that are taken into account for finding repeating patterns
 - ``angles``: Range on which values are binned. Default is the whole image range
 - ``props``: Texture features that are extracted from the GLCM
+
 """
 
-import os
-
-import squidpy as sq
-
 import scanpy as sc
+import squidpy as sq
 
 # %%
 # Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
-# Here, we need to cast the image crops from uint16 to uint8 (by using ``dtype="uint8"``) before calculating the
-# texture features, because `skimage.feature.greycomatrix` does not support values above 255.
+# Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype="uint8"``) before calculating the
+# texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
 # Note that for texture features it may make sense to compute them over a larger crop size to include more context,
 # e.g., ``size=2`` or ``size=4`` which will extract crops with double or four times the radius than the original
 # visium spot size.
 
 # get spatial dataset including hires tissue image
-img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.tiff"))
-adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_fluo_crop.h5ad"))
+img = sq.datasets.visium_fluo_image_crop()
+adata = sq.datasets.visium_fluo_adata_crop()
 
 # calculate texture features and save in key "texture_features"
 sq.im.calculate_image_features(
     adata, img, features="texture", key_added="texture_features_2", dtype="uint8", show_progress_bar=False, size=2
 )
 # %%
-# The result is stored in `adata.obsm['texture_features']`
+# The result is stored in ``adata.obsm['texture_features']``
 
 adata.obsm["texture_features_2"].head()
 
@@ -53,9 +53,11 @@ adata.obsm["texture_features_2"].head()
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 #
 # TODO: reference to interactive plotting
-sc.set_figure_params(facecolor="white", figsize=(8, 8))
+
 sc.pl.spatial(
     sq.pl.extract(adata, "texture_features_2"),
     color=[None, "texture_contrast_ch_0_dist_1_angle_0.00", "texture_contrast_ch_1_dist_1_angle_0.00"],
     bw=True,
 )
+
+# %%

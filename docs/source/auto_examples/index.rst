@@ -125,7 +125,7 @@ This README should describe the image gallery.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process_img to convert and image layer of squidpy.im.I...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process_img to convert an image layer of squidpy.im.Im...">
 
 .. only:: html
 

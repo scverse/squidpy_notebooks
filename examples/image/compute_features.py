@@ -1,3 +1,4 @@
+# %%
 """
 Extract Image Features
 ----------------------
@@ -13,6 +14,7 @@ See also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
 The extracted crops are then used to compute features.
 We provide different feature extractors that are described in more detail in the following examples:
+
 - summary statistics of each color channel
   (:ref:`sphx_glr_auto_examples_image_compute_summary_features.py`)
 - texture features based on repeating patterns
@@ -23,21 +25,16 @@ We provide different feature extractors that are described in more detail in the
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
 
 """
-# import modules
-import os
-
-import squidpy as sq
-
 import scanpy as sc
+import squidpy as sq
 
 import numpy as np
 
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 # get spatial dataset including hires tissue image
-img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
-adata = sc.read(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.h5ad"))
+img = sq.datasets.visium_hne_image_crop()
+adata = sq.datasets.visium_hne_adata_crop()
 
 # %%
 # The high resolution tissue image is contained in ``img['image']``,
@@ -53,10 +50,11 @@ sc.pl.spatial(adata, add_outline=True)
 # %%
 # Using this information, we can now extract features from the tissue underneath each spot by calling
 # :func:`squidpy.im.calculate_image_features`.
-# This function takes both `adata` and `img` as input, and will write the resulting ``obs x features`` matrix to
+# This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
 # ``adata.obsm[key]``.
 # It contains several arguments to modify its behaviour.
 # With these arguments you can
+#
 # - specify the image used for feature calculation using ``img_id``,
 # - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 # - specify how the crops used for feature calculation look like using ``kwargs``,
@@ -69,7 +67,7 @@ sq.im.calculate_image_features(adata, img, features="summary", key_added="featur
 
 # show the calculated features
 print(f"calculated features: {list(adata.obsm['features'].columns)}")
-print(adata.obsm["features"].head())
+adata.obsm["features"].head()
 
 # %%
 # To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
@@ -77,11 +75,11 @@ print(adata.obsm["features"].head())
 #
 # Here, we plot the median value of channel 0 (``summary_quantile_0.5_ch_0``).
 
-sc.set_figure_params(facecolor="white", figsize=(8, 8))
 sc.pl.spatial(sq.pl.extract(adata, "features"), color=[None, "summary_quantile_0.5_ch_0"])
 
 # %%
-# ## Speed up feature extraction
+# Speed up feature extraction
+# ---------------------------
 # Speeding up the feature extraction is easy.
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 
@@ -89,16 +87,17 @@ sc.pl.spatial(sq.pl.extract(adata, "features"), color=[None, "summary_quantile_0
 sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
 
 # %%
-# ## Specify crop appearance
+# Specify crop appearance
+# -----------------------
 # Features are extracted from image crops that are centered on the visium spots
 # (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
 # By default, the crops have the same size as the spot, are not scaled and not masked.
-# We can use the `mask_circle`, `scale`, and `size` arguments to change how the crops are generated.
+# We can use the ``mask_circle``, ``scale``, and ``size`` arguments to change how the crops are generated.
 #
-# - Use `mask_circle=True, scale=1, size=1`, if you would like to get features that are calculated only from tissue
+# - Use ``mask_circle=True, scale=1, size=1``, if you would like to get features that are calculated only from tissue
 #   in a visium spot
-# - Use `scale=X`, with `X < 1`, if you would like to downscale the crop before extracting the features
-# - Use `size=X`, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
+# - Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
+# - Use ``size=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
 #
 # Let us extract masked and scaled features and compare them
 
@@ -124,10 +123,14 @@ sq.im.calculate_image_features(
 )
 
 # plot distribution of median for different cropping options
-sns.distplot(adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"], label="features")
-sns.distplot(adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"], label="features_masked")
-sns.distplot(adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"], label="features_scaled")
-_ = plt.legend()
+_ = sns.displot(
+    {
+        "features": adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"],
+        "features_masked": adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"],
+        "features_scaled": adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"],
+    },
+    kind="kde",
+)
 
 # %%
 # The masked features have lower median values, because the area outside the circle is masked with zeros.

@@ -1,3 +1,4 @@
+# %%
 """
 Advanced Cell-segmentation for H&E stains
 ------------------
@@ -12,9 +13,6 @@ If you require precise cell-segmentation and cell-counts, you might want to add 
 and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
 """
 
-import os
-
-# import modules
 import squidpy as sq
 
 import numpy as np
@@ -23,7 +21,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # load H&E stained tissue image
-img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff"))
+img = sq.datasets.visium_hne_image_crop()
 # crop a smaller image to segment
 crop = img.crop_corner(0, 0, 1000, 1000)
 
@@ -35,7 +33,7 @@ sq.im.process_img(crop, img_id="image", processing="gray")
 sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
 
 # plot the result
-fig, axes = plt.subplots(1, 3, figsize=(8, 15))
+fig, axes = plt.subplots(1, 3)
 for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
     ax.imshow(np.squeeze(crop[img_id]))
     ax.set_title(img_id)
@@ -48,7 +46,7 @@ for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 axes[0].imshow(crop["image_gray_smooth"][:, :, 0] < 0.28)
 axes[0].axis("off")
-sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes[1])
+_ = sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes[1])
 
 
 # %%
@@ -66,10 +64,12 @@ sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed",
 print(crop)
 print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 
-fig, axes = plt.subplots(1, 2, figsize=(10, 20))
+fig, axes = plt.subplots(1, 2)
 axes[0].imshow(crop["image_gray_smooth"][:, :, 0])
 axes[0].set_title("H&E")
 axes[1].imshow(crop["segmented_watershed"][:, :, 0], cmap="jet", interpolation="none")
 axes[1].set_title("segmentation")
 for ax in axes:
     ax.axis("off")
+
+# %%

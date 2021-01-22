@@ -1,18 +1,17 @@
+# %%
 """
 Converting to Grayscale
 ------------------
 
-This example shows how to use :func:`squidpy.im.process_img` to convert and image layer
+This example shows how to use :func:`squidpy.im.process_img` to convert an image layer
 of :class:`squidpy.im.ImageContainer` to grayscale.
 
-We use the argument ``processing="gray"`` to smooth the image.
+We use the argument ``processing="gray"`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 
 See also :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
 and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 """
-
-import os
 
 import squidpy as sq
 
@@ -23,9 +22,7 @@ import matplotlib.pyplot as plt
 # Here, we only load a cropped dataset to speed things up.
 # In general, :func:`squidpy.im.process_img` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
-# TODO: add howto download data
-img_path = os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne_crop.tiff")
-img = sq.im.ImageContainer(img_path)
+img = sq.datasets.visium_hne_image_crop()
 
 # %%
 # Then, we convert the image to grayscale and plot the result.
@@ -33,13 +30,17 @@ img = sq.im.ImageContainer(img_path)
 # When converting to grayscale, the channel dimensions change from 3 to 1.
 # By default, the name of the resulting channel dimension will be ``{{original_channel_name}}_gray``.
 # Use the argument ``channel_id`` to set a new channel name explicitely.
-# By default, the resulting image is saved in the layer ``image_gray`.
+# By default, the resulting image is saved in the layer ``image_gray``.
 # This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 sq.im.process_img(img, img_id="image", processing="gray")
 
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(img["image"])
+axes[0].set_title("original")
 axes[1].imshow(img["image_gray"], cmap="gray")
+axes[1].set_title("grayscale")
 for ax in axes:
     ax.axis("off")
+
+# %%

@@ -1,3 +1,4 @@
+# %%
 """
 Processing a high-resolution Image
 ----------------------------------
@@ -5,7 +6,7 @@ Processing a high-resolution Image
 This example shows how to use :func:`squidpy.im.process_img` to apply any processing function
 (smoothing, conversion to grayscale) to a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
 
-By default, :func:`squidpy.im.process_img`` processes the entire input image at once.
+By default, :func:`squidpy.im.process_img` processes the entire input image at once.
 In the case of high-resolution tissue slides however, the images might bo too big to fit in memory
 and cannot be processed at once.
 In that case you can use the arguments ``xs`` and ``ys`` that will tile the image in crops of size ``(ys, xs)``,
@@ -21,14 +22,12 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 """
 
-import os
-
 import squidpy as sq
 
 import matplotlib.pyplot as plt
 
-# get H&E stained tissue image.
-img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne.tiff"))
+# load H&E stained tissue image
+img = sq.datasets.visium_hne_image()
 
 
 # %%
@@ -44,6 +43,10 @@ sq.im.process_img(crop, img_id="image", processing="gray", xs=1000, ys=1000)
 # Now we can plot the result
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(crop["image"])
+axes[0].set_title("original")
 axes[1].imshow(crop["image_gray"], cmap="gray")
+axes[1].set_title("converted to grayscale")
 for ax in axes:
     ax.axis("off")
+
+# %%

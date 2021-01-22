@@ -24,7 +24,7 @@ Processing a high-resolution Image
 This example shows how to use :func:`squidpy.im.process_img` to apply any processing function
 (smoothing, conversion to grayscale) to a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
 
-By default, :func:`squidpy.im.process_img`` processes the entire input image at once.
+By default, :func:`squidpy.im.process_img` processes the entire input image at once.
 In the case of high-resolution tissue slides however, the images might bo too big to fit in memory
 and cannot be processed at once.
 In that case you can use the arguments ``xs`` and ``ys`` that will tile the image in crops of size ``(ys, xs)``,
@@ -39,7 +39,7 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 :ref:`sphx_glr_auto_examples_image_compute_gray.py`, and
 :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-34
+.. GENERATED FROM PYTHON SOURCE LINES 24-35
 
 .. code-block:: default
 
@@ -50,31 +50,22 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 
     import matplotlib.pyplot as plt
 
-    # get H&E stained tissue image.
-    img = sq.im.ImageContainer(os.path.expanduser("~/.cache/squidpy/tutorial_data/visium_hne.tiff"))
+    # load H&E stained tissue image
+    img = sq.datasets.visium_hne_image()
 
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/rasterio/__init__.py:221: NotGeoreferencedWarning: Dataset has no geotransform set. The identity matrix may be returned.
-      s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 36-37
 
 First, we crop a smaller image to process
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-38
+.. GENERATED FROM PYTHON SOURCE LINES 37-39
 
 .. code-block:: default
 
@@ -87,11 +78,11 @@ First, we crop a smaller image to process
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 We will process the image by tiling it in crops of shape ``(ys, xs) = (1000,1000)``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -105,24 +96,27 @@ We will process the image by tiling it in crops of shape ``(ys, xs) = (1000,1000
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 Now we can plot the result
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-50
+.. GENERATED FROM PYTHON SOURCE LINES 46-54
 
 .. code-block:: default
 
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image"])
+    axes[0].set_title("original")
     axes[1].imshow(crop["image_gray"], cmap="gray")
+    axes[1].set_title("converted to grayscale")
     for ax in axes:
         ax.axis("off")
 
 
 
+
 .. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
-    :alt: compute process hires
+    :alt: original, converted to grayscale
     :class: sphx-glr-single-img
 
 
@@ -132,9 +126,9 @@ Now we can plot the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.652 seconds)
+   **Total running time of the script:** ( 0 minutes  20.202 seconds)
 
-**Estimated memory usage:**  1142 MB
+**Estimated memory usage:**  727 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:
