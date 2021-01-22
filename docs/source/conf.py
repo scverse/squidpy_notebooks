@@ -16,6 +16,7 @@ from pathlib import Path
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import squidpy
+from sphinx.application import Sphinx
 from sphinx_gallery.sorting import ExplicitOrder, _SortKey
 
 sys.path.insert(0, os.path.abspath("_ext"))
@@ -91,12 +92,9 @@ def reset_matplotlib(_gallery_conf, _fname):
     plt.rcdefaults()
     mpl.rcParams["savefig.bbox"] = "tight"
     mpl.rcParams["savefig.transparent"] = True
-
-
-def reset_scanpy(_gallery_conf, _fname):
-    import scanpy as sc
-
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
+    mpl.rcParams["figure.figsize"] = (12, 8)
+    mpl.rcParams["figure.dpi"] = 90
+    mpl.rcParams["figure.autolayout"] = True
 
 
 example_dir = Path(__file__).parent.parent.parent / "examples"
@@ -133,7 +131,6 @@ sphinx_gallery_conf = {
     "reset_modules": (
         "seaborn",
         reset_matplotlib,
-        reset_scanpy,
     ),
     "filename_pattern": f"{os.path.sep}(plot_|compute_|tutorial_)",
     "examples_dirs": [example_dir, tutorial_dir],
@@ -182,3 +179,7 @@ html_show_sphinx = False
 
 github_repo = "squidpy"
 github_repo_nb = "squidpy_notebooks"
+
+
+def setup(app: Sphinx) -> None:
+    app.add_css_file("css/custom.css")

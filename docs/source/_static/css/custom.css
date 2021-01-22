@@ -1,0 +1,11 @@
+.highlight {
+    background: #f1f5fb!important;
+}
+
+.sphx-glr-script-out .highlight pre {
+    background-color: #f1f5fbcf!important;
+}
+
+div.output_subarea.output_html.rendered_html.output_result{
+    overflow: auto;
+}
