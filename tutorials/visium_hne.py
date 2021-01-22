@@ -29,7 +29,7 @@ import scanpy as sc
 import anndata as ad
 import squidpy as sq
 
-# import numpy as np
+import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
@@ -310,22 +310,22 @@ sq.pl.co_occurrence(
 # the *Hippocampus* cluster, and two target groups, *Pyramidal_layer_dentate_gyrus* and *Pyramidal_layer* cluster.
 
 # %%
-# sq.gr.ligrec(
-#    adata,
-#    cluster_key="cluster",
-# )
+sq.gr.ligrec(
+    adata,
+    cluster_key="cluster",
+)
 
 
 # %%
-# sq.pl.ligrec(
-#    adata,
-#    cluster_key="cluster",
-#    source_groups="Hippocampus",
-#    target_groups=["Pyramidal_layer", "Pyramidal_layer_dentate_gyrus"],
-#    means_range=(3, np.inf),
-#    alpha=1e-4,
-#    swap_axes=True,
-# )
+sq.pl.ligrec(
+    adata,
+    cluster_key="cluster",
+    source_groups="Hippocampus",
+    target_groups=["Pyramidal_layer", "Pyramidal_layer_dentate_gyrus"],
+    means_range=(3, np.inf),
+    alpha=1e-4,
+    swap_axes=True,
+)
 
 
 # %% [markdown]
@@ -358,7 +358,7 @@ sq.pl.co_occurrence(
 # returns both test statistics and adjusted pvalues in `adata.var` slot.
 
 # %%
-# sq.gr.moran(adata, n_jobs=4)
+sq.gr.moran(adata, n_jobs=4)
 
 
 # %% [markdown]
@@ -367,11 +367,11 @@ sq.pl.co_occurrence(
 # We can select few genes and visualize their expression levels in the tissue
 
 # %%
-# adata.uns["moranI"].head(10)
+adata.uns["moranI"].head(10)
 
 
 # %%
-# sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
+sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
 
 
 # %% [markdown]
