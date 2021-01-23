@@ -100,8 +100,9 @@ def reset_matplotlib(_gallery_conf, _fname):
     mpl.rcParams["figure.autolayout"] = True
 
 
-example_dir = Path(__file__).parent.parent.parent / "examples"
-tutorial_dir = Path(__file__).parent.parent.parent / "tutorials"
+_root = Path(__file__).parent.parent.parent
+example_dir = _root / "examples"
+tutorial_dir = _root / "tutorials"
 rel_example_dir = Path("..") / ".." / "examples"
 rel_tutorial_dir = Path("..") / ".." / "tutorials"
 
@@ -163,7 +164,7 @@ sphinx_gallery_conf = {
     "doc_module": "squidpy",
     "download_all_examples": False,
     "show_signature": False,
-    "pypandoc": True,  # convert rST to md when downloading notebooks
+    "pypandoc": {"filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")]},
 }
 
 # -- Options for HTML output -------------------------------------------------
