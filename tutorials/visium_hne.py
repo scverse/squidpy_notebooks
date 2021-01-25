@@ -24,7 +24,6 @@ To run the notebook locally, create a conda environment with `conda create -f en
 The file `environment.yml` can be found `here <>`_ .
 """
 
-# %%
 import scanpy as sc
 import anndata as ad
 import squidpy as sq
@@ -34,26 +33,22 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
-# %%
 sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
 
-# %%
 # load the pre-processed dataset
 img = sq.datasets.visium_hne_image()
 adata = sq.datasets.visium_hne_adata()
 
-
-# %% [markdown]
+###############################################################################
 # First, let's visualize cluster annotation in spatial context
 # with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
 
-# %%
 sc.pl.spatial(adata, color="cluster")
 
 
-# %% [markdown]
+###############################################################################
 # Image features
 # --------------
 #
@@ -100,11 +95,11 @@ axes[1].imshow(img_crop["segmented_watershed"] > 0)
 for ax in axes:
     ax.axis("off")
 
-# %% [markdown]
+###############################################################################
 # The result of :func:`squidpy.im.segment_img` is saved in ``img['segmented_watershed']``.
 # It is a label image where each segmented object is annotated with a different integer number.
 
-# %% [markdown]
+###############################################################################
 # Segmentation Features
 # +++++++++++++++++++++
 #
@@ -116,7 +111,6 @@ for ax in axes:
 # For more details on how the segmentation features, you can have a look at
 # :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
 
-# %%
 # define image layer to use for segmentation
 features_kwargs = {"segmentation": {"label_img_id": "segmented_watershed"}}
 # calculate segmentation features
@@ -124,11 +118,10 @@ sq.im.calculate_image_features(
     adata, img, features="segmentation", key_added="features_segmentation", n_jobs=4, features_kwargs=features_kwargs
 )
 
-# %%
 # compare number of cells extracted from segmentation with gene-space clustering
 sc.pl.spatial(sq.pl.extract(adata, "features_segmentation"), color=["segmentation_label", "cluster"])
 
-# %% [markdown]
+###############################################################################
 # In the above cells, we made use of :func:`squidpy.pl.extract`, a method to extract
 # all features in a given `adata.obsm[<key>]` and temporarily save them to `adata.obs`.
 # Such method is particularly useful for plotting purpose, as showed above.
@@ -140,7 +133,7 @@ sc.pl.spatial(sq.pl.extract(adata, "features_segmentation"), color=["segmentatio
 # has a very low cell-density (cluster "Hippocampus" in the gene-space clustering).
 # In addition, the region of the cluster called "Cortex_1" also seems to have low cell counts.
 
-# %% [markdown]
+###############################################################################
 # Summary features and feature clusters
 # +++++++++++++++++++++++++++++++++++++
 #
@@ -165,7 +158,7 @@ adata.obsm["features"] = pd.concat(
 adata.obsm["features"].columns = ad.utils.make_index_unique(adata.obsm["features"].columns)
 
 
-# %% [markdown]
+###############################################################################
 # We can use the extracted image features to compute a new cluster annotation.
 # This could be useful to gain insights in similarities across spots based on image morphology.
 
@@ -198,7 +191,7 @@ adata.obs["features_cluster"] = cluster_features(adata.obsm["features"], like="s
 sc.set_figure_params(facecolor="white", figsize=(8, 8))
 sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 
-# %% [markdown]
+###############################################################################
 # Like the gene-space clusters (right), the feature space clusters (left) are also spatially coherent.
 # We can see the cluster 4 of the feature clusters is a border clusters,
 # that all spots at the border of the tissue were assigned to.
@@ -217,7 +210,7 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # This is only a simple, comparative analysis of the image features,
 # note that you could also use the image features to e.g. compute a common image and gene clustering.
 
-# %% [markdown]
+###############################################################################
 # Spatial statistics and graph analysis
 # -------------------------------------
 # Similar to other spatial data, we can investigate spatial organization
@@ -242,19 +235,18 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
-# %%
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="cluster")
 sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 
 
-# %% [markdown]
+###############################################################################
 # Given the spatial organization of the mouse brain coronal section,
 # not surprisingly we find high neighborhood enrichment the Hippocampus region:
 # "Pyramidal_layer_dentate_gyrus" and "Pyramidal_layer" clusters seems
 # to be often neighbors with the larger "Hippocampus" cluster.
 
-# %% [markdown]
+###############################################################################
 # Co-occurrence across spatial dimensions
 # +++++++++++++++++++++++++++++++++++++++
 # In addition to the neighbor enrichment score, we can visualize cluster co-occurrence in spatial dimensions.
@@ -272,7 +264,6 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 # for the conditional probability with the argument `clusters`.
 # Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
 
-# %%
 sq.gr.co_occurrence(adata, cluster_key="cluster")
 sq.pl.co_occurrence(
     adata,
@@ -282,7 +273,7 @@ sq.pl.co_occurrence(
 )
 
 
-# %% [markdown]
+###############################################################################
 # The result largely recapitulates the previous analysis:
 # the "Pyramidal_layer" cluster seem to co-occur at short distances
 # with the larger "Hippocampus" cluster.
@@ -290,7 +281,7 @@ sq.pl.co_occurrence(
 # the Visium `source_image`, and corresponds to the same unit of
 # the spatial coordinates saved in `adata.obsm["spatial"]`.
 
-# %% [markdown]
+###############################################################################
 # Ligand-receptor interaction analysis
 # ++++++++++++++++++++++++++++++++++++
 # We are continuing the analysis showing couple of feature-level methods that are very relevant
@@ -312,14 +303,12 @@ sq.pl.co_occurrence(
 # We'll also subset the visualization for only one source group,
 # the "Hippocampus" cluster, and two target groups, "Pyramidal_layer_dentate_gyrus" and "Pyramidal_layer" cluster.
 
-# %%
 sq.gr.ligrec(
     adata,
     cluster_key="cluster",
 )
 
 
-# %%
 sq.pl.ligrec(
     adata,
     cluster_key="cluster",
@@ -331,14 +320,14 @@ sq.pl.ligrec(
 )
 
 
-# %% [markdown]
+###############################################################################
 # The dotplot visualization provides an interesting set of candidate ligand-receptor
 # annotation that could be involved in cellular interactions in the Hippocampus.
 # A more refined analysis would be for instance to integrate these results with
 # the results of a deconvolution method, to understand what's the proportion of single-cell
 # cell types present in this region of the tissue.
 
-# %% [markdown]
+###############################################################################
 # Spatially Variable genes with Moran's I
 # +++++++++++++++++++++++++++++++++++++++
 # Finally, we might be interested in finding genes that show spatial patterns.
@@ -360,22 +349,19 @@ sq.pl.ligrec(
 # The function in Squidpy is called :func:`squidpy.gr.moran`, and
 # returns both test statistics and adjusted pvalues in `adata.var` slot.
 
-# %%
 sq.gr.moran(adata, n_jobs=4)
 
 
-# %% [markdown]
+###############################################################################
 # The results are saved in `adata.uns["moranI"]` slot.
 # Genes have already been sorted by Moran'I statistic.
 # We can select few genes and visualize their expression levels in the tissue
 
-# %%
 adata.uns["moranI"].head(10)
 
 
-# %%
 sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
 
 
-# %% [markdown]
+###############################################################################
 # Interestingly, some of these genes seems to be related to the *pyramidal* layers, the *cortex* and the *Fiber tract*.

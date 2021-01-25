@@ -15,25 +15,22 @@ To run the notebook locally, create a conda environment with `conda create -f en
 The file `environment.yml` can be found `here <>`_ .
 """
 
-# %%
 import scanpy as sc
 import squidpy as sq
 
 sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
-# %%
 # load the pre-processed dataset
 adata = sq.datasets.imc()
 
-# %% [markdown]
-# First, let's visualize cell type annotation in spatial context
+###############################################################################
+# First, let's visualize cluster annotation in spatial context
 # with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
 
-# %%
-sc.pl.spatial(adata, color="cell type", spot_size=0.03)
+sc.pl.spatial(adata, color="cell type", spot_size=10)
 
-# %% [markdown]
+###############################################################################
 # We can appreciate how the majority of the tissue seems
 # to consist of "apoptotic tumor cells". There also seems to be other
 # cell types scattered across the tissue of, annotated as "T cells",
@@ -41,9 +38,10 @@ sc.pl.spatial(adata, color="cell type", spot_size=0.03)
 # appreciate how a subset of tumor cell, "basal CK tumor cells" seems
 # to be located in the lower part of the tissue.
 
-# %% [markdown]
+###############################################################################
 # Co-occurrence across spatial dimensions
 # +++++++++++++++++++++++++++++++++++++++
+#
 # In addition to the neighbor enrichemnt score, we can visualize cluster
 # co-occurrence in spatial dimensions. This is a similar analysis of the
 # one presented above, yet it does not operates on the connectivity matrix,
@@ -65,7 +63,6 @@ sc.pl.spatial(adata, color="cell type", spot_size=0.03)
 # We visualize the result for two conditional groups, namely
 # "basal CK tumor cell" and "T cells".
 
-# %%
 sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(
     adata,
@@ -74,14 +71,14 @@ sq.pl.co_occurrence(
     figsize=(15, 4),
 )
 
-# %% [markdown]
+###############################################################################
 # We can observer that "T cells" seems to co-occurr
 # with "endothelial" and "vimentin hi stromal cells",
 # whereas "basal CK tumor cell" seem to largerly cluster
 # together, except for the presence of a type of stromal
 # cells ("small elongated stromal cell") at close distance.
 
-# %% [markdown]
+###############################################################################
 # Neighborhood enrichment
 # +++++++++++++++++++++++
 # A similar analysis that can inform on the neighbor structure of
@@ -101,12 +98,11 @@ sq.pl.co_occurrence(
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
-# %%
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="cell type")
 sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 
-# %% [markdown]
+###############################################################################
 # Interestingly, "T cells" shows an enrichment with "stromal"  and
 # "endothelial cells", as well as "macrophages". Another interesting
 # result is that "apoptotic tumor cells", being uniformly spread across
@@ -117,7 +113,7 @@ sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 # more likely to be enriched with cell types from the same class,
 # rather than different one.
 
-# %% [markdown]
+###############################################################################
 # Interaction matrix and network centralities
 # +++++++++++++++++++++++++++++++++++++++++++
 # Squidpy provides other descriptive statistics of the spatial graph.
@@ -127,12 +123,11 @@ sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 # We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
 
-# %%
 sq.gr.interaction_matrix(adata, cluster_key="cell type")
 sq.pl.interaction_matrix(adata, cluster_key="cell type")
 
 
-# %% [markdown]
+###############################################################################
 # Finally, similar to the previous analysis,
 # we can investigate properties of the spatial graph by
 # computing different network centralities:
@@ -144,7 +139,6 @@ sq.pl.interaction_matrix(adata, cluster_key="cell type")
 # :func:`squidpy.gr.centrality_scores` and
 # :func:`squidpy.pl.centrality_scores` for visualization.
 
-# %%
 sq.gr.centrality_scores(
     adata,
     cluster_key="cell type",
@@ -152,7 +146,7 @@ sq.gr.centrality_scores(
 sq.pl.centrality_scores(adata, cluster_key="cell type", figsize=(20, 5), s=500)
 
 
-# %% [markdown]
+###############################################################################
 # You can familiarize yourself with network centralities from the
 # excellent networkx
 # `documentation <https://networkx.org/documentation/stable/reference/algorithms/centrality>`_ .

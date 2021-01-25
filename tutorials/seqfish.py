@@ -15,7 +15,6 @@ To run the notebook locally, create a conda environment with `conda create -f en
 The file `environment.yml` can be found `here <>`_ .
 """
 
-# %%
 import scanpy as sc
 import squidpy as sq
 
@@ -24,18 +23,15 @@ import numpy as np
 sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
-# %%
 # load the pre-processed dataset
 adata = sq.datasets.seqfish()
 
-# %% [markdown]
-# First, let's visualize cell type annotation in spatial context
+###############################################################################
+# First, let's visualize cluster annotation in spatial context
 # with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
-
-# %%
 sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 
-# %% [markdown]
+###############################################################################
 # Neighborhood enrichment analysis
 # ++++++++++++++++++++++++++++++++
 # Similar to other spatial data, we can investigate spatial organization of clusters
@@ -56,12 +52,11 @@ sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 # We'll add a dendrogram to the heatmap computed with linkage method "ward".
 
-# %%
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
 sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
 
-# %% [markdown]
+###############################################################################
 # A similar analysis was performed in the
 # `original publication <https://www.biorxiv.org/content/10.1101/2020.11.20.391896v1>`_ ,
 # and we can appreciate to what extent results overlap.
@@ -80,7 +75,6 @@ sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="war
 # For this, we'll use the same function as before
 # `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
 
-# %%
 sc.pl.spatial(
     adata,
     color="celltype_mapped_refined",
@@ -95,7 +89,7 @@ sc.pl.spatial(
     spot_size=0.03,
 )
 
-# %% [markdown]
+###############################################################################
 # Co-occurrence across spatial dimensions
 # +++++++++++++++++++++++++++++++++++++++
 # In addition to the neighbor enrichment score, we can visualize cluster co-occurrence
@@ -117,7 +111,6 @@ sc.pl.spatial(
 # for the conditional probability with the argument `clusters`.
 # Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
 
-# %%
 sq.gr.co_occurrence(adata, cluster_key="celltype_mapped_refined")
 sq.pl.co_occurrence(
     adata,
@@ -126,7 +119,7 @@ sq.pl.co_occurrence(
     figsize=(10, 5),
 )
 
-# %% [markdown]
+###############################################################################
 # It seems to recapitulate a previous observation, that there is a co-occurrence between the
 # conditional cell type annotation "Lateral plate mesoderm" and the clusters
 # æIntermediate mesoderm" and "Allantois".
@@ -137,7 +130,7 @@ sq.pl.co_occurrence(
 # It should be noted that the distance units corresponds to
 # the spatial coordinates saved in `adata.obsm["spatial"]`.
 
-# %% [markdown]
+###############################################################################
 # Ligand-receptor interaction analysis
 # ++++++++++++++++++++++++++++++++++++
 # The analysis showed above has provided us with quantitative information on
@@ -163,7 +156,6 @@ sq.pl.co_occurrence(
 # and decreasing the threshold
 # for the adjusted p-value (with the `alpha` argument)
 
-# %%
 sq.gr.ligrec(
     adata,
     cluster_key="celltype_mapped_refined",
@@ -178,7 +170,7 @@ sq.pl.ligrec(
     swap_axes=True,
 )
 
-# %% [markdown]
+###############################################################################
 # The dotplot visualization provides an interesting set of candidate interactions
 # that could be involved in the tissue organization of the cell types of interest.
 # It should be noted that this method is a pure re-implementation of the original
