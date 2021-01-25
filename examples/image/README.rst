@@ -1,4 +1,4 @@
 Image
 -----
 
-This readme should describe the image gallery.
+This README should describe the image gallery.

@@ -1,4 +1,4 @@
 Graph
 -----
 
-This readme should describe the graph gallery.
+This README should describe the graph gallery.
