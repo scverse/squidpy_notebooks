@@ -83,7 +83,7 @@ jobs:
     test:
         needs: download
         runs-on: ubuntu-latest
-        timeout-minutes: 10
+        timeout-minutes: 20
         steps:
         -   name: Get the triggering event
             run: |
