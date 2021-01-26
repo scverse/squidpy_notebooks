@@ -4,12 +4,11 @@ Summary features
 --------------
 
 Here, we use :func:`squidpy.im.calculate_image_features` to extract summary features from the tissue image.
-Please have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py`
+Have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py`
 for the general usage of :func:`squidpy.im.calculate_image_features`.
 
-Summary features give a good overview over the intensity of each image channels at the location of the visium spots.
-They are calculated by using ``features = 'summary'``,
-which will internally call :meth:`squidpy.im.ImageContainer.get_summary_features`.
+Summary features give a good overview over the intensity of each image channel at the location of the visium spots.
+They are calculated by using ``features='summary'``.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -25,15 +24,15 @@ import squidpy as sq
 # %%
 # First, we load a fluorescence visisum dataset.
 
-# get spatial dataset including hires tissue image
+# get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()
 adata = sq.datasets.visium_fluo_adata_crop()
 
 
 # %%
-# Then, we and calculate the 0.1th quantile and mean for the visium spots of the fluorescence channels 0 (DAPI)
+# Then, we calculate the 0.9th quantile and mean for the visium spots of the fluorescence channels 0 (DAPI)
 # and 1 (GFAP).
-# In order to only get statistics of the tissue underneath the spots, we use the argument ``mask_circle = True``.
+# In order to only get statistics of the tissue underneath the spots, we use the argument ``mask_circle=True``.
 # When not setting this flag, statistics are calculated using a square crop centered on the spot.
 
 # calculate summary features and save in key "summary_features"
@@ -44,9 +43,7 @@ sq.im.calculate_image_features(
     features_kwargs={
         "summary": {
             "mean": True,
-            "quantiles": [
-                0.1,
-            ],
+            "quantiles": [0.9],
             "channels": [0, 1],
         }
     },
@@ -60,7 +57,7 @@ adata.obsm["summary_features"].head()
 
 # %%
 # Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image.
-# Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
+# Note, how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 # and 1 (GFAP stain).
 #
 # TODO: reference to interactive plotting
