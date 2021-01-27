@@ -1,7 +1,7 @@
 # %%
 """
 Summary features
---------------
+----------------
 
 Here, we use :func:`squidpy.im.calculate_image_features` to extract summary features from the tissue image.
 Have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py`

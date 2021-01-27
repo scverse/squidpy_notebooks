@@ -1,7 +1,7 @@
 # %%
 """
 Converting to Grayscale
-------------------
+-----------------------
 
 This example shows how to use :func:`squidpy.im.process_img` to convert an image layer
 of :class:`squidpy.im.ImageContainer` to grayscale.
