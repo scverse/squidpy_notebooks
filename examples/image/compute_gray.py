@@ -1,7 +1,7 @@
 # %%
 """
 Converting to Grayscale
-------------------
+-----------------------
 
 This example shows how to use :func:`squidpy.im.process_img` to convert an image layer
 of :class:`squidpy.im.ImageContainer` to grayscale.
@@ -38,7 +38,7 @@ sq.im.process_img(img, img_id="image", processing="gray")
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(img["image"])
 axes[0].set_title("original")
-axes[1].imshow(img["image_gray"], cmap="gray")
+axes[1].imshow(img["image_gray"].squeeze(), cmap="gray")
 axes[1].set_title("grayscale")
 for ax in axes:
     ax.axis("off")

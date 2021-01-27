@@ -2,17 +2,13 @@
 """
 Extract Image Features
 ----------------------
-In addition to the spatial gene expression values, visium datasets also contain high-resolution images of the tissue.
-In this notebook we extract features from this image using :func:`squidpy.im.calculate_image_features`
+This example explains the computation of spot-wise features from visium images. 
+
+Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression measurements per spot (`obs`).
+In this notebook, we extract features for each spot from an image using :func:`squidpy.im.calculate_image_features`
 and create a ``obs x features`` matrix that can be analysed together with
 the ``obs x genes`` spatial gene expression matrix.
 
-To compute features for each visium spot (``obs``), we extract image crops from the tissue image centered on each spot.
-When extracting the crops, we can specify the size and scale of the crops and optionally mask a circle
-to ensure that only tissue underneath the round visium spots is taken into account to compute the features.
-See also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
-
-The extracted crops are then used to compute features.
 We provide different feature extractors that are described in more detail in the following examples:
 
 - summary statistics of each color channel
@@ -23,8 +19,8 @@ We provide different feature extractors that are described in more detail in the
   (:ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`)
 - number and size of objects from a binary segmentation layer
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
-
 """
+
 import scanpy as sc
 import squidpy as sq
 
@@ -32,13 +28,13 @@ import numpy as np
 
 import seaborn as sns
 
-# get spatial dataset including hires tissue image
+# get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_hne_image_crop()
 adata = sq.datasets.visium_hne_adata_crop()
 
 # %%
-# The high resolution tissue image is contained in ``img['image']``,
-# and the spot locations in tissue image pixel-space are located in ``adata.obsm['spatial']``.
+# The high-resolution tissue image is contained in ``img['image']``,
+# and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 # We can plot the spots overlayed on a lower-resolution version of the tissue image contained in adata.
 
 np.set_printoptions(threshold=10)
@@ -58,8 +54,8 @@ sc.pl.spatial(adata, add_outline=True)
 # - specify the image used for feature calculation using ``img_id``,
 # - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 # - specify how the crops used for feature calculation look like using ``kwargs``,
-# - specify parallelization options using ``n_jobs``, ``backend``, ``show_progress_bar``, and
-# - specify how the data that is returned using ``key_added``, ``copy``.
+# - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
+# - specify how the data that is returned using ``key_added`` and ``copy``.
 #
 # Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
@@ -73,26 +69,21 @@ adata.obsm["features"].head()
 # To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 # See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
 #
-# Here, we plot the median value of channel 0 (``summary_quantile_0.5_ch_0``).
+# Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `summary_quantile_0.5_ch_1` and
+# `summary_quantile_0.5_ch_2`).
 
-sc.pl.spatial(sq.pl.extract(adata, "features"), color=[None, "summary_quantile_0.5_ch_0"])
-
-# %%
-# Speed up feature extraction
-# ---------------------------
-# Speeding up the feature extraction is easy.
-# Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
-
-# extract features by using 4 jobs
-sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
+sc.pl.spatial(sq.pl.extract(adata, "features"), color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"])
 
 # %%
 # Specify crop appearance
 # -----------------------
-# Features are extracted from image crops that are centered on the visium spots
+# Features are extracted from image crops that capture the visium spots
 # (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
-# By default, the crops have the same size as the spot, are not scaled and not masked.
-# We can use the ``mask_circle``, ``scale``, and ``size`` arguments to change how the crops are generated.
+# By default, the crops have the same size as the spot, are not scaled and square.
+# We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round 
+# visium spots is taken into account to compute the features.
+# Further, we can set ``scale`` and ``size`` arguments to change how the crops are generated.
+# For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 #
 # - Use ``mask_circle=True, scale=1, size=1``, if you would like to get features that are calculated only from tissue
 #   in a visium spot
@@ -134,3 +125,11 @@ _ = sns.displot(
 
 # %%
 # The masked features have lower median values, because the area outside the circle is masked with zeros.
+
+# %%
+# Speed up feature extraction
+# ---------------------------
+# Speeding up the feature extraction is easy.
+# Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
+# extract features by using 4 jobs
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)

@@ -4,3 +4,4 @@ esda
 # git+https://github.com/theislab/squidpy
 git+https://github.com/theislab/scanpy@master
 libpysal
+seaborn>=0.11.0
