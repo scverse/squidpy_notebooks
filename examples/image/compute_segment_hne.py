@@ -41,8 +41,8 @@ for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
 
 # %%
 # Finding a good threshold for the segmentation is more difficult than for a DAPI stain,
-# as there is no distinct peak in the histogram. 
-# Judging by the plot showing values smaller than 0.28, this threshold seems to be a good 
+# as there is no distinct peak in the histogram.
+# Judging by the plot showing values smaller than 0.28, this threshold seems to be a good
 # choice for this example.
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 axes[0].imshow(crop["image_gray_smooth"][:, :, 0] < 0.28)

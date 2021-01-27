@@ -1,10 +1,11 @@
 # %%
 """
 Extract Image Features
-----------------------
-This example explains the computation of spot-wise features from visium images. 
+======================
+This example explains the computation of spot-wise features from visium images.
 
-Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression measurements per spot (`obs`).
+Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression
+measurements per spot (`obs`).
 In this notebook, we extract features for each spot from an image using :func:`squidpy.im.calculate_image_features`
 and create a ``obs x features`` matrix that can be analysed together with
 the ``obs x genes`` spatial gene expression matrix.
@@ -41,6 +42,7 @@ np.set_printoptions(threshold=10)
 print(img)
 print(adata.obsm["spatial"])
 
+sc.set_figure_params(figsize=(4, 4))
 sc.pl.spatial(adata, add_outline=True)
 
 # %%
@@ -72,7 +74,10 @@ adata.obsm["features"].head()
 # Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `summary_quantile_0.5_ch_1` and
 # `summary_quantile_0.5_ch_2`).
 
-sc.pl.spatial(sq.pl.extract(adata, "features"), color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"])
+sc.pl.spatial(
+    sq.pl.extract(adata, "features"),
+    color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"],
+)
 
 # %%
 # Specify crop appearance
@@ -80,7 +85,7 @@ sc.pl.spatial(sq.pl.extract(adata, "features"), color=["summary_quantile_0.5_ch_
 # Features are extracted from image crops that capture the visium spots
 # (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
 # By default, the crops have the same size as the spot, are not scaled and square.
-# We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round 
+# We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round
 # visium spots is taken into account to compute the features.
 # Further, we can set ``scale`` and ``size`` arguments to change how the crops are generated.
 # For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
@@ -127,8 +132,8 @@ _ = sns.displot(
 # The masked features have lower median values, because the area outside the circle is masked with zeros.
 
 # %%
-# Speed up feature extraction
-# ---------------------------
+# Parallelisation
+# ---------------
 # Speeding up the feature extraction is easy.
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 # extract features by using 4 jobs

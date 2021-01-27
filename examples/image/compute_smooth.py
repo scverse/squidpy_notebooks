@@ -25,7 +25,7 @@ img = sq.datasets.visium_hne_image_crop()
 # %%
 # Smooth the image with ``sigma = 2``.
 # With the argument ``img_id`` we can select the image layer that should be processed.
-# By default, the resulting image is saved in the layer ``image_smooth`.
+# By default, the resulting image is saved in the layer ``image_smooth``.
 # This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 sq.im.process_img(img, img_id="image", processing="smooth", sigma=2)

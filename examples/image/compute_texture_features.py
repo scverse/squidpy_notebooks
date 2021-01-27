@@ -47,11 +47,10 @@ sq.im.calculate_image_features(
 adata.obsm["texture_features_2"].head()
 
 # %%
-# Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
+# Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 # Here, we show the contrast feature for channels 0 and 1.
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
-#
-# TODO: reference to interactive plotting
 
 sc.pl.spatial(
     sq.pl.extract(adata, "texture_features_2"),

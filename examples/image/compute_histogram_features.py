@@ -32,7 +32,11 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 # calculate histogram features and save in key "histogram_features"
 sq.im.calculate_image_features(
-    adata, img, features="histogram", features_kwargs={"histogram": {"bins": 3, "channels": [0, 1]}}, key_added="histogram_features"
+    adata,
+    img,
+    features="histogram",
+    features_kwargs={"histogram": {"bins": 3, "channels": [0, 1]}},
+    key_added="histogram_features",
 )
 
 # %%
@@ -41,11 +45,10 @@ sq.im.calculate_image_features(
 adata.obsm["histogram_features"].head()
 
 # %%
-# Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image.
+# Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 # With these features we can e.g. appreciate the detailed distribution of
 # intensity values of channel 0 (DAPI stain) on the different bins.
-#
-# TODO: reference to interactive plotting
 
 sc.pl.spatial(
     sq.pl.extract(adata, "histogram_features"),

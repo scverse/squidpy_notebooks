@@ -51,7 +51,8 @@ for i, ax in enumerate(axes):
 # %%
 # For watershed segmentation, we need to set a threshold to create the mask image.
 # The threshold should be chosen in such a way, that all nuclei are contained in the mask image.
-_ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50)
+fig, ax = plt.subplots(1, 1, figsize=(5, 3))
+_ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 
 # %%
 # The histogram of DAPI values shows a small peak at 60000 containing the nuclei.
