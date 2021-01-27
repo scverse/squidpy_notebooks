@@ -5,14 +5,14 @@ Examples using ``squidpy.__version__``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy tutorial">
+    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing: TODO taken from H&amp;E, same for fluo?">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_dummy_thumb.png
-     :alt: This is a dummy tutorial
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Visium Fluorescence dataset
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``squidpy.__version__``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`

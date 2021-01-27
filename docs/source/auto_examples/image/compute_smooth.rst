@@ -32,12 +32,10 @@ This allows us to set the width of the gaussian kernel, ``sigma``, used for smoo
 See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
 :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-27
+.. GENERATED FROM PYTHON SOURCE LINES 17-25
 
 .. code-block:: default
 
-
-    import os
 
     import squidpy as sq
 
@@ -53,38 +51,19 @@ See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-31
-
-First, we crop a smaller image to smooth.
-This is only to speed things up, :func:`squidpy.im.process_img` can also process very large images
-(see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
-
-.. GENERATED FROM PYTHON SOURCE LINES 31-33
-
-.. code-block:: default
-
-    crop = img.crop_corner(0, 0, 500, 500)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 Smooth the image with ``sigma = 2``.
 With the argument ``img_id`` we can select the image layer that should be processed.
-By default, the resulting image is saved in the layer ``image_smooth`.
+By default, the resulting image is saved in the layer ``image_smooth``.
 This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 30-33
 
 .. code-block:: default
 
 
-    sq.im.process_img(crop, img_id="image", processing="smooth", sigma=2)
+    sq.im.process_img(img, img_id="image", processing="smooth", sigma=2)
 
 
 
@@ -102,13 +81,15 @@ This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-43
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
-Now we can plot the result
+Now we can look at the result on a cropped part of the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-50
+.. GENERATED FROM PYTHON SOURCE LINES 35-44
 
 .. code-block:: default
+
+    crop = img.crop_corner(0, 0, 200, 200)
 
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image"])
@@ -131,9 +112,9 @@ Now we can plot the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.834 seconds)
+   **Total running time of the script:** ( 0 minutes  8.714 seconds)
 
-**Estimated memory usage:**  117 MB
+**Estimated memory usage:**  644 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

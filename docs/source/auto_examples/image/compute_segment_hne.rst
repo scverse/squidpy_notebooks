@@ -19,7 +19,7 @@
 
 
 Advanced Cell-segmentation for H&E stains
-------------------
+-----------------------------------------
 
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
 For a general example of how to use :func:`squidpy.im.segment_img`
@@ -30,12 +30,10 @@ Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
 and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-30
+.. GENERATED FROM PYTHON SOURCE LINES 15-27
 
 .. code-block:: default
 
-
-    import os
 
     import squidpy as sq
 
@@ -44,9 +42,8 @@ and / or use a pre-trained model to do the segmentation (using :class:`squidpy.i
     import seaborn as sns
     import matplotlib.pyplot as plt
 
-    # load H&E stained tissue image
+    # load H&E stained tissue image and crop to a smaller segment
     img = sq.datasets.visium_hne_image_crop()
-    # crop a smaller image to segment
     crop = img.crop_corner(0, 0, 1000, 1000)
 
 
@@ -56,15 +53,16 @@ and / or use a pre-trained model to do the segmentation (using :class:`squidpy.i
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-33
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
-Before segmenting the image, we add some preprocessing using :func:`squidpy.im.process_img`.
-convert to grayscale
+Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process_img`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-44
+.. GENERATED FROM PYTHON SOURCE LINES 29-42
 
 .. code-block:: default
 
+
+    # convert to grayscale
     sq.im.process_img(crop, img_id="image", processing="gray")
     # smooth image
     sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
@@ -87,13 +85,14 @@ convert to grayscale
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+.. GENERATED FROM PYTHON SOURCE LINES 43-47
 
 Finding a good threshold for the segmentation is more difficult than for a DAPI stain,
 as there is no distinct peak in the histogram.
-A threshold of 0.28 seems to be a good choice for this example.
+Judging by the plot showing values smaller than 0.28, this threshold seems to be a good
+choice for this example.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-54
+.. GENERATED FROM PYTHON SOURCE LINES 47-53
 
 .. code-block:: default
 
@@ -114,14 +113,14 @@ A threshold of 0.28 seems to be a good choice for this example.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
-We segment :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
+We use :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
 Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
 we need to indicate the model that it should treat lower-intensity values as foreground.
-We do this by specifying the ``geq = False`` in the ``kwargs``.
+We do this by specifying the ``geq=False`` in the ``kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 .. code-block:: default
 
@@ -143,14 +142,14 @@ We do this by specifying the ``geq = False`` in the ``kwargs``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-66
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 The segmented crop is saved in the layer `segmented_watershed`.
-This behavour can be changed with the arguments ``copy`` and ``key_added``.
+This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 The result of the segmentation is a label image that can be used to extract features
-like number of cells from the image.
+like the number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-77
+.. GENERATED FROM PYTHON SOURCE LINES 65-75
 
 .. code-block:: default
 
@@ -160,11 +159,10 @@ like number of cells from the image.
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image_gray_smooth"][:, :, 0])
     axes[0].set_title("H&E")
-    axes[1].imshow(crop["segmented_watershed"][:, :, 0], cmap="jet", interpolation="none")
+    axes[1].imshow(crop["segmented_watershed"].squeeze(), cmap="jet", interpolation="none")
     axes[1].set_title("segmentation")
     for ax in axes:
         ax.axis("off")
-
 
 
 
@@ -193,9 +191,9 @@ like number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  20.312 seconds)
+   **Total running time of the script:** ( 0 minutes  14.571 seconds)
 
-**Estimated memory usage:**  183 MB
+**Estimated memory usage:**  182 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_hne.py:

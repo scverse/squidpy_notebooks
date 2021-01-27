@@ -19,7 +19,7 @@
 
 
 Converting to Grayscale
-------------------
+-----------------------
 
 This example shows how to use :func:`squidpy.im.process_img` to convert an image layer
 of :class:`squidpy.im.ImageContainer` to grayscale.
@@ -30,12 +30,10 @@ This calls :func:`skimage.color.rgb2gray` in the background.
 See also :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
 and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-22
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 .. code-block:: default
 
-
-    import os
 
     import squidpy as sq
 
@@ -48,14 +46,14 @@ and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-27
+.. GENERATED FROM PYTHON SOURCE LINES 21-25
 
 First, we load an H&E stained tissue image.
 Here, we only load a cropped dataset to speed things up.
 In general, :func:`squidpy.im.process_img` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-29
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 .. code-block:: default
 
@@ -68,7 +66,7 @@ In general, :func:`squidpy.im.process_img` can also process very large images
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-37
+.. GENERATED FROM PYTHON SOURCE LINES 28-35
 
 Then, we convert the image to grayscale and plot the result.
 With the argument ``img_id`` we can select the image layer that should be processed.
@@ -78,7 +76,7 @@ Use the argument ``channel_id`` to set a new channel name explicitely.
 By default, the resulting image is saved in the layer ``image_gray``.
 This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-48
+.. GENERATED FROM PYTHON SOURCE LINES 35-46
 
 .. code-block:: default
 
@@ -88,7 +86,7 @@ This behaviour can be changed with the arguments ``copy`` and ``key_added``.
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(img["image"])
     axes[0].set_title("original")
-    axes[1].imshow(img["image_gray"], cmap="gray")
+    axes[1].imshow(img["image_gray"].squeeze(), cmap="gray")
     axes[1].set_title("grayscale")
     for ax in axes:
         ax.axis("off")
@@ -107,9 +105,9 @@ This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.635 seconds)
+   **Total running time of the script:** ( 0 minutes  7.865 seconds)
 
-**Estimated memory usage:**  409 MB
+**Estimated memory usage:**  424 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

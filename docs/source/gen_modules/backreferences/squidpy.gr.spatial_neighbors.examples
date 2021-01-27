@@ -5,14 +5,14 @@ Examples using ``squidpy.gr.spatial_neighbors``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy tutorial">
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_dummy_thumb.png
-     :alt: This is a dummy tutorial
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
+     :ref:`sphx_glr_auto_examples_image_API.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``squidpy.gr.spatial_neighbors``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`
+ * :ref:`sphx_glr_auto_examples_image_API.py`

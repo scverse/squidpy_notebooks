@@ -25,7 +25,7 @@ This example shows how to use :func:`squidpy.im.process_img` to apply any proces
 (smoothing, conversion to grayscale) to a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
 
 By default, :func:`squidpy.im.process_img` processes the entire input image at once.
-In the case of high-resolution tissue slides however, the images might bo too big to fit in memory
+In the case of high-resolution tissue slides however, the images might be too big to fit in memory
 and cannot be processed at once.
 In that case you can use the arguments ``xs`` and ``ys`` that will tile the image in crops of size ``(ys, xs)``,
 process each crop, and re-assemble the resulting image.
@@ -39,12 +39,10 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 :ref:`sphx_glr_auto_examples_image_compute_gray.py`, and
 :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-35
+.. GENERATED FROM PYTHON SOURCE LINES 24-32
 
 .. code-block:: default
 
-
-    import os
 
     import squidpy as sq
 
@@ -60,54 +58,38 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+We will process the image by tiling it in crops of shape ``(ys, xs) = (1000, 1000)``.
 
-First, we crop a smaller image to process
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. code-block:: default
+
+
+    sq.im.process_img(img, img_id="image", processing="gray", xs=1000, ys=1000)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
+
+Now we can look at the result on a cropped part of the image.
+
+.. GENERATED FROM PYTHON SOURCE LINES 39-49
 
 .. code-block:: default
 
     crop = img.crop_corner(4000, 4000, 2000, 2000)
 
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
-
-We will process the image by tiling it in crops of shape ``(ys, xs) = (1000,1000)``.
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
-
-.. code-block:: default
-
-
-    sq.im.process_img(crop, img_id="image", processing="gray", xs=1000, ys=1000)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
-
-Now we can plot the result
-
-.. GENERATED FROM PYTHON SOURCE LINES 46-54
-
-.. code-block:: default
-
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image"])
     axes[0].set_title("original")
-    axes[1].imshow(crop["image_gray"], cmap="gray")
+    axes[1].imshow(crop["image_gray"].squeeze(), cmap="gray")
     axes[1].set_title("converted to grayscale")
     for ax in axes:
         ax.axis("off")
@@ -126,9 +108,9 @@ Now we can plot the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  20.202 seconds)
+   **Total running time of the script:** ( 0 minutes  10.700 seconds)
 
-**Estimated memory usage:**  727 MB
+**Estimated memory usage:**  2247 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

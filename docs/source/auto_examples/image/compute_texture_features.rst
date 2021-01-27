@@ -30,8 +30,7 @@ calculating a grey-level co-occurence matrix (GLCM).
 The GLCM includes the number of times that grey-level j occurs at a distance d and at an angle theta from grey-level i.
 From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
-Use ``features = 'texture'`` to calculate the features.
-This will internally call :meth:`squidpy.im.ImageContainer.get_texture_features`.
+Use ``features='texture'`` to calculate the features.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -39,16 +38,14 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 - ``angles``: Range on which values are binned. Default is the whole image range
 - ``props``: Texture features that are extracted from the GLCM
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-32
+.. GENERATED FROM PYTHON SOURCE LINES 24-28
 
 .. code-block:: default
 
 
-    import os
-
+    import scanpy as sc
     import squidpy as sq
 
-    import scanpy as sc
 
 
 
@@ -56,22 +53,21 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 33-39
+.. GENERATED FROM PYTHON SOURCE LINES 29-35
 
 Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
 Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype="uint8"``) before calculating the
 texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
 Note that for texture features it may make sense to compute them over a larger crop size to include more context,
 e.g., ``size=2`` or ``size=4`` which will extract crops with double or four times the radius than the original
-visium spot size.
+visium spot size. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-48
+.. GENERATED FROM PYTHON SOURCE LINES 35-44
 
 .. code-block:: default
 
 
-    # get spatial dataset including hires tissue image
+    # get spatial dataset including high-resolution tissue image
     img = sq.datasets.visium_fluo_image_crop()
     adata = sq.datasets.visium_fluo_adata_crop()
 
@@ -86,11 +82,11 @@ visium spot size.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 The result is stored in ``adata.obsm['texture_features']``
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-53
+.. GENERATED FROM PYTHON SOURCE LINES 46-49
 
 .. code-block:: default
 
@@ -508,15 +504,14 @@ The result is stored in ``adata.obsm['texture_features']``
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-59
+.. GENERATED FROM PYTHON SOURCE LINES 50-54
 
-Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
+Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
+:ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 
-TODO: reference to interactive plotting
-
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 54-60
 
 .. code-block:: default
 
@@ -526,7 +521,6 @@ TODO: reference to interactive plotting
         color=[None, "texture_contrast_ch_0_dist_1_angle_0.00", "texture_contrast_ch_1_dist_1_angle_0.00"],
         bw=True,
     )
-
 
 
 
@@ -541,9 +535,9 @@ TODO: reference to interactive plotting
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  47.359 seconds)
+   **Total running time of the script:** ( 0 minutes  45.295 seconds)
 
-**Estimated memory usage:**  889 MB
+**Estimated memory usage:**  858 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

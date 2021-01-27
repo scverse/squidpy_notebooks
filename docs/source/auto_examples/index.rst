@@ -62,6 +62,48 @@ This README should describe the image gallery.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract features from the tissue image usin...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
+     :alt: Custom features
+
+     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_custom_features
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract texture features from the tissue im...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segmentation_features_thumb.png
+     :alt: Segmentation features
+
+     :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_segmentation_features
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process_img to smooth an image layer of squidpy.im.Ima...">
 
 .. only:: html
@@ -146,6 +188,27 @@ This README should describe the image gallery.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
+
+     :ref:`sphx_glr_auto_examples_image_API.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/API
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="We can use the high resolution tissue images to segment nuclei. This information can be used to...">
 
 .. only:: html
@@ -167,7 +230,7 @@ This README should describe the image gallery.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="To compute features for each visium spot (``obs``), we extract image crops from the tissue imag...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Visium datasets contain high-resolution images of the tissue in addition to the spatial gene ex...">
 
 .. only:: html
 

@@ -5,14 +5,14 @@ Examples using ``squidpy.im.segment_img``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="We can use the high resolution tissue images to segment nuclei. This information can be used to...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
-     :alt: Cell-segmentation
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
 
-     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+     :ref:`sphx_glr_auto_examples_image_API.py`
 
 .. raw:: html
 
@@ -20,18 +20,18 @@ Examples using ``squidpy.im.segment_img``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+ * :ref:`sphx_glr_auto_examples_image_API.py`
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use processing and segmentation functions to segment images with H&amp;E ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing: TODO taken from H&amp;E, same for fluo?">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_hne_thumb.png
-     :alt: Advanced Cell-segmentation for H&E stains
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Visium Fluorescence dataset
 
-     :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
 
 .. raw:: html
 
@@ -39,4 +39,4 @@ Examples using ``squidpy.im.segment_img``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`

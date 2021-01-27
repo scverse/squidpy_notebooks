@@ -28,7 +28,7 @@ This example shows how to use :func:`squidpy.im.segment_img` and explains the pa
 
 We provide two segmentation models :class:`squidpy.im.SegmentationModelBlob`
 and :class:`squidpy.im.SegmentationModelWatershed`.
-In addition, you can use your own pre-tranined :mod:`tensorflow.keras` model to do the segmentation
+In addition, you can use your own pre-trained :mod:`tensorflow.keras` model to perform the segmentation
 utilising :class:`squidpy.im.SegmentationModelTensorflow`.
 
 Note that when using the provided segmentation models ``"blob"`` and ``"watershed"``, the quality of the
@@ -39,12 +39,10 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
 calculate a cell-segmentation of an H&E stain.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-38
+.. GENERATED FROM PYTHON SOURCE LINES 24-36
 
 .. code-block:: default
 
-
-    import os
 
     import squidpy as sq
 
@@ -64,13 +62,13 @@ calculate a cell-segmentation of an H&E stain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-42
+.. GENERATED FROM PYTHON SOURCE LINES 37-40
 
-We crop a smaller image to segment.
+We crop the image to a smaller segment.
 This is only to speed things up, :func:`squidpy.im.segment_img` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-44
+.. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 .. code-block:: default
 
@@ -83,12 +81,12 @@ This is only to speed things up, :func:`squidpy.im.segment_img` can also process
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
 
 The tissue image in this dataset contains four fluorescence stains.
 The first one is DAPI, which we will use for the nuclei-segmentation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-53
+.. GENERATED FROM PYTHON SOURCE LINES 45-51
 
 .. code-block:: default
 
@@ -109,16 +107,17 @@ The first one is DAPI, which we will use for the nuclei-segmentation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-56
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 For watershed segmentation, we need to set a threshold to create the mask image.
 The threshold should be chosen in such a way, that all nuclei are contained in the mask image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-58
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
 
 .. code-block:: default
 
-    _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50)
+    fig, ax = plt.subplots(1, 1, figsize=(5, 3))
+    _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 
 
 
@@ -131,22 +130,22 @@ The threshold should be chosen in such a way, that all nuclei are contained in t
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-71
+.. GENERATED FROM PYTHON SOURCE LINES 58-70
 
-There is a small peak at 60000 containing the nuclei.
-Lets choose 50000 as a threshold for the segmentation function
+The histogram of DAPI values shows a small peak at 60000 containing the nuclei.
+So, let us choose 50000 as a threshold for the segmentation method.
 
 We segment the image using the chosen threshold with :func:`squidpy.im.segment_img`.
 The argument ``image_id`` sets the image layer of img that should be segmented.
-Since we are segmenting the first channel, we will set ``channel_idx = 0``.
+Since we are segmenting the first channel, we will set ``channel_idx=0``.
 With the argument ``model_group`` we specify the model that we'd like to use for the segmentation.
 In our case this is ``"watershed"``.
 With ``kwargs`` we can provide keyword arguments to the segmentation model.
-For watershed, we need to set the threshold, ``thresh = 50000``, as determined above.
+For watershed, we need to set the threshold, ``thresh=50000``, as determined above.
 In addition, we can specify if the values greater or equal than the threshold should be in the mask (default)
-or if the values smaller to the threshold should be in the mask (``geq = False``).
+or if the values smaller to the threshold should be in the mask (``geq=False``).
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-73
+.. GENERATED FROM PYTHON SOURCE LINES 70-72
 
 .. code-block:: default
 
@@ -168,14 +167,14 @@ or if the values smaller to the threshold should be in the mask (``geq = False``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-78
+.. GENERATED FROM PYTHON SOURCE LINES 73-77
 
 The segmented crop is saved in the layer ``segmented_watershed``.
-This behavour can be shanged with the arguments ``copy`` and ``key_added``.
-The result of the segmentation is a label image that can be used to extract features like number
-of cells from the image.
+This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+The result of the segmentation is a label image that can be used to extract features like the
+number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-89
+.. GENERATED FROM PYTHON SOURCE LINES 77-87
 
 .. code-block:: default
 
@@ -185,11 +184,10 @@ of cells from the image.
     fig, axes = plt.subplots(1, 2)
     axes[0].imshow(crop["image"][:, :, 0])
     axes[0].set_title("DAPI")
-    axes[1].imshow(crop["segmented_watershed"], cmap="jet", interpolation="none")
+    axes[1].imshow(crop["segmented_watershed"].squeeze(), cmap="jet", interpolation="none")
     axes[1].set_title("segmentation")
     for ax in axes:
         ax.axis("off")
-
 
 
 
@@ -216,9 +214,9 @@ of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.633 seconds)
+   **Total running time of the script:** ( 0 minutes  15.167 seconds)
 
-**Estimated memory usage:**  849 MB
+**Estimated memory usage:**  862 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

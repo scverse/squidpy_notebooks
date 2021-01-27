@@ -16,13 +16,14 @@ A couple of notes on pre-processing: TODO taken from H&E, same for fluo?
 
 - The pre-processing pipeline is the same as the one shown in the original
 `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
+
 - The cluster annotation was performed using several resources, such as the
 `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
 the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
 from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
 
-Import packages & data
-----------------------
+Import packages and load data
+-----------------------------
 To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
 The file `environment.yml` can be found `here <>`_ .
 
@@ -57,7 +58,7 @@ sc.pl.spatial(adata, color="cluster")
 
 ###############################################################################
 # The fluorescence image provided with this dataset has three channels:
-# DAPI (specific to DNA), anti-NEUN (specific to neurons), anti-GFAP (specific to glial cells.
+# DAPI (specific to DNA), anti-NEUN (specific to neurons), anti-GFAP (specific to glial cells).
 
 fig, axes = plt.subplots(1, 3)
 for i, ax in enumerate(axes):
@@ -65,9 +66,6 @@ for i, ax in enumerate(axes):
     ax.axis("off")
 
 ###############################################################################
-# Image features
-# --------------
-#
 # Visium datasets contain high-resolution images of the tissue that was used for the gene extraction.
 # Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
 # for each visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analysed together
@@ -91,12 +89,12 @@ for i, ax in enumerate(axes):
 # `summary` and `histogram` features at different crop sizes and scales.
 #
 # Image Segmentation
-# ++++++++++++++++++
+# ------------------
 #
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment_img`.
 # For this we use the DAPI channel if the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
-# or more details on how to calculate a segmented image.
+# for more details on how to calculate a segmented image.
 
 sq.im.segment_img(img=img, img_id="image", model_group="watershed", channel_ids=0, thresh=40000)
 
@@ -113,7 +111,7 @@ for ax in axes:
 # It is a label image where each segmented object is annotated with a different integer number.
 #
 # Segmentation Features
-# +++++++++++++++++++++
+# ---------------------
 #
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
@@ -162,8 +160,8 @@ sc.pl.spatial(
 # In addition, cluster "Fiber_tracts" and "lateral ventricls" seems to be enriched with glial cells,
 # seen by the larger mean intensities of channel 2, anti-GPAF, in these areas (lower right).
 #
-# Summary features and feature clusters
-# +++++++++++++++++++++++++++++++++++++
+# Extract and cluster features
+# ----------------------------
 #
 # Now we will calculate summary, histogram, and texture features.
 # These features provide a useful compressed summary of the tissue image.
