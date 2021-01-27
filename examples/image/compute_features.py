@@ -125,3 +125,11 @@ _ = sns.displot(
 
 # %%
 # The masked features have lower median values, because the area outside the circle is masked with zeros.
+
+# %%
+# Speed up feature extraction
+# ---------------------------
+# Speeding up the feature extraction is easy.
+# Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
+# extract features by using 4 jobs
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)

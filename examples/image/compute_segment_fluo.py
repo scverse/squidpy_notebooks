@@ -79,7 +79,7 @@ print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(crop["image"][:, :, 0])
 axes[0].set_title("DAPI")
-axes[1].imshow(crop["segmented_watershed"][:, :, 0], cmap="jet", interpolation="none")
+axes[1].imshow(crop["segmented_watershed"].squeeze(), cmap="jet", interpolation="none")
 axes[1].set_title("segmentation")
 for ax in axes:
     ax.axis("off")
