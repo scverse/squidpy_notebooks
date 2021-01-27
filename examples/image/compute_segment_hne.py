@@ -33,7 +33,7 @@ sq.im.process_img(crop, img_id="image", processing="gray")
 sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
 
 # plot the result
-fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+fig, axes = plt.subplots(1, 3)
 for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
     ax.imshow(np.squeeze(crop[img_id]))
     ax.set_title(img_id)
