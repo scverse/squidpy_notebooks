@@ -20,6 +20,12 @@ adata
 # %%
 # This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 # Note than any such references or code usage will be automatically linked under that function.
+# Let's see how a GIF renders in .RST:
+#
+# .. image:: ../_static/img/napari_annotate_small.gif
+#    :width: 600px
+#    :align: center
+#
 # See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
 adata.obsm["spatial"] = np.stack([r.randint(0, 500, 200), r.randint(0, 500, 200)], axis=1)
 sp.gr.spatial_neighbors(adata, spatial_key="spatial", n_rings=2)
