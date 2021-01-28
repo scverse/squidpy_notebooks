@@ -83,7 +83,7 @@ This README should describe the image gallery.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract texture features from the tissue im...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract segmentation features from the tiss...">
 
 .. only:: html
 

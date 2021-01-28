@@ -5,26 +5,7 @@ Examples using ``squidpy.im.calculate_image_features``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract features from the tissue image usin...">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
-     :alt: Custom features
-
-     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract texture features from the tissue im...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract segmentation features from the tiss...">
 
 .. only:: html
 
@@ -59,41 +40,3 @@ Examples using ``squidpy.im.calculate_image_features``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_image_API.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Visium datasets contain high-resolution images of the tissue in addition to the spatial gene ex...">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_features_thumb.png
-     :alt: Extract Image Features
-
-     :ref:`sphx_glr_auto_examples_image_compute_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_features.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing: TODO taken from H&amp;E, same for fluo?">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
-     :alt: Visium Fluorescence dataset
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
