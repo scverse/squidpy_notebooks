@@ -32,3 +32,8 @@ References
     Aric A. Hagberg, Daniel A. Schult and Pieter J. Swart, |br|
     *Exploring Network Structure, Dynamics, and Function using NetworkX*, |br|
     `SciPyProceedings_11 2008 <http://conference.scipy.org/proceedings/SciPy2008/paper_2/>`__.
+
+.. [ResNet16]
+    K. He, X. Zhang, S. Ren and J. Sun, |br|
+    *Deep Residual Learning for Image Recognition*, |br|
+    `2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, 2016, pp. 770-778, <https://ieeexplore.ieee.org/document/7780459>`_.

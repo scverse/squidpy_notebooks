@@ -22,14 +22,12 @@ These DL-powered features can be very powerful and provide a semantically meanin
 
 Here, we show how to use the feature extraction pipeline defined in :mod:`squidpy.im` to extract features from
 a pretrained neural network.
-For this, we use a ResNet50 with weights pretrained on `ImageNet`_.
+For this, we use a ResNet50 ([ResNet16]_) with weights pretrained on `ImageNet`_.
 
 To execute this notebook, you need to install ``tensorflow`` in addition to ``squidpy``.
 TODO more info on how to install
 
 .. _ImageNet: http://www.image-net.org
-
-Citation: Deep Residual Learning for Image Recognition (CVPR 2015) https://arxiv.org/abs/1512.03385
 """
 
 import time
