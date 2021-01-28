@@ -16,6 +16,7 @@ from pathlib import Path
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import squidpy
+from sphinx.application import Sphinx
 from sphinx_gallery.sorting import ExplicitOrder, _SortKey
 
 sys.path.insert(0, os.path.abspath("_ext"))
@@ -47,7 +48,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     # TODO: uncomment once the docs are up
     # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
-    # TODO: remove me if if not used
+    # TODO: remove me if not used
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
@@ -59,12 +60,15 @@ source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
+suppress_warnings = ["ref.citation"]  # ignore not referenced citations
+
 # spelling
 spelling_lang = "en_US"
 spelling_warning = True
 spelling_word_list_filename = "spelling_wordlist.txt"
 spelling_add_pypi_package_names = True
 spelling_show_suggestions = True
+spelling_exclude_patterns = ["references.rst"]
 # see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
 spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
 
@@ -91,16 +95,14 @@ def reset_matplotlib(_gallery_conf, _fname):
     plt.rcdefaults()
     mpl.rcParams["savefig.bbox"] = "tight"
     mpl.rcParams["savefig.transparent"] = True
+    mpl.rcParams["figure.figsize"] = (12, 8)
+    mpl.rcParams["figure.dpi"] = 90
+    mpl.rcParams["figure.autolayout"] = True
 
 
-def reset_scanpy(_gallery_conf, _fname):
-    import scanpy as sc
-
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
-
-
-example_dir = Path(__file__).parent.parent.parent / "examples"
-tutorial_dir = Path(__file__).parent.parent.parent / "tutorials"
+_root = Path(__file__).parent.parent.parent
+example_dir = _root / "examples"
+tutorial_dir = _root / "tutorials"
 rel_example_dir = Path("..") / ".." / "examples"
 rel_tutorial_dir = Path("..") / ".." / "tutorials"
 
@@ -133,7 +135,6 @@ sphinx_gallery_conf = {
     "reset_modules": (
         "seaborn",
         reset_matplotlib,
-        reset_scanpy,
     ),
     "filename_pattern": f"{os.path.sep}(plot_|compute_|tutorial_)",
     "examples_dirs": [example_dir, tutorial_dir],
@@ -163,7 +164,7 @@ sphinx_gallery_conf = {
     "doc_module": "squidpy",
     "download_all_examples": False,
     "show_signature": False,
-    "pypandoc": True,  # convert rST to md when downloading notebooks
+    "pypandoc": {"filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")]},
 }
 
 # -- Options for HTML output -------------------------------------------------
@@ -182,3 +183,7 @@ html_show_sphinx = False
 
 github_repo = "squidpy"
 github_repo_nb = "squidpy_notebooks"
+
+
+def setup(app: Sphinx) -> None:
+    app.add_css_file("css/custom.css")
