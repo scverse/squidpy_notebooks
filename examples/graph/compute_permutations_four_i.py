@@ -1,32 +1,49 @@
-"""
-This is a test permutations example for four_i example
------------------------
+# ---
+# jupyter:
+#   jupytext:
+#     text_representation:
+#       extension: .py
+#       format_name: sphinx
+#       format_version: '1.1'
+#       jupytext_version: 1.7.1
+#   kernelspec:
+#     display_name: Python [conda env:mypython3] *
+#     language: python
+#     name: conda-env-mypython3-py
+# ---
 
-This is how we can link an example saved under **`examples/graph/compute_non_existing.py`**:
-**:ref:`sphx_glr_auto_examples_graph_compute_non_existing.py`**.
-
-All examples should be prefixed with either **compute_** or **plot_**.
 """
+Neighboor enrichment analysis
+------------------------
+This example shows how to run the neighbors enrichment analysis routine in squidpy.
+It calculates based on pre-defined clusters the proximity between those in the calculated connetivity graph. The number of observed events is compared versus permutations and Z-scores are summarized.
+"""
+
+###############################################################################
+# To get started, we import squidpy
 
 import squidpy as sq
 
-# this is for autocompletion and will be removed during python conversion
-# # %config Completer.use_jedi = False
-
+###############################################################################
+# Load a dataset of interest
 
 adata = sq.datasets.four_i()
+
+###############################################################################
+# Calculate the neighbors graph and the enrichment counts and Z-scores
+
+sq.gr.spatial_neighbors(adata)
+sq.gr.nhood_enrichment(adata, cluster_key='leiden')
+
+""
+# The results are stored in two matrices: One for z-scores and one for counts
+# ['leiden_nhood_enrichment']
 adata
 
 ""
-# This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
-# Note than any such references or code usage will be automatically linked under that function.
-# See tutorial at :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`.
+# Pairs 6 and 8 and are significantly co-enriched
+sq.pl.nhood_enrichment(adata, cluster_key='leiden', cmap='Blues',
+                       cbar_kws={'label': 'Z-score'}, figsize=[4, 4], vmin=0, vmax=5)
 
 ""
-sq.gr.spatial_neighbors(adata)
-
-""
-# https://stackoverflow.com/questions/42092218/how-to-add-a-label-to-seaborn-heatmap-color-bar
-sq.pl.nhood_enrichment(adata, cluster_key='leiden', figsize=[4, 4], cmap='Blues',
-                       cbar_kws={'label': 'Z-score'}, vmin=5, vmax=20)
-
+adata.uns['leiden_nhood_enrichment']
