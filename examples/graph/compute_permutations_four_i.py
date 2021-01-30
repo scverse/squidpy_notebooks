@@ -1,22 +1,8 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: sphinx
-#       format_version: '1.1'
-#       jupytext_version: 1.7.1
-#   kernelspec:
-#     display_name: Python [conda env:mypython3] *
-#     language: python
-#     name: conda-env-mypython3-py
-# ---
-
 """
-Neighboor enrichment analysis
+Neighbors co-enrichment analysis
 ------------------------
 This example shows how to run the neighbors enrichment analysis routine in squidpy.
-It calculates based on pre-defined clusters the proximity between those in the calculated connetivity graph. The number of observed events is compared versus permutations and Z-scores are summarized.
+It calculates based on pre-defined clusters the proximity between those in the calculated connetivity graph. The number of observed events is compared versus permutations of the graph, to obtain Z-scores.
 """
 
 ###############################################################################
