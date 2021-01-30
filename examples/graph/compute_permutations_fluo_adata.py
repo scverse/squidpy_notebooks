@@ -1,5 +1,5 @@
 """
-Neighbors enrichment analysis (4i dataset)
+Neighbors enrichment analysis (Visium Fluo)
 ------------------------
 This example shows how to run the neighbors enrichment analysis routine in squidpy.
 It calculates based on pre-defined clusters the proximity between those in the calculated connetivity graph. The number of observed events is compared versus permutations and Z-scores are summarized.
@@ -13,7 +13,7 @@ import squidpy as sq
 ###############################################################################
 # Load a dataset of interest
 
-adata = sq.datasets.four_i()
+adata = sq.datasets.visium_fluo_adata()
 
 ###############################################################################
 # Calculate the neighbors graph and the enrichment counts and Z-scores
