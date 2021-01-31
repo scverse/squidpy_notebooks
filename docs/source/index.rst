@@ -16,3 +16,8 @@ This documentation is for testing purposes only. It will not correctly display t
    :hidden:
 
    auto_examples/index.rst
+
+.. toctree::
+   :caption: References
+
+   references.rst

@@ -118,14 +118,14 @@ See example at :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`.
         obs: 'cluster'
         uns: 'spatial_neighbors'
         obsm: 'spatial'
-        obsp: 'spatial_neighbors_connectivities', 'spatial_neighbors_distances'
+        obsp: 'spatial_connectivities', 'spatial_distances'
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.624 seconds)
+   **Total running time of the script:** ( 0 minutes  0.475 seconds)
 
 **Estimated memory usage:**  9 MB
 
