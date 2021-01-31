@@ -2,8 +2,8 @@
 Neighbors enrichment analysis
 ------------------------
 This example shows how to run the neighbors enrichment analysis routine in squidpy.
-It calculates based on pre-defined clusters the proximity between those in the calculated connectivity graph.
-The number of observed events is compared versus permutations and Z-scores are summarized.
+It calculates an enrichment score based on proximity on the connectivity graph of cell clusters.
+The number of observed events is compared against n permutations and a z-score is computed.
 """
 
 import squidpy as sq
