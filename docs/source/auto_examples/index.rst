@@ -31,10 +31,10 @@ This README should describe the graph gallery.
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_dummy_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_dummy1_thumb.png
      :alt: This is a dummy example
 
-     :ref:`sphx_glr_auto_examples_graph_compute_dummy.py`
+     :ref:`sphx_glr_auto_examples_graph_compute_dummy1.py`
 
 .. raw:: html
 
@@ -44,7 +44,7 @@ This README should describe the graph gallery.
 .. toctree::
    :hidden:
 
-   /auto_examples/graph/compute_dummy
+   /auto_examples/graph/compute_dummy1
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
@@ -59,20 +59,27 @@ Image
 This README should describe the image gallery.
 
 
+
 .. raw:: html
 
-    <div class="sphx-glr-clear"></div>
+    <div class="sphx-glr-thumbcontainer" tooltip="This is how we can link an example saved under **`examples/graph/compute_non_existing.py`**: **...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_dummy2_thumb.png
+     :alt: This is a dummy example
+
+     :ref:`sphx_glr_auto_examples_image_compute_dummy2.py`
+
+.. raw:: html
+
+    </div>
 
 
+.. toctree::
+   :hidden:
 
-.. _sphx_glr_auto_examples_plot:
-
-Plot
-----
-
-This README should describe the plotting gallery.
-
-
+   /auto_examples/image/compute_dummy2
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

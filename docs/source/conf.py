@@ -7,7 +7,6 @@
 # -- Path setup --------------------------------------------------------------
 import os
 import sys
-from collections import ChainMap
 from datetime import datetime
 from pathlib import Path
 
@@ -17,7 +16,6 @@ from pathlib import Path
 #
 import squidpy
 from sphinx.application import Sphinx
-from sphinx_gallery.sorting import ExplicitOrder, _SortKey
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "3.0"
@@ -37,9 +35,11 @@ version = f"{release} ({squidpy.__version__})"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "nbsphinx",
     "sphinx.ext.intersphinx",
     "sphinx_gallery.gen_gallery",
     "sphinx_last_updated_by_git",
+    "sphinxcontrib.bibtex",
     "sphinx_copybutton",
     "edit_on_github",
 ]
@@ -60,7 +60,10 @@ source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
-suppress_warnings = ["ref.citation"]  # ignore not referenced citations
+# citation
+bibtex_bibfiles = ["references.bib"]
+bibtex_reference_style = ["author_year"]
+bibtex_default_style = "alpha"
 
 # spelling
 spelling_lang = "en_US"
@@ -76,11 +79,11 @@ spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
-    "**.ipynb",
-    "**.md5",
-    "**.py",
+    "auto_*/**.ipynb",
+    "auto_*/**.md5",
+    "auto_*/**.py",
     "**.ipynb_checkpoints",
-]  # ignore anything that isn't .rst
+]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery
 
@@ -101,54 +104,17 @@ def reset_matplotlib(_gallery_conf, _fname):
 
 
 _root = Path(__file__).parent.parent.parent
-example_dir = _root / "examples"
-tutorial_dir = _root / "tutorials"
-rel_example_dir = Path("..") / ".." / "examples"
-rel_tutorial_dir = Path("..") / ".." / "tutorials"
-
-
-class ExplicitSubsectionOrder(_SortKey):
-
-    _order = ChainMap(
-        {
-            example_dir / "graph" / "compute_dummy.py": 0,
-        },
-        {
-            tutorial_dir / "tutorial_dummy.py": 0,
-        },
-    )
-
-    def __call__(self, filename: str) -> int:
-        src_file = os.path.normpath(os.path.join(self.src_dir, filename))
-        # TODO: once all examples are in order, remove me
-        try:
-            return self._order[Path(src_file)]
-        except KeyError:
-            return 0
-
-    def __repr__(self) -> str:
-        return f"<{self.__class__.__name__}: {repr(dict(self._order))}>"
-
-
 sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
     "reset_modules": (
         "seaborn",
         reset_matplotlib,
     ),
-    "filename_pattern": f"{os.path.sep}(plot_|compute_|tutorial_)",
-    "examples_dirs": [example_dir, tutorial_dir],
+    "filename_pattern": f"{os.path.sep}(compute_|tutorial_)",
+    "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
     "show_memory": True,
-    "within_subsection_order": ExplicitSubsectionOrder,
-    "subsection_order": ExplicitOrder(
-        [
-            rel_example_dir / "graph",
-            rel_example_dir / "image",
-            rel_example_dir / "plot",
-        ]
-    ),
     "reference_url": {
         "sphinx_gallery": None,
     },
