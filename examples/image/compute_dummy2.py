@@ -16,4 +16,4 @@ adata
 # %%
 # This is a new cell. We can reference the docs as :func:`squidpy.gr.moran`.
 # Note than any such references or code usage will be automatically linked under that function.
-# See tutorial at :ref:`sphx_glr_auto_tutorials_tutorial_dummy.py`.
+# See tutorial at :ref:`sphx_glr_auto_examples_graph_compute_dummy1.py`.
