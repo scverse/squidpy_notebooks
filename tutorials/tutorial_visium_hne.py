@@ -307,8 +307,6 @@ sq.gr.ligrec(
     adata,
     cluster_key="cluster",
 )
-
-
 sq.pl.ligrec(
     adata,
     cluster_key="cluster",
@@ -358,8 +356,6 @@ sq.gr.moran(adata, n_jobs=4)
 # We can select few genes and visualize their expression levels in the tissue
 
 adata.uns["moranI"].head(10)
-
-
 sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
 
 
