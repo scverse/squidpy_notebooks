@@ -79,19 +79,18 @@ This README describes the image tutorials.
 .. toctree::
    :hidden:
 
-<<<<<<< HEAD
-   /auto_tutorials/tutorial_dummy
+   /auto_tutorials/image/tutorial_dummy1
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing: TODO taken from H&amp;E, same for fluo?">
+    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing:">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+ .. figure:: /auto_tutorials/image/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
      :alt: Visium Fluorescence dataset
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+     :ref:`sphx_glr_auto_tutorials_image_tutorial_visium_fluo.py`
 
 .. raw:: html
 
@@ -101,10 +100,7 @@ This README describes the image tutorials.
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_visium_fluo
-=======
-   /auto_tutorials/image/tutorial_dummy1
->>>>>>> 2f0cbf85ad6d36544b3f4e0fd4c8707718cf68b0
+   /auto_tutorials/image/tutorial_visium_fluo
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

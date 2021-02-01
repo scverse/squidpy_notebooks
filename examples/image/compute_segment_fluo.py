@@ -21,6 +21,7 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
 calculate a cell-segmentation of an H&E stain.
 """
+# sphinx_gallery_thumbnail_number = 2
 
 import squidpy as sq
 

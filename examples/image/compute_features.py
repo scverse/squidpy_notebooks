@@ -21,6 +21,7 @@ We provide different feature extractors that are described in more detail in the
 - number and size of objects from a binary segmentation layer
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
 """
+# sphinx_gallery_thumbnail_number = 2
 
 import scanpy as sc
 import squidpy as sq

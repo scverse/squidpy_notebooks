@@ -12,7 +12,7 @@ The original dataset is publicly available at the
 Here, we provide a pre-processed dataset, with pre-annoated clusters, in AnnData format and the
 tissue image in :class:`squidpy.im.ImageContainer` format.
 
-A couple of notes on pre-processing: TODO taken from H&E, same for fluo?
+A couple of notes on pre-processing:
 
 - The pre-processing pipeline is the same as the one shown in the original
 `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
@@ -28,8 +28,6 @@ To run the notebook locally, create a conda environment with `conda create -f en
 The file `environment.yml` can be found `here <>`_ .
 
 """
-
-import tqdm
 
 import scanpy as sc
 import anndata as ad
@@ -48,7 +46,7 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 ###############################################################################
 # First, let's visualize the cluster annotation in the spatial context
-# with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
+# with :func:`scanpy.pl.spatial`.
 #
 # As you can see, this dataset is a smaller crop of the whole brain section.
 # We provide this crop to make the execution time of this tutorial a bit shorter.
@@ -182,7 +180,7 @@ params = {
 }
 
 # extract features with the different parameters in a loop
-for feature_name, cur_params in tqdm.tqdm(params.items()):
+for feature_name, cur_params in params.items():
     # features will be saved in `adata.obsm[feature_name]`
     sq.im.calculate_image_features(adata, img, key_added=feature_name, dtype="uint8", n_jobs=4, **cur_params)
 

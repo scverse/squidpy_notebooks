@@ -5,14 +5,14 @@ Examples using ``squidpy.gr.moran``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is how we can link an example saved under **`examples/graph/compute_non_existing.py`**: **...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_dummy1_thumb.png
-     :alt: This is a dummy example
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
 
-     :ref:`sphx_glr_auto_examples_graph_compute_dummy1.py`
+     :ref:`sphx_glr_auto_examples_image_API.py`
 
 .. raw:: html
 
@@ -20,61 +20,4 @@ Examples using ``squidpy.gr.moran``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_graph_compute_dummy1.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is how we can link an example saved under **`examples/graph/compute_non_existing.py`**: **...">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_dummy2_thumb.png
-     :alt: This is a dummy example
-
-     :ref:`sphx_glr_auto_examples_image_compute_dummy2.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_dummy2.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy2 tutorial">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/graph/images/thumb/sphx_glr_tutorial_dummy2_thumb.png
-     :alt: This is a dummy2 tutorial
-
-     :ref:`sphx_glr_auto_tutorials_graph_tutorial_dummy2.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_graph_tutorial_dummy2.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy1 tutorial">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/image/images/thumb/sphx_glr_tutorial_dummy1_thumb.png
-     :alt: This is a dummy1 tutorial
-
-     :ref:`sphx_glr_auto_tutorials_image_tutorial_dummy1.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_image_tutorial_dummy1.py`
+ * :ref:`sphx_glr_auto_examples_image_API.py`

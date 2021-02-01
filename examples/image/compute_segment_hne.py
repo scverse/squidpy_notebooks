@@ -12,6 +12,7 @@ Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
 and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
 """
+# sphinx_gallery_thumbnail_number = 3
 
 import squidpy as sq
 

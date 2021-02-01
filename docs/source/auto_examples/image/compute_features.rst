@@ -62,13 +62,13 @@ We provide different feature extractors that are described in more detail in the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 The high-resolution tissue image is contained in ``img['image']``,
 and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 We can plot the spots overlayed on a lower-resolution version of the tissue image contained in adata.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-48
+.. GENERATED FROM PYTHON SOURCE LINES 41-49
 
 .. code-block:: default
 
@@ -108,7 +108,7 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-63
+.. GENERATED FROM PYTHON SOURCE LINES 50-64
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
@@ -125,7 +125,7 @@ With these arguments you can
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-70
+.. GENERATED FROM PYTHON SOURCE LINES 64-71
 
 .. code-block:: default
 
@@ -249,7 +249,7 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-76
+.. GENERATED FROM PYTHON SOURCE LINES 72-77
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
@@ -257,7 +257,7 @@ See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details o
 Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `summary_quantile_0.5_ch_1` and
 `summary_quantile_0.5_ch_2`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-82
+.. GENERATED FROM PYTHON SOURCE LINES 77-83
 
 .. code-block:: default
 
@@ -278,7 +278,7 @@ Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `s
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-99
+.. GENERATED FROM PYTHON SOURCE LINES 84-100
 
 Specify crop appearance
 -----------------------
@@ -297,7 +297,7 @@ For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_
 
 Let us extract masked and scaled features and compare them
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-131
+.. GENERATED FROM PYTHON SOURCE LINES 100-132
 
 .. code-block:: default
 
@@ -353,11 +353,11 @@ Let us extract masked and scaled features and compare them
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-133
+.. GENERATED FROM PYTHON SOURCE LINES 133-134
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-140
+.. GENERATED FROM PYTHON SOURCE LINES 136-141
 
 Parallelisation
 ---------------
@@ -365,7 +365,7 @@ Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 extract features by using 4 jobs
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-141
+.. GENERATED FROM PYTHON SOURCE LINES 141-142
 
 .. code-block:: default
 
@@ -380,9 +380,9 @@ extract features by using 4 jobs
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.853 seconds)
+   **Total running time of the script:** ( 0 minutes  42.801 seconds)
 
-**Estimated memory usage:**  332 MB
+**Estimated memory usage:**  290 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

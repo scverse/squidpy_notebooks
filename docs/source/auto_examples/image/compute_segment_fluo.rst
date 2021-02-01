@@ -62,13 +62,13 @@ calculate a cell-segmentation of an H&E stain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 We crop the image to a smaller segment.
 This is only to speed things up, :func:`squidpy.im.segment_img` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 41-43
 
 .. code-block:: default
 
@@ -81,12 +81,12 @@ This is only to speed things up, :func:`squidpy.im.segment_img` can also process
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 The tissue image in this dataset contains four fluorescence stains.
 The first one is DAPI, which we will use for the nuclei-segmentation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-51
+.. GENERATED FROM PYTHON SOURCE LINES 46-52
 
 .. code-block:: default
 
@@ -107,12 +107,12 @@ The first one is DAPI, which we will use for the nuclei-segmentation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-54
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
 
 For watershed segmentation, we need to set a threshold to create the mask image.
 The threshold should be chosen in such a way, that all nuclei are contained in the mask image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-57
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
 
 .. code-block:: default
 
@@ -130,7 +130,7 @@ The threshold should be chosen in such a way, that all nuclei are contained in t
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-70
+.. GENERATED FROM PYTHON SOURCE LINES 59-71
 
 The histogram of DAPI values shows a small peak at 60000 containing the nuclei.
 So, let us choose 50000 as a threshold for the segmentation method.
@@ -145,7 +145,7 @@ For watershed, we need to set the threshold, ``thresh=50000``, as determined abo
 In addition, we can specify if the values greater or equal than the threshold should be in the mask (default)
 or if the values smaller to the threshold should be in the mask (``geq=False``).
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-72
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 .. code-block:: default
 
@@ -167,14 +167,14 @@ or if the values smaller to the threshold should be in the mask (``geq=False``).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-77
+.. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 The segmented crop is saved in the layer ``segmented_watershed``.
 This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 The result of the segmentation is a label image that can be used to extract features like the
 number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-87
+.. GENERATED FROM PYTHON SOURCE LINES 78-88
 
 .. code-block:: default
 
@@ -214,9 +214,9 @@ number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.167 seconds)
+   **Total running time of the script:** ( 0 minutes  21.049 seconds)
 
-**Estimated memory usage:**  862 MB
+**Estimated memory usage:**  906 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

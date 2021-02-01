@@ -53,11 +53,11 @@ and / or use a pre-trained model to do the segmentation (using :class:`squidpy.i
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-29
+.. GENERATED FROM PYTHON SOURCE LINES 29-30
 
 Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process_img`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-42
+.. GENERATED FROM PYTHON SOURCE LINES 30-43
 
 .. code-block:: default
 
@@ -85,14 +85,14 @@ Before segmenting the image, we do some preprocessing using :func:`squidpy.im.pr
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-47
+.. GENERATED FROM PYTHON SOURCE LINES 44-48
 
 Finding a good threshold for the segmentation is more difficult than for a DAPI stain,
 as there is no distinct peak in the histogram.
 Judging by the plot showing values smaller than 0.28, this threshold seems to be a good
 choice for this example.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-53
+.. GENERATED FROM PYTHON SOURCE LINES 48-54
 
 .. code-block:: default
 
@@ -113,14 +113,14 @@ choice for this example.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-59
 
 We use :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
 Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
 we need to indicate the model that it should treat lower-intensity values as foreground.
 We do this by specifying the ``geq=False`` in the ``kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-60
+.. GENERATED FROM PYTHON SOURCE LINES 59-61
 
 .. code-block:: default
 
@@ -142,14 +142,14 @@ We do this by specifying the ``geq=False`` in the ``kwargs``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-65
+.. GENERATED FROM PYTHON SOURCE LINES 62-66
 
 The segmented crop is saved in the layer `segmented_watershed`.
 This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 The result of the segmentation is a label image that can be used to extract features
 like the number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-75
+.. GENERATED FROM PYTHON SOURCE LINES 66-76
 
 .. code-block:: default
 
@@ -191,9 +191,9 @@ like the number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.571 seconds)
+   **Total running time of the script:** ( 0 minutes  21.479 seconds)
 
-**Estimated memory usage:**  182 MB
+**Estimated memory usage:**  178 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_hne.py:
