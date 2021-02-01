@@ -11,7 +11,7 @@ import squidpy as sq
 adata = sq.datasets.seqfish()
 adata
 
-# %%
+###############################################################################
 # To get started, we just need an :class:`anndata.AnnData` object with some clustering information. Below are some
 # useful parameters of :func:`squidpy.gr.ligrec`:
 #
@@ -37,22 +37,22 @@ res = sq.gr.ligrec(
     receiver_params={"categories": "receptor"},
 )
 
-# %%
+###############################################################################
 # First, we inspect the calculated means. The resulting object is a :class:`pandas.DataFrame`, with rows corresponding
 # to interacting pairs and columns to cluster combinations.
 res.means.head()
 
-# %%
+###############################################################################
 # Next, we take a look at the p-values. If ``corr_method != None``, this will contained the corrected p-values.
 # The p-values marked as `NaN` correspond to interactions, which did not pass the filtering ``threshold`` specified
 # above.
 res.pvalues.head()
 
-# %%
+###############################################################################
 # Any interaction metadata downloaded from :mod:`omnipath`, such as the interaction type, can be accessed as:
 res.metadata.head()
 
-# %%
+###############################################################################
 # In order to plot the results, we can run :func:`squidpy.pl.ligrec`. Some useful parameters are:
 #
 # - ``{source,target}_groups`` - only plot specific source/target clusters.

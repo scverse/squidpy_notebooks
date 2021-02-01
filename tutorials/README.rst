@@ -1,4 +1,4 @@
 Tutorials
 =========
 
-This README describes the tutorials.
+Here you can find a series of tutorials for the analysis of spatial molecular data with squidpy
