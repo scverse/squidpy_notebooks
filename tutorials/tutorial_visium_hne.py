@@ -115,7 +115,13 @@ for ax in axes:
 features_kwargs = {"segmentation": {"label_img_id": "segmented_watershed"}}
 # calculate segmentation features
 sq.im.calculate_image_features(
-    adata, img, features="segmentation", key_added="features_segmentation", n_jobs=4, features_kwargs=features_kwargs
+    adata,
+    img,
+    features="segmentation",
+    key_added="features_segmentation",
+    n_jobs=4,
+    features_kwargs=features_kwargs,
+    backend="threading",
 )
 
 # compare number of cells extracted from segmentation with gene-space clustering
@@ -146,7 +152,7 @@ sc.pl.spatial(sq.pl.extract(adata, "features_segmentation"), color=["segmentatio
 for size, scale in [(1, 1.0), (2, 1.0), (4, 0.25)]:
     feature_name = f"features_summary_size{size}_scale{scale}"
     sq.im.calculate_image_features(
-        adata, img, features="summary", key_added=feature_name, n_jobs=4, size=size, scale=scale
+        adata, img, features="summary", key_added=feature_name, n_jobs=4, size=size, scale=scale, backend="threading"
     )
 
 
@@ -347,7 +353,7 @@ sq.pl.ligrec(
 # The function in Squidpy is called :func:`squidpy.gr.moran`, and
 # returns both test statistics and adjusted pvalues in `adata.var` slot.
 
-sq.gr.moran(adata, n_jobs=4)
+sq.gr.moran(adata, n_jobs=4, backend="threading")
 
 
 ###############################################################################
