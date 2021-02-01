@@ -5,14 +5,14 @@ Examples using ``squidpy.__version__``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing: TODO taken from H&amp;E, same for fluo?">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy2 tutorial">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
-     :alt: Visium Fluorescence dataset
+ .. figure:: /auto_tutorials/graph/images/thumb/sphx_glr_tutorial_dummy2_thumb.png
+     :alt: This is a dummy2 tutorial
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+     :ref:`sphx_glr_auto_tutorials_graph_tutorial_dummy2.py`
 
 .. raw:: html
 
@@ -20,4 +20,23 @@ Examples using ``squidpy.__version__``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+ * :ref:`sphx_glr_auto_tutorials_graph_tutorial_dummy2.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is a dummy1 tutorial">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/image/images/thumb/sphx_glr_tutorial_dummy1_thumb.png
+     :alt: This is a dummy1 tutorial
+
+     :ref:`sphx_glr_auto_tutorials_image_tutorial_dummy1.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_image_tutorial_dummy1.py`
