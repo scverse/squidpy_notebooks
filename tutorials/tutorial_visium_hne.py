@@ -230,7 +230,7 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # Neighborhood enrichment
 # +++++++++++++++++++++++
 # Computing a neighborhood enrichment can help us identify spots clusters that share
-# a commone neighborhood structure across the tissue.
+# a common neighborhood structure across the tissue.
 # We can compute such score with the following function: :func:`squidpy.gr.nhood_enrichment`.
 # In short, it's an enrichment score on spatial proximity of clusters:
 # if spots belonging to two different clusters are often close to each other,
@@ -360,7 +360,7 @@ sq.pl.ligrec(
 
 sq.gr.moran(
     adata,
-    n_jobs=4,
+    n_jobs=1,
 )
 
 
