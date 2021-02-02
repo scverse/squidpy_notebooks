@@ -5,6 +5,9 @@ from pathlib import Path
 from textwrap import indent
 import os
 
+import matplotlib
+
+matplotlib.use("Agg")
 _test_template = """
 def _test(self):
 {code}
