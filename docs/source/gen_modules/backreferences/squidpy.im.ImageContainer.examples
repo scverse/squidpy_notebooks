@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.im.ImageContainer``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="A couple of notes on pre-processing:">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/image/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Visium Fluorescence dataset
+
+     :ref:`sphx_glr_auto_tutorials_image_tutorial_visium_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_image_tutorial_visium_fluo.py`
