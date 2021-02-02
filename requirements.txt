@@ -3,4 +3,4 @@ astropy
 esda
 libpysal
 # git+https://github.com/theislab/squidpy
-scanpy==1.7.0rc1
+scanpy[leiden]==1.7.0rc1
