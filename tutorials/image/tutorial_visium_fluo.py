@@ -15,12 +15,11 @@ tissue image in :class:`squidpy.im.ImageContainer` format.
 A couple of notes on pre-processing:
 
 - The pre-processing pipeline is the same as the one shown in the original
-`Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
-
+  `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
 - The cluster annotation was performed using several resources, such as the
-`Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+  `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
+  the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
+  from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
 
 Import packages and load data
 -----------------------------
