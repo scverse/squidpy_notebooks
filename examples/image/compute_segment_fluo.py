@@ -1,4 +1,3 @@
-# %%
 """
 Cell-segmentation
 ------------------
@@ -21,7 +20,6 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
 calculate a cell-segmentation of an H&E stain.
 """
-# sphinx_gallery_thumbnail_number = 2
 
 import squidpy as sq
 
@@ -34,13 +32,13 @@ import matplotlib.pyplot as plt
 img = sq.datasets.visium_fluo_image_crop()
 
 
-# %%
+###############################################################################
 # We crop the image to a smaller segment.
 # This is only to speed things up, :func:`squidpy.im.segment_img` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
 crop = img.crop_corner(1000, 1000, 1000, 1000)
 
-# %%
+###############################################################################
 # The tissue image in this dataset contains four fluorescence stains.
 # The first one is DAPI, which we will use for the nuclei-segmentation.
 
@@ -49,13 +47,13 @@ for i, ax in enumerate(axes):
     ax.imshow(crop["image"][:, :, i])
     ax.axis("off")
 
-# %%
+###############################################################################
 # For watershed segmentation, we need to set a threshold to create the mask image.
 # The threshold should be chosen in such a way, that all nuclei are contained in the mask image.
 fig, ax = plt.subplots(1, 1, figsize=(5, 3))
 _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 
-# %%
+###############################################################################
 # The histogram of DAPI values shows a small peak at 60000 containing the nuclei.
 # So, let us choose 50000 as a threshold for the segmentation method.
 #
@@ -70,7 +68,7 @@ _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 # or if the values smaller to the threshold should be in the mask (``geq=False``).
 sq.im.segment_img(img=crop, img_id="image", model_group="watershed", channel_idx=0, thresh=50000)
 
-# %%
+###############################################################################
 # The segmented crop is saved in the layer ``segmented_watershed``.
 # This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 # The result of the segmentation is a label image that can be used to extract features like the

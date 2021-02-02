@@ -23,7 +23,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 - ``std``: Return the std of feature values per obs
 
 """
-# sphinx_gallery_thumbnail_number = 2
 
 import scanpy as sc
 import squidpy as sq

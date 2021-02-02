@@ -1,4 +1,3 @@
-# %%
 """
 Converting to Grayscale
 -----------------------
@@ -17,14 +16,14 @@ import squidpy as sq
 
 import matplotlib.pyplot as plt
 
-# %%
+###############################################################################
 # First, we load an H&E stained tissue image.
 # Here, we only load a cropped dataset to speed things up.
 # In general, :func:`squidpy.im.process_img` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 img = sq.datasets.visium_hne_image_crop()
 
-# %%
+###############################################################################
 # Then, we convert the image to grayscale and plot the result.
 # With the argument ``img_id`` we can select the image layer that should be processed.
 # When converting to grayscale, the channel dimensions change from 3 to 1.
@@ -42,5 +41,3 @@ axes[1].imshow(img["image_gray"].squeeze(), cmap="gray")
 axes[1].set_title("grayscale")
 for ax in axes:
     ax.axis("off")
-
-# %%

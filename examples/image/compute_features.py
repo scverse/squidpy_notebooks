@@ -1,4 +1,3 @@
-# %%
 """
 Extract Image Features
 ======================
@@ -21,7 +20,6 @@ We provide different feature extractors that are described in more detail in the
 - number and size of objects from a binary segmentation layer
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
 """
-# sphinx_gallery_thumbnail_number = 2
 
 import scanpy as sc
 import squidpy as sq
@@ -34,7 +32,7 @@ import seaborn as sns
 img = sq.datasets.visium_hne_image_crop()
 adata = sq.datasets.visium_hne_adata_crop()
 
-# %%
+###############################################################################
 # The high-resolution tissue image is contained in ``img['image']``,
 # and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 # We can plot the spots overlayed on a lower-resolution version of the tissue image contained in adata.
@@ -46,7 +44,7 @@ print(adata.obsm["spatial"])
 sc.set_figure_params(figsize=(4, 4))
 sc.pl.spatial(adata, add_outline=True)
 
-# %%
+###############################################################################
 # Using this information, we can now extract features from the tissue underneath each spot by calling
 # :func:`squidpy.im.calculate_image_features`.
 # This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
@@ -68,7 +66,7 @@ sq.im.calculate_image_features(adata, img, features="summary", key_added="featur
 print(f"calculated features: {list(adata.obsm['features'].columns)}")
 adata.obsm["features"].head()
 
-# %%
+###############################################################################
 # To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 # See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
 #
@@ -80,7 +78,7 @@ sc.pl.spatial(
     color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"],
 )
 
-# %%
+###############################################################################
 # Specify crop appearance
 # -----------------------
 # Features are extracted from image crops that capture the visium spots
@@ -129,10 +127,10 @@ _ = sns.displot(
     kind="kde",
 )
 
-# %%
+###############################################################################
 # The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-# %%
+###############################################################################
 # Parallelisation
 # ---------------
 # Speeding up the feature extraction is easy.
