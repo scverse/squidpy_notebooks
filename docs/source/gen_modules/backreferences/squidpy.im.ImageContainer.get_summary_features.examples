@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.im.ImageContainer.get_summary_features``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we use squidpy.im.calculate_image_features to extract summary features from the tissue im...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_summary_features_thumb.png
+     :alt: Summary features
+
+     :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`

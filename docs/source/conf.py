@@ -52,6 +52,7 @@ intersphinx_mapping = {
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
+    "skimage": ("https://scikit-image.org/docs/stable/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
