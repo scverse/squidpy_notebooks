@@ -360,6 +360,7 @@ sq.pl.ligrec(
 
 sq.gr.moran(
     adata,
+    n_perms=100,
     n_jobs=1,
 )
 
