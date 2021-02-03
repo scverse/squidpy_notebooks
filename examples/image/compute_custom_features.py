@@ -1,4 +1,3 @@
-# %%
 """
 Custom features
 ---------------
@@ -17,15 +16,14 @@ Here, we show a simple example by defining a function to calculate the mean of t
 import scanpy as sc
 import squidpy as sq
 
-# %%
+###############################################################################
 # Lets load a H&E visisum dataset
-
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_hne_image_crop()
 adata = sq.datasets.visium_hne_adata_crop()
 
-# %%
+###############################################################################
 # Define a custom feature extraction function
 
 
@@ -36,19 +34,19 @@ def feature_fn(arr):
     return np.mean(arr)
 
 
-# %%
+###############################################################################
 # Now we can extract features using ``feature_fn``
 
 sq.im.calculate_image_features(
     adata, img, features="custom", features_kwargs={"custom": {"feature_fn": feature_fn}}, key_added="custom_features"
 )
 
-# %%
+###############################################################################
 # The result is stored in ``adata.obsm['custom_features']``.
 
 adata.obsm["custom_features"].head()
 
-# %%
+###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 # :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 

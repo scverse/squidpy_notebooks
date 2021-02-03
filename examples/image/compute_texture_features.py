@@ -1,4 +1,3 @@
-# %%
 """
 Texture features
 ----------------
@@ -25,7 +24,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 import scanpy as sc
 import squidpy as sq
 
-# %%
+###############################################################################
 # Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
 # Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype="uint8"``) before calculating the
 # texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
@@ -41,12 +40,12 @@ adata = sq.datasets.visium_fluo_adata_crop()
 sq.im.calculate_image_features(
     adata, img, features="texture", key_added="texture_features_2", dtype="uint8", show_progress_bar=False, size=2
 )
-# %%
+###############################################################################
 # The result is stored in ``adata.obsm['texture_features']``
 
 adata.obsm["texture_features_2"].head()
 
-# %%
+###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
 # :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 # Here, we show the contrast feature for channels 0 and 1.

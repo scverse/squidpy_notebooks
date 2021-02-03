@@ -93,7 +93,7 @@ for i, ax in enumerate(axes):
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 # for more details on how to calculate a segmented image.
 
-sq.im.segment_img(img=img, img_id="image", model_group="watershed", channel_ids=0, thresh=40000)
+sq.im.segment_img(img=img, img_id="image", model_group="watershed", channel_ids=0, thresh=40000, xs=1000, ys=1000)
 
 # plot the resulting segmentation
 img_crop = img.crop_corner(2000, 2000, 500, 500)
@@ -125,7 +125,7 @@ for ax in axes:
 features_kwargs = {"segmentation": {"label_img_id": "segmented_watershed"}}
 # calculate segmentation features
 sq.im.calculate_image_features(
-    adata, img, features="segmentation", key_added="features_segmentation", n_jobs=4, features_kwargs=features_kwargs
+    adata, img, features="segmentation", key_added="features_segmentation", n_jobs=1, features_kwargs=features_kwargs
 )
 # plot results and compare with gene-space clustering
 sc.pl.spatial(

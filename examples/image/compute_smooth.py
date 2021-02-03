@@ -1,4 +1,3 @@
-# %%
 """
 Smoothing an Image
 ------------------
@@ -22,7 +21,7 @@ import matplotlib.pyplot as plt
 # load H&E stained tissue image
 img = sq.datasets.visium_hne_image_crop()
 
-# %%
+###############################################################################
 # Smooth the image with ``sigma = 2``.
 # With the argument ``img_id`` we can select the image layer that should be processed.
 # By default, the resulting image is saved in the layer ``image_smooth``.
@@ -30,7 +29,7 @@ img = sq.datasets.visium_hne_image_crop()
 
 sq.im.process_img(img, img_id="image", processing="smooth", sigma=2)
 
-# %%
+###############################################################################
 # Now we can look at the result on a cropped part of the image.
 crop = img.crop_corner(0, 0, 200, 200)
 

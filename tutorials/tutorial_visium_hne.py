@@ -85,7 +85,9 @@ sq.im.process_img(img, img_id="image", processing="gray")
 # smooth image
 sq.im.process_img(img, img_id="image_gray", processing="smooth", sigma=4)
 # segment
-sq.im.segment_img(img=img, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
+sq.im.segment_img(
+    img=img, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False, xs=1000, ys=1000
+)
 
 # plot the resulting segmentation
 img_crop = img.crop_corner(2500, 1800, xs=1000, ys=1000)
@@ -119,7 +121,7 @@ sq.im.calculate_image_features(
     img,
     features="segmentation",
     key_added="features_segmentation",
-    n_jobs=4,
+    n_jobs=1,
     features_kwargs=features_kwargs,
 )
 
@@ -155,7 +157,7 @@ for size, scale in [(1, 1.0), (2, 1.0), (4, 0.25)]:
         img,
         features="summary",
         key_added=feature_name,
-        n_jobs=4,
+        n_jobs=1,
         size=size,
         scale=scale,
     )
@@ -230,7 +232,7 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # Neighborhood enrichment
 # +++++++++++++++++++++++
 # Computing a neighborhood enrichment can help us identify spots clusters that share
-# a commone neighborhood structure across the tissue.
+# a common neighborhood structure across the tissue.
 # We can compute such score with the following function: :func:`squidpy.gr.nhood_enrichment`.
 # In short, it's an enrichment score on spatial proximity of clusters:
 # if spots belonging to two different clusters are often close to each other,
@@ -316,6 +318,7 @@ sq.pl.co_occurrence(
 
 sq.gr.ligrec(
     adata,
+    n_perms=100,
     cluster_key="cluster",
 )
 sq.pl.ligrec(
@@ -360,7 +363,8 @@ sq.pl.ligrec(
 
 sq.gr.moran(
     adata,
-    n_jobs=4,
+    n_perms=100,
+    n_jobs=1,
 )
 
 

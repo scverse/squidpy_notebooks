@@ -1,4 +1,3 @@
-# %%
 """
 Processing a high-resolution Image
 ----------------------------------
@@ -29,12 +28,12 @@ import matplotlib.pyplot as plt
 # load H&E stained tissue image
 img = sq.datasets.visium_hne_image()
 
-# %%
+###############################################################################
 # We will process the image by tiling it in crops of shape ``(ys, xs) = (1000, 1000)``.
 
 sq.im.process_img(img, img_id="image", processing="gray", xs=1000, ys=1000)
 
-# %%
+###############################################################################
 # Now we can look at the result on a cropped part of the image.
 crop = img.crop_corner(4000, 4000, 2000, 2000)
 
@@ -45,5 +44,3 @@ axes[1].imshow(crop["image_gray"].squeeze(), cmap="gray")
 axes[1].set_title("converted to grayscale")
 for ax in axes:
     ax.axis("off")
-
-# %%

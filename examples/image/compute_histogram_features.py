@@ -1,4 +1,3 @@
-# %%
 """
 Histogram features
 ------------------
@@ -22,7 +21,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 import scanpy as sc
 import squidpy as sq
 
-# %%
+###############################################################################
 # Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
 
@@ -39,12 +38,12 @@ sq.im.calculate_image_features(
     key_added="histogram_features",
 )
 
-# %%
+###############################################################################
 # The result is stored in ``adata.obsm['histogram_features']``.
 
 adata.obsm["histogram_features"].head()
 
-# %%
+###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 # :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
 # With these features we can e.g. appreciate the detailed distribution of
