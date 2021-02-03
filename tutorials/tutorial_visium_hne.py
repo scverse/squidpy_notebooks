@@ -85,7 +85,9 @@ sq.im.process_img(img, img_id="image", processing="gray")
 # smooth image
 sq.im.process_img(img, img_id="image_gray", processing="smooth", sigma=4)
 # segment
-sq.im.segment_img(img=img, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
+sq.im.segment_img(
+    img=img, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False, xs=1000, ys=1000
+)
 
 # plot the resulting segmentation
 img_crop = img.crop_corner(2500, 1800, xs=1000, ys=1000)
