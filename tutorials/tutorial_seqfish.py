@@ -158,6 +158,7 @@ sq.pl.co_occurrence(
 
 sq.gr.ligrec(
     adata,
+    n_perms=100,
     cluster_key="celltype_mapped_refined",
 )
 sq.pl.ligrec(
