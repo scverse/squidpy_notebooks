@@ -105,7 +105,8 @@ jobs:
         -   name: Testing
             # TODO: remove -q once squidpy is public
             run: |
-                tox -q
+                tox -q -- -k test_tutorials
+                tox -q -- -k test_examples
             env:
                 PLATFORM: ubuntu-latest
                 SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
