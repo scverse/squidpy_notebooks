@@ -26,16 +26,20 @@ adata
 # It specifies for each spot how many hexagonal rings of spots around
 # it will be considered neighbors.
 
-sq.gr.spatial_neighbors(adata, n_rings=1, coord_type="visium")
+sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="visium")
 
 ###############################################################################
 # The function builds a spatial graph and saves its adjacency matrix
 # to ``adata.obsp["spatial_connectivities"]`` and weighted adjacency matrix to
 # ``adata.obsp["spatial_distances"]`` by default.
+
+adata.obsp["spatial_connectivities"]
+
+###############################################################################
+# For ``n_rings=1`` there will be no ``adata.obsp["spatial_distances"]``
 # The weights of the weighted adjacency matrix are ordinal numbers of hexagonal rings
 # in the case of ``coord_type="visium"``.
 
-adata.obsp["spatial_connectivities"]
 adata.obsp["spatial_distances"]
 
 ###############################################################################
