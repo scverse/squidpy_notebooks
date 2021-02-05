@@ -23,11 +23,12 @@ import squidpy as sq
 img = sq.datasets.visium_hne_image_crop()
 adata = sq.datasets.visium_hne_adata_crop()
 
+
 ###############################################################################
 # Define a custom feature extraction function
 
 
-def feature_fn(arr):
+def mean_fn(arr):
     """Compute mean of arr."""
     import numpy as np
 
@@ -35,10 +36,10 @@ def feature_fn(arr):
 
 
 ###############################################################################
-# Now we can extract features using ``feature_fn``
+# Now we can extract features using ``mean_fn`` by providing it within `features_kwargs`
 
 sq.im.calculate_image_features(
-    adata, img, features="custom", features_kwargs={"custom": {"feature_fn": feature_fn}}, key_added="custom_features"
+    adata, img, features="custom", features_kwargs={"custom": {"func": mean_fn}}, key_added="custom_features"
 )
 
 ###############################################################################
@@ -52,6 +53,6 @@ adata.obsm["custom_features"].head()
 
 sc.pl.spatial(
     sq.pl.extract(adata, "custom_features"),
-    color=[None, "custom_0"],
+    color=[None, "mean_fn_0"],
     bw=True,
 )

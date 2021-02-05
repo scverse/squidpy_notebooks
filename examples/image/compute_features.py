@@ -75,7 +75,7 @@ adata.obsm["features"].head()
 
 sc.pl.spatial(
     sq.pl.extract(adata, "features"),
-    color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"],
+    color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
 )
 
 ###############################################################################
@@ -86,13 +86,13 @@ sc.pl.spatial(
 # By default, the crops have the same size as the spot, are not scaled and square.
 # We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round
 # visium spots is taken into account to compute the features.
-# Further, we can set ``scale`` and ``size`` arguments to change how the crops are generated.
+# Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
 # For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 #
-# - Use ``mask_circle=True, scale=1, size=1``, if you would like to get features that are calculated only from tissue
-#   in a visium spot
+# - Use ``mask_circle=True, scale=1, spot_scale=1``, if you would like to get features that are calculated only from
+#   tissue in a visium spot
 # - Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
-# - Use ``size=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
+# - Use ``spot_scale=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
 #
 # Let us extract masked and scaled features and compare them
 
@@ -113,16 +113,16 @@ sq.im.calculate_image_features(
     features=["summary", "texture", "histogram"],
     key_added="features_scaled",
     mask_circle=True,
-    size=2,
+    spot_scale=2,
     scale=0.5,
 )
 
 # plot distribution of median for different cropping options
 _ = sns.displot(
     {
-        "features": adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"],
-        "features_masked": adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"],
-        "features_scaled": adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"],
+        "features": adata_sml.obsm["features"]["summary_ch-0_quantile-0.5"],
+        "features_masked": adata_sml.obsm["features_masked"]["summary_ch-0_quantile-0.5"],
+        "features_scaled": adata_sml.obsm["features_scaled"]["summary_ch-0_quantile-0.5"],
     },
     kind="kde",
 )

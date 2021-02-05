@@ -32,7 +32,7 @@ img = sq.datasets.visium_hne_image_crop()
 # By default, the resulting image is saved in the layer ``image_gray``.
 # This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
-sq.im.process_img(img, img_id="image", processing="gray")
+sq.im.process(img, img_id="image", method="gray")
 
 fig, axes = plt.subplots(1, 2)
 axes[0].imshow(img["image"])

@@ -21,40 +21,43 @@ import matplotlib.pyplot as plt
 
 # load H&E stained tissue image and crop to a smaller segment
 img = sq.datasets.visium_hne_image_crop()
-crop = img.crop_corner(0, 0, 1000, 1000)
+crop = img.crop_corner(0, 0, size=1000)
 
 ###############################################################################
-# Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process_img`.
+# Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process`.
 
-# convert to grayscale
-sq.im.process_img(crop, img_id="image", processing="gray")
 # smooth image
-sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
+sq.im.process(crop, img_id="image", method="smooth", sigma=4)
 
 # plot the result
-fig, axes = plt.subplots(1, 3)
-for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
+fig, axes = plt.subplots(1, 2)
+for img_id, ax in zip(["image", "image_smooth"], axes):
     ax.imshow(np.squeeze(crop[img_id]))
     ax.set_title(img_id)
     ax.axis("off")
 
 ###############################################################################
-# Finding a good threshold for the segmentation is more difficult than for a DAPI stain,
-# as there is no distinct peak in the histogram.
+# We will use channel 0 to do the segmentation, as this channel contains most of
+# the nuclei information within an H&E stain.
+# Instead of using Otsh thresholding, we will define a manual fixed threshold.
+# Note that using Otsu's method to determine the threshold also yields good results.
+#
 # Judging by the plot showing values smaller than 0.28, this threshold seems to be a good
 # choice for this example.
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-axes[0].imshow(crop["image_gray_smooth"][:, :, 0] < 0.28)
+fig, axes = plt.subplots(1, 3, figsize=(12, 5))
+axes[0].imshow(crop["image_smooth"][:, :, 0], cmap="gray")
 axes[0].axis("off")
-_ = sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes[1])
+axes[1].imshow(crop["image_smooth"][:, :, 0] < 0.36)
+axes[1].axis("off")
+_ = sns.histplot(np.array(crop["image_smooth"]).flatten(), bins=50, ax=axes[2])
 
 
 ###############################################################################
-# We use :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
+# We use :func:`squidpy.im.segment` with ``method="watershed"`` to do the segmentation.
 # Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
 # we need to indicate the model that it should treat lower-intensity values as foreground.
 # We do this by specifying the ``geq=False`` in the ``kwargs``.
-sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
+sq.im.segment(img=crop, img_id="image_gray_smooth", method="watershed", thresh=0.28, geq=False)
 
 ###############################################################################
 # The segmented crop is saved in the layer `segmented_watershed`.
