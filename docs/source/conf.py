@@ -138,6 +138,10 @@ sphinx_gallery_conf = {
         "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
     },
 }
+nbsphinx_thumbnails = {
+    "auto_**": "_static/img/squidpy_vertical.png",
+    "external_tutorials/**": "_static/img/squidpy_vertical.png",
+}
 
 # -- Options for HTML output -------------------------------------------------
 
