@@ -131,7 +131,12 @@ sphinx_gallery_conf = {
     "doc_module": "squidpy",
     "download_all_examples": False,
     "show_signature": False,
-    "pypandoc": {"filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")]},
+    "pypandoc": {
+        "extra_args": [
+            "--mathjax",
+        ],
+        "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
+    },
 }
 
 # -- Options for HTML output -------------------------------------------------

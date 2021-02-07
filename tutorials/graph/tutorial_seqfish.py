@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """
 seqFISH
 =======
@@ -11,8 +10,8 @@ For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <../../../../../environment.yml>`_.
 """
 
 import scanpy as sc
@@ -33,7 +32,7 @@ sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 
 ###############################################################################
 # Neighborhood enrichment analysis
-# ++++++++++++++++++++++++++++++++
+# --------------------------------
 # Similar to other spatial data, we can investigate spatial organization of clusters
 # in a quantitative way, by computing a neighborhood enrichment score.
 # You can compute such score with the following function: :func:`squidpy.gr.nhood_enrichment`.
@@ -91,7 +90,7 @@ sc.pl.spatial(
 
 ###############################################################################
 # Co-occurrence across spatial dimensions
-# +++++++++++++++++++++++++++++++++++++++
+# ---------------------------------------
 # In addition to the neighbor enrichment score, we can visualize cluster co-occurrence
 # in spatial dimensions.
 # This is a similar analysis of the one presented above,
@@ -132,7 +131,7 @@ sq.pl.co_occurrence(
 
 ###############################################################################
 # Ligand-receptor interaction analysis
-# ++++++++++++++++++++++++++++++++++++
+# ------------------------------------
 # The analysis showed above has provided us with quantitative information on
 # cellular organization and communication at the tissue level.
 # We might be interested in getting a list of potential candidates that might be driving

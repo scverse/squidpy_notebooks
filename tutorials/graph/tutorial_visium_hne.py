@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """
 Visium H&E dataset
-===================
+==================
 This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset.
 The dataset used here consist of a Visium slide of a coronal section of the mouse brain.
+
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
 Here, we provide a pre-processed dataset, with pre-annoated clusters, in AnnData format and the
@@ -12,16 +13,16 @@ tissue image in :class:`squidpy.im.ImageContainer` format.
 A couple of notes on pre-processing:
 
 - The pre-processing pipeline is the same as the one shown in the original
-`Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
+  `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
 - The cluster annotation was performed using several resources, such as the
-`Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+  `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
+  the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
+  from the Linnarson lab and this recent `pre-print <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <../../../../../environment.yml>`_.
 """
 
 import scanpy as sc
@@ -104,7 +105,6 @@ for ax in axes:
 ###############################################################################
 # Segmentation Features
 # +++++++++++++++++++++
-#
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
 # intensities beneath the segmentation mask.
@@ -143,7 +143,6 @@ sc.pl.spatial(sq.pl.extract(adata, "features_segmentation"), color=["segmentatio
 ###############################################################################
 # Summary features and feature clusters
 # +++++++++++++++++++++++++++++++++++++
-#
 # Now we will calculate summary features like the mean intensity of each channel and their variance.
 # These features provide a useful compressed summary of the tissue image.
 # For more information on the summary features,
@@ -237,14 +236,14 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # In short, it's an enrichment score on spatial proximity of clusters:
 # if spots belonging to two different clusters are often close to each other,
 # then they will have a high score and can be defined as being *enriched*.
-# On the other hand, if they are far apart, and therefore are seldomly neighborhood,
+# On the other hand, if they are far apart, and therefore are seldomly a neighborhood,
 # the score will be low and they can be defined as *depleted*. This score is
 # based on a permutation-based test, and you can set
 # the number of permutations with the `n_perms` argument (default is 1000).
 #
 # Since the function works on a connectivity matrix, we need to compute that as well.
 # This can be done with :func:`squidpy.gr.spatial_neighbors`.
-# Please see #ADD LINK for a thorough explanation of how this function works.
+# Please see TODO: add link for a thorough explanation of how this function works.
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
@@ -265,12 +264,13 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 # In addition to the neighbor enrichment score, we can visualize cluster co-occurrence in spatial dimensions.
 # This is a similar analysis of the one presented above, yet it does not operate on the connectivity matrix,
 # but on the original spatial coordinates. The co-occurrence score is defined as:
-# \begin{equation*}
-# \frac{p(exp|cond)}{p(exp)}
-# \end{equation*}
 #
-# where $p(exp|cond)$ is the conditional probability of observing a cluster $exp$ conditioned on the presence
-# of a cluster $cond$, whereas $p(exp)$ is the probability of observing $exp$ in the radius size of interest.
+# .. math::
+#    \frac{p(exp|cond)}{p(exp)}
+#
+# where :math:`p(exp|cond)` is the conditional probability of observing a cluster :math:`exp` conditioned
+# on the presence of a cluster :math:`cond`, whereas :math:`p(exp)` is the probability of observing :math:`exp`
+# in the radius size of interest.
 # The score is computed across increasing radii size around each observation (i.e. spots here) in the tissue.
 #
 # We are gonna compute such score with :func:`squidpy.gr.co_occurrence` and set the cluster annotation
@@ -345,16 +345,17 @@ sq.pl.ligrec(
 # Finally, we might be interested in finding genes that show spatial patterns.
 # There are several methods that aimed at address this expliclty,
 # based on point processes or gaussian process regression framework:
-# * SPARK `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`_
-# `code <https://github.com/xzhoulab/SPARK>`_
-# * Spatial DE `paper <https://www.nature.com/articles/nmeth.4636>`_
-# `code <https://github.com/Teichlab/SpatialDE>`_
-# * trendsceek `<paper https://www.nature.com/articles/nmeth.4634>`_
-# `code <https://github.com/edsgard/trendsceek>`_
-# * HMRF `paper <https://www.nature.com/articles/nbt.4260>`_
-# `code <https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/>`_
 #
-# Here, we provide a simple approach based on the well-knwon
+# - SPARK - `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`__,
+#   `code <https://github.com/xzhoulab/SPARK>`__.
+# - Spatial DE  - `paper <https://www.nature.com/articles/nmeth.4636>`__,
+#   `code <https://github.com/Teichlab/SpatialDE>`__.
+# - trendsceek - `paper <https://www.nature.com/articles/nmeth.4634>`__,
+#   `code <https://github.com/edsgard/trendsceek>`__.
+# - HMRF - `paper <https://www.nature.com/articles/nbt.4260>`__,
+#   `code <https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/>`__.
+#
+# Here, we provide a simple approach based on the well-known
 # `Moran's I statistics <https://en.wikipedia.org/wiki/Moran%27s_I>`_
 # which is in fact used
 # also as a baseline method in the spatially variable gene papers listed above.
@@ -369,7 +370,7 @@ sq.gr.moran(
 
 
 ###############################################################################
-# The results are saved in `adata.uns["moranI"]` slot.
+# The results are saved in `adata.uns['moranI']` slot.
 # Genes have already been sorted by Moran'I statistic.
 # We can select few genes and visualize their expression levels in the tissue
 

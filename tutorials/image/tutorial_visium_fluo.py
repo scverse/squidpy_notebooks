@@ -4,12 +4,13 @@ Visium Fluorescence dataset
 ===========================
 This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset
 with a focus on extracting image features.
+
 For a tutorial usign Visium data that includes the graph analysis functions, have a look at
 :func:`sphx_glr_auto_tutorials_visium_hne.py`.
 The dataset used here consists of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
-Here, we provide a pre-processed dataset, with pre-annoated clusters, in AnnData format and the
+Here, we provide a pre-processed dataset, with pre-annotated clusters, in :class:`anndata.AnnData` format and the
 tissue image in :class:`squidpy.im.ImageContainer` format.
 
 A couple of notes on pre-processing:
@@ -21,11 +22,10 @@ A couple of notes on pre-processing:
   the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
   from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
 
-Import packages and load data
------------------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
-
+Import packages & data
+----------------------
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <../../../../../environment.yml>`_.
 """
 
 import scanpy as sc
@@ -65,7 +65,7 @@ for i, ax in enumerate(axes):
 ###############################################################################
 # Visium datasets contain high-resolution images of the tissue that was used for the gene extraction.
 # Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
-# for each visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analysed together
+# for each Visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analysed together
 # with the ``obs x gene`` gene expression matrix.
 #
 # By extracting image features we are aiming to get both similar and complementary information to the
@@ -87,7 +87,6 @@ for i, ax in enumerate(axes):
 #
 # Image Segmentation
 # ------------------
-#
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment_img`.
 # For this we use the DAPI channel if the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
@@ -109,7 +108,6 @@ for ax in axes:
 #
 # Segmentation Features
 # ---------------------
-#
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
 # intensities beneath the segmentation mask.
@@ -159,7 +157,6 @@ sc.pl.spatial(
 #
 # Extract and cluster features
 # ----------------------------
-#
 # Now we will calculate summary, histogram, and texture features.
 # These features provide a useful compressed summary of the tissue image.
 # For more information on these features, refer to

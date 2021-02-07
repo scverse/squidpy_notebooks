@@ -1,15 +1,15 @@
+#!/usr/bin/env python
 """
-Advanced Cell-segmentation for H&E stains
+Advanced cell-segmentation for H&E stains
 -----------------------------------------
-
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
-For a general example of how to use :func:`squidpy.im.segment_img`
+
+For a general example of how to use :func:`squidpy.im.segment_img`,
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-Here, we attempt to segment a noisy H&E stain.
-Note that we only provide very basic segmentation models.
+Here, we attempt to segment a noisy H&E stain. Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
-and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
+and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
 """
 
 import squidpy as sq
@@ -50,10 +50,10 @@ _ = sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes
 
 
 ###############################################################################
-# We use :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
+# We use :func:`squidpy.im.segment_img` with ``mode = 'watershed'`` to do the segmentation.
 # Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
 # we need to indicate the model that it should treat lower-intensity values as foreground.
-# We do this by specifying the ``geq=False`` in the ``kwargs``.
+# We do this by specifying the ``geq = False`` in the ``kwargs``.
 sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
 
 ###############################################################################

@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 """
 Imaging Mass Cytometry
-=======
+======================
 This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.
 The data used here comes from a recent paper from
 `Jackson et al. <https://www.nature.com/articles/s41586-019-1876-x>`_.
-We provide a pre-processed subset of the data, in AnnData format,
-that can be downloaded `here <>`_.
+We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format,
+that can be downloaded `here <TODO>`_.
 For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <../../../../../environment.yml>`_.
 """
 
 import scanpy as sc

@@ -1,24 +1,26 @@
+#!/usr/bin/env python
 """
 Cell-segmentation
-------------------
+-----------------
+This example shows how to use the high resolution tissue images to segment nuclei.
 
-We can use the high resolution tissue images to segment nuclei.
 This information can be used to compute additional image features like cell count and cell size per spot
 (see :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`).
 This example shows how to use :func:`squidpy.im.segment_img` and explains the parameters you can use.
 
 We provide two segmentation models :class:`squidpy.im.SegmentationModelBlob`
 and :class:`squidpy.im.SegmentationModelWatershed`.
-In addition, you can use your own pre-trained :mod:`tensorflow.keras` model to perform the segmentation
-utilising :class:`squidpy.im.SegmentationModelTensorflow`.
+In addition, you can use your own pre-trained :mod:`tensorflow` model to perform the segmentation
+utilizing :class:`squidpy.im.SegmentationModelTensorflow`.
 
-Note that when using the provided segmentation models ``"blob"`` and ``"watershed"``, the quality of the
+Note that when using the provided segmentation models `'blob'` and `'watershed'`, the quality of the
 cell-segmentation depends on the quality of your tissue images.
 In this example we use the DAPI stain of a fluorescence dataset that clearly shows the nuclei to do the segmentation.
 For harder cases, you may want to provide your own pre-trained segmentation model.
 
-See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
-calculate a cell-segmentation of an H&E stain.
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
+    calculate a cell-segmentation of an H&E stain.
 """
 
 import squidpy as sq
@@ -59,13 +61,13 @@ _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 #
 # We segment the image using the chosen threshold with :func:`squidpy.im.segment_img`.
 # The argument ``image_id`` sets the image layer of img that should be segmented.
-# Since we are segmenting the first channel, we will set ``channel_idx=0``.
+# Since we are segmenting the first channel, we will set ``channel_idx = 0``.
 # With the argument ``model_group`` we specify the model that we'd like to use for the segmentation.
-# In our case this is ``"watershed"``.
+# In our case this is ``'watershed'``.
 # With ``kwargs`` we can provide keyword arguments to the segmentation model.
-# For watershed, we need to set the threshold, ``thresh=50000``, as determined above.
+# For watershed, we need to set the threshold, ``thresh = 50000``, as determined above.
 # In addition, we can specify if the values greater or equal than the threshold should be in the mask (default)
-# or if the values smaller to the threshold should be in the mask (``geq=False``).
+# or if the values smaller to the threshold should be in the mask (``geq = False``).
 sq.im.segment_img(img=crop, img_id="image", model_group="watershed", channel_idx=0, thresh=50000)
 
 ###############################################################################
