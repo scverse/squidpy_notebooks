@@ -1,15 +1,20 @@
 Examples
 ========
 
+Graph
+-----
+In the main repo, add something nice here.
+
 .. nbgallery::
-    :caption: Graph
     :glob:
 
     auto_examples/graph/compute_*
 
+Image
+-----
+In the main repo, add something nice here.
 
 .. nbgallery::
-    :caption: Image
     :glob:
 
     auto_examples/image/compute_*
