@@ -4,7 +4,7 @@ import runpy
 import pytest
 
 ROOT = Path(__file__).parent.parent
-TUTORIALS = tuple(map(str, ((ROOT / "tutorials").resolve().glob("*/*.py"))))
+TUTORIALS = tuple(map(str, ((ROOT / "tutorials").resolve().glob("*.py"))))
 EXAMPLES = tuple(map(str, ((ROOT / "examples").resolve().glob("*/*.py"))))
 
 
