@@ -17,7 +17,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a H&E visisum dataset.
+# Lets load a H&E Visium dataset.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_hne_image_crop()

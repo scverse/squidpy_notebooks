@@ -60,7 +60,7 @@ _ = sns.histplot(np.asarray(crop["image"][:, :, 0]).flatten(), bins=50, ax=ax)
 # So, let us choose 50000 as a threshold for the segmentation method.
 #
 # We segment the image using the chosen threshold with :func:`squidpy.im.segment_img`.
-# The argument ``image_id`` sets the image layer of img that should be segmented.
+# The argument ``image_id`` sets the image layer of image that should be segmented.
 # Since we are segmenting the first channel, we will set ``channel_idx = 0``.
 # With the argument ``model_group`` we specify the model that we'd like to use for the segmentation.
 # In our case this is ``'watershed'``.
@@ -72,7 +72,7 @@ sq.im.segment_img(img=crop, img_id="image", model_group="watershed", channel_idx
 
 ###############################################################################
 # The segmented crop is saved in the layer ``segmented_watershed``.
-# This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+# This behavior can be changed with the arguments ``copy`` and ``key_added``.
 # The result of the segmentation is a label image that can be used to extract features like the
 # number of cells from the image.
 print(crop)

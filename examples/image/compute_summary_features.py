@@ -24,7 +24,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# First, we load a fluorescence visisum dataset.
+# First, we load a fluorescence Visium dataset.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()
@@ -32,7 +32,7 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 
 ###############################################################################
-# Then, we calculate the 0.9th quantile and mean for the visium spots of the fluorescence channels 0 (DAPI)
+# Then, we calculate the 0.9th quantile and mean for the Visium spots of the fluorescence channels 0 (DAPI)
 # and 1 (GFAP).
 # In order to only get statistics of the tissue underneath the spots, we use the argument ``mask_circle = True``.
 # When not setting this flag, statistics are calculated using a square crop centered on the spot.
@@ -59,7 +59,7 @@ adata.obsm["summary_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
 # Note, how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 # and 1 (GFAP stain).
 

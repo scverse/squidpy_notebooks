@@ -23,7 +23,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+# Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()

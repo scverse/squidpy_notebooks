@@ -6,7 +6,7 @@ This example shows how to use :func:`squidpy.im.calculate_image_features` to ext
 from the tissue image.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
-calculating a grey-level co-occurence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
+calculating a grey-level co-occurrence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
 The GLCM includes the number of times that grey-level :math:`j` occurs at a distance :math:`d` and
 at an angle :math:`\\theta` from grey-level :math:`i`. From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
@@ -27,7 +27,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
+# Lets load a fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
 # Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype = 'uint8'``) before calculating the
 # texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
 # Note that for texture features it may make sense to compute them over a larger crop size to include more context,
@@ -49,7 +49,7 @@ adata.obsm["texture_features_2"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
 # Here, we show the contrast feature for channels 0 and 1.
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 

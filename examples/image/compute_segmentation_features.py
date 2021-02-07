@@ -4,11 +4,11 @@ Segmentation features
 ---------------------
 This examples show how to extract segmentation features from the tissue image.
 
-Segmentation features are computed using a label image where each object (nucleous) in the image has a different number.
+Segmentation features are computed using a label image where each object (nucleus) in the image has a different number.
 See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for how to calculate such a label image.
 
-Features extracted from a nucleous segmentation range from the number of nuclei per image,
-over numclei shapes and sizes, to the intensity of the input channels within the segmented objects.
+Features extracted from a nucleus segmentation range from the number of nuclei per image,
+over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
 Use ``features='segmentation'`` to calculate the features.
 
@@ -31,7 +31,7 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Lets load a fluorescence visium dataset.
+# Lets load a fluorescence Visium dataset.
 
 img = sq.datasets.visium_fluo_image_crop()
 adata = sq.datasets.visium_fluo_adata_crop()

@@ -7,7 +7,7 @@ This example shows how to use :func:`squidpy.im.process_img` to smooth an image 
 
 We use the argument ``processing = 'smooth'`` to smooth the image. This calls :func:`skimage.filters.gaussian`
 in the background. Keyword arguments ``kwargs`` are passed to the wrapped function.
-This allows us to set the width of the gaussian kernel :math:`sigma`, used for smoothing.
+This allows us to set the width of the Gaussian kernel :math:`sigma`, used for smoothing.
 
 .. seealso::
 

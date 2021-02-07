@@ -7,7 +7,7 @@ The dataset used here consist of a Visium slide of a coronal section of the mous
 
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
-Here, we provide a pre-processed dataset, with pre-annoated clusters, in AnnData format and the
+Here, we provide a pre-processed dataset, with pre-annotated clusters, in AnnData format and the
 tissue image in :class:`squidpy.im.ImageContainer` format.
 
 A couple of notes on pre-processing:
@@ -22,7 +22,7 @@ A couple of notes on pre-processing:
 Import packages & data
 ----------------------
 To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
-`environment.yml <../../../../../environment.yml>`_.
+`environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 """
 
 import scanpy as sc
@@ -55,7 +55,7 @@ sc.pl.spatial(adata, color="cluster")
 #
 # Visium datasets contain high-resolution images of the tissue that was used for the gene extraction.
 # Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
-# for each visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analysed together
+# for each Visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analyzed together
 # with the ``obs x gene`` gene expression matrix.
 #
 # By extracting image features we are aiming to get both similar and complementary information to the
@@ -63,12 +63,12 @@ sc.pl.spatial(adata, color="cluster")
 # Similar information is for example present in the case of a tissue with two different cell types
 # whose morphology is different.
 # Such cell type information is then contained in both the gene expression values and the tissue image features.
-# Complementary or additional information is present in the fact that we can use a nucleous segmentation
-# to count cells and add features summarising the immediate spatial neighborhood of a spot.
+# Complementary or additional information is present in the fact that we can use a nucleus segmentation
+# to count cells and add features summarizing the immediate spatial neighborhood of a spot.
 #
 # Squidpy contains several feature extractors and a flexible pipeline of calculating features
 # of different scales and sizes.
-# There are several detailled examples of how to use :func:`squidpy.im.calculate_image_features`.
+# There are several detailed examples of how to use :func:`squidpy.im.calculate_image_features`.
 # :ref:`sphx_glr_auto_examples_image_compute_features.py` provides a good starting point for learning more.
 #
 # Here, we will extract `summary` features at different crop sizes and scales to allow
@@ -108,7 +108,7 @@ for ax in axes:
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
 # intensities beneath the segmentation mask.
-# In particular, we can count the segmented objects within each visium spot to get an
+# In particular, we can count the segmented objects within each Visium spot to get an
 # approximation of the number of cells.
 # For more details on how the segmentation features, you can have a look at
 # :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
@@ -133,10 +133,10 @@ sc.pl.spatial(sq.pl.extract(adata, "features_segmentation"), color=["segmentatio
 # all features in a given `adata.obsm[<key>]` and temporarily save them to `adata.obs`.
 # Such method is particularly useful for plotting purpose, as showed above.
 #
-# The number of cells per visium spot provides an interesting view of the data that can enhance
-# the characterisation of gene-space clusters.
-# We can see that the area surroundting the cell-rich pyramidial layer of the Hippocampus
-# (clusters "Pyramidial Layer" and "Pyramidial layer Dentate Gyrus" in the gene-space clustering),
+# The number of cells per Visium spot provides an interesting view of the data that can enhance
+# the characterization of gene-space clusters.
+# We can see that the area surrounding the cell-rich pyramidal layer of the Hippocampus
+# (clusters "Pyramidal Layer" and "Pyramidal layer Dentate Gyrus" in the gene-space clustering),
 # has a very low cell-density (cluster "Hippocampus" in the gene-space clustering).
 # In addition, the region of the cluster called "Cortex_1" also seems to have low cell counts.
 
@@ -236,7 +236,7 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # In short, it's an enrichment score on spatial proximity of clusters:
 # if spots belonging to two different clusters are often close to each other,
 # then they will have a high score and can be defined as being *enriched*.
-# On the other hand, if they are far apart, and therefore are seldomly a neighborhood,
+# On the other hand, if they are far apart, and therefore are seldom a neighborhood,
 # the score will be low and they can be defined as *depleted*. This score is
 # based on a permutation-based test, and you can set
 # the number of permutations with the `n_perms` argument (default is 1000).
@@ -310,7 +310,7 @@ sq.pl.co_occurrence(
 # `Omnipath <https://omnipathdb.org/>`_ .
 # You can run the analysis for all clusters pairs, and all genes (in seconds,
 # without leaving this notebook), with :func:`squidpy.gr.ligrec`.
-# Furthermore, we'll directly visualize the results, filering out lowly-expressed genes
+# Furthermore, we'll directly visualize the results, filtering out lowly-expressed genes
 # (with the `means_range` argument) and increasing the threshold for
 # the adjusted p-value (with the `alpha` argument).
 # We'll also subset the visualization for only one source group,
@@ -343,24 +343,24 @@ sq.pl.ligrec(
 # Spatially Variable genes with Moran's I
 # +++++++++++++++++++++++++++++++++++++++
 # Finally, we might be interested in finding genes that show spatial patterns.
-# There are several methods that aimed at address this expliclty,
-# based on point processes or gaussian process regression framework:
+# There are several methods that aimed at address this explicitly,
+# based on point processes or Gaussian process regression framework:
 #
-# - SPARK - `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`__,
+# - *SPARK* - `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`__,
 #   `code <https://github.com/xzhoulab/SPARK>`__.
-# - Spatial DE  - `paper <https://www.nature.com/articles/nmeth.4636>`__,
+# - *Spatial DE*  - `paper <https://www.nature.com/articles/nmeth.4636>`__,
 #   `code <https://github.com/Teichlab/SpatialDE>`__.
-# - trendsceek - `paper <https://www.nature.com/articles/nmeth.4634>`__,
+# - *trendsceek* - `paper <https://www.nature.com/articles/nmeth.4634>`__,
 #   `code <https://github.com/edsgard/trendsceek>`__.
-# - HMRF - `paper <https://www.nature.com/articles/nbt.4260>`__,
-#   `code <https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/>`__.
+# - *HMRF* - `paper <https://www.nature.com/articles/nbt.4260>`__,
+#   `code <https://bitbucket.org/qzhudfci/smfishhmrf-py>`__.
 #
 # Here, we provide a simple approach based on the well-known
 # `Moran's I statistics <https://en.wikipedia.org/wiki/Moran%27s_I>`_
 # which is in fact used
 # also as a baseline method in the spatially variable gene papers listed above.
 # The function in Squidpy is called :func:`squidpy.gr.moran`, and
-# returns both test statistics and adjusted pvalues in `adata.var` slot.
+# returns both test statistics and adjusted p-values in :attr:`anndata.AnnData.var` slot.
 
 sq.gr.moran(
     adata,
@@ -371,7 +371,7 @@ sq.gr.moran(
 
 ###############################################################################
 # The results are saved in `adata.uns['moranI']` slot.
-# Genes have already been sorted by Moran'I statistic.
+# Genes have already been sorted by Moran's I statistic.
 # We can select few genes and visualize their expression levels in the tissue
 
 adata.uns["moranI"].head(10)

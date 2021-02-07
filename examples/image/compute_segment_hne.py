@@ -24,7 +24,7 @@ img = sq.datasets.visium_hne_image_crop()
 crop = img.crop_corner(0, 0, 1000, 1000)
 
 ###############################################################################
-# Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process_img`.
+# Before segmenting the image, we do some pre-processing using :func:`squidpy.im.process_img`.
 
 # convert to grayscale
 sq.im.process_img(crop, img_id="image", processing="gray")
@@ -58,7 +58,7 @@ sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed",
 
 ###############################################################################
 # The segmented crop is saved in the layer `segmented_watershed`.
-# This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+# This behavior can be changed with the arguments ``copy`` and ``key_added``.
 # The result of the segmentation is a label image that can be used to extract features
 # like the number of cells from the image.
 print(crop)

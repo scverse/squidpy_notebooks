@@ -30,7 +30,7 @@ img = sq.datasets.visium_hne_image_crop()
 # With the argument ``img_id`` we can select the image layer that should be processed.
 # When converting to grayscale, the channel dimensions change from 3 to 1.
 # By default, the name of the resulting channel dimension will be ``'{{original_channel_name}}_gray'``.
-# Use the argument ``channel_id`` to set a new channel name explicitely.
+# Use the argument ``channel_id`` to set a new channel name explicitly.
 # By default, the resulting image is saved in the layer ``image_gray``.
 # This behavior can be changed with the arguments ``copy`` and ``key_added``.
 
