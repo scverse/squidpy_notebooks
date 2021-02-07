@@ -14,4 +14,4 @@ This documentation is for testing purposes only. It will not correctly display t
 .. toctree::
    :caption: References
 
-   references.rst
+    references.rst
