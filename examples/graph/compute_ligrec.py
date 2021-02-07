@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 """
 Receptor-ligand analysis
 ------------------------
 This example shows how to run the receptor-ligand analysis.
 
-It uses an efficient re-implementation of the [CellPhoneDB20]_ algorithm which can handle large
-number of interacting pairs (100k+) and cluster combinations (100+).
+It uses an efficient re-implementation of the :cite:`cellphonedb` algorithm which can handle large number of interacting
+pairs (100k+) and cluster combinations (100+).
 """
 import squidpy as sq
 
@@ -16,7 +17,7 @@ adata
 # useful parameters of :func:`squidpy.gr.ligrec`:
 #
 # - ``n_perms`` - number of permutations for the permutation test.
-# - ``interactions`` - list of interaction, by default we fetch all available interactions from [OmniPath16]_.
+# - ``interactions`` - list of interaction, by default we fetch all available interactions from :cite:`omnipath`.
 # - ``{interactions,transmitter,receiver}_params`` - parameters used if downloading the ``interactions``,
 #   see :func:`omnipah.interactions.import_intercell_network` for more information.
 # - ``threshold`` - percentage of cells required to be expressed in a given cluster.
@@ -25,7 +26,7 @@ adata
 # Since we're interested in receptors and ligands in this example, we specify these categories in ``receiver_params``
 # and ``transmitter_params``, respectively.
 # If desired, we can also restrict the resources to just a select few. For example, in order to only use
-# [CellPhoneDB20]_, set ``interactions_params={'resources': 'CellPhoneDB'}``.
+# :cite:`cellphonedb`, set ``interactions_params={'resources': 'CellPhoneDB'}``.
 #
 res = sq.gr.ligrec(
     adata,

@@ -12,6 +12,6 @@ This documentation is for testing purposes only. It will not correctly display t
     examples
 
 .. toctree::
-   :caption: References
+    :caption: References
 
-   references.rst
+    references.rst

@@ -1,27 +1,28 @@
+#!/usr/bin/env python
 """
 Segmentation features
 ---------------------
+This examples show how to extract segmentation features from the tissue image.
 
-Here, we use :func:`squidpy.im.calculate_image_features` to extract segmentation features from the tissue image.
-Please have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
-:func:`squidpy.im.calculate_image_features`.
+Segmentation features are computed using a label image where each object (nucleus) in the image has a different number.
+See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for how to calculate such a label image.
 
-Segmentation features are computed using a label image where each object (nucleous)
-in the image has a different number.
-See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for how to calculate such a label image
-
-Features extracted from a nucleous segmentation range from the number of nuclei per image,
-over numclei shapes and sizes, to the intensity of the input channels within the segmented objects.
+Features extracted from a nucleus segmentation range from the number of nuclei per image,
+over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
 Use ``features='segmentation'`` to calculate the features.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``label_img_id``: name of label image layer in ``img``
-- ``props``: Segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
-- ``mean``: Return the mean of feature values per obs
-- ``std``: Return the std of feature values per obs
+- ``label_img_id`` - name of label image layer in ``img``.
+- ``props`` - segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
+- ``mean`` - return the mean of feature values per obs.
+- ``std`` - return the std of feature values per obs.
 
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    :func:`squidpy.im.calculate_image_features`.
 """
 
 import scanpy as sc
@@ -30,7 +31,7 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Lets load a fluorescence visium dataset
+# Lets load a fluorescence Visium dataset.
 
 img = sq.datasets.visium_fluo_image_crop()
 adata = sq.datasets.visium_fluo_adata_crop()
@@ -44,14 +45,14 @@ sq.im.segment_img(
 )
 
 ###############################################################################
-# Now we can calculate segmentation features.
-# Here, we will calculate the following features:
-# - number of nuclei (``label``)
-# - mean area of nuclei (``area``)
-# - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei (``mean_intensity``)
+# Now we can calculate segmentation features. Here, we will calculate the following features:
 #
-# We use ``mask_cicle=True`` to ensure that we are only extracting features from the tissue underneath each visium spot.
-# For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+# - number of nuclei (``label``).
+# - mean area of nuclei (``area``).
+# - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei (``mean_intensity``).
+#
+# We use ``mask_cicle = True`` to ensure that we are only extracting features from the tissue underneath
+# each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
 sq.im.calculate_image_features(
     adata,
@@ -69,13 +70,13 @@ sq.im.calculate_image_features(
 )
 
 ###############################################################################
-# The result is stored in ``adata.obsm['segmentation_features']``
+# The result is stored in ``adata.obsm['segmentation_features']``.
 
 adata.obsm["segmentation_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
 # Here, we show all calculated segmentation features.
 
 # show all channels
