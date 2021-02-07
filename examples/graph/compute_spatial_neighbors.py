@@ -3,17 +3,20 @@ Building spatial neighbors graph
 ------------------------
 This example shows how to compute a spatial neighbors graph.
 
-Spatial graph is a graph of spatial neighbors with spots as nodes
-and neighbor-hood relations between spots as edges.
-We use spatial coordinates of spots to identify neighborsamong them.
-Different approach of defining a neighborhood relation among spots are used
+Spatial graph is a graph of spatial neighbors with observations as nodes
+and neighbor-hood relations between observations as edges.
+We use spatial coordinates of spots/cells to identify neighbors among them.
+Different approach of defining a neighborhood relation among observations are used
 for different types of spatial datasets.
 """
 
+import scanpy as sc
 import squidpy as sq
 
+import numpy as np
+
 ###############################################################################
-# First, we show how to compute the spatial neighbors garph for a visium dataset.
+# First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
 adata = sq.datasets.visium_fluo_adata()
 adata
@@ -24,7 +27,7 @@ adata
 # We set this parameter here explicitly for clarity.
 # ``n_rings`` should be used only for visium datasets.
 # It specifies for each spot how many hexagonal rings of spots around
-# it will be considered neighbors.
+# will be considered neighbors.
 
 sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="visium")
 
@@ -43,9 +46,22 @@ adata.obsp["spatial_connectivities"]
 adata.obsp["spatial_distances"]
 
 ###############################################################################
-# Next, we show how to compute the spatial neighbors garph for a non-visium dataset.
+# We can visualize the neighbors of a point to better visualize what `n_rings` mean:
 
-adata = sq.datasets.visium_fluo_adata()
+_, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
+idx = np.append(idx, 420)
+sc.pl.spatial(
+    adata[idx, :],
+    neighbors_key="spatial_neighbors",
+    edges=True,
+    edges_width=1,
+    img_key=None,
+)
+
+###############################################################################
+# Next, we show how to compute the spatial neighbors graph for a non-visium dataset.
+
+adata = sq.datasets.imc()
 adata
 
 ###############################################################################
@@ -54,9 +70,17 @@ adata
 # ``n_neigh`` specifies a fixed number of the closest spots for each spot as neighbors.
 
 sq.gr.spatial_neighbors(adata, n_neigh=10, coord_type="generic")
-
-adata.obsp["spatial_connectivities"]
-adata.obsp["spatial_distances"]
+_, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
+idx = np.append(idx, 420)
+sc.pl.spatial(
+    adata[idx, :],
+    color="cell type",
+    neighbors_key="spatial_neighbors",
+    spot_size=1,
+    edges=True,
+    edges_width=1,
+    img_key=None,
+)
 
 ###############################################################################
 # In order to get all spots within a specified radius (in units of the spatial coordinates)
