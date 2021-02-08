@@ -1,16 +1,9 @@
 Tutorials
 =========
+In the main repository, add something nice here.
 
 .. nbgallery::
-    :caption: Graph
     :glob:
 
-    auto_tutorials/graph/tutorial_*
-    external_tutorials/graph/tutorial_*
-
-.. nbgallery::
-    :caption: Image
-    :glob:
-
-    auto_tutorials/image/tutorial_*
-    external_tutorials/image/tutorial_*
+    auto_tutorials/tutorial_*
+    external_tutorials/tutorial_*

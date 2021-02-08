@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 """
 Imaging Mass Cytometry
-=======
+======================
 This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.
 The data used here comes from a recent paper from
 `Jackson et al. <https://www.nature.com/articles/s41586-019-1876-x>`_.
-We provide a pre-processed subset of the data, in AnnData format,
-that can be downloaded `here <>`_.
+We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format,
+that can be downloaded `here <TODO>`_.
 For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 """
 
 import scanpy as sc
@@ -42,7 +42,7 @@ sc.pl.spatial(adata, color="cell type", spot_size=10)
 # Co-occurrence across spatial dimensions
 # +++++++++++++++++++++++++++++++++++++++
 #
-# In addition to the neighbor enrichemnt score, we can visualize cluster
+# In addition to the neighbor enrichment score, we can visualize cluster
 # co-occurrence in spatial dimensions. This is a similar analysis of the
 # one presented above, yet it does not operates on the connectivity matrix,
 # yet on the original spatial coordinates. The co-occurrence score is defined as:
@@ -72,11 +72,11 @@ sq.pl.co_occurrence(
 )
 
 ###############################################################################
-# We can observer that "T cells" seems to co-occurr
-# with "endothelial" and "vimentin hi stromal cells",
-# whereas "basal CK tumor cell" seem to largerly cluster
+# We can observer that *T cells* seems to co-occur
+# with *endothelial* and *vimentin hi stromal cells*,
+# whereas *basal CK tumor cell* seem to largely cluster
 # together, except for the presence of a type of stromal
-# cells ("small elongated stromal cell") at close distance.
+# cells (*small elongated stromal cell*) at close distance.
 
 ###############################################################################
 # Neighborhood enrichment

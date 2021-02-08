@@ -1,9 +1,11 @@
+#!/usr/bin/env python
 """
 Neighbors enrichment analysis
-------------------------
-This example shows how to run the neighbors enrichment analysis routine in squidpy.
+-----------------------------
+This example shows how to run the neighbors enrichment analysis routine.
+
 It calculates an enrichment score based on proximity on the connectivity graph of cell clusters.
-The number of observed events is compared against n permutations and a z-score is computed.
+The number of observed events is compared against :math:`N` permutations and a *z-score* is computed.
 """
 
 import squidpy as sq
@@ -12,9 +14,8 @@ adata = sq.datasets.visium_fluo_adata()
 adata
 
 ###############################################################################
-# This dataset contains cell type annotations in adata.obs
-# which are used for calculation of the neigborhood enrichment.
-# First, we need to compute a connectivity matrix from spatial coordinates.
+# This dataset contains cell type annotations in :attr:`anndata.Anndata.obs` which are used for calculation of the
+# neighborhood enrichment. First, we need to compute a connectivity matrix from spatial coordinates.
 
 sq.gr.spatial_neighbors(adata)
 

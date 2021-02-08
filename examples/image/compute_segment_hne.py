@@ -1,15 +1,16 @@
+#!/usr/bin/env python
 """
-Advanced Cell-segmentation for H&E stains
+Advanced cell-segmentation for H&E stains
 -----------------------------------------
-
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
+
 For a general example of how to use :func:`squidpy.im.segment`
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-Here, we attempt to segment a noisy H&E stain.
-Note that we only provide very basic segmentation models.
+Here, we attempt to segment a noisy H&E stain. Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
-and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
+and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
+
 """
 
 import squidpy as sq
@@ -25,6 +26,7 @@ crop = img.crop_corner(0, 0, size=1000)
 
 ###############################################################################
 # Before segmenting the image, we smooth it using :func:`squidpy.im.process`.
+
 
 # smooth image
 sq.im.process(crop, layer="image", method="smooth", sigma=4)
@@ -63,6 +65,7 @@ sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=0.36, g
 # This behaviour can be changed with the arguments ``copy`` and ``layer_added``.
 # The result of the segmentation is a label image that can be used to extract features
 # like the number of cells from the image.
+
 print(crop)
 print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 

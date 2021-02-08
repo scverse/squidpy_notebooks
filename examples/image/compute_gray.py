@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 """
-Converting to Grayscale
------------------------
+Convert to grayscale
+--------------------
 
 This example shows how to use :func:`squidpy.im.process` to convert an image layer
 of :class:`squidpy.im.ImageContainer` to grayscale.
@@ -8,8 +9,10 @@ of :class:`squidpy.im.ImageContainer` to grayscale.
 We use the argument ``method="gray"`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 
-See also :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
-and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+.. seealso::
+
+    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 """
 
 import squidpy as sq

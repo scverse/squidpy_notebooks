@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """
 seqFISH
 =======
@@ -11,8 +10,8 @@ For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment with `conda create -f environment.yml`.
-The file `environment.yml` can be found `here <>`_ .
+To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+`environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 """
 
 import scanpy as sc
@@ -33,7 +32,7 @@ sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 
 ###############################################################################
 # Neighborhood enrichment analysis
-# ++++++++++++++++++++++++++++++++
+# --------------------------------
 # Similar to other spatial data, we can investigate spatial organization of clusters
 # in a quantitative way, by computing a neighborhood enrichment score.
 # You can compute such score with the following function: :func:`squidpy.gr.nhood_enrichment`.
@@ -60,15 +59,16 @@ sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="war
 # A similar analysis was performed in the
 # `original publication <https://www.biorxiv.org/content/10.1101/2020.11.20.391896v1>`_ ,
 # and we can appreciate to what extent results overlap.
-# For instance, there seems to be an enrichment between the "Lateral plate mesoderm",
-# the "Intermediate mesoderm" and a milder enrichment for "Allantois" cells.
-# As in the original publication, there also seems to be an association between the "Endothelium" and
-# the "Haemathoendothelial progenitors".
+# For instance, there seems to be an enrichment between the *Lateral plate mesoderm*,
+# the *Intermediate mesoderm* and a milder enrichment for *Allantois* cells.
+# As in the original publication, there also seems to be an association between the *Endothelium* and
+# the *Haematoendothelial progenitors*.
 # Of course, results do not perfectly overlap, and this could be due to several factors:
+#
 # - the construction of the neighbors graph (which in our case is
-# not informed by the radius, as we did not have access to this information) and by
+#   not informed by the radius, as we did not have access to this information) and by
 # - the number of permutation of the neighborhood enrichment
-# (500 in the original publication against the default 1000 in our implementation).
+#   (500 in the original publication against the default 1000 in our implementation).
 #
 # We can also visualize the spatial organization of cells again,
 # and appreciate the proximity of specific cell clusters.
@@ -91,7 +91,7 @@ sc.pl.spatial(
 
 ###############################################################################
 # Co-occurrence across spatial dimensions
-# +++++++++++++++++++++++++++++++++++++++
+# ---------------------------------------
 # In addition to the neighbor enrichment score, we can visualize cluster co-occurrence
 # in spatial dimensions.
 # This is a similar analysis of the one presented above,
@@ -121,10 +121,10 @@ sq.pl.co_occurrence(
 
 ###############################################################################
 # It seems to recapitulate a previous observation, that there is a co-occurrence between the
-# conditional cell type annotation "Lateral plate mesoderm" and the clusters
-# æIntermediate mesoderm" and "Allantois".
+# conditional cell type annotation *Lateral plate mesoderm* and the clusters
+# *Intermediate mesoderm* and *Allantois*.
 # It also seems that at longer distances, there seems to be a co-occurrence of cells belonging to
-# the "Presomitic mesoderm* cluster". By visualizing the full tissue as before we can indeed
+# the *Presomitic mesoderm* cluster. By visualizing the full tissue as before we can indeed
 # appreciate that these cell types seems to form a defined clusters relatively close
 # to the "Lateral plate mesoderm" cells.
 # It should be noted that the distance units corresponds to
@@ -132,7 +132,7 @@ sq.pl.co_occurrence(
 
 ###############################################################################
 # Ligand-receptor interaction analysis
-# ++++++++++++++++++++++++++++++++++++
+# ------------------------------------
 # The analysis showed above has provided us with quantitative information on
 # cellular organization and communication at the tissue level.
 # We might be interested in getting a list of potential candidates that might be driving
@@ -141,7 +141,7 @@ sq.pl.co_occurrence(
 # In Squidpy, we provide a fast re-implementation the popular method
 # CellPhoneDB (`paper <https://www.nature.com/articles/s41596-020-0292-x>`_
 # `code <https://github.com/Teichlab/cellphonedb>`_ )
-# and extended its databased of annotated ligand-receptor interaction pairs with
+# and extended its database of annotated ligand-receptor interaction pairs with
 # the popular database
 # `Omnipath <https://omnipathdb.org/>`_ .
 # You can run the analysis for all clusters pairs,

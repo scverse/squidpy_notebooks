@@ -1,25 +1,27 @@
-"""
+#!/usr/bin/env python
+r"""
 Texture features
 ----------------
-
-Here, we use :func:`squidpy.im.calculate_image_features` to extract texture features from the tissue image.
-Please have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
-:func:`squidpy.im.calculate_image_features`.
+This example shows how to use :func:`squidpy.im.calculate_image_features` to extract texture features
+from the tissue image.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
-calculating a grey-level co-occurence matrix (GLCM).
+calculating a grey-level co-occurence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
 The GLCM includes the number of times that grey-level `j` occurs at a distance `d`
-and at an angle `theta` from grey-level `i`.
+and at an angle :math:`\\theta` from grey-level :math:`i`.
 From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
-Use ``features='texture'`` to calculate the features.
 
-In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
+In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
 - ``distances``: Distances that are taken into account for finding repeating patterns
 - ``angles``: Range on which values are binned. Default is the whole image range
 - ``props``: Texture features that are extracted from the GLCM
 
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    :func:`squidpy.im.calculate_image_features`.
 """
 
 import scanpy as sc
@@ -53,7 +55,7 @@ adata.obsm["texture_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
 # Here, we show the contrast feature for channels 0 and 1.
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 

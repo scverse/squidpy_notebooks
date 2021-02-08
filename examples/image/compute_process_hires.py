@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Processing a high-resolution Image
 ----------------------------------
@@ -16,9 +17,11 @@ Note that depending on the processing function used, there might be border effec
 of the crops. In a future version, we will support the extraction of overlapping crops,
 which can mitigate these effects.
 
-For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_smooth.py`,
-:ref:`sphx_glr_auto_examples_image_compute_gray.py`, and
-:ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
+.. seealso::
+
+    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 """
 
 import squidpy as sq

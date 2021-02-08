@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 """
 Cell-segmentation
-------------------
+-----------------
+This example shows how to use the high resolution tissue images to segment nuclei.
 
-We can use the high resolution tissue images to segment nuclei.
 This information can be used to compute additional image features like cell count and cell size per spot
 (see :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`).
 This example shows how to use :func:`squidpy.im.segment` and explains the parameters you can use.
@@ -12,13 +13,14 @@ and :class:`squidpy.im.SegmentationBlob`.
 In addition, you can use a custom segmentation function, like a pre-trained :mod:`tensorflow.keras` model,
 to perform the segmentation utilising :class:`squidpy.im.SegmentationCustom`.
 
-Note that when using the provided segmentation models ``"blob"`` and ``"watershed"``, the quality of the
+Note that when using the provided segmentation models `'blob'` and `'watershed'`, the quality of the
 cell-segmentation depends on the quality of your tissue images.
 In this example we use the DAPI stain of a fluorescence dataset to compute the segmentation.
 For harder cases, you may want to provide your own pre-trained segmentation model.
 
-See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example of how to
-calculate a cell-segmentation of an H&E stain.
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
+    calculate a cell-segmentation of an H&E stain.
 """
 
 import squidpy as sq
@@ -63,6 +65,7 @@ for i, ax in enumerate(axes):
 # In addition, we can specify if the values greater or equal than
 # the threshold should be in the mask (default)
 # or if the values smaller to the threshold should be in the mask (``geq=False``).
+
 sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=None, geq=True)
 
 ###############################################################################
@@ -70,6 +73,7 @@ sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=Non
 # This behaviour can be changed with the arguments ``copy`` and ``layer_added``.
 # The result of the segmentation is a label image that can be used to extract features like the
 # number of cells from the image.
+
 print(crop)
 print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 
