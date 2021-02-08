@@ -89,11 +89,19 @@ for i, ax in enumerate(axes):
 # Image Segmentation
 # ------------------
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
-# For this we use the DAPI channel if the fluorescence image (``channel_ids=0``).
+# But even before that, it's best practice to process the image with some smoothing function, available
+# in :func::func:`squidpy.im.process`.
+# We will then use the DAPI channel if the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 # for more details on how to calculate a segmented image.
 
-sq.im.segment(img=img, layer="image", method="watershed", channel_ids=0, xs=1000, ys=1000)
+sq.im.process(
+    img=img,
+    layer="image",
+    method="smooth",
+)
+
+sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
 
 # plot the resulting segmentation
 fig, ax = plt.subplots(1, 2)
