@@ -39,7 +39,12 @@ def mean_fn(arr):
 # Now we can extract features using ``mean_fn`` by providing it within `features_kwargs`
 
 sq.im.calculate_image_features(
-    adata, img, features="custom", features_kwargs={"custom": {"func": mean_fn}}, key_added="custom_features"
+    adata,
+    img,
+    features="custom",
+    features_kwargs={"custom": {"func": mean_fn}},
+    key_added="custom_features",
+    show_progress_bar=False,
 )
 
 ###############################################################################

@@ -19,6 +19,8 @@ We provide different feature extractors that are described in more detail in the
   (:ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`)
 - number and size of objects from a binary segmentation layer
   (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
+- custom features by providing any feature extraction function
+  (:ref:`sphx_glr_auto_examples_image_compute_custom_features.py`)
 """
 
 import scanpy as sc
@@ -52,18 +54,17 @@ sc.pl.spatial(adata, add_outline=True)
 # It contains several arguments to modify its behaviour.
 # With these arguments you can
 #
-# - specify the image used for feature calculation using ``img_id``,
+# - specify the image used for feature calculation using ``layer``,
 # - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 # - specify how the crops used for feature calculation look like using ``kwargs``,
 # - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
-# - specify how the data that is returned using ``key_added`` and ``copy``.
+# - specify how the data is returned using ``key_added`` and ``copy``.
 #
 # Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-sq.im.calculate_image_features(adata, img, features="summary", key_added="features")
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", show_progress_bar=False)
 
 # show the calculated features
-print(f"calculated features: {list(adata.obsm['features'].columns)}")
 adata.obsm["features"].head()
 
 ###############################################################################
@@ -101,10 +102,17 @@ sc.pl.spatial(
 adata_sml = adata[0:50].copy()
 
 # calculate default features
-sq.im.calculate_image_features(adata_sml, img, features=["summary", "texture", "histogram"], key_added="features")
+sq.im.calculate_image_features(
+    adata_sml, img, features=["summary", "texture", "histogram"], key_added="features", show_progress_bar=False
+)
 # calculate features with masking
 sq.im.calculate_image_features(
-    adata_sml, img, features=["summary", "texture", "histogram"], key_added="features_masked", mask_circle=True
+    adata_sml,
+    img,
+    features=["summary", "texture", "histogram"],
+    key_added="features_masked",
+    mask_circle=True,
+    show_progress_bar=False,
 )
 # calculate features with scaling and larger context
 sq.im.calculate_image_features(
@@ -115,6 +123,7 @@ sq.im.calculate_image_features(
     mask_circle=True,
     spot_scale=2,
     scale=0.5,
+    show_progress_bar=False,
 )
 
 # plot distribution of median for different cropping options
@@ -136,4 +145,4 @@ _ = sns.displot(
 # Speeding up the feature extraction is easy.
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 # extract features by using 4 jobs
-sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)
