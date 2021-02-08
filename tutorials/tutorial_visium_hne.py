@@ -3,8 +3,8 @@
 Visium H&E dataset
 ==================
 This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset.
-The dataset used here consist of a Visium slide of a coronal section of the mouse brain.
 
+The dataset used here consist of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
 Here, we provide a pre-processed dataset, with pre-annotated clusters, in AnnData format and the
@@ -44,7 +44,7 @@ adata = sq.datasets.visium_hne_adata()
 
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
-# with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
+# with :func:`scanpy.pl.spatial`.
 
 sc.pl.spatial(adata, color="cluster")
 
@@ -82,13 +82,21 @@ sc.pl.spatial(adata, color="cluster")
 # or more details on how to calculate a segmented image.
 
 # convert to grayscale
-sq.im.process_img(img, img_id="image", processing="gray")
-# smooth image
-sq.im.process_img(img, img_id="image_gray", processing="smooth", sigma=4)
-# segment
-sq.im.segment_img(
-    img=img, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False, xs=1000, ys=1000
+sq.im.process(
+    img=img,
+    layer="image",
+    method="smooth",
 )
+
+# smooth image
+sq.im.process(
+    img=img,
+    layer="image_smooth",
+    method="gray",
+)
+
+# segment
+sq.im.segment(img=img, layer="image_smooth_gray", method="watershed", xs=1000, ys=1000)
 
 # plot the resulting segmentation
 img_crop = img.crop_corner(2500, 1800, xs=1000, ys=1000)

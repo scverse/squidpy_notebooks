@@ -187,7 +187,7 @@ params = {
 
 for feature_name, cur_params in params.items():
     # features will be saved in `adata.obsm[feature_name]`
-    sq.im.calculate_image_features(adata, img, layer="image", key_added=feature_name, n_jobs=4, **cur_params)
+    sq.im.calculate_image_features(adata, img, layer="image", key_added=feature_name, n_jobs=1, **cur_params)
 
 # combine features in one dataframe
 adata.obsm["features"] = pd.concat([adata.obsm[f] for f in params.keys()], axis="columns")
