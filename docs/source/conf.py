@@ -7,7 +7,6 @@
 # -- Path setup --------------------------------------------------------------
 import os
 import sys
-from collections import ChainMap
 from datetime import datetime
 from pathlib import Path
 
@@ -16,7 +15,7 @@ from pathlib import Path
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import squidpy
-from sphinx_gallery.sorting import ExplicitOrder, _SortKey
+from sphinx.application import Sphinx
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "3.0"
@@ -36,9 +35,11 @@ version = f"{release} ({squidpy.__version__})"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "nbsphinx",
     "sphinx.ext.intersphinx",
     "sphinx_gallery.gen_gallery",
     "sphinx_last_updated_by_git",
+    "sphinxcontrib.bibtex",
     "sphinx_copybutton",
     "edit_on_github",
 ]
@@ -47,10 +48,11 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     # TODO: uncomment once the docs are up
     # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
-    # TODO: remove me if if not used
+    # TODO: remove me if not used
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
+    "skimage": ("https://scikit-image.org/docs/stable/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,12 +61,18 @@ source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
+# citation
+bibtex_bibfiles = ["references.bib"]
+bibtex_reference_style = ["author_year"]
+bibtex_default_style = "alpha"
+
 # spelling
 spelling_lang = "en_US"
 spelling_warning = True
 spelling_word_list_filename = "spelling_wordlist.txt"
 spelling_add_pypi_package_names = True
 spelling_show_suggestions = True
+spelling_exclude_patterns = ["references.rst"]
 # see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
 spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
 
@@ -72,11 +80,11 @@ spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
-    "**.ipynb",
-    "**.md5",
-    "**.py",
+    "auto_*/**.ipynb",
+    "auto_*/**.md5",
+    "auto_*/**.py",
     "**.ipynb_checkpoints",
-]  # ignore anything that isn't .rst
+]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery
 
@@ -91,63 +99,23 @@ def reset_matplotlib(_gallery_conf, _fname):
     plt.rcdefaults()
     mpl.rcParams["savefig.bbox"] = "tight"
     mpl.rcParams["savefig.transparent"] = True
+    mpl.rcParams["figure.figsize"] = (12, 8)
+    mpl.rcParams["figure.dpi"] = 90
+    mpl.rcParams["figure.autolayout"] = True
 
 
-def reset_scanpy(_gallery_conf, _fname):
-    import scanpy as sc
-
-    sc.set_figure_params(facecolor="white", figsize=(8, 8))
-
-
-example_dir = Path(__file__).parent.parent.parent / "examples"
-tutorial_dir = Path(__file__).parent.parent.parent / "tutorials"
-rel_example_dir = Path("..") / ".." / "examples"
-rel_tutorial_dir = Path("..") / ".." / "tutorials"
-
-
-class ExplicitSubsectionOrder(_SortKey):
-
-    _order = ChainMap(
-        {
-            example_dir / "graph" / "compute_dummy.py": 0,
-        },
-        {
-            tutorial_dir / "tutorial_dummy.py": 0,
-        },
-    )
-
-    def __call__(self, filename: str) -> int:
-        src_file = os.path.normpath(os.path.join(self.src_dir, filename))
-        # TODO: once all examples are in order, remove me
-        try:
-            return self._order[Path(src_file)]
-        except KeyError:
-            return 0
-
-    def __repr__(self) -> str:
-        return f"<{self.__class__.__name__}: {repr(dict(self._order))}>"
-
-
+_root = Path(__file__).parent.parent.parent
 sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
     "reset_modules": (
         "seaborn",
         reset_matplotlib,
-        reset_scanpy,
     ),
-    "filename_pattern": f"{os.path.sep}(plot_|compute_|tutorial_)",
-    "examples_dirs": [example_dir, tutorial_dir],
+    "filename_pattern": f"{os.path.sep}(compute_|tutorial_)",
+    "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
     "show_memory": True,
-    "within_subsection_order": ExplicitSubsectionOrder,
-    "subsection_order": ExplicitOrder(
-        [
-            rel_example_dir / "graph",
-            rel_example_dir / "image",
-            rel_example_dir / "plot",
-        ]
-    ),
     "reference_url": {
         "sphinx_gallery": None,
     },
@@ -163,7 +131,16 @@ sphinx_gallery_conf = {
     "doc_module": "squidpy",
     "download_all_examples": False,
     "show_signature": False,
-    "pypandoc": True,  # convert rST to md when downloading notebooks
+    "pypandoc": {
+        "extra_args": [
+            "--mathjax",
+        ],
+        "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
+    },
+}
+nbsphinx_thumbnails = {
+    "auto_**": "_static/img/squidpy_vertical.png",
+    "external_tutorials/**": "_static/img/squidpy_vertical.png",
 }
 
 # -- Options for HTML output -------------------------------------------------
@@ -182,3 +159,7 @@ html_show_sphinx = False
 
 github_repo = "squidpy"
 github_repo_nb = "squidpy_notebooks"
+
+
+def setup(app: Sphinx) -> None:
+    app.add_css_file("css/custom.css")
