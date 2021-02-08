@@ -7,9 +7,13 @@ This example shows how to use processing and segmentation functions to segment i
 For a general example of how to use :func:`squidpy.im.segment`
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-Here, we attempt to segment a noisy H&E stain. Note that we only provide very basic segmentation models.
+Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
 and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
+
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for a general example of how to
+    use :func:`squidpy.im.segment`.
 
 """
 

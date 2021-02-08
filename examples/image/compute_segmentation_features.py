@@ -15,9 +15,10 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 - ``props``: Segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
 
 .. seealso::
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
-    :func:`squidpy.im.calculate_image_features`.
-    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details on calculating a cell-segmentation.
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details
+      on calculating a cell-segmentation.
+    - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
+      :func:`squidpy.im.calculate_image_features`.
 """
 
 import scanpy as sc
