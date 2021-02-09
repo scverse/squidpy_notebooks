@@ -36,7 +36,7 @@ adata = sq.datasets.visium_fluo_adata_crop()
 # Before calculating segmentation features, we need to first calculate a segmentation
 # using :func:`squidpy.im.segment`.
 
-sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", model_group="watershed", channel=0)
+sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
 
 ###############################################################################
 # Now we can calculate segmentation features. Here, we will calculate the following features:
