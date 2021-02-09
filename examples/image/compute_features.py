@@ -22,6 +22,8 @@ the **obs x genes** spatial gene expression matrix.
       color histogram features.
     - See :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py` on how to calculate
       number and size of objects from a binary segmentation layer.
+    - See :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` on how to calculate custom features
+      by providing any feature extraction function.
 """
 
 import scanpy as sc
@@ -55,18 +57,17 @@ sc.pl.spatial(adata, add_outline=True)
 # It contains several arguments to modify its behavior.
 # With these arguments you can
 #
-# - specify the image used for feature calculation using ``img_id``,
+# - specify the image used for feature calculation using ``layer``,
 # - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 # - specify how the crops used for feature calculation look like using ``kwargs``,
 # - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
-# - specify how the data that is returned using ``key_added`` and ``copy``.
+# - specify how the data is returned using ``key_added`` and ``copy``.
 #
 # Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-sq.im.calculate_image_features(adata, img, features="summary", key_added="features")
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", show_progress_bar=False)
 
 # show the calculated features
-print(f"calculated features: {list(adata.obsm['features'].columns)}")
 adata.obsm["features"].head()
 
 ###############################################################################
@@ -78,7 +79,7 @@ adata.obsm["features"].head()
 
 sc.pl.spatial(
     sq.pl.extract(adata, "features"),
-    color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"],
+    color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
 )
 
 ###############################################################################
@@ -89,13 +90,13 @@ sc.pl.spatial(
 # By default, the crops have the same size as the spot, are not scaled and square.
 # We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round
 # Visium spots is taken into account to compute the features.
-# Further, we can set ``scale`` and ``size`` arguments to change how the crops are generated.
+# Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
 # For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 #
-# - use ``mask_circle = True, scale = 1, size = 1``, if you would like to get features that are calculated
-#   only from tissue in a Visium spot.
-# - use ``scale = X``, with `X < 1`, if you would like to downscale the crop before extracting the features.
-# - use ``size = X``, with `X > 1`, if you would like to extract crops that are X-times the size of the Visium spot.
+# - Use ``mask_circle=True, scale=1, spot_scale=1``, if you would like to get features that are calculated only from
+#   tissue in a Visium spot
+# - Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
+# - Use ``spot_scale=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the Visium spot
 #
 # Let us extract masked and scaled features and compare them
 
@@ -104,10 +105,17 @@ sc.pl.spatial(
 adata_sml = adata[:50].copy()
 
 # calculate default features
-sq.im.calculate_image_features(adata_sml, img, features=["summary", "texture", "histogram"], key_added="features")
+sq.im.calculate_image_features(
+    adata_sml, img, features=["summary", "texture", "histogram"], key_added="features", show_progress_bar=False
+)
 # calculate features with masking
 sq.im.calculate_image_features(
-    adata_sml, img, features=["summary", "texture", "histogram"], key_added="features_masked", mask_circle=True
+    adata_sml,
+    img,
+    features=["summary", "texture", "histogram"],
+    key_added="features_masked",
+    mask_circle=True,
+    show_progress_bar=False,
 )
 # calculate features with scaling and larger context
 sq.im.calculate_image_features(
@@ -116,16 +124,17 @@ sq.im.calculate_image_features(
     features=["summary", "texture", "histogram"],
     key_added="features_scaled",
     mask_circle=True,
-    size=2,
+    spot_scale=2,
     scale=0.5,
+    show_progress_bar=False,
 )
 
 # plot distribution of median for different cropping options
 _ = sns.displot(
     {
-        "features": adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"],
-        "features_masked": adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"],
-        "features_scaled": adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"],
+        "features": adata_sml.obsm["features"]["summary_ch-0_quantile-0.5"],
+        "features_masked": adata_sml.obsm["features_masked"]["summary_ch-0_quantile-0.5"],
+        "features_scaled": adata_sml.obsm["features_scaled"]["summary_ch-0_quantile-0.5"],
     },
     kind="kde",
 )
@@ -139,4 +148,4 @@ _ = sns.displot(
 # Speeding up the feature extraction is easy.
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 # extract features by using 4 jobs
-sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
+sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)
