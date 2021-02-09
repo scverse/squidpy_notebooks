@@ -4,9 +4,6 @@ Segmentation features
 ---------------------
 This examples show how to extract segmentation features from the tissue image.
 
-Segmentation features are computed using a label image where each object (nucleus) in the image has a different number.
-See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for how to calculate such a label image.
-
 Features extracted from a nucleus segmentation range from the number of nuclei per image,
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
@@ -14,15 +11,14 @@ Use ``features='segmentation'`` to calculate the features.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``label_img_id`` - name of label image layer in ``img``.
-- ``props`` - segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
-- ``mean`` - return the mean of feature values per obs.
-- ``std`` - return the std of feature values per obs.
+- ``label_layer``: name of label image layer in ``img``
+- ``props``: Segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
 
 .. seealso::
-
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
-    :func:`squidpy.im.calculate_image_features`.
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details
+      on calculating a cell-segmentation.
+    - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
+      :func:`squidpy.im.calculate_image_features`.
 """
 
 import scanpy as sc
@@ -38,11 +34,9 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 ###############################################################################
 # Before calculating segmentation features, we need to first calculate a segmentation
-# using :func:`squidpy.im.segment_img`.
+# using :func:`squidpy.im.segment`.
 
-sq.im.segment_img(
-    img=img, img_id="image", key_added="segmented_watershed", model_group="watershed", channel_idx=0, thresh=50000
-)
+sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
 
 ###############################################################################
 # Now we can calculate segmentation features. Here, we will calculate the following features:
@@ -57,11 +51,12 @@ sq.im.segment_img(
 sq.im.calculate_image_features(
     adata,
     img,
+    layer="image",
     features="segmentation",
     key_added="segmentation_features",
     features_kwargs={
         "segmentation": {
-            "label_img_id": "segmented_watershed",
+            "label_layer": "segmented_watershed",
             "props": ["label", "area", "mean_intensity"],
             "channels": [1, 2],
         }
@@ -79,7 +74,7 @@ adata.obsm["segmentation_features"].head()
 # :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
 # Here, we show all calculated segmentation features.
 
-# show all channels
+# show all channels (using low-res image contained in adata to save memory)
 fig, axes = plt.subplots(1, 3, figsize=(8, 4))
 for i, ax in enumerate(axes):
     ax.imshow(adata.uns["spatial"]["V1_Adult_Mouse_Brain_Coronal_Section_2"]["images"]["hires"][:, :, i])
@@ -92,11 +87,13 @@ sc.pl.spatial(
     color=[
         "segmentation_label",
         "segmentation_area_mean",
-        "segmentation_mean_intensity_ch1_mean",
-        "segmentation_mean_intensity_ch2_mean",
+        "segmentation_ch-1_mean_intensity_mean",
+        "segmentation_ch-2_mean_intensity_mean",
     ],
     bw=True,
     ncols=2,
+    vmin="p1",
+    vmax="p99",
 )
 
 ###############################################################################

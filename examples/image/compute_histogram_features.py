@@ -23,7 +23,8 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+# Lets load a fluorescence Visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()
@@ -51,6 +52,6 @@ adata.obsm["histogram_features"].head()
 
 sc.pl.spatial(
     sq.pl.extract(adata, "histogram_features"),
-    color=[None, "histogram_ch_0_bin_0", "histogram_ch_0_bin_1", "histogram_ch_0_bin_2"],
+    color=[None, "histogram_ch-0_bin-0", "histogram_ch-0_bin-1", "histogram_ch-0_bin-2"],
     bw=True,
 )
