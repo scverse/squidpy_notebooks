@@ -135,7 +135,13 @@ img_crop.show(
 features_kwargs = {"segmentation": {"label_layer": "segmented_watershed"}}
 # calculate segmentation features
 sq.im.calculate_image_features(
-    adata, img, features="segmentation", layer_added="features_segmentation", n_jobs=1, features_kwargs=features_kwargs
+    adata,
+    img,
+    features="segmentation",
+    layer="image",
+    layer_added="features_segmentation",
+    n_jobs=1,
+    features_kwargs=features_kwargs,
 )
 # plot results and compare with gene-space clustering
 sc.pl.spatial(
