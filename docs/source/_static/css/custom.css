@@ -19,3 +19,7 @@ div.output_subarea.output_html.rendered_html.output_result{
     width: 100% !important;
     height: auto !important;
 }
+
+.rendered_html table {
+    margin-left: 0!important;
+}
