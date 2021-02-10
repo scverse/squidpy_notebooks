@@ -12,7 +12,7 @@ pattern at certain scale.
 .. seealso::
 
     See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` for
-    another score to describe spatial patterns with :func:`squidpy.gr.co_occurrence`
+    another score to describe spatial patterns with :func:`squidpy.gr.co_occurrence`.
 """
 import scanpy as sc
 import squidpy as sq

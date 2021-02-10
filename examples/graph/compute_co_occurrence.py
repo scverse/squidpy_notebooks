@@ -17,8 +17,8 @@ The score is computed across increasing radii size around each cell in the tissu
 
 .. seealso::
 
-     See :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for
-    another score to describe spatial patterns with :func:`squidpy.gr.ripley_k`
+    See :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for
+    another score to describe spatial patterns with :func:`squidpy.gr.ripley_k`.
 """
 import scanpy as sc
 import squidpy as sq
