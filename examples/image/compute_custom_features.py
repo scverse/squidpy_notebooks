@@ -2,10 +2,12 @@
 """
 Custom features
 ---------------
+
 This example shows how to extract features from the tissue image using a custom function.
 
 The custom feature calculation function can be any python function that takes an image as input, and
-returns a list of features. Here, we show a simple example by defining a function to calculate the mean of the images.
+returns a list of features.
+Here, we show a simple example by defining a function to calculate the mean of the images.
 
 .. seealso::
 

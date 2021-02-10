@@ -3,8 +3,7 @@
 Smoothing an image
 ------------------
 
-This example shows how to use :func:`squidpy.im.process` to smooth an image layer of
-:class:`squidpy.im.ImageContainer`.
+This example shows how to use :func:`squidpy.im.process` to smooth an image layer of :class:`squidpy.im.ImageContainer`.
 
 We use the argument ``method="smooth"`` to smooth the image.
 This calls :func:`skimage.filters.gaussian` in the background.

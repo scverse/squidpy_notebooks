@@ -2,6 +2,7 @@
 """
 Histogram features
 ------------------
+
 This example shows how to extract histogram features from tissue image.
 
 Histogram features give a more detailed view than summary features

@@ -2,12 +2,17 @@
 """
 Imaging Mass Cytometry
 ======================
+
 This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.
+
 The data used here comes from a recent paper from
 `Jackson et al. <https://www.nature.com/articles/s41586-019-1876-x>`_.
-We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format,
-that can be downloaded `here <TODO>`_.
+We provide a pre-processed subset of the data, in :class:`anndata.AnnData`.
 For details on how it was pre-processed, please refer to the original paper.
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py` for additional analysis examples.
 
 Import packages & data
 ----------------------

@@ -2,6 +2,7 @@
 """
 Extract image features
 ----------------------
+
 This example shows the computation of spot-wise features from Visium images.
 
 Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression

@@ -2,8 +2,8 @@
 """
 Visium Fluorescence dataset
 ===========================
-This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset
-with a focus on extracting image features.
+
+This tutorial shows how to apply Squidpy Image analysis Features for the analysis of Visium data.
 
 For a tutorial using Visium data that includes the graph analysis functions, have a look at
 :func:`sphx_glr_auto_tutorials_visium_hne.py`.
@@ -21,6 +21,10 @@ A couple of notes on pre-processing:
   `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
   the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
   from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py` for additional analysis examples.
 
 Import packages & data
 ----------------------

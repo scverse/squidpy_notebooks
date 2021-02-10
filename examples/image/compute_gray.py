@@ -3,9 +3,9 @@
 Convert to grayscale
 --------------------
 
-This example shows how to use :func:`squidpy.im.process` to convert an image layer
-of :class:`squidpy.im.ImageContainer` to grayscale.
+This example shows how to use :func:`squidpy.im.process` to convert an image layer to grayscale.
 
+You can convert any layer of :class:`squidpy.im.ImageContainer` to grayscale.
 We use the argument ``method="gray"`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 

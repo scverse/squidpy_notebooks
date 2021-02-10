@@ -2,11 +2,17 @@
 """
 seqFISH
 =======
+
 This tutorial shows how to apply Squidpy for the analysis of seqFISH data.
+
 The data used here was obtained from
 `Lohoff et al. <https://www.biorxiv.org/content/10.1101/2020.11.20.391896v1>`_ .
-We provide a pre-processed subset of the data, in AnnData format.
+We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format.
 For details on how it was pre-processed, please refer to the original paper.
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_tutorials_tutorial_imc.py` for additional analysis examples.
 
 Import packages & data
 ----------------------

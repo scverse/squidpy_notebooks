@@ -2,8 +2,8 @@
 r"""
 Texture features
 ----------------
-This example shows how to use :func:`squidpy.im.calculate_image_features` to extract texture features
-from the tissue image.
+
+This example shows how to use :func:`squidpy.im.calculate_image_features`.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
 calculating a grey-level co-occurence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).

@@ -2,6 +2,7 @@
 """
 Cell-segmentation
 -----------------
+
 This example shows how to use the high resolution tissue images to segment nuclei.
 
 This information can be used to compute additional image features like cell count and cell size per spot

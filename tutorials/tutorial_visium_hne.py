@@ -2,6 +2,7 @@
 """
 Visium H&E dataset
 ==================
+
 This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset.
 
 The dataset used here consist of a Visium slide of a coronal section of the mouse brain.
@@ -18,6 +19,10 @@ A couple of notes on pre-processing:
   `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
   the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
   from the Linnarson lab and this recent `pre-print <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` for additional analysis examples.
 
 Import packages & data
 ----------------------
@@ -287,11 +292,14 @@ sq.gr.moran(
 ###############################################################################
 # The results are saved in `adata.uns['moranI']` slot.
 # Genes have already been sorted by Moran's I statistic.
-# We can select few genes and visualize their expression levels in the tissue
 
 adata.uns["moranI"].head(10)
+
+###############################################################################
+# We can select few genes and visualize their expression levels in the tissue with :func:`scanpy.pl.spatial`
+
 sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
 
 
 ###############################################################################
-# Interestingly, some of these genes seems to be related to the *pyramidal* layers, the *cortex* and the *Fiber tract*.
+# Interestingly, some of these genes seems to be related to the *pyramidal* layers, the *cortex* and the *fiber tract*.

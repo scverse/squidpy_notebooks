@@ -2,6 +2,7 @@
 """
 Advanced cell-segmentation for H&E stains
 -----------------------------------------
+
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
 
 For a general example of how to use :func:`squidpy.im.segment`
