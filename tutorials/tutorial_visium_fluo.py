@@ -143,7 +143,7 @@ sq.im.calculate_image_features(
     img,
     features="segmentation",
     layer="image",
-    layer_added="features_segmentation",
+    key_added="features_segmentation",
     n_jobs=1,
     features_kwargs=features_kwargs,
 )
