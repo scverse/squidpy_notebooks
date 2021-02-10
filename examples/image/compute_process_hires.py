@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Processing a high-resolution Image
+Processing a high-resolution image
 ----------------------------------
 
 This example shows how to use :func:`squidpy.im.process` with tiling.
