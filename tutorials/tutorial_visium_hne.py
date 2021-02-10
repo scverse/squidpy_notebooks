@@ -281,9 +281,12 @@ sq.pl.ligrec(
 # also as a baseline method in the spatially variable gene papers listed above.
 # The function in Squidpy is called :func:`squidpy.gr.moran`, and
 # returns both test statistics and adjusted p-values in :attr:`anndata.AnnData.var` slot.
+# For time reasons, we will evaluate a subset of the highly variable genes only.
 
+genes = adata[:, adata.var.highly_variable].var_names.values[0:1000]
 sq.gr.moran(
     adata,
+    genes=genes,
     n_perms=100,
     n_jobs=1,
 )
@@ -298,8 +301,8 @@ adata.uns["moranI"].head(10)
 ###############################################################################
 # We can select few genes and visualize their expression levels in the tissue with :func:`scanpy.pl.spatial`
 
-sc.pl.spatial(adata, color=["Nrgn", "Camk2n1", "Mobp", "cluster"])
+sc.pl.spatial(adata, color=["Olfm1", "Plp1", "Itpka", "cluster"])
 
 
 ###############################################################################
-# Interestingly, some of these genes seems to be related to the *pyramidal* layers, the *cortex* and the *fiber tract*.
+# Interestingly, some of these genes seems to be related to the *pyramidal* layers and the *fiber tract*.
