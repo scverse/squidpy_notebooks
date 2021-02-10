@@ -2,6 +2,7 @@
 """
 Building spatial neighbors graph
 --------------------------------
+
 This example shows how to compute a spatial neighbors graph.
 
 Spatial graph is a graph of spatial neighbors with observations as nodes

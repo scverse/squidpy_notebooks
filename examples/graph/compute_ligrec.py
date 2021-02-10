@@ -2,6 +2,7 @@
 """
 Receptor-ligand analysis
 ------------------------
+
 This example shows how to run the receptor-ligand analysis.
 
 It uses an efficient re-implementation of the :cite:`cellphonedb` algorithm which can handle large number of interacting

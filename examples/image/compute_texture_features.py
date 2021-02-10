@@ -28,7 +28,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
+# Lets load a fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
 #
 # Note that for texture features it may make sense to compute them over a larger crop size to include more context,
 # e.g., ``spot_scale=2`` or ``spit_scale=4`` which will extract crops with double or four times the radius
