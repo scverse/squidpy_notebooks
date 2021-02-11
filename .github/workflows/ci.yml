@@ -54,6 +54,8 @@ jobs:
             # TODO: remove -q once squidpy is public
             run: |
                 tox -q -e lint,check-docs
+            env:
+                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
     test:
         needs: init
