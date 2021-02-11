@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-Compute Ripley K function
+Compute Ripley's K function
 ---------------------------
 
 This example shows how to compute the Ripley's K function.
 
-The Ripley K function is a descriptive statistics that is generally used
+The Ripley's K function is a descriptive statistics that is generally used
 to determine whether points have a random, dispersed or clustered distribution
 pattern at certain scale.
 
@@ -21,7 +21,7 @@ adata = sq.datasets.imc()
 adata
 
 ###############################################################################
-# We can compute the Ripley K function with :func:`squidpy.gr.ripley_k`.
+# We can compute the Ripley's K function with :func:`squidpy.gr.ripley_k`.
 # Results can be visualized with :func:`squidpy.pl.ripley_k`.
 sq.gr.ripley_k(adata, cluster_key="cell type")
 sq.pl.ripley_k(adata, cluster_key="cell type")

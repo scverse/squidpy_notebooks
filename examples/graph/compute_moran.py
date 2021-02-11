@@ -8,7 +8,7 @@ This example shows how to compute the Moran's I global spatial autocorrelation s
 The Moran's I global spatial autocorrelation statistics evaluates whether
 features (i.e. genes) shows a pattern that is clustered, dispersed or random
 in the tissue are under consideration.
-It wraps and implementation in :cite:`pysal` spatial analysis toolbox.
+It wraps an implementation in the PySAL spatial analysis toolbox :cite:`pysal`.
 
 .. seealso::
 

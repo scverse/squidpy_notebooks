@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 """
-Imaging Mass Cytometry
-======================
+Analyze Imaging Mass Cytometry data
+===================================
 
 This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.
 
-The data used here comes from a recent paper from
-`Jackson et al. <https://www.nature.com/articles/s41586-019-1876-x>`_.
-We provide a pre-processed subset of the data, in :class:`anndata.AnnData`.
+The data used here comes from a recent paper from :cite:`jackson2020single`.
+We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format.
 For details on how it was pre-processed, please refer to the original paper.
 
 .. seealso::
@@ -30,15 +29,15 @@ print(f"squidpy=={sq.__version__}")
 adata = sq.datasets.imc()
 
 ###############################################################################
-# First, let's visualize cluster annotation in spatial context
-# with `scanpy.pl.spatial <https://scanpy.readthedocs.io/en/stable/api/scanpy.pl.spatial.html>`_ .
+# First, let's visualize the cluster annotation in spatial context
+# with :func:`scanpy.pl.spatial`.
 
 sc.pl.spatial(adata, color="cell type", spot_size=10)
 
 ###############################################################################
 # We can appreciate how the majority of the tissue seems
-# to consist of "apoptotic tumor cells". There also seems to be other
-# cell types scattered across the tissue of, annotated as "T cells",
+# to consist of "apoptotic tumor cells". There also seem to be other
+# cell types scattered across the tissue, annotated as "T cells",
 # "Macrophages" and different types of "Stromal cells". We can also
 # appreciate how a subset of tumor cell, "basal CK tumor cells" seems
 # to be located in the lower part of the tissue.
@@ -47,23 +46,23 @@ sc.pl.spatial(adata, color="cell type", spot_size=10)
 # Co-occurrence across spatial dimensions
 # +++++++++++++++++++++++++++++++++++++++
 #
-# In addition to the neighbor enrichment score, we can visualize cluster
-# co-occurrence in spatial dimensions. This is a similar analysis of the
-# one presented above, yet it does not operates on the connectivity matrix,
-# yet on the original spatial coordinates. The co-occurrence score is defined as:
-# \begin{equation*}
-# \frac{p(exp|cond)}{p(exp)}
-# \end{equation*}
+# We can visualize cluster co-occurrence in spatial dimensions using the original
+# spatial coordinates.
+# The co-occurrence score is defined as:
 #
-# where $p(exp|cond)$ is the conditional probability of observing a
-# cluster $exp$ conditioned on the presence of a cluster $cond$, whereas
-# $p(exp)$ is the probability of observing $exp$ in the radius size
+# .. math::
+#
+#     \frac{p(exp|cond)}{p(exp)}
+#
+# where :math:`p(exp|cond)` is the conditional probability of observing a
+# cluster :math:`exp` conditioned on the presence of a cluster :math:`cond`, whereas
+# :math:`p(exp)` is the probability of observing :math:`exp` in the radius size
 # of interest. The score is computed across increasing radii size
 # around each cell in the tissue.
 #
-# We are gonna compute such score with :func:`squidpy.gr.co_occurrence`
+# We can compute this score with :func:`squidpy.gr.co_occurrence`
 # and set the cluster annotation for the conditional probability with
-# the argument `clusters`. Then, we visualize the results with
+# the argument ``clusters``. Then, we visualize the results with
 # :func:`squidpy.pl.co_occurrence`.
 # We visualize the result for two conditional groups, namely
 # "basal CK tumor cell" and "T cells".
@@ -77,11 +76,11 @@ sq.pl.co_occurrence(
 )
 
 ###############################################################################
-# We can observer that *T cells* seems to co-occur
-# with *endothelial* and *vimentin hi stromal cells*,
-# whereas *basal CK tumor cell* seem to largely cluster
+# We can observe that "T cells" seems to co-occur
+# with "endothelial" and "vimentin hi stromal cells",
+# whereas "basal CK tumor cell" seem to largely cluster
 # together, except for the presence of a type of stromal
-# cells (*small elongated stromal cell*) at close distance.
+# cells ("small elongated stromal cell") at close distance.
 
 ###############################################################################
 # Neighborhood enrichment
@@ -95,13 +94,14 @@ sq.pl.co_occurrence(
 # On the other hand, if they are far apart, the score will be low
 # and they can be defined as *depleted*.
 # This score is based on a permutation-based test, and you can set
-# the number of permutations with the `n_perms` argument (default is 1000).
+# the number of permutations with the ``n_perms`` argument (default is 1000).
 #
 # Since the function works on a connectivity matrix, we need to compute that as well.
 # This can be done with :func:`squidpy.gr.spatial_neighbors`.
-# Please see #ADD LINK for a thorough explanation of how this function works.
+# Please see :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for more details
+# of how this function works.
 #
-# Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
+# Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="cell type")
@@ -136,6 +136,7 @@ sq.pl.interaction_matrix(adata, cluster_key="cell type")
 # Finally, similar to the previous analysis,
 # we can investigate properties of the spatial graph by
 # computing different network centralities:
+#
 # - degree_centrality
 # - average_clustering
 # - closeness_centrality

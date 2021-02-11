@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 r"""
-Texture features
-----------------
+Extract texture features
+------------------------
 
 This example shows how to use :func:`squidpy.im.calculate_image_features`.
 
@@ -55,7 +55,8 @@ adata.obsm["texture_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+# how to use our interactive :mod:`napari` plugin.
 # Here, we show the contrast feature for channels 0 and 1.
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 

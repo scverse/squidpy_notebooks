@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Cell-segmentation
------------------
+Cell-segmentation for fluorescence images
+-----------------------------------------
 
 This example shows how to use the high resolution tissue images to segment nuclei.
 

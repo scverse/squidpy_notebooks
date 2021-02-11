@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Segmentation features
----------------------
+Extract segmentation features
+-----------------------------
 
 This examples show how to extract segmentation features from the tissue image.
 
@@ -72,7 +72,8 @@ adata.obsm["segmentation_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+# how to use our interactive :mod:`napari` plugin.
 # Here, we show all calculated segmentation features.
 
 # show all channels (using low-res image contained in adata to save memory)

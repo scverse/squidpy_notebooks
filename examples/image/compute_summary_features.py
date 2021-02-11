@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Summary features
-----------------
+Extract summary features
+------------------------
 
 Here, we use :func:`squidpy.im.calculate_image_features` to extract summary features from the tissue image.
 
@@ -54,13 +54,14 @@ sq.im.calculate_image_features(
 )
 
 ###############################################################################
-# The result is stored in `adata.obsm['summary_features']`
+# The result is stored in ``adata.obsm['summary_features']``
 
 adata.obsm["summary_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-# our external tutorials to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+# how to use our interactive :mod:`napari` plugin.
 # Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 # and 1 (GFAP stain).
 

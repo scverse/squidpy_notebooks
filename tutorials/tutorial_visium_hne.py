@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-Visium H&E dataset
-==================
+Analyze Visium H&E data
+=========================
 
-This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset.
+This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics data.
 
-The dataset used here consist of a Visium slide of a coronal section of the mouse brain.
+The dataset used here consists of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
 Here, we provide a pre-processed dataset, with pre-annotated clusters, in AnnData format and the
@@ -22,7 +22,7 @@ A couple of notes on pre-processing:
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` for additional analysis examples.
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` for a detailled analysis example of image features.
 
 Import packages & data
 ----------------------
@@ -39,7 +39,6 @@ import pandas as pd
 
 sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
-
 
 # load the pre-processed dataset
 img = sq.datasets.visium_hne_image()
@@ -159,11 +158,12 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # On the other hand, if they are far apart, and therefore are seldom a neighborhood,
 # the score will be low and they can be defined as *depleted*. This score is
 # based on a permutation-based test, and you can set
-# the number of permutations with the `n_perms` argument (default is 1000).
+# the number of permutations with the ``n_perms`` argument (default is 1000).
 #
 # Since the function works on a connectivity matrix, we need to compute that as well.
 # This can be done with :func:`squidpy.gr.spatial_neighbors`.
-# Please see TODO: add link for a thorough explanation of how this function works.
+# Please see :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for more details
+# of how this function works.
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
@@ -194,7 +194,7 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 # The score is computed across increasing radii size around each observation (i.e. spots here) in the tissue.
 #
 # We are gonna compute such score with :func:`squidpy.gr.co_occurrence` and set the cluster annotation
-# for the conditional probability with the argument `clusters`.
+# for the conditional probability with the argument ``clusters``.
 # Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
 
 sq.gr.co_occurrence(adata, cluster_key="cluster")
@@ -211,8 +211,8 @@ sq.pl.co_occurrence(
 # the "Pyramidal_layer" cluster seem to co-occur at short distances
 # with the larger "Hippocampus" cluster.
 # It should be noted that the distance units are given in pixels of
-# the Visium `source_image`, and corresponds to the same unit of
-# the spatial coordinates saved in `adata.obsm["spatial"]`.
+# the Visium ``source_image``, and corresponds to the same unit of
+# the spatial coordinates saved in ``adata.obsm["spatial"]``.
 
 ###############################################################################
 # Ligand-receptor interaction analysis
@@ -223,16 +223,15 @@ sq.pl.co_occurrence(
 # we might be interested in finding molecular instances
 # that could potentially drive cellular communication.
 # This naturally translates in a ligand-receptor interaction analysis.
-# In Squidpy, we provide a fast re-implementation the popular method
-# CellPhoneDB (`paper <https://www.nature.com/articles/s41596-020-0292-x>`_
-# `code <https://github.com/Teichlab/cellphonedb>`_ )
-# using the extended database of annotated ligand-receptor interaction pairs
-# `Omnipath <https://omnipathdb.org/>`_ .
+# In Squidpy, we provide a fast re-implementation the popular method CellPhoneDB :cite:`cellphonedb`
+# (`code <https://github.com/Teichlab/cellphonedb>`_ )
+# and extended its database of annotated ligand-receptor interaction pairs with
+# the popular database Omnipath :cite:`omnipath`.
 # You can run the analysis for all clusters pairs, and all genes (in seconds,
 # without leaving this notebook), with :func:`squidpy.gr.ligrec`.
 # Furthermore, we'll directly visualize the results, filtering out lowly-expressed genes
-# (with the `means_range` argument) and increasing the threshold for
-# the adjusted p-value (with the `alpha` argument).
+# (with the ``means_range`` argument) and increasing the threshold for
+# the adjusted p-value (with the ``alpha`` argument).
 # We'll also subset the visualization for only one source group,
 # the "Hippocampus" cluster, and two target groups, "Pyramidal_layer_dentate_gyrus" and "Pyramidal_layer" cluster.
 
@@ -260,7 +259,7 @@ sq.pl.ligrec(
 # cell types present in this region of the tissue.
 
 ###############################################################################
-# Spatially Variable genes with Moran's I
+# Spatially variable genes with Moran's I
 # +++++++++++++++++++++++++++++++++++++++
 # Finally, we might be interested in finding genes that show spatial patterns.
 # There are several methods that aimed at address this explicitly,
@@ -293,7 +292,7 @@ sq.gr.moran(
 
 
 ###############################################################################
-# The results are saved in `adata.uns['moranI']` slot.
+# The results are saved in ``adata.uns['moranI']`` slot.
 # Genes have already been sorted by Moran's I statistic.
 
 adata.uns["moranI"].head(10)

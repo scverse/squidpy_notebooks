@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """
-Visium Fluorescence dataset
-===========================
+Analyse Visium fluorescence data
+================================
 
-This tutorial shows how to apply Squidpy Image analysis Features for the analysis of Visium data.
+This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium data.
 
 For a tutorial using Visium data that includes the graph analysis functions, have a look at
-:func:`sphx_glr_auto_tutorials_visium_hne.py`.
+:ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`.
 The dataset used here consists of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
@@ -59,7 +59,7 @@ sc.pl.spatial(adata, color="cluster")
 
 ###############################################################################
 # The fluorescence image provided with this dataset has three channels:
-# DAPI (specific to DNA), anti-NEUN (specific to neurons), anti-GFAP (specific to Glial cells).
+# *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
 # We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
 
 fig, axes = plt.subplots(1, 3)
@@ -90,12 +90,12 @@ for i, ax in enumerate(axes):
 # To provide more context and allow the calculation of multi-scale features, we will additionally calculate
 # `summary` and `histogram` features at different crop sizes and scales.
 #
-# Image Segmentation
+# Image segmentation
 # ------------------
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
-# But even before that, it's best practice to process the image with some smoothing function, available
-# in :func::func:`squidpy.im.process`.
-# We will then use the DAPI channel if the fluorescence image (``channel_ids=0``).
+# But even before that, it's best practice to preprocess the image by e.g. smoothing it using
+# in :func:`squidpy.im.process`.
+# We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 # for more details on how to calculate a segmented image.
 
@@ -121,7 +121,7 @@ img_crop.show(
 # The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
 # It is a label image where each segmented object is annotated with a different integer number.
 #
-# Segmentation Features
+# Segmentation features
 # ---------------------
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
@@ -129,7 +129,7 @@ img_crop.show(
 # In particular, we can count the segmented objects within each Visium spot to get an
 # approximation of the number of cells.
 # In addition, we can calculate the mean intensity of each fluorescence channel within the segmented objects.
-# Depending on the fluorescence channels, this can give us e.g. an estimation of the cell type.
+# Depending on the fluorescence channels, this can give us e.g., an estimation of the cell type.
 # For more details on how the segmentation features, you can have a look at
 # the docs of :func:`squidpy.im.calculate_image_features` or the example at
 # :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
@@ -163,7 +163,7 @@ sc.pl.spatial(
 ###############################################################################
 # Above, we made use of :func:`squidpy.pl.extract`, a method to extract
 # all features in a given `adata.obsm['{key}']` and temporarily save them to :attr:`anndata.AnnData.obs`.
-# Such method is particularly useful for plotting purpose, as showed above.
+# Such method is particularly useful for plotting purpose, as shown above.
 #
 # The number of cells per Visium spot provides an interesting view of the data that can enhance
 # the characterization of gene-space clusters.
@@ -173,10 +173,10 @@ sc.pl.spatial(
 # the Hippocampus is one cluster only.
 #
 # The per-channel intensities plotted in the second row show us that the areas labeled with *Cortex_1* and
-# *Cortex_3* have a higher intensity of channel 1, anti-NEUN (lower left).
+# *Cortex_3* have a higher intensity of channel 1, *anti-NEUN* (lower left).
 # This means that these areas have more neurons that the remaining areas in this crop.
-# In addition, cluster *Fiber_tracts* and *lateral ventricles* seems to be enriched with Glial cells,
-# seen by the larger mean intensities of channel 2, anti-GFAP, in these areas (lower right).
+# In addition, cluster *Fiber_tracts* and *lateral ventricles* seems to be enriched with *Glial cells*,
+# seen by the larger mean intensities of channel 2, *anti-GFAP*, in these areas (lower right).
 #
 # Extract and cluster features
 # ----------------------------
@@ -231,7 +231,6 @@ def cluster_features(features: pd.DataFrame, like=None):
         features = features.filter(like=like)
     # create temporary adata to calculate the clustering
     adata = ad.AnnData(features)
-    # adata.var_names_make_unique()
     # important - feature values are not scaled, so need to scale them before PCA
     sc.pp.scale(adata)
     # calculate leiden clustering

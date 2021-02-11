@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Smoothing an image
-------------------
+Smooth an image
+---------------
 
 This example shows how to use :func:`squidpy.im.process` to smooth an image layer of :class:`squidpy.im.ImageContainer`.
 

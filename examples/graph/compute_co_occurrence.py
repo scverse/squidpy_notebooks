@@ -7,12 +7,13 @@ This example shows how to compute the co-occurrence probability.
 
 The co-occurrence score is defined as:
 
-\begin{equation*}
-\frac{p(exp|cond)}{p(exp)}
-\\end{equation*}
+.. math::
+    \frac{p(exp|cond)}{p(exp)}
 
-where $p(exp|cond)$ is the conditional probability of observing a cluster $exp$ conditioned on the presence
-of a cluster $cond$, whereas $p(exp)$ is the probability of observing $exp$ in the radius size of interest.
+where :math:`p(exp|cond)` is the conditional probability of observing a cluster :math:`exp` conditioned
+on the presence
+of a cluster :math:`cond`, whereas :math:`p(exp)` is the probability of observing :math:`exp` in the
+radius size of interest.
 The score is computed across increasing radii size around each cell in the tissue.
 
 .. seealso::

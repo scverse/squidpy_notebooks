@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Custom features
----------------
+Extract custom features
+-----------------------
 
 This example shows how to extract features from the tissue image using a custom function.
 
@@ -38,7 +38,7 @@ def mean_fn(arr):
 
 
 ###############################################################################
-# Now we can extract features using ``mean_fn`` by providing it within `features_kwargs`
+# Now we can extract features using `mean_fn` by providing it within ``features_kwargs``
 
 sq.im.calculate_image_features(
     adata,
@@ -56,7 +56,8 @@ adata.obsm["custom_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+# how to use our interactive :mod:`napari` plugin.
 
 sc.pl.spatial(
     sq.pl.extract(adata, "custom_features"),

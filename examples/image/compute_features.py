@@ -8,7 +8,7 @@ This example shows the computation of spot-wise features from Visium images.
 Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression
 measurements per spot (*obs*).
 In this notebook, we extract features for each spot from an image using :func:`squidpy.im.calculate_image_features`
-and create a ``obs x features`` matrix that can be analyzed together with
+and create a **obs x features** matrix that can be analyzed together with
 the **obs x genes** spatial gene expression matrix.
 
 .. seealso::
@@ -73,10 +73,9 @@ adata.obsm["features"].head()
 
 ###############################################################################
 # To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
-# See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
 #
-# Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `summary_quantile_0.5_ch_1` and
-# `summary_quantile_0.5_ch_2`).
+# Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
+# `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
 
 sc.pl.spatial(
     sq.pl.extract(adata, "features"),
