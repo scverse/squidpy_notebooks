@@ -14,7 +14,7 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example how to calculate
+    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate
     a cell-segmentation of a fluorescence image.
 """
 
@@ -54,7 +54,6 @@ for layer, ax in zip(["image", "image_smooth"], axes):
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 crop.show("image_smooth", cmap="gray", ax=axes[0])
 axes[1].imshow(crop["image_smooth"][:, :, 0] < 0.36)
-axes[1].axis("off")
 _ = sns.histplot(np.array(crop["image_smooth"]).flatten(), bins=50, ax=axes[2])
 plt.tight_layout()
 

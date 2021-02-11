@@ -12,11 +12,10 @@ It wraps an implementation in the PySAL spatial analysis toolbox :cite:`pysal`.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` and
-    :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for
-    other scores to describe spatial patterns.
-    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
-    :func:`squidpy.gr.spatial_neighbors`.
+    - See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` and
+      :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for other scores to describe spatial patterns.
+    - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+      :func:`squidpy.gr.spatial_neighbors`.
 """
 import scanpy as sc
 import squidpy as sq

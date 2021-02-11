@@ -82,7 +82,6 @@ fig, axes = plt.subplots(1, 3, figsize=(8, 4))
 for i, ax in enumerate(axes):
     ax.imshow(adata.uns["spatial"]["V1_Adult_Mouse_Brain_Coronal_Section_2"]["images"]["hires"][:, :, i])
     ax.set_title(f"ch{i}")
-    ax.axis("off")
 
 # plot segmentation features
 sc.pl.spatial(

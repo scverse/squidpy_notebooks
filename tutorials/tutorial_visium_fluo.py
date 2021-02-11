@@ -20,7 +20,7 @@ A couple of notes on pre-processing:
 - The cluster annotation was performed using several resources, such as the
   `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
   the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-  from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+  from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
 
 .. seealso::
 
@@ -65,7 +65,6 @@ sc.pl.spatial(adata, color="cluster")
 fig, axes = plt.subplots(1, 3)
 for i, ax in enumerate(axes):
     img.show(channel=i, ax=ax)
-    ax.axis("off")
 
 ###############################################################################
 # Visium datasets contain high-resolution images of the tissue.

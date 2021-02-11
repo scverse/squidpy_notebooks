@@ -3,12 +3,12 @@
 Crop images with ImageContainer
 -------------------------------
 
-This example shows how crop images from ImageContainer.
+This example shows how crop images from :class:`squidpy.im.ImageContainer`.
 
 Specifically, it shows how to use:
 
-    - :func:`squidpy.im.ImageContainer.crop_corner()`
-    - :func:`squidpy.im.ImageContainer.crop_center()`
+    - :meth:`squidpy.im.ImageContainer.crop_corner()`
+    - :meth:`squidpy.im.ImageContainer.crop_center()`
 
 .. seealso::
 

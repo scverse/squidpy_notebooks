@@ -36,10 +36,10 @@ sc.pl.spatial(adata, color="cell type", spot_size=10)
 
 ###############################################################################
 # We can appreciate how the majority of the tissue seems
-# to consist of "apoptotic tumor cells". There also seem to be other
-# cell types scattered across the tissue, annotated as "T cells",
-# "Macrophages" and different types of "Stromal cells". We can also
-# appreciate how a subset of tumor cell, "basal CK tumor cells" seems
+# to consist of *apoptotic tumor cells*. There also seem to be other
+# cell types scattered across the tissue, annotated as *T cells*,
+# *Macrophages* and different types of *Stromal cells*. We can also
+# appreciate how a subset of tumor cell, *basal CK tumor cells* seems
 # to be located in the lower part of the tissue.
 
 ###############################################################################
@@ -65,7 +65,7 @@ sc.pl.spatial(adata, color="cell type", spot_size=10)
 # the argument ``clusters``. Then, we visualize the results with
 # :func:`squidpy.pl.co_occurrence`.
 # We visualize the result for two conditional groups, namely
-# "basal CK tumor cell" and "T cells".
+# *basal CK tumor cell* and *T cells*.
 
 sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(
@@ -76,7 +76,7 @@ sq.pl.co_occurrence(
 )
 
 ###############################################################################
-# We can observe that "T cells" seems to co-occur
+# We can observe that *T cells* seems to co-occur
 # with *endothelial* and *vimentin hi stromal cells*,
 # whereas *basal CK tumor cell* seem to largely cluster
 # together, except for the presence of a type of stromal
@@ -156,6 +156,6 @@ sq.pl.centrality_scores(adata, cluster_key="cell type", figsize=(20, 5), s=500)
 # You can familiarize yourself with network centralities from the
 # excellent networkx
 # `documentation <https://networkx.org/documentation/stable/reference/algorithms/centrality>`_ .
-# For the purpose of this analysis, we can appreciate that the "apoptotic tumor cell"
+# For the purpose of this analysis, we can appreciate that the *apoptotic tumor cell*
 # clusters shows high closeness centrality, indicating that nodes belonging to that group
 # are often close to each other in the spatial graph.
