@@ -3,9 +3,9 @@
 Extract summary features
 ------------------------
 
-Here, we use :func:`squidpy.im.calculate_image_features` to extract summary features from the tissue image.
+This example shows how to extract summary features from the tissue image.
 
-Summary features give a good overview over the intensity of each image channels at the location of the visium spots.
+Summary features give a good overview over the intensity of each image channels at the location of the Visium spots.
 They are calculated by using ``features = 'summary'``.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
@@ -30,8 +30,8 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 
 ###############################################################################
-# Then, we calculate the 0.1th quantile, mean and stdev for the visium spots of the fluorescence channels 0 (DAPI)
-# and 1 (GFAP).
+# Then, we calculate the 0.1th quantile, mean and standard deviation for the Visium spots
+# of the fluorescence channels 0 (DAPI) and 1 (GFAP).
 # In order to get statistics of only the tissue underneath the spots, we use the argument ``mask_circle = True``.
 # When not setting this flag, statistics are calculated using a square crop centered on the spot.
 

@@ -22,13 +22,13 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Load a H&E visium image.
+# Load a H&E Visium image.
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################
 # Extracting single crops:
 # Crops need to be sized and located. We distinguish crops located based on a
-# corner coordinate of the crop and crops located based on the centre coordinate
+# corner coordinate of the crop and crops located based on the center coordinate
 # of the crop.
 # You can specify the crop coordinates in pixels (as ``int``) or in percentage of total image size (as ``float``)
 

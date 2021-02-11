@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Analyze Visium H&E data
-=========================
+=======================
 
 This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics data.
 
@@ -22,7 +22,7 @@ A couple of notes on pre-processing:
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` for a detailled analysis example of image features.
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` for a detailed analysis example of image features.
 
 Import packages & data
 ----------------------
@@ -131,7 +131,7 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 
 ###############################################################################
 # Comparing gene and feature clusters, we notice that in some regions,
-# they look very similar, like the cluster "Fiber_tract", or clusters around the Hippocampus
+# they look very similar, like the cluster *Fiber_tract*, or clusters around the Hippocampus
 # seems to be roughly recapitulated by the clusters in image feature space.
 # In others, the feature clusters look different, like in the cortex,
 # where the gene clusters show the layered structure of the cortex,
@@ -175,8 +175,8 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 ###############################################################################
 # Given the spatial organization of the mouse brain coronal section,
 # not surprisingly we find high neighborhood enrichment the Hippocampus region:
-# "Pyramidal_layer_dentate_gyrus" and "Pyramidal_layer" clusters seems
-# to be often neighbors with the larger "Hippocampus" cluster.
+# *Pyramidal_layer_dentate_gyrus* and *Pyramidal_layer* clusters seems
+# to be often neighbors with the larger *Hippocampus* cluster.
 
 ###############################################################################
 # Co-occurrence across spatial dimensions
@@ -208,8 +208,8 @@ sq.pl.co_occurrence(
 
 ###############################################################################
 # The result largely recapitulates the previous analysis:
-# the "Pyramidal_layer" cluster seem to co-occur at short distances
-# with the larger "Hippocampus" cluster.
+# the *Pyramidal_layer* cluster seem to co-occur at short distances
+# with the larger *Hippocampus* cluster.
 # It should be noted that the distance units are given in pixels of
 # the Visium ``source_image``, and corresponds to the same unit of
 # the spatial coordinates saved in ``adata.obsm["spatial"]``.
@@ -226,14 +226,14 @@ sq.pl.co_occurrence(
 # In Squidpy, we provide a fast re-implementation the popular method CellPhoneDB :cite:`cellphonedb`
 # (`code <https://github.com/Teichlab/cellphonedb>`_ )
 # and extended its database of annotated ligand-receptor interaction pairs with
-# the popular database Omnipath :cite:`omnipath`.
+# the popular database *Omnipath* :cite:`omnipath`.
 # You can run the analysis for all clusters pairs, and all genes (in seconds,
 # without leaving this notebook), with :func:`squidpy.gr.ligrec`.
 # Furthermore, we'll directly visualize the results, filtering out lowly-expressed genes
 # (with the ``means_range`` argument) and increasing the threshold for
 # the adjusted p-value (with the ``alpha`` argument).
 # We'll also subset the visualization for only one source group,
-# the "Hippocampus" cluster, and two target groups, "Pyramidal_layer_dentate_gyrus" and "Pyramidal_layer" cluster.
+# the *Hippocampus* cluster, and two target groups, *Pyramidal_layer_dentate_gyrus* and *Pyramidal_layer* cluster.
 
 sq.gr.ligrec(
     adata,

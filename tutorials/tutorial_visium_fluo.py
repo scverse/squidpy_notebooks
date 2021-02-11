@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Analyse Visium fluorescence data
+Analyze Visium fluorescence data
 ================================
 
 This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium data.
@@ -93,7 +93,7 @@ for i, ax in enumerate(axes):
 # Image segmentation
 # ------------------
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
-# But even before that, it's best practice to preprocess the image by e.g. smoothing it using
+# But even before that, it's best practice to pre-process the image by e.g. smoothing it using
 # in :func:`squidpy.im.process`.
 # We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`

@@ -3,7 +3,7 @@
 Extract segmentation features
 -----------------------------
 
-This examples show how to extract segmentation features from the tissue image.
+This example shows how to extract segmentation features from the tissue image.
 
 Features extracted from a nucleus segmentation range from the number of nuclei per image,
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.

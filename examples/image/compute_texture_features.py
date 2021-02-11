@@ -6,8 +6,8 @@ Extract texture features
 This example shows how to use :func:`squidpy.im.calculate_image_features`.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
-calculating a grey-level co-occurence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
-The GLCM includes the number of times that grey-level `j` occurs at a distance `d`
+calculating a grey-level co-occurrence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
+The GLCM includes the number of times that grey-level :math:`j` occurs at a distance :math:`d`
 and at an angle :math:`\\theta` from grey-level :math:`i`.
 From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
@@ -28,11 +28,11 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
+# Let's load the fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
 #
 # Note that for texture features it may make sense to compute them over a larger crop size to include more context,
-# e.g., ``spot_scale=2`` or ``spit_scale=4`` which will extract crops with double or four times the radius
-# than the original visium spot size.
+# e.g., ``spot_scale = 2`` or ``spit_scale = 4`` which will extract crops with double or four times the radius
+# than the original Visium spot size.
 # For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
 # get spatial dataset including high-resolution tissue image
@@ -49,7 +49,7 @@ sq.im.calculate_image_features(
     show_progress_bar=False,
 )
 ###############################################################################
-# The result is stored in ``adata.obsm['texture_features']``
+# The result is stored in ``adata.obsm['texture_features']``.
 
 adata.obsm["texture_features"].head()
 

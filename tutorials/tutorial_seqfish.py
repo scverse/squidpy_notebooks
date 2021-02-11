@@ -134,7 +134,7 @@ sq.pl.co_occurrence(
 # It also seems that at longer distances, there is a co-occurrence of cells belonging to
 # the *Presomitic mesoderm* cluster. By visualizing the full tissue as before we can indeed
 # appreciate that these cell types seems to form a defined clusters relatively close
-# to the "Lateral plate mesoderm" cells.
+# to the *Lateral plate mesoderm* cells.
 # It should be noted that the distance units corresponds to
 # the spatial coordinates saved in `adata.obsm["spatial"]`.
 
@@ -149,14 +149,13 @@ sq.pl.co_occurrence(
 # In Squidpy, we provide a fast re-implementation the popular method CellPhoneDB :cite:`cellphonedb`
 # (`code <https://github.com/Teichlab/cellphonedb>`_ )
 # and extended its database of annotated ligand-receptor interaction pairs with
-# the popular database Omnipath :cite:`omnipath`.
-# You can run the analysis for all clusters pairs,
-# and all genes (in seconds,
+# the popular database *Omnipath* :cite:`omnipath`.
+# You can run the analysis for all clusters pairs, and all genes (in seconds,
 # without leaving this notebook), with :func:`squidpy.gr.ligrec`.
 #
 # Let's perform the analysis and visualize the result for three clusters of
-# interest: "Lateral plate mesoderm",
-# "Intermediate mesoderm" and "Allantois". For the visualization, we will
+# interest: *Lateral plate mesoderm*,
+# *Intermediate mesoderm* and *Allantois*. For the visualization, we will
 # filter out annotations
 # with low-expressed genes (with the ``means_range`` argument)
 # and decreasing the threshold

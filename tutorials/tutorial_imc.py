@@ -77,10 +77,10 @@ sq.pl.co_occurrence(
 
 ###############################################################################
 # We can observe that "T cells" seems to co-occur
-# with "endothelial" and "vimentin hi stromal cells",
-# whereas "basal CK tumor cell" seem to largely cluster
+# with *endothelial* and *vimentin hi stromal cells*,
+# whereas *basal CK tumor cell* seem to largely cluster
 # together, except for the presence of a type of stromal
-# cells ("small elongated stromal cell") at close distance.
+# cells (*small elongated stromal cell*) at close distance.
 
 ###############################################################################
 # Neighborhood enrichment
@@ -108,9 +108,9 @@ sq.gr.nhood_enrichment(adata, cluster_key="cell type")
 sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 
 ###############################################################################
-# Interestingly, "T cells" shows an enrichment with "stromal"  and
-# "endothelial cells", as well as "macrophages". Another interesting
-# result is that "apoptotic tumor cells", being uniformly spread across
+# Interestingly, *T cells* shows an enrichment with *stromal* and
+# *endothelial cells*, as well as *macrophages*. Another interesting
+# result is that *apoptotic tumor cells*, being uniformly spread across
 # the tissue area, show a neighbor depletion against any other cluster
 # (but a strong enrichment for itself). This is a correct interpretation
 # from a permutation based approach, because the cluster annotation,
