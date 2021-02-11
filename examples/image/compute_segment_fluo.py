@@ -20,6 +20,7 @@ In this example we use the DAPI stain of a fluorescence dataset to compute the s
 For harder cases, you may want to provide your own pre-trained segmentation model.
 
 .. seealso::
+
     See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
     calculate a cell-segmentation of an H&E stain.
 """

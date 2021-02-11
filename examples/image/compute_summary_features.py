@@ -10,7 +10,7 @@ They are calculated by using ``features = 'summary'``.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``quantiles``: Quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated
+- ``quantiles`` - quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated.
 
 .. seealso::
 

@@ -11,6 +11,7 @@ Keyword arguments ``kwargs`` are passed to the wrapped function.
 This allows us to set the width of the Gaussian kernel, :math:`sigma`, used for smoothing.
 
 .. seealso::
+
     - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
     - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.
 """

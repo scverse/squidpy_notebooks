@@ -13,6 +13,7 @@ If you require precise cell-segmentation and cell-counts, you might want to add 
 and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
 
 .. seealso::
+
     See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example how to calculate
     a cell-segmentation of a fluorescence image.
 """

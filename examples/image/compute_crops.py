@@ -14,7 +14,6 @@ Specifically, it shows how to use:
 
     See :ref:`sphx_glr_auto_examples_image_compute_image_container.py` for general usage of
     :class:`squidpy.im.ImageContainer`.
-
 """
 
 import squidpy as sq

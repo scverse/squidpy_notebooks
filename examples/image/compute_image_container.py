@@ -9,7 +9,6 @@ This example shows how to use :class:`squidpy.im.ImageContainer` to interact wit
 
     See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for examples how to crop images using
     :class:`squidpy.im.ImageContainer`.
-
 """
 
 import squidpy as sq

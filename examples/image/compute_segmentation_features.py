@@ -12,10 +12,11 @@ Use ``features='segmentation'`` to calculate the features.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``label_layer``: name of label image layer in ``img``
-- ``props``: Segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
+- ``label_layer`` - name of label image layer in ``img``.
+- ``props`` - segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
 
 .. seealso::
+
     - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details
       on calculating a cell-segmentation.
     - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of

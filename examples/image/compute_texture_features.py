@@ -14,9 +14,9 @@ See also :func:`skimage.feature.greycomatrix`.
 
 In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
-- ``distances``: Distances that are taken into account for finding repeating patterns
-- ``angles``: Range on which values are binned. Default is the whole image range
-- ``props``: Texture features that are extracted from the GLCM
+- ``distances`` - distances that are taken into account for finding repeating patterns.
+- ``angles`` - range on which values are binned. Default is the whole image range.
+- ``props`` - texture features that are extracted from the GLCM.
 
 .. seealso::
 
