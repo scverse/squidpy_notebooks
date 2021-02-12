@@ -2,10 +2,16 @@
 """
 Neighbors enrichment analysis
 -----------------------------
+
 This example shows how to run the neighbors enrichment analysis routine.
 
 It calculates an enrichment score based on proximity on the connectivity graph of cell clusters.
 The number of observed events is compared against :math:`N` permutations and a *z-score* is computed.
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    :func:`squidpy.gr.spatial_neighbors`.
 """
 
 import squidpy as sq

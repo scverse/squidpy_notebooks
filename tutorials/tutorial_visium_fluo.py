@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """
-Visium Fluorescence dataset
-===========================
-This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dataset
-with a focus on extracting image features.
+Analyze Visium fluorescence data
+================================
+
+This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium data.
 
 For a tutorial using Visium data that includes the graph analysis functions, have a look at
-:func:`sphx_glr_auto_tutorials_visium_hne.py`.
+:ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`.
 The dataset used here consists of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
 10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
@@ -20,7 +20,11 @@ A couple of notes on pre-processing:
 - The cluster annotation was performed using several resources, such as the
   `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
   the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-  from the Linnarson lab and this recent `preprint <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+  from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py` for additional analysis examples.
 
 Import packages & data
 ----------------------
@@ -55,15 +59,15 @@ sc.pl.spatial(adata, color="cluster")
 
 ###############################################################################
 # The fluorescence image provided with this dataset has three channels:
-# DAPI (specific to DNA), anti-NEUN (specific to neurons), anti-GFAP (specific to Glial cells).
+# *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
+# We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
 
 fig, axes = plt.subplots(1, 3)
 for i, ax in enumerate(axes):
-    ax.imshow(img["image"][:, :, i])
-    ax.axis("off")
+    img.show(channel=i, ax=ax)
 
 ###############################################################################
-# Visium datasets contain high-resolution images of the tissue that was used for the gene extraction.
+# Visium datasets contain high-resolution images of the tissue.
 # Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
 # for each Visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analyzed together
 # with the ``obs x gene`` gene expression matrix.
@@ -85,28 +89,38 @@ for i, ax in enumerate(axes):
 # To provide more context and allow the calculation of multi-scale features, we will additionally calculate
 # `summary` and `histogram` features at different crop sizes and scales.
 #
-# Image Segmentation
+# Image segmentation
 # ------------------
-# To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment_img`.
-# For this we use the DAPI channel if the fluorescence image (``channel_ids=0``).
+# To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
+# But even before that, it's best practice to pre-process the image by e.g. smoothing it using
+# in :func:`squidpy.im.process`.
+# We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 # for more details on how to calculate a segmented image.
 
-sq.im.segment_img(img=img, img_id="image", model_group="watershed", channel_ids=0, thresh=40000, xs=1000, ys=1000)
+sq.im.process(
+    img=img,
+    layer="image",
+    method="smooth",
+)
+
+sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
 
 # plot the resulting segmentation
-img_crop = img.crop_corner(2000, 2000, 500, 500)
-fig, axes = plt.subplots(1, 2)
-axes[0].imshow(img_crop["image"][:, :, 0])
-axes[1].imshow(img_crop["segmented_watershed"] > 0, interpolation="none")
-for ax in axes:
-    ax.axis("off")
+fig, ax = plt.subplots(1, 2)
+img_crop = img.crop_corner(2000, 2000, size=500)
+img_crop.show(layer="image", channel=0, ax=ax[0])
+img_crop.show(
+    layer="segmented_watershed",
+    channel=0,
+    ax=ax[1],
+)
 
 ###############################################################################
-# The result of :func:`squidpy.im.segment_img` is saved in ``img['segmented_watershed']``.
+# The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
 # It is a label image where each segmented object is annotated with a different integer number.
 #
-# Segmentation Features
+# Segmentation features
 # ---------------------
 # We can now use the segmentation to calculate segmentation features.
 # These include morphological features of the segmented objects and channel-wise image
@@ -114,16 +128,23 @@ for ax in axes:
 # In particular, we can count the segmented objects within each Visium spot to get an
 # approximation of the number of cells.
 # In addition, we can calculate the mean intensity of each fluorescence channel within the segmented objects.
-# Depending on the fluorescence channels, this can give us e.g. an estimation of the cell type.
+# Depending on the fluorescence channels, this can give us e.g., an estimation of the cell type.
 # For more details on how the segmentation features, you can have a look at
+# the docs of :func:`squidpy.im.calculate_image_features` or the example at
 # :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
 
 
 # define image layer to use for segmentation
-features_kwargs = {"segmentation": {"label_img_id": "segmented_watershed"}}
+features_kwargs = {"segmentation": {"label_layer": "segmented_watershed"}}
 # calculate segmentation features
 sq.im.calculate_image_features(
-    adata, img, features="segmentation", key_added="features_segmentation", n_jobs=1, features_kwargs=features_kwargs
+    adata,
+    img,
+    features="segmentation",
+    layer="image",
+    key_added="features_segmentation",
+    n_jobs=1,
+    features_kwargs=features_kwargs,
 )
 # plot results and compare with gene-space clustering
 sc.pl.spatial(
@@ -131,16 +152,17 @@ sc.pl.spatial(
     color=[
         "segmentation_label",
         "cluster",
-        "segmentation_mean_intensity_ch1_mean",
-        "segmentation_mean_intensity_ch2_mean",
+        "segmentation_ch-0_mean_intensity_mean",
+        "segmentation_ch-1_mean_intensity_mean",
     ],
+    frameon=False,
     ncols=2,
 )
 
 ###############################################################################
 # Above, we made use of :func:`squidpy.pl.extract`, a method to extract
 # all features in a given `adata.obsm['{key}']` and temporarily save them to :attr:`anndata.AnnData.obs`.
-# Such method is particularly useful for plotting purpose, as showed above.
+# Such method is particularly useful for plotting purpose, as shown above.
 #
 # The number of cells per Visium spot provides an interesting view of the data that can enhance
 # the characterization of gene-space clusters.
@@ -150,10 +172,10 @@ sc.pl.spatial(
 # the Hippocampus is one cluster only.
 #
 # The per-channel intensities plotted in the second row show us that the areas labeled with *Cortex_1* and
-# *Cortex_3* have a higher intensity of channel 1, anti-NEUN (lower left).
+# *Cortex_3* have a higher intensity of channel 1, *anti-NEUN* (lower left).
 # This means that these areas have more neurons that the remaining areas in this crop.
-# In addition, cluster *Fiber_tracts* and *lateral ventricles* seems to be enriched with Glial cells,
-# seen by the larger mean intensities of channel 2, anti-GFAP, in these areas (lower right).
+# In addition, cluster *Fiber_tracts* and *lateral ventricles* seems to be enriched with *Glial cells*,
+# seen by the larger mean intensities of channel 2, *anti-GFAP*, in these areas (lower right).
 #
 # Extract and cluster features
 # ----------------------------
@@ -169,17 +191,20 @@ sc.pl.spatial(
 # define different feature calculation combinations
 params = {
     # all features, corresponding only to tissue underneath spot
-    "features_orig": {"features": ["summary", "texture", "histogram"], "size": 1, "scale": 1.0, "mask_circle": True},
+    "features_orig": {
+        "features": ["summary", "texture", "histogram"],
+        "scale": 1.0,
+        "mask_circle": True,
+    },
     # summary and histogram features with a bit more context, original resolution
-    "features_context": {"features": ["summary", "histogram"], "size": 2, "scale": 1.0},
+    "features_context": {"features": ["summary", "histogram"], "scale": 1.0},
     # summary and histogram features with more context and at lower resolution
-    "features_lowres": {"features": ["summary", "histogram"], "size": 4, "scale": 0.25},
+    "features_lowres": {"features": ["summary", "histogram"], "scale": 0.25},
 }
 
-# extract features with the different parameters in a loop
 for feature_name, cur_params in params.items():
     # features will be saved in `adata.obsm[feature_name]`
-    sq.im.calculate_image_features(adata, img, key_added=feature_name, dtype="uint8", n_jobs=4, **cur_params)
+    sq.im.calculate_image_features(adata, img, layer="image", key_added=feature_name, n_jobs=1, **cur_params)
 
 # combine features in one dataframe
 adata.obsm["features"] = pd.concat([adata.obsm[f] for f in params.keys()], axis="columns")
@@ -205,7 +230,6 @@ def cluster_features(features: pd.DataFrame, like=None):
         features = features.filter(like=like)
     # create temporary adata to calculate the clustering
     adata = ad.AnnData(features)
-    # adata.var_names_make_unique()
     # important - feature values are not scaled, so need to scale them before PCA
     sc.pp.scale(adata)
     # calculate leiden clustering
@@ -222,7 +246,6 @@ def cluster_features(features: pd.DataFrame, like=None):
 adata.obs["features_summary_cluster"] = cluster_features(adata.obsm["features"], like="summary")
 adata.obs["features_histogram_cluster"] = cluster_features(adata.obsm["features"], like="histogram")
 adata.obs["features_texture_cluster"] = cluster_features(adata.obsm["features"], like="texture")
-adata.obs["features_cluster"] = cluster_features(adata.obsm["features"], like="summary")
 
 sc.set_figure_params(facecolor="white", figsize=(8, 8))
 sc.pl.spatial(
@@ -231,7 +254,6 @@ sc.pl.spatial(
         "features_summary_cluster",
         "features_histogram_cluster",
         "features_texture_cluster",
-        "features_cluster",
         "cluster",
     ],
     ncols=3,

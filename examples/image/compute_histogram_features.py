@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 """
-Histogram features
-------------------
+Extract histogram features
+--------------------------
+
 This example shows how to extract histogram features from tissue image.
 
 Histogram features give a more detailed view than summary features
@@ -23,7 +24,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence Visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+# Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
 
 # get spatial dataset including high-resolution tissue image
@@ -46,7 +47,8 @@ adata.obsm["histogram_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to
+# learn how to use our interactive :mod:`napari` plugin.
 # With these features we can e.g. appreciate the detailed distribution of
 # intensity values of channel 0 (DAPI stain) on the different bins.
 

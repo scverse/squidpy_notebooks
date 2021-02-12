@@ -49,10 +49,14 @@ jobs:
             run: |
                 python -m pip install --upgrade pip
                 pip install tox
+                sudo apt install pandoc
 
         -   name: Linting
+            # TODO: remove -q once squidpy is public
             run: |
-                tox -e lint
+                tox -q -e lint,check-docs
+            env:
+                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
     test:
         needs: init
@@ -143,7 +147,7 @@ jobs:
         -   name: Regenerate documentation
             # TODO: remove -q once squidpy is public
             run: |
-                tox -q -e docs,check-docs
+                tox -q -e docs
             env:
                 PLATFORM: ubuntu-latest
                 SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}

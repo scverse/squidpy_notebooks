@@ -3,9 +3,9 @@
 Convert to grayscale
 --------------------
 
-This example shows how to use :func:`squidpy.im.process` to convert an image layer
-of :class:`squidpy.im.ImageContainer` to grayscale.
+This example shows how to use :func:`squidpy.im.process` to convert an image layer to grayscale.
 
+You can convert any layer of :class:`squidpy.im.ImageContainer` to grayscale.
 We use the argument ``method="gray"`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 
@@ -30,10 +30,10 @@ img = sq.datasets.visium_hne_image_crop()
 # Then, we convert the image to grayscale and plot the result.
 # With the argument ``layer`` we can select the image layer that should be processed.
 # When converting to grayscale, the channel dimensions change from 3 to 1.
-# By default, the name of the resulting channel dimension will be ``{{original_channel_name}}_gray``.
-# Use the argument ``channel_dim`` to set a new channel name explicitely.
+# By default, the name of the resulting channel dimension will be ``'{{original_channel_name}}_gray'``.
+# Use the argument ``channel_dim`` to set a new channel name explicitly.
 # By default, the resulting image is saved in the layer ``image_gray``.
-# This behaviour can be changed with the arguments ``copy`` and ``layer_added``.
+# This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 sq.im.process(img, layer="image", method="gray")
 

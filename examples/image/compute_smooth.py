@@ -1,17 +1,17 @@
 #!/usr/bin/env python
-"""
-Smoothing an image
-------------------
+r"""
+Smooth an image
+---------------
 
-This example shows how to use :func:`squidpy.im.process` to smooth an image layer of
-:class:`squidpy.im.ImageContainer`.
+This example shows how to use :func:`squidpy.im.process` to smooth an image layer of :class:`squidpy.im.ImageContainer`.
 
 We use the argument ``method="smooth"`` to smooth the image.
 This calls :func:`skimage.filters.gaussian` in the background.
 Keyword arguments ``kwargs`` are passed to the wrapped function.
-This allows us to set the width of the gaussian kernel, :math:`sigma`, used for smoothing.
+This allows us to set the width of the Gaussian kernel, :math:`\\sigma`, used for smoothing.
 
 .. seealso::
+
     - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
     - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.
 """

@@ -1,7 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Building spatial neighbors graph
 --------------------------------
+
 This example shows how to compute a spatial neighbors graph.
 
 Spatial graph is a graph of spatial neighbors with observations as nodes
@@ -42,7 +43,7 @@ adata.obsp["spatial_connectivities"]
 ###############################################################################
 # For ``n_rings = 1`` there will be no ``adata.obsp['spatial_distances']``
 # The weights of the weighted adjacency matrix are ordinal numbers of hexagonal rings
-# in the case of ``coord_type="visium"``.
+# in the case of ``coord_type = 'visium'``.
 
 adata.obsp["spatial_distances"]
 
@@ -60,7 +61,7 @@ sc.pl.spatial(
 )
 
 ###############################################################################
-# Next, we show how to compute the spatial neighbors graph for a non-visium dataset.
+# Next, we show how to compute the spatial neighbors graph for a non-Visium dataset.
 
 adata = sq.datasets.imc()
 adata

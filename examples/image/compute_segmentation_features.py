@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 """
-Segmentation features
----------------------
-This examples show how to extract segmentation features from the tissue image.
+Extract segmentation features
+-----------------------------
+
+This example shows how to extract segmentation features from the tissue image.
 
 Features extracted from a nucleus segmentation range from the number of nuclei per image,
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
@@ -11,10 +12,11 @@ Use ``features='segmentation'`` to calculate the features.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``label_layer``: name of label image layer in ``img``
-- ``props``: Segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
+- ``label_layer`` - name of label image layer in ``img``.
+- ``props`` - segmentation features that are calculated. See `properties` in :func:`skimage.measure.regionprops_table`.
 
 .. seealso::
+
     - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details
       on calculating a cell-segmentation.
     - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
@@ -71,7 +73,8 @@ adata.obsm["segmentation_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive :mod:`napari` plugin.
+# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+# how to use our interactive :mod:`napari` plugin.
 # Here, we show all calculated segmentation features.
 
 # show all channels (using low-res image contained in adata to save memory)
@@ -79,7 +82,6 @@ fig, axes = plt.subplots(1, 3, figsize=(8, 4))
 for i, ax in enumerate(axes):
     ax.imshow(adata.uns["spatial"]["V1_Adult_Mouse_Brain_Coronal_Section_2"]["images"]["hires"][:, :, i])
     ax.set_title(f"ch{i}")
-    ax.axis("off")
 
 # plot segmentation features
 sc.pl.spatial(

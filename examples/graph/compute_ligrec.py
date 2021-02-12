@@ -2,10 +2,16 @@
 """
 Receptor-ligand analysis
 ------------------------
+
 This example shows how to run the receptor-ligand analysis.
 
 It uses an efficient re-implementation of the :cite:`cellphonedb` algorithm which can handle large number of interacting
 pairs (100k+) and cluster combinations (100+).
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py` for
+    finding cluster neighborhood with :func:`squidpy.gr.nhood_enrichment`.
 """
 import squidpy as sq
 

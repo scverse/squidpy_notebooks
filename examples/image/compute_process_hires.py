@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 """
-Processing a high-resolution Image
-----------------------------------
+Process a high-resolution image
+-------------------------------
 
-This example shows how to use :func:`squidpy.im.process` to apply any processing function
-(e.g., smoothing, conversion to grayscale) to a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
+This example shows how to use :func:`squidpy.im.process` with tiling.
+
+The function can be applied to any method (e.g., smoothing, conversion to grayscale)
+or ``layer`` of a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
 
 By default, :func:`squidpy.im.process` processes the entire input image at once.
 In the case of high-resolution tissue slides however, the images might be too big to fit in memory
