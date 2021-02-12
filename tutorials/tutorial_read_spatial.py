@@ -74,9 +74,11 @@ sc.pl.spatial(adata, color="leiden", spot_size=1)
 #
 # For use cases where there is no tissue image, this is all you need
 # to start using Scanpy/Squidpy for your analysis.
-# For instance, you can compute a spatial graph based on a fixed neighbor radius
+# For instance, you can compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`
+# based on a fixed neighbor radius
 # that is informative given your experimental settings.
 
+sq.gr.spatial_neighbors(adata, radius=3.0)
 sc.pl.spatial(adata, color="leiden", neighbors_key="spatial_neighbors", spot_size=1, edges=True, edges_width=2)
 
 ###############################################################################
