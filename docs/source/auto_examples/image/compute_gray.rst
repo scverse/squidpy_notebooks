@@ -18,19 +18,21 @@
 .. _sphx_glr_auto_examples_image_compute_gray.py:
 
 
-Converting to Grayscale
------------------------
+Convert to grayscale
+--------------------
 
-This example shows how to use :func:`squidpy.im.process_img` to convert an image layer
-of :class:`squidpy.im.ImageContainer` to grayscale.
+This example shows how to use :func:`squidpy.im.process` to convert an image layer to grayscale.
 
-We use the argument ``processing="gray"`` to convert the image.
+You can convert any layer of :class:`squidpy.im.ImageContainer` to grayscale.
+We use the argument ``method="gray"`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 
-See also :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
-and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+.. seealso::
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-20
+    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. GENERATED FROM PYTHON SOURCE LINES 17-22
 
 .. code-block:: default
 
@@ -46,14 +48,14 @@ and :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-25
+.. GENERATED FROM PYTHON SOURCE LINES 23-27
 
 First, we load an H&E stained tissue image.
 Here, we only load a cropped dataset to speed things up.
-In general, :func:`squidpy.im.process_img` can also process very large images
+In general, :func:`squidpy.im.process` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-29
 
 .. code-block:: default
 
@@ -66,31 +68,28 @@ In general, :func:`squidpy.im.process_img` can also process very large images
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-35
+.. GENERATED FROM PYTHON SOURCE LINES 30-37
 
 Then, we convert the image to grayscale and plot the result.
-With the argument ``img_id`` we can select the image layer that should be processed.
+With the argument ``layer`` we can select the image layer that should be processed.
 When converting to grayscale, the channel dimensions change from 3 to 1.
-By default, the name of the resulting channel dimension will be ``{{original_channel_name}}_gray``.
-Use the argument ``channel_id`` to set a new channel name explicitely.
+By default, the name of the resulting channel dimension will be ``'{{original_channel_name}}_gray'``.
+Use the argument ``channel_dim`` to set a new channel name explicitly.
 By default, the resulting image is saved in the layer ``image_gray``.
-This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-46
+.. GENERATED FROM PYTHON SOURCE LINES 37-45
 
 .. code-block:: default
 
 
-    sq.im.process_img(img, img_id="image", processing="gray")
+    sq.im.process(img, layer="image", method="gray")
 
     fig, axes = plt.subplots(1, 2)
-    axes[0].imshow(img["image"])
-    axes[0].set_title("original")
-    axes[1].imshow(img["image_gray"].squeeze(), cmap="gray")
-    axes[1].set_title("grayscale")
-    for ax in axes:
-        ax.axis("off")
-
+    img.show("image", ax=axes[0])
+    _ = axes[0].set_title("original")
+    img.show("image_gray", cmap="gray", ax=axes[1])
+    _ = axes[1].set_title("grayscale")
 
 
 
@@ -105,9 +104,9 @@ This behaviour can be changed with the arguments ``copy`` and ``key_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.865 seconds)
+   **Total running time of the script:** ( 0 minutes  8.701 seconds)
 
-**Estimated memory usage:**  424 MB
+**Estimated memory usage:**  744 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

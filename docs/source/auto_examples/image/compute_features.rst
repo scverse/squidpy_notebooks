@@ -18,28 +18,33 @@
 .. _sphx_glr_auto_examples_image_compute_features.py:
 
 
-Extract Image Features
-======================
-This example explains the computation of spot-wise features from visium images.
+Extract image features
+----------------------
+
+This example shows the computation of spot-wise features from Visium images.
 
 Visium datasets contain high-resolution images of the tissue in addition to the spatial gene expression
-measurements per spot (`obs`).
+measurements per spot (*obs*).
 In this notebook, we extract features for each spot from an image using :func:`squidpy.im.calculate_image_features`
-and create a ``obs x features`` matrix that can be analysed together with
-the ``obs x genes`` spatial gene expression matrix.
+and create a **obs x features** matrix that can be analyzed together with
+the **obs x genes** spatial gene expression matrix.
 
-We provide different feature extractors that are described in more detail in the following examples:
+.. seealso::
 
-- summary statistics of each color channel
-  (:ref:`sphx_glr_auto_examples_image_compute_summary_features.py`)
-- texture features based on repeating patterns
-  (:ref:`sphx_glr_auto_examples_image_compute_texture_features.py`)
-- color histogram features using counts in bins of each channel's histogram
-  (:ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`)
-- number and size of objects from a binary segmentation layer
-  (:ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`)
+    We provide different feature extractors that are described in more detail in the following examples:
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-36
+    - See :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` on how to calculate summary statistics
+      of each color channel.
+    - See :ref:`sphx_glr_auto_examples_image_compute_texture_features.py` on how to calculate texture features based
+      on repeating patterns.
+    - See :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py` on how to calculate
+      color histogram features.
+    - See :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py` on how to calculate
+      number and size of objects from a binary segmentation layer.
+    - See :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` on how to calculate custom features
+      by providing any feature extraction function.
+
+.. GENERATED FROM PYTHON SOURCE LINES 29-41
 
 .. code-block:: default
 
@@ -62,13 +67,13 @@ We provide different feature extractors that are described in more detail in the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 The high-resolution tissue image is contained in ``img['image']``,
 and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
-We can plot the spots overlayed on a lower-resolution version of the tissue image contained in adata.
+We can plot the spots overlayed on a lower-resolution version of the tissue image contained in ``adata``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-49
+.. GENERATED FROM PYTHON SOURCE LINES 45-53
 
 .. code-block:: default
 
@@ -94,9 +99,7 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
  .. code-block:: none
 
-    ImageContainer object with 1 layer(s)
-        image: y (3527), x (3527), channels (3)
-
+    ImageContainer[shape=(3527, 3527), layers=['image']]
     [[1575   98]
      [2538 1774]
      [1850   98]
@@ -108,32 +111,31 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-64
+.. GENERATED FROM PYTHON SOURCE LINES 54-68
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
 This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
 ``adata.obsm[key]``.
-It contains several arguments to modify its behaviour.
+It contains several arguments to modify its behavior.
 With these arguments you can
 
-- specify the image used for feature calculation using ``img_id``,
+- specify the image used for feature calculation using ``layer``,
 - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
 - specify how the crops used for feature calculation look like using ``kwargs``,
 - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
-- specify how the data that is returned using ``key_added`` and ``copy``.
+- specify how the data is returned using ``key_added`` and ``copy``.
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-71
+.. GENERATED FROM PYTHON SOURCE LINES 68-74
 
 .. code-block:: default
 
 
-    sq.im.calculate_image_features(adata, img, features="summary", key_added="features")
+    sq.im.calculate_image_features(adata, img, features="summary", key_added="features", show_progress_bar=False)
 
     # show the calculated features
-    print(f"calculated features: {list(adata.obsm['features'].columns)}")
     adata.obsm["features"].head()
 
 
@@ -146,7 +148,8 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
 
  .. code-block:: none
 
-    calculated features: ['summary_quantile_0.9_ch_0', 'summary_quantile_0.5_ch_0', 'summary_quantile_0.1_ch_0', 'summary_quantile_0.9_ch_1', 'summary_quantile_0.5_ch_1', 'summary_quantile_0.1_ch_1', 'summary_quantile_0.9_ch_2', 'summary_quantile_0.5_ch_2', 'summary_quantile_0.1_ch_2']
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
 
 
 .. raw:: html
@@ -170,75 +173,111 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>summary_quantile_0.9_ch_0</th>
-          <th>summary_quantile_0.5_ch_0</th>
-          <th>summary_quantile_0.1_ch_0</th>
-          <th>summary_quantile_0.9_ch_1</th>
-          <th>summary_quantile_0.5_ch_1</th>
-          <th>summary_quantile_0.1_ch_1</th>
-          <th>summary_quantile_0.9_ch_2</th>
-          <th>summary_quantile_0.5_ch_2</th>
-          <th>summary_quantile_0.1_ch_2</th>
+          <th>summary_ch-0_quantile-0.9</th>
+          <th>summary_ch-0_mean</th>
+          <th>summary_ch-0_std</th>
+          <th>summary_ch-0_quantile-0.5</th>
+          <th>summary_ch-0_quantile-0.1</th>
+          <th>summary_ch-1_quantile-0.9</th>
+          <th>summary_ch-1_mean</th>
+          <th>summary_ch-1_std</th>
+          <th>summary_ch-1_quantile-0.5</th>
+          <th>summary_ch-1_quantile-0.1</th>
+          <th>summary_ch-2_quantile-0.9</th>
+          <th>summary_ch-2_mean</th>
+          <th>summary_ch-2_std</th>
+          <th>summary_ch-2_quantile-0.5</th>
+          <th>summary_ch-2_quantile-0.1</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th>AAAGACCCAAGTCGCG-1</th>
           <td>140.0</td>
+          <td>110.332029</td>
+          <td>24.126489</td>
           <td>112.0</td>
           <td>78.0</td>
           <td>108.0</td>
+          <td>80.129908</td>
+          <td>21.863844</td>
           <td>80.0</td>
           <td>53.0</td>
           <td>140.0</td>
+          <td>115.145057</td>
+          <td>19.554108</td>
           <td>115.0</td>
           <td>90.0</td>
         </tr>
         <tr>
           <th>AAAGGGATGTAGCAAG-1</th>
           <td>144.0</td>
+          <td>115.557253</td>
+          <td>21.279808</td>
           <td>114.0</td>
           <td>90.0</td>
           <td>107.0</td>
+          <td>79.957329</td>
+          <td>20.546552</td>
           <td>77.0</td>
           <td>56.0</td>
           <td>142.0</td>
+          <td>113.362959</td>
+          <td>21.422890</td>
           <td>111.0</td>
           <td>88.0</td>
         </tr>
         <tr>
           <th>AAAGTCACTGATGTAA-1</th>
           <td>139.0</td>
+          <td>112.740563</td>
+          <td>22.550223</td>
           <td>115.0</td>
           <td>84.0</td>
           <td>121.0</td>
+          <td>93.735134</td>
+          <td>22.459672</td>
           <td>94.0</td>
           <td>66.0</td>
           <td>141.0</td>
+          <td>117.298447</td>
+          <td>19.089482</td>
           <td>118.0</td>
           <td>93.0</td>
         </tr>
         <tr>
           <th>AAATGGCATGTCTTGT-1</th>
           <td>138.0</td>
+          <td>107.372175</td>
+          <td>24.896688</td>
           <td>109.0</td>
           <td>74.0</td>
           <td>101.0</td>
+          <td>72.320288</td>
+          <td>21.589912</td>
           <td>71.0</td>
           <td>45.0</td>
           <td>142.0</td>
+          <td>112.642091</td>
+          <td>21.896309</td>
           <td>111.0</td>
           <td>85.0</td>
         </tr>
         <tr>
           <th>AAATGGTCAATGTGCC-1</th>
           <td>146.0</td>
+          <td>113.296553</td>
+          <td>24.740431</td>
           <td>113.0</td>
           <td>84.0</td>
           <td>112.0</td>
+          <td>80.073602</td>
+          <td>22.858352</td>
           <td>77.0</td>
           <td>53.0</td>
           <td>144.0</td>
+          <td>115.193915</td>
+          <td>20.901613</td>
           <td>113.0</td>
           <td>89.0</td>
         </tr>
@@ -249,68 +288,74 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-77
+.. GENERATED FROM PYTHON SOURCE LINES 75-79
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
-See :ref:`sphx_glr_auto_examples_plotting_compute_extract.py` for more details on this function.
 
-Here, we plot the median values of all channels (`summary_quantile_0.5_ch_0`, `summary_quantile_0.5_ch_1` and
-`summary_quantile_0.5_ch_2`).
+Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
+`summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-83
+.. GENERATED FROM PYTHON SOURCE LINES 79-85
 
 .. code-block:: default
 
 
     sc.pl.spatial(
         sq.pl.extract(adata, "features"),
-        color=["summary_quantile_0.5_ch_0", "summary_quantile_0.5_ch_1", "summary_quantile_0.5_ch_2"],
+        color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
     )
 
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_features_002.png
-    :alt: summary_quantile_0.5_ch_0, summary_quantile_0.5_ch_1, summary_quantile_0.5_ch_2
+    :alt: summary_ch-0_quantile-0.5, summary_ch-0_quantile-0.5, summary_ch-2_quantile-0.5
     :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-100
+.. GENERATED FROM PYTHON SOURCE LINES 86-102
 
 Specify crop appearance
------------------------
-Features are extracted from image crops that capture the visium spots
+=======================
+Features are extracted from image crops that capture the Visium spots
 (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
 By default, the crops have the same size as the spot, are not scaled and square.
 We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round
-visium spots is taken into account to compute the features.
-Further, we can set ``scale`` and ``size`` arguments to change how the crops are generated.
+Visium spots is taken into account to compute the features.
+Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
 For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-- Use ``mask_circle=True, scale=1, size=1``, if you would like to get features that are calculated only from tissue
-  in a visium spot
+- Use ``mask_circle=True, scale=1, spot_scale=1``, if you would like to get features that are calculated only from
+  tissue in a Visium spot
 - Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
-- Use ``size=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the visium spot
+- Use ``spot_scale=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the Visium spot
 
 Let us extract masked and scaled features and compare them
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-132
+.. GENERATED FROM PYTHON SOURCE LINES 102-142
 
 .. code-block:: default
 
 
     # We subset adata to the first 50 spots to make the computation of features fast.
     # Skip this step if you want to calculate features from all spots
-    adata_sml = adata[0:50].copy()
+    adata_sml = adata[:50].copy()
 
     # calculate default features
-    sq.im.calculate_image_features(adata_sml, img, features=["summary", "texture", "histogram"], key_added="features")
+    sq.im.calculate_image_features(
+        adata_sml, img, features=["summary", "texture", "histogram"], key_added="features", show_progress_bar=False
+    )
     # calculate features with masking
     sq.im.calculate_image_features(
-        adata_sml, img, features=["summary", "texture", "histogram"], key_added="features_masked", mask_circle=True
+        adata_sml,
+        img,
+        features=["summary", "texture", "histogram"],
+        key_added="features_masked",
+        mask_circle=True,
+        show_progress_bar=False,
     )
     # calculate features with scaling and larger context
     sq.im.calculate_image_features(
@@ -319,16 +364,17 @@ Let us extract masked and scaled features and compare them
         features=["summary", "texture", "histogram"],
         key_added="features_scaled",
         mask_circle=True,
-        size=2,
+        spot_scale=2,
         scale=0.5,
+        show_progress_bar=False,
     )
 
     # plot distribution of median for different cropping options
     _ = sns.displot(
         {
-            "features": adata_sml.obsm["features"]["summary_quantile_0.5_ch_0"],
-            "features_masked": adata_sml.obsm["features_masked"]["summary_quantile_0.5_ch_0"],
-            "features_scaled": adata_sml.obsm["features_scaled"]["summary_quantile_0.5_ch_0"],
+            "features": adata_sml.obsm["features"]["summary_ch-0_quantile-0.5"],
+            "features_masked": adata_sml.obsm["features_masked"]["summary_ch-0_quantile-0.5"],
+            "features_scaled": adata_sml.obsm["features_scaled"]["summary_ch-0_quantile-0.5"],
         },
         kind="kde",
     )
@@ -347,29 +393,29 @@ Let us extract masked and scaled features and compare them
 
  .. code-block:: none
 
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
       res = method(*args, **kwargs)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-134
+.. GENERATED FROM PYTHON SOURCE LINES 143-144
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-141
+.. GENERATED FROM PYTHON SOURCE LINES 146-151
 
-Parallelisation
----------------
+Parallelization
+===============
 Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 extract features by using 4 jobs
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-142
+.. GENERATED FROM PYTHON SOURCE LINES 151-152
 
 .. code-block:: default
 
-    sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4)
+    sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)
 
 
 
@@ -380,9 +426,9 @@ extract features by using 4 jobs
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  42.801 seconds)
+   **Total running time of the script:** ( 0 minutes  42.404 seconds)
 
-**Estimated memory usage:**  290 MB
+**Estimated memory usage:**  222 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

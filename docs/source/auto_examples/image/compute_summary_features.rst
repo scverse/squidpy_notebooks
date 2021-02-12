@@ -18,21 +18,22 @@
 .. _sphx_glr_auto_examples_image_compute_summary_features.py:
 
 
-Summary features
-----------------
+Extract summary features
+------------------------
 
-Here, we use :func:`squidpy.im.calculate_image_features` to extract summary features from the tissue image.
-Have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py`
-for the general usage of :func:`squidpy.im.calculate_image_features`.
+This example shows how to extract summary features from the tissue image.
 
-Summary features give a good overview over the intensity of each image channel at the location of the visium spots.
-They are calculated by using ``features='summary'``.
+Summary features give a good overview over the intensity of each image channels at the location of the Visium spots.
+They are calculated by using ``features = 'summary'``.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``quantiles``: Quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated
-- ``mean``: Compute mean. Off by default
-- ``std``: Compute std deviation. Off by default.
+- ``quantiles`` - quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated.
+
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    :func:`squidpy.im.calculate_image_features`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-24
 
@@ -51,14 +52,14 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
-First, we load a fluorescence visisum dataset.
+First, we load a fluorescence Visium dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-32
 
 .. code-block:: default
 
 
-    # get spatial dataset including high-resolution tissue image
+    # get spatial dataset including hires tissue image
     img = sq.datasets.visium_fluo_image_crop()
     adata = sq.datasets.visium_fluo_adata_crop()
 
@@ -72,12 +73,12 @@ First, we load a fluorescence visisum dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-37
 
-Then, we calculate the 0.9th quantile and mean for the visium spots of the fluorescence channels 0 (DAPI)
-and 1 (GFAP).
-In order to only get statistics of the tissue underneath the spots, we use the argument ``mask_circle=True``.
+Then, we calculate the 0.1th quantile, mean and standard deviation for the Visium spots
+of the fluorescence channels 0 (DAPI) and 1 (GFAP).
+In order to get statistics of only the tissue underneath the spots, we use the argument ``mask_circle = True``.
 When not setting this flag, statistics are calculated using a square crop centered on the spot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-54
+.. GENERATED FROM PYTHON SOURCE LINES 37-56
 
 .. code-block:: default
 
@@ -89,29 +90,41 @@ When not setting this flag, statistics are calculated using a square crop center
         features="summary",
         features_kwargs={
             "summary": {
-                "mean": True,
-                "quantiles": [0.9],
+                "quantiles": [
+                    0.1,
+                ],
                 "channels": [0, 1],
             }
         },
         key_added="summary_features",
         mask_circle=True,
+        show_progress_bar=False,
     )
 
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
-The result is stored in `adata.obsm['summary_features']`
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-58
+The result is stored in ``adata.obsm['summary_features']``
+
+.. GENERATED FROM PYTHON SOURCE LINES 58-61
 
 .. code-block:: default
+
 
     adata.obsm["summary_features"].head()
 
@@ -141,47 +154,59 @@ The result is stored in `adata.obsm['summary_features']`
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>summary_quantile_0.9_ch_0</th>
-          <th>summary_mean_ch_0</th>
-          <th>summary_quantile_0.9_ch_1</th>
-          <th>summary_mean_ch_1</th>
+          <th>summary_ch-0_quantile-0.1</th>
+          <th>summary_ch-0_mean</th>
+          <th>summary_ch-0_std</th>
+          <th>summary_ch-1_quantile-0.1</th>
+          <th>summary_ch-1_mean</th>
+          <th>summary_ch-1_std</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th>AAACGAGACGGTTGAT-1</th>
-          <td>20236.0</td>
+          <td>0.0</td>
           <td>6849.760120</td>
-          <td>4916.0</td>
+          <td>14383.136990</td>
+          <td>0.0</td>
           <td>3762.582691</td>
+          <td>2462.922155</td>
         </tr>
         <tr>
           <th>AAAGGGATGTAGCAAG-1</th>
-          <td>3800.0</td>
+          <td>0.0</td>
           <td>4469.448519</td>
-          <td>5380.0</td>
+          <td>11304.932832</td>
+          <td>0.0</td>
           <td>3824.862145</td>
+          <td>2153.804234</td>
         </tr>
         <tr>
           <th>AAATGGCATGTCTTGT-1</th>
-          <td>15968.0</td>
+          <td>0.0</td>
           <td>5944.567897</td>
-          <td>9400.0</td>
+          <td>9808.327041</td>
+          <td>0.0</td>
           <td>5481.824787</td>
+          <td>6747.728831</td>
         </tr>
         <tr>
           <th>AAATGGTCAATGTGCC-1</th>
-          <td>17752.0</td>
+          <td>0.0</td>
           <td>5259.799257</td>
-          <td>3532.0</td>
+          <td>9115.113451</td>
+          <td>0.0</td>
           <td>2628.194501</td>
+          <td>1418.504292</td>
         </tr>
         <tr>
           <th>AAATTAACGGGTAGCT-1</th>
-          <td>6468.0</td>
+          <td>0.0</td>
           <td>4468.428701</td>
-          <td>4708.0</td>
+          <td>10285.605481</td>
+          <td>0.0</td>
           <td>4036.154302</td>
+          <td>4447.304626</td>
         </tr>
       </tbody>
     </table>
@@ -190,25 +215,25 @@ The result is stored in `adata.obsm['summary_features']`
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-63
+.. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-:ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
-Note, how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+how to use our interactive :mod:`napari` plugin.
+Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 and 1 (GFAP stain).
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 67-69
 
 .. code-block:: default
 
 
-    sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_mean_ch_0", "summary_mean_ch_1"], bw=True)
-
+    sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], bw=True)
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_summary_features_001.png
-    :alt: summary_mean_ch_0, summary_mean_ch_1
+    :alt: summary_ch-0_mean, summary_ch-1_mean
     :class: sphx-glr-single-img
 
 
@@ -218,9 +243,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.327 seconds)
+   **Total running time of the script:** ( 0 minutes  12.509 seconds)
 
-**Estimated memory usage:**  778 MB
+**Estimated memory usage:**  762 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.pl.ripley_k``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s K function.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_k_thumb.png
+     :alt: Compute Ripley's K function
+
+     :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py`

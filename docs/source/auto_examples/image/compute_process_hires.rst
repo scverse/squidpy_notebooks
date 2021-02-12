@@ -18,28 +18,32 @@
 .. _sphx_glr_auto_examples_image_compute_process_hires.py:
 
 
-Processing a high-resolution Image
-----------------------------------
+Process a high-resolution image
+-------------------------------
 
-This example shows how to use :func:`squidpy.im.process_img` to apply any processing function
-(smoothing, conversion to grayscale) to a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
+This example shows how to use :func:`squidpy.im.process` with tiling.
 
-By default, :func:`squidpy.im.process_img` processes the entire input image at once.
+The function can be applied to any method (e.g., smoothing, conversion to grayscale)
+or ``layer`` of a high-resolution image layer of :class:`squidpy.im.ImageContainer`.
+
+By default, :func:`squidpy.im.process` processes the entire input image at once.
 In the case of high-resolution tissue slides however, the images might be too big to fit in memory
 and cannot be processed at once.
-In that case you can use the arguments ``xs`` and ``ys`` that will tile the image in crops of size ``(ys, xs)``,
+In that case you can use the argument ``size`` to tile the image in crops of shape ``size``,
 process each crop, and re-assemble the resulting image.
-Note that you can also use :func:`squidpy.im.segment_img` in this manner.
+Note that you can also use :func:`squidpy.im.segment` in this manner.
 
 Note that depending on the processing function used, there might be border effects occurring at the edges
 of the crops. In a future version, we will support the extraction of overlapping crops,
 which can mitigate these effects.
 
-For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_smooth.py`,
-:ref:`sphx_glr_auto_examples_image_compute_gray.py`, and
-:ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
+.. seealso::
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-32
+    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 28-36
 
 .. code-block:: default
 
@@ -58,16 +62,16 @@ For more usage examples see also   :ref:`sphx_glr_auto_examples_image_compute_sm
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
-We will process the image by tiling it in crops of shape ``(ys, xs) = (1000, 1000)``.
+We will process the image by tiling it in crops of shape ``size = (1000, 1000)``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 .. code-block:: default
 
 
-    sq.im.process_img(img, img_id="image", processing="gray", xs=1000, ys=1000)
+    sq.im.process(img, layer="image", method="gray", size=1000)
 
 
 
@@ -76,29 +80,26 @@ We will process the image by tiling it in crops of shape ``(ys, xs) = (1000, 100
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 Now we can look at the result on a cropped part of the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-49
+.. GENERATED FROM PYTHON SOURCE LINES 43-50
 
 .. code-block:: default
 
-    crop = img.crop_corner(4000, 4000, 2000, 2000)
+    crop = img.crop_corner(4000, 4000, size=2000)
 
     fig, axes = plt.subplots(1, 2)
-    axes[0].imshow(crop["image"])
-    axes[0].set_title("original")
-    axes[1].imshow(crop["image_gray"].squeeze(), cmap="gray")
-    axes[1].set_title("converted to grayscale")
-    for ax in axes:
-        ax.axis("off")
-
+    crop.show("image", ax=axes[0])
+    _ = axes[0].set_title("original")
+    crop.show("image_gray", cmap="gray", ax=axes[1])
+    _ = axes[1].set_title("grayscale")
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
-    :alt: original, converted to grayscale
+    :alt: original, grayscale
     :class: sphx-glr-single-img
 
 
@@ -108,9 +109,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.700 seconds)
+   **Total running time of the script:** ( 0 minutes  9.817 seconds)
 
-**Estimated memory usage:**  2247 MB
+**Estimated memory usage:**  3407 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

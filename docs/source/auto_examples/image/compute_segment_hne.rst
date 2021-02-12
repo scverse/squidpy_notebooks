@@ -18,19 +18,24 @@
 .. _sphx_glr_auto_examples_image_compute_segment_hne.py:
 
 
-Advanced Cell-segmentation for H&E stains
------------------------------------------
+Cell-segmentation for H&E stains
+--------------------------------
 
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
-For a general example of how to use :func:`squidpy.im.segment_img`
+
+For a general example of how to use :func:`squidpy.im.segment`
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-Here, we attempt to segment a noisy H&E stain.
 Note that we only provide very basic segmentation models.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
-and / or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationModelTensorflow`).
+and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-27
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate
+    a cell-segmentation of a fluorescence image.
+
+.. GENERATED FROM PYTHON SOURCE LINES 20-32
 
 .. code-block:: default
 
@@ -44,7 +49,7 @@ and / or use a pre-trained model to do the segmentation (using :class:`squidpy.i
 
     # load H&E stained tissue image and crop to a smaller segment
     img = sq.datasets.visium_hne_image_crop()
-    crop = img.crop_corner(0, 0, 1000, 1000)
+    crop = img.crop_corner(0, 0, size=1000)
 
 
 
@@ -53,54 +58,56 @@ and / or use a pre-trained model to do the segmentation (using :class:`squidpy.i
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
-Before segmenting the image, we do some preprocessing using :func:`squidpy.im.process_img`.
+Before segmenting the image, we smooth it using :func:`squidpy.im.process`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-43
+.. GENERATED FROM PYTHON SOURCE LINES 34-45
 
 .. code-block:: default
 
 
-    # convert to grayscale
-    sq.im.process_img(crop, img_id="image", processing="gray")
+
     # smooth image
-    sq.im.process_img(crop, img_id="image_gray", processing="smooth", sigma=4)
+    sq.im.process(crop, layer="image", method="smooth", sigma=4)
 
     # plot the result
-    fig, axes = plt.subplots(1, 3)
-    for img_id, ax in zip(["image", "image_gray", "image_gray_smooth"], axes):
-        ax.imshow(np.squeeze(crop[img_id]))
-        ax.set_title(img_id)
-        ax.axis("off")
+    fig, axes = plt.subplots(1, 2)
+    for layer, ax in zip(["image", "image_smooth"], axes):
+        crop.show(layer, ax=ax)
+        ax.set_title(layer)
 
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_segment_hne_001.png
-    :alt: image, image_gray, image_gray_smooth
+    :alt: image, image_smooth
     :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-48
+.. GENERATED FROM PYTHON SOURCE LINES 46-54
 
-Finding a good threshold for the segmentation is more difficult than for a DAPI stain,
-as there is no distinct peak in the histogram.
-Judging by the plot showing values smaller than 0.28, this threshold seems to be a good
+We will use channel 0 to do the segmentation, as this channel contains most of
+the nuclei information within an H&E stain.
+Instead of using automatic threshold with `Otsu's method <https://en.wikipedia.org/wiki/Otsu%27s_method>`_,
+we will define a manual fixed threshold.
+Note that using Otsu's method to determine the threshold also yields good results.
+
+Judging by peak in the histogram and the thresholded example image, a threshold of 0.36, seems to be a good
 choice for this example.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-54
+.. GENERATED FROM PYTHON SOURCE LINES 54-60
 
 .. code-block:: default
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    axes[0].imshow(crop["image_gray_smooth"][:, :, 0] < 0.28)
-    axes[0].axis("off")
-    _ = sns.histplot(np.array(crop["image_gray_smooth"]).flatten(), bins=50, ax=axes[1])
-
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+    crop.show("image_smooth", cmap="gray", ax=axes[0])
+    axes[1].imshow(crop["image_smooth"][:, :, 0] < 0.36)
+    _ = sns.histplot(np.array(crop["image_smooth"]).flatten(), bins=50, ax=axes[2])
+    plt.tight_layout()
 
 
 
@@ -113,56 +120,46 @@ choice for this example.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
-We use :func:`squidpy.im.segment_img` with ``mode="watershed"`` to do the segmentation.
-Since, opposite to the fluorescence DAPI stain, in the H&E stain, nuclei appear darker,
-we need to indicate the model that it should treat lower-intensity values as foreground.
-We do this by specifying the ``geq=False`` in the ``kwargs``.
+We use :func:`squidpy.im.segment` with ``method="watershed"`` to do the segmentation.
+Since, opposite to the fluorescence DAPI stain, in the H&E stain nuclei appear darker,
+we need to indicate to the model that it should treat lower-intensity values as foreground.
+We do this by specifying the ``geq = False`` in the ``kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 .. code-block:: default
 
-    sq.im.segment_img(img=crop, img_id="image_gray_smooth", model_group="watershed", thresh=0.28, geq=False)
+    sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=0.36, geq=False)
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/im/segment.py:146: FutureWarning: indices argument is deprecated and will be removed in version 0.20. To avoid this warning, please do not use the indices argument. Please see peak_local_max documentation for more details.
-      local_maxi = peak_local_max(distance, indices=False, footprint=np.ones((5, 5)), labels=mask)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 62-66
+.. GENERATED FROM PYTHON SOURCE LINES 68-72
 
 The segmented crop is saved in the layer `segmented_watershed`.
-This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 The result of the segmentation is a label image that can be used to extract features
 like the number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-76
+.. GENERATED FROM PYTHON SOURCE LINES 72-81
 
 .. code-block:: default
+
 
     print(crop)
     print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 
     fig, axes = plt.subplots(1, 2)
-    axes[0].imshow(crop["image_gray_smooth"][:, :, 0])
-    axes[0].set_title("H&E")
-    axes[1].imshow(crop["segmented_watershed"].squeeze(), cmap="jet", interpolation="none")
-    axes[1].set_title("segmentation")
-    for ax in axes:
-        ax.axis("off")
+    crop.show("image", channel=0, ax=axes[0])
+    _ = axes[0].set_title("H&E")
+    crop.show("segmented_watershed", cmap="jet", interpolation="none", ax=axes[1])
+    _ = axes[1].set_title("segmentation")
 
 
 
@@ -177,13 +174,8 @@ like the number of cells from the image.
 
  .. code-block:: none
 
-    ImageContainer object with 4 layer(s)
-        image: y (1000), x (1000), channels (3)
-        image_gray: y (1000), x (1000), channels_gray (1)
-        image_gray_smooth: y (1000), x (1000), channels_gray (1)
-        segmented_watershed: y (1000), x (1000), segmented_channels_gray (1)
-
-    number of segments in crop: 1227
+    ImageContainer[shape=(1000, 1000), layers=['image', 'image_smooth', 'segmented_watershed']]
+    number of segments in crop: 1255
 
 
 
@@ -191,9 +183,9 @@ like the number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.479 seconds)
+   **Total running time of the script:** ( 0 minutes  17.555 seconds)
 
-**Estimated memory usage:**  178 MB
+**Estimated memory usage:**  276 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_hne.py:

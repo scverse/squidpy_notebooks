@@ -18,24 +18,26 @@
 .. _sphx_glr_auto_examples_image_compute_histogram_features.py:
 
 
-Histogram features
-------------------
+Extract histogram features
+--------------------------
 
-Here, we use :func:`squidpy.im.calculate_image_features` to extract histogram features from the tissue image.
-Have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
-:func:`squidpy.im.calculate_image_features`.
+This example shows how to extract histogram features from tissue image.
 
 Histogram features give a more detailed view than summary features
 (:ref:`sphx_glr_auto_examples_image_compute_summary_features.py`)
-by computing a histogram of each image channel and returning bin-counts for each visium spot.
-Use ``features='histogram'`` to calculate the features.
+by computing a histogram of each image channel and returning bin-counts for each Visium spot.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``bins``: Number of bins of the histogram. Default is 10
-- ``v_range``: Range on which values are binned. Default is the whole image range
+- ``bins`` - number of bins of the histogram, default is 10.
+- ``v_range`` - range on which values are binned, default is the whole image range.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-25
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    :func:`squidpy.im.calculate_image_features`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 22-26
 
 .. code-block:: default
 
@@ -50,11 +52,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-28
 
-Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-42
+.. GENERATED FROM PYTHON SOURCE LINES 28-43
 
 .. code-block:: default
 
@@ -77,14 +79,24 @@ Lets load a fluorescence visisum dataset and calculate bin-counts (3 bins) of ch
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/704 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
+
+.. GENERATED FROM PYTHON SOURCE LINES 44-45
 
 The result is stored in ``adata.obsm['histogram_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
+.. GENERATED FROM PYTHON SOURCE LINES 45-48
 
 .. code-block:: default
 
@@ -117,12 +129,12 @@ The result is stored in ``adata.obsm['histogram_features']``.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>histogram_ch_0_bin_0</th>
-          <th>histogram_ch_0_bin_1</th>
-          <th>histogram_ch_0_bin_2</th>
-          <th>histogram_ch_1_bin_0</th>
-          <th>histogram_ch_1_bin_1</th>
-          <th>histogram_ch_1_bin_2</th>
+          <th>histogram_ch-0_bin-0</th>
+          <th>histogram_ch-0_bin-1</th>
+          <th>histogram_ch-0_bin-2</th>
+          <th>histogram_ch-1_bin-0</th>
+          <th>histogram_ch-1_bin-1</th>
+          <th>histogram_ch-1_bin-2</th>
         </tr>
       </thead>
       <tbody>
@@ -178,28 +190,29 @@ The result is stored in ``adata.obsm['histogram_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-52
+.. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-:ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to
+learn how to use our interactive :mod:`napari` plugin.
 With these features we can e.g. appreciate the detailed distribution of
 intensity values of channel 0 (DAPI stain) on the different bins.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-58
+.. GENERATED FROM PYTHON SOURCE LINES 54-60
 
 .. code-block:: default
 
 
     sc.pl.spatial(
         sq.pl.extract(adata, "histogram_features"),
-        color=[None, "histogram_ch_0_bin_0", "histogram_ch_0_bin_1", "histogram_ch_0_bin_2"],
+        color=[None, "histogram_ch-0_bin-0", "histogram_ch-0_bin-1", "histogram_ch-0_bin-2"],
         bw=True,
     )
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_histogram_features_001.png
-    :alt: histogram_ch_0_bin_0, histogram_ch_0_bin_1, histogram_ch_0_bin_2
+    :alt: histogram_ch-0_bin-0, histogram_ch-0_bin-1, histogram_ch-0_bin-2
     :class: sphx-glr-single-img
 
 
@@ -209,9 +222,9 @@ intensity values of channel 0 (DAPI stain) on the different bins.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.767 seconds)
+   **Total running time of the script:** ( 0 minutes  13.049 seconds)
 
-**Estimated memory usage:**  782 MB
+**Estimated memory usage:**  714 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:
