@@ -34,7 +34,8 @@ print(f"squidpy=={sq.__version__}")
 # Spatial coordinates in AnnData
 # ------------------------------
 #
-# First, let's generate some data. We will need
+# First, let's generate some data. We will need:
+#
 # - an array of features (e.g. counts)
 # - an array of spatial coordinates
 # - an image array (e.g. the tissue image)
@@ -45,10 +46,10 @@ coordinates = rng.uniform(0, 10, size=(10, 2))  # spatial coordinates
 image = rng.uniform(0, 1, size=(10, 10, 3))  # image
 
 ###############################################################################
-# Let's first start with creating the :class:`anndataAnnData` object.
+# Let's first start with creating the :class:`anndata.AnnData` object.
 # We will first just use the count matrix and the spatial coordinates.
-# Specificy the `obsm` key as `"spatial"` is not strictly necessary
-# but will save you a lot of typing since it's the default for both Squidpy and Scanpy
+# Specify the :attr:`anndata.AnnData.obsm` key as `"spatial"` is not strictly necessary
+# but will save you a lot of typing since it's the default for both Squidpy and Scanpy.
 
 adata = AnnData(counts, obsm={"spatial": coordinates})
 
@@ -64,7 +65,7 @@ sc.tl.leiden(adata)
 adata
 
 ###############################################################################
-# We can visualize the dummy cluster annotation `adata.obs.leiden` in space.
+# We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
 sc.pl.spatial(adata, color="leiden", spot_size=1)
 
@@ -90,7 +91,7 @@ plt.imshow(image)
 
 ###############################################################################
 # The image and its metadata are stored in the `uns` slot of :class:`anndata.AnnData`.
-# Specifically, in the `adata.uns["spatial"][<library_id>]` slot, where `library_id`
+# Specifically, in the ``adata.uns['spatial']['{library_id}']`` slot, where `library_id`
 # is any unique key that refers to the tissue image.
 #
 # For now, we will assume that there is only one image.
