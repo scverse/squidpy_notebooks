@@ -50,7 +50,7 @@ pairs (100k+) and cluster combinations (100+).
 
  .. code-block:: none
 
-      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 40.0k/30.7M [00:00<01:48, 295kB/s]      1%|          | 208k/30.7M [00:00<00:37, 844kB/s]       3%|2         | 872k/30.7M [00:00<00:11, 2.67MB/s]     11%|#1        | 3.44M/30.7M [00:00<00:03, 9.23MB/s]     29%|##9       | 8.97M/30.7M [00:00<00:01, 20.7MB/s]     47%|####7     | 14.5M/30.7M [00:00<00:00, 27.6MB/s]     66%|######5   | 20.2M/30.7M [00:00<00:00, 32.5MB/s]     84%|########4 | 25.9M/30.7M [00:01<00:00, 35.7MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 26.6MB/s]
+      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 40.0k/30.7M [00:00<01:48, 296kB/s]      1%|          | 208k/30.7M [00:00<00:37, 841kB/s]       3%|2         | 864k/30.7M [00:00<00:10, 2.86MB/s]      6%|5         | 1.80M/30.7M [00:00<00:05, 5.25MB/s]     20%|##        | 6.15M/30.7M [00:00<00:01, 17.7MB/s]     30%|###       | 9.29M/30.7M [00:00<00:01, 22.4MB/s]     46%|####6     | 14.2M/30.7M [00:00<00:00, 30.1MB/s]     58%|#####7    | 17.8M/30.7M [00:00<00:00, 32.2MB/s]     74%|#######3  | 22.7M/30.7M [00:01<00:00, 36.8MB/s]     86%|########6 | 26.4M/30.7M [00:01<00:00, 37.4MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 26.5MB/s]
 
     AnnData object with n_obs × n_vars = 19416 × 351
         obs: 'Area', 'celltype_mapped_refined'
@@ -101,13 +101,13 @@ If desired, we can also restrict the resources to just a select few. For example
 
  .. code-block:: none
 
-      0%|          | 0.00/8.93M [00:00<?, ?B/s]      1%|          | 80.0k/8.93M [00:00<00:17, 517kB/s]      4%|4         | 368k/8.93M [00:00<00:06, 1.30MB/s]     16%|#6        | 1.44M/8.93M [00:00<00:01, 3.94MB/s]     61%|######1   | 5.46M/8.93M [00:00<00:00, 12.8MB/s]    100%|##########| 8.93M/8.93M [00:00<00:00, 12.9MB/s]
+      0%|          | 0.00/8.93M [00:00<?, ?B/s]      1%|          | 80.0k/8.93M [00:00<00:17, 522kB/s]      4%|4         | 368k/8.93M [00:00<00:06, 1.31MB/s]     17%|#6        | 1.49M/8.93M [00:00<00:01, 4.13MB/s]     62%|######1   | 5.52M/8.93M [00:00<00:00, 13.1MB/s]    100%|##########| 8.93M/8.93M [00:00<00:00, 13.1MB/s]
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
       return cls(include, exclude=exclude)._get(**kwargs)
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
       _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-      0%|          | 0.00/1.39M [00:00<?, ?B/s]      6%|5         | 80.0k/1.39M [00:00<00:02, 514kB/s]     26%|##5       | 368k/1.39M [00:00<00:00, 1.30MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 3.63MB/s]
-      0%|          | 0.00/2.60M [00:00<?, ?B/s]      3%|3         | 80.0k/2.60M [00:00<00:05, 517kB/s]     11%|#1        | 304k/2.60M [00:00<00:02, 1.06MB/s]     46%|####5     | 1.19M/2.60M [00:00<00:00, 3.26MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 4.88MB/s]
+      0%|          | 0.00/1.39M [00:00<?, ?B/s]      6%|5         | 80.0k/1.39M [00:00<00:02, 522kB/s]     29%|##9       | 416k/1.39M [00:00<00:00, 1.50MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 3.68MB/s]
+      0%|          | 0.00/2.60M [00:00<?, ?B/s]      3%|3         | 80.0k/2.60M [00:00<00:05, 522kB/s]     14%|#3        | 368k/2.60M [00:00<00:01, 1.32MB/s]     56%|#####5    | 1.45M/2.60M [00:00<00:00, 4.04MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 5.69MB/s]
       0%|          | 0/1000 [00:00<?, ?permutation/s]
 
 
@@ -122,7 +122,7 @@ to interacting pairs and columns to cluster combinations.
 
 .. code-block:: default
 
-    res.means.head()
+    res["means"].head()
 
 
 
@@ -776,7 +776,7 @@ above.
 
 .. code-block:: default
 
-    res.pvalues.head()
+    res["pvalues"].head()
 
 
 
@@ -991,52 +991,52 @@ above.
           <th>FGF3</th>
           <th>KDR</th>
           <td>0.998</td>
-          <td>0.096</td>
-          <td>0.998</td>
+          <td>0.076</td>
           <td>1.000</td>
-          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
           <td>0.999</td>
           <td>NaN</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.976</td>
-          <td>1.000</td>
-          <td>1.0</td>
-          <td>1.0</td>
+          <td>0.988</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.936</td>
-          <td>0.969</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.957</td>
+          <td>0.978</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>1.000</td>
           <td>0.968</td>
           <td>0.022</td>
-          <td>0.943</td>
-          <td>0.974</td>
+          <td>0.941</td>
+          <td>0.964</td>
           <td>0.997</td>
-          <td>0.914</td>
+          <td>0.927</td>
           <td>NaN</td>
           <td>0.994</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.752</td>
-          <td>0.952</td>
-          <td>0.999</td>
-          <td>0.991</td>
-          <td>0.986</td>
-          <td>0.990</td>
-          <td>0.605</td>
+          <td>0.741</td>
+          <td>0.964</td>
+          <td>0.997</td>
+          <td>0.993</td>
+          <td>0.993</td>
+          <td>0.989</td>
+          <td>0.598</td>
           <td>...</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.0</td>
-          <td>1.0</td>
+          <td>1.000</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.000</td>
@@ -1049,38 +1049,38 @@ above.
           <td>1.0</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.978</td>
-          <td>0.016</td>
-          <td>0.976</td>
-          <td>0.988</td>
-          <td>1.00</td>
-          <td>0.948</td>
+          <td>0.977</td>
+          <td>0.018</td>
+          <td>0.965</td>
+          <td>0.992</td>
+          <td>1.000</td>
+          <td>0.970</td>
           <td>NaN</td>
-          <td>0.998</td>
+          <td>0.997</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.766</td>
-          <td>0.994</td>
+          <td>0.751</td>
+          <td>0.991</td>
           <td>1.000</td>
+          <td>1.000</td>
+          <td>0.992</td>
           <td>0.998</td>
-          <td>0.995</td>
-          <td>0.999</td>
-          <td>0.582</td>
-          <td>0.844</td>
+          <td>0.588</td>
+          <td>0.863</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.963</td>
+          <td>0.981</td>
         </tr>
         <tr>
           <th>IGF1</th>
           <th>KDR</th>
-          <td>0.998</td>
-          <td>0.141</td>
+          <td>1.000</td>
+          <td>0.139</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>1.0</td>
           <td>1.000</td>
+          <td>0.999</td>
           <td>NaN</td>
           <td>1.0</td>
           <td>1.0</td>
@@ -1088,329 +1088,329 @@ above.
           <td>NaN</td>
           <td>0.996</td>
           <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>0.981</td>
+          <td>0.991</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>1.000</td>
-          <td>1.000</td>
-          <td>0.982</td>
-          <td>0.990</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>0.913</td>
-          <td>0.022</td>
-          <td>0.727</td>
-          <td>0.849</td>
-          <td>0.980</td>
-          <td>0.737</td>
+          <td>0.915</td>
+          <td>0.016</td>
+          <td>0.749</td>
+          <td>0.872</td>
+          <td>0.985</td>
+          <td>0.770</td>
           <td>NaN</td>
-          <td>0.951</td>
+          <td>0.959</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.452</td>
-          <td>0.743</td>
-          <td>0.966</td>
-          <td>0.923</td>
-          <td>0.957</td>
-          <td>0.883</td>
-          <td>0.347</td>
+          <td>0.464</td>
+          <td>0.767</td>
+          <td>0.976</td>
+          <td>0.940</td>
+          <td>0.956</td>
+          <td>0.903</td>
+          <td>0.345</td>
           <td>...</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.0</td>
-          <td>1.0</td>
+          <td>1.000</td>
           <td>NaN</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.978</td>
+          <td>0.989</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.992</td>
+          <td>0.021</td>
+          <td>0.988</td>
           <td>0.997</td>
           <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.983</td>
-          <td>0.981</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.989</td>
-          <td>0.024</td>
-          <td>0.992</td>
-          <td>0.995</td>
-          <td>1.00</td>
-          <td>0.984</td>
+          <td>0.987</td>
           <td>NaN</td>
           <td>0.999</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.884</td>
+          <td>0.880</td>
+          <td>0.998</td>
           <td>1.000</td>
           <td>1.000</td>
+          <td>0.998</td>
           <td>1.000</td>
-          <td>0.997</td>
-          <td>1.000</td>
-          <td>0.724</td>
-          <td>0.888</td>
+          <td>0.729</td>
+          <td>0.909</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.988</td>
+          <td>0.990</td>
         </tr>
         <tr>
           <th>FGF10</th>
           <th>KDR</th>
-          <td>0.986</td>
-          <td>0.039</td>
+          <td>0.987</td>
+          <td>0.044</td>
           <td>0.977</td>
-          <td>0.991</td>
-          <td>1.0</td>
+          <td>0.989</td>
+          <td>0.999</td>
           <td>0.979</td>
           <td>NaN</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.888</td>
-          <td>0.989</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>0.995</td>
-          <td>0.998</td>
-          <td>0.772</td>
-          <td>0.906</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>0.977</td>
-          <td>0.994</td>
-          <td>0.058</td>
-          <td>0.997</td>
-          <td>0.998</td>
-          <td>1.000</td>
-          <td>0.997</td>
-          <td>NaN</td>
+          <td>0.876</td>
+          <td>0.991</td>
           <td>0.999</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>NaN</td>
-          <td>0.946</td>
+          <td>0.997</td>
           <td>0.998</td>
+          <td>0.998</td>
+          <td>0.804</td>
+          <td>0.932</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>0.983</td>
+          <td>0.994</td>
+          <td>0.052</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.960</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.871</td>
+          <td>1.000</td>
+          <td>0.899</td>
           <td>...</td>
-          <td>0.936</td>
-          <td>0.403</td>
+          <td>0.939</td>
+          <td>0.399</td>
           <td>NaN</td>
-          <td>0.865</td>
+          <td>0.854</td>
           <td>1.0</td>
-          <td>1.0</td>
+          <td>0.999</td>
           <td>NaN</td>
-          <td>0.102</td>
-          <td>0.256</td>
-          <td>0.829</td>
-          <td>0.754</td>
-          <td>0.895</td>
-          <td>0.591</td>
+          <td>0.091</td>
+          <td>0.265</td>
+          <td>0.845</td>
+          <td>0.773</td>
+          <td>0.867</td>
+          <td>0.587</td>
           <td>0.084</td>
-          <td>0.584</td>
+          <td>0.582</td>
           <td>1.0</td>
           <td>0.972</td>
-          <td>0.313</td>
-          <td>0.981</td>
+          <td>0.364</td>
+          <td>0.986</td>
           <td>0.020</td>
-          <td>0.978</td>
-          <td>0.992</td>
-          <td>1.00</td>
-          <td>0.963</td>
+          <td>0.972</td>
+          <td>0.994</td>
+          <td>1.000</td>
+          <td>0.976</td>
           <td>NaN</td>
           <td>0.999</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.814</td>
-          <td>0.997</td>
+          <td>0.812</td>
+          <td>0.996</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.995</td>
+          <td>0.996</td>
           <td>1.000</td>
-          <td>0.648</td>
-          <td>0.853</td>
+          <td>0.634</td>
+          <td>0.886</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.978</td>
+          <td>0.989</td>
         </tr>
         <tr>
           <th>FGF17</th>
           <th>KDR</th>
+          <td>0.999</td>
+          <td>0.129</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.996</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.979</td>
+          <td>0.990</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.995</td>
+          <td>0.068</td>
           <td>0.998</td>
-          <td>0.122</td>
           <td>1.000</td>
-          <td>1.000</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>NaN</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>NaN</td>
-          <td>0.994</td>
-          <td>1.000</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.976</td>
-          <td>0.981</td>
-          <td>1.0</td>
-          <td>1.0</td>
           <td>1.000</td>
           <td>0.997</td>
-          <td>0.075</td>
-          <td>0.998</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.996</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.970</td>
+          <td>0.969</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.921</td>
+          <td>0.910</td>
           <td>...</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.990</td>
+          <td>0.991</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.799</td>
+          <td>0.004</td>
+          <td>0.292</td>
+          <td>0.544</td>
+          <td>0.939</td>
+          <td>0.394</td>
+          <td>NaN</td>
+          <td>0.839</td>
+          <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
+          <td>0.089</td>
+          <td>0.240</td>
+          <td>0.812</td>
+          <td>0.761</td>
+          <td>0.862</td>
+          <td>0.562</td>
+          <td>0.083</td>
+          <td>0.572</td>
           <td>0.999</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.985</td>
-          <td>0.982</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.806</td>
-          <td>0.003</td>
-          <td>0.332</td>
-          <td>0.559</td>
-          <td>0.93</td>
-          <td>0.382</td>
-          <td>NaN</td>
-          <td>0.848</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>NaN</td>
-          <td>0.094</td>
-          <td>0.248</td>
-          <td>0.807</td>
-          <td>0.734</td>
-          <td>0.867</td>
-          <td>0.555</td>
-          <td>0.085</td>
-          <td>0.580</td>
-          <td>0.998</td>
-          <td>0.964</td>
-          <td>0.302</td>
+          <td>0.958</td>
+          <td>0.342</td>
         </tr>
         <tr>
           <th>FGF5</th>
           <th>KDR</th>
-          <td>1.000</td>
-          <td>0.103</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>NaN</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>NaN</td>
-          <td>0.992</td>
-          <td>1.000</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.980</td>
-          <td>0.985</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>0.982</td>
-          <td>0.026</td>
-          <td>0.965</td>
-          <td>0.986</td>
-          <td>0.999</td>
-          <td>0.946</td>
-          <td>NaN</td>
           <td>0.998</td>
+          <td>0.104</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.999</td>
+          <td>NaN</td>
+          <td>1.0</td>
           <td>1.0</td>
           <td>1.0</td>
           <td>NaN</td>
-          <td>0.809</td>
-          <td>0.980</td>
+          <td>0.999</td>
           <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.983</td>
+          <td>0.990</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.983</td>
+          <td>0.020</td>
+          <td>0.954</td>
+          <td>0.982</td>
+          <td>1.000</td>
+          <td>0.961</td>
+          <td>NaN</td>
           <td>0.996</td>
-          <td>0.994</td>
-          <td>0.997</td>
-          <td>0.662</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.793</td>
+          <td>0.978</td>
+          <td>0.999</td>
+          <td>0.998</td>
+          <td>0.991</td>
+          <td>0.996</td>
+          <td>0.657</td>
           <td>...</td>
           <td>1.000</td>
           <td>1.000</td>
           <td>NaN</td>
           <td>1.000</td>
           <td>1.0</td>
-          <td>1.0</td>
+          <td>1.000</td>
           <td>NaN</td>
-          <td>0.988</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.948</td>
-          <td>0.964</td>
-          <td>1.0</td>
-          <td>1.000</td>
-          <td>1.000</td>
-          <td>0.987</td>
-          <td>0.022</td>
-          <td>0.986</td>
           <td>0.997</td>
-          <td>1.00</td>
-          <td>0.975</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.954</td>
+          <td>0.980</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.989</td>
+          <td>0.024</td>
+          <td>0.989</td>
+          <td>0.997</td>
+          <td>1.000</td>
+          <td>0.984</td>
           <td>NaN</td>
+          <td>0.998</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.851</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.996</td>
           <td>0.999</td>
-          <td>1.0</td>
-          <td>1.0</td>
-          <td>NaN</td>
-          <td>0.863</td>
-          <td>0.997</td>
-          <td>1.000</td>
-          <td>0.999</td>
-          <td>0.997</td>
-          <td>1.000</td>
-          <td>0.699</td>
-          <td>0.883</td>
+          <td>0.704</td>
+          <td>0.903</td>
           <td>1.000</td>
           <td>1.000</td>
-          <td>0.991</td>
+          <td>0.992</td>
         </tr>
       </tbody>
     </table>
@@ -1428,7 +1428,7 @@ Any interaction metadata downloaded from :mod:`omnipath`, such as the interactio
 
 .. code-block:: default
 
-    res.metadata.head()
+    res["metadata"].head()
 
 
 
@@ -1824,9 +1824,9 @@ In the plot below, to highlight significance, we've marked all p-values <= 0.005
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  30.477 seconds)
+   **Total running time of the script:** ( 0 minutes  30.780 seconds)
 
-**Estimated memory usage:**  162 MB
+**Estimated memory usage:**  189 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_ligrec.py:
