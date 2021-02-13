@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-Import spatial data in Anndata and Squidpy
+Import spatial data in AnnData and Squidpy
 ==========================================
 
-This tutorial shows how to store spatial datasets in :mod:`anndata.AnnData`.
+This tutorial shows how to store spatial datasets in :class:`anndata.AnnData`.
 
 Spatial molecular data comes in many different formats, and to date there is no
 one-size-fit-all solution for reading spatial data in python.
@@ -13,10 +13,10 @@ Here in Squidpy, we do provide some pre-processed (and pre-formatted) datasets,
 with the module :mod:`squidpy.datasets` but it's not very useful for the users
 who need to import their own data.
 
-In this tutorial, we will showcase how spatial data are stored in :mod:`anndata.AnnData`.
+In this tutorial, we will showcase how spatial data are stored in :class:`anndata.AnnData`.
 We will use mock datasets for this purpose, yet showing with examples the important
 details that you should take care of in order to exploit the full functionality of the
-Anndata-Scanpy-Squidpy ecosystem.
+*AnnData-Scanpy-Squidpy* ecosystem.
 """
 
 from anndata import AnnData
@@ -45,7 +45,7 @@ coordinates = rng.uniform(0, 10, size=(10, 2))  # spatial coordinates
 image = rng.uniform(0, 1, size=(10, 10, 3))  # image
 
 ###############################################################################
-# Let's first start with creating the :mod:`anndataAnnData` object.
+# Let's first start with creating the :class:`anndataAnnData` object.
 # We will first just use the count matrix and the spatial coordinates.
 # Specificy the `obsm` key as `"spatial"` is not strictly necessary
 # but will save you a lot of typing since it's the default for both Squidpy and Scanpy
@@ -89,7 +89,7 @@ sc.pl.spatial(adata, color="leiden", neighbors_key="spatial_neighbors", spot_siz
 plt.imshow(image)
 
 ###############################################################################
-# The image and its metadata are stored in the `uns` slot of :mod:`anndata.AnnData`.
+# The image and its metadata are stored in the `uns` slot of :class:`anndata.AnnData`.
 # Specifically, in the `adata.uns["spatial"][<library_id>]` slot, where `library_id`
 # is any unique key that refers to the tissue image.
 #
@@ -131,7 +131,7 @@ sc.pl.spatial(adata, color="leiden")
 # As you can see, the spatial coordinates have been scaled down, and the image
 # was "zoomed in".
 #
-# Of course, you might want to "analyze" such image. :class:`sq.im.ImageContainer`
+# Of course, you might want to "analyze" such image. :class:`squidpy.im.ImageContainer`
 # comes to the rescue! Just instantiate a new object and it will work out of the box.
 
 img = sq.im.ImageContainer(image)
