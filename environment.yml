@@ -5,4 +5,7 @@ dependencies:
 -   python
 -   pip
 -   pip:
-    -   squidpy
+    -   squidpy[all]
+    -   tangram-sc>=0.2.1
+    -   tensorflow>=2.3.0
+    -   pytorch>=1.4.0
