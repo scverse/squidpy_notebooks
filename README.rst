@@ -4,8 +4,9 @@ Squidpy - Spatial Molecular Data Analysis in Python
 ===================================================
 
 .. image:: https://raw.githubusercontent.com/theislab/squidpy/master/docs/source/_static/img/squidpy_horizontal.png
-   :width: 400px
-   :align: center
+    :alt: Title figure
+    :width: 400px
+    :align: center
 
 **Squidpy** is a tool for the analysis and visualization of spatial molecular data.
 It builds on top of `scanpy`_ and `anndata`_, from which it inherits modularity and scalability.
@@ -31,7 +32,6 @@ Install Squidpy via PyPI by running::
 
     pip install squidpy
 
-
 Contributing to Squidpy
 -----------------------
 If you wish to contribute to ``Squidpy``, please make sure you're familiar with our
@@ -45,7 +45,7 @@ If you wish to contribute to ``Squidpy``, please make sure you're familiar with 
     :target: https://github.com/theislab/squidpy/actions
     :alt: CI
 
-.. |Notebooks| image:: https://img.shields.io/github/workflow/status/theislab/squidpy_notebooks/CI/master
+.. |Notebooks| image:: https://img.shields.io/github/workflow/status/theislab/squidpy_notebooks/CI/master?label=notebooks
     :target: https://github.com/theislab/squidpy_notebooks/actions
     :alt: Notebooks CI
 
@@ -53,7 +53,7 @@ If you wish to contribute to ``Squidpy``, please make sure you're familiar with 
     :target: https://squidpy.readthedocs.io/en/latest/
     :alt: Documentation
 
-.. |Coverage| image:: https://codecov.io/gh/theislab/squidpy/branch/master/graph/badge.svg?token=JQZA3UZ94Y
+.. |Coverage| image:: https://codecov.io/gh/theislab/squidpy/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/theislab/squidpy
     :alt: Coverage
 
