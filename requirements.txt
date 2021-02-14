@@ -1,6 +1,1 @@
-# TODO: below should be removed and handled by above installation
-astropy
-esda
-libpysal
-# git+https://github.com/theislab/squidpy
-scanpy[leiden]>=1.7.0
+git+https://github.com/theislab/squidpy.git#egg=squidpy[all]

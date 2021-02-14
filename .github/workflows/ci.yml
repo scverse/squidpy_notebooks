@@ -52,11 +52,8 @@ jobs:
                 sudo apt install pandoc
 
         -   name: Linting
-            # TODO: remove -q once squidpy is public
             run: |
-                tox -q -e lint,check-docs
-            env:
-                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
+                tox -e lint,check-docs
 
     test:
         needs: init
@@ -99,20 +96,15 @@ jobs:
                     ~/.cache/squidpy/*.h5ad
                 key: data-${{ hashFiles('**/download_data.py') }}
         -   name: Download datasets
-            # TODO: remove -q once squidpy is public
             if: steps.data-cache.outputs.cache-hit != 'true'
             run: |
-                tox -e download-data -q
-            env:
-                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
+                tox -e download-data
 
         -   name: Testing
-            # TODO: remove -q once squidpy is public
             run: |
-                tox -q
+                tox
             env:
                 PLATFORM: ubuntu-latest
-                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
     regenerate:
         if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
@@ -145,12 +137,10 @@ jobs:
                 sudo apt install pandoc optipng
 
         -   name: Regenerate documentation
-            # TODO: remove -q once squidpy is public
             run: |
-                tox -q -e docs
+                tox -e docs
             env:
                 PLATFORM: ubuntu-latest
-                SQUIDPY_DOWNLOAD_TOKEN: ${{ secrets.SQUIDPY_DOWNLOAD_TOKEN }}
 
         -   name: Temporarily update .gitignore
             # git-auto-commit-action does not support: git add --force
