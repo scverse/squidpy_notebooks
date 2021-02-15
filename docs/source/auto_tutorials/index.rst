@@ -58,7 +58,7 @@ Tutorials
 .. only:: html
 
  .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
-     :alt: Import spatial data in Anndata and Squidpy
+     :alt: Import spatial data in AnnData and Squidpy
 
      :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
 

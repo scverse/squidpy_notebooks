@@ -7,21 +7,21 @@
 
 .. only:: html
 
-    .. note::
-        :class: sphx-glr-download-link-note
+  .. container:: binder-badge
 
-        Click :ref:`here <sphx_glr_download_auto_tutorials_tutorial_read_spatial.py>`
-        to download the full example code
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_tutorials/tutorial_read_spatial.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 .. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_tutorials_tutorial_read_spatial.py:
 
-
-Import spatial data in Anndata and Squidpy
+Import spatial data in AnnData and Squidpy
 ==========================================
 
-This tutorial shows how to store spatial datasets in :mod:`anndata.AnnData`.
+This tutorial shows how to store spatial datasets in :class:`anndata.AnnData`.
 
 Spatial molecular data comes in many different formats, and to date there is no
 one-size-fit-all solution for reading spatial data in python.
@@ -31,10 +31,10 @@ Here in Squidpy, we do provide some pre-processed (and pre-formatted) datasets,
 with the module :mod:`squidpy.datasets` but it's not very useful for the users
 who need to import their own data.
 
-In this tutorial, we will showcase how spatial data are stored in :mod:`anndata.AnnData`.
+In this tutorial, we will showcase how spatial data are stored in :class:`anndata.AnnData`.
 We will use mock datasets for this purpose, yet showing with examples the important
 details that you should take care of in order to exploit the full functionality of the
-Anndata-Scanpy-Squidpy ecosystem.
+*AnnData-Scanpy-Squidpy* ecosystem.
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-33
 
@@ -62,23 +62,24 @@ Anndata-Scanpy-Squidpy ecosystem.
 
  .. code-block:: none
 
-    scanpy==1.7.0rc1 anndata==0.7.5 umap==0.4.6 numpy==1.20.1 scipy==1.6.0 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    scanpy==1.7.0 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.0 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
     squidpy==0.0.0
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-41
+.. GENERATED FROM PYTHON SOURCE LINES 34-42
 
 Spatial coordinates in AnnData
 ------------------------------
 
-First, let's generate some data. We will need
+First, let's generate some data. We will need:
+
 - an array of features (e.g. counts)
 - an array of spatial coordinates
 - an image array (e.g. the tissue image)
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-47
+.. GENERATED FROM PYTHON SOURCE LINES 42-48
 
 .. code-block:: default
 
@@ -95,14 +96,14 @@ First, let's generate some data. We will need
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-52
+.. GENERATED FROM PYTHON SOURCE LINES 49-53
 
-Let's first start with creating the :mod:`anndataAnnData` object.
+Let's first start with creating the :class:`anndata.AnnData` object.
 We will first just use the count matrix and the spatial coordinates.
-Specificy the `obsm` key as `"spatial"` is not strictly necessary
-but will save you a lot of typing since it's the default for both Squidpy and Scanpy
+Specify the :attr:`anndata.AnnData.obsm` key as `"spatial"` is not strictly necessary
+but will save you a lot of typing since it's the default for both Squidpy and Scanpy.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-55
+.. GENERATED FROM PYTHON SOURCE LINES 53-56
 
 .. code-block:: default
 
@@ -116,11 +117,11 @@ but will save you a lot of typing since it's the default for both Squidpy and Sc
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 Next, let's run a standard Scanpy clustering and umap workflow.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-66
+.. GENERATED FROM PYTHON SOURCE LINES 58-67
 
 .. code-block:: default
 
@@ -143,8 +144,6 @@ Next, let's run a standard Scanpy clustering and umap workflow.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numba/np/ufunc/parallel.py:363: NumbaWarning: The TBB threading layer requires TBB version 2019.5 or later i.e., TBB_INTERFACE_VERSION >= 11005. Found TBB_INTERFACE_VERSION = 9107. The TBB threading layer is disabled.
-      warnings.warn(problem)
 
     AnnData object with n_obs × n_vars = 10 × 100
         obs: 'leiden'
@@ -155,11 +154,11 @@ Next, let's run a standard Scanpy clustering and umap workflow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-68
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
-We can visualize the dummy cluster annotation `adata.obs.leiden` in space.
+We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 69-72
 
 .. code-block:: default
 
@@ -177,7 +176,7 @@ We can visualize the dummy cluster annotation `adata.obs.leiden` in space.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-80
+.. GENERATED FROM PYTHON SOURCE LINES 73-81
 
 Tissue image in AnnData
 -----------------------
@@ -188,7 +187,7 @@ For instance, you can compute a spatial graph with :func:`squidpy.gr.spatial_nei
 based on a fixed neighbor radius
 that is informative given your experimental settings.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-84
+.. GENERATED FROM PYTHON SOURCE LINES 81-85
 
 .. code-block:: default
 
@@ -207,13 +206,13 @@ that is informative given your experimental settings.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-88
+.. GENERATED FROM PYTHON SOURCE LINES 86-89
 
 In case you do have an image of the tissue (or multiple, at different resolutions)
 this is what you need to know to correctly store it in AnnData.
 First, let's visualize the mock image from before.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 .. code-block:: default
 
@@ -235,14 +234,14 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7ff23e330700>
+    <matplotlib.image.AxesImage object at 0x7ff92ce79460>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-105
+.. GENERATED FROM PYTHON SOURCE LINES 93-106
 
-The image and its metadata are stored in the `uns` slot of :mod:`anndata.AnnData`.
-Specifically, in the `adata.uns["spatial"][<library_id>]` slot, where `library_id`
+The image and its metadata are stored in the `uns` slot of :class:`anndata.AnnData`.
+Specifically, in the ``adata.uns['spatial']['{library_id}']`` slot, where `library_id`
 is any unique key that refers to the tissue image.
 
 For now, we will assume that there is only one image.
@@ -255,7 +254,7 @@ we will set this value to 1.
 In the case of Visium, we usually call them `"spots"` and this value is set to ~89.
 Here, we will set it to 0.5.
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-113
+.. GENERATED FROM PYTHON SOURCE LINES 106-114
 
 .. code-block:: default
 
@@ -274,7 +273,7 @@ Here, we will set it to 0.5.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-120
+.. GENERATED FROM PYTHON SOURCE LINES 115-121
 
 We don't provide the flexibility (yet) to change the values of such keys.
 These are the keys provided by the Space Ranger output from 10x Genomics Visium
@@ -283,7 +282,7 @@ a sightly different structure.
 But for now, if all such key are correct, :func:`scanpy.pl.spatial` works
 out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-123
+.. GENERATED FROM PYTHON SOURCE LINES 121-124
 
 .. code-block:: default
 
@@ -301,12 +300,12 @@ out of the box.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-126
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 You can fiddle around with the settings to see what changes.
 For instance, let's change `tissue_hires_scalef` to half the previous value.
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-130
+.. GENERATED FROM PYTHON SOURCE LINES 127-131
 
 .. code-block:: default
 
@@ -325,15 +324,15 @@ For instance, let's change `tissue_hires_scalef` to half the previous value.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-136
+.. GENERATED FROM PYTHON SOURCE LINES 132-137
 
 As you can see, the spatial coordinates have been scaled down, and the image
 was "zoomed in".
 
-Of course, you might want to "analyze" such image. :class:`sq.im.ImageContainer`
+Of course, you might want to "analyze" such image. :class:`squidpy.im.ImageContainer`
 comes to the rescue! Just instantiate a new object and it will work out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-139
+.. GENERATED FROM PYTHON SOURCE LINES 137-140
 
 .. code-block:: default
 
@@ -354,9 +353,9 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.867 seconds)
+   **Total running time of the script:** ( 0 minutes  28.208 seconds)
 
-**Estimated memory usage:**  13 MB
+**Estimated memory usage:**  93 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:
@@ -378,10 +377,3 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
   .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: tutorial_read_spatial.ipynb <tutorial_read_spatial.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_
