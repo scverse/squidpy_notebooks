@@ -143,7 +143,7 @@ jobs:
                 PLATFORM: ubuntu-latest
 
         -   name: Temporarily update .gitignore
-            # git-auto-commit-action does not support: git add --force
+            # git-auto-commit-action does not support `git add --force`
             run: |
                 sed -i -E 's%docs/source/(auto_\*|gen_modules/)%%g' -- .gitignore
                 git status -s -- add docs/source/auto_* docs/source/gen_modules/backreferences/*
@@ -158,8 +158,6 @@ jobs:
                 skip_fetch: true
 
         -   name: Request documentation rebuild
-            # TODO: if: always()?
             if: steps.auto-commit-action.outputs.changes_detected == 'true'
             run: |
-                echo "TODO: update rebuild secrets..."
-            # curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+                curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
