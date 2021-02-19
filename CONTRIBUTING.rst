@@ -99,6 +99,7 @@ or `functions <https://nbsphinx.readthedocs.io/en/0.8.1/markdown-cells.html#Link
 Make sure the tutorial has a thumbnail, see `here <https://nbsphinx.readthedocs.io/en/dask-theme/gallery/cell-metadata.html>`__.
 You can also define the hover info.
 Put this in the metadata of the cell that produces the image that should be used as thubnail image
+
 .. code-block::
 
   {
