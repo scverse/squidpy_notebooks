@@ -18,21 +18,22 @@
 .. _sphx_glr_auto_examples_image_compute_smooth.py:
 
 
-Smoothing an Image
-------------------
+Smooth an image
+---------------
 
-This example shows how to use :func:`squidpy.im.process_img` to smooth an image layer of
-:class:`squidpy.im.ImageContainer`.
+This example shows how to use :func:`squidpy.im.process` to smooth an image layer of :class:`squidpy.im.ImageContainer`.
 
-We use the argument ``processing="smooth"`` to smooth the image.
+We use the argument ``method="smooth"`` to smooth the image.
 This calls :func:`skimage.filters.gaussian` in the background.
 Keyword arguments ``kwargs`` are passed to the wrapped function.
-This allows us to set the width of the gaussian kernel, ``sigma``, used for smoothing.
+This allows us to set the width of the Gaussian kernel, :math:`\\sigma`, used for smoothing.
 
-See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
-:ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+.. seealso::
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-25
+    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 18-26
 
 .. code-block:: default
 
@@ -51,58 +52,46 @@ See also :ref:`sphx_glr_auto_examples_image_compute_gray.py` and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 Smooth the image with ``sigma = 2``.
-With the argument ``img_id`` we can select the image layer that should be processed.
+With the argument ``layer`` we can select the image layer that should be processed.
 By default, the resulting image is saved in the layer ``image_smooth``.
-This behaviour can be changed with the arguments ``copy`` and ``key_added``.
+This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-33
+.. GENERATED FROM PYTHON SOURCE LINES 31-34
 
 .. code-block:: default
 
 
-    sq.im.process_img(img, img_id="image", processing="smooth", sigma=2)
+    sq.im.process(img, layer="image", method="smooth", sigma=2)
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/im/processing.py:74: RuntimeWarning: Images with dimensions (M, N, 3) are interpreted as 2D+RGB by default. Use `multichannel=False` to interpret as 3D image with last dimension of length 3.
-      skimage.filters.gaussian(crop[img_id], **kwargs),
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 Now we can look at the result on a cropped part of the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-44
+.. GENERATED FROM PYTHON SOURCE LINES 36-42
 
 .. code-block:: default
 
-    crop = img.crop_corner(0, 0, 200, 200)
+    crop = img.crop_corner(0, 0, size=200)
 
     fig, axes = plt.subplots(1, 2)
-    axes[0].imshow(crop["image"])
-    axes[0].set_title("original")
-    axes[1].imshow(crop["image_smooth"])
-    axes[1].set_title("smoothed")
-    for ax in axes:
-        ax.axis("off")
+    for i, layer in enumerate(["image", "image_smooth"]):
+        crop.show(layer, ax=axes[i])
+        axes[i].set_title(layer)
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
-    :alt: original, smoothed
+    :alt: image, image_smooth
     :class: sphx-glr-single-img
 
 
@@ -112,9 +101,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.714 seconds)
+   **Total running time of the script:** ( 0 minutes  16.692 seconds)
 
-**Estimated memory usage:**  644 MB
+**Estimated memory usage:**  782 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

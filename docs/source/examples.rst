@@ -1,9 +1,11 @@
 Examples
 ========
 
+This section contains various short examples showcasing core squidpy functionalities.
+
 Graph
 -----
-In the main repository, add something nice here.
+This section contains various examples for the :mod:`squidpy.gr` module.
 
 .. nbgallery::
     :glob:
@@ -12,9 +14,21 @@ In the main repository, add something nice here.
 
 Image
 -----
-In the main repository, add something nice here.
+This section contains various examples for the :mod:`squidpy.im` module.
 
 .. nbgallery::
     :glob:
 
-    auto_examples/image/compute_*
+    auto_examples/image/compute_image_container
+    auto_examples/image/compute_crops
+    auto_examples/image/compute_process_hires
+    auto_examples/image/compute_gray
+    auto_examples/image/compute_smooth
+    auto_examples/image/compute_segment_fluo
+    auto_examples/image/compute_segment_hne
+    auto_examples/image/compute_features
+    auto_examples/image/compute_summary_features
+    auto_examples/image/compute_histogram_features
+    auto_examples/image/compute_texture_features
+    auto_examples/image/compute_segmentation_features
+    auto_examples/image/compute_custom_features

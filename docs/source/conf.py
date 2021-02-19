@@ -5,17 +5,24 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
+from pathlib import Path
 import os
 import sys
+
 from datetime import datetime
-from pathlib import Path
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import squidpy
+import sphinx_gallery.gen_rst
 from sphinx.application import Sphinx
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE.parent.parent))  # this way, we don't have to install squidpy
+
+from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "3.0"
@@ -48,7 +55,6 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     # TODO: uncomment once the docs are up
     # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
-    # TODO: remove me if not used
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
@@ -100,7 +106,7 @@ def reset_matplotlib(_gallery_conf, _fname):
     mpl.rcParams["savefig.bbox"] = "tight"
     mpl.rcParams["savefig.transparent"] = True
     mpl.rcParams["figure.figsize"] = (12, 8)
-    mpl.rcParams["figure.dpi"] = 90
+    mpl.rcParams["figure.dpi"] = 96
     mpl.rcParams["figure.autolayout"] = True
 
 
@@ -137,11 +143,36 @@ sphinx_gallery_conf = {
         ],
         "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
     },
+    "binder": {
+        "org": "theislab",
+        "repo": "squidpy_notebooks",
+        "branch": "master",
+        "binderhub_url": "https://mybinder.org",
+        "dependencies": str(_root / "environment.yml"),
+        "filepath_prefix": "docs",
+        "notebooks_dir": "source",  # trick sphinx-gallery into producing the correct binder links
+        "use_jupyter_lab": False,
+    },
 }
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
     "external_tutorials/**": "_static/img/squidpy_vertical.png",
 }
+nbsphinx_execute_arguments = [
+    "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
+    "--InlineBackend.rc={'figure.dpi': 96}",
+]
+nbsphinx_prolog = r"""
+{% set docname = 'docs/source/' + env.doc2path(env.docname, base=None) %}
+.. raw:: html
+
+    <div class="binder-badge docutils container">
+        <a class="reference external image-reference"
+           href="https://mybinder.org/v2/gh/theislab/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}">
+        <img alt="Launch binder" src="https://mybinder.org/badge_logo.svg" width="150px">
+        </a>
+    </div>
+"""  # noqa: E501
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -159,6 +190,8 @@ html_show_sphinx = False
 
 github_repo = "squidpy"
 github_repo_nb = "squidpy_notebooks"
+
+sphinx_gallery.gen_rst.save_rst_example = save_rst_example
 
 
 def setup(app: Sphinx) -> None:

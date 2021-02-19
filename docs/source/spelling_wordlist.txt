@@ -31,3 +31,12 @@ ResNet
 KNN
 leiden
 DL
+thresholded
+Otsu
+Napari
+Scanpy
+Qt
+dataframe
+AnnData
+Tensorflow
+ligand

@@ -18,27 +18,30 @@
 .. _sphx_glr_auto_examples_image_compute_texture_features.py:
 
 
-Texture features
-----------------
+Extract texture features
+------------------------
 
-Here, we use :func:`squidpy.im.calculate_image_features` to extract texture features from the tissue image.
-Please have a look at :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
-:func:`squidpy.im.calculate_image_features`.
+This example shows how to use :func:`squidpy.im.calculate_image_features`.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
-calculating a grey-level co-occurence matrix (GLCM).
-The GLCM includes the number of times that grey-level j occurs at a distance d and at an angle theta from grey-level i.
+calculating a grey-level co-occurrence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
+The GLCM includes the number of times that grey-level :math:`j` occurs at a distance :math:`d`
+and at an angle :math:`\\theta` from grey-level :math:`i`.
 From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
-Use ``features='texture'`` to calculate the features.
 
-In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
+In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
-- ``distances``: Distances that are taken into account for finding repeating patterns
-- ``angles``: Range on which values are binned. Default is the whole image range
-- ``props``: Texture features that are extracted from the GLCM
+- ``distances`` - distances that are taken into account for finding repeating patterns.
+- ``angles`` - range on which values are binned. Default is the whole image range.
+- ``props`` - texture features that are extracted from the GLCM.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. seealso::
+
+    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    :func:`squidpy.im.calculate_image_features`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 .. code-block:: default
 
@@ -53,16 +56,16 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-35
+.. GENERATED FROM PYTHON SOURCE LINES 31-37
 
-Lets load a fluorescence visisum dataset and calculate texture features with default ``features_kwargs``.
-Here, we need to cast the image crops from `uint16` to `uint8` (by using ``dtype="uint8"``) before calculating the
-texture features, because :func:`skimage.feature.greycomatrix` does not support values above 255.
+Let's load the fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
+
 Note that for texture features it may make sense to compute them over a larger crop size to include more context,
-e.g., ``size=2`` or ``size=4`` which will extract crops with double or four times the radius than the original
-visium spot size. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+e.g., ``spot_scale = 2`` or ``spit_scale = 4`` which will extract crops with double or four times the radius
+than the original Visium spot size.
+For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-44
+.. GENERATED FROM PYTHON SOURCE LINES 37-51
 
 .. code-block:: default
 
@@ -73,25 +76,41 @@ visium spot size. For more details on the image cropping, see :ref:`sphx_glr_aut
 
     # calculate texture features and save in key "texture_features"
     sq.im.calculate_image_features(
-        adata, img, features="texture", key_added="texture_features_2", dtype="uint8", show_progress_bar=False, size=2
+        adata,
+        img,
+        features="texture",
+        key_added="texture_features",
+        spot_scale=2,
+        show_progress_bar=False,
     )
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/303M [00:00<?, ?B/s]      0%|          | 40.0k/303M [00:00<17:53, 296kB/s]      0%|          | 200k/303M [00:00<06:31, 810kB/s]       0%|          | 872k/303M [00:00<01:58, 2.67MB/s]      1%|1         | 3.45M/303M [00:00<00:33, 9.27MB/s]      3%|2         | 8.15M/303M [00:00<00:16, 18.6MB/s]      4%|4         | 13.5M/303M [00:00<00:11, 25.8MB/s]      6%|6         | 18.8M/303M [00:00<00:09, 30.3MB/s]      8%|7         | 24.0M/303M [00:01<00:08, 36.4MB/s]      9%|8         | 26.9M/303M [00:01<00:08, 33.7MB/s]     11%|#         | 32.4M/303M [00:01<00:07, 39.9MB/s]     12%|#1        | 35.4M/303M [00:01<00:07, 36.6MB/s]     14%|#3        | 40.9M/303M [00:01<00:06, 42.3MB/s]     15%|#4        | 44.1M/303M [00:01<00:07, 38.3MB/s]     16%|#6        | 49.4M/303M [00:01<00:06, 42.2MB/s]     17%|#7        | 52.6M/303M [00:01<00:06, 39.6MB/s]     19%|#9        | 58.2M/303M [00:01<00:05, 43.9MB/s]     20%|##        | 61.4M/303M [00:02<00:06, 40.7MB/s]     22%|##2       | 66.8M/303M [00:02<00:05, 44.2MB/s]     23%|##3       | 70.2M/303M [00:02<00:05, 41.4MB/s]     25%|##4       | 75.6M/303M [00:02<00:05, 44.8MB/s]     26%|##6       | 79.0M/303M [00:02<00:05, 41.9MB/s]     28%|##7       | 84.4M/303M [00:02<00:05, 45.0MB/s]     29%|##8       | 87.6M/303M [00:02<00:05, 41.4MB/s]     31%|###       | 92.8M/303M [00:02<00:04, 45.1MB/s]     32%|###1      | 96.5M/303M [00:02<00:05, 41.7MB/s]     33%|###3      | 101M/303M [00:02<00:04, 43.5MB/s]      35%|###4      | 105M/303M [00:03<00:04, 42.3MB/s]     36%|###6      | 110M/303M [00:03<00:04, 43.9MB/s]     38%|###7      | 114M/303M [00:03<00:04, 42.5MB/s]     39%|###9      | 118M/303M [00:03<00:04, 43.4MB/s]     41%|####      | 123M/303M [00:03<00:04, 42.9MB/s]     42%|####2     | 127M/303M [00:03<00:04, 43.9MB/s]     43%|####3     | 131M/303M [00:03<00:04, 42.2MB/s]     45%|####4     | 136M/303M [00:03<00:03, 44.0MB/s]     46%|####6     | 140M/303M [00:03<00:04, 41.8MB/s]     48%|####7     | 145M/303M [00:04<00:03, 43.5MB/s]     49%|####9     | 149M/303M [00:04<00:03, 42.1MB/s]     51%|#####     | 154M/303M [00:04<00:03, 43.7MB/s]     52%|#####1    | 157M/303M [00:04<00:03, 42.2MB/s]     54%|#####3    | 162M/303M [00:04<00:03, 43.7MB/s]     55%|#####4    | 166M/303M [00:04<00:03, 42.5MB/s]     57%|#####6    | 171M/303M [00:04<00:03, 43.9MB/s]     58%|#####7    | 175M/303M [00:04<00:03, 42.4MB/s]     59%|#####9    | 180M/303M [00:04<00:02, 44.0MB/s]     61%|######    | 183M/303M [00:05<00:02, 42.2MB/s]     62%|######2   | 188M/303M [00:05<00:02, 43.7MB/s]     64%|######3   | 192M/303M [00:05<00:02, 42.5MB/s]     65%|######5   | 197M/303M [00:05<00:02, 43.9MB/s]     66%|######6   | 201M/303M [00:05<00:02, 42.6MB/s]     68%|######7   | 206M/303M [00:05<00:02, 43.2MB/s]     69%|######9   | 210M/303M [00:05<00:02, 42.4MB/s]     71%|#######   | 214M/303M [00:05<00:02, 43.6MB/s]     72%|#######2  | 218M/303M [00:05<00:02, 42.1MB/s]     74%|#######3  | 223M/303M [00:05<00:01, 43.6MB/s]     75%|#######4  | 227M/303M [00:06<00:01, 42.0MB/s]     76%|#######6  | 231M/303M [00:06<00:01, 43.4MB/s]     78%|#######7  | 235M/303M [00:06<00:01, 41.5MB/s]     79%|#######9  | 240M/303M [00:06<00:01, 43.3MB/s]     81%|########  | 244M/303M [00:06<00:01, 41.7MB/s]     82%|########2 | 248M/303M [00:06<00:01, 42.8MB/s]     83%|########3 | 253M/303M [00:06<00:01, 42.2MB/s]     85%|########4 | 257M/303M [00:06<00:01, 43.3MB/s]     86%|########6 | 261M/303M [00:06<00:01, 42.2MB/s]     88%|########7 | 266M/303M [00:07<00:00, 43.9MB/s]     89%|########9 | 270M/303M [00:07<00:00, 42.4MB/s]     91%|######### | 274M/303M [00:07<00:00, 43.3MB/s]     92%|#########2| 279M/303M [00:07<00:00, 39.6MB/s]     94%|#########3| 284M/303M [00:07<00:00, 40.8MB/s]     96%|#########5| 290M/303M [00:07<00:00, 40.7MB/s]     98%|#########7| 296M/303M [00:07<00:00, 41.2MB/s]    100%|#########9| 301M/303M [00:07<00:00, 41.7MB/s]    100%|##########| 303M/303M [00:07<00:00, 40.0MB/s]
+      0%|          | 0.00/65.5M [00:00<?, ?B/s]      0%|          | 40.0k/65.5M [00:00<03:53, 293kB/s]      0%|          | 208k/65.5M [00:00<01:21, 842kB/s]       1%|1         | 864k/65.5M [00:00<00:25, 2.64MB/s]      5%|5         | 3.38M/65.5M [00:00<00:06, 9.72MB/s]     11%|#         | 7.19M/65.5M [00:00<00:03, 18.8MB/s]     18%|#7        | 11.7M/65.5M [00:00<00:02, 26.6MB/s]     24%|##4       | 15.8M/65.5M [00:00<00:01, 31.4MB/s]     31%|###       | 20.1M/65.5M [00:00<00:01, 34.1MB/s]     37%|###7      | 24.4M/65.5M [00:01<00:01, 37.5MB/s]     44%|####3     | 28.8M/65.5M [00:01<00:00, 38.6MB/s]     49%|####9     | 32.2M/65.5M [00:01<00:00, 38.0MB/s]     56%|#####6    | 36.9M/65.5M [00:01<00:00, 40.0MB/s]     62%|######2   | 40.7M/65.5M [00:01<00:00, 39.8MB/s]     69%|######9   | 45.5M/65.5M [00:01<00:00, 41.5MB/s]     75%|#######5  | 49.2M/65.5M [00:01<00:00, 40.8MB/s]     83%|########2 | 54.1M/65.5M [00:01<00:00, 42.5MB/s]     89%|########8 | 58.1M/65.5M [00:01<00:00, 42.2MB/s]     96%|#########5| 62.8M/65.5M [00:02<00:00, 43.0MB/s]    100%|##########| 65.5M/65.5M [00:02<00:00, 33.4MB/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
-The result is stored in ``adata.obsm['texture_features']``
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+The result is stored in ``adata.obsm['texture_features']``.
+
+.. GENERATED FROM PYTHON SOURCE LINES 53-56
 
 .. code-block:: default
 
 
-    adata.obsm["texture_features_2"].head()
+    adata.obsm["texture_features"].head()
 
 
 
@@ -119,66 +138,66 @@ The result is stored in ``adata.obsm['texture_features']``
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>texture_contrast_ch_0_dist_1_angle_0.00</th>
-          <th>texture_contrast_ch_0_dist_1_angle_0.79</th>
-          <th>texture_contrast_ch_0_dist_1_angle_1.57</th>
-          <th>texture_contrast_ch_0_dist_1_angle_2.36</th>
-          <th>texture_dissimilarity_ch_0_dist_1_angle_0.00</th>
-          <th>texture_dissimilarity_ch_0_dist_1_angle_0.79</th>
-          <th>texture_dissimilarity_ch_0_dist_1_angle_1.57</th>
-          <th>texture_dissimilarity_ch_0_dist_1_angle_2.36</th>
-          <th>texture_homogeneity_ch_0_dist_1_angle_0.00</th>
-          <th>texture_homogeneity_ch_0_dist_1_angle_0.79</th>
-          <th>texture_homogeneity_ch_0_dist_1_angle_1.57</th>
-          <th>texture_homogeneity_ch_0_dist_1_angle_2.36</th>
-          <th>texture_correlation_ch_0_dist_1_angle_0.00</th>
-          <th>texture_correlation_ch_0_dist_1_angle_0.79</th>
-          <th>texture_correlation_ch_0_dist_1_angle_1.57</th>
-          <th>texture_correlation_ch_0_dist_1_angle_2.36</th>
-          <th>texture_ASM_ch_0_dist_1_angle_0.00</th>
-          <th>texture_ASM_ch_0_dist_1_angle_0.79</th>
-          <th>texture_ASM_ch_0_dist_1_angle_1.57</th>
-          <th>texture_ASM_ch_0_dist_1_angle_2.36</th>
-          <th>texture_contrast_ch_1_dist_1_angle_0.00</th>
-          <th>texture_contrast_ch_1_dist_1_angle_0.79</th>
-          <th>texture_contrast_ch_1_dist_1_angle_1.57</th>
-          <th>texture_contrast_ch_1_dist_1_angle_2.36</th>
-          <th>texture_dissimilarity_ch_1_dist_1_angle_0.00</th>
-          <th>texture_dissimilarity_ch_1_dist_1_angle_0.79</th>
-          <th>texture_dissimilarity_ch_1_dist_1_angle_1.57</th>
-          <th>texture_dissimilarity_ch_1_dist_1_angle_2.36</th>
-          <th>texture_homogeneity_ch_1_dist_1_angle_0.00</th>
-          <th>texture_homogeneity_ch_1_dist_1_angle_0.79</th>
-          <th>texture_homogeneity_ch_1_dist_1_angle_1.57</th>
-          <th>texture_homogeneity_ch_1_dist_1_angle_2.36</th>
-          <th>texture_correlation_ch_1_dist_1_angle_0.00</th>
-          <th>texture_correlation_ch_1_dist_1_angle_0.79</th>
-          <th>texture_correlation_ch_1_dist_1_angle_1.57</th>
-          <th>texture_correlation_ch_1_dist_1_angle_2.36</th>
-          <th>texture_ASM_ch_1_dist_1_angle_0.00</th>
-          <th>texture_ASM_ch_1_dist_1_angle_0.79</th>
-          <th>texture_ASM_ch_1_dist_1_angle_1.57</th>
-          <th>texture_ASM_ch_1_dist_1_angle_2.36</th>
-          <th>texture_contrast_ch_2_dist_1_angle_0.00</th>
-          <th>texture_contrast_ch_2_dist_1_angle_0.79</th>
-          <th>texture_contrast_ch_2_dist_1_angle_1.57</th>
-          <th>texture_contrast_ch_2_dist_1_angle_2.36</th>
-          <th>texture_dissimilarity_ch_2_dist_1_angle_0.00</th>
-          <th>texture_dissimilarity_ch_2_dist_1_angle_0.79</th>
-          <th>texture_dissimilarity_ch_2_dist_1_angle_1.57</th>
-          <th>texture_dissimilarity_ch_2_dist_1_angle_2.36</th>
-          <th>texture_homogeneity_ch_2_dist_1_angle_0.00</th>
-          <th>texture_homogeneity_ch_2_dist_1_angle_0.79</th>
-          <th>texture_homogeneity_ch_2_dist_1_angle_1.57</th>
-          <th>texture_homogeneity_ch_2_dist_1_angle_2.36</th>
-          <th>texture_correlation_ch_2_dist_1_angle_0.00</th>
-          <th>texture_correlation_ch_2_dist_1_angle_0.79</th>
-          <th>texture_correlation_ch_2_dist_1_angle_1.57</th>
-          <th>texture_correlation_ch_2_dist_1_angle_2.36</th>
-          <th>texture_ASM_ch_2_dist_1_angle_0.00</th>
-          <th>texture_ASM_ch_2_dist_1_angle_0.79</th>
-          <th>texture_ASM_ch_2_dist_1_angle_1.57</th>
-          <th>texture_ASM_ch_2_dist_1_angle_2.36</th>
+          <th>texture_ch-0_contrast_dist-1_angle-0.00</th>
+          <th>texture_ch-0_contrast_dist-1_angle-0.79</th>
+          <th>texture_ch-0_contrast_dist-1_angle-1.57</th>
+          <th>texture_ch-0_contrast_dist-1_angle-2.36</th>
+          <th>texture_ch-0_dissimilarity_dist-1_angle-0.00</th>
+          <th>texture_ch-0_dissimilarity_dist-1_angle-0.79</th>
+          <th>texture_ch-0_dissimilarity_dist-1_angle-1.57</th>
+          <th>texture_ch-0_dissimilarity_dist-1_angle-2.36</th>
+          <th>texture_ch-0_homogeneity_dist-1_angle-0.00</th>
+          <th>texture_ch-0_homogeneity_dist-1_angle-0.79</th>
+          <th>texture_ch-0_homogeneity_dist-1_angle-1.57</th>
+          <th>texture_ch-0_homogeneity_dist-1_angle-2.36</th>
+          <th>texture_ch-0_correlation_dist-1_angle-0.00</th>
+          <th>texture_ch-0_correlation_dist-1_angle-0.79</th>
+          <th>texture_ch-0_correlation_dist-1_angle-1.57</th>
+          <th>texture_ch-0_correlation_dist-1_angle-2.36</th>
+          <th>texture_ch-0_ASM_dist-1_angle-0.00</th>
+          <th>texture_ch-0_ASM_dist-1_angle-0.79</th>
+          <th>texture_ch-0_ASM_dist-1_angle-1.57</th>
+          <th>texture_ch-0_ASM_dist-1_angle-2.36</th>
+          <th>texture_ch-1_contrast_dist-1_angle-0.00</th>
+          <th>texture_ch-1_contrast_dist-1_angle-0.79</th>
+          <th>texture_ch-1_contrast_dist-1_angle-1.57</th>
+          <th>texture_ch-1_contrast_dist-1_angle-2.36</th>
+          <th>texture_ch-1_dissimilarity_dist-1_angle-0.00</th>
+          <th>texture_ch-1_dissimilarity_dist-1_angle-0.79</th>
+          <th>texture_ch-1_dissimilarity_dist-1_angle-1.57</th>
+          <th>texture_ch-1_dissimilarity_dist-1_angle-2.36</th>
+          <th>texture_ch-1_homogeneity_dist-1_angle-0.00</th>
+          <th>texture_ch-1_homogeneity_dist-1_angle-0.79</th>
+          <th>texture_ch-1_homogeneity_dist-1_angle-1.57</th>
+          <th>texture_ch-1_homogeneity_dist-1_angle-2.36</th>
+          <th>texture_ch-1_correlation_dist-1_angle-0.00</th>
+          <th>texture_ch-1_correlation_dist-1_angle-0.79</th>
+          <th>texture_ch-1_correlation_dist-1_angle-1.57</th>
+          <th>texture_ch-1_correlation_dist-1_angle-2.36</th>
+          <th>texture_ch-1_ASM_dist-1_angle-0.00</th>
+          <th>texture_ch-1_ASM_dist-1_angle-0.79</th>
+          <th>texture_ch-1_ASM_dist-1_angle-1.57</th>
+          <th>texture_ch-1_ASM_dist-1_angle-2.36</th>
+          <th>texture_ch-2_contrast_dist-1_angle-0.00</th>
+          <th>texture_ch-2_contrast_dist-1_angle-0.79</th>
+          <th>texture_ch-2_contrast_dist-1_angle-1.57</th>
+          <th>texture_ch-2_contrast_dist-1_angle-2.36</th>
+          <th>texture_ch-2_dissimilarity_dist-1_angle-0.00</th>
+          <th>texture_ch-2_dissimilarity_dist-1_angle-0.79</th>
+          <th>texture_ch-2_dissimilarity_dist-1_angle-1.57</th>
+          <th>texture_ch-2_dissimilarity_dist-1_angle-2.36</th>
+          <th>texture_ch-2_homogeneity_dist-1_angle-0.00</th>
+          <th>texture_ch-2_homogeneity_dist-1_angle-0.79</th>
+          <th>texture_ch-2_homogeneity_dist-1_angle-1.57</th>
+          <th>texture_ch-2_homogeneity_dist-1_angle-2.36</th>
+          <th>texture_ch-2_correlation_dist-1_angle-0.00</th>
+          <th>texture_ch-2_correlation_dist-1_angle-0.79</th>
+          <th>texture_ch-2_correlation_dist-1_angle-1.57</th>
+          <th>texture_ch-2_correlation_dist-1_angle-2.36</th>
+          <th>texture_ch-2_ASM_dist-1_angle-0.00</th>
+          <th>texture_ch-2_ASM_dist-1_angle-0.79</th>
+          <th>texture_ch-2_ASM_dist-1_angle-1.57</th>
+          <th>texture_ch-2_ASM_dist-1_angle-2.36</th>
         </tr>
       </thead>
       <tbody>
@@ -504,28 +523,29 @@ The result is stored in ``adata.obsm['texture_features']``
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-54
+.. GENERATED FROM PYTHON SOURCE LINES 57-62
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-:ref:`sphx_glr_auto_tutorials_tutorial_napari.py` to learn how to use our interactive napari plugin.
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+how to use our interactive :mod:`napari` plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-60
+.. GENERATED FROM PYTHON SOURCE LINES 62-68
 
 .. code-block:: default
 
 
     sc.pl.spatial(
-        sq.pl.extract(adata, "texture_features_2"),
-        color=[None, "texture_contrast_ch_0_dist_1_angle_0.00", "texture_contrast_ch_1_dist_1_angle_0.00"],
+        sq.pl.extract(adata, "texture_features"),
+        color=[None, "texture_ch-0_contrast_dist-1_angle-0.00", "texture_ch-1_contrast_dist-1_angle-0.00"],
         bw=True,
     )
 
 
 
 .. image:: /auto_examples/image/images/sphx_glr_compute_texture_features_001.png
-    :alt: texture_contrast_ch_0_dist_1_angle_0.00, texture_contrast_ch_1_dist_1_angle_0.00
+    :alt: texture_ch-0_contrast_dist-1_angle-0.00, texture_ch-1_contrast_dist-1_angle-0.00
     :class: sphx-glr-single-img
 
 
@@ -535,9 +555,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  45.295 seconds)
+   **Total running time of the script:** ( 0 minutes  55.796 seconds)
 
-**Estimated memory usage:**  858 MB
+**Estimated memory usage:**  768 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:
