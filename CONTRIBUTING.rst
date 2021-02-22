@@ -36,8 +36,8 @@ Remember that only the visium datasets contain tissue images.
 - ``sq.datasets.visium_hne_image_crop()`` - good for image container (cropped)
 - ``sq.datasets.visium_hne_image()`` - good for image container (cropped)
 
-Guidelines for writing examples / tutorials
--------------------------------------------
+Main examples and tutorials
+---------------------------
 
 Examples and Tutorials are represented as an executable **python file**.
 The general structure is described `here <https://sphinx-gallery.github.io/stable/syntax.html>`_ .
@@ -86,8 +86,8 @@ Make sure to follow the following checklist before merging a new example / tutor
 - ensure that .py examples/tutorials are executable (``chmod +x``) and have ``#!/usr/bin/env python`` shebang at the top
 
 
-Write external tutorials
-------------------------
+External tutorials
+------------------
 
 External tutorials are not run by CI, and therefore provided as **ipynb notebooks**.
 Therefore, they will be rendered as they appear locally.
