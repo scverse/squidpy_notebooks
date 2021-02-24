@@ -53,8 +53,7 @@ extensions = [
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    # TODO: uncomment once the docs are up
-    # "squidpy": ("https://squidpy.readthedocs.io/en/stable/", None),
+    "squidpy": ("https://squidpy.readthedocs.io/en/latest/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
@@ -162,7 +161,9 @@ nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
     "--InlineBackend.rc={'figure.dpi': 96}",
 ]
-nbsphinx_prolog = r"""
+
+# we ignore this because external tutorials require some heavy libraries (tensorflow/pytorch/pyqt5)
+_nbsphinx_prolog = r"""
 {% set docname = 'docs/source/' + env.doc2path(env.docname, base=None) %}
 .. raw:: html
 
