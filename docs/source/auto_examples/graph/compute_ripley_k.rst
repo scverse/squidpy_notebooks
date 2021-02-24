@@ -43,6 +43,23 @@ pattern at certain scale.
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 4668 × 34
+        obs: 'cell type'
+        uns: 'cell type_colors'
+        obsm: 'spatial'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 We can compute the Ripley's K function with :func:`squidpy.gr.ripley_k`.
@@ -54,6 +71,16 @@ Results can be visualized with :func:`squidpy.pl.ripley_k`.
 
     sq.gr.ripley_k(adata, cluster_key="cell type")
     sq.pl.ripley_k(adata, cluster_key="cell type")
+
+
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_ripley_k_001.png
+    :alt: Ripley's K
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
@@ -68,11 +95,21 @@ with :func:`scanpy.pl.spatial`.
     sc.pl.spatial(adata, color="cell type", spot_size=10)
 
 
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_ripley_k_002.png
+    :alt: cell type
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  17.783 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  355 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_ripley_k.py:

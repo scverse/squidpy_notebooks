@@ -61,6 +61,12 @@ the **obs x genes** spatial gene expression matrix.
     adata = sq.datasets.visium_hne_adata_crop()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 The high-resolution tissue image is contained in ``img['image']``,
@@ -78,6 +84,31 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
     sc.set_figure_params(figsize=(4, 4))
     sc.pl.spatial(adata, add_outline=True)
+
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_001.png
+    :alt: compute features
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ImageContainer[shape=(3527, 3527), layers=['image']]
+    [[1575   98]
+     [2538 1774]
+     [1850   98]
+     ...
+     [2263 1534]
+     [2401 1055]
+     [2676 1774]]
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 54-68
@@ -108,6 +139,155 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     adata.obsm["features"].head()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>summary_ch-0_quantile-0.9</th>
+          <th>summary_ch-0_quantile-0.5</th>
+          <th>summary_ch-0_quantile-0.1</th>
+          <th>summary_ch-0_mean</th>
+          <th>summary_ch-0_std</th>
+          <th>summary_ch-1_quantile-0.9</th>
+          <th>summary_ch-1_quantile-0.5</th>
+          <th>summary_ch-1_quantile-0.1</th>
+          <th>summary_ch-1_mean</th>
+          <th>summary_ch-1_std</th>
+          <th>summary_ch-2_quantile-0.9</th>
+          <th>summary_ch-2_quantile-0.5</th>
+          <th>summary_ch-2_quantile-0.1</th>
+          <th>summary_ch-2_mean</th>
+          <th>summary_ch-2_std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAAGACCCAAGTCGCG-1</th>
+          <td>140.0</td>
+          <td>112.0</td>
+          <td>78.0</td>
+          <td>110.332029</td>
+          <td>24.126489</td>
+          <td>108.0</td>
+          <td>80.0</td>
+          <td>53.0</td>
+          <td>80.129908</td>
+          <td>21.863844</td>
+          <td>140.0</td>
+          <td>115.0</td>
+          <td>90.0</td>
+          <td>115.145057</td>
+          <td>19.554108</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>144.0</td>
+          <td>114.0</td>
+          <td>90.0</td>
+          <td>115.557253</td>
+          <td>21.279808</td>
+          <td>107.0</td>
+          <td>77.0</td>
+          <td>56.0</td>
+          <td>79.957329</td>
+          <td>20.546552</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>88.0</td>
+          <td>113.362959</td>
+          <td>21.422890</td>
+        </tr>
+        <tr>
+          <th>AAAGTCACTGATGTAA-1</th>
+          <td>139.0</td>
+          <td>115.0</td>
+          <td>84.0</td>
+          <td>112.740563</td>
+          <td>22.550223</td>
+          <td>121.0</td>
+          <td>94.0</td>
+          <td>66.0</td>
+          <td>93.735134</td>
+          <td>22.459672</td>
+          <td>141.0</td>
+          <td>118.0</td>
+          <td>93.0</td>
+          <td>117.298447</td>
+          <td>19.089482</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>138.0</td>
+          <td>109.0</td>
+          <td>74.0</td>
+          <td>107.372175</td>
+          <td>24.896688</td>
+          <td>101.0</td>
+          <td>71.0</td>
+          <td>45.0</td>
+          <td>72.320288</td>
+          <td>21.589912</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>85.0</td>
+          <td>112.642091</td>
+          <td>21.896309</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>146.0</td>
+          <td>113.0</td>
+          <td>84.0</td>
+          <td>113.296553</td>
+          <td>24.740431</td>
+          <td>112.0</td>
+          <td>77.0</td>
+          <td>53.0</td>
+          <td>80.073602</td>
+          <td>22.858352</td>
+          <td>144.0</td>
+          <td>113.0</td>
+          <td>89.0</td>
+          <td>115.193915</td>
+          <td>20.901613</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 75-79
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
@@ -124,6 +304,16 @@ Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
         sq.pl.extract(adata, "features"),
         color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
     )
+
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_002.png
+    :alt: summary_ch-0_quantile-0.5, summary_ch-0_quantile-0.5, summary_ch-2_quantile-0.5
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-102
@@ -190,6 +380,25 @@ Let us extract masked and scaled features and compare them
     )
 
 
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_003.png
+    :alt: compute features
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 143-144
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
@@ -209,11 +418,17 @@ extract features by using 4 jobs
     sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  39.677 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  262 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

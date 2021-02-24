@@ -46,6 +46,27 @@ It wraps an implementation in the PySAL spatial analysis toolbox :cite:`pysal`.
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/314M [00:00<?, ?B/s]      0%|          | 48.0k/314M [00:00<15:28, 355kB/s]      0%|          | 216k/314M [00:00<06:20, 865kB/s]       0%|          | 912k/314M [00:00<01:58, 2.78MB/s]      1%|1         | 3.59M/314M [00:00<00:33, 9.58MB/s]      3%|2         | 9.35M/314M [00:00<00:14, 21.5MB/s]      5%|4         | 15.2M/314M [00:00<00:10, 29.1MB/s]      7%|6         | 21.2M/314M [00:00<00:09, 33.9MB/s]      9%|8         | 27.0M/314M [00:01<00:08, 37.0MB/s]     10%|#         | 32.9M/314M [00:01<00:07, 39.0MB/s]     12%|#2        | 38.8M/314M [00:01<00:07, 40.4MB/s]     14%|#4        | 44.6M/314M [00:01<00:06, 41.2MB/s]     16%|#6        | 50.4M/314M [00:01<00:06, 41.8MB/s]     18%|#7        | 56.4M/314M [00:01<00:06, 42.5MB/s]     20%|#9        | 62.3M/314M [00:01<00:06, 43.0MB/s]     22%|##1       | 68.2M/314M [00:02<00:05, 43.3MB/s]     24%|##3       | 74.0M/314M [00:02<00:05, 43.1MB/s]     25%|##5       | 79.8M/314M [00:02<00:05, 43.2MB/s]     27%|##7       | 85.7M/314M [00:02<00:05, 43.3MB/s]     29%|##9       | 91.2M/314M [00:02<00:05, 46.6MB/s]     30%|###       | 94.5M/314M [00:02<00:05, 42.2MB/s]     32%|###1      | 100M/314M [00:02<00:04, 46.6MB/s]      33%|###2      | 103M/314M [00:02<00:05, 41.3MB/s]     35%|###4      | 109M/314M [00:03<00:04, 46.4MB/s]     36%|###5      | 112M/314M [00:03<00:05, 40.9MB/s]     38%|###7      | 118M/314M [00:03<00:04, 46.6MB/s]     38%|###8      | 121M/314M [00:03<00:04, 41.1MB/s]     40%|####      | 127M/314M [00:03<00:04, 46.7MB/s]     41%|####1     | 130M/314M [00:03<00:04, 41.0MB/s]     43%|####3     | 136M/314M [00:03<00:03, 46.9MB/s]     44%|####4     | 139M/314M [00:03<00:04, 41.0MB/s]     46%|####5     | 144M/314M [00:03<00:03, 46.7MB/s]     47%|####6     | 147M/314M [00:04<00:04, 40.9MB/s]     49%|####8     | 153M/314M [00:04<00:03, 46.7MB/s]     50%|####9     | 156M/314M [00:04<00:04, 40.7MB/s]     52%|#####1    | 162M/314M [00:04<00:03, 41.9MB/s]     54%|#####3    | 168M/314M [00:04<00:03, 42.4MB/s]     55%|#####5    | 174M/314M [00:04<00:03, 42.8MB/s]     57%|#####7    | 180M/314M [00:04<00:03, 43.2MB/s]     59%|#####9    | 186M/314M [00:04<00:03, 43.5MB/s]     61%|######1   | 192M/314M [00:05<00:02, 43.5MB/s]     63%|######2   | 198M/314M [00:05<00:02, 43.7MB/s]     65%|######4   | 204M/314M [00:05<00:02, 43.7MB/s]     67%|######6   | 210M/314M [00:05<00:02, 43.8MB/s]     69%|######8   | 216M/314M [00:05<00:02, 43.9MB/s]     70%|#######   | 221M/314M [00:05<00:02, 43.5MB/s]     72%|#######2  | 227M/314M [00:05<00:02, 43.6MB/s]     74%|#######4  | 233M/314M [00:06<00:01, 43.6MB/s]     76%|#######5  | 239M/314M [00:06<00:01, 46.7MB/s]     77%|#######6  | 242M/314M [00:06<00:01, 42.1MB/s]     78%|#######8  | 245M/314M [00:06<00:01, 36.5MB/s]     80%|#######9  | 250M/314M [00:06<00:01, 36.4MB/s]     81%|########1 | 256M/314M [00:06<00:01, 38.4MB/s]     83%|########3 | 262M/314M [00:06<00:01, 39.8MB/s]     85%|########5 | 267M/314M [00:07<00:01, 40.7MB/s]     87%|########7 | 273M/314M [00:07<00:01, 41.6MB/s]     89%|########8 | 279M/314M [00:07<00:00, 42.8MB/s]     91%|######### | 285M/314M [00:07<00:00, 43.0MB/s]     93%|#########2| 291M/314M [00:07<00:00, 43.2MB/s]     94%|#########4| 297M/314M [00:07<00:00, 46.9MB/s]     96%|#########5| 300M/314M [00:07<00:00, 42.5MB/s]     97%|#########7| 306M/314M [00:07<00:00, 47.1MB/s]     98%|#########8| 309M/314M [00:07<00:00, 41.8MB/s]    100%|##########| 314M/314M [00:08<00:00, 40.7MB/s]
+
+    AnnData object with n_obs × n_vars = 2688 × 18078
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_mt', 'log1p_total_counts_mt', 'pct_counts_mt', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'rank_genes_groups', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 27-30
 
 We can compute the Moran's I score with :func:`squidpy.gr.moran`.
@@ -68,6 +89,128 @@ We will also subset the number of genes to evaluate
     adata.uns["moranI"].head(10)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+     There are 3 disconnected components.
+      warnings.warn(message)
+      0%|          | 0/100 [00:00<?, ?/s]
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>I</th>
+          <th>pval_sim</th>
+          <th>VI_sim</th>
+          <th>pval_sim_fdr_bh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>3110035E14Rik</th>
+          <td>0.665132</td>
+          <td>0.0</td>
+          <td>0.000147</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Resp18</th>
+          <td>0.649582</td>
+          <td>0.0</td>
+          <td>0.000123</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>1500015O10Rik</th>
+          <td>0.605940</td>
+          <td>0.0</td>
+          <td>0.000113</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Ecel1</th>
+          <td>0.570304</td>
+          <td>0.0</td>
+          <td>0.000109</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>2010300C02Rik</th>
+          <td>0.539469</td>
+          <td>0.0</td>
+          <td>0.000129</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Scg2</th>
+          <td>0.476060</td>
+          <td>0.0</td>
+          <td>0.000132</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Ogfrl1</th>
+          <td>0.457945</td>
+          <td>0.0</td>
+          <td>0.000099</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Itm2c</th>
+          <td>0.451842</td>
+          <td>0.0</td>
+          <td>0.000142</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Tuba4a</th>
+          <td>0.451810</td>
+          <td>0.0</td>
+          <td>0.000128</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Satb2</th>
+          <td>0.429162</td>
+          <td>0.0</td>
+          <td>0.000130</td>
+          <td>0.0</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 We can visualize some of those genes with :func:`scanpy.pl.spatial`.
@@ -79,11 +222,21 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
     sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
 
 
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_moran_001.png
+    :alt: Resp18, Tuba4a
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  27.255 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  422 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_moran.py:

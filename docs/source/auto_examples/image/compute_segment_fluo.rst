@@ -58,6 +58,12 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 39-42
 
 We crop the image to a smaller segment.
@@ -69,6 +75,12 @@ This is only to speed things up, :func:`squidpy.im.segment` can also process ver
 .. code-block:: default
 
     crop = img.crop_corner(1000, 1000, size=1000)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-47
@@ -84,6 +96,16 @@ The first one is DAPI, which we will use for the nuclei-segmentation.
     fig, axes = plt.subplots(1, 3, figsize=(10, 20))
     for i, ax in enumerate(axes):
         crop.show("image", channel=i, ax=ax)
+
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_001.png
+    :alt: compute segment fluo
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-70
@@ -114,6 +136,12 @@ or if the values smaller to the threshold should be in the mask (``geq = False``
     sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=None, geq=True)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 The segmented crop is saved in the layer ``segmented_watershed``.
@@ -136,11 +164,30 @@ number of cells from the image.
     _ = axes[1].set_title("segmentation")
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_002.png
+    :alt: DAPI, segmentation
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ImageContainer[shape=(1000, 1000), layers=['image', 'segmented_watershed']]
+    Number of segments in crop: 567
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  7.906 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  700 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

@@ -40,6 +40,12 @@ for different types of spatial datasets.
     import numpy as np
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 21-22
 
 First, we show how to compute the spatial neighbors graph for a Visium dataset.
@@ -51,6 +57,26 @@ First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
     adata = sq.datasets.visium_fluo_adata()
     adata
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 2800 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-33
@@ -70,6 +96,12 @@ will be considered neighbors.
     sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="visium")
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 37-40
 
 The function builds a spatial graph and saves its adjacency matrix
@@ -84,6 +116,21 @@ to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
     adata.obsp["spatial_connectivities"]
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    <2800x2800 sparse matrix of type '<class 'numpy.float64'>'
+    	with 48240 stored elements in Compressed Sparse Row format>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 44-47
 
 For ``n_rings = 1`` there will be no ``adata.obsp['spatial_distances']``
@@ -96,6 +143,21 @@ in the case of ``coord_type = 'visium'``.
 
 
     adata.obsp["spatial_distances"]
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    <2800x2800 sparse matrix of type '<class 'numpy.float64'>'
+    	with 48240 stored elements in Compressed Sparse Row format>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-52
@@ -118,6 +180,25 @@ We can visualize the neighbors of a point to better visualize what `n_rings` mea
     )
 
 
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_spatial_neighbors_001.png
+    :alt: compute spatial neighbors
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Next, we show how to compute the spatial neighbors graph for a non-Visium dataset.
@@ -129,6 +210,23 @@ Next, we show how to compute the spatial neighbors graph for a non-Visium datase
 
     adata = sq.datasets.imc()
     adata
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 4668 × 34
+        obs: 'cell type'
+        uns: 'cell type_colors'
+        obsm: 'spatial'
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-73
@@ -156,6 +254,25 @@ We use the same function for this with ``coord_type = 'generic'``.
     )
 
 
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_spatial_neighbors_002.png
+    :alt: cell type
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 88-90
 
 In order to get all spots within a specified radius (in units of the spatial coordinates)
@@ -172,11 +289,26 @@ from each spot as neighbors, the parameter ``radius`` should be used.
     adata.obsp["spatial_distances"]
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    <4668x4668 sparse matrix of type '<class 'numpy.float64'>'
+    	with 0 stored elements in Compressed Sparse Row format>
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  7.746 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  234 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:

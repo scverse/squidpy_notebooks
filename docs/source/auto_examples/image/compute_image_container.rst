@@ -36,6 +36,12 @@ This example shows how to use :class:`squidpy.im.ImageContainer` to interact wit
     import squidpy as sq
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 17-20
 
 Load a pre-loaded image.
@@ -47,6 +53,20 @@ To load your own data, use the ImageContainer constructor:
 .. code-block:: default
 
     img = sq.datasets.visium_hne_image()
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/380M [00:00<?, ?B/s]      0%|          | 48.0k/380M [00:00<18:46, 354kB/s]      0%|          | 216k/380M [00:00<07:39, 866kB/s]       0%|          | 912k/380M [00:00<02:22, 2.78MB/s]      1%|          | 3.60M/380M [00:00<00:40, 9.64MB/s]      2%|2         | 9.41M/380M [00:00<00:17, 21.7MB/s]      4%|4         | 15.3M/380M [00:00<00:13, 29.1MB/s]      6%|5         | 21.1M/380M [00:00<00:11, 33.8MB/s]      7%|7         | 27.0M/380M [00:01<00:10, 36.9MB/s]      9%|8         | 33.0M/380M [00:01<00:09, 39.2MB/s]     10%|#         | 38.9M/380M [00:01<00:08, 40.6MB/s]     12%|#1        | 44.7M/380M [00:01<00:08, 41.4MB/s]     13%|#3        | 50.5M/380M [00:01<00:08, 42.0MB/s]     15%|#4        | 56.4M/380M [00:01<00:07, 42.6MB/s]     16%|#6        | 62.3M/380M [00:01<00:07, 42.9MB/s]     18%|#7        | 68.2M/380M [00:02<00:07, 43.2MB/s]     20%|#9        | 74.2M/380M [00:02<00:07, 43.4MB/s]     21%|##1       | 80.0M/380M [00:02<00:07, 43.5MB/s]     23%|##2       | 86.0M/380M [00:02<00:07, 43.7MB/s]     24%|##4       | 91.9M/380M [00:02<00:06, 43.9MB/s]     26%|##5       | 97.9M/380M [00:02<00:06, 44.5MB/s]     27%|##7       | 103M/380M [00:02<00:06, 47.9MB/s]      28%|##8       | 107M/380M [00:03<00:06, 43.0MB/s]     29%|##9       | 112M/380M [00:03<00:06, 46.1MB/s]     30%|###       | 115M/380M [00:03<00:06, 42.3MB/s]     32%|###1      | 121M/380M [00:03<00:05, 46.1MB/s]     33%|###2      | 124M/380M [00:03<00:06, 41.7MB/s]     34%|###4      | 130M/380M [00:03<00:05, 45.9MB/s]     35%|###5      | 133M/380M [00:03<00:06, 41.8MB/s]     36%|###6      | 139M/380M [00:03<00:05, 46.2MB/s]     37%|###7      | 142M/380M [00:03<00:05, 41.7MB/s]     39%|###8      | 148M/380M [00:03<00:05, 46.5MB/s]     40%|###9      | 151M/380M [00:04<00:05, 41.7MB/s]     41%|####1     | 156M/380M [00:04<00:05, 46.5MB/s]     42%|####2     | 160M/380M [00:04<00:05, 41.8MB/s]     44%|####3     | 165M/380M [00:04<00:04, 46.4MB/s]     44%|####4     | 169M/380M [00:04<00:05, 41.7MB/s]     46%|####5     | 174M/380M [00:04<00:04, 46.6MB/s]     47%|####6     | 178M/380M [00:04<00:05, 41.5MB/s]     48%|####8     | 183M/380M [00:04<00:04, 47.0MB/s]     49%|####9     | 186M/380M [00:04<00:04, 41.2MB/s]     50%|#####     | 191M/380M [00:05<00:04, 44.2MB/s]     51%|#####1    | 195M/380M [00:05<00:04, 41.9MB/s]     53%|#####2    | 200M/380M [00:05<00:04, 45.0MB/s]     54%|#####3    | 204M/380M [00:05<00:04, 42.5MB/s]     55%|#####5    | 209M/380M [00:05<00:03, 45.5MB/s]     56%|#####6    | 213M/380M [00:05<00:04, 42.8MB/s]     57%|#####7    | 218M/380M [00:05<00:03, 45.4MB/s]     58%|#####8    | 222M/380M [00:05<00:03, 42.2MB/s]     60%|#####9    | 227M/380M [00:05<00:03, 45.8MB/s]     61%|######    | 231M/380M [00:05<00:03, 42.4MB/s]     62%|######2   | 236M/380M [00:06<00:03, 46.1MB/s]     63%|######3   | 240M/380M [00:06<00:03, 42.5MB/s]     65%|######4   | 245M/380M [00:06<00:03, 46.3MB/s]     66%|######5   | 249M/380M [00:06<00:03, 42.5MB/s]     67%|######6   | 254M/380M [00:06<00:02, 46.3MB/s]     68%|######7   | 258M/380M [00:06<00:02, 43.1MB/s]     69%|######9   | 263M/380M [00:06<00:02, 45.3MB/s]     70%|#######   | 267M/380M [00:06<00:02, 43.2MB/s]     71%|#######1  | 272M/380M [00:06<00:02, 45.0MB/s]     73%|#######2  | 276M/380M [00:07<00:02, 43.3MB/s]     74%|#######3  | 280M/380M [00:07<00:02, 44.8MB/s]     75%|#######4  | 285M/380M [00:07<00:02, 43.4MB/s]     75%|#######5  | 285M/380M [00:07<00:03, 32.6MB/s]     77%|#######6  | 291M/380M [00:07<00:02, 37.0MB/s]     78%|#######8  | 297M/380M [00:07<00:02, 42.9MB/s]     79%|#######8  | 300M/380M [00:07<00:02, 39.0MB/s]     80%|########  | 306M/380M [00:07<00:01, 43.7MB/s]     81%|########1 | 309M/380M [00:07<00:01, 40.2MB/s]     83%|########2 | 314M/380M [00:08<00:01, 44.8MB/s]     84%|########3 | 318M/380M [00:08<00:01, 41.0MB/s]     85%|########4 | 322M/380M [00:08<00:01, 36.0MB/s]     86%|########6 | 328M/380M [00:08<00:01, 37.0MB/s]     87%|########7 | 331M/380M [00:08<00:01, 32.7MB/s]     88%|########8 | 336M/380M [00:08<00:01, 34.0MB/s]     90%|######### | 342M/380M [00:08<00:01, 36.8MB/s]     92%|#########1| 348M/380M [00:09<00:00, 38.8MB/s]     93%|#########3| 354M/380M [00:09<00:00, 40.2MB/s]     95%|#########4| 360M/380M [00:09<00:00, 41.2MB/s]     96%|#########6| 365M/380M [00:09<00:00, 45.5MB/s]     97%|#########6| 368M/380M [00:09<00:00, 41.0MB/s]     98%|#########8| 374M/380M [00:09<00:00, 46.5MB/s]     99%|#########9| 377M/380M [00:09<00:00, 41.1MB/s]    100%|##########| 380M/380M [00:09<00:00, 40.8MB/s]
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-27
@@ -63,6 +83,29 @@ multiple image-structured layers.
     print(img.data)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    <xarray.Dataset>
+    Dimensions:  (channels: 3, x: 11291, y: 11757)
+    Dimensions without coordinates: channels, x, y
+    Data variables:
+        image    (y, x, channels) uint8 129 134 127 129 132 ... 133 131 131 131 128
+    Attributes:
+        coords:       CropCoords(x0=0, y0=0, x1=0, y1=0)
+        padding:      CropPadding(x_pre=0, y_pre=0, x_post=0, y_post=0)
+        scale:        1
+        mask_circle:  False
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
 
 You can access specific image-structured arrays in the image using their
@@ -73,6 +116,70 @@ names.
 .. code-block:: default
 
     print(img["image"])
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    <xarray.DataArray 'image' (y: 11757, x: 11291, channels: 3)>
+    array([[[129, 134, 127],
+            [129, 132, 127],
+            [129, 132, 127],
+            ...,
+            [127, 129, 123],
+            [128, 129, 125],
+            [128, 130, 126]],
+
+           [[130, 134, 127],
+            [131, 135, 128],
+            [130, 132, 128],
+            ...,
+            [128, 130, 125],
+            [128, 130, 126],
+            [128, 129, 124]],
+
+           [[128, 136, 128],
+            [129, 135, 128],
+            [127, 132, 126],
+            ...,
+    ...
+            ...,
+            [131, 133, 129],
+            [131, 132, 128],
+            [128, 129, 125]],
+
+           [[130, 132, 127],
+            [131, 132, 128],
+            [131, 132, 126],
+            ...,
+            [132, 134, 133],
+            [132, 132, 130],
+            [129, 130, 127]],
+
+           [[130, 132, 127],
+            [132, 133, 127],
+            [132, 133, 127],
+            ...,
+            [133, 135, 133],
+            [133, 133, 131],
+            [131, 131, 128]]], dtype=uint8)
+    Dimensions without coordinates: y, x, channels
+    Attributes:
+        transform:               (1.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+        res:                     (1.0, -1.0)
+        is_tiled:                0
+        nodatavals:              (nan, nan, nan)
+        scales:                  (1.0, 1.0, 1.0)
+        offsets:                 (0.0, 0.0, 0.0)
+        TIFFTAG_MAXSAMPLEVALUE:  255
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-38
@@ -87,6 +194,418 @@ memory via ``.data.load()`` and saved to disk via ``.save()``:
 
     img.data.load()
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+    <defs>
+    <symbol id="icon-database" viewBox="0 0 32 32">
+    <path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+    <path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+    <path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+    </symbol>
+    <symbol id="icon-file-text2" viewBox="0 0 32 32">
+    <path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+    <path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+    <path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+    <path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+    </symbol>
+    </defs>
+    </svg>
+    <style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+     *
+     */
+
+    :root {
+      --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+      --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+      --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+      --xr-border-color: var(--jp-border-color2, #e0e0e0);
+      --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+      --xr-background-color: var(--jp-layout-color0, white);
+      --xr-background-color-row-even: var(--jp-layout-color1, white);
+      --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+    }
+
+    html[theme=dark],
+    body.vscode-dark {
+      --xr-font-color0: rgba(255, 255, 255, 1);
+      --xr-font-color2: rgba(255, 255, 255, 0.54);
+      --xr-font-color3: rgba(255, 255, 255, 0.38);
+      --xr-border-color: #1F1F1F;
+      --xr-disabled-color: #515151;
+      --xr-background-color: #111111;
+      --xr-background-color-row-even: #111111;
+      --xr-background-color-row-odd: #313131;
+    }
+
+    .xr-wrap {
+      display: block;
+      min-width: 300px;
+      max-width: 700px;
+    }
+
+    .xr-text-repr-fallback {
+      /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+      display: none;
+    }
+
+    .xr-header {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      margin-bottom: 4px;
+      border-bottom: solid 1px var(--xr-border-color);
+    }
+
+    .xr-header > div,
+    .xr-header > ul {
+      display: inline;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .xr-obj-type,
+    .xr-array-name {
+      margin-left: 2px;
+      margin-right: 10px;
+    }
+
+    .xr-obj-type {
+      color: var(--xr-font-color2);
+    }
+
+    .xr-sections {
+      padding-left: 0 !important;
+      display: grid;
+      grid-template-columns: 150px auto auto 1fr 20px 20px;
+    }
+
+    .xr-section-item {
+      display: contents;
+    }
+
+    .xr-section-item input {
+      display: none;
+    }
+
+    .xr-section-item input + label {
+      color: var(--xr-disabled-color);
+    }
+
+    .xr-section-item input:enabled + label {
+      cursor: pointer;
+      color: var(--xr-font-color2);
+    }
+
+    .xr-section-item input:enabled + label:hover {
+      color: var(--xr-font-color0);
+    }
+
+    .xr-section-summary {
+      grid-column: 1;
+      color: var(--xr-font-color2);
+      font-weight: 500;
+    }
+
+    .xr-section-summary > span {
+      display: inline-block;
+      padding-left: 0.5em;
+    }
+
+    .xr-section-summary-in:disabled + label {
+      color: var(--xr-font-color2);
+    }
+
+    .xr-section-summary-in + label:before {
+      display: inline-block;
+      content: '►';
+      font-size: 11px;
+      width: 15px;
+      text-align: center;
+    }
+
+    .xr-section-summary-in:disabled + label:before {
+      color: var(--xr-disabled-color);
+    }
+
+    .xr-section-summary-in:checked + label:before {
+      content: '▼';
+    }
+
+    .xr-section-summary-in:checked + label > span {
+      display: none;
+    }
+
+    .xr-section-summary,
+    .xr-section-inline-details {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    .xr-section-inline-details {
+      grid-column: 2 / -1;
+    }
+
+    .xr-section-details {
+      display: none;
+      grid-column: 1 / -1;
+      margin-bottom: 5px;
+    }
+
+    .xr-section-summary-in:checked ~ .xr-section-details {
+      display: contents;
+    }
+
+    .xr-array-wrap {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 20px auto;
+    }
+
+    .xr-array-wrap > label {
+      grid-column: 1;
+      vertical-align: top;
+    }
+
+    .xr-preview {
+      color: var(--xr-font-color3);
+    }
+
+    .xr-array-preview,
+    .xr-array-data {
+      padding: 0 5px !important;
+      grid-column: 2;
+    }
+
+    .xr-array-data,
+    .xr-array-in:checked ~ .xr-array-preview {
+      display: none;
+    }
+
+    .xr-array-in:checked ~ .xr-array-data,
+    .xr-array-preview {
+      display: inline-block;
+    }
+
+    .xr-dim-list {
+      display: inline-block !important;
+      list-style: none;
+      padding: 0 !important;
+      margin: 0;
+    }
+
+    .xr-dim-list li {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+    }
+
+    .xr-dim-list:before {
+      content: '(';
+    }
+
+    .xr-dim-list:after {
+      content: ')';
+    }
+
+    .xr-dim-list li:not(:last-child):after {
+      content: ',';
+      padding-right: 5px;
+    }
+
+    .xr-has-index {
+      font-weight: bold;
+    }
+
+    .xr-var-list,
+    .xr-var-item {
+      display: contents;
+    }
+
+    .xr-var-item > div,
+    .xr-var-item label,
+    .xr-var-item > .xr-var-name span {
+      background-color: var(--xr-background-color-row-even);
+      margin-bottom: 0;
+    }
+
+    .xr-var-item > .xr-var-name:hover span {
+      padding-right: 5px;
+    }
+
+    .xr-var-list > li:nth-child(odd) > div,
+    .xr-var-list > li:nth-child(odd) > label,
+    .xr-var-list > li:nth-child(odd) > .xr-var-name span {
+      background-color: var(--xr-background-color-row-odd);
+    }
+
+    .xr-var-name {
+      grid-column: 1;
+    }
+
+    .xr-var-dims {
+      grid-column: 2;
+    }
+
+    .xr-var-dtype {
+      grid-column: 3;
+      text-align: right;
+      color: var(--xr-font-color2);
+    }
+
+    .xr-var-preview {
+      grid-column: 4;
+    }
+
+    .xr-var-name,
+    .xr-var-dims,
+    .xr-var-dtype,
+    .xr-preview,
+    .xr-attrs dt {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 10px;
+    }
+
+    .xr-var-name:hover,
+    .xr-var-dims:hover,
+    .xr-var-dtype:hover,
+    .xr-attrs dt:hover {
+      overflow: visible;
+      width: auto;
+      z-index: 1;
+    }
+
+    .xr-var-attrs,
+    .xr-var-data {
+      display: none;
+      background-color: var(--xr-background-color) !important;
+      padding-bottom: 5px !important;
+    }
+
+    .xr-var-attrs-in:checked ~ .xr-var-attrs,
+    .xr-var-data-in:checked ~ .xr-var-data {
+      display: block;
+    }
+
+    .xr-var-data > table {
+      float: right;
+    }
+
+    .xr-var-name span,
+    .xr-var-data,
+    .xr-attrs {
+      padding-left: 25px !important;
+    }
+
+    .xr-attrs,
+    .xr-var-attrs,
+    .xr-var-data {
+      grid-column: 1 / -1;
+    }
+
+    dl.xr-attrs {
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 125px auto;
+    }
+
+    .xr-attrs dt,
+    .xr-attrs dd {
+      padding: 0;
+      margin: 0;
+      float: left;
+      padding-right: 10px;
+      width: auto;
+    }
+
+    .xr-attrs dt {
+      font-weight: normal;
+      grid-column: 1;
+    }
+
+    .xr-attrs dt:hover span {
+      display: inline-block;
+      background: var(--xr-background-color);
+      padding-right: 10px;
+    }
+
+    .xr-attrs dd {
+      grid-column: 2;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .xr-icon-database,
+    .xr-icon-file-text2 {
+      display: inline-block;
+      vertical-align: middle;
+      width: 1em;
+      height: 1.5em !important;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: currentColor;
+    }
+    </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+    Dimensions:  (channels: 3, x: 11291, y: 11757)
+    Dimensions without coordinates: channels, x, y
+    Data variables:
+        image    (y, x, channels) uint8 129 134 127 129 132 ... 133 131 131 131 128
+    Attributes:
+        coords:       CropCoords(x0=0, y0=0, x1=0, y1=0)
+        padding:      CropPadding(x_pre=0, y_pre=0, x_post=0, y_post=0)
+        scale:        1
+        mask_circle:  False</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-202ce529-9185-4afa-97c0-d2a5ce145bf9' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-202ce529-9185-4afa-97c0-d2a5ce145bf9' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>channels</span>: 3</li><li><span>x</span>: 11291</li><li><span>y</span>: 11757</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-74efd74b-73dc-4b3e-8ce4-20f837168afe' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-74efd74b-73dc-4b3e-8ce4-20f837168afe' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-0869d3e3-7262-4f36-a018-f38579f76eb5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0869d3e3-7262-4f36-a018-f38579f76eb5' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>image</span></div><div class='xr-var-dims'>(y, x, channels)</div><div class='xr-var-dtype'>uint8</div><div class='xr-var-preview xr-preview'>129 134 127 129 ... 131 131 131 128</div><input id='attrs-a851ca7a-b262-45f7-ab25-6d670cbe8599' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a851ca7a-b262-45f7-ab25-6d670cbe8599' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-026d5355-7732-46ee-a4ec-42fde149d4b7' class='xr-var-data-in' type='checkbox'><label for='data-026d5355-7732-46ee-a4ec-42fde149d4b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(1.0, 0.0, 0.0, 0.0, 1.0, 0.0)</dd><dt><span>res :</span></dt><dd>(1.0, -1.0)</dd><dt><span>is_tiled :</span></dt><dd>0</dd><dt><span>nodatavals :</span></dt><dd>(nan, nan, nan)</dd><dt><span>scales :</span></dt><dd>(1.0, 1.0, 1.0)</dd><dt><span>offsets :</span></dt><dd>(0.0, 0.0, 0.0)</dd><dt><span>TIFFTAG_MAXSAMPLEVALUE :</span></dt><dd>255</dd></dl></div><div class='xr-var-data'><pre>array([[[129, 134, 127],
+            [129, 132, 127],
+            [129, 132, 127],
+            ...,
+            [127, 129, 123],
+            [128, 129, 125],
+            [128, 130, 126]],
+
+           [[130, 134, 127],
+            [131, 135, 128],
+            [130, 132, 128],
+            ...,
+            [128, 130, 125],
+            [128, 130, 126],
+            [128, 129, 124]],
+
+           [[128, 136, 128],
+            [129, 135, 128],
+            [127, 132, 126],
+            ...,
+    ...
+            ...,
+            [131, 133, 129],
+            [131, 132, 128],
+            [128, 129, 125]],
+
+           [[130, 132, 127],
+            [131, 132, 128],
+            [131, 132, 126],
+            ...,
+            [132, 134, 133],
+            [132, 132, 130],
+            [129, 130, 127]],
+
+           [[130, 132, 127],
+            [132, 133, 127],
+            [132, 133, 127],
+            ...,
+            [133, 135, 133],
+            [133, 133, 131],
+            [131, 131, 128]]], dtype=uint8)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-045b86b2-0ac5-4f5c-bb63-1d01d8501d30' class='xr-section-summary-in' type='checkbox'  checked><label for='section-045b86b2-0ac5-4f5c-bb63-1d01d8501d30' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coords :</span></dt><dd>CropCoords(x0=0, y0=0, x1=0, y1=0)</dd><dt><span>padding :</span></dt><dd>CropPadding(x_pre=0, y_pre=0, x_post=0, y_post=0)</dd><dt><span>scale :</span></dt><dd>1</dd><dt><span>mask_circle :</span></dt><dd>False</dd></dl></div></li></ul></div></div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-47
 
@@ -110,11 +629,23 @@ label for ``channel_dim``.
     img
 
 
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    ImageContainer object with 2 layers:<p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image</strong>: <em>y</em> (11757), <em>x</em> (11291), <em>channels</em> (3)</p><p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image2</strong>: <em>y</em> (11757), <em>x</em> (11291), <em>channels</em> (3)</p>
+    </div>
+    <br />
+    <br />
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  13.183 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  993 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_image_container.py:

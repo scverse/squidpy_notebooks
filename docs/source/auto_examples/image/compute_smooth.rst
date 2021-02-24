@@ -46,6 +46,12 @@ This allows us to set the width of the Gaussian kernel, :math:`\\sigma`, used fo
     img = sq.datasets.visium_hne_image_crop()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 Smooth the image with ``sigma = 2``.
@@ -59,6 +65,12 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 
     sq.im.process(img, layer="image", method="smooth", sigma=2)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-36
@@ -77,11 +89,21 @@ Now we can look at the result on a cropped part of the image.
         axes[i].set_title(layer)
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
+    :alt: image, image_smooth
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  22.863 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  779 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

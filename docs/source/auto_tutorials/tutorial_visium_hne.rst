@@ -67,6 +67,21 @@ To run the notebook locally, create a conda environment as *conda create -f envi
     adata = sq.datasets.visium_hne_adata()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.1 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    squidpy==1.0.0
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 First, let's visualize cluster annotation in spatial context
@@ -78,6 +93,16 @@ with :func:`scanpy.pl.spatial`.
 
 
     sc.pl.spatial(adata, color="cluster")
+
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_001.png
+    :alt: cluster
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -134,6 +159,23 @@ also refer to :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
 
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/2688 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+      0%|          | 0/2688 [00:00<?, ?/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 101-103
 
 We can use the extracted image features to compute a new cluster annotation.
@@ -171,6 +213,16 @@ This could be useful to gain insights in similarities across spots based on imag
     # compare feature and gene clusters
     sc.set_figure_params(facecolor="white", figsize=(8, 8))
     sc.pl.spatial(adata, color=["features_cluster", "cluster"])
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_002.png
+    :alt: features_cluster, cluster
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 133-143
@@ -224,6 +276,26 @@ Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enric
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_003.png
+    :alt: Neighborhood enrichment
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1000 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 176-180
 
 Given the spatial organization of the mouse brain coronal section,
@@ -263,6 +335,24 @@ Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
         clusters="Hippocampus",
         figsize=(8, 4),
     )
+
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_004.png
+    :alt: $\frac{p(exp|Hippocampus)}{p(exp)}$
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1 [00:00<?, ?/s]
+
 
 
 
@@ -319,6 +409,26 @@ the *Hippocampus* cluster, and two target groups, *Pyramidal_layer_dentate_gyrus
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_005.png
+    :alt: Receptor-ligand test, $-\log_{10} ~ P$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
+      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
+      0%|          | 0/100 [00:00<?, ?permutation/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 255-260
 
 The dotplot visualization provides an interesting set of candidate ligand-receptor
@@ -367,6 +477,25 @@ For time reasons, we will evaluate a subset of the highly variable genes only.
 
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+     There are 3 disconnected components.
+      warnings.warn(message)
+      0%|          | 0/1000 [00:00<?, ?/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 295-297
 
 The results are saved in ``adata.uns['moranI']`` slot.
@@ -379,6 +508,115 @@ Genes have already been sorted by Moran's I statistic.
 
     adata.uns["moranI"].head(10)
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>I</th>
+          <th>pval_sim</th>
+          <th>VI_sim</th>
+          <th>pval_sim_fdr_bh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Olfm1</th>
+          <td>0.763291</td>
+          <td>0.0</td>
+          <td>0.000144</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Plp1</th>
+          <td>0.747660</td>
+          <td>0.0</td>
+          <td>0.000121</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Itpka</th>
+          <td>0.727076</td>
+          <td>0.0</td>
+          <td>0.000140</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Snap25</th>
+          <td>0.720987</td>
+          <td>0.0</td>
+          <td>0.000125</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Nnat</th>
+          <td>0.708637</td>
+          <td>0.0</td>
+          <td>0.000120</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Ppp3ca</th>
+          <td>0.693320</td>
+          <td>0.0</td>
+          <td>0.000124</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Chn1</th>
+          <td>0.684957</td>
+          <td>0.0</td>
+          <td>0.000101</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Mal</th>
+          <td>0.679775</td>
+          <td>0.0</td>
+          <td>0.000110</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Tmsb4x</th>
+          <td>0.676719</td>
+          <td>0.0</td>
+          <td>0.000120</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th>Cldn11</th>
+          <td>0.674110</td>
+          <td>0.0</td>
+          <td>0.000159</td>
+          <td>0.0</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 301-302
 
@@ -393,6 +631,16 @@ We can select few genes and visualize their expression levels in the tissue with
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_006.png
+    :alt: Olfm1, Plp1, Itpka, cluster
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 307-308
 
 Interestingly, some of these genes seems to be related to the *pyramidal* layers and the *fiber tract*.
@@ -400,9 +648,9 @@ Interestingly, some of these genes seems to be related to the *pyramidal* layers
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 3 minutes  30.486 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  950 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_hne.py:

@@ -41,6 +41,12 @@ Here, we show a simple example by defining a function to calculate the mean of t
     import squidpy as sq
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Lets load a H&E Visium dataset.
@@ -53,6 +59,20 @@ Lets load a H&E Visium dataset.
     # get spatial dataset including high-resolution tissue image
     img = sq.datasets.visium_hne_image_crop()
     adata = sq.datasets.visium_hne_adata_crop()
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/89.9M [00:00<?, ?B/s]      0%|          | 48.0k/89.9M [00:00<04:26, 354kB/s]      0%|          | 200k/89.9M [00:00<01:57, 797kB/s]       1%|          | 824k/89.9M [00:00<00:37, 2.50MB/s]      4%|3         | 3.28M/89.9M [00:00<00:10, 8.77MB/s]     10%|#         | 9.06M/89.9M [00:00<00:04, 21.1MB/s]     17%|#6        | 15.0M/89.9M [00:00<00:02, 28.9MB/s]     23%|##3       | 20.9M/89.9M [00:00<00:02, 33.7MB/s]     30%|##9       | 26.8M/89.9M [00:01<00:01, 36.8MB/s]     36%|###6      | 32.7M/89.9M [00:01<00:01, 39.9MB/s]     41%|####1     | 37.2M/89.9M [00:01<00:01, 41.8MB/s]     46%|####6     | 41.4M/89.9M [00:01<00:01, 41.0MB/s]     51%|#####1    | 46.1M/89.9M [00:01<00:01, 43.2MB/s]     56%|#####5    | 50.2M/89.9M [00:01<00:00, 41.9MB/s]     61%|######1   | 55.2M/89.9M [00:01<00:00, 44.6MB/s]     66%|######5   | 59.1M/89.9M [00:01<00:00, 42.2MB/s]     71%|#######1  | 63.9M/89.9M [00:01<00:00, 44.4MB/s]     76%|#######5  | 68.0M/89.9M [00:02<00:00, 42.5MB/s]     81%|########1 | 72.8M/89.9M [00:02<00:00, 44.9MB/s]     85%|########5 | 76.7M/89.9M [00:02<00:00, 42.1MB/s]     91%|#########1| 81.9M/89.9M [00:02<00:00, 45.7MB/s]     95%|#########5| 85.6M/89.9M [00:02<00:00, 42.1MB/s]    100%|##########| 89.9M/89.9M [00:02<00:00, 35.8MB/s]
+
 
 
 
@@ -71,6 +91,12 @@ Define a custom feature extraction function.
         import numpy as np
 
         return np.mean(arr)
+
+
+
+
+
+
 
 
 
@@ -93,6 +119,21 @@ Now we can extract features using `mean_fn` by providing it within ``features_kw
     )
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 53-54
 
 The result is stored in ``adata.obsm['custom_features']``.
@@ -104,6 +145,62 @@ The result is stored in ``adata.obsm['custom_features']``.
 
     adata.obsm["custom_features"].head()
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>mean_fn_0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAAGACCCAAGTCGCG-1</th>
+          <td>101.868998</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>102.959180</td>
+        </tr>
+        <tr>
+          <th>AAAGTCACTGATGTAA-1</th>
+          <td>107.924715</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>97.444851</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>102.854690</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-61
 
@@ -123,11 +220,21 @@ how to use our interactive :mod:`napari` plugin.
     )
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_custom_features_001.png
+    :alt: mean_fn_0
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  11.376 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  175 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

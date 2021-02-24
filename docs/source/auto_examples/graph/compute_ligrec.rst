@@ -41,6 +41,24 @@ pairs (100k+) and cluster combinations (100+).
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 56.0k/30.7M [00:00<01:17, 414kB/s]      1%|          | 176k/30.7M [00:00<00:46, 684kB/s]       2%|2         | 736k/30.7M [00:00<00:14, 2.23MB/s]     10%|9         | 2.92M/30.7M [00:00<00:03, 7.81MB/s]     28%|##8       | 8.64M/30.7M [00:00<00:01, 20.3MB/s]     47%|####7     | 14.5M/30.7M [00:00<00:00, 28.3MB/s]     66%|######6   | 20.4M/30.7M [00:00<00:00, 33.2MB/s]     86%|########5 | 26.2M/30.7M [00:01<00:00, 36.5MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 26.5MB/s]
+
+    AnnData object with n_obs × n_vars = 19416 × 351
+        obs: 'Area', 'celltype_mapped_refined'
+        uns: 'celltype_mapped_refined_colors'
+        obsm: 'X_umap', 'spatial'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 22-37
 
 To get started, we just need an :class:`anndata.AnnData` object with some clustering information. Below are some
@@ -74,6 +92,27 @@ If desired, we can also restrict the resources to just a select few. For example
     )
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/8.93M [00:00<?, ?B/s]      1%|          | 80.0k/8.93M [00:00<00:17, 523kB/s]      5%|4         | 416k/8.93M [00:00<00:05, 1.50MB/s]     19%|#9        | 1.72M/8.93M [00:00<00:01, 4.80MB/s]     71%|#######1  | 6.35M/8.93M [00:00<00:00, 15.0MB/s]    100%|##########| 8.93M/8.93M [00:00<00:00, 14.3MB/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
+      return cls(include, exclude=exclude)._get(**kwargs)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
+      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
+      0%|          | 0.00/1.39M [00:00<?, ?B/s]      6%|5         | 80.0k/1.39M [00:00<00:02, 529kB/s]     29%|##9       | 416k/1.39M [00:00<00:00, 1.52MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 3.72MB/s]
+      0%|          | 0.00/2.60M [00:00<?, ?B/s]      3%|3         | 80.0k/2.60M [00:00<00:05, 517kB/s]     14%|#3        | 368k/2.60M [00:00<00:01, 1.30MB/s]     55%|#####4    | 1.42M/2.60M [00:00<00:00, 3.89MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 5.60MB/s]
+      0%|          | 0/1000 [00:00<?, ?permutation/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 First, we inspect the calculated means. The resulting object is a :class:`pandas.DataFrame`, with rows corresponding
@@ -85,6 +124,647 @@ to interacting pairs and columns to cluster combinations.
 
     res["means"].head()
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead tr th {
+            text-align: left;
+        }
+
+        .dataframe thead tr:last-of-type th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr>
+          <th></th>
+          <th>cluster_1</th>
+          <th colspan="22" halign="left">Allantois</th>
+          <th colspan="18" halign="left">Anterior somitic tissues</th>
+          <th>...</th>
+          <th colspan="18" halign="left">Splanchnic mesoderm</th>
+          <th colspan="22" halign="left">Surface ectoderm</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>cluster_2</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>...</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+        </tr>
+        <tr>
+          <th>source</th>
+          <th>target</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>FGF3</th>
+          <th>KDR</th>
+          <td>0.162338</td>
+          <td>0.484172</td>
+          <td>0.250242</td>
+          <td>0.232278</td>
+          <td>0.164777</td>
+          <td>0.246182</td>
+          <td>2.253158</td>
+          <td>0.192922</td>
+          <td>0.141502</td>
+          <td>0.169111</td>
+          <td>1.296132</td>
+          <td>0.281774</td>
+          <td>0.253304</td>
+          <td>0.218348</td>
+          <td>0.214706</td>
+          <td>0.155904</td>
+          <td>0.231979</td>
+          <td>0.294079</td>
+          <td>0.212537</td>
+          <td>0.177159</td>
+          <td>0.195673</td>
+          <td>0.249583</td>
+          <td>0.222808</td>
+          <td>0.544643</td>
+          <td>0.310713</td>
+          <td>0.292749</td>
+          <td>0.225247</td>
+          <td>0.306653</td>
+          <td>2.313629</td>
+          <td>0.253393</td>
+          <td>0.201973</td>
+          <td>0.229581</td>
+          <td>1.356603</td>
+          <td>0.342245</td>
+          <td>0.313775</td>
+          <td>0.278818</td>
+          <td>0.275177</td>
+          <td>0.216375</td>
+          <td>0.292450</td>
+          <td>0.354550</td>
+          <td>...</td>
+          <td>0.144851</td>
+          <td>0.226257</td>
+          <td>2.233233</td>
+          <td>0.172996</td>
+          <td>0.121576</td>
+          <td>0.149185</td>
+          <td>1.276207</td>
+          <td>0.261849</td>
+          <td>0.233379</td>
+          <td>0.198422</td>
+          <td>0.194780</td>
+          <td>0.135978</td>
+          <td>0.212054</td>
+          <td>0.274154</td>
+          <td>0.192612</td>
+          <td>0.157233</td>
+          <td>0.175747</td>
+          <td>0.229657</td>
+          <td>0.224865</td>
+          <td>0.546699</td>
+          <td>0.312770</td>
+          <td>0.294805</td>
+          <td>0.227304</td>
+          <td>0.308709</td>
+          <td>2.315686</td>
+          <td>0.255449</td>
+          <td>0.204029</td>
+          <td>0.231638</td>
+          <td>1.358660</td>
+          <td>0.344302</td>
+          <td>0.315832</td>
+          <td>0.280875</td>
+          <td>0.277233</td>
+          <td>0.218431</td>
+          <td>0.294506</td>
+          <td>0.356607</td>
+          <td>0.275065</td>
+          <td>0.239686</td>
+          <td>0.258200</td>
+          <td>0.312110</td>
+        </tr>
+        <tr>
+          <th>IGF1</th>
+          <th>KDR</th>
+          <td>0.162338</td>
+          <td>0.484172</td>
+          <td>0.250242</td>
+          <td>0.232278</td>
+          <td>0.164777</td>
+          <td>0.246182</td>
+          <td>2.253158</td>
+          <td>0.192922</td>
+          <td>0.141502</td>
+          <td>0.169111</td>
+          <td>1.296132</td>
+          <td>0.281774</td>
+          <td>0.253304</td>
+          <td>0.218348</td>
+          <td>0.214706</td>
+          <td>0.155904</td>
+          <td>0.231979</td>
+          <td>0.294079</td>
+          <td>0.212537</td>
+          <td>0.177159</td>
+          <td>0.195673</td>
+          <td>0.249583</td>
+          <td>0.276380</td>
+          <td>0.598214</td>
+          <td>0.364285</td>
+          <td>0.346320</td>
+          <td>0.278819</td>
+          <td>0.360224</td>
+          <td>2.367200</td>
+          <td>0.306964</td>
+          <td>0.255544</td>
+          <td>0.283153</td>
+          <td>1.410175</td>
+          <td>0.395817</td>
+          <td>0.367346</td>
+          <td>0.332390</td>
+          <td>0.328748</td>
+          <td>0.269946</td>
+          <td>0.346021</td>
+          <td>0.408121</td>
+          <td>...</td>
+          <td>0.193181</td>
+          <td>0.274587</td>
+          <td>2.281563</td>
+          <td>0.221327</td>
+          <td>0.169907</td>
+          <td>0.197515</td>
+          <td>1.324537</td>
+          <td>0.310179</td>
+          <td>0.281709</td>
+          <td>0.246752</td>
+          <td>0.243111</td>
+          <td>0.184309</td>
+          <td>0.260384</td>
+          <td>0.322484</td>
+          <td>0.240942</td>
+          <td>0.205564</td>
+          <td>0.224077</td>
+          <td>0.277987</td>
+          <td>0.236725</td>
+          <td>0.558560</td>
+          <td>0.324630</td>
+          <td>0.306666</td>
+          <td>0.239164</td>
+          <td>0.320570</td>
+          <td>2.327546</td>
+          <td>0.267310</td>
+          <td>0.215890</td>
+          <td>0.243498</td>
+          <td>1.370520</td>
+          <td>0.356162</td>
+          <td>0.327692</td>
+          <td>0.292735</td>
+          <td>0.289093</td>
+          <td>0.230291</td>
+          <td>0.306367</td>
+          <td>0.368467</td>
+          <td>0.286925</td>
+          <td>0.251546</td>
+          <td>0.270060</td>
+          <td>0.323970</td>
+        </tr>
+        <tr>
+          <th>FGF10</th>
+          <th>KDR</th>
+          <td>0.201299</td>
+          <td>0.523133</td>
+          <td>0.289203</td>
+          <td>0.271239</td>
+          <td>0.203738</td>
+          <td>0.285143</td>
+          <td>2.292119</td>
+          <td>0.231883</td>
+          <td>0.180463</td>
+          <td>0.208072</td>
+          <td>1.335093</td>
+          <td>0.320735</td>
+          <td>0.292265</td>
+          <td>0.257309</td>
+          <td>0.253667</td>
+          <td>0.194865</td>
+          <td>0.270940</td>
+          <td>0.333040</td>
+          <td>0.251499</td>
+          <td>0.216120</td>
+          <td>0.234634</td>
+          <td>0.288544</td>
+          <td>0.187094</td>
+          <td>0.508929</td>
+          <td>0.274999</td>
+          <td>0.257035</td>
+          <td>0.189533</td>
+          <td>0.270939</td>
+          <td>2.277915</td>
+          <td>0.217679</td>
+          <td>0.166258</td>
+          <td>0.193867</td>
+          <td>1.320889</td>
+          <td>0.306531</td>
+          <td>0.278061</td>
+          <td>0.243104</td>
+          <td>0.239462</td>
+          <td>0.180660</td>
+          <td>0.256736</td>
+          <td>0.318836</td>
+          <td>...</td>
+          <td>0.296433</td>
+          <td>0.377838</td>
+          <td>2.384814</td>
+          <td>0.324578</td>
+          <td>0.273158</td>
+          <td>0.300767</td>
+          <td>1.427789</td>
+          <td>0.413431</td>
+          <td>0.384960</td>
+          <td>0.350004</td>
+          <td>0.346362</td>
+          <td>0.287560</td>
+          <td>0.363635</td>
+          <td>0.425735</td>
+          <td>0.344194</td>
+          <td>0.308815</td>
+          <td>0.327329</td>
+          <td>0.381239</td>
+          <td>0.223617</td>
+          <td>0.545451</td>
+          <td>0.311521</td>
+          <td>0.293557</td>
+          <td>0.226055</td>
+          <td>0.307461</td>
+          <td>2.314437</td>
+          <td>0.254201</td>
+          <td>0.202781</td>
+          <td>0.230390</td>
+          <td>1.357411</td>
+          <td>0.343053</td>
+          <td>0.314583</td>
+          <td>0.279627</td>
+          <td>0.275985</td>
+          <td>0.217183</td>
+          <td>0.293258</td>
+          <td>0.355358</td>
+          <td>0.273816</td>
+          <td>0.238438</td>
+          <td>0.256951</td>
+          <td>0.310861</td>
+        </tr>
+        <tr>
+          <th>FGF17</th>
+          <th>KDR</th>
+          <td>0.168831</td>
+          <td>0.490666</td>
+          <td>0.256736</td>
+          <td>0.238772</td>
+          <td>0.171270</td>
+          <td>0.252676</td>
+          <td>2.259652</td>
+          <td>0.199416</td>
+          <td>0.147995</td>
+          <td>0.175604</td>
+          <td>1.302626</td>
+          <td>0.288268</td>
+          <td>0.259798</td>
+          <td>0.224841</td>
+          <td>0.221199</td>
+          <td>0.162397</td>
+          <td>0.238473</td>
+          <td>0.300573</td>
+          <td>0.219031</td>
+          <td>0.183652</td>
+          <td>0.202166</td>
+          <td>0.256076</td>
+          <td>0.200487</td>
+          <td>0.522321</td>
+          <td>0.288392</td>
+          <td>0.270427</td>
+          <td>0.202926</td>
+          <td>0.284331</td>
+          <td>2.291308</td>
+          <td>0.231071</td>
+          <td>0.179651</td>
+          <td>0.207260</td>
+          <td>1.334282</td>
+          <td>0.319924</td>
+          <td>0.291454</td>
+          <td>0.256497</td>
+          <td>0.252855</td>
+          <td>0.194053</td>
+          <td>0.270128</td>
+          <td>0.332229</td>
+          <td>...</td>
+          <td>0.191424</td>
+          <td>0.272829</td>
+          <td>2.279806</td>
+          <td>0.219569</td>
+          <td>0.168149</td>
+          <td>0.195758</td>
+          <td>1.322780</td>
+          <td>0.308422</td>
+          <td>0.279952</td>
+          <td>0.244995</td>
+          <td>0.241353</td>
+          <td>0.182551</td>
+          <td>0.258626</td>
+          <td>0.320727</td>
+          <td>0.239185</td>
+          <td>0.203806</td>
+          <td>0.222320</td>
+          <td>0.276230</td>
+          <td>0.319122</td>
+          <td>0.640957</td>
+          <td>0.407027</td>
+          <td>0.389063</td>
+          <td>0.321561</td>
+          <td>0.402967</td>
+          <td>2.409943</td>
+          <td>0.349707</td>
+          <td>0.298287</td>
+          <td>0.325895</td>
+          <td>1.452917</td>
+          <td>0.438559</td>
+          <td>0.410089</td>
+          <td>0.375132</td>
+          <td>0.371490</td>
+          <td>0.312688</td>
+          <td>0.388764</td>
+          <td>0.450864</td>
+          <td>0.369322</td>
+          <td>0.333943</td>
+          <td>0.352457</td>
+          <td>0.406367</td>
+        </tr>
+        <tr>
+          <th>FGF5</th>
+          <th>KDR</th>
+          <td>0.129870</td>
+          <td>0.451705</td>
+          <td>0.217775</td>
+          <td>0.199811</td>
+          <td>0.132309</td>
+          <td>0.213715</td>
+          <td>2.220691</td>
+          <td>0.160455</td>
+          <td>0.109034</td>
+          <td>0.136643</td>
+          <td>1.263665</td>
+          <td>0.249307</td>
+          <td>0.220837</td>
+          <td>0.185880</td>
+          <td>0.182238</td>
+          <td>0.123436</td>
+          <td>0.199512</td>
+          <td>0.261612</td>
+          <td>0.180070</td>
+          <td>0.144691</td>
+          <td>0.163205</td>
+          <td>0.217115</td>
+          <td>0.200487</td>
+          <td>0.522321</td>
+          <td>0.288392</td>
+          <td>0.270427</td>
+          <td>0.202926</td>
+          <td>0.284331</td>
+          <td>2.291308</td>
+          <td>0.231071</td>
+          <td>0.179651</td>
+          <td>0.207260</td>
+          <td>1.334282</td>
+          <td>0.319924</td>
+          <td>0.291454</td>
+          <td>0.256497</td>
+          <td>0.252855</td>
+          <td>0.194053</td>
+          <td>0.270128</td>
+          <td>0.332229</td>
+          <td>...</td>
+          <td>0.161986</td>
+          <td>0.243392</td>
+          <td>2.250368</td>
+          <td>0.190132</td>
+          <td>0.138712</td>
+          <td>0.166320</td>
+          <td>1.293342</td>
+          <td>0.278984</td>
+          <td>0.250514</td>
+          <td>0.215557</td>
+          <td>0.211916</td>
+          <td>0.153113</td>
+          <td>0.229189</td>
+          <td>0.291289</td>
+          <td>0.209747</td>
+          <td>0.174368</td>
+          <td>0.192882</td>
+          <td>0.246792</td>
+          <td>0.197399</td>
+          <td>0.519234</td>
+          <td>0.285304</td>
+          <td>0.267340</td>
+          <td>0.199838</td>
+          <td>0.281244</td>
+          <td>2.288220</td>
+          <td>0.227984</td>
+          <td>0.176564</td>
+          <td>0.204172</td>
+          <td>1.331194</td>
+          <td>0.316836</td>
+          <td>0.288366</td>
+          <td>0.253409</td>
+          <td>0.249768</td>
+          <td>0.190965</td>
+          <td>0.267041</td>
+          <td>0.329141</td>
+          <td>0.247599</td>
+          <td>0.212220</td>
+          <td>0.230734</td>
+          <td>0.284644</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>5 rows × 484 columns</p>
+    </div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-56
 
@@ -99,6 +779,647 @@ above.
     res["pvalues"].head()
 
 
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead tr th {
+            text-align: left;
+        }
+
+        .dataframe thead tr:last-of-type th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr>
+          <th></th>
+          <th>cluster_1</th>
+          <th colspan="22" halign="left">Allantois</th>
+          <th colspan="18" halign="left">Anterior somitic tissues</th>
+          <th>...</th>
+          <th colspan="18" halign="left">Splanchnic mesoderm</th>
+          <th colspan="22" halign="left">Surface ectoderm</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>cluster_2</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>...</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+          <th>Allantois</th>
+          <th>Anterior somitic tissues</th>
+          <th>Cardiomyocytes</th>
+          <th>Cranial mesoderm</th>
+          <th>Definitive endoderm</th>
+          <th>Dermomyotome</th>
+          <th>Endothelium</th>
+          <th>Erythroid</th>
+          <th>Forebrain/Midbrain/Hindbrain</th>
+          <th>Gut tube</th>
+          <th>Haematoendothelial progenitors</th>
+          <th>Intermediate mesoderm</th>
+          <th>Lateral plate mesoderm</th>
+          <th>Low quality</th>
+          <th>Mixed mesenchymal mesoderm</th>
+          <th>NMP</th>
+          <th>Neural crest</th>
+          <th>Presomitic mesoderm</th>
+          <th>Sclerotome</th>
+          <th>Spinal cord</th>
+          <th>Splanchnic mesoderm</th>
+          <th>Surface ectoderm</th>
+        </tr>
+        <tr>
+          <th>source</th>
+          <th>target</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>FGF3</th>
+          <th>KDR</th>
+          <td>0.996</td>
+          <td>0.087</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.995</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.980</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.952</td>
+          <td>0.982</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>0.998</td>
+          <td>0.969</td>
+          <td>0.020</td>
+          <td>0.926</td>
+          <td>0.964</td>
+          <td>0.995</td>
+          <td>0.909</td>
+          <td>NaN</td>
+          <td>0.988</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.698</td>
+          <td>0.932</td>
+          <td>0.999</td>
+          <td>0.981</td>
+          <td>0.986</td>
+          <td>0.984</td>
+          <td>0.577</td>
+          <td>...</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.00</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>0.996</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.00</td>
+          <td>0.974</td>
+          <td>0.020</td>
+          <td>0.969</td>
+          <td>0.979</td>
+          <td>1.000</td>
+          <td>0.947</td>
+          <td>NaN</td>
+          <td>0.995</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>0.747</td>
+          <td>0.986</td>
+          <td>1.000</td>
+          <td>0.998</td>
+          <td>0.990</td>
+          <td>0.999</td>
+          <td>0.589</td>
+          <td>0.860</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.966</td>
+        </tr>
+        <tr>
+          <th>IGF1</th>
+          <th>KDR</th>
+          <td>0.998</td>
+          <td>0.132</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.999</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.996</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.985</td>
+          <td>0.995</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.909</td>
+          <td>0.016</td>
+          <td>0.752</td>
+          <td>0.849</td>
+          <td>0.981</td>
+          <td>0.747</td>
+          <td>NaN</td>
+          <td>0.958</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.453</td>
+          <td>0.743</td>
+          <td>0.959</td>
+          <td>0.932</td>
+          <td>0.956</td>
+          <td>0.881</td>
+          <td>0.348</td>
+          <td>...</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.00</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.979</td>
+          <td>0.990</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.00</td>
+          <td>0.986</td>
+          <td>0.026</td>
+          <td>0.990</td>
+          <td>0.998</td>
+          <td>1.000</td>
+          <td>0.984</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>0.863</td>
+          <td>0.996</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>1.000</td>
+          <td>0.725</td>
+          <td>0.912</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.987</td>
+        </tr>
+        <tr>
+          <th>FGF10</th>
+          <th>KDR</th>
+          <td>0.986</td>
+          <td>0.047</td>
+          <td>0.980</td>
+          <td>0.986</td>
+          <td>1.0</td>
+          <td>0.977</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.883</td>
+          <td>0.992</td>
+          <td>1.0</td>
+          <td>0.998</td>
+          <td>0.991</td>
+          <td>1.0</td>
+          <td>0.791</td>
+          <td>0.903</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>0.987</td>
+          <td>0.994</td>
+          <td>0.047</td>
+          <td>0.997</td>
+          <td>0.999</td>
+          <td>0.999</td>
+          <td>0.996</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.950</td>
+          <td>0.998</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>0.886</td>
+          <td>...</td>
+          <td>0.919</td>
+          <td>0.409</td>
+          <td>NaN</td>
+          <td>0.854</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.081</td>
+          <td>0.26</td>
+          <td>0.863</td>
+          <td>0.758</td>
+          <td>0.875</td>
+          <td>0.605</td>
+          <td>0.067</td>
+          <td>0.593</td>
+          <td>1.0</td>
+          <td>0.974</td>
+          <td>0.36</td>
+          <td>0.979</td>
+          <td>0.024</td>
+          <td>0.979</td>
+          <td>0.989</td>
+          <td>1.000</td>
+          <td>0.974</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>0.809</td>
+          <td>0.992</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>1.000</td>
+          <td>0.649</td>
+          <td>0.881</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.985</td>
+        </tr>
+        <tr>
+          <th>FGF17</th>
+          <th>KDR</th>
+          <td>0.999</td>
+          <td>0.121</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.990</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.976</td>
+          <td>0.992</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>0.071</td>
+          <td>0.998</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>0.996</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.967</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.912</td>
+          <td>...</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.998</td>
+          <td>1.00</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.981</td>
+          <td>0.990</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.00</td>
+          <td>0.804</td>
+          <td>0.005</td>
+          <td>0.330</td>
+          <td>0.540</td>
+          <td>0.912</td>
+          <td>0.375</td>
+          <td>NaN</td>
+          <td>0.853</td>
+          <td>1.0</td>
+          <td>0.999</td>
+          <td>NaN</td>
+          <td>0.085</td>
+          <td>0.247</td>
+          <td>0.834</td>
+          <td>0.721</td>
+          <td>0.870</td>
+          <td>0.572</td>
+          <td>0.070</td>
+          <td>0.592</td>
+          <td>1.0</td>
+          <td>0.962</td>
+          <td>0.350</td>
+        </tr>
+        <tr>
+          <th>FGF5</th>
+          <th>KDR</th>
+          <td>1.000</td>
+          <td>0.102</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.999</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.997</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>0.979</td>
+          <td>0.994</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.974</td>
+          <td>0.026</td>
+          <td>0.968</td>
+          <td>0.980</td>
+          <td>0.999</td>
+          <td>0.938</td>
+          <td>NaN</td>
+          <td>0.997</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.794</td>
+          <td>0.988</td>
+          <td>1.000</td>
+          <td>0.995</td>
+          <td>0.991</td>
+          <td>0.994</td>
+          <td>0.641</td>
+          <td>...</td>
+          <td>1.000</td>
+          <td>0.999</td>
+          <td>NaN</td>
+          <td>1.000</td>
+          <td>1.0</td>
+          <td>1.0</td>
+          <td>NaN</td>
+          <td>0.992</td>
+          <td>1.00</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.957</td>
+          <td>0.982</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>1.00</td>
+          <td>0.982</td>
+          <td>0.024</td>
+          <td>0.991</td>
+          <td>0.994</td>
+          <td>1.000</td>
+          <td>0.985</td>
+          <td>NaN</td>
+          <td>0.997</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>NaN</td>
+          <td>0.850</td>
+          <td>0.999</td>
+          <td>1.000</td>
+          <td>1.000</td>
+          <td>0.995</td>
+          <td>1.000</td>
+          <td>0.705</td>
+          <td>0.905</td>
+          <td>1.0</td>
+          <td>1.000</td>
+          <td>0.992</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>5 rows × 484 columns</p>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 59-60
 
 Any interaction metadata downloaded from :mod:`omnipath`, such as the interaction type, can be accessed as:
@@ -109,6 +1430,360 @@ Any interaction metadata downloaded from :mod:`omnipath`, such as the interactio
 
     res["metadata"].head()
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th></th>
+          <th>aspect_intercell_source</th>
+          <th>aspect_intercell_target</th>
+          <th>category_intercell_source</th>
+          <th>category_intercell_target</th>
+          <th>category_source_intercell_source</th>
+          <th>category_source_intercell_target</th>
+          <th>consensus_direction</th>
+          <th>consensus_inhibition</th>
+          <th>consensus_score_intercell_source</th>
+          <th>consensus_score_intercell_target</th>
+          <th>consensus_stimulation</th>
+          <th>curation_effort</th>
+          <th>database_intercell_source</th>
+          <th>database_intercell_target</th>
+          <th>dip_url</th>
+          <th>entity_type_intercell_source</th>
+          <th>entity_type_intercell_target</th>
+          <th>is_inhibition</th>
+          <th>is_stimulation</th>
+          <th>n_primary_sources</th>
+          <th>n_references</th>
+          <th>n_sources</th>
+          <th>parent_intercell_source</th>
+          <th>parent_intercell_target</th>
+          <th>plasma_membrane_peripheral_intercell_source</th>
+          <th>plasma_membrane_peripheral_intercell_target</th>
+          <th>plasma_membrane_transmembrane_intercell_source</th>
+          <th>plasma_membrane_transmembrane_intercell_target</th>
+          <th>receiver_intercell_source</th>
+          <th>receiver_intercell_target</th>
+          <th>references</th>
+          <th>references_stripped</th>
+          <th>scope_intercell_source</th>
+          <th>scope_intercell_target</th>
+          <th>secreted_intercell_source</th>
+          <th>secreted_intercell_target</th>
+          <th>sources</th>
+          <th>transmitter_intercell_source</th>
+          <th>transmitter_intercell_target</th>
+          <th>type</th>
+          <th>uniprot_intercell_source</th>
+          <th>uniprot_intercell_target</th>
+        </tr>
+        <tr>
+          <th>source</th>
+          <th>target</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>FGF3</th>
+          <th>KDR</th>
+          <td>functional</td>
+          <td>functional</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>resource_specific</td>
+          <td>resource_specific</td>
+          <td>True</td>
+          <td>False</td>
+          <td>13</td>
+          <td>17</td>
+          <td>True</td>
+          <td>1</td>
+          <td>talklr;connectomeDB2020;Matrisome;iTALK;EMBRAC...</td>
+          <td>NaN</td>
+          <td>None</td>
+          <td>protein</td>
+          <td>protein</td>
+          <td>False</td>
+          <td>True</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>SIGNOR:17306385</td>
+          <td>17306385</td>
+          <td>generic</td>
+          <td>generic</td>
+          <td>True</td>
+          <td>True</td>
+          <td>SIGNOR</td>
+          <td>True</td>
+          <td>False</td>
+          <td>post_translational</td>
+          <td>P11487</td>
+          <td>P35968</td>
+        </tr>
+        <tr>
+          <th>IGF1</th>
+          <th>KDR</th>
+          <td>functional</td>
+          <td>functional</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>resource_specific</td>
+          <td>resource_specific</td>
+          <td>True</td>
+          <td>False</td>
+          <td>18</td>
+          <td>17</td>
+          <td>True</td>
+          <td>1</td>
+          <td>talklr;connectomeDB2020;Matrisome;iTALK;CellPh...</td>
+          <td>NaN</td>
+          <td>None</td>
+          <td>protein</td>
+          <td>protein</td>
+          <td>False</td>
+          <td>True</td>
+          <td>2</td>
+          <td>1</td>
+          <td>2</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>SIGNOR:17306385</td>
+          <td>17306385</td>
+          <td>generic</td>
+          <td>generic</td>
+          <td>True</td>
+          <td>True</td>
+          <td>SIGNOR;Wang</td>
+          <td>True</td>
+          <td>False</td>
+          <td>post_translational</td>
+          <td>P05019</td>
+          <td>P35968</td>
+        </tr>
+        <tr>
+          <th>FGF10</th>
+          <th>KDR</th>
+          <td>functional</td>
+          <td>functional</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>resource_specific</td>
+          <td>resource_specific</td>
+          <td>True</td>
+          <td>False</td>
+          <td>16</td>
+          <td>17</td>
+          <td>True</td>
+          <td>1</td>
+          <td>NaN</td>
+          <td>NaN</td>
+          <td>None</td>
+          <td>protein</td>
+          <td>protein</td>
+          <td>False</td>
+          <td>True</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>SIGNOR:17306385</td>
+          <td>17306385</td>
+          <td>generic</td>
+          <td>generic</td>
+          <td>True</td>
+          <td>True</td>
+          <td>SIGNOR</td>
+          <td>True</td>
+          <td>False</td>
+          <td>post_translational</td>
+          <td>O15520</td>
+          <td>P35968</td>
+        </tr>
+        <tr>
+          <th>FGF17</th>
+          <th>KDR</th>
+          <td>functional</td>
+          <td>functional</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>resource_specific</td>
+          <td>resource_specific</td>
+          <td>True</td>
+          <td>False</td>
+          <td>16</td>
+          <td>17</td>
+          <td>True</td>
+          <td>1</td>
+          <td>NaN</td>
+          <td>NaN</td>
+          <td>None</td>
+          <td>protein</td>
+          <td>protein</td>
+          <td>False</td>
+          <td>True</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>SIGNOR:17306385</td>
+          <td>17306385</td>
+          <td>generic</td>
+          <td>generic</td>
+          <td>True</td>
+          <td>True</td>
+          <td>SIGNOR</td>
+          <td>True</td>
+          <td>False</td>
+          <td>post_translational</td>
+          <td>O60258</td>
+          <td>P35968</td>
+        </tr>
+        <tr>
+          <th>FGF5</th>
+          <th>KDR</th>
+          <td>functional</td>
+          <td>functional</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>resource_specific</td>
+          <td>resource_specific</td>
+          <td>True</td>
+          <td>False</td>
+          <td>14</td>
+          <td>17</td>
+          <td>True</td>
+          <td>1</td>
+          <td>NaN</td>
+          <td>NaN</td>
+          <td>None</td>
+          <td>protein</td>
+          <td>protein</td>
+          <td>False</td>
+          <td>True</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>ligand</td>
+          <td>receptor</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>SIGNOR:17306385</td>
+          <td>17306385</td>
+          <td>generic</td>
+          <td>generic</td>
+          <td>True</td>
+          <td>True</td>
+          <td>SIGNOR</td>
+          <td>True</td>
+          <td>False</td>
+          <td>post_translational</td>
+          <td>P12034</td>
+          <td>P35968</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 63-71
 
@@ -128,11 +1803,21 @@ In the plot below, to highlight significance, we've marked all p-values <= 0.005
     sq.pl.ligrec(res, source_groups="Erythroid", alpha=0.005)
 
 
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_ligrec_001.png
+    :alt: Receptor-ligand test, $-\log_{10} ~ P$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  30.854 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  148 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_ligrec.py:

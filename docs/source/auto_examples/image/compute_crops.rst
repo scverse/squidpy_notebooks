@@ -43,6 +43,12 @@ Specifically, it shows how to use:
     import matplotlib.pyplot as plt
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 Load a H&E Visium image.
@@ -52,6 +58,20 @@ Load a H&E Visium image.
 .. code-block:: default
 
     img = sq.datasets.visium_hne_image_crop()
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/35.6M [00:00<?, ?B/s]      0%|          | 56.0k/35.6M [00:00<01:29, 415kB/s]      1%|          | 192k/35.6M [00:00<00:49, 757kB/s]       2%|1         | 672k/35.6M [00:00<00:18, 2.02MB/s]      7%|6         | 2.48M/35.6M [00:00<00:05, 6.61MB/s]     22%|##2       | 7.91M/35.6M [00:00<00:01, 20.1MB/s]     33%|###3      | 11.8M/35.6M [00:00<00:00, 26.0MB/s]     47%|####7     | 16.7M/35.6M [00:00<00:00, 32.4MB/s]     57%|#####7    | 20.4M/35.6M [00:00<00:00, 33.9MB/s]     72%|#######1  | 25.5M/35.6M [00:01<00:00, 38.5MB/s]     82%|########1 | 29.1M/35.6M [00:01<00:00, 38.4MB/s]     96%|#########6| 34.2M/35.6M [00:01<00:00, 41.5MB/s]    100%|##########| 35.6M/35.6M [00:01<00:00, 27.8MB/s]
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-33
@@ -76,6 +96,16 @@ You can specify the crop coordinates in pixels (as ``int``) or in percentage of 
     crop_center.show(ax=axes[1])
 
 
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
+    :alt: compute crops
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 The result of the cropping functions is another ImageContainer
@@ -88,11 +118,23 @@ The result of the cropping functions is another ImageContainer
     crop_corner
 
 
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    ImageContainer object with 1 layer:<p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image</strong>: <em>y</em> (400), <em>x</em> (400), <em>channels</em> (3)</p>
+    </div>
+    <br />
+    <br />
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  9.473 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  54 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

@@ -44,6 +44,12 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     import squidpy as sq
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 First, we load a fluorescence Visium dataset.
@@ -56,6 +62,12 @@ First, we load a fluorescence Visium dataset.
     # get spatial dataset including hires tissue image
     img = sq.datasets.visium_fluo_image_crop()
     adata = sq.datasets.visium_fluo_adata_crop()
+
+
+
+
+
+
 
 
 
@@ -90,6 +102,21 @@ When not setting this flag, statistics are calculated using a square crop center
     )
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
+      res = method(*args, **kwargs)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 The result is stored in ``adata.obsm['summary_features']``
@@ -101,6 +128,92 @@ The result is stored in ``adata.obsm['summary_features']``
 
     adata.obsm["summary_features"].head()
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>summary_ch-0_quantile-0.1</th>
+          <th>summary_ch-0_mean</th>
+          <th>summary_ch-0_std</th>
+          <th>summary_ch-1_quantile-0.1</th>
+          <th>summary_ch-1_mean</th>
+          <th>summary_ch-1_std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAACGAGACGGTTGAT-1</th>
+          <td>0.0</td>
+          <td>6849.760120</td>
+          <td>14383.136990</td>
+          <td>0.0</td>
+          <td>3762.582691</td>
+          <td>2462.922155</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>0.0</td>
+          <td>4469.448519</td>
+          <td>11304.932832</td>
+          <td>0.0</td>
+          <td>3824.862145</td>
+          <td>2153.804234</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>0.0</td>
+          <td>5944.567897</td>
+          <td>9808.327041</td>
+          <td>0.0</td>
+          <td>5481.824787</td>
+          <td>6747.728831</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>0.0</td>
+          <td>5259.799257</td>
+          <td>9115.113451</td>
+          <td>0.0</td>
+          <td>2628.194501</td>
+          <td>1418.504292</td>
+        </tr>
+        <tr>
+          <th>AAATTAACGGGTAGCT-1</th>
+          <td>0.0</td>
+          <td>4468.428701</td>
+          <td>10285.605481</td>
+          <td>0.0</td>
+          <td>4036.154302</td>
+          <td>4447.304626</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
@@ -118,11 +231,21 @@ and 1 (GFAP stain).
     sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], bw=True)
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_summary_features_001.png
+    :alt: summary_ch-0_mean, summary_ch-1_mean
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  13.101 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  734 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:
