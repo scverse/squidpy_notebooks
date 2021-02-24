@@ -158,6 +158,7 @@ jobs:
                 skip_fetch: true
 
         -   name: Request documentation rebuild
-            if: steps.auto-commit-action.outputs.changes_detected == 'true'
+            # if: steps.auto-commit-action.outputs.changes_detected == 'true'
+            # does not seem to work with the above hack
             run: |
                 curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
