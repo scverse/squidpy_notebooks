@@ -4,7 +4,7 @@ Squidpy - Spatial Single Cell Analysis in Python
 ================================================
 
 .. image:: https://raw.githubusercontent.com/theislab/squidpy/master/docs/source/_static/img/squidpy_horizontal.png
-    :alt: Title figure
+    :alt: Logo
     :width: 400px
     :align: center
 
@@ -14,9 +14,10 @@ It provides analysis tools that leverages the spatial coordinates of the data, a
 tissue images if available.
 
 .. image:: https://raw.githubusercontent.com/theislab/squidpy/master/docs/source/_static/img/figure1.png
-    :alt: Figure
+    :alt: Title figure
     :width: 400px
     :align: center
+    :target: https://www.biorxiv.org/content/10.1101/2021.02.19.431994v1
 
 Visit our `documentation`_ for installation, tutorials, examples and more.
 
@@ -36,10 +37,12 @@ Installation
 Install Squidpy via PyPI by running::
 
     pip install squidpy
+    # or with napari included
+    pip install 'squidpy[all]'
 
-Contributing to Squidpy
------------------------
-We are happy about any contributions! Before you start, check out our `Contributing guide <CONTRIBUTING.rst>`_.
+Contributing notebooks
+----------------------
+We are happy about any contributions! Before you start, check out our `contributing guide <CONTRIBUTING.rst>`_.
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/squidpy.svg
     :target: https://img.shields.io/pypi/v/squidpy.svg
@@ -65,7 +68,7 @@ We are happy about any contributions! Before you start, check out our `Contribut
     :target: https://pepy.tech/project/squidpy
     :alt: Downloads
 
-.. _preprint: VERY SOON
+.. _preprint: https://www.biorxiv.org/content/10.1101/2021.02.19.431994v1
 .. _scanpy: https://scanpy.readthedocs.io/en/latest/
 .. _anndata: https://anndata.readthedocs.io/en/latest/
 .. _napari: https://napari.org/
