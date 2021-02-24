@@ -10,8 +10,4 @@ This documentation is for testing purposes only. It will not correctly display t
 
     tutorials
     examples
-
-.. toctree::
-    :caption: References
-
-    references.rst
+    references
