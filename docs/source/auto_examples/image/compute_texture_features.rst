@@ -7,16 +7,16 @@
 
 .. only:: html
 
-    .. note::
-        :class: sphx-glr-download-link-note
+  .. container:: binder-badge
 
-        Click :ref:`here <sphx_glr_download_auto_examples_image_compute_texture_features.py>`
-        to download the full example code
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_texture_features.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 .. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_image_compute_texture_features.py:
-
 
 Extract texture features
 ------------------------
@@ -50,12 +50,6 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
     import squidpy as sq
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 31-37
 
 Let's load the fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
@@ -84,23 +78,6 @@ For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_c
         show_progress_bar=False,
     )
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/303M [00:00<?, ?B/s]      0%|          | 40.0k/303M [00:00<17:53, 296kB/s]      0%|          | 200k/303M [00:00<06:31, 810kB/s]       0%|          | 872k/303M [00:00<01:58, 2.67MB/s]      1%|1         | 3.45M/303M [00:00<00:33, 9.27MB/s]      3%|2         | 8.15M/303M [00:00<00:16, 18.6MB/s]      4%|4         | 13.5M/303M [00:00<00:11, 25.8MB/s]      6%|6         | 18.8M/303M [00:00<00:09, 30.3MB/s]      8%|7         | 24.0M/303M [00:01<00:08, 36.4MB/s]      9%|8         | 26.9M/303M [00:01<00:08, 33.7MB/s]     11%|#         | 32.4M/303M [00:01<00:07, 39.9MB/s]     12%|#1        | 35.4M/303M [00:01<00:07, 36.6MB/s]     14%|#3        | 40.9M/303M [00:01<00:06, 42.3MB/s]     15%|#4        | 44.1M/303M [00:01<00:07, 38.3MB/s]     16%|#6        | 49.4M/303M [00:01<00:06, 42.2MB/s]     17%|#7        | 52.6M/303M [00:01<00:06, 39.6MB/s]     19%|#9        | 58.2M/303M [00:01<00:05, 43.9MB/s]     20%|##        | 61.4M/303M [00:02<00:06, 40.7MB/s]     22%|##2       | 66.8M/303M [00:02<00:05, 44.2MB/s]     23%|##3       | 70.2M/303M [00:02<00:05, 41.4MB/s]     25%|##4       | 75.6M/303M [00:02<00:05, 44.8MB/s]     26%|##6       | 79.0M/303M [00:02<00:05, 41.9MB/s]     28%|##7       | 84.4M/303M [00:02<00:05, 45.0MB/s]     29%|##8       | 87.6M/303M [00:02<00:05, 41.4MB/s]     31%|###       | 92.8M/303M [00:02<00:04, 45.1MB/s]     32%|###1      | 96.5M/303M [00:02<00:05, 41.7MB/s]     33%|###3      | 101M/303M [00:02<00:04, 43.5MB/s]      35%|###4      | 105M/303M [00:03<00:04, 42.3MB/s]     36%|###6      | 110M/303M [00:03<00:04, 43.9MB/s]     38%|###7      | 114M/303M [00:03<00:04, 42.5MB/s]     39%|###9      | 118M/303M [00:03<00:04, 43.4MB/s]     41%|####      | 123M/303M [00:03<00:04, 42.9MB/s]     42%|####2     | 127M/303M [00:03<00:04, 43.9MB/s]     43%|####3     | 131M/303M [00:03<00:04, 42.2MB/s]     45%|####4     | 136M/303M [00:03<00:03, 44.0MB/s]     46%|####6     | 140M/303M [00:03<00:04, 41.8MB/s]     48%|####7     | 145M/303M [00:04<00:03, 43.5MB/s]     49%|####9     | 149M/303M [00:04<00:03, 42.1MB/s]     51%|#####     | 154M/303M [00:04<00:03, 43.7MB/s]     52%|#####1    | 157M/303M [00:04<00:03, 42.2MB/s]     54%|#####3    | 162M/303M [00:04<00:03, 43.7MB/s]     55%|#####4    | 166M/303M [00:04<00:03, 42.5MB/s]     57%|#####6    | 171M/303M [00:04<00:03, 43.9MB/s]     58%|#####7    | 175M/303M [00:04<00:03, 42.4MB/s]     59%|#####9    | 180M/303M [00:04<00:02, 44.0MB/s]     61%|######    | 183M/303M [00:05<00:02, 42.2MB/s]     62%|######2   | 188M/303M [00:05<00:02, 43.7MB/s]     64%|######3   | 192M/303M [00:05<00:02, 42.5MB/s]     65%|######5   | 197M/303M [00:05<00:02, 43.9MB/s]     66%|######6   | 201M/303M [00:05<00:02, 42.6MB/s]     68%|######7   | 206M/303M [00:05<00:02, 43.2MB/s]     69%|######9   | 210M/303M [00:05<00:02, 42.4MB/s]     71%|#######   | 214M/303M [00:05<00:02, 43.6MB/s]     72%|#######2  | 218M/303M [00:05<00:02, 42.1MB/s]     74%|#######3  | 223M/303M [00:05<00:01, 43.6MB/s]     75%|#######4  | 227M/303M [00:06<00:01, 42.0MB/s]     76%|#######6  | 231M/303M [00:06<00:01, 43.4MB/s]     78%|#######7  | 235M/303M [00:06<00:01, 41.5MB/s]     79%|#######9  | 240M/303M [00:06<00:01, 43.3MB/s]     81%|########  | 244M/303M [00:06<00:01, 41.7MB/s]     82%|########2 | 248M/303M [00:06<00:01, 42.8MB/s]     83%|########3 | 253M/303M [00:06<00:01, 42.2MB/s]     85%|########4 | 257M/303M [00:06<00:01, 43.3MB/s]     86%|########6 | 261M/303M [00:06<00:01, 42.2MB/s]     88%|########7 | 266M/303M [00:07<00:00, 43.9MB/s]     89%|########9 | 270M/303M [00:07<00:00, 42.4MB/s]     91%|######### | 274M/303M [00:07<00:00, 43.3MB/s]     92%|#########2| 279M/303M [00:07<00:00, 39.6MB/s]     94%|#########3| 284M/303M [00:07<00:00, 40.8MB/s]     96%|#########5| 290M/303M [00:07<00:00, 40.7MB/s]     98%|#########7| 296M/303M [00:07<00:00, 41.2MB/s]    100%|#########9| 301M/303M [00:07<00:00, 41.7MB/s]    100%|##########| 303M/303M [00:07<00:00, 40.0MB/s]
-      0%|          | 0.00/65.5M [00:00<?, ?B/s]      0%|          | 40.0k/65.5M [00:00<03:53, 293kB/s]      0%|          | 208k/65.5M [00:00<01:21, 842kB/s]       1%|1         | 864k/65.5M [00:00<00:25, 2.64MB/s]      5%|5         | 3.38M/65.5M [00:00<00:06, 9.72MB/s]     11%|#         | 7.19M/65.5M [00:00<00:03, 18.8MB/s]     18%|#7        | 11.7M/65.5M [00:00<00:02, 26.6MB/s]     24%|##4       | 15.8M/65.5M [00:00<00:01, 31.4MB/s]     31%|###       | 20.1M/65.5M [00:00<00:01, 34.1MB/s]     37%|###7      | 24.4M/65.5M [00:01<00:01, 37.5MB/s]     44%|####3     | 28.8M/65.5M [00:01<00:00, 38.6MB/s]     49%|####9     | 32.2M/65.5M [00:01<00:00, 38.0MB/s]     56%|#####6    | 36.9M/65.5M [00:01<00:00, 40.0MB/s]     62%|######2   | 40.7M/65.5M [00:01<00:00, 39.8MB/s]     69%|######9   | 45.5M/65.5M [00:01<00:00, 41.5MB/s]     75%|#######5  | 49.2M/65.5M [00:01<00:00, 40.8MB/s]     83%|########2 | 54.1M/65.5M [00:01<00:00, 42.5MB/s]     89%|########8 | 58.1M/65.5M [00:01<00:00, 42.2MB/s]     96%|#########5| 62.8M/65.5M [00:02<00:00, 43.0MB/s]    100%|##########| 65.5M/65.5M [00:02<00:00, 33.4MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 The result is stored in ``adata.obsm['texture_features']``.
@@ -112,416 +89,6 @@ The result is stored in ``adata.obsm['texture_features']``.
 
     adata.obsm["texture_features"].head()
 
-
-
-
-
-
-.. raw:: html
-
-    <div class="output_subarea output_html rendered_html output_result">
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>texture_ch-0_contrast_dist-1_angle-0.00</th>
-          <th>texture_ch-0_contrast_dist-1_angle-0.79</th>
-          <th>texture_ch-0_contrast_dist-1_angle-1.57</th>
-          <th>texture_ch-0_contrast_dist-1_angle-2.36</th>
-          <th>texture_ch-0_dissimilarity_dist-1_angle-0.00</th>
-          <th>texture_ch-0_dissimilarity_dist-1_angle-0.79</th>
-          <th>texture_ch-0_dissimilarity_dist-1_angle-1.57</th>
-          <th>texture_ch-0_dissimilarity_dist-1_angle-2.36</th>
-          <th>texture_ch-0_homogeneity_dist-1_angle-0.00</th>
-          <th>texture_ch-0_homogeneity_dist-1_angle-0.79</th>
-          <th>texture_ch-0_homogeneity_dist-1_angle-1.57</th>
-          <th>texture_ch-0_homogeneity_dist-1_angle-2.36</th>
-          <th>texture_ch-0_correlation_dist-1_angle-0.00</th>
-          <th>texture_ch-0_correlation_dist-1_angle-0.79</th>
-          <th>texture_ch-0_correlation_dist-1_angle-1.57</th>
-          <th>texture_ch-0_correlation_dist-1_angle-2.36</th>
-          <th>texture_ch-0_ASM_dist-1_angle-0.00</th>
-          <th>texture_ch-0_ASM_dist-1_angle-0.79</th>
-          <th>texture_ch-0_ASM_dist-1_angle-1.57</th>
-          <th>texture_ch-0_ASM_dist-1_angle-2.36</th>
-          <th>texture_ch-1_contrast_dist-1_angle-0.00</th>
-          <th>texture_ch-1_contrast_dist-1_angle-0.79</th>
-          <th>texture_ch-1_contrast_dist-1_angle-1.57</th>
-          <th>texture_ch-1_contrast_dist-1_angle-2.36</th>
-          <th>texture_ch-1_dissimilarity_dist-1_angle-0.00</th>
-          <th>texture_ch-1_dissimilarity_dist-1_angle-0.79</th>
-          <th>texture_ch-1_dissimilarity_dist-1_angle-1.57</th>
-          <th>texture_ch-1_dissimilarity_dist-1_angle-2.36</th>
-          <th>texture_ch-1_homogeneity_dist-1_angle-0.00</th>
-          <th>texture_ch-1_homogeneity_dist-1_angle-0.79</th>
-          <th>texture_ch-1_homogeneity_dist-1_angle-1.57</th>
-          <th>texture_ch-1_homogeneity_dist-1_angle-2.36</th>
-          <th>texture_ch-1_correlation_dist-1_angle-0.00</th>
-          <th>texture_ch-1_correlation_dist-1_angle-0.79</th>
-          <th>texture_ch-1_correlation_dist-1_angle-1.57</th>
-          <th>texture_ch-1_correlation_dist-1_angle-2.36</th>
-          <th>texture_ch-1_ASM_dist-1_angle-0.00</th>
-          <th>texture_ch-1_ASM_dist-1_angle-0.79</th>
-          <th>texture_ch-1_ASM_dist-1_angle-1.57</th>
-          <th>texture_ch-1_ASM_dist-1_angle-2.36</th>
-          <th>texture_ch-2_contrast_dist-1_angle-0.00</th>
-          <th>texture_ch-2_contrast_dist-1_angle-0.79</th>
-          <th>texture_ch-2_contrast_dist-1_angle-1.57</th>
-          <th>texture_ch-2_contrast_dist-1_angle-2.36</th>
-          <th>texture_ch-2_dissimilarity_dist-1_angle-0.00</th>
-          <th>texture_ch-2_dissimilarity_dist-1_angle-0.79</th>
-          <th>texture_ch-2_dissimilarity_dist-1_angle-1.57</th>
-          <th>texture_ch-2_dissimilarity_dist-1_angle-2.36</th>
-          <th>texture_ch-2_homogeneity_dist-1_angle-0.00</th>
-          <th>texture_ch-2_homogeneity_dist-1_angle-0.79</th>
-          <th>texture_ch-2_homogeneity_dist-1_angle-1.57</th>
-          <th>texture_ch-2_homogeneity_dist-1_angle-2.36</th>
-          <th>texture_ch-2_correlation_dist-1_angle-0.00</th>
-          <th>texture_ch-2_correlation_dist-1_angle-0.79</th>
-          <th>texture_ch-2_correlation_dist-1_angle-1.57</th>
-          <th>texture_ch-2_correlation_dist-1_angle-2.36</th>
-          <th>texture_ch-2_ASM_dist-1_angle-0.00</th>
-          <th>texture_ch-2_ASM_dist-1_angle-0.79</th>
-          <th>texture_ch-2_ASM_dist-1_angle-1.57</th>
-          <th>texture_ch-2_ASM_dist-1_angle-2.36</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>AAACGAGACGGTTGAT-1</th>
-          <td>42.783204</td>
-          <td>79.464035</td>
-          <td>41.904014</td>
-          <td>82.624826</td>
-          <td>1.983783</td>
-          <td>2.753093</td>
-          <td>1.973759</td>
-          <td>2.743151</td>
-          <td>0.753973</td>
-          <td>0.725217</td>
-          <td>0.753458</td>
-          <td>0.727817</td>
-          <td>0.989676</td>
-          <td>0.980799</td>
-          <td>0.989874</td>
-          <td>0.980027</td>
-          <td>0.257660</td>
-          <td>0.246727</td>
-          <td>0.257964</td>
-          <td>0.246895</td>
-          <td>1.074851</td>
-          <td>1.818339</td>
-          <td>1.128450</td>
-          <td>1.947829</td>
-          <td>0.555952</td>
-          <td>0.728388</td>
-          <td>0.566007</td>
-          <td>0.746670</td>
-          <td>0.760217</td>
-          <td>0.706197</td>
-          <td>0.757304</td>
-          <td>0.703203</td>
-          <td>0.988467</td>
-          <td>0.980503</td>
-          <td>0.987873</td>
-          <td>0.979115</td>
-          <td>0.126044</td>
-          <td>0.109685</td>
-          <td>0.125444</td>
-          <td>0.109163</td>
-          <td>3.719164</td>
-          <td>6.743719</td>
-          <td>4.043992</td>
-          <td>6.661864</td>
-          <td>1.106474</td>
-          <td>1.404873</td>
-          <td>1.103460</td>
-          <td>1.419202</td>
-          <td>0.567838</td>
-          <td>0.508652</td>
-          <td>0.570987</td>
-          <td>0.504941</td>
-          <td>0.883396</td>
-          <td>0.787901</td>
-          <td>0.872758</td>
-          <td>0.790485</td>
-          <td>0.040632</td>
-          <td>0.035577</td>
-          <td>0.041006</td>
-          <td>0.035397</td>
-        </tr>
-        <tr>
-          <th>AAAGGGATGTAGCAAG-1</th>
-          <td>82.756940</td>
-          <td>144.883230</td>
-          <td>76.546612</td>
-          <td>159.714604</td>
-          <td>3.349644</td>
-          <td>4.369327</td>
-          <td>3.171514</td>
-          <td>4.603538</td>
-          <td>0.692667</td>
-          <td>0.666414</td>
-          <td>0.696288</td>
-          <td>0.668449</td>
-          <td>0.989196</td>
-          <td>0.981083</td>
-          <td>0.990008</td>
-          <td>0.979096</td>
-          <td>0.184797</td>
-          <td>0.176518</td>
-          <td>0.184901</td>
-          <td>0.176277</td>
-          <td>10.298760</td>
-          <td>17.196961</td>
-          <td>9.024880</td>
-          <td>18.784308</td>
-          <td>1.472209</td>
-          <td>1.902758</td>
-          <td>1.400009</td>
-          <td>1.990153</td>
-          <td>0.643670</td>
-          <td>0.593335</td>
-          <td>0.644992</td>
-          <td>0.584962</td>
-          <td>0.995620</td>
-          <td>0.992694</td>
-          <td>0.996157</td>
-          <td>0.991982</td>
-          <td>0.043327</td>
-          <td>0.037119</td>
-          <td>0.043447</td>
-          <td>0.036352</td>
-          <td>5.188997</td>
-          <td>7.293595</td>
-          <td>4.433292</td>
-          <td>9.512128</td>
-          <td>1.300680</td>
-          <td>1.641199</td>
-          <td>1.269742</td>
-          <td>1.706421</td>
-          <td>0.533904</td>
-          <td>0.470301</td>
-          <td>0.538010</td>
-          <td>0.466651</td>
-          <td>0.938821</td>
-          <td>0.914061</td>
-          <td>0.947862</td>
-          <td>0.887927</td>
-          <td>0.016620</td>
-          <td>0.013672</td>
-          <td>0.016786</td>
-          <td>0.013555</td>
-        </tr>
-        <tr>
-          <th>AAATGGCATGTCTTGT-1</th>
-          <td>27.093979</td>
-          <td>48.276535</td>
-          <td>23.560334</td>
-          <td>49.362415</td>
-          <td>2.416785</td>
-          <td>3.209199</td>
-          <td>2.249740</td>
-          <td>3.271754</td>
-          <td>0.565910</td>
-          <td>0.525931</td>
-          <td>0.581019</td>
-          <td>0.517047</td>
-          <td>0.991710</td>
-          <td>0.985251</td>
-          <td>0.992796</td>
-          <td>0.984920</td>
-          <td>0.049270</td>
-          <td>0.044856</td>
-          <td>0.049755</td>
-          <td>0.044653</td>
-          <td>7.686629</td>
-          <td>15.158968</td>
-          <td>8.050239</td>
-          <td>14.615958</td>
-          <td>1.533212</td>
-          <td>2.103325</td>
-          <td>1.545864</td>
-          <td>2.088909</td>
-          <td>0.566223</td>
-          <td>0.501223</td>
-          <td>0.568412</td>
-          <td>0.501163</td>
-          <td>0.994528</td>
-          <td>0.989220</td>
-          <td>0.994271</td>
-          <td>0.989604</td>
-          <td>0.020876</td>
-          <td>0.017366</td>
-          <td>0.021290</td>
-          <td>0.017391</td>
-          <td>4.889899</td>
-          <td>8.797153</td>
-          <td>5.103539</td>
-          <td>8.590543</td>
-          <td>1.146626</td>
-          <td>1.475492</td>
-          <td>1.136618</td>
-          <td>1.472076</td>
-          <td>0.567434</td>
-          <td>0.503189</td>
-          <td>0.571515</td>
-          <td>0.503682</td>
-          <td>0.878716</td>
-          <td>0.781444</td>
-          <td>0.873200</td>
-          <td>0.786576</td>
-          <td>0.033804</td>
-          <td>0.028822</td>
-          <td>0.034247</td>
-          <td>0.028759</td>
-        </tr>
-        <tr>
-          <th>AAATGGTCAATGTGCC-1</th>
-          <td>24.198313</td>
-          <td>36.550901</td>
-          <td>18.040215</td>
-          <td>46.083141</td>
-          <td>2.222673</td>
-          <td>2.732854</td>
-          <td>1.925904</td>
-          <td>3.103483</td>
-          <td>0.645956</td>
-          <td>0.621034</td>
-          <td>0.661099</td>
-          <td>0.608436</td>
-          <td>0.995620</td>
-          <td>0.993373</td>
-          <td>0.996737</td>
-          <td>0.991662</td>
-          <td>0.115711</td>
-          <td>0.105768</td>
-          <td>0.116269</td>
-          <td>0.104839</td>
-          <td>0.291332</td>
-          <td>0.380815</td>
-          <td>0.289475</td>
-          <td>0.378077</td>
-          <td>0.289743</td>
-          <td>0.366076</td>
-          <td>0.287870</td>
-          <td>0.363701</td>
-          <td>0.855288</td>
-          <td>0.818436</td>
-          <td>0.856225</td>
-          <td>0.819587</td>
-          <td>0.699605</td>
-          <td>0.607720</td>
-          <td>0.701861</td>
-          <td>0.610545</td>
-          <td>0.311822</td>
-          <td>0.284697</td>
-          <td>0.312450</td>
-          <td>0.285439</td>
-          <td>2.076205</td>
-          <td>3.487123</td>
-          <td>2.163905</td>
-          <td>3.622057</td>
-          <td>1.033055</td>
-          <td>1.325574</td>
-          <td>1.032772</td>
-          <td>1.335698</td>
-          <td>0.575675</td>
-          <td>0.511713</td>
-          <td>0.578051</td>
-          <td>0.511233</td>
-          <td>0.988060</td>
-          <td>0.979815</td>
-          <td>0.987566</td>
-          <td>0.979121</td>
-          <td>0.016216</td>
-          <td>0.013678</td>
-          <td>0.016297</td>
-          <td>0.013659</td>
-        </tr>
-        <tr>
-          <th>AAATTAACGGGTAGCT-1</th>
-          <td>21.413928</td>
-          <td>39.826111</td>
-          <td>23.691475</td>
-          <td>47.908006</td>
-          <td>1.281552</td>
-          <td>1.779400</td>
-          <td>1.349581</td>
-          <td>1.883277</td>
-          <td>0.821503</td>
-          <td>0.798561</td>
-          <td>0.820337</td>
-          <td>0.797125</td>
-          <td>0.992404</td>
-          <td>0.985869</td>
-          <td>0.991574</td>
-          <td>0.983001</td>
-          <td>0.415389</td>
-          <td>0.398915</td>
-          <td>0.416979</td>
-          <td>0.398506</td>
-          <td>0.981407</td>
-          <td>1.711100</td>
-          <td>1.141055</td>
-          <td>1.991123</td>
-          <td>0.470454</td>
-          <td>0.601865</td>
-          <td>0.481864</td>
-          <td>0.636275</td>
-          <td>0.795344</td>
-          <td>0.751778</td>
-          <td>0.794664</td>
-          <td>0.745535</td>
-          <td>0.994745</td>
-          <td>0.990863</td>
-          <td>0.993890</td>
-          <td>0.989368</td>
-          <td>0.118716</td>
-          <td>0.103852</td>
-          <td>0.118967</td>
-          <td>0.102996</td>
-          <td>2.032095</td>
-          <td>3.256446</td>
-          <td>2.022826</td>
-          <td>3.435038</td>
-          <td>1.027862</td>
-          <td>1.291212</td>
-          <td>1.010441</td>
-          <td>1.315388</td>
-          <td>0.571921</td>
-          <td>0.511880</td>
-          <td>0.577136</td>
-          <td>0.507679</td>
-          <td>0.954380</td>
-          <td>0.926691</td>
-          <td>0.954430</td>
-          <td>0.922658</td>
-          <td>0.026097</td>
-          <td>0.022120</td>
-          <td>0.026564</td>
-          <td>0.022041</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-    <br />
-    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-62
 
@@ -543,21 +110,11 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
     )
 
 
-
-.. image:: /auto_examples/image/images/sphx_glr_compute_texture_features_001.png
-    :alt: texture_ch-0_contrast_dist-1_angle-0.00, texture_ch-1_contrast_dist-1_angle-0.00
-    :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  55.796 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  768 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:
@@ -579,10 +136,3 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
   .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: compute_texture_features.ipynb <compute_texture_features.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

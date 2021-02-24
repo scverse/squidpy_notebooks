@@ -7,16 +7,16 @@
 
 .. only:: html
 
-    .. note::
-        :class: sphx-glr-download-link-note
+  .. container:: binder-badge
 
-        Click :ref:`here <sphx_glr_download_auto_tutorials_tutorial_visium_fluo.py>`
-        to download the full example code
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_tutorials/tutorial_visium_fluo.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 .. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_tutorials_tutorial_visium_fluo.py:
-
 
 Analyze Visium fluorescence data
 ================================
@@ -70,21 +70,6 @@ To run the notebook locally, create a conda environment as *conda create -f envi
     adata = sq.datasets.visium_fluo_adata_crop()
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    scanpy==1.7.0rc1 anndata==0.7.5 umap==0.4.6 numpy==1.20.1 scipy==1.6.0 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
-    squidpy==0.0.0
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 51-56
 
 First, let's visualize the cluster annotation in the spatial context
@@ -102,16 +87,6 @@ We provide this crop to make the execution time of this tutorial a bit shorter.
 
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_001.png
-    :alt: cluster
-    :class: sphx-glr-single-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 The fluorescence image provided with this dataset has three channels:
@@ -126,16 +101,6 @@ We can directly visualize the channels with the method :meth:`squidpy.im.ImageCo
     fig, axes = plt.subplots(1, 3)
     for i, ax in enumerate(axes):
         img.show(channel=i, ax=ax)
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_002.png
-    :alt: tutorial visium fluo
-    :class: sphx-glr-single-img
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-100
@@ -195,16 +160,6 @@ for more details on how to calculate a segmented image.
     )
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_003.png
-    :alt: tutorial visium fluo
-    :class: sphx-glr-single-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 120-135
 
 The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
@@ -253,26 +208,6 @@ the docs of :func:`squidpy.im.calculate_image_features` or the example at
         frameon=False,
         ncols=2,
     )
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_004.png
-    :alt: segmentation_label, cluster, segmentation_ch-0_mean_intensity_mean, segmentation_ch-1_mean_intensity_mean
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 163-189
@@ -336,24 +271,6 @@ For more information on these features, refer to:
 
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-      0%|          | 0/704 [00:00<?, ?/s]
-      0%|          | 0/704 [00:00<?, ?/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 217-221
 
 We can use the extracted image features to compute a new cluster annotation.
@@ -388,12 +305,6 @@ For this, we first define a helper function to cluster features.
 
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 244-245
 
 Then, we calculate feature clusters using different features and compare them to gene clusters
@@ -420,16 +331,6 @@ Then, we calculate feature clusters using different features and compare them to
     )
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_005.png
-    :alt: features_summary_cluster, features_histogram_cluster, features_texture_cluster, cluster
-    :class: sphx-glr-single-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 263-275
 
 Like the gene-space clusters (bottom middle), the feature space clusters are also spatially coherent.
@@ -448,9 +349,9 @@ information to the gene-space clusters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  16.560 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  5195 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_fluo.py:
@@ -472,10 +373,3 @@ information to the gene-space clusters.
   .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: tutorial_visium_fluo.ipynb <tutorial_visium_fluo.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

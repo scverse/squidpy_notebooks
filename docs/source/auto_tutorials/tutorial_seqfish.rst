@@ -7,16 +7,16 @@
 
 .. only:: html
 
-    .. note::
-        :class: sphx-glr-download-link-note
+  .. container:: binder-badge
 
-        Click :ref:`here <sphx_glr_download_auto_tutorials_tutorial_seqfish.py>`
-        to download the full example code
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_tutorials/tutorial_seqfish.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 .. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_tutorials_tutorial_seqfish.py:
-
 
 Analyze seqFISH data
 ====================
@@ -53,21 +53,6 @@ To run the notebook locally, create a conda environment as *conda create -f envi
     adata = sq.datasets.seqfish()
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    scanpy==1.7.0rc1 anndata==0.7.5 umap==0.4.6 numpy==1.20.1 scipy==1.6.0 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
-    squidpy==0.0.0
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 First, let's visualize cluster annotation in spatial context
@@ -78,16 +63,6 @@ with :func:`scanpy.pl.spatial`.
 .. code-block:: default
 
     sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_001.png
-    :alt: celltype_mapped_refined
-    :class: sphx-glr-single-img
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-59
@@ -121,27 +96,6 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
     sq.gr.spatial_neighbors(adata)
     sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
     sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_002.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:527: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
-      col_ax = divider.append_axes("top", size="5%")
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-82
@@ -184,16 +138,6 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
     )
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_003.png
-    :alt: celltype_mapped_refined
-    :class: sphx-glr-single-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 98-121
 
 Co-occurrence across spatial dimensions
@@ -232,24 +176,6 @@ the argument ``clusters``. Then, we visualize the results with
         clusters="Lateral plate mesoderm",
         figsize=(10, 5),
     )
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_004.png
-    :alt: $\frac{p(exp|Lateral plate mesoderm)}{p(exp)}$
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/1 [00:00<?, ?/s]
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 131-140
@@ -309,28 +235,6 @@ for the adjusted p-value (with the ``alpha`` argument)
     )
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_005.png
-    :alt: Receptor-ligand test, $-\log_{10} ~ P$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
-      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-      0%|          | 0/100 [00:00<?, ?permutation/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 180-185
 
 The dotplot visualization provides an interesting set of candidate interactions
@@ -342,9 +246,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  23.672 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  1942 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:
@@ -366,10 +270,3 @@ and should be interpreted accordingly.
   .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: tutorial_seqfish.ipynb <tutorial_seqfish.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

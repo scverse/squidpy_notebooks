@@ -7,16 +7,16 @@
 
 .. only:: html
 
-    .. note::
-        :class: sphx-glr-download-link-note
+  .. container:: binder-badge
 
-        Click :ref:`here <sphx_glr_download_auto_examples_image_compute_segmentation_features.py>`
-        to download the full example code
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_segmentation_features.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 .. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_image_compute_segmentation_features.py:
-
 
 Extract segmentation features
 -----------------------------
@@ -51,12 +51,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     import matplotlib.pyplot as plt
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 Lets load a fluorescence Visium dataset.
@@ -70,12 +64,6 @@ Lets load a fluorescence Visium dataset.
     adata = sq.datasets.visium_fluo_adata_crop()
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Before calculating segmentation features, we need to first calculate a segmentation
@@ -87,12 +75,6 @@ using :func:`squidpy.im.segment`.
 
 
     sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 44-52
@@ -128,32 +110,6 @@ each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_aut
     )
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
-      return _methods._mean(a, axis=axis, dtype=dtype,
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
-      ret = ret.dtype.type(ret / rcount)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
-      ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
-      arrmean = um.true_divide(arrmean, div, out=arrmean, casting='unsafe',
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
-      ret = ret.dtype.type(ret / rcount)
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 70-71
 
 The result is stored in ``adata.obsm['segmentation_features']``.
@@ -165,98 +121,6 @@ The result is stored in ``adata.obsm['segmentation_features']``.
 
     adata.obsm["segmentation_features"].head()
 
-
-
-
-
-
-.. raw:: html
-
-    <div class="output_subarea output_html rendered_html output_result">
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>segmentation_label</th>
-          <th>segmentation_area_mean</th>
-          <th>segmentation_area_std</th>
-          <th>segmentation_ch-1_mean_intensity_mean</th>
-          <th>segmentation_ch-1_mean_intensity_std</th>
-          <th>segmentation_ch-2_mean_intensity_mean</th>
-          <th>segmentation_ch-2_mean_intensity_std</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>AAACGAGACGGTTGAT-1</th>
-          <td>17</td>
-          <td>175.176471</td>
-          <td>300.662843</td>
-          <td>5635.885562</td>
-          <td>3175.876203</td>
-          <td>8971.918171</td>
-          <td>194.956736</td>
-        </tr>
-        <tr>
-          <th>AAAGGGATGTAGCAAG-1</th>
-          <td>14</td>
-          <td>101.000000</td>
-          <td>132.257865</td>
-          <td>4915.193958</td>
-          <td>1666.696202</td>
-          <td>10136.992231</td>
-          <td>704.473874</td>
-        </tr>
-        <tr>
-          <th>AAATGGCATGTCTTGT-1</th>
-          <td>16</td>
-          <td>132.437500</td>
-          <td>204.011020</td>
-          <td>11347.535302</td>
-          <td>12316.129059</td>
-          <td>7818.805053</td>
-          <td>1331.060294</td>
-        </tr>
-        <tr>
-          <th>AAATGGTCAATGTGCC-1</th>
-          <td>10</td>
-          <td>220.000000</td>
-          <td>160.001250</td>
-          <td>3580.821392</td>
-          <td>43.125371</td>
-          <td>9878.047372</td>
-          <td>1358.796629</td>
-        </tr>
-        <tr>
-          <th>AAATTAACGGGTAGCT-1</th>
-          <td>8</td>
-          <td>200.750000</td>
-          <td>216.285546</td>
-          <td>8482.360154</td>
-          <td>8286.489959</td>
-          <td>10375.129194</td>
-          <td>3293.694436</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-    <br />
-    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-79
 
@@ -292,27 +156,6 @@ Here, we show all calculated segmentation features.
     )
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image:: /auto_examples/image/images/sphx_glr_compute_segmentation_features_001.png
-          :alt: ch0, ch1, ch2
-          :class: sphx-glr-multi-img
-
-    *
-
-      .. image:: /auto_examples/image/images/sphx_glr_compute_segmentation_features_002.png
-          :alt: segmentation_label, segmentation_area_mean, segmentation_ch-1_mean_intensity_mean, segmentation_ch-2_mean_intensity_mean
-          :class: sphx-glr-multi-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 102-106
 
 `segmentation_label` shows the number of nuclei per spot and `segmentation_area_mean` the mean are of nuclei per spot.
@@ -323,9 +166,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  4.515 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  2476 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:
@@ -347,10 +190,3 @@ these features show us Neuron and Glial cell dense areas.
   .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: compute_segmentation_features.ipynb <compute_segmentation_features.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_
