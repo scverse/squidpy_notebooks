@@ -2,10 +2,11 @@ name: squidpy
 channels:
 -   conda-forge
 dependencies:
--   python
+-   python=3.8
 -   pip
 -   pip:
     -   squidpy>=1.0.0
     -   esda>=2.3.1
     -   libpysal>=4.3.0
     -   astropy>=4.1
+    -   numba==0.52.0
