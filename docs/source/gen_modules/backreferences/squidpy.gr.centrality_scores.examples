@@ -5,25 +5,6 @@ Examples using ``squidpy.gr.centrality_scores``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute centrality scores, given a spatial graph and cell type annota...">
-
-.. only:: html
-
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_centrality_scores_thumb.png
-     :alt: Compute centrality scores
-
-     :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
 
 .. only:: html

@@ -44,7 +44,7 @@ A couple of notes on pre-processing:
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-47
@@ -76,8 +76,10 @@ To run the notebook locally, create a conda environment as *conda create -f envi
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.1 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
     squidpy==1.0.0
+      0%|          | 0.00/380M [00:00<?, ?B/s]      0%|          | 56.0k/380M [00:00<22:44, 292kB/s]      0%|          | 176k/380M [00:00<13:41, 485kB/s]       0%|          | 448k/380M [00:00<05:39, 1.17MB/s]      0%|          | 904k/380M [00:00<02:59, 2.22MB/s]      0%|          | 1.60M/380M [00:00<01:44, 3.81MB/s]      1%|          | 3.34M/380M [00:00<00:48, 8.11MB/s]      2%|1         | 6.29M/380M [00:00<00:26, 15.0MB/s]      2%|2         | 9.32M/380M [00:00<00:19, 20.0MB/s]      3%|3         | 12.4M/380M [00:01<00:16, 23.6MB/s]      4%|4         | 15.2M/380M [00:01<00:15, 25.4MB/s]      5%|4         | 18.2M/380M [00:01<00:13, 27.1MB/s]      6%|5         | 21.2M/380M [00:01<00:13, 28.6MB/s]      6%|6         | 24.3M/380M [00:01<00:12, 29.6MB/s]      7%|7         | 27.3M/380M [00:01<00:12, 30.3MB/s]      8%|7         | 30.1M/380M [00:01<00:12, 30.1MB/s]      9%|8         | 33.2M/380M [00:01<00:11, 30.5MB/s]     10%|9         | 36.2M/380M [00:01<00:11, 30.9MB/s]     10%|#         | 39.3M/380M [00:01<00:11, 31.1MB/s]     11%|#1        | 42.4M/380M [00:02<00:11, 31.5MB/s]     12%|#1        | 45.4M/380M [00:02<00:11, 31.7MB/s]     13%|#2        | 48.5M/380M [00:02<00:10, 32.0MB/s]     14%|#3        | 51.6M/380M [00:02<00:10, 32.1MB/s]     14%|#4        | 54.7M/380M [00:02<00:10, 32.0MB/s]     15%|#5        | 57.8M/380M [00:02<00:10, 32.2MB/s]     16%|#6        | 60.9M/380M [00:02<00:10, 32.3MB/s]     17%|#6        | 63.8M/380M [00:02<00:10, 31.8MB/s]     18%|#7        | 66.6M/380M [00:02<00:10, 30.9MB/s]     18%|#8        | 69.7M/380M [00:03<00:10, 31.4MB/s]     19%|#9        | 72.7M/380M [00:03<00:10, 31.5MB/s]     20%|#9        | 75.8M/380M [00:03<00:10, 31.7MB/s]     21%|##        | 78.8M/380M [00:03<00:09, 31.7MB/s]     21%|##1       | 81.6M/380M [00:03<00:10, 30.9MB/s]     22%|##2       | 84.6M/380M [00:03<00:09, 31.1MB/s]     23%|##3       | 87.7M/380M [00:03<00:09, 31.4MB/s]     24%|##3       | 90.7M/380M [00:03<00:09, 31.3MB/s]     25%|##4       | 93.8M/380M [00:03<00:09, 31.8MB/s]     25%|##5       | 96.9M/380M [00:03<00:09, 31.6MB/s]     26%|##6       | 99.9M/380M [00:04<00:09, 31.5MB/s]     27%|##7       | 103M/380M [00:04<00:09, 31.7MB/s]      28%|##7       | 106M/380M [00:04<00:10, 28.4MB/s]     29%|##8       | 109M/380M [00:04<00:09, 29.3MB/s]     29%|##9       | 112M/380M [00:04<00:09, 30.1MB/s]     30%|###       | 115M/380M [00:04<00:09, 30.6MB/s]     31%|###1      | 118M/380M [00:04<00:09, 29.2MB/s]     32%|###1      | 121M/380M [00:04<00:09, 29.6MB/s]     33%|###2      | 124M/380M [00:04<00:08, 30.1MB/s]     34%|###3      | 127M/380M [00:04<00:08, 30.7MB/s]     34%|###4      | 130M/380M [00:05<00:08, 30.9MB/s]     35%|###5      | 133M/380M [00:05<00:08, 30.6MB/s]     36%|###5      | 136M/380M [00:05<00:08, 31.0MB/s]     37%|###6      | 139M/380M [00:05<00:08, 31.3MB/s]     37%|###7      | 142M/380M [00:05<00:07, 31.4MB/s]     38%|###8      | 145M/380M [00:05<00:07, 31.3MB/s]     39%|###9      | 148M/380M [00:05<00:07, 31.4MB/s]     40%|###9      | 151M/380M [00:05<00:07, 31.7MB/s]     41%|####      | 154M/380M [00:05<00:07, 31.5MB/s]     41%|####1     | 157M/380M [00:05<00:07, 31.2MB/s]     42%|####2     | 160M/380M [00:06<00:07, 30.7MB/s]     43%|####2     | 163M/380M [00:06<00:07, 31.2MB/s]     44%|####3     | 166M/380M [00:06<00:07, 30.1MB/s]     44%|####4     | 169M/380M [00:06<00:07, 30.2MB/s]     45%|####5     | 172M/380M [00:06<00:07, 30.5MB/s]     46%|####6     | 175M/380M [00:06<00:06, 30.8MB/s]     47%|####6     | 178M/380M [00:06<00:06, 31.3MB/s]     48%|####7     | 181M/380M [00:06<00:06, 31.4MB/s]     48%|####8     | 184M/380M [00:06<00:06, 31.8MB/s]     49%|####9     | 187M/380M [00:06<00:06, 31.8MB/s]     50%|####9     | 190M/380M [00:07<00:06, 31.1MB/s]     51%|#####     | 193M/380M [00:07<00:06, 31.5MB/s]     52%|#####1    | 196M/380M [00:07<00:06, 31.6MB/s]     52%|#####2    | 199M/380M [00:07<00:06, 31.5MB/s]     53%|#####3    | 202M/380M [00:07<00:05, 31.6MB/s]     54%|#####4    | 205M/380M [00:07<00:05, 31.9MB/s]     55%|#####4    | 208M/380M [00:07<00:05, 31.7MB/s]     56%|#####5    | 211M/380M [00:07<00:05, 31.5MB/s]     56%|#####6    | 214M/380M [00:07<00:05, 31.4MB/s]     57%|#####7    | 217M/380M [00:07<00:05, 31.4MB/s]     58%|#####8    | 220M/380M [00:08<00:05, 31.5MB/s]     59%|#####8    | 223M/380M [00:08<00:05, 31.5MB/s]     60%|#####9    | 226M/380M [00:08<00:05, 31.4MB/s]     60%|######    | 229M/380M [00:08<00:05, 31.5MB/s]     61%|######1   | 232M/380M [00:08<00:04, 31.7MB/s]     62%|######2   | 236M/380M [00:08<00:04, 32.1MB/s]     63%|######2   | 239M/380M [00:08<00:04, 32.2MB/s]     64%|######3   | 242M/380M [00:08<00:04, 29.3MB/s]     64%|######4   | 245M/380M [00:08<00:04, 30.0MB/s]     65%|######5   | 248M/380M [00:09<00:04, 30.2MB/s]     66%|######6   | 251M/380M [00:09<00:04, 30.6MB/s]     67%|######6   | 254M/380M [00:09<00:04, 29.2MB/s]     68%|######7   | 257M/380M [00:09<00:04, 30.0MB/s]     68%|######8   | 260M/380M [00:09<00:04, 30.4MB/s]     69%|######9   | 263M/380M [00:09<00:03, 30.8MB/s]     70%|######9   | 266M/380M [00:09<00:03, 30.4MB/s]     71%|#######   | 269M/380M [00:09<00:03, 30.7MB/s]     72%|#######1  | 272M/380M [00:09<00:03, 31.2MB/s]     72%|#######2  | 275M/380M [00:09<00:03, 31.4MB/s]     73%|#######3  | 278M/380M [00:10<00:03, 31.7MB/s]     74%|#######3  | 281M/380M [00:10<00:03, 31.7MB/s]     75%|#######4  | 284M/380M [00:10<00:03, 31.2MB/s]     76%|#######5  | 287M/380M [00:10<00:03, 31.4MB/s]     76%|#######6  | 290M/380M [00:10<00:02, 31.8MB/s]     77%|#######7  | 293M/380M [00:10<00:02, 32.0MB/s]     78%|#######7  | 296M/380M [00:10<00:02, 31.4MB/s]     79%|#######8  | 299M/380M [00:10<00:02, 31.5MB/s]     80%|#######9  | 302M/380M [00:10<00:02, 31.5MB/s]     80%|########  | 305M/380M [00:10<00:02, 31.4MB/s]     81%|########1 | 308M/380M [00:11<00:02, 31.3MB/s]     82%|########1 | 311M/380M [00:11<00:02, 31.3MB/s]     83%|########2 | 314M/380M [00:11<00:02, 31.4MB/s]     84%|########3 | 317M/380M [00:11<00:02, 31.7MB/s]     84%|########4 | 320M/380M [00:11<00:01, 32.1MB/s]     85%|########5 | 323M/380M [00:11<00:01, 31.8MB/s]     86%|########5 | 327M/380M [00:11<00:01, 32.0MB/s]     87%|########6 | 329M/380M [00:11<00:01, 30.6MB/s]     87%|########7 | 332M/380M [00:11<00:01, 31.0MB/s]     88%|########8 | 335M/380M [00:11<00:01, 31.3MB/s]     89%|########9 | 338M/380M [00:12<00:01, 31.6MB/s]     90%|########9 | 341M/380M [00:12<00:01, 31.8MB/s]     91%|######### | 345M/380M [00:12<00:01, 32.0MB/s]     91%|#########1| 348M/380M [00:12<00:01, 32.1MB/s]     92%|#########2| 351M/380M [00:12<00:00, 31.9MB/s]     93%|#########3| 354M/380M [00:12<00:00, 31.9MB/s]     94%|#########3| 357M/380M [00:12<00:00, 31.8MB/s]     95%|#########4| 360M/380M [00:12<00:00, 31.9MB/s]     96%|#########5| 363M/380M [00:12<00:00, 31.9MB/s]     96%|#########6| 366M/380M [00:12<00:00, 32.1MB/s]     97%|#########7| 369M/380M [00:13<00:00, 32.0MB/s]     98%|#########7| 372M/380M [00:13<00:00, 32.3MB/s]     99%|#########8| 375M/380M [00:13<00:00, 31.6MB/s]    100%|#########9| 378M/380M [00:13<00:00, 29.3MB/s]    100%|##########| 380M/380M [00:13<00:00, 29.6MB/s]
+      0%|          | 0.00/314M [00:00<?, ?B/s]      0%|          | 56.0k/314M [00:00<18:52, 291kB/s]      0%|          | 144k/314M [00:00<14:09, 388kB/s]       0%|          | 376k/314M [00:00<05:35, 980kB/s]      0%|          | 616k/314M [00:00<03:51, 1.42MB/s]      0%|          | 1.21M/314M [00:00<01:52, 2.91MB/s]      1%|          | 2.57M/314M [00:00<00:51, 6.30MB/s]      2%|1         | 5.06M/314M [00:00<00:26, 12.2MB/s]      2%|2         | 7.56M/314M [00:00<00:19, 16.4MB/s]      3%|3         | 10.5M/314M [00:01<00:15, 20.7MB/s]      4%|4         | 13.5M/314M [00:01<00:13, 23.8MB/s]      5%|5         | 16.3M/314M [00:01<00:12, 25.6MB/s]      6%|6         | 19.3M/314M [00:01<00:11, 27.3MB/s]      7%|7         | 22.2M/314M [00:01<00:10, 28.4MB/s]      8%|8         | 25.4M/314M [00:01<00:10, 29.7MB/s]      9%|9         | 28.4M/314M [00:01<00:09, 30.3MB/s]     10%|#         | 31.4M/314M [00:01<00:09, 30.7MB/s]     11%|#         | 34.4M/314M [00:01<00:09, 30.7MB/s]     12%|#1        | 37.4M/314M [00:01<00:09, 31.1MB/s]     13%|#2        | 40.4M/314M [00:02<00:09, 31.1MB/s]     14%|#3        | 43.5M/314M [00:02<00:09, 31.5MB/s]     15%|#4        | 46.5M/314M [00:02<00:08, 31.3MB/s]     16%|#5        | 49.4M/314M [00:02<00:08, 31.0MB/s]     17%|#6        | 52.5M/314M [00:02<00:08, 31.5MB/s]     18%|#7        | 55.6M/314M [00:02<00:08, 31.6MB/s]     19%|#8        | 58.7M/314M [00:02<00:08, 32.0MB/s]     20%|#9        | 61.7M/314M [00:02<00:08, 31.8MB/s]     21%|##        | 64.6M/314M [00:02<00:08, 31.6MB/s]     22%|##1       | 67.6M/314M [00:03<00:08, 31.3MB/s]     22%|##2       | 70.6M/314M [00:03<00:09, 26.2MB/s]     23%|##3       | 73.6M/314M [00:03<00:09, 27.6MB/s]     24%|##4       | 76.7M/314M [00:03<00:08, 28.7MB/s]     25%|##5       | 79.6M/314M [00:03<00:08, 29.3MB/s]     26%|##6       | 82.6M/314M [00:03<00:08, 29.7MB/s]     27%|##7       | 85.7M/314M [00:03<00:07, 30.4MB/s]     28%|##8       | 88.6M/314M [00:03<00:07, 30.5MB/s]     29%|##9       | 91.7M/314M [00:03<00:07, 30.5MB/s]     30%|###       | 94.9M/314M [00:03<00:07, 31.1MB/s]     31%|###1      | 97.9M/314M [00:04<00:07, 31.5MB/s]     32%|###2      | 101M/314M [00:04<00:07, 31.4MB/s]      33%|###3      | 104M/314M [00:04<00:06, 32.0MB/s]     34%|###4      | 107M/314M [00:04<00:06, 32.4MB/s]     35%|###5      | 110M/314M [00:04<00:06, 32.1MB/s]     36%|###6      | 113M/314M [00:04<00:06, 32.3MB/s]     37%|###7      | 117M/314M [00:04<00:06, 32.5MB/s]     38%|###8      | 120M/314M [00:04<00:06, 32.1MB/s]     39%|###9      | 123M/314M [00:04<00:06, 31.9MB/s]     40%|####      | 126M/314M [00:04<00:06, 32.3MB/s]     41%|####1     | 129M/314M [00:05<00:06, 32.3MB/s]     42%|####2     | 132M/314M [00:05<00:05, 32.5MB/s]     43%|####3     | 135M/314M [00:05<00:05, 32.5MB/s]     44%|####4     | 138M/314M [00:05<00:05, 32.5MB/s]     45%|####4     | 141M/314M [00:05<00:06, 27.2MB/s]     46%|####5     | 144M/314M [00:05<00:06, 28.5MB/s]     47%|####6     | 147M/314M [00:05<00:06, 28.7MB/s]     48%|####7     | 150M/314M [00:05<00:05, 29.4MB/s]     49%|####8     | 153M/314M [00:05<00:05, 29.7MB/s]     50%|####9     | 156M/314M [00:06<00:05, 30.5MB/s]     51%|#####     | 160M/314M [00:06<00:05, 31.2MB/s]     52%|#####1    | 163M/314M [00:06<00:05, 31.5MB/s]     53%|#####2    | 166M/314M [00:06<00:04, 31.3MB/s]     54%|#####3    | 169M/314M [00:06<00:04, 31.9MB/s]     55%|#####4    | 172M/314M [00:06<00:04, 32.0MB/s]     56%|#####5    | 175M/314M [00:06<00:04, 31.8MB/s]     57%|#####6    | 178M/314M [00:06<00:04, 31.9MB/s]     58%|#####7    | 181M/314M [00:06<00:04, 32.1MB/s]     59%|#####8    | 184M/314M [00:06<00:04, 32.2MB/s]     60%|#####9    | 187M/314M [00:07<00:04, 32.5MB/s]     61%|######    | 191M/314M [00:07<00:03, 32.7MB/s]     62%|######1   | 194M/314M [00:07<00:03, 32.7MB/s]     63%|######2   | 197M/314M [00:07<00:03, 32.6MB/s]     64%|######3   | 200M/314M [00:07<00:03, 32.4MB/s]     65%|######4   | 203M/314M [00:07<00:04, 27.6MB/s]     66%|######5   | 206M/314M [00:07<00:04, 28.1MB/s]     67%|######6   | 209M/314M [00:07<00:03, 29.1MB/s]     68%|######7   | 212M/314M [00:07<00:03, 29.7MB/s]     68%|######8   | 215M/314M [00:08<00:03, 30.1MB/s]     69%|######9   | 218M/314M [00:08<00:03, 30.3MB/s]     70%|#######   | 221M/314M [00:08<00:03, 30.8MB/s]     71%|#######1  | 224M/314M [00:08<00:03, 31.1MB/s]     72%|#######2  | 227M/314M [00:08<00:02, 31.1MB/s]     73%|#######3  | 230M/314M [00:08<00:02, 31.3MB/s]     74%|#######4  | 233M/314M [00:08<00:02, 31.5MB/s]     75%|#######5  | 236M/314M [00:08<00:02, 30.9MB/s]     76%|#######6  | 239M/314M [00:08<00:02, 31.1MB/s]     77%|#######7  | 242M/314M [00:08<00:02, 31.4MB/s]     77%|#######7  | 242M/314M [00:09<00:03, 21.7MB/s]     78%|#######8  | 245M/314M [00:09<00:02, 24.3MB/s]     79%|#######8  | 248M/314M [00:09<00:02, 25.5MB/s]     80%|#######9  | 251M/314M [00:09<00:02, 27.3MB/s]     81%|########  | 254M/314M [00:09<00:02, 27.8MB/s]     82%|########1 | 257M/314M [00:09<00:02, 29.2MB/s]     83%|########2 | 260M/314M [00:09<00:01, 30.3MB/s]     84%|########3 | 263M/314M [00:09<00:01, 31.0MB/s]     85%|########4 | 266M/314M [00:09<00:01, 31.4MB/s]     86%|########5 | 269M/314M [00:09<00:01, 31.4MB/s]     87%|########6 | 272M/314M [00:10<00:01, 31.8MB/s]     88%|########7 | 275M/314M [00:10<00:01, 31.8MB/s]     89%|########8 | 278M/314M [00:10<00:01, 32.0MB/s]     90%|########9 | 281M/314M [00:10<00:01, 31.7MB/s]     91%|######### | 284M/314M [00:10<00:00, 31.9MB/s]     92%|#########1| 288M/314M [00:10<00:00, 32.1MB/s]     93%|#########2| 291M/314M [00:10<00:00, 32.2MB/s]     94%|#########3| 294M/314M [00:10<00:00, 32.2MB/s]     95%|#########4| 297M/314M [00:10<00:00, 32.4MB/s]     96%|#########5| 300M/314M [00:10<00:00, 32.0MB/s]     97%|#########6| 303M/314M [00:11<00:00, 32.3MB/s]     97%|#########6| 303M/314M [00:11<00:01, 11.0MB/s]     98%|#########7| 308M/314M [00:11<00:00, 16.6MB/s]     99%|#########8| 309M/314M [00:11<00:00, 17.1MB/s]     99%|#########9| 312M/314M [00:11<00:00, 20.4MB/s]    100%|##########| 314M/314M [00:11<00:00, 27.8MB/s]
 
 
 
@@ -352,6 +354,30 @@ Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
 
@@ -545,70 +571,70 @@ Genes have already been sorted by Moran's I statistic.
           <th>Olfm1</th>
           <td>0.763291</td>
           <td>0.0</td>
-          <td>0.000144</td>
+          <td>0.000125</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Plp1</th>
           <td>0.747660</td>
           <td>0.0</td>
-          <td>0.000121</td>
+          <td>0.000130</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Itpka</th>
           <td>0.727076</td>
           <td>0.0</td>
-          <td>0.000140</td>
+          <td>0.000164</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Snap25</th>
           <td>0.720987</td>
           <td>0.0</td>
-          <td>0.000125</td>
+          <td>0.000133</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Nnat</th>
           <td>0.708637</td>
           <td>0.0</td>
-          <td>0.000120</td>
+          <td>0.000147</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Ppp3ca</th>
           <td>0.693320</td>
           <td>0.0</td>
-          <td>0.000124</td>
+          <td>0.000101</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Chn1</th>
           <td>0.684957</td>
           <td>0.0</td>
-          <td>0.000101</td>
+          <td>0.000130</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Mal</th>
           <td>0.679775</td>
           <td>0.0</td>
-          <td>0.000110</td>
+          <td>0.000124</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Tmsb4x</th>
           <td>0.676719</td>
           <td>0.0</td>
-          <td>0.000120</td>
+          <td>0.000164</td>
           <td>0.0</td>
         </tr>
         <tr>
           <th>Cldn11</th>
           <td>0.674110</td>
           <td>0.0</td>
-          <td>0.000159</td>
+          <td>0.000137</td>
           <td>0.0</td>
         </tr>
       </tbody>
@@ -648,9 +674,9 @@ Interestingly, some of these genes seems to be related to the *pyramidal* layers
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  30.486 seconds)
+   **Total running time of the script:** ( 4 minutes  36.246 seconds)
 
-**Estimated memory usage:**  950 MB
+**Estimated memory usage:**  972 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_hne.py:

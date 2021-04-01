@@ -33,7 +33,7 @@ For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-31
@@ -60,8 +60,9 @@ To run the notebook locally, create a conda environment as *conda create -f envi
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.1 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
     squidpy==1.0.0
+      0%|          | 0.00/1.50M [00:00<?, ?B/s]      3%|3         | 48.0k/1.50M [00:00<00:06, 250kB/s]     10%|9         | 152k/1.50M [00:00<00:03, 419kB/s]      19%|#8        | 288k/1.50M [00:00<00:02, 572kB/s]     70%|#######   | 1.05M/1.50M [00:00<00:00, 2.39MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 2.26MB/s]
 
 
 
@@ -152,6 +153,30 @@ We visualize the result for two conditional groups, namely
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
 
@@ -317,9 +342,9 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  40.915 seconds)
+   **Total running time of the script:** ( 0 minutes  44.291 seconds)
 
-**Estimated memory usage:**  110 MB
+**Estimated memory usage:**  182 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_imc.py:

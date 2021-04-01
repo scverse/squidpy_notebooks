@@ -33,7 +33,7 @@ For details on how it was pre-processed, please refer to the original paper.
 
 Import packages & data
 ----------------------
-To run the notebook locally, create a conda environment as *conda create -f environment.yml* using this
+To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-33
@@ -62,8 +62,9 @@ To run the notebook locally, create a conda environment as *conda create -f envi
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.1 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
     squidpy==1.0.0
+      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 56.0k/30.7M [00:00<01:50, 291kB/s]      1%|          | 176k/30.7M [00:00<00:46, 681kB/s]       1%|1         | 408k/30.7M [00:00<00:24, 1.31MB/s]      3%|2         | 936k/30.7M [00:00<00:15, 2.06MB/s]      6%|6         | 1.98M/30.7M [00:00<00:06, 4.53MB/s]     13%|#3        | 4.00M/30.7M [00:00<00:03, 9.19MB/s]     23%|##2       | 7.05M/30.7M [00:00<00:01, 15.7MB/s]     33%|###2      | 10.1M/30.7M [00:00<00:01, 20.4MB/s]     43%|####2     | 13.1M/30.7M [00:01<00:00, 23.7MB/s]     53%|#####2    | 16.2M/30.7M [00:01<00:00, 26.1MB/s]     63%|######2   | 19.2M/30.7M [00:01<00:00, 27.9MB/s]     73%|#######2  | 22.3M/30.7M [00:01<00:00, 29.2MB/s]     83%|########2 | 25.5M/30.7M [00:01<00:00, 30.2MB/s]     93%|#########3| 28.5M/30.7M [00:01<00:00, 30.7MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 19.0MB/s]
 
 
 
@@ -249,6 +250,30 @@ the argument ``clusters``. Then, we visualize the results with
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
 
@@ -323,8 +348,13 @@ for the adjusted p-value (with the ``alpha`` argument)
 
  .. code-block:: none
 
+      0%|          | 0.00/8.94M [00:00<?, ?B/s]      0%|          | 32.0k/8.94M [00:00<00:30, 310kB/s]      1%|          | 80.0k/8.94M [00:00<00:23, 398kB/s]      1%|1         | 112k/8.94M [00:00<00:26, 355kB/s]       2%|1         | 160k/8.94M [00:00<00:23, 395kB/s]      2%|2         | 224k/8.94M [00:00<00:19, 473kB/s]      4%|4         | 400k/8.94M [00:00<00:10, 882kB/s]      8%|8         | 752k/8.94M [00:00<00:05, 1.69MB/s]     16%|#5        | 1.41M/8.94M [00:00<00:02, 3.24MB/s]     31%|###       | 2.77M/8.94M [00:00<00:01, 6.38MB/s]     61%|######1   | 5.49M/8.94M [00:01<00:00, 12.6MB/s]     91%|#########1| 8.18M/8.94M [00:01<00:00, 16.7MB/s]    100%|##########| 8.94M/8.94M [00:01<00:00, 7.90MB/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
+      return cls(include, exclude=exclude)._get(**kwargs)
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
       _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
+      0%|          | 0.00/1.39M [00:00<?, ?B/s]      2%|2         | 32.0k/1.39M [00:00<00:04, 308kB/s]      6%|5         | 80.0k/1.39M [00:00<00:03, 396kB/s]      8%|7         | 112k/1.39M [00:00<00:03, 355kB/s]      11%|#1        | 160k/1.39M [00:00<00:03, 395kB/s]     18%|#7        | 256k/1.39M [00:00<00:02, 583kB/s]     33%|###2      | 464k/1.39M [00:00<00:00, 1.06MB/s]     61%|######    | 864k/1.39M [00:00<00:00, 1.96MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 1.93MB/s]
+      0%|          | 0.00/2.60M [00:00<?, ?B/s]      1%|1         | 32.0k/2.60M [00:00<00:08, 308kB/s]      3%|3         | 80.0k/2.60M [00:00<00:06, 396kB/s]      7%|6         | 176k/2.60M [00:00<00:04, 633kB/s]      14%|#4        | 384k/2.60M [00:00<00:01, 1.17MB/s]     29%|##9       | 784k/2.60M [00:00<00:00, 2.12MB/s]     60%|#####9    | 1.55M/2.60M [00:00<00:00, 3.99MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 4.20MB/s]
       0%|          | 0/100 [00:00<?, ?permutation/s]
 
 
@@ -341,9 +371,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  36.160 seconds)
+   **Total running time of the script:** ( 1 minutes  55.997 seconds)
 
-**Estimated memory usage:**  1951 MB
+**Estimated memory usage:**  2002 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:
