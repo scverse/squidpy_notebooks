@@ -40,3 +40,19 @@ dataframe
 AnnData
 Tensorflow
 ligand
+uncommenting
+segmentations
+# CI
+ligands
+tori
+autocorrelation
+datasets
+parallelization
+interpretable
+CP
+Dentate
+gyrus
+Tangram
+sc
+centroid
+centroids
