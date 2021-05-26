@@ -56,3 +56,6 @@ Tangram
 sc
 centroid
 centroids
+# external tutorials
+StarDist
+convolutional
