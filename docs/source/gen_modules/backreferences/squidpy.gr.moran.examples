@@ -5,14 +5,14 @@ Examples using ``squidpy.gr.moran``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
-     :alt: Analyze Visium H&E data
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+     :ref:`sphx_glr_auto_examples_image_API.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``squidpy.gr.moran``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+ * :ref:`sphx_glr_auto_examples_image_API.py`

@@ -46,12 +46,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     import squidpy as sq
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 27-28
 
 Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
@@ -76,22 +70,6 @@ Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of cha
     )
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 44-45
 
 The result is stored in ``adata.obsm['histogram_features']``.
@@ -103,92 +81,6 @@ The result is stored in ``adata.obsm['histogram_features']``.
 
     adata.obsm["histogram_features"].head()
 
-
-
-
-
-
-.. raw:: html
-
-    <div class="output_subarea output_html rendered_html output_result">
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>histogram_ch-0_bin-0</th>
-          <th>histogram_ch-0_bin-1</th>
-          <th>histogram_ch-0_bin-2</th>
-          <th>histogram_ch-1_bin-0</th>
-          <th>histogram_ch-1_bin-1</th>
-          <th>histogram_ch-1_bin-2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>AAACGAGACGGTTGAT-1</th>
-          <td>28201</td>
-          <td>1649</td>
-          <td>2191</td>
-          <td>32041</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>AAAGGGATGTAGCAAG-1</th>
-          <td>30072</td>
-          <td>748</td>
-          <td>1221</td>
-          <td>31510</td>
-          <td>529</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>AAATGGCATGTCTTGT-1</th>
-          <td>29032</td>
-          <td>2252</td>
-          <td>757</td>
-          <td>30793</td>
-          <td>1002</td>
-          <td>246</td>
-        </tr>
-        <tr>
-          <th>AAATGGTCAATGTGCC-1</th>
-          <td>28672</td>
-          <td>2411</td>
-          <td>958</td>
-          <td>32041</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>AAATTAACGGGTAGCT-1</th>
-          <td>29996</td>
-          <td>1116</td>
-          <td>929</td>
-          <td>31367</td>
-          <td>674</td>
-          <td>0</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-    <br />
-    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 49-54
 
@@ -210,21 +102,11 @@ intensity values of channel 0 (DAPI stain) on the different bins.
     )
 
 
-
-.. image:: /auto_examples/image/images/sphx_glr_compute_histogram_features_001.png
-    :alt: histogram_ch-0_bin-0, histogram_ch-0_bin-1, histogram_ch-0_bin-2
-    :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.720 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  700 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:

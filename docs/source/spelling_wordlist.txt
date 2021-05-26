@@ -40,3 +40,16 @@ dataframe
 AnnData
 Tensorflow
 ligand
+ligands
+tori
+datasets
+subsetting
+parallelization
+interpretable
+img
+omics
+Tangram
+centroid
+centroids
+preprocessing
+sagittal

@@ -5,7 +5,7 @@ Examples using ``squidpy.gr.spatial_autocorr``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial autocorrelation statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
 
 .. only:: html
 

@@ -33,10 +33,10 @@ This section contains various examples for the :mod:`squidpy.im` module.
 
 ImageContainer
 --------------
-This section contains various examples for the :class:`squidpy.im.ImageContainer` class, which is the underlying datastructure for the :mod:`squidpy.im` module.
+This section contains various examples for the :class:`squidpy.im.ImageContainer` class, which is the underlying data structure for the :mod:`squidpy.im` module. See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` for an entry point to the ``ImageContainer``.
 
 .. nbgallery::
     :glob:
 
-    auto_examples/image/compute_image_container
-    auto_examples/image/compute_image_crops
+    auto_examples/image/compute_image_container_show
+    auto_examples/image/compute_crops

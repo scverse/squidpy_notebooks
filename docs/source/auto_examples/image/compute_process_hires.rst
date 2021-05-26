@@ -56,12 +56,6 @@ which can mitigate these effects.
     img = sq.datasets.visium_hne_image()
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 We will process the image by tiling it in crops of shape ``size = (1000, 1000)``.
@@ -72,12 +66,6 @@ We will process the image by tiling it in crops of shape ``size = (1000, 1000)``
 
 
     sq.im.process(img, layer="image", method="gray", size=1000)
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-43
@@ -97,21 +85,11 @@ Now we can look at the result on a cropped part of the image.
     _ = axes[1].set_title("grayscale")
 
 
-
-.. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
-    :alt: original, grayscale
-    :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.111 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  3473 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

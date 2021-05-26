@@ -5,6 +5,158 @@ Examples using ``squidpy.im.ImageContainer``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer to interact with image structured data.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_image_container_thumb.png
+     :alt: ImageContainer object
+
+     :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to convert an image layer to grayscale.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_gray_thumb.png
+     :alt: Convert to grayscale
+
+     :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to smooth an image layer of squidpy.im.ImageCo...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_smooth_thumb.png
+     :alt: Smooth an image
+
+     :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+     :alt: Process a high-resolution image
+
+     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+     :alt: Crop images with ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use squidpy.im.ImageContainer to interact with image structured data...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_thumb.png
+     :alt: ImageContainer object
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to store spatial datasets in anndata.AnnData.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
+     :alt: Import spatial data in AnnData and Squidpy
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="It is possible to acquire several consecutive image slices from the same tissue. Squidpy&#x27;s Imag...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
+     :alt: Use z-stacks with ImageContainer
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
 
 .. only:: html
@@ -21,3 +173,22 @@ Examples using ``squidpy.im.ImageContainer``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Analyze Visium fluorescence data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`

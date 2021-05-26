@@ -41,23 +41,6 @@ annotations. It's a descriptive statistics of the spatial graph.
     adata
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    AnnData object with n_obs × n_vars = 4668 × 34
-        obs: 'cell type'
-        uns: 'cell type_colors'
-        obsm: 'spatial'
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 First, we need to compute a connectivity matrix from spatial coordinates. We can use
@@ -68,12 +51,6 @@ First, we need to compute a connectivity matrix from spatial coordinates. We can
 .. code-block:: default
 
     sq.gr.spatial_neighbors(adata)
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-29
@@ -89,30 +66,11 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
     sq.pl.interaction_matrix(adata, cluster_key="cell type")
 
 
-
-.. image:: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
-    :alt: Interaction matrix
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.968 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  16 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_interaction_matrix.py:

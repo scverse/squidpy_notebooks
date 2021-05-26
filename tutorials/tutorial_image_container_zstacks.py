@@ -17,10 +17,10 @@ Use z-stacks with ImageContainer
 ================================
 In this example we showcase how to use z-stacks with ImageContainer
 
-It is possible to aquire several consecutive image slices from the same tissue.
-Squidpy's ImageContainer supports storing, processing, and visualisation of these z-stacks.
+It is possible to acquire several consecutive image slices from the same tissue.
+Squidpy's ImageContainer supports storing, processing, and visualization of these z-stacks.
 
-Here, we use the visisum 10x mouse brain saggital slices as an example of a z-stack image with two z dimensions.
+Here, we use the Visisum 10x mouse brain sagittal slices as an example of a z-stack image with two z dimensions.
 We will use the "hires" images contained in `adata`, but you could also use the original resolution tiff
 images in the ImageContainer.
 
@@ -60,7 +60,7 @@ for library_id in library_ids:
 # we will store a `library_id` column in `adata.obs` and associate each `library_id`
 # to a z dimension in the `ImageContainer`.
 #
-# For this, we will use `ad.concat` with `uns_merge=only` (to ensure that uns entries are correctly concatenated),
+# For this, we will use `ad.concat` with ``uns_merge=only`` (to ensure that `uns` entries are correctly concatenated),
 # `label='library_id'` and `keys=library_ids` (to create the necessary `adata.obs`.
 # To concatenate the individual ImageContainers, we just need to specify `library_ids=library_ids`
 # to `sq.im.ImageContainer.concat`.
@@ -88,10 +88,10 @@ img
 # and segmentation functions if we'd like to only process a specific `library_id`.
 
 ###############################################################################
-# Plot adata and ImageContainer
-# -----------------------------
+# Plot AnnData and ImageContainer
+# -------------------------------
 #
-# For using `sc.pl.spatial`, subset the adata to the desired `library_id`
+# For using `sc.pl.spatial`, subset the `adata` to the desired `library_id`
 
 library_id = library_ids[0]
 sc.pl.spatial(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
@@ -143,7 +143,7 @@ img.show("smooth2")
 # only the first library_id is smoothed. For the second, the original image was placed.
 #
 # if the processing function changes the number of dimensions, non-processed z dimensions will contain 0.
-# Lets see this behaviour with using method='gray', which moves from 3 channels (RGB) to one channel (gray).
+# Lets see this behavior with using method='gray', which moves from 3 channels (RGB) to one channel (gray).
 
 sq.im.process(img, layer="image", method="gray", layer_added="gray")
 img.show("gray", cmap="gray")
@@ -153,12 +153,12 @@ img.show("gray", cmap="gray")
 #
 # Calculate features from z-stacks
 # --------------------------------
-# Calculating features from zstack images is straight forward as well.
+# Calculating features from z-stack images is straight forward as well.
 # With more than one z dimension, the supplied `adata` needs to contain a `library_id` column on `adata.obs`
 # to allow the function to extract the features from the correct z dimension.
-# As of now, features can only be extracted on 2D, meanning from the z dimension that the current spot is located on.
+# As of now, features can only be extracted on 2D, meaning from the z dimension that the current spot is located on.
 #
-# The following call extracts features for each obs in adata, automatically choosing the correct z dimension in img.
+# The following call extracts features for each obs in `adata`, automatically choosing the correct z dimension in `img`.
 
 adata_crop = crop.subset(adata)
 sq.im.calculate_image_features(adata_crop, crop, layer="image", features="summary", n_jobs=4)

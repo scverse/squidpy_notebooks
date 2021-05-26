@@ -67,22 +67,6 @@ To run the notebook locally, create a conda environment as *conda env create -f 
     adata = sq.datasets.visium_hne_adata()
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    scanpy==1.8.0.dev88+g525f08f6 anndata==0.7.6 umap==0.5.1 numpy==1.20.2 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.1 pynndescent==0.5.2
-    squidpy==1.0.0
-      0%|          | 0.00/380M [00:00<?, ?B/s]      0%|          | 8.00k/380M [00:00<1:39:10, 67.0kB/s]      0%|          | 56.0k/380M [00:00<25:16, 263kB/s]         0%|          | 80.0k/380M [00:00<28:23, 234kB/s]      0%|          | 200k/380M [00:00<12:23, 536kB/s]       0%|          | 400k/380M [00:00<07:02, 942kB/s]      0%|          | 808k/380M [00:00<03:44, 1.77MB/s]      0%|          | 1.59M/380M [00:00<01:56, 3.41MB/s]      1%|          | 3.20M/380M [00:00<00:59, 6.70MB/s]      2%|1         | 5.98M/380M [00:01<00:32, 12.0MB/s]      2%|2         | 8.59M/380M [00:01<00:25, 15.1MB/s]      3%|3         | 11.6M/380M [00:01<00:21, 18.1MB/s]      4%|3         | 14.5M/380M [00:01<00:18, 20.4MB/s]      5%|4         | 17.4M/380M [00:01<00:17, 21.6MB/s]      5%|5         | 20.4M/380M [00:01<00:16, 22.7MB/s]      6%|6         | 23.1M/380M [00:01<00:16, 22.9MB/s]      7%|6         | 25.9M/380M [00:01<00:15, 23.2MB/s]      8%|7         | 28.8M/380M [00:02<00:15, 23.6MB/s]      8%|8         | 31.7M/380M [00:02<00:15, 24.0MB/s]      9%|9         | 34.6M/380M [00:02<00:15, 24.1MB/s]     10%|9         | 37.5M/380M [00:02<00:14, 24.4MB/s]     11%|#         | 40.5M/380M [00:02<00:14, 24.7MB/s]     11%|#1        | 43.5M/380M [00:02<00:14, 24.9MB/s]     12%|#2        | 46.4M/380M [00:02<00:13, 25.0MB/s]     13%|#2        | 49.2M/380M [00:02<00:14, 24.5MB/s]     14%|#3        | 51.9M/380M [00:03<00:14, 24.1MB/s]     14%|#4        | 54.8M/380M [00:03<00:14, 24.2MB/s]     15%|#5        | 57.6M/380M [00:03<00:13, 24.3MB/s]     16%|#5        | 60.3M/380M [00:03<00:14, 23.8MB/s]     17%|#6        | 63.2M/380M [00:03<00:13, 24.1MB/s]     17%|#7        | 66.1M/380M [00:03<00:13, 24.2MB/s]     18%|#8        | 68.9M/380M [00:03<00:13, 24.1MB/s]     19%|#8        | 71.7M/380M [00:03<00:13, 24.2MB/s]     20%|#9        | 74.6M/380M [00:04<00:13, 24.3MB/s]     20%|##        | 77.6M/380M [00:04<00:12, 24.5MB/s]     21%|##1       | 80.6M/380M [00:04<00:12, 24.5MB/s]     22%|##1       | 83.6M/380M [00:04<00:12, 24.8MB/s]     23%|##2       | 86.3M/380M [00:04<00:12, 24.7MB/s]     23%|##3       | 89.2M/380M [00:04<00:12, 24.6MB/s]     24%|##4       | 92.1M/380M [00:04<00:12, 24.7MB/s]     25%|##5       | 95.1M/380M [00:04<00:12, 24.8MB/s]     26%|##5       | 98.0M/380M [00:05<00:11, 24.9MB/s]     27%|##6       | 101M/380M [00:05<00:11, 24.8MB/s]      27%|##7       | 104M/380M [00:05<00:11, 24.7MB/s]     28%|##8       | 107M/380M [00:05<00:11, 24.9MB/s]     29%|##8       | 110M/380M [00:05<00:11, 24.6MB/s]     30%|##9       | 112M/380M [00:05<00:11, 24.5MB/s]     30%|###       | 115M/380M [00:05<00:11, 24.4MB/s]     31%|###1      | 118M/380M [00:05<00:11, 24.7MB/s]     32%|###1      | 121M/380M [00:06<00:10, 24.8MB/s]     33%|###2      | 124M/380M [00:06<00:10, 24.6MB/s]     33%|###3      | 127M/380M [00:06<00:10, 24.7MB/s]     34%|###4      | 130M/380M [00:06<00:10, 24.8MB/s]     35%|###4      | 133M/380M [00:06<00:10, 24.7MB/s]     36%|###5      | 136M/380M [00:06<00:10, 24.6MB/s]     36%|###6      | 139M/380M [00:06<00:10, 24.8MB/s]     37%|###7      | 142M/380M [00:06<00:10, 24.9MB/s]     38%|###7      | 144M/380M [00:07<00:10, 24.5MB/s]     39%|###8      | 147M/380M [00:07<00:09, 24.4MB/s]     39%|###9      | 150M/380M [00:07<00:09, 24.4MB/s]     40%|####      | 153M/380M [00:07<00:09, 24.3MB/s]     41%|####      | 156M/380M [00:07<00:09, 24.2MB/s]     42%|####1     | 159M/380M [00:07<00:09, 24.3MB/s]     43%|####2     | 161M/380M [00:07<00:09, 24.5MB/s]     43%|####3     | 164M/380M [00:07<00:09, 24.6MB/s]     44%|####4     | 167M/380M [00:08<00:09, 24.6MB/s]     45%|####4     | 170M/380M [00:08<00:08, 24.7MB/s]     46%|####5     | 173M/380M [00:08<00:08, 24.8MB/s]     46%|####6     | 176M/380M [00:08<00:08, 24.5MB/s]     47%|####7     | 179M/380M [00:08<00:08, 24.4MB/s]     48%|####7     | 182M/380M [00:08<00:08, 24.5MB/s]     49%|####8     | 185M/380M [00:08<00:08, 24.5MB/s]     49%|####9     | 188M/380M [00:08<00:08, 24.6MB/s]     50%|#####     | 190M/380M [00:08<00:08, 24.6MB/s]     51%|#####     | 193M/380M [00:09<00:07, 24.8MB/s]     52%|#####1    | 196M/380M [00:09<00:07, 24.5MB/s]     52%|#####2    | 199M/380M [00:09<00:07, 24.1MB/s]     53%|#####3    | 202M/380M [00:09<00:07, 23.9MB/s]     54%|#####3    | 205M/380M [00:09<00:07, 24.1MB/s]     55%|#####4    | 208M/380M [00:09<00:07, 24.5MB/s]     55%|#####5    | 210M/380M [00:09<00:07, 24.1MB/s]     56%|#####6    | 213M/380M [00:09<00:07, 23.9MB/s]     57%|#####6    | 216M/380M [00:10<00:07, 24.0MB/s]     58%|#####7    | 219M/380M [00:10<00:07, 24.1MB/s]     58%|#####8    | 222M/380M [00:10<00:06, 24.4MB/s]     59%|#####9    | 225M/380M [00:10<00:06, 24.6MB/s]     60%|#####9    | 228M/380M [00:10<00:06, 24.6MB/s]     61%|######    | 230M/380M [00:10<00:06, 24.6MB/s]     61%|######1   | 233M/380M [00:10<00:06, 24.6MB/s]     62%|######2   | 236M/380M [00:10<00:06, 24.6MB/s]     63%|######2   | 239M/380M [00:11<00:05, 24.8MB/s]     64%|######3   | 242M/380M [00:11<00:05, 24.7MB/s]     64%|######4   | 245M/380M [00:11<00:05, 24.5MB/s]     65%|######5   | 248M/380M [00:11<00:05, 24.4MB/s]     66%|######5   | 251M/380M [00:11<00:05, 24.6MB/s]     67%|######6   | 254M/380M [00:11<00:05, 24.8MB/s]     68%|######7   | 257M/380M [00:11<00:05, 24.7MB/s]     68%|######8   | 259M/380M [00:11<00:05, 24.6MB/s]     69%|######9   | 262M/380M [00:12<00:05, 24.5MB/s]     70%|######9   | 265M/380M [00:12<00:04, 24.5MB/s]     71%|#######   | 268M/380M [00:12<00:04, 24.8MB/s]     71%|#######1  | 271M/380M [00:12<00:04, 24.7MB/s]     72%|#######2  | 274M/380M [00:12<00:04, 24.8MB/s]     73%|#######2  | 277M/380M [00:12<00:04, 24.9MB/s]     74%|#######3  | 280M/380M [00:12<00:04, 24.7MB/s]     74%|#######4  | 283M/380M [00:12<00:04, 24.6MB/s]     75%|#######5  | 286M/380M [00:13<00:03, 24.8MB/s]     76%|#######5  | 289M/380M [00:13<00:03, 24.9MB/s]     77%|#######6  | 291M/380M [00:13<00:03, 24.8MB/s]     77%|#######7  | 294M/380M [00:13<00:03, 24.4MB/s]     78%|#######8  | 297M/380M [00:13<00:03, 24.2MB/s]     79%|#######8  | 300M/380M [00:13<00:03, 24.3MB/s]     80%|#######9  | 303M/380M [00:13<00:03, 24.1MB/s]     80%|########  | 306M/380M [00:13<00:03, 24.0MB/s]     81%|########1 | 308M/380M [00:14<00:03, 24.1MB/s]     82%|########1 | 311M/380M [00:14<00:02, 24.2MB/s]     83%|########2 | 314M/380M [00:14<00:02, 24.3MB/s]     83%|########3 | 317M/380M [00:14<00:02, 24.6MB/s]     84%|########4 | 320M/380M [00:14<00:02, 24.7MB/s]     85%|########4 | 323M/380M [00:14<00:02, 24.7MB/s]     86%|########5 | 326M/380M [00:14<00:02, 24.6MB/s]     87%|########6 | 329M/380M [00:14<00:02, 24.6MB/s]     87%|########7 | 332M/380M [00:15<00:02, 24.6MB/s]     88%|########8 | 334M/380M [00:15<00:01, 24.6MB/s]     89%|########8 | 337M/380M [00:15<00:01, 24.5MB/s]     90%|########9 | 340M/380M [00:15<00:01, 24.7MB/s]     90%|######### | 343M/380M [00:15<00:01, 24.6MB/s]     91%|#########1| 346M/380M [00:15<00:01, 24.8MB/s]     92%|#########1| 349M/380M [00:15<00:01, 24.7MB/s]     93%|#########2| 352M/380M [00:15<00:01, 24.8MB/s]     93%|#########3| 355M/380M [00:16<00:01, 24.7MB/s]     94%|#########4| 358M/380M [00:16<00:00, 24.6MB/s]     95%|#########4| 361M/380M [00:16<00:00, 24.6MB/s]     96%|#########5| 364M/380M [00:16<00:00, 24.8MB/s]     96%|#########6| 366M/380M [00:16<00:00, 24.7MB/s]     97%|#########7| 369M/380M [00:16<00:00, 24.8MB/s]     98%|#########7| 372M/380M [00:16<00:00, 24.9MB/s]     99%|#########8| 375M/380M [00:16<00:00, 24.8MB/s]    100%|#########9| 378M/380M [00:17<00:00, 24.8MB/s]    100%|##########| 380M/380M [00:17<00:00, 23.4MB/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 First, let's visualize cluster annotation in spatial context
@@ -94,16 +78,6 @@ with :func:`scanpy.pl.spatial`.
 
 
     sc.pl.spatial(adata, color="cluster")
-
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_001.png
-    :alt: cluster
-    :class: sphx-glr-single-img
-
-
 
 
 
@@ -160,21 +134,6 @@ also refer to :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
 
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/2688 [00:00<?, ?/s]
-      0%|          | 0/2688 [00:00<?, ?/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 101-103
 
 We can use the extracted image features to compute a new cluster annotation.
@@ -212,16 +171,6 @@ This could be useful to gain insights in similarities across spots based on imag
     # compare feature and gene clusters
     sc.set_figure_params(facecolor="white", figsize=(8, 8))
     sc.pl.spatial(adata, color=["features_cluster", "cluster"])
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_002.png
-    :alt: features_cluster, cluster
-    :class: sphx-glr-single-img
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 133-143
@@ -275,24 +224,6 @@ Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enric
 
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_003.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/1000 [00:00<?, ?/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 176-180
 
 Given the spatial organization of the mouse brain coronal section,
@@ -332,48 +263,6 @@ Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
         clusters="Hippocampus",
         figsize=(8, 4),
     )
-
-
-
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_004.png
-    :alt: $\frac{p(exp|Hippocampus)}{p(exp)}$
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/1 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
-      mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
-      mpl_cm.register_cmap(_name + "_r", _cmap_r)
-
 
 
 
@@ -430,31 +319,6 @@ the *Hippocampus* cluster, and two target groups, *Pyramidal_layer_dentate_gyrus
 
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_005.png
-    :alt: Receptor-ligand test, $-\log_{10} ~ P$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/8.94M [00:00<?, ?B/s]      0%|          | 32.0k/8.94M [00:00<00:37, 249kB/s]      1%|          | 80.0k/8.94M [00:00<00:28, 322kB/s]      2%|2         | 192k/8.94M [00:00<00:16, 571kB/s]       5%|4         | 416k/8.94M [00:00<00:08, 1.03MB/s]      9%|9         | 864k/8.94M [00:00<00:04, 1.91MB/s]     19%|#9        | 1.72M/8.94M [00:00<00:02, 3.61MB/s]     39%|###8      | 3.45M/8.94M [00:00<00:00, 6.90MB/s]     67%|######6   | 5.96M/8.94M [00:01<00:00, 11.0MB/s]     93%|#########3| 8.33M/8.94M [00:01<00:00, 13.4MB/s]    100%|##########| 8.94M/8.94M [00:01<00:00, 7.83MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
-      return cls(include, exclude=exclude)._get(**kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
-      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-      0%|          | 0.00/1.39M [00:00<?, ?B/s]      2%|2         | 32.0k/1.39M [00:00<00:05, 250kB/s]      6%|5         | 80.0k/1.39M [00:00<00:04, 324kB/s]     13%|#3        | 192k/1.39M [00:00<00:02, 575kB/s]      26%|##5       | 368k/1.39M [00:00<00:01, 890kB/s]     53%|#####2    | 752k/1.39M [00:00<00:00, 1.65MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 2.21MB/s]
-      0%|          | 0.00/2.60M [00:00<?, ?B/s]      1%|1         | 32.0k/2.60M [00:00<00:11, 244kB/s]      3%|3         | 80.0k/2.60M [00:00<00:08, 313kB/s]      7%|7         | 192k/2.60M [00:00<00:04, 557kB/s]      14%|#3        | 368k/2.60M [00:00<00:02, 861kB/s]     28%|##8       | 752k/2.60M [00:00<00:01, 1.59MB/s]     55%|#####5    | 1.44M/2.60M [00:00<00:00, 2.90MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 3.32MB/s]
-      0%|          | 0/100 [00:00<?, ?permutation/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 255-260
 
 The dotplot visualization provides an interesting set of candidate ligand-receptor
@@ -503,20 +367,6 @@ For time reasons, we will evaluate a subset of the highly variable genes only.
 
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0/100 [00:00<?, ?/s]
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 295-297
 
 The results are saved in ``adata.uns['moranI']`` slot.
@@ -529,170 +379,6 @@ Genes have already been sorted by Moran's I statistic.
 
     adata.uns["moranI"].head(10)
 
-
-
-
-
-
-.. raw:: html
-
-    <div class="output_subarea output_html rendered_html output_result">
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>I</th>
-          <th>pval_norm</th>
-          <th>var_norm</th>
-          <th>pval_z_sim</th>
-          <th>pval_sim</th>
-          <th>var_sim</th>
-          <th>pval_norm_fdr_bh</th>
-          <th>pval_z_sim_fdr_bh</th>
-          <th>pval_sim_fdr_bh</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Olfm1</th>
-          <td>0.763291</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000294</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Plp1</th>
-          <td>0.747660</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000266</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Itpka</th>
-          <td>0.727076</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000291</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Snap25</th>
-          <td>0.720987</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000265</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Nnat</th>
-          <td>0.708637</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000244</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Ppp3ca</th>
-          <td>0.693320</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000273</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Chn1</th>
-          <td>0.684957</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000270</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Mal</th>
-          <td>0.679775</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000265</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Tmsb4x</th>
-          <td>0.676719</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000192</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-        <tr>
-          <th>Cldn11</th>
-          <td>0.674110</td>
-          <td>0.0</td>
-          <td>0.000131</td>
-          <td>0.0</td>
-          <td>0.009901</td>
-          <td>0.000237</td>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011648</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-    <br />
-    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 301-302
 
@@ -707,16 +393,6 @@ We can select few genes and visualize their expression levels in the tissue with
 
 
 
-
-
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_hne_006.png
-    :alt: Olfm1, Plp1, Itpka, cluster
-    :class: sphx-glr-single-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 307-308
 
 Interestingly, some of these genes seems to be related to the *pyramidal* layers and the *fiber tract*.
@@ -724,9 +400,9 @@ Interestingly, some of these genes seems to be related to the *pyramidal* layers
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 50 minutes  16.950 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  1686 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_hne.py:

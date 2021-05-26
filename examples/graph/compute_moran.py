@@ -3,9 +3,9 @@
 Compute Moran's I score
 -----------------------
 
-This example shows how to compute the Moran's I global spatial autocorrelation statistics.
+This example shows how to compute the Moran's I global spatial auto-correlation statistics.
 
-The Moran's I global spatial autocorrelation statistics evaluates whether
+The Moran's I global spatial auto-correlation statistics evaluates whether
 features (i.e. genes) shows a pattern that is clustered, dispersed or random
 in the tissue are under consideration.
 
@@ -43,5 +43,5 @@ adata.uns["moranI"].head(10)
 sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
 
 ###############################################################################
-# We could've also passed ``mode = 'geary'`` to compute a closely related autocorrelation statistic, `Geary's C
+# We could've also passed ``mode = 'geary'`` to compute a closely related auto-correlation statistic, `Geary's C
 # <https://en.wikipedia.org/wiki/Geary%27s_C>`_. See :func:`squidpy.gr.spatial_autocorr` for more information.

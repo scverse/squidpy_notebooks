@@ -48,24 +48,6 @@ All scores are descriptive statistics of the spatial graph.
     adata
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:03, 414kB/s]     10%|#         | 160k/1.50M [00:00<00:02, 617kB/s]      41%|####1     | 632k/1.50M [00:00<00:00, 1.91MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.20MB/s]
-
-    AnnData object with n_obs × n_vars = 4668 × 34
-        obs: 'cell type'
-        uns: 'cell type_colors'
-        obsm: 'spatial'
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 29-32
 
 This dataset contains cell type annotations in :attr:`anndata.AnnData.obs`, which are used for calculation of
@@ -80,12 +62,6 @@ centrality scores. First, we need to compute a connectivity matrix from spatial 
     sq.gr.spatial_neighbors(adata)
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 36-37
 
 Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
@@ -96,12 +72,6 @@ Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
 
 
     sq.gr.centrality_scores(adata, "cell type")
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-42
@@ -116,21 +86,11 @@ and visualize results with :func:`squidpy.pl.centrality_scores`.
     sq.pl.centrality_scores(adata, "cell type")
 
 
-
-.. image:: /auto_examples/graph/images/sphx_glr_compute_centrality_scores_001.png
-    :alt: Average clustering, Closeness centrality, Degree centrality
-    :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.148 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  24 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_centrality_scores.py:

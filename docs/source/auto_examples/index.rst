@@ -128,7 +128,7 @@ Graph
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial autocorrelation statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
 
 .. only:: html
 
@@ -224,27 +224,6 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
-     :alt: Crop images with ImageContainer
-
-     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_crops
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to convert an image layer to grayscale.">
 
 .. only:: html
@@ -305,6 +284,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_process_hires
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+     :alt: Crop images with ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_crops
 
 .. raw:: html
 
@@ -431,6 +431,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_segment_hne
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
+
+     :ref:`sphx_glr_auto_examples_image_API.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/API
 
 .. raw:: html
 

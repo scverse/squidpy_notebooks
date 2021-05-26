@@ -5,7 +5,64 @@ Examples using ``squidpy.gr.spatial_neighbors``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial autocorrelation statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute centrality scores, given a spatial graph and cell type annota...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_centrality_scores_thumb.png
+     :alt: Compute centrality scores
+
+     :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the interaction matrix.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_interaction_matrix_thumb.png
+     :alt: Compute interaction matrix
+
+     :ref:`sphx_glr_auto_examples_graph_compute_interaction_matrix.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_interaction_matrix.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to run the neighbors enrichment analysis routine.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_nhood_enrichment_thumb.png
+     :alt: Neighbors enrichment analysis
+
+     :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
 
 .. only:: html
 
@@ -21,6 +78,101 @@ Examples using ``squidpy.gr.spatial_neighbors``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute a spatial neighbors graph.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_spatial_neighbors_thumb.png
+     :alt: Building spatial neighbors graph
+
+     :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
+
+     :ref:`sphx_glr_auto_examples_image_API.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_API.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
+     :alt: Analyze Imaging Mass Cytometry data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
+     :alt: Analyze seqFISH data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to store spatial datasets in anndata.AnnData.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
+     :alt: Import spatial data in AnnData and Squidpy
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
 
 .. raw:: html
 
