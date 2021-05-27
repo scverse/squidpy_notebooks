@@ -56,7 +56,7 @@ img
 
 ###############################################################################
 # `img` now contains one layer, "img1". The default value of `dims` expects the image to have dimensions
-# `(y,x,channels)`.
+# `(y,x,channels)` or `(y,x,z,channels)`.
 # If the image has different dimensions, you can specify another strategy or a tuple of dimension names:
 
 arr1 = arr.transpose(2, 0, 1)
@@ -187,7 +187,7 @@ sq.im.ImageContainer.uncrop([crop2], shape=(50, 50)).show(layer="img1")
 img.data
 
 ###############################################################################
-# Whenever possible, image layers are represented as dask arrays.
+# Whenever possible, images are represented as lazy dask arrays.
 # This allows lazy computations, which only load and compute the data when it is required.
 #
 # Let us load an on-disk image that is provided by the :mod:squidpy.datasets` module:
