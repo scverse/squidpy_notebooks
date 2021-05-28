@@ -3,7 +3,7 @@
 Compute Sepal score
 -----------------------
 
-This example shows how to compute the Sepal score for sptially variable genes identification.
+This example shows how to compute the Sepal score for spatially variable genes identification.
 
 The Sepal score is a method that simulates a diffusion process to quantify spatial structure in tissue.
 See :cite:`andersson2021` for reference.
@@ -28,7 +28,7 @@ adata
 # maximum number of neighbors in your data (6 for an hexagonal grid like Visium)
 # with ``max_neighs = 6``.
 # - It is useful to filter out genes that are expressed in very few observations
-# and might be wrongly identified as being variable in space. If you are performing
+# and might be wrongly identified as being spatially variable. If you are performing
 # preprocessing with Scanpy, there is a convenient function that can be used BEFORE
 # normalization :func:`scanpy.pp.calculate_qc_metrics`. It computes several useful
 # summary statistics on both observation and feature axis. We will be using the
