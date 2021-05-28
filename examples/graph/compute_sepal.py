@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Compute Sepal score
------------------------
+-------------------
 
 This example shows how to compute the Sepal score for spatially variable genes identification.
 
