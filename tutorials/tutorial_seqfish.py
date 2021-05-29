@@ -57,7 +57,7 @@ sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 # We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
-sq.gr.spatial_neighbors(adata)
+sq.gr.spatial_neighbors(adata, coord_type="generic")
 sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
 sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
 
