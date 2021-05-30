@@ -61,5 +61,5 @@ Delaunay
 Merfish
 preoptic
 Slide
-seqV2
+seqV
 hypothalamic
