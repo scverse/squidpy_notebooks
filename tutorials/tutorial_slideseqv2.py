@@ -7,8 +7,7 @@ This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.
 
 The data used here was obtained from :cite:`Stickels2020-rf`.
 We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format.
-We would like to thank Dr. Aleksandrina Goeva and Dr. Evan Macosko for providing
-cell-type level annotation.
+We would like to thank @tudaga for providing cell-type level annotation.
 For details on how it was pre-processed, please refer to the original paper.
 
 .. seealso::
