@@ -137,6 +137,27 @@ Tutorials
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to MIBI-TOF data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
+     :alt: Pre-process MIBI-TOF data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_mibitof
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
 
 .. only:: html

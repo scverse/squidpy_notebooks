@@ -44,7 +44,7 @@ import numpy as np
 # - `dims`, to specify which dimensions `img` has. There are
 # - `lazy`, set to True to allow lazy computations
 # - `scale`, set this to the scaling factor between the image and the coordinates saved
-#    in `adata.obsm['spatial']` to allow correct mapping between the image and the observations in `adata`.
+# in `adata.obsm['spatial']` to allow correct mapping between the image and the observations in `adata`.
 #
 # Let us see these arguments in action with a toy example.
 arr = np.ones((100, 100, 3))
@@ -68,7 +68,7 @@ img
 # Add layers to ImageContainer
 # ----------------------------
 #
-# You can add image layers into the ImageContainer using :meth:``squidpy.im.ImageContainer.add_img``.
+# You can add image layers into the ImageContainer using :meth:`squidpy.im.ImageContainer.add_img`.
 #
 # The new layer has to share `x`, `y` (and `z`) dimensions with the already existing image.
 # It can have different channel dimensions. This is useful for add e.g., segmentation masks.

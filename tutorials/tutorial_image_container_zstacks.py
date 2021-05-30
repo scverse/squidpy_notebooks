@@ -20,7 +20,7 @@ In this example we showcase how to use z-stacks with :class:`squidpy.im.ImageCon
 It is possible to acquire several consecutive image slices from the same tissue.
 Squidpy's `ImageContainer` supports storing, processing, and visualization of these z-stacks.
 
-Here, we use the Visisum 10x mouse brain sagittal slices as an example of a z-stack image with two Z dimensions.
+Here, we use the Visium 10x mouse brain sagittal slices as an example of a z-stack image with two Z dimensions.
 We will use the "hires" images contained in the :class:`anndata.AnnData` object, but you could also use the
 original resolution tiff images in the `ImageContainer`.
 
@@ -89,7 +89,7 @@ print(img["image"].z)
 img
 
 ###############################################################################
-# It is also possible to initialise the `ImageContainer` with images that already contain the Z dimension.
+# It is also possible to initialize the `ImageContainer` with images that already contain the Z dimension.
 # In this case you need to specify the ``library_id`` argument in the constructor.
 # In addition, you might want to set ``dims`` to the correct ordering of dimensions manually for more control.
 
@@ -108,7 +108,7 @@ img2
 # Visualization
 # -------------
 #
-# For using `sc.pl.spatial`, subset the `adata` to the desired `library_id`
+# For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_id`
 
 library_id = library_ids[0]
 sc.pl.spatial(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
@@ -120,7 +120,7 @@ sc.pl.spatial(adata[adata.obs["library_id"] == library_id], library_id=library_i
 img.show()
 
 ###############################################################################
-# Interactive visualisation of z-stacks is also possible.
+# Interactive visualization of z-stacks is also possible.
 # The Napari viewer will have a slider at the bottom, allowing you to choose the Z dimension to display.
 # The `adata` observations are automatically updated to the current Z dimension.
 #

@@ -16,6 +16,7 @@ to a diverse set of different spatial datasets.
     auto_tutorials/tutorial_seqfish
     auto_tutorials/tutorial_visium_fluo
     auto_tutorials/tutorial_visium_hne
+    auto_tutorials/tutorial_mibitof
 
 Advanced Tutorials
 ------------------

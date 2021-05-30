@@ -115,15 +115,13 @@ Note the number of observations in ``adata`` before and after subsetting.
     adata_crop
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-68
+.. GENERATED FROM PYTHON SOURCE LINES 61-66
 
-Visualise the result in napari:
+Visualize the result in napari:
 
 .. code-block:: python
 
-    import napari
-    with napari.gui_qt():
-        crop_corner.interactive(adata_crop)
+       crop_corner.interactive(adata_crop)
 
 
 .. rst-class:: sphx-glr-timing

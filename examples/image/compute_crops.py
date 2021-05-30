@@ -62,6 +62,4 @@ adata_crop
 #
 # .. code-block:: python
 #
-#     import napari
-#     with napari.gui_qt():
-#         crop_corner.interactive(adata_crop)
+#        crop_corner.interactive(adata_crop)
