@@ -6,4 +6,4 @@ dependencies:
 -   pip
 -   pip:
     -   squidpy
-    -   cellpose
+    -   cellpose==0.6.2
