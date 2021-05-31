@@ -40,3 +40,4 @@ dataframe
 AnnData
 Tensorflow
 ligand
+Cellpose
