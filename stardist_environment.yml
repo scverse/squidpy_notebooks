@@ -3,10 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - pip=21.1.1
-  - python=3.8
+  - python>=3.8
   - pip:
     - squidpy==1.0.1.dev17+g6ba1291
     - stardist==0.6.2
     - tensorflow==2.4.1
-
 
