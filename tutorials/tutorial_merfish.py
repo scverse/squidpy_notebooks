@@ -78,6 +78,19 @@ sc.pl.embedding(
 )
 
 ###############################################################################
+# We can also visualize gene expression in 3D coordinates. Let's perform differential
+# expression testing with :fun:`scanpy.tl.rank_genes_groups` and visualize the results
+
+sc.tl.rank_genes_groups(adata, groupby="Cell_class")
+sc.pl.rank_genes_groups(adata, groupby="Cell_class")
+
+###############################################################################
+# And the expression in 3D
+
+sc.pl.embedding(adata, basis="spatial3d", projection="3d", color=["Gad1", "Mlc1"])
+
+
+###############################################################################
 # If the same analysis should be performed on a single slice, then it is advisable to
 # copy the sample of interest in a new :class:`anndata.AnnData` and use it as
 # a standard 2D spatial data object.
