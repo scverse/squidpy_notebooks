@@ -2,7 +2,7 @@ name: stardist_environment
 channels:
   - conda-forge
 dependencies:
-  - pip=21.1.1
+  - pip
   - python>=3.8
   - pip:
     - squidpy
