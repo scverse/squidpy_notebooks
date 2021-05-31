@@ -1,10 +1,10 @@
 name: stardist_environment
 channels:
-  - conda-forge
+-   conda-forge
 dependencies:
-  - pip
-  - python>=3.8
-  - pip:
-    - squidpy
-    - stardist==0.6.2
-    - tensorflow==2.4.1
+-   pip
+-   python>=3.8
+-   pip:
+    -   squidpy
+    -   stardist==0.6.2
+    -   tensorflow==2.4.1
