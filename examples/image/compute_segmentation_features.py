@@ -8,7 +8,8 @@ This example shows how to extract segmentation features from the tissue image.
 Features extracted from a nucleus segmentation range from the number of nuclei per image,
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
-Use ``features='segmentation'`` to calculate the features.
+Segmentation features are calculated by using ``features = 'segmentation'``,
+which calls :func:`squidpy.im.ImageContainer.features_segmentation`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
