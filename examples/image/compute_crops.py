@@ -46,7 +46,8 @@ crop_center.show(ax=axes[1])
 crop_corner
 
 ###############################################################################
-# You can subset the associated ``adata`` to the cropped image:
+# You can subset the associated ``adata`` to the cropped image using
+# :meth:`squidpy.im.ImageContainer.subset`:
 
 adata = sq.datasets.visium_fluo_adata_crop()
 adata
