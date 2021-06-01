@@ -157,6 +157,7 @@ sphinx_gallery_conf = {
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
     "external_tutorials/**": "_static/img/squidpy_vertical.png",
+    "external_tutorials/tutorial_cellprofiler": "_static/img/cellprofiler_icon.png",
 }
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
