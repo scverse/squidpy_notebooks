@@ -142,7 +142,7 @@ Tutorials
 .. only:: html
 
  .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
-     :alt: Pre-process MIBI-TOF data
+     :alt: Analyze images of MIBI-TOF data
 
      :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
 

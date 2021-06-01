@@ -42,6 +42,12 @@ This calls :func:`skimage.color.rgb2gray` in the background.
     import matplotlib.pyplot as plt
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 23-27
 
 First, we load an H&E stained tissue image.
@@ -54,6 +60,12 @@ In general, :func:`squidpy.im.process` can also process very large images
 .. code-block:: default
 
     img = sq.datasets.visium_hne_image_crop()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-37
@@ -80,11 +92,21 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
     _ = axes[1].set_title("grayscale")
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_gray_001.png
+    :alt: original, grayscale
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  13.491 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  942 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

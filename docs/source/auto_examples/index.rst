@@ -287,28 +287,7 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
-     :alt: Extract custom features
-
-     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_custom_features
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.calculate_image_features.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract texture features from the tissue image.">
 
 .. only:: html
 
@@ -389,6 +368,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_summary_features
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
+     :alt: Extract custom features
+
+     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_custom_features
 
 .. raw:: html
 

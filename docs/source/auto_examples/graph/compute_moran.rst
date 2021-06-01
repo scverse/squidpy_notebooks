@@ -45,6 +45,26 @@ in the tissue are under consideration.
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 2688 × 18078
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_mt', 'log1p_total_counts_mt', 'pct_counts_mt', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'rank_genes_groups', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 26-29
 
 We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and ``mode = 'moran'``.
@@ -68,6 +88,178 @@ We will also subset the number of genes to evaluate.
     adata.uns["moranI"].head(10)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/100 [00:00<?, ?/s]
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>I</th>
+          <th>pval_norm</th>
+          <th>var_norm</th>
+          <th>pval_z_sim</th>
+          <th>pval_sim</th>
+          <th>var_sim</th>
+          <th>pval_norm_fdr_bh</th>
+          <th>pval_z_sim_fdr_bh</th>
+          <th>pval_sim_fdr_bh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>3110035E14Rik</th>
+          <td>0.665132</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000253</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Resp18</th>
+          <td>0.649582</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000299</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>1500015O10Rik</th>
+          <td>0.605940</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000252</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Ecel1</th>
+          <td>0.570304</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000231</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>2010300C02Rik</th>
+          <td>0.539469</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000208</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Scg2</th>
+          <td>0.476060</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000165</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Ogfrl1</th>
+          <td>0.457945</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000174</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Itm2c</th>
+          <td>0.451842</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000165</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Tuba4a</th>
+          <td>0.451810</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000164</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+        <tr>
+          <th>Satb2</th>
+          <td>0.429162</td>
+          <td>0.0</td>
+          <td>0.000131</td>
+          <td>0.0</td>
+          <td>0.009901</td>
+          <td>0.000202</td>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.011929</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 We can visualize some of those genes with :func:`scanpy.pl.spatial`.
@@ -79,6 +271,16 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
     sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
 
 
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_moran_001.png
+    :alt: Resp18, Tuba4a
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 We could've also passed ``mode = 'geary'`` to compute a closely related auto-correlation statistic, `Geary's C
@@ -87,9 +289,9 @@ We could've also passed ``mode = 'geary'`` to compute a closely related auto-cor
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  31.834 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  561 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_moran.py:

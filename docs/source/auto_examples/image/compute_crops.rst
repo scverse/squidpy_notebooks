@@ -43,6 +43,12 @@ Specifically, it shows how to use:
     import matplotlib.pyplot as plt
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 Load a fluorescence Visium image.
@@ -52,6 +58,12 @@ Load a fluorescence Visium image.
 .. code-block:: default
 
     img = sq.datasets.visium_fluo_image_crop()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-34
@@ -77,6 +89,16 @@ In addition, you can specify a scaling factor for the crop.
     crop_center.show(ax=axes[1])
 
 
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
+    :alt: image, image
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 44-45
 
 The result of the cropping functions is another ImageContainer
@@ -88,6 +110,18 @@ The result of the cropping functions is another ImageContainer
 
     crop_corner
 
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    ImageContainer object with 1 layer:<p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image</strong>: <em>y</em> (800), <em>x</em> (800), <em>z</em> (1), <em>channels</em> (3)</p>
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 49-51
 
@@ -103,6 +137,26 @@ You can subset the associated ``adata`` to the cropped image using
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 704 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 56-57
 
 Note the number of observations in ``adata`` before and after subsetting.
@@ -116,6 +170,26 @@ Note the number of observations in ``adata`` before and after subsetting.
     adata_crop
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 7 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 Visualize the result in napari:
@@ -127,9 +201,9 @@ Visualize the result in napari:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  35.007 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  355 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

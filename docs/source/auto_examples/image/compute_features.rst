@@ -61,13 +61,50 @@ the **obs x genes** spatial gene expression matrix.
     adata = sq.datasets.visium_hne_adata_crop()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 The high-resolution tissue image is contained in ``img['image']``,
 and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 We can plot the spots overlayed on a lower-resolution version of the tissue image contained in ``adata``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-53
+.. GENERATED FROM PYTHON SOURCE LINES 45-55
 
 .. code-block:: default
 
@@ -79,8 +116,35 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
     sc.set_figure_params(figsize=(4, 4))
     sc.pl.spatial(adata, add_outline=True)
 
+    # sq.im.calculate_image_features?
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-68
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_001.png
+    :alt: compute features
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ImageContainer[shape=(3527, 3527), layers=['image']]
+    [[1575   98]
+     [2538 1774]
+     [1850   98]
+     ...
+     [2263 1534]
+     [2401 1055]
+     [2676 1774]]
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 56-70
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
@@ -97,7 +161,7 @@ With these arguments you can
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-74
+.. GENERATED FROM PYTHON SOURCE LINES 70-76
 
 .. code-block:: default
 
@@ -108,14 +172,154 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     adata.obsm["features"].head()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>summary_ch-0_quantile-0.9</th>
+          <th>summary_ch-0_quantile-0.5</th>
+          <th>summary_ch-0_quantile-0.1</th>
+          <th>summary_ch-0_mean</th>
+          <th>summary_ch-0_std</th>
+          <th>summary_ch-1_quantile-0.9</th>
+          <th>summary_ch-1_quantile-0.5</th>
+          <th>summary_ch-1_quantile-0.1</th>
+          <th>summary_ch-1_mean</th>
+          <th>summary_ch-1_std</th>
+          <th>summary_ch-2_quantile-0.9</th>
+          <th>summary_ch-2_quantile-0.5</th>
+          <th>summary_ch-2_quantile-0.1</th>
+          <th>summary_ch-2_mean</th>
+          <th>summary_ch-2_std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAAGACCCAAGTCGCG-1</th>
+          <td>140.0</td>
+          <td>112.0</td>
+          <td>78.0</td>
+          <td>110.332029</td>
+          <td>24.126489</td>
+          <td>108.0</td>
+          <td>80.0</td>
+          <td>53.0</td>
+          <td>80.129908</td>
+          <td>21.863844</td>
+          <td>140.0</td>
+          <td>115.0</td>
+          <td>90.0</td>
+          <td>115.145057</td>
+          <td>19.554108</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>144.0</td>
+          <td>114.0</td>
+          <td>90.0</td>
+          <td>115.557253</td>
+          <td>21.279808</td>
+          <td>107.0</td>
+          <td>77.0</td>
+          <td>56.0</td>
+          <td>79.957329</td>
+          <td>20.546552</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>88.0</td>
+          <td>113.362959</td>
+          <td>21.422890</td>
+        </tr>
+        <tr>
+          <th>AAAGTCACTGATGTAA-1</th>
+          <td>139.0</td>
+          <td>115.0</td>
+          <td>84.0</td>
+          <td>112.740563</td>
+          <td>22.550223</td>
+          <td>121.0</td>
+          <td>94.0</td>
+          <td>66.0</td>
+          <td>93.735134</td>
+          <td>22.459672</td>
+          <td>141.0</td>
+          <td>118.0</td>
+          <td>93.0</td>
+          <td>117.298447</td>
+          <td>19.089482</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>138.0</td>
+          <td>109.0</td>
+          <td>74.0</td>
+          <td>107.372175</td>
+          <td>24.896688</td>
+          <td>101.0</td>
+          <td>71.0</td>
+          <td>45.0</td>
+          <td>72.320288</td>
+          <td>21.589912</td>
+          <td>142.0</td>
+          <td>111.0</td>
+          <td>85.0</td>
+          <td>112.642091</td>
+          <td>21.896309</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>146.0</td>
+          <td>113.0</td>
+          <td>84.0</td>
+          <td>113.296553</td>
+          <td>24.740431</td>
+          <td>112.0</td>
+          <td>77.0</td>
+          <td>53.0</td>
+          <td>80.073602</td>
+          <td>22.858352</td>
+          <td>144.0</td>
+          <td>113.0</td>
+          <td>89.0</td>
+          <td>115.193915</td>
+          <td>20.901613</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 77-81
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 
 Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-85
+.. GENERATED FROM PYTHON SOURCE LINES 81-87
 
 .. code-block:: default
 
@@ -126,7 +330,17 @@ Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-102
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_002.png
+    :alt: summary_ch-0_quantile-0.5, summary_ch-0_quantile-0.5, summary_ch-2_quantile-0.5
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 88-104
 
 Specify crop appearance
 =======================
@@ -145,7 +359,7 @@ For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_
 
 Let us extract masked and scaled features and compare them
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-142
+.. GENERATED FROM PYTHON SOURCE LINES 104-144
 
 .. code-block:: default
 
@@ -190,11 +404,21 @@ Let us extract masked and scaled features and compare them
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-144
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_features_003.png
+    :alt: compute features
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 145-146
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-151
+.. GENERATED FROM PYTHON SOURCE LINES 148-153
 
 Parallelization
 ===============
@@ -202,18 +426,24 @@ Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 extract features by using 4 jobs
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-152
+.. GENERATED FROM PYTHON SOURCE LINES 153-154
 
 .. code-block:: default
 
     sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  55.710 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  303 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

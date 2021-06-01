@@ -42,6 +42,26 @@ The number of observed events is compared against :math:`N` permutations and a *
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 2800 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 23-25
 
 This dataset contains cell type annotations in :attr:`anndata.Anndata.obs` which are used for calculation of the
@@ -53,6 +73,12 @@ neighborhood enrichment. First, we need to compute a connectivity matrix from sp
 
 
     sq.gr.spatial_neighbors(adata)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-30
@@ -67,6 +93,20 @@ Then we can calculate the neighborhood enrichment score with :func:`squidpy.gr.n
     sq.gr.nhood_enrichment(adata, cluster_key="cluster")
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1000 [00:00<?, ?/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 And visualize the results with :func:`squidpy.pl.nhood_enrichment`
@@ -79,11 +119,21 @@ And visualize the results with :func:`squidpy.pl.nhood_enrichment`
     sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 
 
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_nhood_enrichment_001.png
+    :alt: Neighborhood enrichment
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  36.630 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  293 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_nhood_enrichment.py:

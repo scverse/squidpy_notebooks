@@ -50,6 +50,8 @@ print(adata.obsm["spatial"])
 sc.set_figure_params(figsize=(4, 4))
 sc.pl.spatial(adata, add_outline=True)
 
+# sq.im.calculate_image_features?
+
 ###############################################################################
 # Using this information, we can now extract features from the tissue underneath each spot by calling
 # :func:`squidpy.im.calculate_image_features`.

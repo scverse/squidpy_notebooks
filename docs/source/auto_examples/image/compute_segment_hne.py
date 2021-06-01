@@ -14,9 +14,12 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate a cell-segmentation of a fluorescence image.
-    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_ for a tutorial on using Cellpose as a custom segmentation function
-    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_ for a tutorial on using StarDist as a custom segmentation function
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on
+    how to calculate a cell-segmentation of a fluorescence image.
+    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_
+    for a tutorial on using Cellpose as a custom segmentation function
+    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_
+    for a tutorial on using StarDist as a custom segmentation function
 """
 
 import squidpy as sq

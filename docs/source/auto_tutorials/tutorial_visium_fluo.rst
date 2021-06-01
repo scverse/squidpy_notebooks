@@ -70,6 +70,21 @@ To run the notebook locally, create a conda environment as *conda env create -f 
     adata = sq.datasets.visium_fluo_adata_crop()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
+    squidpy==1.0.0
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 51-56
 
 First, let's visualize the cluster annotation in the spatial context
@@ -87,6 +102,16 @@ We provide this crop to make the execution time of this tutorial a bit shorter.
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_001.png
+    :alt: cluster
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 The fluorescence image provided with this dataset has three channels:
@@ -99,6 +124,16 @@ We can directly visualize the channels with the method :meth:`squidpy.im.ImageCo
 
 
     img.show(channelwise=True)
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_002.png
+    :alt: image:0, image:1, image:2
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-98
@@ -158,6 +193,16 @@ for more details on how to calculate a segmented image.
     )
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_003.png
+    :alt: image, segmented_watershed
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 118-133
 
 The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
@@ -206,6 +251,24 @@ the docs of :func:`squidpy.im.calculate_image_features` or the example at
         frameon=False,
         ncols=2,
     )
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_004.png
+    :alt: segmentation_label, cluster, segmentation_ch-0_mean_intensity_mean, segmentation_ch-1_mean_intensity_mean
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/704 [00:00<?, ?/s]
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 161-187
@@ -269,6 +332,22 @@ For more information on these features, refer to:
 
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/704 [00:00<?, ?/s]
+      0%|          | 0/704 [00:00<?, ?/s]
+      0%|          | 0/704 [00:00<?, ?/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 215-219
 
 We can use the extracted image features to compute a new cluster annotation.
@@ -303,6 +382,12 @@ For this, we first define a helper function to cluster features.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 242-243
 
 Then, we calculate feature clusters using different features and compare them to gene clusters
@@ -329,6 +414,16 @@ Then, we calculate feature clusters using different features and compare them to
     )
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_005.png
+    :alt: features_summary_cluster, features_histogram_cluster, features_texture_cluster, cluster
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 261-273
 
 Like the gene-space clusters (bottom middle), the feature space clusters are also spatially coherent.
@@ -347,9 +442,9 @@ information to the gene-space clusters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 12 minutes  14.317 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  1872 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_fluo.py:

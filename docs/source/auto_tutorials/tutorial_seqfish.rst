@@ -53,6 +53,21 @@ To run the notebook locally, create a conda environment as *conda env create -f 
     adata = sq.datasets.seqfish()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
+    squidpy==1.0.0
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 First, let's visualize cluster annotation in spatial context
@@ -63,6 +78,16 @@ with :func:`scanpy.pl.spatial`.
 .. code-block:: default
 
     sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_001.png
+    :alt: celltype_mapped_refined
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-59
@@ -96,6 +121,26 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
     sq.gr.spatial_neighbors(adata)
     sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
     sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_002.png
+    :alt: Neighborhood enrichment
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1000 [00:00<?, ?/s]
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
+      col_ax = divider.append_axes("top", size="5%")
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-82
@@ -138,6 +183,16 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
     )
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_003.png
+    :alt: celltype_mapped_refined
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 98-121
 
 Co-occurrence across spatial dimensions
@@ -176,6 +231,48 @@ the argument ``clusters``. Then, we visualize the results with
         clusters="Lateral plate mesoderm",
         figsize=(10, 5),
     )
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_004.png
+    :alt: $\frac{p(exp|Lateral plate mesoderm)}{p(exp)}$
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1 [00:00<?, ?/s]
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 131-140
@@ -235,6 +332,26 @@ for the adjusted p-value (with the ``alpha`` argument)
     )
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_005.png
+    :alt: Receptor-ligand test, $-\log_{10} ~ P$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
+      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
+      0%|          | 0/100 [00:00<?, ?permutation/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 180-185
 
 The dotplot visualization provides an interesting set of candidate interactions
@@ -246,9 +363,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  43.187 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  2550 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

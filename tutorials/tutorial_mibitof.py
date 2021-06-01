@@ -12,8 +12,8 @@
 #     name: python3
 # ---
 """
-Pre-process MIBI-TOF data
-=========================
+Analyze MIBI-TOF image data
+===========================
 
 This tutorial shows how to apply Squidpy to MIBI-TOF data.
 
@@ -112,7 +112,7 @@ img.show("image", segmentation_layer="segmentation")
 # As Squidpy is backed by dask and supports chunked image processing, also large images can be processed in this way.
 
 # drop obs with Nan coords TODO remove
-adata = adata[~np.isnan(adata.obsm["spatial"][:, 0])]
+# adata = adata[~np.isnan(adata.obsm["spatial"][:, 0])]
 
 
 ###############################################################################

@@ -53,6 +53,21 @@ details that you should take care of in order to exploit the full functionality 
     print(f"squidpy=={sq.__version__}")
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
+    squidpy==1.0.0
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 34-42
 
 Spatial coordinates in AnnData
@@ -75,6 +90,12 @@ First, let's generate some data. We will need:
     image = rng.uniform(0, 1, size=(10, 10, 3))  # image
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 49-53
 
 Let's first start with creating the :class:`anndata.AnnData` object.
@@ -88,6 +109,12 @@ but will save you a lot of typing since it's the default for both Squidpy and Sc
 
 
     adata = AnnData(counts, obsm={"spatial": coordinates})
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
@@ -108,6 +135,25 @@ Next, let's run a standard Scanpy clustering and umap workflow.
     adata
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 10 × 100
+        obs: 'leiden'
+        uns: 'log1p', 'pca', 'neighbors', 'umap', 'leiden'
+        obsm: 'spatial', 'X_pca', 'X_umap'
+        varm: 'PCs'
+        obsp: 'distances', 'connectivities'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
@@ -118,6 +164,16 @@ We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
 
     sc.pl.spatial(adata, color="leiden", spot_size=1)
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_001.png
+    :alt: leiden
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 73-81
@@ -140,6 +196,16 @@ that is informative given your experimental settings.
     sc.pl.spatial(adata, color="leiden", neighbors_key="spatial_neighbors", spot_size=1, edges=True, edges_width=2)
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_002.png
+    :alt: leiden
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 86-89
 
 In case you do have an image of the tissue (or multiple, at different resolutions)
@@ -152,6 +218,24 @@ First, let's visualize the mock image from before.
 
 
     plt.imshow(image)
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_003.png
+    :alt: tutorial read spatial
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    <matplotlib.image.AxesImage object at 0x1364971c0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-106
@@ -183,6 +267,12 @@ Here, we will set it to 0.5.
     adata.uns[spatial_key][library_id]["scalefactors"] = {"tissue_hires_scalef": 1, "spot_diameter_fullres": 0.5}
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 115-121
 
 We don't provide the flexibility (yet) to change the values of such keys.
@@ -200,6 +290,16 @@ out of the box.
     sc.pl.spatial(adata, color="leiden")
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_004.png
+    :alt: leiden
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 You can fiddle around with the settings to see what changes.
@@ -212,6 +312,16 @@ For instance, let's change `tissue_hires_scalef` to half the previous value.
 
     adata.uns[spatial_key][library_id]["scalefactors"] = {"tissue_hires_scalef": 0.5, "spot_diameter_fullres": 0.5}
     sc.pl.spatial(adata, color="leiden")
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_005.png
+    :alt: leiden
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 132-137
@@ -231,11 +341,21 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
     img.show()
 
 
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_006.png
+    :alt: image
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  17.264 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  107 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:

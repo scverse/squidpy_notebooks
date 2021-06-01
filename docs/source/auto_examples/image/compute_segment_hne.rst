@@ -32,11 +32,14 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate a cell-segmentation of a fluorescence image.
-    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_ for a tutorial on using Cellpose as a custom segmentation function
-    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_ for a tutorial on using StarDist as a custom segmentation function
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on
+    how to calculate a cell-segmentation of a fluorescence image.
+    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_
+    for a tutorial on using Cellpose as a custom segmentation function
+    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_
+    for a tutorial on using StarDist as a custom segmentation function
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-33
+.. GENERATED FROM PYTHON SOURCE LINES 24-36
 
 .. code-block:: default
 
@@ -53,11 +56,48 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
     crop = img.crop_corner(0, 0, size=1000)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 Before segmenting the image, we smooth it using :func:`squidpy.im.process`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-45
+.. GENERATED FROM PYTHON SOURCE LINES 38-48
 
 .. code-block:: default
 
@@ -72,7 +112,17 @@ Before segmenting the image, we smooth it using :func:`squidpy.im.process`.
         ax.set_title(layer)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-54
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_hne_001.png
+    :alt: image, image_smooth
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 49-57
 
 We will use channel 0 to do the segmentation, as this channel contains most of
 the nuclei information within an H&E stain.
@@ -83,7 +133,7 @@ Note that using Otsu's method to determine the threshold also yields good result
 Judging by peak in the histogram and the thresholded example image, a threshold of 90, seems to be a good
 choice for this example.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-63
 
 .. code-block:: default
 
@@ -94,28 +144,44 @@ choice for this example.
     plt.tight_layout()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-65
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_hne_002.png
+    :alt: image_smooth
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 64-68
 
 We use :func:`squidpy.im.segment` with ``method="watershed"`` to do the segmentation.
 Since, opposite to the fluorescence DAPI stain, in the H&E stain nuclei appear darker,
 we need to indicate to the model that it should treat lower-intensity values as foreground.
 We do this by specifying the ``geq = False`` in the ``kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-67
+.. GENERATED FROM PYTHON SOURCE LINES 68-70
 
 .. code-block:: default
 
     sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=90, geq=False)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-72
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 71-75
 
 The segmented crop is saved in the layer `segmented_watershed`.
 This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 The result of the segmentation is a label image that can be used to extract features
 like the number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-81
+.. GENERATED FROM PYTHON SOURCE LINES 75-84
 
 .. code-block:: default
 
@@ -130,11 +196,30 @@ like the number of cells from the image.
     _ = axes[1].set_title("segmentation")
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_hne_003.png
+    :alt: H&E, segmentation
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ImageContainer[shape=(1000, 1000), layers=['image', 'image_smooth', 'segmented_watershed']]
+    number of segments in crop: 1182
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  21.428 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  220 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_hne.py:

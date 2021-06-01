@@ -26,7 +26,8 @@ This example shows how to extract segmentation features from the tissue image.
 Features extracted from a nucleus segmentation range from the number of nuclei per image,
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
-Use ``features='segmentation'`` to calculate the features.
+Segmentation features are calculated by using ``features = 'segmentation'``,
+which calls :func:`squidpy.im.ImageContainer.features_segmentation`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -40,7 +41,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
       :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-31
+.. GENERATED FROM PYTHON SOURCE LINES 26-32
 
 .. code-block:: default
 
@@ -51,11 +52,17 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     import matplotlib.pyplot as plt
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 Lets load a fluorescence Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-38
 
 .. code-block:: default
 
@@ -64,12 +71,18 @@ Lets load a fluorescence Visium dataset.
     adata = sq.datasets.visium_fluo_adata_crop()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-40
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Before calculating segmentation features, we need to first calculate a segmentation
 using :func:`squidpy.im.segment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -77,7 +90,13 @@ using :func:`squidpy.im.segment`.
     sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-52
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 45-53
 
 Now we can calculate segmentation features. Here, we will calculate the following features:
 
@@ -88,7 +107,7 @@ Now we can calculate segmentation features. Here, we will calculate the followin
 We use ``mask_cicle = True`` to ensure that we are only extracting features from the tissue underneath
 each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-69
+.. GENERATED FROM PYTHON SOURCE LINES 53-70
 
 .. code-block:: default
 
@@ -110,11 +129,35 @@ each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_aut
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-71
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/704 [00:00<?, ?/s]
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
+      return _methods._mean(a, axis=axis, dtype=dtype,
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
+      ret = ret.dtype.type(ret / rcount)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
+      ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
+      arrmean = um.true_divide(arrmean, div, out=arrmean, casting='unsafe',
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
+      ret = ret.dtype.type(ret / rcount)
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
 The result is stored in ``adata.obsm['segmentation_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-74
+.. GENERATED FROM PYTHON SOURCE LINES 72-75
 
 .. code-block:: default
 
@@ -122,14 +165,106 @@ The result is stored in ``adata.obsm['segmentation_features']``.
     adata.obsm["segmentation_features"].head()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>segmentation_label</th>
+          <th>segmentation_area_mean</th>
+          <th>segmentation_area_std</th>
+          <th>segmentation_ch-1_mean_intensity_mean</th>
+          <th>segmentation_ch-1_mean_intensity_std</th>
+          <th>segmentation_ch-2_mean_intensity_mean</th>
+          <th>segmentation_ch-2_mean_intensity_std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>AAACGAGACGGTTGAT-1</th>
+          <td>17</td>
+          <td>174.764706</td>
+          <td>291.276810</td>
+          <td>5604.069561</td>
+          <td>3100.506862</td>
+          <td>8997.290710</td>
+          <td>177.888882</td>
+        </tr>
+        <tr>
+          <th>AAAGGGATGTAGCAAG-1</th>
+          <td>14</td>
+          <td>100.785714</td>
+          <td>80.946348</td>
+          <td>5034.146353</td>
+          <td>1625.737796</td>
+          <td>10376.489346</td>
+          <td>564.254124</td>
+        </tr>
+        <tr>
+          <th>AAATGGCATGTCTTGT-1</th>
+          <td>16</td>
+          <td>132.000000</td>
+          <td>147.241723</td>
+          <td>11527.768307</td>
+          <td>12227.308457</td>
+          <td>7725.282284</td>
+          <td>947.987907</td>
+        </tr>
+        <tr>
+          <th>AAATGGTCAATGTGCC-1</th>
+          <td>9</td>
+          <td>243.000000</td>
+          <td>132.341310</td>
+          <td>3581.244911</td>
+          <td>46.124320</td>
+          <td>9664.505991</td>
+          <td>1331.259644</td>
+        </tr>
+        <tr>
+          <th>AAATTAACGGGTAGCT-1</th>
+          <td>7</td>
+          <td>229.142857</td>
+          <td>203.573383</td>
+          <td>9038.077440</td>
+          <td>8707.493743</td>
+          <td>10922.808071</td>
+          <td>3631.149215</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 76-80
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
 `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Here, we show all calculated segmentation features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-101
+.. GENERATED FROM PYTHON SOURCE LINES 80-102
 
 .. code-block:: default
 
@@ -156,7 +291,28 @@ Here, we show all calculated segmentation features.
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-106
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image:: /auto_examples/image/images/sphx_glr_compute_segmentation_features_001.png
+          :alt: ch0, ch1, ch2
+          :class: sphx-glr-multi-img
+
+    *
+
+      .. image:: /auto_examples/image/images/sphx_glr_compute_segmentation_features_002.png
+          :alt: segmentation_label, segmentation_area_mean, segmentation_ch-1_mean_intensity_mean, segmentation_ch-2_mean_intensity_mean
+          :class: sphx-glr-multi-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 103-107
 
 `segmentation_label` shows the number of nuclei per spot and `segmentation_area_mean` the mean are of nuclei per spot.
 The remaining two plots show the mean intensity of channels 1 and 2 per spot.
@@ -166,9 +322,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 3 minutes  40.133 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  2428 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:

@@ -65,6 +65,12 @@ border effects.
     import matplotlib.pyplot as plt
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 46-50
 
 Build in processing functions
@@ -80,6 +86,12 @@ Load H&E stained tissue image
     img = sq.datasets.visium_hne_image()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 We will process the image by tiling it in crops of shape ``chunks = (1000, 1000)``.
@@ -90,6 +102,12 @@ We will process the image by tiling it in crops of shape ``chunks = (1000, 1000)
 
 
     sq.im.process(img, layer="image", method="gray", chunks=1000)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-60
@@ -108,6 +126,16 @@ Now we can look at the result on a cropped part of the image.
     _ = axes[0].set_title("original")
     crop.show("image_gray", cmap="gray", ax=axes[1])
     _ = axes[1].set_title("grayscale")
+
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
+    :alt: original, grayscale
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-78
@@ -151,6 +179,12 @@ between using overlapping crops and non-overlapping crops.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 104-106
 
 Plot the difference in results.
@@ -170,11 +204,21 @@ Using overlapping blocks with `depth` 1 removes artifacts at the borders between
     _ = axes[2].set_title("overlapping crops")
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_002.png
+    :alt: original, non-overlapping crops, overlapping crops
+    :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  29.650 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  2081 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

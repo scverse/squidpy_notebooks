@@ -38,11 +38,14 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to calculate a cell-segmentation of an H&E stain.
-    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_ for a tutorial on using Cellpose as a custom segmentation function
-    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_ for a tutorial on using StarDist as a custom segmentation function
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
+    calculate a cell-segmentation of an H&E stain.
+    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_
+    for a tutorial on using Cellpose as a custom segmentation function
+    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_
+    for a tutorial on using StarDist as a custom segmentation function
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-39
+.. GENERATED FROM PYTHON SOURCE LINES 31-42
 
 .. code-block:: default
 
@@ -58,25 +61,37 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 We crop the image to a smaller segment.
 This is only to speed things up, :func:`squidpy.im.segment` can also process very large images
 (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 .. code-block:: default
 
     crop = img.crop_corner(1000, 1000, size=1000)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-48
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 The tissue image in this dataset contains four fluorescence stains.
 The first one is DAPI, which we will use for the nuclei-segmentation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 .. code-block:: default
 
@@ -84,7 +99,17 @@ The first one is DAPI, which we will use for the nuclei-segmentation.
     crop.show("image", channelwise=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-69
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_001.png
+    :alt: image:0, image:1, image:2
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 55-72
 
 We segment the image with :func:`squidpy.im.segment` using watershed segmentation
 (``method="watershed"``).
@@ -104,7 +129,7 @@ In addition, we can specify if the values greater or equal than
 the threshold should be in the mask (default)
 or if the values smaller to the threshold should be in the mask (``geq = False``).
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-75
 
 .. code-block:: default
 
@@ -112,14 +137,20 @@ or if the values smaller to the threshold should be in the mask (``geq = False``
     sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=None, geq=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-77
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 76-80
 
 The segmented crop is saved in the layer ``segmented_watershed``.
 This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 The result of the segmentation is a label image that can be used to extract features like the
 number of cells from the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-86
+.. GENERATED FROM PYTHON SOURCE LINES 80-89
 
 .. code-block:: default
 
@@ -134,11 +165,30 @@ number of cells from the image.
     _ = axes[1].set_title("segmentation")
 
 
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_002.png
+    :alt: DAPI, segmentation
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ImageContainer[shape=(1000, 1000), layers=['image', 'segmented_watershed']]
+    Number of segments in crop: 580
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  21.015 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  345 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

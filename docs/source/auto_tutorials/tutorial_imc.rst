@@ -51,6 +51,21 @@ To run the notebook locally, create a conda environment as *conda env create -f 
     adata = sq.datasets.imc()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
+    squidpy==1.0.0
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 First, let's visualize the cluster annotation in spatial context
@@ -62,6 +77,16 @@ with :func:`scanpy.pl.spatial`.
 
 
     sc.pl.spatial(adata, color="cell type", spot_size=10)
+
+
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_001.png
+    :alt: cell type
+    :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-44
@@ -113,6 +138,48 @@ We visualize the result for two conditional groups, namely
     )
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_002.png
+    :alt: $\frac{p(exp|T cells)}{p(exp)}$, $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1 [00:00<?, ?/s]
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 79-84
 
 We can observe that *T cells* seems to co-occur
@@ -153,6 +220,24 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
     sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_003.png
+    :alt: Neighborhood enrichment
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0/1000 [00:00<?, ?/s]
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 111-120
 
 Interestingly, *T cells* shows an enrichment with *stromal* and
@@ -186,6 +271,16 @@ We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_004.png
+    :alt: Interaction matrix
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 136-147
 
 Finally, similar to the previous analysis,
@@ -213,6 +308,16 @@ Squidpy provides a convenient function for all of them:
 
 
 
+
+
+.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_005.png
+    :alt: Average clustering, Closeness centrality, Degree centrality
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 156-162
 
 You can familiarize yourself with network centralities from the
@@ -225,9 +330,9 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  47.526 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  193 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_imc.py:
