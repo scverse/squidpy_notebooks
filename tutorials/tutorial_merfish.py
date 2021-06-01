@@ -79,7 +79,7 @@ sc.pl.embedding(
 
 ###############################################################################
 # We can also visualize gene expression in 3D coordinates. Let's perform differential
-# expression testing with :fun:`scanpy.tl.rank_genes_groups` and visualize the results
+# expression testing with :func:`scanpy.tl.rank_genes_groups` and visualize the results
 
 sc.tl.rank_genes_groups(adata, groupby="Cell_class")
 sc.pl.rank_genes_groups(adata, groupby="Cell_class")
