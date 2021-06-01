@@ -266,27 +266,6 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
-     :alt: Process a high-resolution image
-
-     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_process_hires
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
 
 .. only:: html
@@ -350,6 +329,27 @@ Image
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the high resolution tissue images to segment nuclei.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
+     :alt: Cell-segmentation for fluorescence images
+
+     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_segment_fluo
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract histogram features from tissue image.">
 
 .. only:: html
@@ -392,27 +392,6 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the high resolution tissue images to segment nuclei.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
-     :alt: Cell-segmentation for fluorescence images
-
-     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_segment_fluo
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use processing and segmentation functions to segment images with H&amp;E ...">
 
 .. only:: html
@@ -431,6 +410,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_segment_hne
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+     :alt: Process a high-resolution image
+
+     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_process_hires
 
 .. raw:: html
 

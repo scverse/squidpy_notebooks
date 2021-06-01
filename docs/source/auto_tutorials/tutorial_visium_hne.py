@@ -81,10 +81,10 @@ for scale in [1.0, 2.0]:
     feature_name = f"features_summary_scale{scale}"
     sq.im.calculate_image_features(
         adata,
-        img,
+        img.compute(),
         features="summary",
         key_added=feature_name,
-        n_jobs=1,
+        n_jobs=4,
         scale=scale,
     )
 

@@ -105,7 +105,7 @@ The result is stored in ``adata.obsm['summary_features']``
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 and 1 (GFAP stain).

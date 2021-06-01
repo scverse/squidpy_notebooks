@@ -117,10 +117,10 @@ also refer to :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
         feature_name = f"features_summary_scale{scale}"
         sq.im.calculate_image_features(
             adata,
-            img,
+            img.compute(),
             features="summary",
             key_added=feature_name,
-            n_jobs=1,
+            n_jobs=4,
             scale=scale,
         )
 

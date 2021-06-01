@@ -129,9 +129,7 @@ img.show()
 #
 # .. code-block:: python
 #
-#     import napari
-#     with napari.gui_qt():
-#         img.interactive(adata, library_key='library_id')
+#    img.interactive(adata, library_key='library_id')
 
 ###############################################################################
 # Cropping
@@ -223,9 +221,7 @@ sc.tl.leiden(adata_crop, neighbors_key="neigh_features", key_added="leiden_featu
 #
 # .. code-block:: python
 #
-#     import napari
-#     with napari.gui_qt():
-#         img.interactive(adata, library_key='library_id')
+#    img.interactive(adata, library_key='library_id')
 
 sc.pl.spatial(
     adata_crop[adata_crop.obs["library_id"] == library_ids[0]],

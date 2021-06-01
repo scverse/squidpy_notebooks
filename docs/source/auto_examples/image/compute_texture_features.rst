@@ -93,7 +93,7 @@ The result is stored in ``adata.obsm['texture_features']``.
 .. GENERATED FROM PYTHON SOURCE LINES 57-62
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.

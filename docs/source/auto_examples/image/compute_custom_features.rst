@@ -108,7 +108,7 @@ The result is stored in ``adata.obsm['custom_features']``.
 .. GENERATED FROM PYTHON SOURCE LINES 58-61
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 61-67

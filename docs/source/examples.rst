@@ -38,5 +38,4 @@ This section contains various examples for the :class:`squidpy.im.ImageContainer
 .. nbgallery::
     :glob:
 
-    auto_examples/image/compute_image_container_show
     auto_examples/image/compute_crops

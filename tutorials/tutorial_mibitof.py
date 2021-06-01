@@ -68,7 +68,7 @@ for library_id in adata.uns["spatial"].keys():
     )
 
 ###############################################################################
-# Let us create an ImageContainer from the images contained in adata.
+# Let us create an ImageContainer from the images contained in `adata`.
 # As all three biopsies are already joined in `adata`, let us also create one ImageContainer for
 # all three biopsies using a z-stack.
 # For more information on how to use `ImageContainer` with z-stacks, also have a look at

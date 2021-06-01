@@ -89,11 +89,12 @@ The result of the cropping functions is another ImageContainer
     crop_corner
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
-You can subset the associated ``adata`` to the cropped image:
+You can subset the associated ``adata`` to the cropped image using
+:meth:`squidpy.im.ImageContainer.subset`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-54
+.. GENERATED FROM PYTHON SOURCE LINES 51-55
 
 .. code-block:: default
 
@@ -102,11 +103,11 @@ You can subset the associated ``adata`` to the cropped image:
     adata
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-56
+.. GENERATED FROM PYTHON SOURCE LINES 56-57
 
 Note the number of observations in ``adata`` before and after subsetting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-61
 
 .. code-block:: default
 
@@ -115,7 +116,7 @@ Note the number of observations in ``adata`` before and after subsetting.
     adata_crop
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-66
+.. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 Visualize the result in napari:
 

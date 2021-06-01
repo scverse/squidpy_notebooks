@@ -26,16 +26,17 @@ This example shows how to use processing and segmentation functions to segment i
 For a general example of how to use :func:`squidpy.im.segment`
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
-Note that we only provide very basic segmentation models.
+Note that we only provide a basic built-in segmentation model.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
 and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.SegmentationCustom`).
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate
-    a cell-segmentation of a fluorescence image.
+    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on how to calculate a cell-segmentation of a fluorescence image.
+    - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_ for a tutorial on using Cellpose as a custom segmentation function
+    - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_ for a tutorial on using StarDist as a custom segmentation function
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-32
+.. GENERATED FROM PYTHON SOURCE LINES 21-33
 
 .. code-block:: default
 
@@ -52,14 +53,13 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
     crop = img.crop_corner(0, 0, size=1000)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 Before segmenting the image, we smooth it using :func:`squidpy.im.process`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-45
+.. GENERATED FROM PYTHON SOURCE LINES 35-45
 
 .. code-block:: default
-
 
 
     # smooth image
@@ -80,7 +80,7 @@ Instead of using automatic threshold with `Otsu's method <https://en.wikipedia.o
 we will define a manual fixed threshold.
 Note that using Otsu's method to determine the threshold also yields good results.
 
-Judging by peak in the histogram and the thresholded example image, a threshold of 0.36, seems to be a good
+Judging by peak in the histogram and the thresholded example image, a threshold of 90, seems to be a good
 choice for this example.
 
 .. GENERATED FROM PYTHON SOURCE LINES 54-60
@@ -89,7 +89,7 @@ choice for this example.
 
     fig, axes = plt.subplots(1, 3, figsize=(15, 4))
     crop.show("image_smooth", cmap="gray", ax=axes[0])
-    axes[1].imshow(crop["image_smooth"][:, :, 0] < 0.36)
+    axes[1].imshow(crop["image_smooth"][:, :, 0, 0] < 90)
     _ = sns.histplot(np.array(crop["image_smooth"]).flatten(), bins=50, ax=axes[2])
     plt.tight_layout()
 
@@ -105,7 +105,7 @@ We do this by specifying the ``geq = False`` in the ``kwargs``.
 
 .. code-block:: default
 
-    sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=0.36, geq=False)
+    sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=90, geq=False)
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-72

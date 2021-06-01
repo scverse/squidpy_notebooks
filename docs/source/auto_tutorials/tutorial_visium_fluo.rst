@@ -93,17 +93,15 @@ The fluorescence image provided with this dataset has three channels:
 *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
 We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-69
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: default
 
 
-    fig, axes = plt.subplots(1, 3)
-    for i, ax in enumerate(axes):
-        img.show(channel=i, ax=ax)
+    img.show(channelwise=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-100
+.. GENERATED FROM PYTHON SOURCE LINES 68-98
 
 Visium datasets contain high-resolution images of the tissue.
 Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
@@ -136,7 +134,7 @@ We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``
 Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 for more details on how to calculate a segmented image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-119
+.. GENERATED FROM PYTHON SOURCE LINES 98-117
 
 .. code-block:: default
 
@@ -147,7 +145,7 @@ for more details on how to calculate a segmented image.
         method="smooth",
     )
 
-    sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
+    sq.im.segment(img=img, layer="image_smooth", method="watershed", channel=0, chunks=1000)
 
     # plot the resulting segmentation
     fig, ax = plt.subplots(1, 2)
@@ -160,7 +158,7 @@ for more details on how to calculate a segmented image.
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-135
+.. GENERATED FROM PYTHON SOURCE LINES 118-133
 
 The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
 It is a label image where each segmented object is annotated with a different integer number.
@@ -178,7 +176,7 @@ For more details on how the segmentation features, you can have a look at
 the docs of :func:`squidpy.im.calculate_image_features` or the example at
 :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-162
+.. GENERATED FROM PYTHON SOURCE LINES 133-160
 
 .. code-block:: default
 
@@ -210,7 +208,7 @@ the docs of :func:`squidpy.im.calculate_image_features` or the example at
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-189
+.. GENERATED FROM PYTHON SOURCE LINES 161-187
 
 Above, we made use of :func:`squidpy.pl.extract`, a method to extract
 all features in a given `adata.obsm['{key}']` and temporarily save them to :attr:`anndata.AnnData.obs`.
@@ -239,7 +237,7 @@ For more information on these features, refer to:
 - :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`.
 - :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-216
+.. GENERATED FROM PYTHON SOURCE LINES 187-214
 
 .. code-block:: default
 
@@ -271,14 +269,14 @@ For more information on these features, refer to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-221
+.. GENERATED FROM PYTHON SOURCE LINES 215-219
 
 We can use the extracted image features to compute a new cluster annotation.
 This could be useful to gain insights in similarities across spots based on image morphology.
 
 For this, we first define a helper function to cluster features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-243
+.. GENERATED FROM PYTHON SOURCE LINES 219-241
 
 .. code-block:: default
 
@@ -305,11 +303,11 @@ For this, we first define a helper function to cluster features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 244-245
+.. GENERATED FROM PYTHON SOURCE LINES 242-243
 
 Then, we calculate feature clusters using different features and compare them to gene clusters
 
-.. GENERATED FROM PYTHON SOURCE LINES 245-262
+.. GENERATED FROM PYTHON SOURCE LINES 243-260
 
 .. code-block:: default
 
@@ -331,7 +329,7 @@ Then, we calculate feature clusters using different features and compare them to
     )
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 263-275
+.. GENERATED FROM PYTHON SOURCE LINES 261-273
 
 Like the gene-space clusters (bottom middle), the feature space clusters are also spatially coherent.
 

@@ -62,9 +62,7 @@ sc.pl.spatial(adata, color="cluster")
 # *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
 # We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
 
-fig, axes = plt.subplots(1, 3)
-for i, ax in enumerate(axes):
-    img.show(channel=i, ax=ax)
+img.show(channelwise=True)
 
 ###############################################################################
 # Visium datasets contain high-resolution images of the tissue.
@@ -104,7 +102,7 @@ sq.im.process(
     method="smooth",
 )
 
-sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
+sq.im.segment(img=img, layer="image_smooth", method="watershed", channel=0, chunks=1000)
 
 # plot the resulting segmentation
 fig, ax = plt.subplots(1, 2)
