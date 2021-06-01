@@ -40,6 +40,7 @@ dataframe
 AnnData
 Tensorflow
 ligand
+Cellpose
 uncommenting
 segmentations
 # CI
@@ -63,3 +64,6 @@ preoptic
 Slide
 seqV
 hypothalamic
+# external tutorials
+StarDist
+convolutional

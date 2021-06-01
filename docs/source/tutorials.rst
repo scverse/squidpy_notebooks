@@ -22,4 +22,6 @@ This section contains tutorials showcasing how squidpy can interface with extern
     external_tutorials/tutorial_tf
     external_tutorials/tutorial_napari
     external_tutorials/tutorial_tangram
+    external_tutorials/tutorial_cellpose_segmentation
+    external_tutorials/tutorial_stardist
     external_tutorials/tutorial_cellprofiler
