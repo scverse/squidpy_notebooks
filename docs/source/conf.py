@@ -89,6 +89,7 @@ exclude_patterns = [
     "auto_*/**.md5",
     "auto_*/**.py",
     "**.ipynb_checkpoints",
+    #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery

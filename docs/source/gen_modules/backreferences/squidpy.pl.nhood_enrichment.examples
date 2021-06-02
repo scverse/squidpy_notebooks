@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.pl.nhood_enrichment``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
+     :alt: Squidpy API
+
+     :ref:`sphx_glr_auto_examples_image_API.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_API.py`
