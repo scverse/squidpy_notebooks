@@ -79,7 +79,7 @@ sc.pl.spatial(
 # For this, specify the necessary additional layer names using ``additional_layers`` in ``features_kwargs``.
 # The specified image layers will be passed to the custom feature extraction function.
 #
-# Here, we show this behaviour by defining a feature extraction function that sums two image layers:
+# Here, we show this behavior by defining a feature extraction function that sums two image layers:
 
 
 def sum_fn(arr, extra_layer):
