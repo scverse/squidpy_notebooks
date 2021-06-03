@@ -79,7 +79,7 @@ spelling_add_pypi_package_names = True
 spelling_show_suggestions = True
 spelling_exclude_patterns = ["references.rst"]
 # see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
-spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
+spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter", "enchant.tokenize.MentionFilter"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

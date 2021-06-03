@@ -65,6 +65,13 @@ Tangram
 sc
 centroid
 centroids
+preprocessing
+Delaunay
+Merfish
+preoptic
+Slide
+seqV
+hypothalamic
 # external tutorials
 StarDist
 convolutional
