@@ -138,8 +138,6 @@ each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_aut
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
       return _methods._mean(a, axis=axis, dtype=dtype,
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
@@ -261,7 +259,7 @@ The result is stored in ``adata.obsm['segmentation_features']``.
 .. GENERATED FROM PYTHON SOURCE LINES 75-79
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Here, we show all calculated segmentation features.
 
@@ -323,9 +321,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.474 seconds)
+   **Total running time of the script:** ( 1 minutes  7.444 seconds)
 
-**Estimated memory usage:**  2521 MB
+**Estimated memory usage:**  2326 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:

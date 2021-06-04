@@ -21,22 +21,3 @@ Examples using ``squidpy.datasets.visium_hne_adata_crop``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the computation of spot-wise features from Visium images.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_features_thumb.png
-     :alt: Extract image features
-
-     :ref:`sphx_glr_auto_examples_image_compute_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_features.py`

@@ -105,15 +105,6 @@ When not setting this flag, statistics are calculated using a square crop center
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
 
 
 
@@ -218,7 +209,7 @@ The result is stored in ``adata.obsm['summary_features']``
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to learn
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 and 1 (GFAP stain).
@@ -243,9 +234,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.101 seconds)
+   **Total running time of the script:** ( 0 minutes  12.626 seconds)
 
-**Estimated memory usage:**  734 MB
+**Estimated memory usage:**  362 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

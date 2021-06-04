@@ -86,8 +86,6 @@ Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of cha
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
@@ -193,7 +191,7 @@ The result is stored in ``adata.obsm['histogram_features']``.
 .. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.html>`_ to
+`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to
 learn how to use our interactive :mod:`napari` plugin.
 With these features we can e.g. appreciate the detailed distribution of
 intensity values of channel 0 (DAPI stain) on the different bins.
@@ -222,9 +220,9 @@ intensity values of channel 0 (DAPI stain) on the different bins.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.720 seconds)
+   **Total running time of the script:** ( 0 minutes  13.263 seconds)
 
-**Estimated memory usage:**  700 MB
+**Estimated memory usage:**  551 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:
