@@ -21,7 +21,7 @@
 Extract texture features
 ------------------------
 
-This example shows how to extract texture features from the tissue image.
+This example shows how to use :func:`squidpy.im.calculate_image_features`.
 
 Textures features give give a measure of how the image intensity at different distances and angles varies by
 calculating a grey-level co-occurrence matrix (`GLCM <https://en.wikipedia.org/wiki/Co-occurrence_matrix>`_).
@@ -30,8 +30,6 @@ and at an angle :math:`\\theta` from grey-level :math:`i`.
 From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
 
-Texture features are calculated by using ``features = 'texture'``, which calls
-:func:`squidpy.im.ImageContainer.features_texture`.
 In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
 - ``distances`` - distances that are taken into account for finding repeating patterns.
@@ -43,7 +41,7 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
     See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-32
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 .. code-block:: default
 
@@ -58,7 +56,7 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-39
+.. GENERATED FROM PYTHON SOURCE LINES 31-37
 
 Let's load the fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
 
@@ -67,7 +65,7 @@ e.g., ``spot_scale = 2`` or ``spit_scale = 4`` which will extract crops with dou
 than the original Visium spot size.
 For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-53
+.. GENERATED FROM PYTHON SOURCE LINES 37-51
 
 .. code-block:: default
 
@@ -89,14 +87,23 @@ For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_c
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/303M [00:00<?, ?B/s]      0%|          | 56.0k/303M [00:00<12:45, 414kB/s]      0%|          | 224k/303M [00:00<05:54, 894kB/s]       0%|          | 920k/303M [00:00<01:52, 2.80MB/s]      1%|          | 2.97M/303M [00:00<00:40, 7.80MB/s]      3%|2         | 8.47M/303M [00:00<00:15, 19.8MB/s]      5%|4         | 14.0M/303M [00:00<00:11, 27.2MB/s]      6%|6         | 19.7M/303M [00:00<00:09, 32.1MB/s]      8%|8         | 25.3M/303M [00:01<00:08, 35.4MB/s]     10%|#         | 31.0M/303M [00:01<00:07, 37.6MB/s]     12%|#2        | 36.7M/303M [00:01<00:07, 39.0MB/s]     14%|#4        | 42.6M/303M [00:01<00:06, 40.4MB/s]     16%|#6        | 48.5M/303M [00:01<00:06, 41.6MB/s]     18%|#7        | 54.0M/303M [00:01<00:06, 41.5MB/s]     20%|#9        | 59.8M/303M [00:01<00:06, 41.9MB/s]     22%|##1       | 65.6M/303M [00:02<00:05, 42.4MB/s]     24%|##3       | 71.4M/303M [00:02<00:05, 42.6MB/s]     26%|##5       | 77.2M/303M [00:02<00:05, 43.0MB/s]     27%|##7       | 83.1M/303M [00:02<00:05, 43.3MB/s]     29%|##9       | 88.9M/303M [00:02<00:05, 43.2MB/s]     31%|###1      | 94.8M/303M [00:02<00:05, 43.5MB/s]     33%|###3      | 101M/303M [00:02<00:04, 43.3MB/s]      35%|###5      | 106M/303M [00:03<00:04, 43.6MB/s]     37%|###7      | 112M/303M [00:03<00:04, 43.6MB/s]     39%|###9      | 118M/303M [00:03<00:04, 43.6MB/s]     41%|####      | 124M/303M [00:03<00:04, 43.6MB/s]     43%|####2     | 130M/303M [00:03<00:03, 47.5MB/s]     44%|####3     | 133M/303M [00:03<00:04, 42.5MB/s]     46%|####5     | 138M/303M [00:03<00:03, 46.5MB/s]     47%|####6     | 141M/303M [00:03<00:04, 41.7MB/s]     49%|####8     | 147M/303M [00:04<00:03, 45.9MB/s]     50%|####9     | 150M/303M [00:04<00:03, 41.5MB/s]     51%|#####1    | 155M/303M [00:04<00:03, 45.1MB/s]     53%|#####2    | 159M/303M [00:04<00:03, 41.7MB/s]     54%|#####4    | 164M/303M [00:04<00:03, 45.2MB/s]     55%|#####5    | 168M/303M [00:04<00:03, 41.9MB/s]     57%|#####7    | 173M/303M [00:04<00:03, 44.8MB/s]     58%|#####8    | 176M/303M [00:04<00:03, 41.6MB/s]     60%|#####9    | 181M/303M [00:04<00:02, 44.6MB/s]     61%|######1   | 185M/303M [00:04<00:02, 41.6MB/s]     63%|######2   | 190M/303M [00:05<00:02, 44.9MB/s]     64%|######4   | 194M/303M [00:05<00:02, 41.9MB/s]     66%|######5   | 199M/303M [00:05<00:02, 44.9MB/s]     67%|######6   | 202M/303M [00:05<00:02, 41.9MB/s]     69%|######8   | 207M/303M [00:05<00:02, 44.8MB/s]     70%|######9   | 211M/303M [00:05<00:02, 41.9MB/s]     71%|#######1  | 216M/303M [00:05<00:02, 44.2MB/s]     73%|#######2  | 220M/303M [00:05<00:02, 41.4MB/s]     74%|#######4  | 225M/303M [00:05<00:01, 44.8MB/s]     75%|#######5  | 228M/303M [00:06<00:01, 41.6MB/s]     77%|#######7  | 233M/303M [00:06<00:01, 45.0MB/s]     78%|#######8  | 237M/303M [00:06<00:01, 41.8MB/s]     80%|########  | 242M/303M [00:06<00:01, 45.0MB/s]     81%|########1 | 246M/303M [00:06<00:01, 41.8MB/s]     83%|########2 | 251M/303M [00:06<00:01, 44.8MB/s]     84%|########4 | 254M/303M [00:06<00:01, 41.7MB/s]     86%|########5 | 260M/303M [00:06<00:01, 45.1MB/s]     87%|########6 | 263M/303M [00:06<00:00, 41.6MB/s]     89%|########8 | 268M/303M [00:06<00:00, 45.5MB/s]     90%|########9 | 272M/303M [00:07<00:00, 41.6MB/s]     92%|#########1| 277M/303M [00:07<00:00, 45.5MB/s]     93%|#########2| 281M/303M [00:07<00:00, 41.9MB/s]     94%|#########4| 286M/303M [00:07<00:00, 45.4MB/s]     96%|#########5| 289M/303M [00:07<00:00, 41.8MB/s]     97%|#########7| 295M/303M [00:07<00:00, 45.0MB/s]     99%|#########8| 298M/303M [00:07<00:00, 42.1MB/s]    100%|##########| 303M/303M [00:07<00:00, 40.6MB/s]
+      0%|          | 0.00/65.5M [00:00<?, ?B/s]      0%|          | 48.0k/65.5M [00:00<03:14, 353kB/s]      0%|          | 248k/65.5M [00:00<01:07, 1.01MB/s]      2%|1         | 1.05M/65.5M [00:00<00:20, 3.30MB/s]      7%|6         | 4.28M/65.5M [00:00<00:05, 12.5MB/s]     11%|#1        | 7.30M/65.5M [00:00<00:03, 18.3MB/s]     20%|##        | 13.2M/65.5M [00:00<00:01, 30.7MB/s]     25%|##4       | 16.2M/65.5M [00:00<00:01, 30.9MB/s]     31%|###       | 20.0M/65.5M [00:00<00:01, 33.4MB/s]     38%|###7      | 24.8M/65.5M [00:01<00:01, 38.4MB/s]     44%|####3     | 28.7M/65.5M [00:01<00:00, 39.1MB/s]     50%|####9     | 32.7M/65.5M [00:01<00:00, 39.9MB/s]     57%|#####6    | 37.2M/65.5M [00:01<00:00, 42.2MB/s]     63%|######3   | 41.3M/65.5M [00:01<00:00, 42.2MB/s]     70%|######9   | 45.6M/65.5M [00:01<00:00, 43.0MB/s]     76%|#######6  | 49.8M/65.5M [00:01<00:00, 43.3MB/s]     83%|########2 | 54.1M/65.5M [00:01<00:00, 43.5MB/s]     89%|########9 | 58.6M/65.5M [00:01<00:00, 44.5MB/s]     95%|#########5| 62.5M/65.5M [00:01<00:00, 43.5MB/s]    100%|##########| 65.5M/65.5M [00:02<00:00, 34.0MB/s]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 The result is stored in ``adata.obsm['texture_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 53-56
 
 .. code-block:: default
 
@@ -514,7 +521,7 @@ The result is stored in ``adata.obsm['texture_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 57-62
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
 `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
@@ -522,7 +529,7 @@ how to use our interactive :mod:`napari` plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-70
+.. GENERATED FROM PYTHON SOURCE LINES 62-68
 
 .. code-block:: default
 
@@ -546,9 +553,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  15.141 seconds)
+   **Total running time of the script:** ( 0 minutes  57.393 seconds)
 
-**Estimated memory usage:**  608 MB
+**Estimated memory usage:**  793 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

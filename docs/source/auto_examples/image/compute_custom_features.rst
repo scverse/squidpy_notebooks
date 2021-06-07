@@ -27,20 +27,12 @@ The custom feature calculation function can be any python function that takes an
 returns a list of features.
 Here, we show a simple example by defining a function to calculate the mean of the images.
 
-Custom features are calculated by using ``features = 'custom'``, which calls
-:func:`squidpy.im.ImageContainer.features_custom`.
-In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
-
-- ``func`` - custom feature extraction function.
-- ``additional_layers`` - names of image layers that should be passed to ``func`` together with ``layer``.
-- other arguments for ``func``
-
 .. seealso::
 
     See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-29
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 .. code-block:: default
 
@@ -55,11 +47,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-31
+.. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Lets load a H&E Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-37
+.. GENERATED FROM PYTHON SOURCE LINES 23-29
 
 .. code-block:: default
 
@@ -73,14 +65,23 @@ Lets load a H&E Visium dataset.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/35.6M [00:00<?, ?B/s]      0%|          | 56.0k/35.6M [00:00<01:30, 411kB/s]      0%|          | 176k/35.6M [00:00<00:54, 681kB/s]       2%|1         | 720k/35.6M [00:00<00:16, 2.17MB/s]      8%|8         | 2.86M/35.6M [00:00<00:04, 7.62MB/s]     23%|##2       | 8.03M/35.6M [00:00<00:01, 18.6MB/s]     37%|###6      | 13.1M/35.6M [00:00<00:00, 25.0MB/s]     53%|#####3    | 19.0M/35.6M [00:00<00:00, 31.0MB/s]     69%|######8   | 24.4M/35.6M [00:01<00:00, 33.9MB/s]     85%|########4 | 30.2M/35.6M [00:01<00:00, 36.7MB/s]    100%|##########| 35.6M/35.6M [00:01<00:00, 27.4MB/s]
+      0%|          | 0.00/89.9M [00:00<?, ?B/s]      0%|          | 56.0k/89.9M [00:00<03:50, 409kB/s]      0%|          | 136k/89.9M [00:00<03:05, 506kB/s]       1%|          | 528k/89.9M [00:00<00:59, 1.57MB/s]      2%|2         | 2.02M/89.9M [00:00<00:17, 5.34MB/s]      7%|7         | 6.61M/89.9M [00:00<00:05, 15.7MB/s]     13%|#2        | 11.6M/89.9M [00:00<00:03, 22.9MB/s]     19%|#8        | 16.8M/89.9M [00:00<00:02, 28.2MB/s]     25%|##4       | 22.4M/89.9M [00:01<00:02, 32.4MB/s]     31%|###1      | 28.0M/89.9M [00:01<00:01, 35.3MB/s]     38%|###7      | 33.8M/89.9M [00:01<00:01, 37.6MB/s]     44%|####3     | 39.5M/89.9M [00:01<00:01, 39.0MB/s]     50%|#####     | 45.2M/89.9M [00:01<00:01, 40.3MB/s]     57%|#####6    | 50.9M/89.9M [00:01<00:01, 40.7MB/s]     63%|######2   | 56.5M/89.9M [00:01<00:00, 41.0MB/s]     69%|######9   | 62.4M/89.9M [00:02<00:00, 41.8MB/s]     76%|#######5  | 68.2M/89.9M [00:02<00:00, 42.3MB/s]     82%|########2 | 73.8M/89.9M [00:02<00:00, 42.1MB/s]     89%|########8 | 79.6M/89.9M [00:02<00:00, 42.4MB/s]     95%|#########4| 85.3M/89.9M [00:02<00:00, 42.5MB/s]    100%|##########| 89.9M/89.9M [00:02<00:00, 34.0MB/s]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+
+.. GENERATED FROM PYTHON SOURCE LINES 30-31
 
 Define a custom feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-48
+.. GENERATED FROM PYTHON SOURCE LINES 31-40
 
 .. code-block:: default
 
@@ -100,11 +101,11 @@ Define a custom feature extraction function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 Now we can extract features using `mean_fn` by providing it within ``features_kwargs``
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-60
+.. GENERATED FROM PYTHON SOURCE LINES 42-52
 
 .. code-block:: default
 
@@ -125,11 +126,11 @@ Now we can extract features using `mean_fn` by providing it within ``features_kw
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
 
 The result is stored in ``adata.obsm['custom_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-65
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
 
 .. code-block:: default
 
@@ -193,13 +194,13 @@ The result is stored in ``adata.obsm['custom_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-69
+.. GENERATED FROM PYTHON SOURCE LINES 58-61
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-77
+.. GENERATED FROM PYTHON SOURCE LINES 61-67
 
 .. code-block:: default
 
@@ -212,8 +213,6 @@ how to use our interactive :mod:`napari` plugin.
 
 
 
-
-
 .. image:: /auto_examples/image/images/sphx_glr_compute_custom_features_001.png
     :alt: mean_fn_0
     :class: sphx-glr-single-img
@@ -222,51 +221,12 @@ how to use our interactive :mod:`napari` plugin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-83
-
-You can also pass more than one image layer to the custom feature extraction function.
-For this, specify the necessary additional layer names using ``additional_layers`` in ``features_kwargs``.
-The specified image layers will be passed to the custom feature extraction function.
-
-Here, we show this behavior by defining a feature extraction function that sums two image layers:
-
-.. GENERATED FROM PYTHON SOURCE LINES 83-103
-
-.. code-block:: default
-
-
-
-    def sum_fn(arr, extra_layer):
-        """Compute sum of two image layers."""
-        import numpy as np
-
-        return np.sum(arr + extra_layer)
-
-
-    img.add_img(img["image"].values, layer="extra_layer")
-
-    sq.im.calculate_image_features(
-        adata,
-        img,
-        layer="image",
-        features="custom",
-        features_kwargs={"custom": {"func": sum_fn, "additional_layers": ["extra_layer"]}},
-        key_added="custom_features",
-        show_progress_bar=False,
-    )
-
-
-
-
-
-
-
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.353 seconds)
+   **Total running time of the script:** ( 0 minutes  12.772 seconds)
 
-**Estimated memory usage:**  242 MB
+**Estimated memory usage:**  275 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

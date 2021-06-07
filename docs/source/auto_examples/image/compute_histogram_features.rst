@@ -220,9 +220,9 @@ intensity values of channel 0 (DAPI stain) on the different bins.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  49.638 seconds)
+   **Total running time of the script:** ( 0 minutes  13.263 seconds)
 
-**Estimated memory usage:**  657 MB
+**Estimated memory usage:**  551 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:

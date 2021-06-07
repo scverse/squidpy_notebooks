@@ -6,9 +6,11 @@ on:
     pull_request:
         branches:
         -   master
+        -   dev
     push:
         branches:
         -   master
+        -   dev
 
 jobs:
     init:
@@ -65,7 +67,7 @@ jobs:
                 echo "${{ github.event_name }} ${{ github.event.action }}"
         -   uses: actions/checkout@v2
             with:
-                fetch-depth: '0'
+                fetch-depth: 0
         -   name: Set up Python 3.8
             uses: actions/setup-python@v2
             with:
@@ -107,7 +109,7 @@ jobs:
                 PLATFORM: ubuntu-latest
 
     regenerate:
-        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && github.ref == 'refs/heads/master'
+        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
         needs: [lint, test]
         runs-on: ubuntu-latest
         steps:
@@ -157,8 +159,16 @@ jobs:
                 skip_dirty_check: false
                 skip_fetch: true
 
-        -   name: Request documentation rebuild
+        -   name: Request master documentation rebuild
             # if: steps.auto-commit-action.outputs.changes_detected == 'true'
             # does not seem to work with the above hack
+            if: github.ref == 'refs/heads/master'
             run: |
                 curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+
+        -   name: Request dev documentation rebuild
+            # if: steps.auto-commit-action.outputs.changes_detected == 'true'
+            # does not seem to work with the above hack
+            if: github.ref == 'refs/heads/dev'
+            run: |
+                curl -X POST -d "branches=dev" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
