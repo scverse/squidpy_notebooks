@@ -59,7 +59,7 @@ adata_crop = crop_corner.subset(adata)
 adata_crop
 
 ###############################################################################
-# Visualize the result in napari:
+# Visualize the result in Napari:
 #
 # .. code-block:: python
 #
