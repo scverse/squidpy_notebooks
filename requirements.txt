@@ -1,1 +1,1 @@
-git+https://github.com/theislab/squidpy.git#egg=squidpy[all]
+git+https://github.com/theislab/squidpy@dev
