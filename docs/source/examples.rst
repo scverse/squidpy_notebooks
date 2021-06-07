@@ -30,6 +30,7 @@ This section contains various examples for the :mod:`squidpy.im` module.
     auto_examples/image/compute_texture_features
     auto_examples/image/compute_segmentation_features
     auto_examples/image/compute_custom_features
+    auto_examples/plotting/compute_extract
 
 ImageContainer
 --------------
@@ -40,4 +41,3 @@ This section contains various examples for the :class:`squidpy.im.ImageContainer
 
     auto_examples/image/compute_show
     auto_examples/image/compute_crops
-    auto_examples/plotting/compute_extract

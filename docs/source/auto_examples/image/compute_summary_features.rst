@@ -24,7 +24,7 @@ Extract summary features
 This example shows how to extract summary features from the tissue image.
 
 Summary features give a good overview over the intensity of each image channels at the location of the Visium spots.
-They are calculated by using ``features = 'summary'``.
+They are calculated by using ``features = 'summary'``, which calls :func:`squidpy.im.ImageContainer.features_summary`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -234,9 +234,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.626 seconds)
+   **Total running time of the script:** ( 3 minutes  0.855 seconds)
 
-**Estimated memory usage:**  362 MB
+**Estimated memory usage:**  384 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

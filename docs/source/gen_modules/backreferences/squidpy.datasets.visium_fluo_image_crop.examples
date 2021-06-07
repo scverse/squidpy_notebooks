@@ -5,7 +5,7 @@ Examples using ``squidpy.datasets.visium_fluo_image_crop``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.calculate_image_features.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract texture features from the tissue image.">
 
 .. only:: html
 
@@ -21,25 +21,6 @@ Examples using ``squidpy.datasets.visium_fluo_image_crop``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract histogram features from tissue image.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_histogram_features_thumb.png
-     :alt: Extract histogram features
-
-     :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`
 
 .. raw:: html
 
