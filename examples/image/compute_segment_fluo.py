@@ -21,12 +21,11 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 .. seealso::
 
     - :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
-    calculate a cell-segmentation of an H&E stain.
+      calculate a cell-segmentation of an H&E stain.
     - `Nuclei Segmentation using Cellpose <../../external_tutorials/tutorial_cellpose_segmentation.ipynb>`_
-    for a tutorial on using Cellpose as a custom segmentation function
+      for a tutorial on using Cellpose as a custom segmentation function.
     - `Nuclei Segmentation using StarDist <../../external_tutorials/tutorial_stardist.ipynb>`_
-    for a tutorial on using StarDist as a custom segmentation function
-
+      for a tutorial on using StarDist as a custom segmentation function.
 """
 
 import squidpy as sq

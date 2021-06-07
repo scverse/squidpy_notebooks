@@ -146,7 +146,7 @@ sphinx_gallery_conf = {
     "binder": {
         "org": "theislab",
         "repo": "squidpy_notebooks",
-        "branch": "master",
+        "branch": release,
         "binderhub_url": "https://mybinder.org",
         "dependencies": str(_root / "environment.yml"),
         "filepath_prefix": "docs",

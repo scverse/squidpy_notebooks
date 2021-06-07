@@ -12,11 +12,10 @@ It wraps :class:`xarray.Dataset` and provides different cropping, processing, an
 
     For more details on specific :class:`squidpy.im.ImageContainer` functions, have a look at the following examples:
 
-    - `Interactive visualisation with Napari <../external_tutorials/tutorial_napari.ipynb>`_
-    - :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-    - :ref:`sphx_glr_auto_examples_image_compute_crops.py`
-    - :ref:`sphx_glr_auto_examples_image_compute_show.py`
-
+    - `Interactive visualisation with Napari <../external_tutorials/tutorial_napari.ipynb>`_.
+    - :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+    - :ref:`sphx_glr_auto_examples_image_compute_show.py`.
 """
 
 import squidpy as sq
@@ -29,7 +28,7 @@ import numpy as np
 #
 # The :class:`squidpy.im.ImageContainer` constructor can read in memory
 # :class:`numpy.ndarray`/:class:`xarray.DataArray` or on-disk image files.
-# The `ImageContainer` can store multiple image `layer`s (for example an image and a matching segmentation mask).
+# The `ImageContainer` can store multiple image layers (for example an image and a matching segmentation mask).
 #
 # Images are expected to have at least a `x` and `y` dimension, with optional `channel` and `z` dimensions.
 # Here, we will focus on 2D images without at `z` dimension, see
@@ -43,6 +42,7 @@ import numpy as np
 # - `dims`, to specify which dimensions `img` has. There are
 # - `lazy`, set to True to allow lazy computations
 # - `scale`, set this to the scaling factor between the image and the coordinates saved
+#
 # in `adata.obsm['spatial']` to allow correct mapping between the image and the observations in `adata`.
 #
 # Let us see these arguments in action with a toy example.
@@ -104,7 +104,7 @@ img.rename("seg2", "new-name")
 # -------------
 #
 # Use :meth:`squidpy.im.ImageContainer.show` to visualize (small) images statically.
-# See :ref:`sphx_glr_auto_examples_image_compute_show.py` for a more details.
+# See :ref:`sphx_glr_auto_examples_image_compute_show.py` for more details.
 #
 # For large images and for interactive visualization of `ImageContainer` together with spatial 'omics data,
 # we recommend using :meth:`squidpy.im.ImageContainer.interactive`, which uses Napari.
@@ -202,5 +202,5 @@ img_on_disk.compute()
 print(type(img_on_disk["image"].data))
 
 ###############################################################################
-# ImageContainers can be saved and loaded from a zarr store, using :meth:`squidpy.im.ImageContainer.save` and
+# ImageContainers can be saved and loaded from a Zarr store, using :meth:`squidpy.im.ImageContainer.save` and
 # :meth:`squidpy.im.ImageContainer.load`
