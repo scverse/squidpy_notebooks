@@ -38,4 +38,6 @@ This section contains various examples for the :class:`squidpy.im.ImageContainer
 .. nbgallery::
     :glob:
 
+    auto_examples/image/compute_show
     auto_examples/image/compute_crops
+    auto_examples/plotting/compute_extract

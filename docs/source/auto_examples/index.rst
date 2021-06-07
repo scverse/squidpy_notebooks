@@ -86,14 +86,14 @@ Graph
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s K function.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s L function.">
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_k_thumb.png
-     :alt: Compute Ripley's K function
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_thumb.png
+     :alt: Compute Ripley's statistics
 
-     :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py`
+     :ref:`sphx_glr_auto_examples_graph_compute_ripley.py`
 
 .. raw:: html
 
@@ -103,7 +103,7 @@ Graph
 .. toctree::
    :hidden:
 
-   /auto_examples/graph/compute_ripley_k
+   /auto_examples/graph/compute_ripley
 
 .. raw:: html
 
@@ -125,6 +125,27 @@ Graph
    :hidden:
 
    /auto_examples/graph/compute_co_occurrence
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Sepal score for spatially variable genes identification.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_sepal_thumb.png
+     :alt: Compute Sepal score
+
+     :ref:`sphx_glr_auto_examples_graph_compute_sepal.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/graph/compute_sepal
 
 .. raw:: html
 
@@ -371,6 +392,27 @@ Image
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show().">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_show_thumb.png
+     :alt: Show layers of the ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_show.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_show
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
 
 .. only:: html
@@ -494,6 +536,39 @@ Image
    :hidden:
 
    /auto_examples/image/compute_features
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_plotting:
+
+Plotting
+--------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.extract to plot features in adata.obsm.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_compute_extract_thumb.png
+     :alt: Plot features in `adata.obsm`
+
+     :ref:`sphx_glr_auto_examples_plotting_compute_extract.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plotting/compute_extract
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

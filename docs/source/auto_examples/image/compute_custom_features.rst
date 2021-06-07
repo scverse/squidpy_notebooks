@@ -228,7 +228,7 @@ You can also pass more than one image layer to the custom feature extraction fun
 For this, specify the necessary additional layer names using ``additional_layers`` in ``features_kwargs``.
 The specified image layers will be passed to the custom feature extraction function.
 
-Here, we show this behaviour by defining a feature extraction function that sums two image layers:
+Here, we show this behavior by defining a feature extraction function that sums two image layers:
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-103
 
@@ -264,9 +264,9 @@ Here, we show this behaviour by defining a feature extraction function that sums
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.219 seconds)
+   **Total running time of the script:** ( 0 minutes  58.353 seconds)
 
-**Estimated memory usage:**  341 MB
+**Estimated memory usage:**  242 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

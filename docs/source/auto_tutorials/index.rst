@@ -74,6 +74,27 @@ Tutorials
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
+     :alt: Analyze Slide-seqV2 data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_slideseqv2
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to store spatial datasets in anndata.AnnData.">
 
 .. only:: html
@@ -92,6 +113,27 @@ Tutorials
    :hidden:
 
    /auto_tutorials/tutorial_read_spatial
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
+     :alt: Analyze Merfish data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_merfish
 
 .. raw:: html
 
@@ -142,7 +184,7 @@ Tutorials
 .. only:: html
 
  .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
-     :alt: Analyze images of MIBI-TOF data
+     :alt: Analyze MIBI-TOF image data
 
      :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
 

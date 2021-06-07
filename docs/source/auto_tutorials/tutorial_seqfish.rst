@@ -118,7 +118,7 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 .. code-block:: default
 
 
-    sq.gr.spatial_neighbors(adata)
+    sq.gr.spatial_neighbors(adata, coord_type="generic")
     sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
     sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
 
@@ -363,9 +363,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  43.187 seconds)
+   **Total running time of the script:** ( 1 minutes  52.604 seconds)
 
-**Estimated memory usage:**  2550 MB
+**Estimated memory usage:**  2556 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

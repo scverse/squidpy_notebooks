@@ -93,7 +93,7 @@ will be considered neighbors.
 .. code-block:: default
 
 
-    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="visium")
+    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", neigh_grid=6)
 
 
 
@@ -102,13 +102,14 @@ will be considered neighbors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 37-41
 
 The function builds a spatial graph and saves its adjacency matrix
 to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 ``adata.obsp['spatial_distances']`` by default.
+Note that it can also build a a graph from a square grid, just set ``neigh_grid = 4``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -131,9 +132,8 @@ to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
+.. GENERATED FROM PYTHON SOURCE LINES 45-47
 
-For ``n_rings = 1`` there will be no ``adata.obsp['spatial_distances']``
 The weights of the weighted adjacency matrix are ordinal numbers of hexagonal rings
 in the case of ``coord_type = 'visium'``.
 
@@ -192,7 +192,7 @@ We can visualize the neighbors of a point to better visualize what `n_rings` mea
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-65
 
-Next, we show how to compute the spatial neighbors graph for a non-Visium dataset.
+Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-69
 
@@ -220,13 +220,14 @@ Next, we show how to compute the spatial neighbors graph for a non-Visium datase
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-73
+.. GENERATED FROM PYTHON SOURCE LINES 70-74
 
 We use the same function for this with ``coord_type = 'generic'``.
 ``n_neigh`` and ``radius`` can be used for non-Visium datasets.
 ``n_neigh`` specifies a fixed number of the closest spots for each spot as neighbors.
+Alternatively, ``delaunay = True`` can be used, for a Delaunay triangulation graph.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-87
+.. GENERATED FROM PYTHON SOURCE LINES 74-88
 
 .. code-block:: default
 
@@ -255,12 +256,46 @@ We use the same function for this with ``coord_type = 'generic'``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-90
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
+
+We use the same function for this with ``coord_type = 'generic'`` and ``delaunay = True``.
+You can appreciate that the neighbor graph is slightly different than before.
+
+.. GENERATED FROM PYTHON SOURCE LINES 91-105
+
+.. code-block:: default
+
+
+    sq.gr.spatial_neighbors(adata, delaunay=True, coord_type="generic")
+    _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
+    idx = np.append(idx, 420)
+    sc.pl.spatial(
+        adata[idx, :],
+        color="cell type",
+        neighbors_key="spatial_neighbors",
+        spot_size=1,
+        edges=True,
+        edges_width=1,
+        img_key=None,
+    )
+
+
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_spatial_neighbors_003.png
+    :alt: cell type
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 106-108
 
 In order to get all spots within a specified radius (in units of the spatial coordinates)
 from each spot as neighbors, the parameter ``radius`` should be used.
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-95
+.. GENERATED FROM PYTHON SOURCE LINES 108-113
 
 .. code-block:: default
 
@@ -288,9 +323,9 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  8.783 seconds)
+   **Total running time of the script:** ( 1 minutes  17.051 seconds)
 
-**Estimated memory usage:**  240 MB
+**Estimated memory usage:**  128 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:

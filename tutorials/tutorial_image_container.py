@@ -15,8 +15,7 @@ It wraps :class:`xarray.Dataset` and provides different cropping, processing, an
     - `Interactive visualisation with Napari <../external_tutorials/tutorial_napari.ipynb>`_
     - :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
     - :ref:`sphx_glr_auto_examples_image_compute_crops.py`
-    - `sphx_glr_auto_examples_image_compute_image_container_show.py`
-    - TODO crop generator
+    - :ref:`sphx_glr_auto_examples_image_compute_show.py`
 
 """
 
@@ -105,7 +104,7 @@ img.rename("seg2", "new-name")
 # -------------
 #
 # Use :meth:`squidpy.im.ImageContainer.show` to visualize (small) images statically.
-# See `sphx_glr_auto_examples_image_compute_image_container_show.py` for a more details.
+# See :ref:`sphx_glr_auto_examples_image_compute_show.py` for a more details.
 #
 # For large images and for interactive visualization of `ImageContainer` together with spatial 'omics data,
 # we recommend using :meth:`squidpy.im.ImageContainer.interactive`, which uses Napari.
