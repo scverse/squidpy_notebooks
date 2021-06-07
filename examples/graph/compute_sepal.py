@@ -24,16 +24,18 @@ adata
 ###############################################################################
 # We can compute the Sepal score with :func:`squidpy.gr.sepal`.
 # there are 2 important aspects to consider when computing sepal:
+#
 # - The function only accepts grid-like spatial graphs. Make sure to specify the
-# maximum number of neighbors in your data (6 for an hexagonal grid like Visium)
-# with ``max_neighs = 6``.
+#   maximum number of neighbors in your data (6 for an hexagonal grid like Visium)
+#   with ``max_neighs = 6``.
 # - It is useful to filter out genes that are expressed in very few observations
-# and might be wrongly identified as being spatially variable. If you are performing
-# preprocessing with Scanpy, there is a convenient function that can be used BEFORE
-# normalization :func:`scanpy.pp.calculate_qc_metrics`. It computes several useful
-# summary statistics on both observation and feature axis. We will be using the
-# ``n_cells`` columns in `adata.var` to filter out genes that are expressed in
-# less than 100 observations.
+#   and might be wrongly identified as being spatially variable. If you are performing
+#   preprocessing with Scanpy, there is a convenient function that can be used BEFORE
+#   normalization :func:`scanpy.pp.calculate_qc_metrics`. It computes several useful
+#   summary statistics on both observation and feature axis. We will be using the
+#   ``n_cells`` columns in `adata.var` to filter out genes that are expressed in
+#   less than 100 observations.
+#
 # Before computing the Sepal score, we first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
 # We will also subset the number of genes to evaluate for efficiency purposes.
 

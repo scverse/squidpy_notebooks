@@ -72,6 +72,7 @@ preoptic
 Slide
 seqV
 hypothalamic
+Zarr
 # external tutorials
 StarDist
 convolutional
