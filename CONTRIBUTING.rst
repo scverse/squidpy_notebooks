@@ -76,7 +76,9 @@ Make sure to follow the following checklist before merging a new example / tutor
 
   The first line after title should be short, since this is the hover info displayed when hovering over the tutorial
 - ensure that citations are in ``docs/source/references.bib`` and are used within the examples/tutorials.
-  Cite in rst using the ``:cite:`` directive.
+  Cite in rst using the ``:cite:`` directive. 
+  In ``references.bib``, remove the ``url`` and ``eprint`` tags, just leave ``DOI``. 
+  The problem is that for ``url``, it gets incorrectly prefixed with ``https://arxiv.org``
 - ensure when referencing functions/classes/packages/etc., we use RST roles, such as:
   ``:func:squidpy.im.process_img``, ``:class:squidpy.im.ImageContainer``, etc.
 - ensure that example/tutorial titles are capitalized, but do not follow Camel Case style
