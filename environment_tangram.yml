@@ -1,9 +1,9 @@
-name: cellpose
+name: squidpy
 channels:
--   defaults
+-   conda-forge
 dependencies:
 -   python=3.8
 -   pip
 -   pip:
     -   squidpy>=1.1.0
-    -   cellpose==0.6.2
+    -   tangram-sc>=0.4.0
