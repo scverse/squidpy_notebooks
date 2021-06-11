@@ -5,34 +5,34 @@
 
 Computation times
 =================
-**09:11.488** total execution time for **auto_examples_image** files:
+**18:09.165** total execution time for **auto_examples_image** files:
 
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py` (``compute_segmentation_features.py``) | 01:45.984 | 2269.6 MB |
+| :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py` (``compute_segmentation_features.py``) | 03:32.935 | 2345.2 MB |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_texture_features.py` (``compute_texture_features.py``)           | 01:22.908 | 673.5 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_texture_features.py` (``compute_texture_features.py``)           | 03:12.813 | 689.2 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_image_container.py` (``compute_image_container.py``)             | 01:08.115 | 768.7 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py` (``compute_histogram_features.py``)       | 02:59.596 | 646.9 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` (``compute_summary_features.py``)           | 01:04.536 | 367.6 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` (``compute_summary_features.py``)           | 02:56.755 | 353.3 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py` (``compute_histogram_features.py``)       | 01:03.625 | 644.4 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` (``compute_custom_features.py``)             | 01:02.013 | 217.1 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` (``compute_custom_features.py``)             | 00:39.410 | 309.3 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_features.py` (``compute_features.py``)                           | 00:57.487 | 284.6 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_features.py` (``compute_features.py``)                           | 00:34.646 | 207.8 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_image_container.py` (``compute_image_container.py``)             | 00:37.141 | 766.0 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_show.py` (``compute_show.py``)                                   | 00:19.596 | 241.9 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_show.py` (``compute_show.py``)                                   | 00:34.272 | 254.9 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_crops.py` (``compute_crops.py``)                                 | 00:15.641 | 98.4 MB   |
+| :ref:`sphx_glr_auto_examples_image_compute_crops.py` (``compute_crops.py``)                                 | 00:33.960 | 227.9 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` (``compute_segment_hne.py``)                     | 00:15.485 | 181.2 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_process_hires.py` (``compute_process_hires.py``)                 | 00:31.933 | 1892.5 MB |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_smooth.py` (``compute_smooth.py``)                               | 00:14.321 | 44.4 MB   |
+| :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` (``compute_segment_hne.py``)                     | 00:22.770 | 199.9 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_gray.py` (``compute_gray.py``)                                   | 00:12.421 | 625.7 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` (``compute_segment_fluo.py``)                   | 00:20.812 | 336.7 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_process_hires.py` (``compute_process_hires.py``)                 | 00:08.339 | 2136.3 MB |
+| :ref:`sphx_glr_auto_examples_image_compute_smooth.py` (``compute_smooth.py``)                               | 00:14.369 | 7.7 MB    |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` (``compute_segment_fluo.py``)                   | 00:06.459 | 289.2 MB  |
+| :ref:`sphx_glr_auto_examples_image_compute_gray.py` (``compute_gray.py``)                                   | 00:12.308 | 706.6 MB  |
 +-------------------------------------------------------------------------------------------------------------+-----------+-----------+

@@ -264,9 +264,9 @@ Here, we show this behavior by defining a feature extraction function that sums 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.938 seconds)
+   **Total running time of the script:** ( 1 minutes  2.013 seconds)
 
-**Estimated memory usage:**  343 MB
+**Estimated memory usage:**  217 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

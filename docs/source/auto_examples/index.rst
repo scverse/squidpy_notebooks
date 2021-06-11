@@ -112,7 +112,7 @@ Graph
 .. only:: html
 
  .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_co_occurrence_thumb.png
-     :alt: Compute Co-occurrence probability
+     :alt: Compute co-occurrence probability
 
      :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py`
 
@@ -473,27 +473,6 @@ Image
    :hidden:
 
    /auto_examples/image/compute_process_hires
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
-     :alt: Squidpy API
-
-     :ref:`sphx_glr_auto_examples_image_API.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/API
 
 .. raw:: html
 

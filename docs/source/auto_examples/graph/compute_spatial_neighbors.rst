@@ -323,9 +323,9 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  17.051 seconds)
+   **Total running time of the script:** ( 1 minutes  11.538 seconds)
 
-**Estimated memory usage:**  128 MB
+**Estimated memory usage:**  244 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:

@@ -234,9 +234,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  0.855 seconds)
+   **Total running time of the script:** ( 2 minutes  56.755 seconds)
 
-**Estimated memory usage:**  384 MB
+**Estimated memory usage:**  353 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

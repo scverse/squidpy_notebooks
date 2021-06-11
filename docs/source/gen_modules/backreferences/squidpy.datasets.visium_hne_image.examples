@@ -5,14 +5,14 @@ Examples using ``squidpy.datasets.visium_hne_image``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Import packages and load dataset">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer to interact with image structured data.">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_API_thumb.png
-     :alt: Squidpy API
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_image_container_thumb.png
+     :alt: ImageContainer object
 
-     :ref:`sphx_glr_auto_examples_image_API.py`
+     :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
 
 .. raw:: html
 
@@ -20,7 +20,26 @@ Examples using ``squidpy.datasets.visium_hne_image``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_image_API.py`
+ * :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+     :alt: Process a high-resolution image
+
+     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
 
 .. raw:: html
 
@@ -40,3 +59,22 @@ Examples using ``squidpy.datasets.visium_hne_image``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
+     :alt: Analyze Visium H&E data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`

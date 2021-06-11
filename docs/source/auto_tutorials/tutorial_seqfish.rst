@@ -137,7 +137,7 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
  .. code-block:: none
 
       0%|          | 0/1000 [00:00<?, ?/s]
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
       col_ax = divider.append_axes("top", size="5%")
 
 
@@ -247,29 +247,29 @@ the argument ``clusters``. Then, we visualize the results with
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -345,7 +345,7 @@ for the adjusted p-value (with the ``alpha`` argument)
 
  .. code-block:: none
 
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
       _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
       0%|          | 0/100 [00:00<?, ?permutation/s]
 
@@ -363,9 +363,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  52.604 seconds)
+   **Total running time of the script:** ( 1 minutes  39.429 seconds)
 
-**Estimated memory usage:**  2556 MB
+**Estimated memory usage:**  2624 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

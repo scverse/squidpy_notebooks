@@ -5,6 +5,25 @@ Examples using ``squidpy.datasets.visium_fluo_adata_crop``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+     :alt: Crop images with ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract texture features from the tissue image.">
 
 .. only:: html
@@ -21,6 +40,25 @@ Examples using ``squidpy.datasets.visium_fluo_adata_crop``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract histogram features from tissue image.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_histogram_features_thumb.png
+     :alt: Extract histogram features
+
+     :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`
 
 .. raw:: html
 
@@ -59,3 +97,22 @@ Examples using ``squidpy.datasets.visium_fluo_adata_crop``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Analyze Visium fluorescence data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`

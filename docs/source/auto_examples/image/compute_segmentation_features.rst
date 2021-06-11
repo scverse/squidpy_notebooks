@@ -139,15 +139,15 @@ each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_aut
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
       return _methods._mean(a, axis=axis, dtype=dtype,
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
       ret = ret.dtype.type(ret / rcount)
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
       ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
       arrmean = um.true_divide(arrmean, div, out=arrmean, casting='unsafe',
-    /Users/hannah.spitzer/projects/spatial_scanpy/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
       ret = ret.dtype.type(ret / rcount)
 
 
@@ -322,9 +322,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  47.670 seconds)
+   **Total running time of the script:** ( 3 minutes  32.935 seconds)
 
-**Estimated memory usage:**  2412 MB
+**Estimated memory usage:**  2345 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:
