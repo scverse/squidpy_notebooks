@@ -42,7 +42,6 @@ adata = sq.datasets.visium_hne_adata_crop()
 # The high-resolution tissue image is contained in ``img['image']``,
 # and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 # We can plot the spots overlayed on a lower-resolution version of the tissue image contained in ``adata``.
-
 np.set_printoptions(threshold=10)
 print(img)
 print(adata.obsm["spatial"])
@@ -50,24 +49,20 @@ print(adata.obsm["spatial"])
 sc.set_figure_params(figsize=(4, 4))
 sc.pl.spatial(adata, add_outline=True)
 
-# sq.im.calculate_image_features?
-
 ###############################################################################
 # Using this information, we can now extract features from the tissue underneath each spot by calling
 # :func:`squidpy.im.calculate_image_features`.
 # This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
-# ``adata.obsm[key]``.
-# It contains several arguments to modify its behavior.
-# With these arguments you can
+# ``adata.obsm[<key>]``.
+# It contains several arguments to modify its behavior. With these arguments you can:
 #
-# - specify the image used for feature calculation using ``layer``,
-# - specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
-# - specify how the crops used for feature calculation look like using ``kwargs``,
-# - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
-# - specify how the data is returned using ``key_added`` and ``copy``.
+#   - specify the image used for feature calculation using ``layer``.
+#   - specify the type of features that should be calculated using ``features`` and ``features_kwargs``.
+#   - specify how the crops used for feature calculation look like using ``kwargs``.
+#   - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``.
+#   - specify how the data is returned using ``key_added`` and ``copy``.
 #
 # Let us first calculate summary features and save the result in ``adata.obsm['features']``.
-
 sq.im.calculate_image_features(adata, img, features="summary", key_added="features", show_progress_bar=False)
 
 # show the calculated features
@@ -78,7 +73,6 @@ adata.obsm["features"].head()
 #
 # Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 # `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
-
 sc.pl.spatial(
     sq.pl.extract(adata, "features"),
     color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
@@ -95,15 +89,15 @@ sc.pl.spatial(
 # Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
 # For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 #
-# - Use ``mask_circle=True, scale=1, spot_scale=1``, if you would like to get features that are calculated only from
-#   tissue in a Visium spot
-# - Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
-# - Use ``spot_scale=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the Visium spot
+#   - Use ``mask_circle = True, scale = 1, spot_scale = 1``, if you would like to get features that are calculated
+#     only from tissue in a Visium spot.
+#   - Use ``scale = X``, with `X < 1`, if you would like to downscale the crop before extracting the features.
+#   - Use ``spot_scale = X``, with `X > 1`, if you want to extract crops that are X-times the size of the Visium spot.
 #
-# Let us extract masked and scaled features and compare them
-
-# We subset adata to the first 50 spots to make the computation of features fast.
-# Skip this step if you want to calculate features from all spots
+# Let us extract masked and scaled features and compare them.
+#
+# We subset ``adata`` to the first 50 spots to make the computation of features fast.
+# Skip this step if you want to calculate features from all spots.
 adata_sml = adata[:50].copy()
 
 # calculate default features
@@ -149,5 +143,4 @@ _ = sns.displot(
 # ===============
 # Speeding up the feature extraction is easy.
 # Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
-# extract features by using 4 jobs
 sq.im.calculate_image_features(adata, img, features="summary", key_added="features", n_jobs=4, show_progress_bar=False)

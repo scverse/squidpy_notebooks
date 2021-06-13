@@ -38,7 +38,6 @@ adata
 #
 # Before computing the Sepal score, we first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
 # We will also subset the number of genes to evaluate for efficiency purposes.
-
 sq.gr.spatial_neighbors(adata)
 genes = adata.var_names[(adata.var.n_cells > 100) & adata.var.highly_variable][0:100]
 sq.gr.sepal(adata, max_neighs=6, genes=genes, n_jobs=1)

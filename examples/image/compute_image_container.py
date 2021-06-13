@@ -15,35 +15,29 @@ import squidpy as sq
 
 ###############################################################################
 # Load a pre-loaded image.
-# To load your own data, use the ImageContainer constructor:
-# ``squidpy.im.ImageContainer(<image-path-or-array>)``
+# To load your own data, use the ImageContainer constructor as ``squidpy.im.ImageContainer(<image-path-or-array>)``.
 img = sq.datasets.visium_hne_image()
 
 ###############################################################################
 # Representation image in container:
-# The image(s) are in the :attr:`img.data` attribute of the instance, which is an
-# :class:`xarray.Dataset`. Note that this is a Dataset so that this attribute can hold
-# multiple image-structured layers.
+# The image layer(s) are stored in :attr:`img.data` attribute of the instance, which is a :class:`xarray.Dataset`.
 print(img.data)
 
 ###############################################################################
-# You can access specific image-structured arrays in the image using their
-# names.
+# You can access specific image-structured arrays in the image using their names.
 print(img["image"])
 
 ###############################################################################
 # Lazy loading:
-# The image data can be lazily loaded with `netcdf` and explicitly loaded into
-# memory via ``.data.load()`` and saved to disk via ``.save()``:
-img.data.load()
+# The image data can be lazily loaded with *Netcdf* and explicitly loaded into
+# memory via :meth:`squidpy.im.ImageContainer.compute` and saved to disk via :meth:`squidpy.im.ImageContainer.save`.`
+img.compute()
 
 ###############################################################################
-# You can add images into the ImageContainer using ``.add_img()``:
+# You can add images into the ImageContainer using :meth:`squidpy.im.ImageContainer.add_img`.`
 # Here we are adding the same image again under a different name as a toy example.
-# It shares the same channel dimension with "image", so we can use the same
-# label for ``channel_dim`` here.
-# If the added image layer has a different channel dimension, just specify a new
-# label for ``channel_dim``.
+# It shares the same channel dimension with `"image"`, so we can use the same label for ``channel_dim`` here.
+# If the added image layer has a different channel dimension, just specify a new label for ``channel_dim``.
 img.add_img(
     img=img.data["image"],
     layer="image2",

@@ -34,6 +34,5 @@ sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(adata, cluster_key="cell type", clusters="basal CK tumor cell")
 
 ###############################################################################
-# We can further visualize tissue organization in spatial coordinates
-# with :func:`scanpy.pl.spatial`.
+# We can further visualize tissue organization in spatial coordinates with :func:`scanpy.pl.spatial`.
 sc.pl.spatial(adata, color="cell type", spot_size=10)

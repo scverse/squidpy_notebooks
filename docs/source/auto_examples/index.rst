@@ -392,7 +392,7 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show().">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show.">
 
 .. only:: html
 
@@ -530,12 +530,12 @@ Plotting
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.extract to plot features in adata.obsm.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.extract to plot features in anndata.AnnData.obsm.">
 
 .. only:: html
 
  .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_compute_extract_thumb.png
-     :alt: Plot features in `adata.obsm`
+     :alt: Plot features in adata.obsm
 
      :ref:`sphx_glr_auto_examples_plotting_compute_extract.py`
 

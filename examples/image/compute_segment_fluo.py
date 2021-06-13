@@ -41,18 +41,17 @@ img = sq.datasets.visium_fluo_image_crop()
 ###############################################################################
 # We crop the image to a smaller segment.
 # This is only to speed things up, :func:`squidpy.im.segment` can also process very large images
-# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.)
+# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 crop = img.crop_corner(1000, 1000, size=1000)
 
 ###############################################################################
 # The tissue image in this dataset contains four fluorescence stains.
 # The first one is DAPI, which we will use for the nuclei-segmentation.
-
 crop.show("image", channelwise=True)
 
 ###############################################################################
 # We segment the image with :func:`squidpy.im.segment` using watershed segmentation
-# (``method="watershed"``).
+# (``method = 'watershed'``).
 # With the arguments ``layer`` and ``channel`` we define the image layer and
 # channel of the image that should be segmented.
 #
@@ -60,15 +59,13 @@ crop.show("image", channelwise=True)
 # For watershed segmentation, we need to set a threshold to create the mask image.
 # You can either set a manual threshold, or use automated
 # `Otsu thresholding <https://en.wikipedia.org/wiki/Otsu%27s_method>`_.
-# For this fluorescence image example, Otsu's thresh works very well,
-# thus we will use ``thresh = None``.
+# For this fluorescence image example, Otsu's thresh works very well, thus we will use ``thresh = None``.
 # See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
 # for an example where we use a manually defined threshold.
 #
 # In addition, we can specify if the values greater or equal than
 # the threshold should be in the mask (default)
 # or if the values smaller to the threshold should be in the mask (``geq = False``).
-
 sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=None, geq=True)
 
 ###############################################################################
@@ -76,7 +73,6 @@ sq.im.segment(img=crop, layer="image", channel=0, method="watershed", thresh=Non
 # This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 # The result of the segmentation is a label image that can be used to extract features like the
 # number of cells from the image.
-
 print(crop)
 print(f"Number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 

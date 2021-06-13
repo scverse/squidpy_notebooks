@@ -20,7 +20,7 @@ import squidpy as sq
 
 import matplotlib.pyplot as plt
 
-# load H&E stained tissue image
+# load the H&E stained tissue image
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################
@@ -28,7 +28,6 @@ img = sq.datasets.visium_hne_image_crop()
 # With the argument ``layer`` we can select the image layer that should be processed.
 # By default, the resulting image is saved in the layer ``image_smooth``.
 # This behavior can be changed with the arguments ``copy`` and ``layer_added``.
-
 sq.im.process(img, layer="image", method="smooth", sigma=2)
 
 ###############################################################################

@@ -6,7 +6,7 @@ Convert to grayscale
 This example shows how to use :func:`squidpy.im.process` to convert an image layer to grayscale.
 
 You can convert any layer of :class:`squidpy.im.ImageContainer` to grayscale.
-We use the argument ``method="gray"`` to convert the image.
+We use the argument ``method = 'gray'`` to convert the image.
 This calls :func:`skimage.color.rgb2gray` in the background.
 
 .. seealso::
@@ -20,7 +20,7 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# First, we load an H&E stained tissue image.
+# First, we load the H&E stained tissue image.
 # Here, we only load a cropped dataset to speed things up.
 # In general, :func:`squidpy.im.process` can also process very large images
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
@@ -34,7 +34,6 @@ img = sq.datasets.visium_hne_image_crop()
 # Use the argument ``channel_dim`` to set a new channel name explicitly.
 # By default, the resulting image is saved in the layer ``image_gray``.
 # This behavior can be changed with the arguments ``copy`` and ``layer_added``.
-
 sq.im.process(img, layer="image", method="gray")
 
 fig, axes = plt.subplots(1, 2)

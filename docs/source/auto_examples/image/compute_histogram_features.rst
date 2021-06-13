@@ -29,8 +29,8 @@ by computing a histogram of each image channel and returning bin-counts for each
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``bins`` - number of bins of the histogram, default is 10.
-- ``v_range`` - range on which values are binned, default is the whole image range.
+    - ``bins`` - number of bins of the histogram, default is 10.
+    - ``v_range`` - range on which values are binned, default is the whole image range.
 
 .. seealso::
 
@@ -54,12 +54,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-28
 
-Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
+Lets load the fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-43
+.. GENERATED FROM PYTHON SOURCE LINES 28-42
 
 .. code-block:: default
-
 
 
     # get spatial dataset including high-resolution tissue image
@@ -90,14 +89,13 @@ Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of cha
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 The result is stored in ``adata.obsm['histogram_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 .. code-block:: default
-
 
     adata.obsm["histogram_features"].head()
 
@@ -188,7 +186,7 @@ The result is stored in ``adata.obsm['histogram_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-54
+.. GENERATED FROM PYTHON SOURCE LINES 47-52
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to
@@ -196,10 +194,9 @@ learn how to use our interactive :mod:`napari` plugin.
 With these features we can e.g. appreciate the detailed distribution of
 intensity values of channel 0 (DAPI stain) on the different bins.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-60
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
-
 
     sc.pl.spatial(
         sq.pl.extract(adata, "histogram_features"),
@@ -220,9 +217,9 @@ intensity values of channel 0 (DAPI stain) on the different bins.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  59.596 seconds)
+   **Total running time of the script:** ( 0 minutes  59.707 seconds)
 
-**Estimated memory usage:**  647 MB
+**Estimated memory usage:**  653 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_histogram_features.py:

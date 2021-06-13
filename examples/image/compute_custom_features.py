@@ -13,9 +13,9 @@ Custom features are calculated by using ``features = 'custom'``, which calls
 :func:`squidpy.im.ImageContainer.features_custom`.
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``func`` - custom feature extraction function.
-- ``additional_layers`` - names of image layers that should be passed to ``func`` together with ``layer``.
-- other arguments for ``func``
+    - ``func`` - custom feature extraction function.
+    - ``additional_layers`` - names of image layers that should be passed to ``func`` together with ``layer``.
+    - additional keyword arguments for ``func``.
 
 .. seealso::
 
@@ -27,7 +27,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a H&E Visium dataset.
+# Let's load the H&E Visium dataset.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_hne_image_crop()
@@ -36,8 +36,6 @@ adata = sq.datasets.visium_hne_adata_crop()
 
 ###############################################################################
 # Define a custom feature extraction function.
-
-
 def mean_fn(arr):
     """Compute mean of arr."""
     import numpy as np
@@ -46,8 +44,7 @@ def mean_fn(arr):
 
 
 ###############################################################################
-# Now we can extract features using `mean_fn` by providing it within ``features_kwargs``
-
+# Now we can extract features using `mean_fn` by providing it within ``features_kwargs``.
 sq.im.calculate_image_features(
     adata,
     img,
@@ -59,14 +56,12 @@ sq.im.calculate_image_features(
 
 ###############################################################################
 # The result is stored in ``adata.obsm['custom_features']``.
-
 adata.obsm["custom_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+# `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 # how to use our interactive :mod:`napari` plugin.
-
 sc.pl.spatial(
     sq.pl.extract(adata, "custom_features"),
     color=[None, "mean_fn_0"],
@@ -80,8 +75,6 @@ sc.pl.spatial(
 # The specified image layers will be passed to the custom feature extraction function.
 #
 # Here, we show this behavior by defining a feature extraction function that sums two image layers:
-
-
 def sum_fn(arr, extra_layer):
     """Compute sum of two image layers."""
     import numpy as np

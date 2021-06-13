@@ -17,7 +17,7 @@ Note that you can also use :func:`squidpy.im.segment` in this manner.
 
 Note that depending on the processing function used, there might be border effects occurring at the edges
 of the crops.
-Since Squidpy is backed by dask, and internally chunking is done using :func:`dask.array.map_overlap`,
+Since Squidpy is backed by :mod:`dask`, and internally chunking is done using :func:`dask.array.map_overlap`,
 dealing with these border effects is easy.
 Just specify the ``depth`` and ``boundary`` arguments in the ``apply_kwargs``
 upon the call to :func:`squidpy.im.process`.
@@ -37,27 +37,24 @@ border effects.
 
 import squidpy as sq
 
-from scipy.ndimage.filters import gaussian_filter
+from scipy.ndimage import gaussian_filter
 import numpy as np
 
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Build in processing functions
+# Built-in processing functions
 # +++++++++++++++++++++++++++++
-#
-# Load H&E stained tissue image
 
+# load the H&E stained tissue image
 img = sq.datasets.visium_hne_image()
 
 ###############################################################################
 # We will process the image by tiling it in crops of shape ``chunks = (1000, 1000)``.
-
 sq.im.process(img, layer="image", method="gray", chunks=1000)
 
 ###############################################################################
 # Now we can look at the result on a cropped part of the image.
-
 crop = img.crop_corner(4000, 4000, size=2000)
 
 fig, axes = plt.subplots(1, 2)
@@ -69,13 +66,11 @@ _ = axes[1].set_title("grayscale")
 ###############################################################################
 # Custom processing functions
 # +++++++++++++++++++++++++++
-#
-# Here, we use a custom processing function (here :func:`scipy.ndimage.filters.gaussian_filter`)
+# Here, we use a custom processing function (here :func:`scipy.ndimage.gaussian_filter`)
 # with chunking to showcase the ``depth`` and ``boundary`` arguments.
 #
 # Lets use a simple image and choose the chunk size in such a way to clearly see the differences
 # between using overlapping crops and non-overlapping crops.
-
 arr = np.zeros((20, 20))
 arr[10:] = 1
 img = sq.im.ImageContainer(arr, layer="image")
@@ -102,8 +97,7 @@ sq.im.process(
 
 ###############################################################################
 # Plot the difference in results.
-# Using overlapping blocks with `depth` 1 removes artifacts at the borders between chunks
-
+# Using overlapping blocks with ``depth = 1`` removes the artifacts at the borders between chunks.
 fig, axes = plt.subplots(1, 3)
 img.show("image", ax=axes[0])
 _ = axes[0].set_title("original")

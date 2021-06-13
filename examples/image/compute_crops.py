@@ -21,7 +21,7 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Load a fluorescence Visium image.
+# Let's load the fluorescence Visium image.
 img = sq.datasets.visium_fluo_image_crop()
 
 ###############################################################################
@@ -31,7 +31,6 @@ img = sq.datasets.visium_fluo_image_crop()
 # of the crop.
 # You can specify the crop coordinates in pixels (as ``int``) or in percentage of total image size (as ``float``).
 # In addition, you can specify a scaling factor for the crop.
-
 crop_corner = img.crop_corner(1000, 1000, size=800)
 
 crop_center = img.crop_center(1400, 1400, radius=400)
@@ -41,20 +40,16 @@ crop_corner.show(ax=axes[0])
 crop_center.show(ax=axes[1])
 
 ###############################################################################
-# The result of the cropping functions is another ImageContainer
-
+# The result of the cropping functions is another ImageContainer.
 crop_corner
 
 ###############################################################################
-# You can subset the associated ``adata`` to the cropped image using
-# :meth:`squidpy.im.ImageContainer.subset`:
-
+# You can subset the associated ``adata`` to the cropped image using :meth:`squidpy.im.ImageContainer.subset`:
 adata = sq.datasets.visium_fluo_adata_crop()
 adata
 
 ###############################################################################
 # Note the number of observations in ``adata`` before and after subsetting.
-
 adata_crop = crop_corner.subset(adata)
 adata_crop
 

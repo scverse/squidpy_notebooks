@@ -60,12 +60,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-34
 
-Lets load a fluorescence Visium dataset.
+First, let's load the fluorescence Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 .. code-block:: default
-
 
     img = sq.datasets.visium_fluo_image_crop()
     adata = sq.datasets.visium_fluo_adata_crop()
@@ -77,15 +76,14 @@ Lets load a fluorescence Visium dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Before calculating segmentation features, we need to first calculate a segmentation
 using :func:`squidpy.im.segment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 .. code-block:: default
-
 
     sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
 
@@ -96,21 +94,20 @@ using :func:`squidpy.im.segment`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-53
+.. GENERATED FROM PYTHON SOURCE LINES 43-51
 
 Now we can calculate segmentation features. Here, we will calculate the following features:
 
-- number of nuclei (``label``).
-- mean area of nuclei (``area``).
-- mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei (``mean_intensity``).
+  - number of nuclei ``label``.
+  - mean area of nuclei ``area``.
+  - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei ``mean_intensity``.
 
 We use ``mask_cicle = True`` to ensure that we are only extracting features from the tissue underneath
 each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-70
+.. GENERATED FROM PYTHON SOURCE LINES 51-67
 
 .. code-block:: default
-
 
     sq.im.calculate_image_features(
         adata,
@@ -139,28 +136,27 @@ each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_aut
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
       return _methods._mean(a, axis=axis, dtype=dtype,
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
       ret = ret.dtype.type(ret / rcount)
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:261: RuntimeWarning: Degrees of freedom <= 0 for slice
       ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:221: RuntimeWarning: invalid value encountered in true_divide
       arrmean = um.true_divide(arrmean, div, out=arrmean, casting='unsafe',
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/numpy/core/_methods.py:253: RuntimeWarning: invalid value encountered in double_scalars
       ret = ret.dtype.type(ret / rcount)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 The result is stored in ``adata.obsm['segmentation_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-75
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
 
 .. code-block:: default
-
 
     adata.obsm["segmentation_features"].head()
 
@@ -257,14 +253,14 @@ The result is stored in ``adata.obsm['segmentation_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-80
+.. GENERATED FROM PYTHON SOURCE LINES 72-76
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+`our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Here, we show all calculated segmentation features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-102
+.. GENERATED FROM PYTHON SOURCE LINES 76-98
 
 .. code-block:: default
 
@@ -312,7 +308,7 @@ Here, we show all calculated segmentation features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 `segmentation_label` shows the number of nuclei per spot and `segmentation_area_mean` the mean are of nuclei per spot.
 The remaining two plots show the mean intensity of channels 1 and 2 per spot.
@@ -322,9 +318,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  32.935 seconds)
+   **Total running time of the script:** ( 1 minutes  43.809 seconds)
 
-**Estimated memory usage:**  2345 MB
+**Estimated memory usage:**  2154 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:

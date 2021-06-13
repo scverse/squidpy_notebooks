@@ -1,11 +1,10 @@
 Examples
 ========
-
-This section contains various short examples showcasing core squidpy functionalities.
+This section contains various short examples showcasing core :mod:`squidpy` functionality.
 
 Graph
 -----
-This section contains various examples for the :mod:`squidpy.gr` module.
+This section contains various examples from the :mod:`squidpy.gr` module.
 
 .. nbgallery::
     :glob:
@@ -14,10 +13,9 @@ This section contains various examples for the :mod:`squidpy.gr` module.
 
 Image
 -----
-This section contains various examples for the :mod:`squidpy.im` module.
+This section contains various examples from the :mod:`squidpy.im` module.
 
 .. nbgallery::
-    :glob:
 
     auto_examples/image/compute_process_hires
     auto_examples/image/compute_gray
@@ -34,10 +32,11 @@ This section contains various examples for the :mod:`squidpy.im` module.
 
 ImageContainer
 --------------
-This section contains various examples for the :class:`squidpy.im.ImageContainer` class, which is the underlying data structure for the :mod:`squidpy.im` module. See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` for an entry point to the ``ImageContainer``.
+This section contains various examples for the :class:`squidpy.im.ImageContainer` class, which is the underlying
+data structure for the :mod:`squidpy.im` module. See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+for an entry point to the :class:`squidpy.im.ImageContainer`.
 
 .. nbgallery::
-    :glob:
 
     auto_examples/image/compute_show
     auto_examples/image/compute_crops

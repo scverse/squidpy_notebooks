@@ -88,7 +88,6 @@ sc.pl.spatial(
 # which is a variance-stabilized version of the Ripley's K statistics.
 # We'll visualize the results with :func:`squidpy.pl.ripley`.
 # Check :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for more details.
-
 mode = "L"
 sq.gr.ripley(adata, cluster_key="cluster", mode=mode, max_dist=500)
 sq.pl.ripley(adata, cluster_key="cluster", mode=mode)
@@ -98,7 +97,6 @@ sq.pl.ripley(adata, cluster_key="cluster", mode=mode)
 # like *Astrocytes* and *CA11_CA2_CA3_Subiculum* cells, whereas other have a more
 # dispersed pattern, like *Mural* cells. To confirm such interpretation, we can
 # selectively visualize again their spatial organization.
-
 sc.pl.spatial(
     adata,
     color="cluster",
@@ -128,7 +126,6 @@ sc.pl.spatial(
 # and decreasing the threshold
 # for the adjusted p-value (with the ``alpha`` argument)
 # Check :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py` for more details.
-
 sq.gr.ligrec(
     adata,
     n_perms=100,
@@ -160,16 +157,13 @@ sq.pl.ligrec(
 # They provide a score on the degree of spatial variability of gene expression.
 # The statistic as well as the p-value are computed for each gene, and FDR correction
 # is performed. For the purpose of this tutorial, let's compute the *Moran's I* score.
-# See :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
-# for more details.
-
+# See :ref:`sphx_glr_auto_examples_graph_compute_moran.py` for more details.
 sq.gr.spatial_autocorr(adata, mode="moran")
 adata.uns["moranI"].head(10)
 
 ###############################################################################
 # The results are stored in `adata.uns["moranI"]` and we can visualize selected genes
 # with :func:`scanpy.pl.spatial`.
-
 sc.pl.spatial(
     adata,
     color=["Ttr", "Plp1", "Mbp", "Hpca", "Enpp2"],

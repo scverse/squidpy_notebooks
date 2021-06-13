@@ -34,9 +34,9 @@ Texture features are calculated by using ``features = 'texture'``, which calls
 :func:`squidpy.im.ImageContainer.features_texture`.
 In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
-- ``distances`` - distances that are taken into account for finding repeating patterns.
-- ``angles`` - range on which values are binned. Default is the whole image range.
-- ``props`` - texture features that are extracted from the GLCM.
+    - ``distances`` - distances that are taken into account for finding repeating patterns.
+    - ``angles`` - range on which values are binned. Default is the whole image range.
+    - ``props`` - texture features that are extracted from the GLCM.
 
 .. seealso::
 
@@ -96,10 +96,9 @@ For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_c
 
 The result is stored in ``adata.obsm['texture_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 .. code-block:: default
-
 
     adata.obsm["texture_features"].head()
 
@@ -514,18 +513,17 @@ The result is stored in ``adata.obsm['texture_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 58-63
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+`our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-70
+.. GENERATED FROM PYTHON SOURCE LINES 63-68
 
 .. code-block:: default
-
 
     sc.pl.spatial(
         sq.pl.extract(adata, "texture_features"),
@@ -546,9 +544,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  12.813 seconds)
+   **Total running time of the script:** ( 1 minutes  25.357 seconds)
 
-**Estimated memory usage:**  689 MB
+**Estimated memory usage:**  730 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

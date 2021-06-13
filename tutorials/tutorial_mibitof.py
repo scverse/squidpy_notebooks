@@ -1,16 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: sphinx
-#       format_version: '1.1'
-#       jupytext_version: 1.9.1
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
 """
 Analyze MIBI-TOF image data
 ===========================
@@ -19,16 +6,12 @@ This tutorial shows how to apply Squidpy to MIBI-TOF data.
 
 The data used here comes from a recent paper from :cite:`hartmann2020multiplexed`.
 We provide a pre-processed subset of the data, in :class:`anndata.AnnData` format.
-For details on how it was pre-processed, please refer to the original paper. TODO
-
-
+For details on how it was pre-processed, please refer to the original paper.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
-    for additional analysis using images,
+    See :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py` for additional analysis using images
     and :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py` for analysis using spatial graph functions.
-
 
 Import packages & data
 ----------------------
@@ -50,9 +33,9 @@ adata = sq.datasets.mibitof()
 # from different donors, where MIBI-TOF was used to measure single-cell metabolic profiles.
 # As imaging information, we included three raw image channels:
 #
-# - `145_CD45`, a immune cell marker (cyan),
-# - `174_CK`, a tumor marker (magenta),
-# - `113_vimentin`, a mesenchymal cell marker (yellow),
+#   - `145_CD45` - a immune cell marker (cyan).
+#   - `174_CK` - a tumor marker (magenta).
+#   - `113_vimentin` - a mesenchymal cell marker (yellow).
 #
 # and a cell segmentation mask provided by the authors of the original paper.
 #
@@ -72,8 +55,7 @@ for library_id in adata.uns["spatial"].keys():
 # As all three biopsies are already joined in `adata`, let us also create one ImageContainer for
 # all three biopsies using a z-stack.
 # For more information on how to use `ImageContainer` with z-stacks, also have a look at
-# :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-
+# :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
 imgs = []
 for library_id in adata.uns["spatial"].keys():
     img = sq.im.ImageContainer(adata.uns["spatial"][library_id]["images"]["hires"], library_id=library_id)
@@ -86,7 +68,6 @@ img = sq.im.ImageContainer.concat(imgs)
 # Note that we also added the segmentation as an additional layer to img, and set the
 # `segmentation` attribute in the ImageContainer.
 # This allows visualization of the segmentation layer as a `labels` layer in Napari.
-
 img
 
 ###############################################################################
@@ -99,7 +80,6 @@ img
 
 ###############################################################################
 # Let us also statically visualize the data in `img`, using :func:`squidpy.im.ImageCntainer.show`:
-
 img.show("image")
 img.show("image", segmentation_layer="segmentation")
 
@@ -109,16 +89,12 @@ img.show("image", segmentation_layer="segmentation")
 # In the present case, `adata` of course already contains the post-processed cellular mean intensity
 # for the raw image channels.
 # The aim of this tutorial, however, is to showcase how the extraction of such features is possible using Squidpy.
-# As Squidpy is backed by dask and supports chunked image processing, also large images can be processed in this way.
-
-# drop obs with Nan coords TODO remove
-# adata = adata[~np.isnan(adata.obsm["spatial"][:, 0])]
-
+# As Squidpy is backed by :mod:`dask` and supports chunked image processing,
+# also large images can be processed in this way.
 
 ###############################################################################
 # Convert image to CMYK
 # ---------------------
-#
 # As already mentioned, the images contain information from three raw channels, `145_CD45`,
 # `174_CK`, and `113_vimentin`.
 # As the channel information is encoded in CMYK space, we first need to convert the RGB images to CMYK.
@@ -141,11 +117,9 @@ def rgb2cmyk(arr):
 img.apply(rgb2cmyk, layer="image", new_layer="image_cmyk", copy=False)
 img.show("image_cmyk", channelwise=True)
 
-
 ###############################################################################
 # Extract per-cell mean intensity
 # -------------------------------
-#
 # Now that we have disentangled the individual channels, let use use the provided segmentation mask
 # to extract per-cell mean intensities.
 #
@@ -190,8 +164,7 @@ def segmentation_image_intensity(arr, image_cmyk):
 # Now, use :func:`squidpy.im.calculate_image_features` with the `custom` feature extractor,
 # specifying the function (``func``) to use, and the additional layers (``additional_layers``)
 # to pass to the function.
-# We will use ``spot_scale=10`` to ensure that we also cover big segments fully by one crop.
-
+# We will use ``spot_scale = 10`` to ensure that we also cover big segments fully by one crop.
 sq.im.calculate_image_features(
     adata,
     img,
@@ -205,19 +178,16 @@ sq.im.calculate_image_features(
 ###############################################################################
 # The resulting features are stored in ``adata.obs['img_features']``,
 # with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_vimentin`.
-
 adata.obsm["img_features"]
 
 ###############################################################################
 # As described in :cite:`hartmann2020multiplexed`, let us transformed using an
 # inverse hyperbolic sine (`arcsinh`) cofactor of 0.05, to allow us to compare
 # the computed mean intensities with the values contained in `adata`.
-
 adata.obsm["img_features_transformed"] = np.arcsinh(adata.obsm["img_features"] / 0.05)
 
 ###############################################################################
-# Now, let us visualize the result:
-
+# Now, let's visualize the result:
 channels = ["CD45", "CK", "vimentin"]
 
 fig, axes = plt.subplots(1, 3, figsize=(15, 3))

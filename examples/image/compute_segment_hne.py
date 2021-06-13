@@ -5,7 +5,7 @@ Cell-segmentation for H&E stains
 
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
 
-For a general example of how to use :func:`squidpy.im.segment`
+For a general example of how to use :func:`squidpy.im.segment`,
 see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
 
 Note that we only provide a basic built-in segmentation model.
@@ -29,7 +29,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# load H&E stained tissue image and crop to a smaller segment
+# load the H&E stained tissue image and crop to a smaller segment
 img = sq.datasets.visium_hne_image_crop()
 crop = img.crop_corner(0, 0, size=1000)
 
@@ -61,7 +61,7 @@ _ = sns.histplot(np.array(crop["image_smooth"]).flatten(), bins=50, ax=axes[2])
 plt.tight_layout()
 
 ###############################################################################
-# We use :func:`squidpy.im.segment` with ``method="watershed"`` to do the segmentation.
+# We use :func:`squidpy.im.segment` with ``method = 'watershed'`` to do the segmentation.
 # Since, opposite to the fluorescence DAPI stain, in the H&E stain nuclei appear darker,
 # we need to indicate to the model that it should treat lower-intensity values as foreground.
 # We do this by specifying the ``geq = False`` in the ``kwargs``.
@@ -72,9 +72,8 @@ sq.im.segment(img=crop, layer="image_smooth", method="watershed", thresh=90, geq
 # This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 # The result of the segmentation is a label image that can be used to extract features
 # like the number of cells from the image.
-
 print(crop)
-print(f"number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
+print(f"Number of segments in crop: {len(np.unique(crop['segmented_watershed']))}")
 
 fig, axes = plt.subplots(1, 2)
 crop.show("image", channel=0, ax=axes[0])

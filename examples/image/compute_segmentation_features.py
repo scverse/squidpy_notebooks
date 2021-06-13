@@ -30,27 +30,24 @@ import squidpy as sq
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# Lets load a fluorescence Visium dataset.
-
+# First, let's load the fluorescence Visium dataset.
 img = sq.datasets.visium_fluo_image_crop()
 adata = sq.datasets.visium_fluo_adata_crop()
 
 ###############################################################################
 # Before calculating segmentation features, we need to first calculate a segmentation
 # using :func:`squidpy.im.segment`.
-
 sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method="watershed", channel=0)
 
 ###############################################################################
 # Now we can calculate segmentation features. Here, we will calculate the following features:
 #
-# - number of nuclei (``label``).
-# - mean area of nuclei (``area``).
-# - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei (``mean_intensity``).
+#   - number of nuclei ``label``.
+#   - mean area of nuclei ``area``.
+#   - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei ``mean_intensity``.
 #
 # We use ``mask_cicle = True`` to ensure that we are only extracting features from the tissue underneath
 # each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
-
 sq.im.calculate_image_features(
     adata,
     img,
@@ -69,12 +66,11 @@ sq.im.calculate_image_features(
 
 ###############################################################################
 # The result is stored in ``adata.obsm['segmentation_features']``.
-
 adata.obsm["segmentation_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
-# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+# `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 # how to use our interactive :mod:`napari` plugin.
 # Here, we show all calculated segmentation features.
 

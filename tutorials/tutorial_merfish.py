@@ -35,7 +35,6 @@ adata
 # It represents an interesting example of how to work with 3D spatial data in Squidpy.
 # Let's start with visualization: we can either visualize the 3D stack of slides
 # using :func:`scanpy.pl.embedding`:
-
 sc.pl.embedding(adata, basis="spatial3d", projection="3d", color="Cell_class")
 
 ###############################################################################
@@ -58,7 +57,6 @@ sc.pl.spatial(adata[adata.obs.Bregma == -9], color="Cell_class", spot_size=0.01)
 # we need to specify ``spatial_key = "spatial3d"``.
 # Then we can use :func:`squidpy.gr.nhood_enrichment` to compute the score, and visualize
 # it with :func:`squidpy.gr.nhood_enrichment`.
-
 sq.gr.spatial_neighbors(adata, coord_type="generic", spatial_key="spatial3d")
 sq.gr.nhood_enrichment(adata, cluster_key="Cell_class")
 sq.pl.nhood_enrichment(adata, cluster_key="Cell_class", method="single", cmap="inferno", vmin=-50, vmax=100)
@@ -67,7 +65,6 @@ sq.pl.nhood_enrichment(adata, cluster_key="Cell_class", method="single", cmap="i
 # We can visualize some of the co-enriched clusters with :func:`scanpy.pl.embedding`.
 # We will set `na_colors=(1,1,1,0)` to make transparent the other observations,
 # in order to better visualize the clusters of interests across z-stacks.
-
 sc.pl.embedding(
     adata,
     basis="spatial3d",
@@ -80,21 +77,17 @@ sc.pl.embedding(
 ###############################################################################
 # We can also visualize gene expression in 3D coordinates. Let's perform differential
 # expression testing with :func:`scanpy.tl.rank_genes_groups` and visualize the results
-
 sc.tl.rank_genes_groups(adata, groupby="Cell_class")
 sc.pl.rank_genes_groups(adata, groupby="Cell_class")
 
 ###############################################################################
-# And the expression in 3D
-
+# and the expression in 3D.
 sc.pl.embedding(adata, basis="spatial3d", projection="3d", color=["Gad1", "Mlc1"])
-
 
 ###############################################################################
 # If the same analysis should be performed on a single slice, then it is advisable to
 # copy the sample of interest in a new :class:`anndata.AnnData` and use it as
 # a standard 2D spatial data object.
-
 adata_slice = adata[adata.obs.Bregma == -9].copy()
 sq.gr.spatial_neighbors(adata_slice, coord_type="generic")
 sq.gr.nhood_enrichment(adata, cluster_key="Cell_class")
@@ -105,20 +98,18 @@ sc.pl.spatial(
     spot_size=0.01,
 )
 
-
 ###############################################################################
 # Spatially variable genes with spatial autocorrelation statistics
 # ----------------------------------------------------------------
 # With Squidpy we can investigate spatial variability of gene expression.
 # This is an example of a function that only supports 2D data.
 # :func:`squidpy.gr.spatial_autocorr` conveniently wraps two
-# spatial autocorrelation statistics: *Moran's I* and *Geary's C**.
+# spatial autocorrelation statistics: *Moran's I* and *Geary's C*.
 # They provide a score on the degree of spatial variability of gene expression.
 # The statistic as well as the p-value are computed for each gene, and FDR correction
 # is performed. For the purpose of this tutorial, let's compute the *Moran's I* score.
-# The results are stored in `adata.uns["moranI"]` and we can visualize selected genes
-# with :func:`scanpy.pl.spatial`
-
+# The results are stored in `adata.uns['moranI']` and we can visualize selected genes
+# with :func:`scanpy.pl.spatial`.
 sq.gr.spatial_autocorr(adata_slice, mode="moran")
 adata_slice.uns["moranI"].head()
 sc.pl.spatial(

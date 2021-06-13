@@ -15,8 +15,4 @@ def test_tutorials(tutorial: str):
 
 @pytest.mark.parametrize("example", EXAMPLES)
 def test_examples(example: str):
-    # TODO: remove me once dev is merged
-    if "compute_segment_fluo" in example:
-        pytest.mark.skip("Re-stiching of segmentation is broken on master.")
-    else:
-        runpy.run_path(example)
+    runpy.run_path(example)

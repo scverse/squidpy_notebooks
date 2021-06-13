@@ -7,18 +7,18 @@ This tutorial shows how to apply Squidpy for the analysis of Visium spatial tran
 
 The dataset used here consists of a Visium slide of a coronal section of the mouse brain.
 The original dataset is publicly available at the
-10x genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
+10x Genomics `dataset portal <https://support.10xgenomics.com/spatial-gene-expression/datasets>`_ .
 Here, we provide a pre-processed dataset, with pre-annotated clusters, in AnnData format and the
 tissue image in :class:`squidpy.im.ImageContainer` format.
 
 A couple of notes on pre-processing:
 
-- The pre-processing pipeline is the same as the one shown in the original
-  `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
-- The cluster annotation was performed using several resources, such as the
-  `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-  the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-  from the Linnarson lab and this recent `pre-print <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
+    - The pre-processing pipeline is the same as the one shown in the original
+      `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
+    - The cluster annotation was performed using several resources, such as the
+      `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
+      the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_ from
+      the Linnarson lab and this recent `pre-print <https://www.biorxiv.org/content/10.1101/2020.07.24.219758v1>`_ .
 
 .. seealso::
 
@@ -47,14 +47,11 @@ adata = sq.datasets.visium_hne_adata()
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
 # with :func:`scanpy.pl.spatial`.
-
 sc.pl.spatial(adata, color="cluster")
-
 
 ###############################################################################
 # Image features
 # --------------
-#
 # Visium datasets contain high-resolution images of the tissue that was used for the gene extraction.
 # Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
 # for each Visium spot and create a ``obs x features`` matrix in ``adata`` that can then be analyzed together
@@ -102,8 +99,9 @@ adata.obsm["features"].columns = ad.utils.make_index_unique(adata.obsm["features
 # This could be useful to gain insights in similarities across spots based on image morphology.
 
 # helper function returning a clustering
-def cluster_features(features: pd.DataFrame, like=None):
-    """Calculate leiden clustering of features.
+def cluster_features(features: pd.DataFrame, like=None) -> pd.Series:
+    """
+    Calculate leiden clustering of features.
 
     Specify filter of features using `like`.
     """
@@ -166,11 +164,9 @@ sc.pl.spatial(adata, color=["features_cluster", "cluster"])
 # of how this function works.
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
-
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="cluster")
 sq.pl.nhood_enrichment(adata, cluster_key="cluster")
-
 
 ###############################################################################
 # Given the spatial organization of the mouse brain coronal section,
@@ -196,7 +192,6 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 # We are gonna compute such score with :func:`squidpy.gr.co_occurrence` and set the cluster annotation
 # for the conditional probability with the argument ``clusters``.
 # Then, we visualize the results with :func:`squidpy.pl.co_occurrence`.
-
 sq.gr.co_occurrence(adata, cluster_key="cluster")
 sq.pl.co_occurrence(
     adata,
@@ -205,14 +200,13 @@ sq.pl.co_occurrence(
     figsize=(8, 4),
 )
 
-
 ###############################################################################
 # The result largely recapitulates the previous analysis:
 # the *Pyramidal_layer* cluster seem to co-occur at short distances
 # with the larger *Hippocampus* cluster.
 # It should be noted that the distance units are given in pixels of
 # the Visium ``source_image``, and corresponds to the same unit of
-# the spatial coordinates saved in ``adata.obsm["spatial"]``.
+# the spatial coordinates saved in ``adata.obsm['spatial']``.
 
 ###############################################################################
 # Ligand-receptor interaction analysis
@@ -234,7 +228,6 @@ sq.pl.co_occurrence(
 # the adjusted p-value (with the ``alpha`` argument).
 # We'll also subset the visualization for only one source group,
 # the *Hippocampus* cluster, and two target groups, *Pyramidal_layer_dentate_gyrus* and *Pyramidal_layer* cluster.
-
 sq.gr.ligrec(
     adata,
     n_perms=100,
@@ -250,7 +243,6 @@ sq.pl.ligrec(
     swap_axes=True,
 )
 
-
 ###############################################################################
 # The dotplot visualization provides an interesting set of candidate ligand-receptor
 # annotation that could be involved in cellular interactions in the Hippocampus.
@@ -265,14 +257,14 @@ sq.pl.ligrec(
 # There are several methods that aimed at address this explicitly,
 # based on point processes or Gaussian process regression framework:
 #
-# - *SPARK* - `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`__,
-#   `code <https://github.com/xzhoulab/SPARK>`__.
-# - *Spatial DE*  - `paper <https://www.nature.com/articles/nmeth.4636>`__,
-#   `code <https://github.com/Teichlab/SpatialDE>`__.
-# - *trendsceek* - `paper <https://www.nature.com/articles/nmeth.4634>`__,
-#   `code <https://github.com/edsgard/trendsceek>`__.
-# - *HMRF* - `paper <https://www.nature.com/articles/nbt.4260>`__,
-#   `code <https://bitbucket.org/qzhudfci/smfishhmrf-py>`__.
+#   - *SPARK* - `paper <https://www.nature.com/articles/s41592-019-0701-7#Abs1>`__,
+#     `code <https://github.com/xzhoulab/SPARK>`__.
+#   - *Spatial DE*  - `paper <https://www.nature.com/articles/nmeth.4636>`__,
+#     `code <https://github.com/Teichlab/SpatialDE>`__.
+#   - *trendsceek* - `paper <https://www.nature.com/articles/nmeth.4634>`__,
+#     `code <https://github.com/edsgard/trendsceek>`__.
+#   - *HMRF* - `paper <https://www.nature.com/articles/nbt.4260>`__,
+#     `code <https://bitbucket.org/qzhudfci/smfishhmrf-py>`__.
 #
 # Here, we provide a simple approach based on the well-known
 # `Moran's I statistics <https://en.wikipedia.org/wiki/Moran%27s_I>`_
@@ -280,7 +272,6 @@ sq.pl.ligrec(
 # The function in Squidpy is called :func:`squidpy.gr.spatial_autocorr`, and
 # returns both test statistics and adjusted p-values in :attr:`anndata.AnnData.var` slot.
 # For time reasons, we will evaluate a subset of the highly variable genes only.
-
 genes = adata[:, adata.var.highly_variable].var_names.values[:1000]
 sq.gr.spatial_autocorr(
     adata,
@@ -290,18 +281,14 @@ sq.gr.spatial_autocorr(
     n_jobs=1,
 )
 
-
 ###############################################################################
 # The results are saved in ``adata.uns['moranI']`` slot.
 # Genes have already been sorted by Moran's I statistic.
-
 adata.uns["moranI"].head(10)
 
 ###############################################################################
-# We can select few genes and visualize their expression levels in the tissue with :func:`scanpy.pl.spatial`
-
+# We can select few genes and visualize their expression levels in the tissue with :func:`scanpy.pl.spatial`.
 sc.pl.spatial(adata, color=["Olfm1", "Plp1", "Itpka", "cluster"])
-
 
 ###############################################################################
 # Interestingly, some of these genes seems to be related to the *pyramidal* layers and the *fiber tract*.

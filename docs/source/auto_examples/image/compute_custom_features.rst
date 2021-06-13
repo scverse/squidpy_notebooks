@@ -31,9 +31,9 @@ Custom features are calculated by using ``features = 'custom'``, which calls
 :func:`squidpy.im.ImageContainer.features_custom`.
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``func`` - custom feature extraction function.
-- ``additional_layers`` - names of image layers that should be passed to ``func`` together with ``layer``.
-- other arguments for ``func``
+    - ``func`` - custom feature extraction function.
+    - ``additional_layers`` - names of image layers that should be passed to ``func`` together with ``layer``.
+    - additional keyword arguments for ``func``.
 
 .. seealso::
 
@@ -57,7 +57,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-31
 
-Lets load a H&E Visium dataset.
+Let's load the H&E Visium dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 31-37
 
@@ -80,11 +80,9 @@ Lets load a H&E Visium dataset.
 
 Define a custom feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-48
+.. GENERATED FROM PYTHON SOURCE LINES 39-46
 
 .. code-block:: default
-
-
 
     def mean_fn(arr):
         """Compute mean of arr."""
@@ -100,14 +98,13 @@ Define a custom feature extraction function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
-Now we can extract features using `mean_fn` by providing it within ``features_kwargs``
+Now we can extract features using `mean_fn` by providing it within ``features_kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-60
+.. GENERATED FROM PYTHON SOURCE LINES 48-57
 
 .. code-block:: default
-
 
     sq.im.calculate_image_features(
         adata,
@@ -125,14 +122,13 @@ Now we can extract features using `mean_fn` by providing it within ``features_kw
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 The result is stored in ``adata.obsm['custom_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-61
 
 .. code-block:: default
-
 
     adata.obsm["custom_features"].head()
 
@@ -193,16 +189,15 @@ The result is stored in ``adata.obsm['custom_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-69
+.. GENERATED FROM PYTHON SOURCE LINES 62-65
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+`our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-77
+.. GENERATED FROM PYTHON SOURCE LINES 65-72
 
 .. code-block:: default
-
 
     sc.pl.spatial(
         sq.pl.extract(adata, "custom_features"),
@@ -222,7 +217,7 @@ how to use our interactive :mod:`napari` plugin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-83
+.. GENERATED FROM PYTHON SOURCE LINES 73-78
 
 You can also pass more than one image layer to the custom feature extraction function.
 For this, specify the necessary additional layer names using ``additional_layers`` in ``features_kwargs``.
@@ -230,11 +225,9 @@ The specified image layers will be passed to the custom feature extraction funct
 
 Here, we show this behavior by defining a feature extraction function that sums two image layers:
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-103
+.. GENERATED FROM PYTHON SOURCE LINES 78-96
 
 .. code-block:: default
-
-
 
     def sum_fn(arr, extra_layer):
         """Compute sum of two image layers."""
@@ -264,9 +257,9 @@ Here, we show this behavior by defining a feature extraction function that sums 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  2.013 seconds)
+   **Total running time of the script:** ( 0 minutes  27.478 seconds)
 
-**Estimated memory usage:**  217 MB
+**Estimated memory usage:**  365 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

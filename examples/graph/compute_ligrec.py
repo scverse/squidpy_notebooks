@@ -22,12 +22,12 @@ adata
 # To get started, we just need an :class:`anndata.AnnData` object with some clustering information. Below are some
 # useful parameters of :func:`squidpy.gr.ligrec`:
 #
-# - ``n_perms`` - number of permutations for the permutation test.
-# - ``interactions`` - list of interaction, by default we fetch all available interactions from :cite:`omnipath`.
-# - ``{interactions,transmitter,receiver}_params`` - parameters used if downloading the ``interactions``,
-#   see :func:`omnipah.interactions.import_intercell_network` for more information.
-# - ``threshold`` - percentage of cells required to be expressed in a given cluster.
-# - ``corr_method`` - false discovery rate (FDR) correction method to use.
+#   - ``n_perms`` - number of permutations for the permutation test.
+#   - ``interactions`` - list of interaction, by default we fetch all available interactions from :cite:`omnipath`.
+#   - ``{interactions,transmitter,receiver}_params`` - parameters used if downloading the ``interactions``,
+#     see :func:`omnipah.interactions.import_intercell_network` for more information.
+#   - ``threshold`` - percentage of cells required to be expressed in a given cluster.
+#   - ``corr_method`` - false discovery rate (FDR) correction method to use.
 #
 # Since we're interested in receptors and ligands in this example, we specify these categories in ``receiver_params``
 # and ``transmitter_params``, respectively.
@@ -62,10 +62,10 @@ res["metadata"].head()
 ###############################################################################
 # In order to plot the results, we can run :func:`squidpy.pl.ligrec`. Some useful parameters are:
 #
-# - ``{source,target}_groups`` - only plot specific source/target clusters.
-# - ``dendrogram`` - whether to hierarchically cluster the rows, columns or both.
-# - ``mean_range`` - plot only interactions whose means are in this range.
-# - ``pval_threshold`` - plot only interactions whose p-values are below this threshold.
+#   - ``{source,target}_groups`` - only plot specific source/target clusters.
+#   - ``dendrogram`` - whether to hierarchically cluster the rows, columns or both.
+#   - ``mean_range`` - plot only interactions whose means are in this range.
+#   - ``pval_threshold`` - plot only interactions whose p-values are below this threshold.
 #
 # In the plot below, to highlight significance, we've marked all p-values <= 0.005 with tori.
 sq.pl.ligrec(res, source_groups="Erythroid", alpha=0.005)

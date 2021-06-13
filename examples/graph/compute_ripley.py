@@ -34,5 +34,5 @@ sq.pl.ripley(adata, cluster_key="cluster", mode=mode)
 sc.pl.spatial(adata, color="cluster", spot_size=20)
 
 ###############################################################################
-# There are 2 other Ripley's statistics available (that are closely related):
-# ``mode = "F"`` and ``mode = "G"``.
+# There are also 2 other Ripley's statistics available (that are closely related):
+# ``mode = 'F'`` and ``mode = 'G'``.
