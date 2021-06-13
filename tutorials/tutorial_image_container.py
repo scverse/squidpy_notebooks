@@ -51,7 +51,7 @@ img = sq.im.ImageContainer(arr, layer="img1")
 img
 
 ###############################################################################
-# `img` now contains one layer, "img1". The default value of `dims` expects the image to have dimensions
+# `img` now contains one layer, `img1`. The default value of `dims` expects the image to have dimensions
 # ``y, x, channels`` or ``y, x, z, channels``.
 # If the image has different dimensions, you can specify another strategy or a tuple of dimension names:
 arr1 = arr.transpose(2, 0, 1)
@@ -93,7 +93,6 @@ img.rename("seg2", "new-name")
 ###############################################################################
 # Visualization
 # -------------
-#
 # Use :meth:`squidpy.im.ImageContainer.show` to visualize (small) images statically.
 # See :ref:`sphx_glr_auto_examples_image_compute_show.py` for more details.
 #
@@ -105,7 +104,6 @@ img.show(layer="img1")
 ###############################################################################
 # Crop and scale images
 # ---------------------
-#
 # Images can be cropped and scaled using :meth:`squidpy.im.ImageContainer.crop_corner` and
 # :meth:`squidpy.im.ImageContainer.crop_center`.
 # See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for more details.
@@ -169,7 +167,7 @@ sq.im.ImageContainer.uncrop([crop2], shape=(50, 50)).show(layer="img1")
 img.data
 
 ###############################################################################
-# Whenever possible, images are represented as lazy dask arrays.
+# Whenever possible, images are represented as lazy :mod:`dask` arrays.
 # This allows lazy computations, which only load and compute the data when it is required.
 #
 # Let us load an on-disk image that is provided by the :mod:`squidpy.datasets` module:
@@ -183,5 +181,5 @@ img_on_disk.compute()
 print(type(img_on_disk["image"].data))
 
 ###############################################################################
-# ImageContainers can be saved and loaded from a Zarr store, using :meth:`squidpy.im.ImageContainer.save` and
+# ImageContainers can be saved and loaded from a *Zarr* store, using :meth:`squidpy.im.ImageContainer.save` and
 # :meth:`squidpy.im.ImageContainer.load`.
