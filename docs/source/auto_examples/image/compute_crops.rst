@@ -30,7 +30,7 @@ Specifically, it shows how to use:
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_image_container.py` for general usage of
+    See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` for general usage of
     :class:`squidpy.im.ImageContainer`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-23
@@ -196,9 +196,9 @@ Visualize the result in Napari:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.005 seconds)
+   **Total running time of the script:** ( 0 minutes  15.381 seconds)
 
-**Estimated memory usage:**  102 MB
+**Estimated memory usage:**  200 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

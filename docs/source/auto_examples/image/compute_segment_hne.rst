@@ -216,9 +216,9 @@ like the number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.039 seconds)
+   **Total running time of the script:** ( 0 minutes  17.734 seconds)
 
-**Estimated memory usage:**  211 MB
+**Estimated memory usage:**  209 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_hne.py:

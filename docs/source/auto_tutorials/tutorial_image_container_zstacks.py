@@ -81,7 +81,7 @@ img2
 ###############################################################################
 # Generally, an `ImageContainer` with more than one Z dimension can be used in the same way as an `ImageContainer`
 # with only one Z dimension.
-# In addition, we can specify `library_id` to cropping, preprocessing,
+# In addition, we can specify `library_id` to cropping, pre-processing,
 # and segmentation functions if we'd like to only process a specific `library_id`.
 
 ###############################################################################

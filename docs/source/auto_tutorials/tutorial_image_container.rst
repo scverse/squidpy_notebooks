@@ -30,7 +30,7 @@ It wraps :class:`xarray.Dataset` and provides different cropping, processing, an
 
     For more details on specific :class:`squidpy.im.ImageContainer` functions, have a look at the following examples:
 
-        - `Interactive visualisation with Napari <../external_tutorials/tutorial_napari.ipynb>`_.
+        - `Interactive visualization with Napari <../external_tutorials/tutorial_napari.ipynb>`_.
         - :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
         - :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
         - :ref:`sphx_glr_auto_examples_image_compute_show.py`.
@@ -108,7 +108,7 @@ Let us see these arguments in action with a toy example.
 
 .. GENERATED FROM PYTHON SOURCE LINES 54-57
 
-`img` now contains one layer, "img1". The default value of `dims` expects the image to have dimensions
+`img` now contains one layer, `img1`. The default value of `dims` expects the image to have dimensions
 ``y, x, channels`` or ``y, x, z, channels``.
 If the image has different dimensions, you can specify another strategy or a tuple of dimension names:
 
@@ -624,7 +624,7 @@ image-structured arrays using their names:
             [[1., 1., 1.]]]])
     Coordinates:
       * z        (z) &lt;U1 &#x27;0&#x27;
-    Dimensions without coordinates: y, x, channels</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'img1'</div><ul class='xr-dim-list'><li><span>y</span>: 100</li><li><span>x</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li><li><span>channels</span>: 3</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-22a283bc-1100-4968-8d8f-b19f25826223' class='xr-array-in' type='checkbox' checked><label for='section-22a283bc-1100-4968-8d8f-b19f25826223' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</span></div><div class='xr-array-data'><pre>array([[[[1., 1., 1.]],
+    Dimensions without coordinates: y, x, channels</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'img1'</div><ul class='xr-dim-list'><li><span>y</span>: 100</li><li><span>x</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li><li><span>channels</span>: 3</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-89e1d93e-fccd-4d0b-8bb5-7b8ba1c52e7e' class='xr-array-in' type='checkbox' checked><label for='section-89e1d93e-fccd-4d0b-8bb5-7b8ba1c52e7e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</span></div><div class='xr-array-data'><pre>array([[[[1., 1., 1.]],
 
             [[1., 1., 1.]],
 
@@ -664,7 +664,7 @@ image-structured arrays using their names:
 
             [[1., 1., 1.]],
 
-            [[1., 1., 1.]]]])</pre></div></div></li><li class='xr-section-item'><input id='section-63285186-524c-4c79-b6d2-25d25e060bdc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-63285186-524c-4c79-b6d2-25d25e060bdc' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-67015cb3-bb24-4964-b6e6-21d5976f8b87' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-67015cb3-bb24-4964-b6e6-21d5976f8b87' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8e75d59b-94d7-4623-b5b1-bb22f4d635fa' class='xr-var-data-in' type='checkbox'><label for='data-8e75d59b-94d7-4623-b5b1-bb22f4d635fa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3fa9ac7f-9f1f-4d06-94f5-0f5712bc410d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3fa9ac7f-9f1f-4d06-94f5-0f5712bc410d' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div>
+            [[1., 1., 1.]]]])</pre></div></div></li><li class='xr-section-item'><input id='section-e59a0d7b-cf35-40de-9d66-f474c4534379' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e59a0d7b-cf35-40de-9d66-f474c4534379' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-82f1d89e-028a-4e45-a603-edb4a258bf04' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-82f1d89e-028a-4e45-a603-edb4a258bf04' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-698f5320-2713-4d15-bd6f-9ff2db1512a3' class='xr-var-data-in' type='checkbox'><label for='data-698f5320-2713-4d15-bd6f-9ff2db1512a3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8cf37f35-f35b-4f6c-be7d-54fb3d72a914' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8cf37f35-f35b-4f6c-be7d-54fb3d72a914' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div>
     </div>
     <br />
     <br />
@@ -692,11 +692,10 @@ Renaming of image layers is also possible using :meth:`squidpy.im.ImageContainer
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-103
+.. GENERATED FROM PYTHON SOURCE LINES 94-102
 
 Visualization
 -------------
-
 Use :meth:`squidpy.im.ImageContainer.show` to visualize (small) images statically.
 See :ref:`sphx_glr_auto_examples_image_compute_show.py` for more details.
 
@@ -704,7 +703,7 @@ For large images and for interactive visualization of :class:`squidpy.im.ImageCo
 spatial 'omics data, we recommend using :meth:`squidpy.im.ImageContainer.interactive`, which uses Napari.
 See `Interactive visualization with Napari <../external_tutorials/tutorial_napari.ipynb>`_ for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-105
+.. GENERATED FROM PYTHON SOURCE LINES 102-104
 
 .. code-block:: default
 
@@ -721,16 +720,15 @@ See `Interactive visualization with Napari <../external_tutorials/tutorial_napar
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-112
+.. GENERATED FROM PYTHON SOURCE LINES 105-110
 
 Crop and scale images
 ---------------------
-
 Images can be cropped and scaled using :meth:`squidpy.im.ImageContainer.crop_corner` and
 :meth:`squidpy.im.ImageContainer.crop_center`.
 See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-118
+.. GENERATED FROM PYTHON SOURCE LINES 110-116
 
 .. code-block:: default
 
@@ -762,7 +760,7 @@ See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for more details.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-126
+.. GENERATED FROM PYTHON SOURCE LINES 117-124
 
 Internally, the `ImageContainer` keeps track of the crop coordinates in the dataset attributes.
 This enables mapping from cropped `ImageContainers` to observations in `adata` for interactive
@@ -772,7 +770,7 @@ Using :meth:`squidpy.im.ImageContainer.uncrop`, we can reconstruct the original 
 Even when chaining multiple calls to ``crop``, ``uncrop`` correctly places the crop in the image.
 Note that ``uncrop`` only undoes the cropping, not the scaling.
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-132
+.. GENERATED FROM PYTHON SOURCE LINES 124-130
 
 .. code-block:: default
 
@@ -813,12 +811,12 @@ Note that ``uncrop`` only undoes the cropping, not the scaling.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-135
+.. GENERATED FROM PYTHON SOURCE LINES 131-133
 
 After cropping the ImageContainer, you can subset the associated `adata` to the cropped image using
 :meth:`squidpy.im.ImageContainer.subset`. See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for an example.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-163
+.. GENERATED FROM PYTHON SOURCE LINES 135-161
 
 Processing images and extracting features
 -----------------------------------------
@@ -847,14 +845,14 @@ that won't fit in memory:
   - :meth:`sq.im.ImageContainer.generate_spot_crops`, for extracting image crops for each observation in the
     associated `adata`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-169
+.. GENERATED FROM PYTHON SOURCE LINES 163-167
 
 Internal representation of images
 ---------------------------------
 Internally, the images are represented in a :class:`xarray.Dataset`. You can access this dataset using
 :attr:`img.data`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-171
+.. GENERATED FROM PYTHON SOURCE LINES 167-169
 
 .. code-block:: default
 
@@ -1232,7 +1230,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
         coords:       CropCoords(x0=0, y0=0, x1=0, y1=0)
         padding:      CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)
         scale:        1.0
-        mask_circle:  False</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-524fb092-ec3d-45e7-af50-b564ff8beb91' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-524fb092-ec3d-45e7-af50-b564ff8beb91' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>channels</span>: 3</li><li><span>channels_0</span>: 1</li><li><span>channels_1</span>: 1</li><li><span>x</span>: 100</li><li><span>y</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d9a9a7b4-a8f6-478a-ac8f-dc4bc49b673b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d9a9a7b4-a8f6-478a-ac8f-dc4bc49b673b' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-02591784-395b-4a2a-9761-fb21f104d775' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-02591784-395b-4a2a-9761-fb21f104d775' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bb227977-bcfd-4c3f-a352-54be7d9aa879' class='xr-var-data-in' type='checkbox'><label for='data-bb227977-bcfd-4c3f-a352-54be7d9aa879' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9efb71fc-4ebb-4e1f-aabf-515339c9acc4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9efb71fc-4ebb-4e1f-aabf-515339c9acc4' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>img1</span></div><div class='xr-var-dims'>(y, x, z, channels)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0</div><input id='attrs-70c3b80b-6a1d-4cec-8d14-b43d460b7a15' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-70c3b80b-6a1d-4cec-8d14-b43d460b7a15' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7bb9203d-2864-439e-afbb-7f3f7965f3e1' class='xr-var-data-in' type='checkbox'><label for='data-7bb9203d-2864-439e-afbb-7f3f7965f3e1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[1., 1., 1.]],
+        mask_circle:  False</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-88dfad0f-f874-4035-a58f-898f70f91334' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-88dfad0f-f874-4035-a58f-898f70f91334' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>channels</span>: 3</li><li><span>channels_0</span>: 1</li><li><span>channels_1</span>: 1</li><li><span>x</span>: 100</li><li><span>y</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7ca689f2-c315-4d3a-8c14-f2550ebc83ec' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7ca689f2-c315-4d3a-8c14-f2550ebc83ec' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-6a0d9d9c-a41f-4680-aca9-8ee8d846646f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6a0d9d9c-a41f-4680-aca9-8ee8d846646f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c45bad4f-d0d2-4c50-9f05-33e89498b653' class='xr-var-data-in' type='checkbox'><label for='data-c45bad4f-d0d2-4c50-9f05-33e89498b653' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3f0b7901-7c80-44a3-a275-1813ffb26aaa' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3f0b7901-7c80-44a3-a275-1813ffb26aaa' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>img1</span></div><div class='xr-var-dims'>(y, x, z, channels)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0</div><input id='attrs-31f9f46e-ccaa-47cd-8d1a-43d32456690e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-31f9f46e-ccaa-47cd-8d1a-43d32456690e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fae2ab17-844a-441e-a00c-c4b04c687074' class='xr-var-data-in' type='checkbox'><label for='data-fae2ab17-844a-441e-a00c-c4b04c687074' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[1., 1., 1.]],
 
             [[1., 1., 1.]],
 
@@ -1272,7 +1270,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[1., 1., 1.]],
 
-            [[1., 1., 1.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seg1</span></div><div class='xr-var-dims'>(y, x, z, channels_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-d9cdea47-246e-47f6-bd69-81e92c83112b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d9cdea47-246e-47f6-bd69-81e92c83112b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2a16a2a1-3bc2-434d-bf0a-ec95fa0cb618' class='xr-var-data-in' type='checkbox'><label for='data-2a16a2a1-3bc2-434d-bf0a-ec95fa0cb618' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
+            [[1., 1., 1.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seg1</span></div><div class='xr-var-dims'>(y, x, z, channels_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-bcdc2ebb-b0b5-4444-8ca6-5d6443ed59ea' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bcdc2ebb-b0b5-4444-8ca6-5d6443ed59ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-84b44591-a171-454f-b2e0-a4d716a984c7' class='xr-var-data-in' type='checkbox'><label for='data-84b44591-a171-454f-b2e0-a4d716a984c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
 
             [[0.]],
 
@@ -1312,7 +1310,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[0.]],
 
-            [[0.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>new-name</span></div><div class='xr-var-dims'>(y, x, z, channels_1)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-0109bdef-ef8d-4652-bd3d-a12c4db9b792' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0109bdef-ef8d-4652-bd3d-a12c4db9b792' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-039d729e-348b-4d6c-a0ae-15aa6ca6ec45' class='xr-var-data-in' type='checkbox'><label for='data-039d729e-348b-4d6c-a0ae-15aa6ca6ec45' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
+            [[0.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>new-name</span></div><div class='xr-var-dims'>(y, x, z, channels_1)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-d6d46347-6cd1-42c0-bcbf-d7968be720db' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d6d46347-6cd1-42c0-bcbf-d7968be720db' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7018e42b-f5c5-4e2c-bc89-7f9bf7e4bb25' class='xr-var-data-in' type='checkbox'><label for='data-7018e42b-f5c5-4e2c-bc89-7f9bf7e4bb25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
 
             [[0.]],
 
@@ -1352,20 +1350,20 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[0.]],
 
-            [[0.]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e1ef8ded-97e5-488d-afd7-6fc85a48c885' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e1ef8ded-97e5-488d-afd7-6fc85a48c885' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coords :</span></dt><dd>CropCoords(x0=0, y0=0, x1=0, y1=0)</dd><dt><span>padding :</span></dt><dd>CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)</dd><dt><span>scale :</span></dt><dd>1.0</dd><dt><span>mask_circle :</span></dt><dd>False</dd></dl></div></li></ul></div></div>
+            [[0.]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ac00d5da-3055-425d-a3c0-76053a15a7c1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ac00d5da-3055-425d-a3c0-76053a15a7c1' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coords :</span></dt><dd>CropCoords(x0=0, y0=0, x1=0, y1=0)</dd><dt><span>padding :</span></dt><dd>CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)</dd><dt><span>scale :</span></dt><dd>1.0</dd><dt><span>mask_circle :</span></dt><dd>False</dd></dl></div></li></ul></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-177
+.. GENERATED FROM PYTHON SOURCE LINES 170-175
 
-Whenever possible, images are represented as lazy dask arrays.
+Whenever possible, images are represented as lazy :mod:`dask` arrays.
 This allows lazy computations, which only load and compute the data when it is required.
 
 Let us load an on-disk image that is provided by the :mod:`squidpy.datasets` module:
 By default, the `lazy` argument is `True`, therefore resulting in a :class:`dask.array.Array`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-180
+.. GENERATED FROM PYTHON SOURCE LINES 175-178
 
 .. code-block:: default
 
@@ -1387,11 +1385,11 @@ By default, the `lazy` argument is `True`, therefore resulting in a :class:`dask
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-182
+.. GENERATED FROM PYTHON SOURCE LINES 179-180
 
 We can use :meth:`squidpy.im.ImageContainer.compute` to force loading of the data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-185
+.. GENERATED FROM PYTHON SOURCE LINES 180-183
 
 .. code-block:: default
 
@@ -1413,17 +1411,17 @@ We can use :meth:`squidpy.im.ImageContainer.compute` to force loading of the dat
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-188
+.. GENERATED FROM PYTHON SOURCE LINES 184-186
 
-ImageContainers can be saved and loaded from a Zarr store, using :meth:`squidpy.im.ImageContainer.save` and
+ImageContainers can be saved and loaded from a *Zarr* store, using :meth:`squidpy.im.ImageContainer.save` and
 :meth:`squidpy.im.ImageContainer.load`.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.284 seconds)
+   **Total running time of the script:** ( 0 minutes  4.331 seconds)
 
-**Estimated memory usage:**  395 MB
+**Estimated memory usage:**  423 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container.py:

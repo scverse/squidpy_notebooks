@@ -544,9 +544,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  25.357 seconds)
+   **Total running time of the script:** ( 1 minutes  21.163 seconds)
 
-**Estimated memory usage:**  730 MB
+**Estimated memory usage:**  676 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

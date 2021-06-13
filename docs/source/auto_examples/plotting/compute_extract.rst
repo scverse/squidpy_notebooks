@@ -63,7 +63,7 @@ are therefore not accessible via standard :mod:`scanpy` plotting.
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
-In this dataset, we have saved deconvolution results in `adata.obsm` and we
+In this dataset, we have saved deconvolution results in :attr:`anndata.AnnData.obsm` and we
 would like to plot them with :func:`scanpy.pl.spatial`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
@@ -365,9 +365,9 @@ for Scanpy plotting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.832 seconds)
+   **Total running time of the script:** ( 0 minutes  26.980 seconds)
 
-**Estimated memory usage:**  719 MB
+**Estimated memory usage:**  443 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_compute_extract.py:

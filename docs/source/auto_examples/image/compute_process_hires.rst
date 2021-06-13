@@ -210,9 +210,9 @@ Using overlapping blocks with ``depth = 1`` removes the artifacts at the borders
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.583 seconds)
+   **Total running time of the script:** ( 0 minutes  8.139 seconds)
 
-**Estimated memory usage:**  2177 MB
+**Estimated memory usage:**  2106 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

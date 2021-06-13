@@ -357,9 +357,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  22.962 seconds)
+   **Total running time of the script:** ( 1 minutes  13.991 seconds)
 
-**Estimated memory usage:**  1845 MB
+**Estimated memory usage:**  1823 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

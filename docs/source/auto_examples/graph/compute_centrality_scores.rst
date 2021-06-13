@@ -155,7 +155,7 @@ And visualize results with :func:`squidpy.pl.centrality_scores`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.690 seconds)
+   **Total running time of the script:** ( 0 minutes  3.557 seconds)
 
 **Estimated memory usage:**  24 MB
 

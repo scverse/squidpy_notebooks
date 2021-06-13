@@ -128,9 +128,9 @@ And visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.701 seconds)
+   **Total running time of the script:** ( 0 minutes  3.620 seconds)
 
-**Estimated memory usage:**  281 MB
+**Estimated memory usage:**  279 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_nhood_enrichment.py:

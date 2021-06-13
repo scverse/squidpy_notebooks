@@ -316,7 +316,7 @@ with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  9.270 seconds)
+   **Total running time of the script:** ( 1 minutes  17.981 seconds)
 
 **Estimated memory usage:**  9 MB
 

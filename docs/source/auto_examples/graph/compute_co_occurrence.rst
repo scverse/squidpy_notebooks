@@ -145,9 +145,9 @@ We can further visualize tissue organization in spatial coordinates with :func:`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.419 seconds)
+   **Total running time of the script:** ( 0 minutes  12.126 seconds)
 
-**Estimated memory usage:**  100 MB
+**Estimated memory usage:**  92 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_co_occurrence.py:

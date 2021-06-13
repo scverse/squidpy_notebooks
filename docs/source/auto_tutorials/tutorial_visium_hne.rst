@@ -557,10 +557,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000249</td>
+          <td>0.000233</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Plp1</th>
@@ -569,10 +569,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000312</td>
+          <td>0.000281</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Itpka</th>
@@ -581,10 +581,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000348</td>
+          <td>0.000289</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Snap25</th>
@@ -593,10 +593,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000231</td>
+          <td>0.000247</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Nnat</th>
@@ -605,10 +605,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000349</td>
+          <td>0.000280</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Ppp3ca</th>
@@ -617,10 +617,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000235</td>
+          <td>0.000244</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Chn1</th>
@@ -629,10 +629,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000204</td>
+          <td>0.000222</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Mal</th>
@@ -641,10 +641,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000275</td>
+          <td>0.000313</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Tmsb4x</th>
@@ -653,10 +653,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000254</td>
+          <td>0.000238</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
         <tr>
           <th>Cldn11</th>
@@ -665,10 +665,10 @@ Genes have already been sorted by Moran's I statistic.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000264</td>
+          <td>0.000243</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011731</td>
+          <td>0.011635</td>
         </tr>
       </tbody>
     </table>
@@ -705,9 +705,9 @@ Interestingly, some of these genes seems to be related to the *pyramidal* layers
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  11.935 seconds)
+   **Total running time of the script:** ( 3 minutes  35.630 seconds)
 
-**Estimated memory usage:**  803 MB
+**Estimated memory usage:**  805 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_hne.py:

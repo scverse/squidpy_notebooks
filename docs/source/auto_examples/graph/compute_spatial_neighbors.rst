@@ -314,7 +314,7 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.262 seconds)
+   **Total running time of the script:** ( 0 minutes  10.595 seconds)
 
 **Estimated memory usage:**  234 MB
 

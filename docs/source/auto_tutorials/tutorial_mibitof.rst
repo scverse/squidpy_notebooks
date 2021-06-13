@@ -143,7 +143,7 @@ For more information on how to use `ImageContainer` with z-stacks, also have a l
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-71
 
-Note that we also added the segmentation as an additional layer to img, and set the
+Note that we also added the segmentation as an additional layer to `img`, and set the
 `segmentation` attribute in the ImageContainer.
 This allows visualization of the segmentation layer as a `labels` layer in Napari.
 
@@ -484,7 +484,7 @@ with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_v
 .. GENERATED FROM PYTHON SOURCE LINES 184-187
 
 As described in :cite:`hartmann2020multiplexed`, let us transformed using an
-inverse hyperbolic sine (`arcsinh`) cofactor of 0.05, to allow us to compare
+inverse hyperbolic sine (`arcsinh`) co-factor of 0.05, to allow us to compare
 the computed mean intensities with the values contained in `adata`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 187-189
@@ -547,9 +547,9 @@ For examples of this, please see our other Analysis tutorials, e.g.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.581 seconds)
+   **Total running time of the script:** ( 1 minutes  10.349 seconds)
 
-**Estimated memory usage:**  265 MB
+**Estimated memory usage:**  229 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_mibitof.py:

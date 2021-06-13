@@ -149,9 +149,9 @@ There are also 2 other Ripley's statistics available (that are closely related):
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.868 seconds)
+   **Total running time of the script:** ( 0 minutes  30.244 seconds)
 
-**Estimated memory usage:**  1864 MB
+**Estimated memory usage:**  1867 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_ripley.py:

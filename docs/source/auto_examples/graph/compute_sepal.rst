@@ -74,7 +74,7 @@ there are 2 important aspects to consider when computing sepal:
   with ``max_neighs = 6``.
 - It is useful to filter out genes that are expressed in very few observations
   and might be wrongly identified as being spatially variable. If you are performing
-  preprocessing with Scanpy, there is a convenient function that can be used BEFORE
+  pre-processing with Scanpy, there is a convenient function that can be used BEFORE
   normalization :func:`scanpy.pp.calculate_qc_metrics`. It computes several useful
   summary statistics on both observation and feature axis. We will be using the
   ``n_cells`` columns in `adata.var` to filter out genes that are expressed in
@@ -200,7 +200,7 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  45.186 seconds)
+   **Total running time of the script:** ( 0 minutes  47.519 seconds)
 
 **Estimated memory usage:**  392 MB
 

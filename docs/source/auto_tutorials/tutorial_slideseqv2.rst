@@ -510,9 +510,9 @@ with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  37.100 seconds)
+   **Total running time of the script:** ( 2 minutes  47.755 seconds)
 
-**Estimated memory usage:**  1692 MB
+**Estimated memory usage:**  1694 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_slideseqv2.py:

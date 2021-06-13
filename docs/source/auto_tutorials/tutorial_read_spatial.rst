@@ -225,7 +225,7 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f2406367df0>
+    <matplotlib.image.AxesImage object at 0x7ffb3176dcd0>
 
 
 
@@ -340,7 +340,7 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.457 seconds)
+   **Total running time of the script:** ( 0 minutes  17.202 seconds)
 
 **Estimated memory usage:**  11 MB
 

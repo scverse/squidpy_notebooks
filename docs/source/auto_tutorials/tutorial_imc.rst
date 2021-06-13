@@ -322,7 +322,7 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.678 seconds)
+   **Total running time of the script:** ( 0 minutes  34.857 seconds)
 
 **Estimated memory usage:**  11 MB
 

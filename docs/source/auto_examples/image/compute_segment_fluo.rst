@@ -182,9 +182,9 @@ number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.883 seconds)
+   **Total running time of the script:** ( 0 minutes  7.161 seconds)
 
-**Estimated memory usage:**  245 MB
+**Estimated memory usage:**  305 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

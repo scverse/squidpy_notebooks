@@ -139,7 +139,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000242</td>
+          <td>0.000222</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -151,7 +151,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000252</td>
+          <td>0.000190</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -175,7 +175,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000177</td>
+          <td>0.000179</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -187,7 +187,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000189</td>
+          <td>0.000233</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -199,7 +199,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000237</td>
+          <td>0.000203</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -211,7 +211,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000240</td>
+          <td>0.000218</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -223,7 +223,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000160</td>
+          <td>0.000193</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -235,7 +235,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000207</td>
+          <td>0.000189</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -247,7 +247,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000210</td>
+          <td>0.000249</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -288,7 +288,7 @@ We could've also passed ``mode = 'geary'`` to compute a closely related auto-cor
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.589 seconds)
+   **Total running time of the script:** ( 0 minutes  19.393 seconds)
 
 **Estimated memory usage:**  363 MB
 

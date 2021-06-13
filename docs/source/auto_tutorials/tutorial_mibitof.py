@@ -65,7 +65,7 @@ for library_id in adata.uns["spatial"].keys():
 img = sq.im.ImageContainer.concat(imgs)
 
 ###############################################################################
-# Note that we also added the segmentation as an additional layer to img, and set the
+# Note that we also added the segmentation as an additional layer to `img`, and set the
 # `segmentation` attribute in the ImageContainer.
 # This allows visualization of the segmentation layer as a `labels` layer in Napari.
 img
@@ -182,7 +182,7 @@ adata.obsm["img_features"]
 
 ###############################################################################
 # As described in :cite:`hartmann2020multiplexed`, let us transformed using an
-# inverse hyperbolic sine (`arcsinh`) cofactor of 0.05, to allow us to compare
+# inverse hyperbolic sine (`arcsinh`) co-factor of 0.05, to allow us to compare
 # the computed mean intensities with the values contained in `adata`.
 adata.obsm["img_features_transformed"] = np.arcsinh(adata.obsm["img_features"] / 0.05)
 

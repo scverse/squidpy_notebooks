@@ -434,9 +434,9 @@ Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.303 seconds)
+   **Total running time of the script:** ( 0 minutes  38.650 seconds)
 
-**Estimated memory usage:**  282 MB
+**Estimated memory usage:**  228 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

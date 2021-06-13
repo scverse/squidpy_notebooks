@@ -103,9 +103,9 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.783 seconds)
+   **Total running time of the script:** ( 0 minutes  8.630 seconds)
 
-**Estimated memory usage:**  628 MB
+**Estimated memory usage:**  626 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

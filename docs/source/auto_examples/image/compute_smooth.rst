@@ -100,9 +100,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.762 seconds)
+   **Total running time of the script:** ( 0 minutes  14.819 seconds)
 
-**Estimated memory usage:**  80 MB
+**Estimated memory usage:**  44 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

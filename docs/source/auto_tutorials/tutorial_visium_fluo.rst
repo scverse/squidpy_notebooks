@@ -435,7 +435,7 @@ information to the gene-space clusters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 5 minutes  26.054 seconds)
+   **Total running time of the script:** ( 5 minutes  45.544 seconds)
 
 **Estimated memory usage:**  1824 MB
 

@@ -19,7 +19,7 @@ adata = sq.datasets.slideseqv2()
 adata
 
 ###############################################################################
-# In this dataset, we have saved deconvolution results in `adata.obsm` and we
+# In this dataset, we have saved deconvolution results in :attr:`anndata.AnnData.obsm` and we
 # would like to plot them with :func:`scanpy.pl.spatial`.
 adata.obsm["deconvolution_results"].head(10)
 

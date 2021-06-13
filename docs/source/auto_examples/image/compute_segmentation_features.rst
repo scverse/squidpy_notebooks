@@ -318,9 +318,9 @@ these features show us Neuron and Glial cell dense areas.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  43.809 seconds)
+   **Total running time of the script:** ( 1 minutes  39.359 seconds)
 
-**Estimated memory usage:**  2154 MB
+**Estimated memory usage:**  2159 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segmentation_features.py:

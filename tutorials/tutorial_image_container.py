@@ -12,7 +12,7 @@ It wraps :class:`xarray.Dataset` and provides different cropping, processing, an
 
     For more details on specific :class:`squidpy.im.ImageContainer` functions, have a look at the following examples:
 
-        - `Interactive visualisation with Napari <../external_tutorials/tutorial_napari.ipynb>`_.
+        - `Interactive visualization with Napari <../external_tutorials/tutorial_napari.ipynb>`_.
         - :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
         - :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
         - :ref:`sphx_glr_auto_examples_image_compute_show.py`.
