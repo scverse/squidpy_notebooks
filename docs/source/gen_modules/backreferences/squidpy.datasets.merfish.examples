@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.datasets.merfish``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
+     :alt: Analyze Merfish data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`

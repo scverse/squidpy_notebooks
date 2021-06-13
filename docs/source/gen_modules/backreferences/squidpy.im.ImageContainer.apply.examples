@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.im.ImageContainer.apply``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to MIBI-TOF data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
+     :alt: Analyze MIBI-TOF image data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
