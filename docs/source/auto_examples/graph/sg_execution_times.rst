@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:41.782** total execution time for **auto_examples_graph** files:
+**00:27.985** total execution time for **auto_examples_graph** files:
 
 +-------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_graph_compute_moran.py` (``compute_moran.py``)                           | 00:41.782 | 588.4 MB |
+| :ref:`sphx_glr_auto_examples_graph_compute_moran.py` (``compute_moran.py``)                           | 00:27.985 | 473.2 MB |
 +-------------------------------------------------------------------------------------------------------+-----------+----------+
 | :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py` (``compute_centrality_scores.py``)   | 00:00.000 | 0.0 MB   |
 +-------------------------------------------------------------------------------------------------------+-----------+----------+
