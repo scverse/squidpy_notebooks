@@ -224,27 +224,6 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer to interact with image structured data.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_image_container_thumb.png
-     :alt: ImageContainer object
-
-     :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_image_container
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to convert an image layer to grayscale.">
 
 .. only:: html
