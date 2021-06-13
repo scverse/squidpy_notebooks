@@ -23,15 +23,14 @@ adata = sq.datasets.visium_hne_adata()
 adata
 
 ###############################################################################
-# We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and ``mode = 'moran'``.
-# We first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
+# We can compute the Moran's I score with :func:`squidpy.gr.moran`.
+# We first need to compute a spatial graph with :func:`squidpy.gr.moran`.
 # We will also subset the number of genes to evaluate.
 
 genes = adata[:, adata.var.highly_variable].var_names.values[:100]
 sq.gr.spatial_neighbors(adata)
-sq.gr.spatial_autocorr(
+sq.gr.moran(
     adata,
-    mode="moran",
     genes=genes,
     n_perms=100,
     n_jobs=1,
@@ -41,7 +40,3 @@ adata.uns["moranI"].head(10)
 ###############################################################################
 # We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
-
-###############################################################################
-# We could've also passed ``mode = 'geary'`` to compute a closely related autocorrelation statistic, `Geary's C
-# <https://en.wikipedia.org/wiki/Geary%27s_C>`_. See :func:`squidpy.gr.spatial_autocorr` for more information.
