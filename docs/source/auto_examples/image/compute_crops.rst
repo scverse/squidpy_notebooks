@@ -30,7 +30,7 @@ Specifically, it shows how to use:
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_image_container.py` for general usage of
+    See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` for general usage of
     :class:`squidpy.im.ImageContainer`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-23
@@ -51,13 +51,86 @@ Specifically, it shows how to use:
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-25
 
-Load a H&E Visium image.
+Let's load the fluorescence Visium image.
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 .. code-block:: default
 
-    img = sq.datasets.visium_hne_image_crop()
+    img = sq.datasets.visium_fluo_image_crop()
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 28-34
+
+Extracting single crops:
+Crops need to be sized and located. We distinguish crops located based on a
+corner coordinate of the crop and crops located based on the center coordinate
+of the crop.
+You can specify the crop coordinates in pixels (as ``int``) or in percentage of total image size (as ``float``).
+In addition, you can specify a scaling factor for the crop.
+
+.. GENERATED FROM PYTHON SOURCE LINES 34-42
+
+.. code-block:: default
+
+    crop_corner = img.crop_corner(1000, 1000, size=800)
+
+    crop_center = img.crop_center(1400, 1400, radius=400)
+
+    fig, axes = plt.subplots(1, 2)
+    crop_corner.show(ax=axes[0])
+    crop_center.show(ax=axes[1])
+
+
+
+
+.. image:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
+    :alt: image, image
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
+
+The result of the cropping functions is another ImageContainer.
+
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
+
+.. code-block:: default
+
+    crop_corner
+
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    ImageContainer object with 1 layer:<p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image</strong>: <em>y</em> (800), <em>x</em> (800), <em>z</em> (1), <em>channels</em> (3)</p>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
+
+You can subset the associated ``adata`` to the cropped image using :meth:`squidpy.im.ImageContainer.subset`:
+
+.. GENERATED FROM PYTHON SOURCE LINES 48-51
+
+.. code-block:: default
+
+    adata = sq.datasets.visium_fluo_adata_crop()
+    adata
 
 
 
@@ -69,72 +142,63 @@ Load a H&E Visium image.
 
  .. code-block:: none
 
-      0%|          | 0.00/35.6M [00:00<?, ?B/s]      0%|          | 56.0k/35.6M [00:00<01:29, 415kB/s]      1%|          | 192k/35.6M [00:00<00:49, 757kB/s]       2%|1         | 672k/35.6M [00:00<00:18, 2.02MB/s]      7%|6         | 2.48M/35.6M [00:00<00:05, 6.61MB/s]     22%|##2       | 7.91M/35.6M [00:00<00:01, 20.1MB/s]     33%|###3      | 11.8M/35.6M [00:00<00:00, 26.0MB/s]     47%|####7     | 16.7M/35.6M [00:00<00:00, 32.4MB/s]     57%|#####7    | 20.4M/35.6M [00:00<00:00, 33.9MB/s]     72%|#######1  | 25.5M/35.6M [00:01<00:00, 38.5MB/s]     82%|########1 | 29.1M/35.6M [00:01<00:00, 38.4MB/s]     96%|#########6| 34.2M/35.6M [00:01<00:00, 41.5MB/s]    100%|##########| 35.6M/35.6M [00:01<00:00, 27.8MB/s]
+
+    AnnData object with n_obs × n_vars = 704 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-33
+Note the number of observations in ``adata`` before and after subsetting.
 
-Extracting single crops:
-Crops need to be sized and located. We distinguish crops located based on a
-corner coordinate of the crop and crops located based on the center coordinate
-of the crop.
-You can specify the crop coordinates in pixels (as ``int``) or in percentage of total image size (as ``float``)
-
-.. GENERATED FROM PYTHON SOURCE LINES 33-42
-
-.. code-block:: default
-
-
-    crop_corner = img.crop_corner(1000, 1000, size=400)
-
-    crop_center = img.crop_center(1200, 1200, radius=200)
-
-    fig, axes = plt.subplots(1, 2)
-    crop_corner.show(ax=axes[0])
-    crop_center.show(ax=axes[1])
-
-
-
-
-.. image:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
-    :alt: compute crops
-    :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
-
-The result of the cropping functions is another ImageContainer
-
-.. GENERATED FROM PYTHON SOURCE LINES 44-46
+.. GENERATED FROM PYTHON SOURCE LINES 53-56
 
 .. code-block:: default
 
-
-    crop_corner
-
-
+    adata_crop = crop_corner.subset(adata)
+    adata_crop
 
 
 
-.. raw:: html
 
-    <div class="output_subarea output_html rendered_html output_result">
-    ImageContainer object with 1 layer:<p style='text-indent: 25px; margin-top: 0px; margin-bottom: 0px;'><strong>image</strong>: <em>y</em> (400), <em>x</em> (400), <em>channels</em> (3)</p>
-    </div>
-    <br />
-    <br />
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    AnnData object with n_obs × n_vars = 7 × 16562
+        obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
+        var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
+        uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
+        obsm: 'X_pca', 'X_umap', 'spatial'
+        varm: 'PCs'
+        obsp: 'connectivities', 'distances'
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 57-62
+
+Visualize the result in Napari:
+
+.. code-block:: python
+
+       crop_corner.interactive(adata_crop)
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.473 seconds)
+   **Total running time of the script:** ( 0 minutes  15.381 seconds)
 
-**Estimated memory usage:**  54 MB
+**Estimated memory usage:**  200 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

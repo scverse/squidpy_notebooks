@@ -5,14 +5,14 @@ Examples using ``squidpy.im.ImageContainer.show``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use squidpy.im.ImageContainer to interact with image structured data...">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
-     :alt: Analyze Visium fluorescence data
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_thumb.png
+     :alt: ImageContainer object
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+     :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``squidpy.im.ImageContainer.show``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+ * :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`

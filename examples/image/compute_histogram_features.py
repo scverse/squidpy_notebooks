@@ -11,8 +11,8 @@ by computing a histogram of each image channel and returning bin-counts for each
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``bins`` - number of bins of the histogram, default is 10.
-- ``v_range`` - range on which values are binned, default is the whole image range.
+    - ``bins`` - number of bins of the histogram, default is 10.
+    - ``v_range`` - range on which values are binned, default is the whole image range.
 
 .. seealso::
 
@@ -24,8 +24,7 @@ import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
-# Lets load a fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
-
+# Lets load the fluorescence Visium dataset and calculate bin-counts (3 bins) of channels 0 and 1.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()
@@ -42,7 +41,6 @@ sq.im.calculate_image_features(
 
 ###############################################################################
 # The result is stored in ``adata.obsm['histogram_features']``.
-
 adata.obsm["histogram_features"].head()
 
 ###############################################################################
@@ -51,7 +49,6 @@ adata.obsm["histogram_features"].head()
 # learn how to use our interactive :mod:`napari` plugin.
 # With these features we can e.g. appreciate the detailed distribution of
 # intensity values of channel 0 (DAPI stain) on the different bins.
-
 sc.pl.spatial(
     sq.pl.extract(adata, "histogram_features"),
     color=[None, "histogram_ch-0_bin-0", "histogram_ch-0_bin-1", "histogram_ch-0_bin-2"],

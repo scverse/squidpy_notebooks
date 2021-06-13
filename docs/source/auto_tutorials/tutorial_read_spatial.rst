@@ -24,7 +24,7 @@ Import spatial data in AnnData and Squidpy
 This tutorial shows how to store spatial datasets in :class:`anndata.AnnData`.
 
 Spatial molecular data comes in many different formats, and to date there is no
-one-size-fit-all solution for reading spatial data in python.
+one-size-fit-all solution for reading spatial data in Python.
 Scanpy already provides a solution for Visium Spatial transcriptomics data with
 the function :func:`scanpy.read_visium` but that is basically it.
 Here in Squidpy, we do provide some pre-processed (and pre-formatted) datasets,
@@ -62,27 +62,25 @@ details that you should take care of in order to exploit the full functionality 
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.1 scipy==1.6.1 pandas==1.2.2 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.8.3 leidenalg==0.8.3
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
     squidpy==1.0.0
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-42
+.. GENERATED FROM PYTHON SOURCE LINES 34-41
 
 Spatial coordinates in AnnData
 ------------------------------
-
 First, let's generate some data. We will need:
 
-- an array of features (e.g. counts)
-- an array of spatial coordinates
-- an image array (e.g. the tissue image)
+  - an array of features (e.g. counts).
+  - an array of spatial coordinates.
+  - an image array (e.g. the tissue image).
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-48
+.. GENERATED FROM PYTHON SOURCE LINES 41-46
 
 .. code-block:: default
-
 
     rng = default_rng(42)
     counts = rng.integers(0, 15, size=(10, 100))  # feature matrix
@@ -96,17 +94,16 @@ First, let's generate some data. We will need:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-53
+.. GENERATED FROM PYTHON SOURCE LINES 47-51
 
 Let's first start with creating the :class:`anndata.AnnData` object.
 We will first just use the count matrix and the spatial coordinates.
-Specify the :attr:`anndata.AnnData.obsm` key as `"spatial"` is not strictly necessary
+Specify the :attr:`anndata.AnnData.obsm` key as `'spatial'` is not strictly necessary
 but will save you a lot of typing since it's the default for both Squidpy and Scanpy.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-56
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 .. code-block:: default
-
 
     adata = AnnData(counts, obsm={"spatial": coordinates})
 
@@ -117,14 +114,13 @@ but will save you a lot of typing since it's the default for both Squidpy and Sc
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 Next, let's run a standard Scanpy clustering and umap workflow.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-67
+.. GENERATED FROM PYTHON SOURCE LINES 55-63
 
 .. code-block:: default
-
 
     sc.pp.normalize_total(adata)
     sc.pp.log1p(adata)
@@ -154,14 +150,13 @@ Next, let's run a standard Scanpy clustering and umap workflow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-69
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 .. code-block:: default
-
 
     sc.pl.spatial(adata, color="leiden", spot_size=1)
 
@@ -176,21 +171,18 @@ We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-81
+.. GENERATED FROM PYTHON SOURCE LINES 68-74
 
 Tissue image in AnnData
 -----------------------
-
 For use cases where there is no tissue image, this is all you need
 to start using Scanpy/Squidpy for your analysis.
 For instance, you can compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`
-based on a fixed neighbor radius
-that is informative given your experimental settings.
+based on a fixed neighbor radius that is informative given your experimental settings.
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-85
+.. GENERATED FROM PYTHON SOURCE LINES 74-77
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata, radius=3.0)
     sc.pl.spatial(adata, color="leiden", neighbors_key="spatial_neighbors", spot_size=1, edges=True, edges_width=2)
@@ -206,16 +198,15 @@ that is informative given your experimental settings.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-89
+.. GENERATED FROM PYTHON SOURCE LINES 78-81
 
 In case you do have an image of the tissue (or multiple, at different resolutions)
 this is what you need to know to correctly store it in AnnData.
 First, let's visualize the mock image from before.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-92
+.. GENERATED FROM PYTHON SOURCE LINES 81-83
 
 .. code-block:: default
-
 
     plt.imshow(image)
 
@@ -234,30 +225,30 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f633a510fa0>
+    <matplotlib.image.AxesImage object at 0x7ffb3176dcd0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-106
+.. GENERATED FROM PYTHON SOURCE LINES 84-98
 
 The image and its metadata are stored in the `uns` slot of :class:`anndata.AnnData`.
-Specifically, in the ``adata.uns['spatial']['{library_id}']`` slot, where `library_id`
+Specifically, in the ``adata.uns['spatial'][<library_id>]`` slot, where `library_id`
 is any unique key that refers to the tissue image.
 
-For now, we will assume that there is only one image.
-This is the necessary metadata:
-- `tissue_hires_scalef`: this is the scale factor between the spatial coordinates
-units and the image pixels. In the case of Visium, this is usually ~0.17. In this case,
-we assume that the spatial coordinates are in the same scale of the pixels, and so
-we will set this value to 1.
-- `spot_diameter_fullres`: this is the diameter of the capture area for each observation.
-In the case of Visium, we usually call them `"spots"` and this value is set to ~89.
+For now, we will assume that there is only one image. This is the necessary metadata:
+
+  - `tissue_hires_scalef` - this is the scale factor between the spatial coordinates
+    units and the image pixels. In the case of Visium, this is usually ~0.17. In this case,
+    we assume that the spatial coordinates are in the same scale of the pixels, and so
+    we will set this value to 1.
+  - `spot_diameter_fullres` - this is the diameter of the capture area for each observation.
+    In the case of Visium, we usually call them `"spots"` and this value is set to ~89.
+
 Here, we will set it to 0.5.
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-114
+.. GENERATED FROM PYTHON SOURCE LINES 98-105
 
 .. code-block:: default
-
 
     spatial_key = "spatial"
     library_id = "tissue42"
@@ -273,19 +264,17 @@ Here, we will set it to 0.5.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-121
+.. GENERATED FROM PYTHON SOURCE LINES 106-111
 
 We don't provide the flexibility (yet) to change the values of such keys.
 These are the keys provided by the Space Ranger output from 10x Genomics Visium
 and therefore were the first to be adopted. In the future, we might settle to
 a sightly different structure.
-But for now, if all such key are correct, :func:`scanpy.pl.spatial` works
-out of the box.
+But for now, if all such key are correct, :func:`scanpy.pl.spatial` works out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-124
+.. GENERATED FROM PYTHON SOURCE LINES 111-113
 
 .. code-block:: default
-
 
     sc.pl.spatial(adata, color="leiden")
 
@@ -300,15 +289,14 @@ out of the box.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-127
+.. GENERATED FROM PYTHON SOURCE LINES 114-116
 
 You can fiddle around with the settings to see what changes.
 For instance, let's change `tissue_hires_scalef` to half the previous value.
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-131
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 .. code-block:: default
-
 
     adata.uns[spatial_key][library_id]["scalefactors"] = {"tissue_hires_scalef": 0.5, "spot_diameter_fullres": 0.5}
     sc.pl.spatial(adata, color="leiden")
@@ -324,7 +312,7 @@ For instance, let's change `tissue_hires_scalef` to half the previous value.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-137
+.. GENERATED FROM PYTHON SOURCE LINES 120-125
 
 As you can see, the spatial coordinates have been scaled down, and the image
 was "zoomed in".
@@ -332,10 +320,9 @@ was "zoomed in".
 Of course, you might want to "analyze" such image. :class:`squidpy.im.ImageContainer`
 comes to the rescue! Just instantiate a new object and it will work out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-140
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 .. code-block:: default
-
 
     img = sq.im.ImageContainer(image)
     img.show()
@@ -343,7 +330,7 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 
 .. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_006.png
-    :alt: tutorial read spatial
+    :alt: image
     :class: sphx-glr-single-img
 
 
@@ -353,9 +340,9 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.530 seconds)
+   **Total running time of the script:** ( 0 minutes  17.202 seconds)
 
-**Estimated memory usage:**  26 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:

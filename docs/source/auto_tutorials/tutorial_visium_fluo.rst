@@ -33,12 +33,12 @@ tissue image in :class:`squidpy.im.ImageContainer` format.
 
 A couple of notes on pre-processing:
 
-- The pre-processing pipeline is the same as the one shown in the original
-  `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
-- The cluster annotation was performed using several resources, such as the
-  `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-  the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-  from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
+    - The pre-processing pipeline is the same as the one shown in the original
+      `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
+    - The cluster annotation was performed using several resources, such as the
+      `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
+      the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
+      from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
 
 .. seealso::
 
@@ -79,10 +79,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
     squidpy==1.0.0
-      0%|          | 0.00/303M [00:00<?, ?B/s]      0%|          | 56.0k/303M [00:00<18:08, 291kB/s]      0%|          | 192k/303M [00:00<09:53, 534kB/s]       0%|          | 512k/303M [00:00<03:54, 1.35MB/s]      0%|          | 1.09M/303M [00:00<01:53, 2.78MB/s]      1%|          | 1.88M/303M [00:00<01:11, 4.41MB/s]      1%|1         | 3.47M/303M [00:00<00:38, 8.08MB/s]      2%|2         | 6.31M/303M [00:00<00:21, 14.6MB/s]      3%|3         | 9.20M/303M [00:01<00:16, 19.0MB/s]      4%|4         | 12.2M/303M [00:01<00:13, 22.7MB/s]      5%|5         | 15.2M/303M [00:01<00:11, 25.2MB/s]      6%|6         | 18.2M/303M [00:01<00:11, 27.1MB/s]      7%|6         | 21.1M/303M [00:01<00:10, 28.0MB/s]      8%|7         | 24.0M/303M [00:01<00:10, 28.9MB/s]      9%|8         | 27.1M/303M [00:01<00:09, 29.7MB/s]     10%|9         | 30.2M/303M [00:01<00:09, 30.5MB/s]     11%|#         | 33.2M/303M [00:01<00:09, 30.9MB/s]     12%|#1        | 36.2M/303M [00:01<00:09, 30.9MB/s]     13%|#2        | 39.1M/303M [00:02<00:08, 30.9MB/s]     14%|#3        | 42.3M/303M [00:02<00:08, 31.5MB/s]     15%|#4        | 45.3M/303M [00:02<00:08, 31.5MB/s]     16%|#5        | 48.1M/303M [00:02<00:08, 31.0MB/s]     17%|#6        | 51.2M/303M [00:02<00:08, 31.4MB/s]     18%|#7        | 54.3M/303M [00:02<00:08, 31.7MB/s]     19%|#8        | 57.3M/303M [00:02<00:08, 31.0MB/s]     20%|#9        | 60.3M/303M [00:02<00:08, 31.1MB/s]     21%|##        | 63.2M/303M [00:02<00:08, 31.1MB/s]     22%|##1       | 66.3M/303M [00:02<00:07, 31.5MB/s]     23%|##2       | 69.3M/303M [00:03<00:07, 31.4MB/s]     24%|##3       | 72.3M/303M [00:03<00:09, 26.1MB/s]     25%|##4       | 75.3M/303M [00:03<00:08, 27.4MB/s]     26%|##5       | 78.3M/303M [00:03<00:08, 28.5MB/s]     27%|##6       | 81.2M/303M [00:03<00:07, 29.1MB/s]     28%|##7       | 84.2M/303M [00:03<00:07, 29.5MB/s]     29%|##8       | 87.2M/303M [00:03<00:07, 29.8MB/s]     30%|##9       | 90.2M/303M [00:03<00:07, 30.4MB/s]     31%|###       | 93.2M/303M [00:03<00:07, 30.6MB/s]     32%|###1      | 96.3M/303M [00:03<00:06, 30.9MB/s]     33%|###2      | 99.3M/303M [00:04<00:06, 31.2MB/s]     34%|###3      | 102M/303M [00:04<00:06, 31.3MB/s]      35%|###4      | 105M/303M [00:04<00:06, 31.1MB/s]     36%|###5      | 108M/303M [00:04<00:06, 31.5MB/s]     37%|###6      | 112M/303M [00:04<00:06, 31.1MB/s]     38%|###7      | 115M/303M [00:04<00:06, 31.2MB/s]     39%|###8      | 118M/303M [00:04<00:06, 31.2MB/s]     40%|###9      | 121M/303M [00:04<00:06, 31.2MB/s]     41%|####      | 123M/303M [00:04<00:06, 31.2MB/s]     42%|####1     | 126M/303M [00:04<00:05, 31.2MB/s]     43%|####2     | 129M/303M [00:05<00:05, 30.9MB/s]     44%|####3     | 132M/303M [00:05<00:05, 30.7MB/s]     45%|####4     | 135M/303M [00:05<00:05, 31.1MB/s]     46%|####5     | 138M/303M [00:05<00:05, 31.4MB/s]     47%|####6     | 141M/303M [00:05<00:05, 31.6MB/s]     48%|####7     | 145M/303M [00:05<00:05, 31.9MB/s]     49%|####8     | 148M/303M [00:05<00:05, 32.0MB/s]     50%|####9     | 151M/303M [00:05<00:05, 31.8MB/s]     51%|#####     | 154M/303M [00:05<00:04, 31.5MB/s]     52%|#####1    | 157M/303M [00:06<00:04, 31.4MB/s]     53%|#####2    | 160M/303M [00:06<00:04, 31.5MB/s]     54%|#####3    | 163M/303M [00:06<00:04, 31.4MB/s]     55%|#####4    | 166M/303M [00:06<00:04, 31.4MB/s]     56%|#####5    | 169M/303M [00:06<00:04, 31.6MB/s]     57%|#####6    | 172M/303M [00:06<00:04, 31.7MB/s]     58%|#####7    | 175M/303M [00:06<00:04, 27.3MB/s]     59%|#####8    | 178M/303M [00:06<00:04, 27.8MB/s]     60%|#####9    | 181M/303M [00:06<00:04, 28.8MB/s]     61%|######    | 184M/303M [00:06<00:04, 29.6MB/s]     62%|######1   | 187M/303M [00:07<00:04, 29.8MB/s]     63%|######2   | 190M/303M [00:07<00:03, 30.5MB/s]     64%|######3   | 193M/303M [00:07<00:03, 30.9MB/s]     65%|######4   | 196M/303M [00:07<00:03, 30.8MB/s]     66%|######5   | 199M/303M [00:07<00:03, 31.1MB/s]     67%|######6   | 202M/303M [00:07<00:03, 31.2MB/s]     68%|######7   | 205M/303M [00:07<00:03, 31.5MB/s]     69%|######8   | 208M/303M [00:07<00:03, 31.7MB/s]     70%|######9   | 211M/303M [00:07<00:03, 31.5MB/s]     71%|#######   | 214M/303M [00:07<00:02, 31.1MB/s]     72%|#######1  | 217M/303M [00:08<00:02, 31.0MB/s]     73%|#######2  | 220M/303M [00:08<00:02, 31.1MB/s]     74%|#######3  | 223M/303M [00:08<00:02, 31.4MB/s]     75%|#######4  | 226M/303M [00:08<00:02, 31.1MB/s]     76%|#######5  | 229M/303M [00:08<00:02, 31.3MB/s]     77%|#######6  | 232M/303M [00:08<00:02, 31.7MB/s]     78%|#######7  | 235M/303M [00:08<00:02, 31.9MB/s]     79%|#######8  | 238M/303M [00:08<00:02, 31.8MB/s]     80%|#######9  | 241M/303M [00:08<00:02, 31.7MB/s]     81%|########  | 244M/303M [00:08<00:01, 31.7MB/s]     82%|########1 | 247M/303M [00:09<00:01, 31.2MB/s]     83%|########2 | 250M/303M [00:09<00:01, 31.3MB/s]     84%|########3 | 253M/303M [00:09<00:01, 31.5MB/s]     85%|########4 | 256M/303M [00:09<00:01, 31.4MB/s]     86%|########5 | 259M/303M [00:09<00:01, 31.8MB/s]     87%|########6 | 262M/303M [00:09<00:01, 31.7MB/s]     88%|########7 | 265M/303M [00:09<00:01, 27.5MB/s]     89%|########8 | 268M/303M [00:09<00:01, 28.4MB/s]     90%|########9 | 271M/303M [00:09<00:01, 29.3MB/s]     91%|######### | 274M/303M [00:10<00:01, 29.1MB/s]     92%|#########1| 277M/303M [00:10<00:00, 29.9MB/s]     93%|#########2| 280M/303M [00:10<00:00, 30.5MB/s]     94%|#########3| 283M/303M [00:10<00:00, 30.9MB/s]     95%|#########4| 287M/303M [00:10<00:00, 31.3MB/s]     96%|#########5| 290M/303M [00:10<00:00, 31.3MB/s]     97%|#########6| 293M/303M [00:10<00:00, 31.3MB/s]     98%|#########7| 296M/303M [00:10<00:00, 31.4MB/s]     99%|#########8| 299M/303M [00:10<00:00, 30.4MB/s]    100%|#########9| 302M/303M [00:10<00:00, 30.9MB/s]    100%|##########| 303M/303M [00:10<00:00, 28.9MB/s]
-      0%|          | 0.00/65.5M [00:00<?, ?B/s]      0%|          | 56.0k/65.5M [00:00<03:56, 290kB/s]      0%|          | 120k/65.5M [00:00<02:34, 443kB/s]       1%|          | 360k/65.5M [00:00<00:57, 1.20MB/s]      1%|1         | 704k/65.5M [00:00<00:33, 2.01MB/s]      2%|2         | 1.43M/65.5M [00:00<00:17, 3.93MB/s]      4%|3         | 2.55M/65.5M [00:00<00:10, 6.43MB/s]      7%|6         | 4.26M/65.5M [00:00<00:06, 10.1MB/s]     11%|#         | 7.10M/65.5M [00:00<00:03, 16.2MB/s]     15%|#5        | 10.1M/65.5M [00:00<00:02, 21.0MB/s]     20%|##        | 13.2M/65.5M [00:01<00:02, 24.2MB/s]     25%|##4       | 16.2M/65.5M [00:01<00:01, 26.5MB/s]     29%|##9       | 19.3M/65.5M [00:01<00:01, 28.2MB/s]     34%|###4      | 22.3M/65.5M [00:01<00:01, 29.3MB/s]     39%|###8      | 25.3M/65.5M [00:01<00:01, 30.0MB/s]     43%|####3     | 28.4M/65.5M [00:01<00:01, 30.7MB/s]     48%|####8     | 31.5M/65.5M [00:01<00:01, 31.1MB/s]     53%|#####2    | 34.5M/65.5M [00:01<00:01, 31.0MB/s]     57%|#####7    | 37.6M/65.5M [00:01<00:00, 31.4MB/s]     62%|######2   | 40.6M/65.5M [00:02<00:00, 31.5MB/s]     66%|######6   | 43.4M/65.5M [00:02<00:00, 30.8MB/s]     71%|#######   | 46.4M/65.5M [00:02<00:00, 30.9MB/s]     75%|#######5  | 49.4M/65.5M [00:02<00:00, 31.1MB/s]     80%|#######9  | 52.3M/65.5M [00:02<00:00, 31.1MB/s]     85%|########4 | 55.4M/65.5M [00:02<00:00, 31.3MB/s]     89%|########9 | 58.4M/65.5M [00:02<00:00, 31.3MB/s]     94%|#########3| 61.4M/65.5M [00:02<00:00, 31.3MB/s]     98%|#########8| 64.5M/65.5M [00:02<00:00, 31.7MB/s]    100%|##########| 65.5M/65.5M [00:02<00:00, 23.8MB/s]
 
 
 
@@ -95,10 +93,9 @@ with :func:`scanpy.pl.spatial`.
 As you can see, this dataset is a smaller crop of the whole brain section.
 We provide this crop to make the execution time of this tutorial a bit shorter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 .. code-block:: default
-
 
     sc.pl.spatial(adata, color="cluster")
 
@@ -114,33 +111,30 @@ We provide this crop to make the execution time of this tutorial a bit shorter.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-64
+.. GENERATED FROM PYTHON SOURCE LINES 60-63
 
 The fluorescence image provided with this dataset has three channels:
 *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
 We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-69
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 .. code-block:: default
 
-
-    fig, axes = plt.subplots(1, 3)
-    for i, ax in enumerate(axes):
-        img.show(channel=i, ax=ax)
+    img.show(channelwise=True)
 
 
 
 
 .. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_002.png
-    :alt: tutorial visium fluo
+    :alt: image:0, image:1, image:2
     :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-100
+.. GENERATED FROM PYTHON SOURCE LINES 66-96
 
 Visium datasets contain high-resolution images of the tissue.
 Using the function :func:`squidpy.im.calculate_image_features` you can calculate image features
@@ -169,14 +163,13 @@ Image segmentation
 To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
 But even before that, it's best practice to pre-process the image by e.g. smoothing it using
 in :func:`squidpy.im.process`.
-We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``).
+We will then use the *DAPI* channel of the fluorescence image (``channel_id s= 0``).
 Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 for more details on how to calculate a segmented image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-119
+.. GENERATED FROM PYTHON SOURCE LINES 96-114
 
 .. code-block:: default
-
 
     sq.im.process(
         img=img,
@@ -184,7 +177,7 @@ for more details on how to calculate a segmented image.
         method="smooth",
     )
 
-    sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
+    sq.im.segment(img=img, layer="image_smooth", method="watershed", channel=0, chunks=1000)
 
     # plot the resulting segmentation
     fig, ax = plt.subplots(1, 2)
@@ -200,14 +193,14 @@ for more details on how to calculate a segmented image.
 
 
 .. image:: /auto_tutorials/images/sphx_glr_tutorial_visium_fluo_003.png
-    :alt: tutorial visium fluo
+    :alt: image, segmented_watershed
     :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-135
+.. GENERATED FROM PYTHON SOURCE LINES 115-130
 
 The result of :func:`squidpy.im.segment` is saved in ``img['segmented_watershed']`` by default.
 It is a label image where each segmented object is annotated with a different integer number.
@@ -225,10 +218,9 @@ For more details on how the segmentation features, you can have a look at
 the docs of :func:`squidpy.im.calculate_image_features` or the example at
 :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-162
+.. GENERATED FROM PYTHON SOURCE LINES 130-156
 
 .. code-block:: default
-
 
 
     # define image layer to use for segmentation
@@ -271,13 +263,11 @@ the docs of :func:`squidpy.im.calculate_image_features` or the example at
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-189
+.. GENERATED FROM PYTHON SOURCE LINES 157-183
 
 Above, we made use of :func:`squidpy.pl.extract`, a method to extract
 all features in a given `adata.obsm['{key}']` and temporarily save them to :attr:`anndata.AnnData.obs`.
@@ -302,14 +292,13 @@ Now we will calculate summary, histogram, and texture features.
 These features provide a useful compressed summary of the tissue image.
 For more information on these features, refer to:
 
-- :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
-- :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`.
-- :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`.
+  - :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
+  - :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`.
+  - :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-216
+.. GENERATED FROM PYTHON SOURCE LINES 183-208
 
 .. code-block:: default
-
 
 
     # define different feature calculation combinations
@@ -340,7 +329,6 @@ For more information on these features, refer to:
 
 
 
-
 .. rst-class:: sphx-glr-script-out
 
  Out:
@@ -348,29 +336,28 @@ For more information on these features, refer to:
  .. code-block:: none
 
       0%|          | 0/704 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
       0%|          | 0/704 [00:00<?, ?/s]
       0%|          | 0/704 [00:00<?, ?/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-221
+.. GENERATED FROM PYTHON SOURCE LINES 209-213
 
 We can use the extracted image features to compute a new cluster annotation.
 This could be useful to gain insights in similarities across spots based on image morphology.
 
 For this, we first define a helper function to cluster features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-243
+.. GENERATED FROM PYTHON SOURCE LINES 213-236
 
 .. code-block:: default
 
 
 
     def cluster_features(features: pd.DataFrame, like=None):
-        """Calculate leiden clustering of features.
+        """
+        Calculate leiden clustering of features.
 
         Specify filter of features using `like`.
         """
@@ -396,14 +383,13 @@ For this, we first define a helper function to cluster features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 244-245
+.. GENERATED FROM PYTHON SOURCE LINES 237-238
 
-Then, we calculate feature clusters using different features and compare them to gene clusters
+Then, we calculate feature clusters using different features and compare them to gene clusters:
 
-.. GENERATED FROM PYTHON SOURCE LINES 245-262
+.. GENERATED FROM PYTHON SOURCE LINES 238-254
 
 .. code-block:: default
-
 
     adata.obs["features_summary_cluster"] = cluster_features(adata.obsm["features"], like="summary")
     adata.obs["features_histogram_cluster"] = cluster_features(adata.obsm["features"], like="histogram")
@@ -432,13 +418,13 @@ Then, we calculate feature clusters using different features and compare them to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 263-275
+.. GENERATED FROM PYTHON SOURCE LINES 255-266
 
 Like the gene-space clusters (bottom middle), the feature space clusters are also spatially coherent.
 
 The feature clusters of the different feature extractors are quite diverse, but all of them reflect
-the structure of the hippocampus by assigning different clusters to the different structural areas.
-This is a higher level of detail than the gene-space clustering provides with only one cluster for the hippocampus.
+the structure of the Hippocampus by assigning different clusters to the different structural areas.
+This is a higher level of detail than the gene-space clustering provides with only one cluster for the Hippocampus.
 
 The feature clusters also show the layered structure of the cortex, but again subdividing it in more clusters
 than the gene-space clustering.
@@ -447,12 +433,11 @@ more fine-grained clusters, but nevertheless the image features seem to provide 
 information to the gene-space clusters.
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  30.562 seconds)
+   **Total running time of the script:** ( 5 minutes  45.544 seconds)
 
-**Estimated memory usage:**  5133 MB
+**Estimated memory usage:**  1824 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_visium_fluo.py:

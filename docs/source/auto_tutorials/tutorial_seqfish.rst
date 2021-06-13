@@ -62,9 +62,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
     squidpy==1.0.0
-      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 56.0k/30.7M [00:00<01:50, 291kB/s]      1%|          | 176k/30.7M [00:00<00:46, 681kB/s]       1%|1         | 408k/30.7M [00:00<00:24, 1.31MB/s]      3%|2         | 936k/30.7M [00:00<00:15, 2.06MB/s]      6%|6         | 1.98M/30.7M [00:00<00:06, 4.53MB/s]     13%|#3        | 4.00M/30.7M [00:00<00:03, 9.19MB/s]     23%|##2       | 7.05M/30.7M [00:00<00:01, 15.7MB/s]     33%|###2      | 10.1M/30.7M [00:00<00:01, 20.4MB/s]     43%|####2     | 13.1M/30.7M [00:01<00:00, 23.7MB/s]     53%|#####2    | 16.2M/30.7M [00:01<00:00, 26.1MB/s]     63%|######2   | 19.2M/30.7M [00:01<00:00, 27.9MB/s]     73%|#######2  | 22.3M/30.7M [00:01<00:00, 29.2MB/s]     83%|########2 | 25.5M/30.7M [00:01<00:00, 30.2MB/s]     93%|#########3| 28.5M/30.7M [00:01<00:00, 30.7MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 19.0MB/s]
 
 
 
@@ -114,12 +113,11 @@ of how this function works.
 Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
-
-    sq.gr.spatial_neighbors(adata)
+    sq.gr.spatial_neighbors(adata, coord_type="generic")
     sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
     sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
 
@@ -138,18 +136,15 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
  .. code-block:: none
 
       0%|          | 0/1000 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:536: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
       col_ax = divider.append_axes("top", size="5%")
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-82
+.. GENERATED FROM PYTHON SOURCE LINES 64-80
 
-A similar analysis was performed in the
-original publication :cite:`lohoff2020highly`,
+A similar analysis was performed in the original publication :cite:`lohoff2020highly`,
 and we can appreciate to what extent results overlap.
 For instance, there seems to be an enrichment between the *Lateral plate mesoderm*,
 the *Intermediate mesoderm* and a milder enrichment for *Allantois* cells.
@@ -157,19 +152,18 @@ As in the original publication, there also seems to be an association between th
 the *Haematoendothelial progenitors*.
 Of course, results do not perfectly overlap, and this could be due to several factors:
 
-- the construction of the neighbors graph (which in our case is
-  not informed by the radius, as we did not have access to this information) and by
-- the number of permutation of the neighborhood enrichment
-  (500 in the original publication against the default 1000 in our implementation).
+  - the construction of the neighbors graph (which in our case is
+    not informed by the radius, as we did not have access to this information).
+  - the number of permutation of the neighborhood enrichment
+    (500 in the original publication against the default 1000 in our implementation).
 
 We can also visualize the spatial organization of cells again,
 and appreciate the proximity of specific cell clusters.
 For this, we'll use :func:`scanpy.pl.spatial` again.
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-97
+.. GENERATED FROM PYTHON SOURCE LINES 80-94
 
 .. code-block:: default
-
 
     sc.pl.spatial(
         adata,
@@ -196,7 +190,7 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-121
+.. GENERATED FROM PYTHON SOURCE LINES 95-118
 
 Co-occurrence across spatial dimensions
 ---------------------------------------
@@ -222,10 +216,9 @@ and set the cluster annotation for the conditional probability with
 the argument ``clusters``. Then, we visualize the results with
 :func:`squidpy.pl.co_occurrence`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-130
+.. GENERATED FROM PYTHON SOURCE LINES 118-126
 
 .. code-block:: default
-
 
     sq.gr.co_occurrence(adata, cluster_key="celltype_mapped_refined")
     sq.pl.co_occurrence(
@@ -250,35 +243,35 @@ the argument ``clusters``. Then, we visualize the results with
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-140
+.. GENERATED FROM PYTHON SOURCE LINES 127-136
 
 It seems to recapitulate a previous observation, that there is a co-occurrence between the
 conditional cell type annotation *Lateral plate mesoderm* and the clusters
@@ -288,9 +281,9 @@ the *Presomitic mesoderm* cluster. By visualizing the full tissue as before we c
 appreciate that these cell types seems to form a defined clusters relatively close
 to the *Lateral plate mesoderm* cells.
 It should be noted that the distance units corresponds to
-the spatial coordinates saved in `adata.obsm["spatial"]`.
+the spatial coordinates saved in `adata.obsm['spatial']`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-163
+.. GENERATED FROM PYTHON SOURCE LINES 138-158
 
 Ligand-receptor interaction analysis
 ------------------------------------
@@ -300,7 +293,7 @@ We might be interested in getting a list of potential candidates that might be d
 such cellular communication.
 This naturally translates in doing a ligand-receptor interaction analysis.
 In Squidpy, we provide a fast re-implementation the popular method CellPhoneDB :cite:`cellphonedb`
-(`code <https://github.com/Teichlab/cellphonedb>`_ )
+(`code <https://github.com/Teichlab/cellphonedb>`_)
 and extended its database of annotated ligand-receptor interaction pairs with
 the popular database *Omnipath* :cite:`omnipath`.
 You can run the analysis for all clusters pairs, and all genes (in seconds,
@@ -311,13 +304,11 @@ interest: *Lateral plate mesoderm*,
 *Intermediate mesoderm* and *Allantois*. For the visualization, we will
 filter out annotations
 with low-expressed genes (with the ``means_range`` argument)
-and decreasing the threshold
-for the adjusted p-value (with the ``alpha`` argument)
+and decreasing the threshold for the adjusted p-value (with the ``alpha`` argument).
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-179
+.. GENERATED FROM PYTHON SOURCE LINES 158-173
 
 .. code-block:: default
-
 
     sq.gr.ligrec(
         adata,
@@ -348,19 +339,14 @@ for the adjusted p-value (with the ``alpha`` argument)
 
  .. code-block:: none
 
-      0%|          | 0.00/8.94M [00:00<?, ?B/s]      0%|          | 32.0k/8.94M [00:00<00:30, 310kB/s]      1%|          | 80.0k/8.94M [00:00<00:23, 398kB/s]      1%|1         | 112k/8.94M [00:00<00:26, 355kB/s]       2%|1         | 160k/8.94M [00:00<00:23, 395kB/s]      2%|2         | 224k/8.94M [00:00<00:19, 473kB/s]      4%|4         | 400k/8.94M [00:00<00:10, 882kB/s]      8%|8         | 752k/8.94M [00:00<00:05, 1.69MB/s]     16%|#5        | 1.41M/8.94M [00:00<00:02, 3.24MB/s]     31%|###       | 2.77M/8.94M [00:00<00:01, 6.38MB/s]     61%|######1   | 5.49M/8.94M [00:01<00:00, 12.6MB/s]     91%|#########1| 8.18M/8.94M [00:01<00:00, 16.7MB/s]    100%|##########| 8.94M/8.94M [00:01<00:00, 7.90MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
-      return cls(include, exclude=exclude)._get(**kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
       _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-      0%|          | 0.00/1.39M [00:00<?, ?B/s]      2%|2         | 32.0k/1.39M [00:00<00:04, 308kB/s]      6%|5         | 80.0k/1.39M [00:00<00:03, 396kB/s]      8%|7         | 112k/1.39M [00:00<00:03, 355kB/s]      11%|#1        | 160k/1.39M [00:00<00:03, 395kB/s]     18%|#7        | 256k/1.39M [00:00<00:02, 583kB/s]     33%|###2      | 464k/1.39M [00:00<00:00, 1.06MB/s]     61%|######    | 864k/1.39M [00:00<00:00, 1.96MB/s]    100%|##########| 1.39M/1.39M [00:00<00:00, 1.93MB/s]
-      0%|          | 0.00/2.60M [00:00<?, ?B/s]      1%|1         | 32.0k/2.60M [00:00<00:08, 308kB/s]      3%|3         | 80.0k/2.60M [00:00<00:06, 396kB/s]      7%|6         | 176k/2.60M [00:00<00:04, 633kB/s]      14%|#4        | 384k/2.60M [00:00<00:01, 1.17MB/s]     29%|##9       | 784k/2.60M [00:00<00:00, 2.12MB/s]     60%|#####9    | 1.55M/2.60M [00:00<00:00, 3.99MB/s]    100%|##########| 2.60M/2.60M [00:00<00:00, 4.20MB/s]
       0%|          | 0/100 [00:00<?, ?permutation/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-185
+.. GENERATED FROM PYTHON SOURCE LINES 174-179
 
 The dotplot visualization provides an interesting set of candidate interactions
 that could be involved in the tissue organization of the cell types of interest.
@@ -371,9 +357,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  55.997 seconds)
+   **Total running time of the script:** ( 1 minutes  13.991 seconds)
 
-**Estimated memory usage:**  2002 MB
+**Estimated memory usage:**  1823 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

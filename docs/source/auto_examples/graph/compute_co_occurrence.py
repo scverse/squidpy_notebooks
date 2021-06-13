@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 r"""
-Compute Co-occurrence probability
+Compute co-occurrence probability
 ---------------------------------
 
 This example shows how to compute the co-occurrence probability.
@@ -18,8 +18,8 @@ The score is computed across increasing radii size around each cell in the tissu
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for
-    another score to describe spatial patterns with :func:`squidpy.gr.ripley_k`.
+    See :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for
+    another score to describe spatial patterns with :func:`squidpy.gr.ripley`.
 """
 import scanpy as sc
 import squidpy as sq
@@ -34,6 +34,5 @@ sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(adata, cluster_key="cell type", clusters="basal CK tumor cell")
 
 ###############################################################################
-# We can further visualize tissue organization in spatial coordinates
-# with :func:`scanpy.pl.spatial`.
+# We can further visualize tissue organization in spatial coordinates with :func:`scanpy.pl.spatial`.
 sc.pl.spatial(adata, color="cell type", spot_size=10)

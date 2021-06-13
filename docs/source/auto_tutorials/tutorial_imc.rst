@@ -60,9 +60,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.7.1 anndata==0.7.5 umap==0.5.1 numpy==1.20.2 scipy==1.6.2 pandas==1.2.3 scikit-learn==0.24.1 statsmodels==0.12.2 python-igraph==0.9.1 leidenalg==0.8.3
+    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
     squidpy==1.0.0
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      3%|3         | 48.0k/1.50M [00:00<00:06, 250kB/s]     10%|9         | 152k/1.50M [00:00<00:03, 419kB/s]      19%|#8        | 288k/1.50M [00:00<00:02, 572kB/s]     70%|#######   | 1.05M/1.50M [00:00<00:00, 2.39MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 2.26MB/s]
 
 
 
@@ -72,10 +71,9 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 First, let's visualize the cluster annotation in spatial context
 with :func:`scanpy.pl.spatial`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 .. code-block:: default
-
 
     sc.pl.spatial(adata, color="cell type", spot_size=10)
 
@@ -90,7 +88,7 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-44
+.. GENERATED FROM PYTHON SOURCE LINES 37-43
 
 We can appreciate how the majority of the tissue seems
 to consist of *apoptotic tumor cells*. There also seem to be other
@@ -99,7 +97,7 @@ cell types scattered across the tissue, annotated as *T cells*,
 appreciate how a subset of tumor cell, *basal CK tumor cells* seems
 to be located in the lower part of the tissue.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-69
+.. GENERATED FROM PYTHON SOURCE LINES 45-68
 
 Co-occurrence across spatial dimensions
 +++++++++++++++++++++++++++++++++++++++
@@ -125,10 +123,9 @@ the argument ``clusters``. Then, we visualize the results with
 We visualize the result for two conditional groups, namely
 *basal CK tumor cell* and *T cells*.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-78
+.. GENERATED FROM PYTHON SOURCE LINES 68-76
 
 .. code-block:: default
-
 
     sq.gr.co_occurrence(adata, cluster_key="cell type")
     sq.pl.co_occurrence(
@@ -153,35 +150,35 @@ We visualize the result for two conditional groups, namely
  .. code-block:: none
 
       0%|          | 0/1 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-84
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 We can observe that *T cells* seems to co-occur
 with *endothelial* and *vimentin hi stromal cells*,
@@ -189,7 +186,7 @@ whereas *basal CK tumor cell* seem to largely cluster
 together, except for the presence of a type of stromal
 cells (*small elongated stromal cell*) at close distance.
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-105
+.. GENERATED FROM PYTHON SOURCE LINES 84-103
 
 Neighborhood enrichment
 +++++++++++++++++++++++
@@ -211,10 +208,9 @@ of how this function works.
 
 Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-110
+.. GENERATED FROM PYTHON SOURCE LINES 103-107
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata)
     sq.gr.nhood_enrichment(adata, cluster_key="cell type")
@@ -235,13 +231,11 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
  .. code-block:: none
 
       0%|          | 0/1000 [00:00<?, ?/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-120
+.. GENERATED FROM PYTHON SOURCE LINES 108-117
 
 Interestingly, *T cells* shows an enrichment with *stromal* and
 *endothelial cells*, as well as *macrophages*. Another interesting
@@ -253,7 +247,7 @@ being uniformly spread across the tissue, and in high number, it's
 more likely to be enriched with cell types from the same class,
 rather than different one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-129
+.. GENERATED FROM PYTHON SOURCE LINES 119-126
 
 Interaction matrix and network centralities
 +++++++++++++++++++++++++++++++++++++++++++
@@ -263,15 +257,12 @@ that each cluster share with all the others.
 This score can be computed with the function :func:`squidpy.gr.interaction_matrix`.
 We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-135
+.. GENERATED FROM PYTHON SOURCE LINES 126-129
 
 .. code-block:: default
 
-
-
     sq.gr.interaction_matrix(adata, cluster_key="cell type")
     sq.pl.interaction_matrix(adata, cluster_key="cell type")
-
 
 
 
@@ -281,43 +272,32 @@ We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 136-147
+.. GENERATED FROM PYTHON SOURCE LINES 130-141
 
 Finally, similar to the previous analysis,
 we can investigate properties of the spatial graph by
 computing different network centralities:
 
-- degree_centrality
-- average_clustering
-- closeness_centrality
+  - degree_centrality.
+  - average_clustering.
+  - closeness_centrality.
 
 Squidpy provides a convenient function for all of them:
 :func:`squidpy.gr.centrality_scores` and
 :func:`squidpy.pl.centrality_scores` for visualization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-155
+.. GENERATED FROM PYTHON SOURCE LINES 141-147
 
 .. code-block:: default
-
 
     sq.gr.centrality_scores(
         adata,
         cluster_key="cell type",
     )
     sq.pl.centrality_scores(adata, cluster_key="cell type", figsize=(20, 5), s=500)
-
 
 
 
@@ -330,10 +310,10 @@ Squidpy provides a convenient function for all of them:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-162
+.. GENERATED FROM PYTHON SOURCE LINES 148-154
 
 You can familiarize yourself with network centralities from the
-excellent networkx
+excellent :mod:`networkx`
 `documentation <https://networkx.org/documentation/stable/reference/algorithms/centrality>`_ .
 For the purpose of this analysis, we can appreciate that the *apoptotic tumor cell*
 clusters shows high closeness centrality, indicating that nodes belonging to that group
@@ -342,9 +322,9 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  44.291 seconds)
+   **Total running time of the script:** ( 0 minutes  34.857 seconds)
 
-**Estimated memory usage:**  182 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_imc.py:

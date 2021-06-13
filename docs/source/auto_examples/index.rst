@@ -86,14 +86,14 @@ Graph
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s K function.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s L function.">
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_k_thumb.png
-     :alt: Compute Ripley's K function
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_thumb.png
+     :alt: Compute Ripley's statistics
 
-     :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py`
+     :ref:`sphx_glr_auto_examples_graph_compute_ripley.py`
 
 .. raw:: html
 
@@ -103,7 +103,7 @@ Graph
 .. toctree::
    :hidden:
 
-   /auto_examples/graph/compute_ripley_k
+   /auto_examples/graph/compute_ripley
 
 .. raw:: html
 
@@ -112,7 +112,7 @@ Graph
 .. only:: html
 
  .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_co_occurrence_thumb.png
-     :alt: Compute Co-occurrence probability
+     :alt: Compute co-occurrence probability
 
      :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py`
 
@@ -128,7 +128,28 @@ Graph
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial autocorrelation statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Sepal score for spatially variable genes identification.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_sepal_thumb.png
+     :alt: Compute Sepal score
+
+     :ref:`sphx_glr_auto_examples_graph_compute_sepal.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/graph/compute_sepal
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
 
 .. only:: html
 
@@ -203,48 +224,6 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer to interact with image structured data.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_image_container_thumb.png
-     :alt: ImageContainer object
-
-     :ref:`sphx_glr_auto_examples_image_compute_image_container.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_image_container
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
-     :alt: Crop images with ImageContainer
-
-     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_crops
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to convert an image layer to grayscale.">
 
 .. only:: html
@@ -287,14 +266,14 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
-     :alt: Process a high-resolution image
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+     :alt: Crop images with ImageContainer
 
-     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
 
 .. raw:: html
 
@@ -304,32 +283,11 @@ Image
 .. toctree::
    :hidden:
 
-   /auto_examples/image/compute_process_hires
+   /auto_examples/image/compute_crops
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
-     :alt: Extract custom features
-
-     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/image/compute_custom_features
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.calculate_image_features.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract texture features from the tissue image.">
 
 .. only:: html
 
@@ -347,6 +305,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_texture_features
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the high resolution tissue images to segment nuclei.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
+     :alt: Cell-segmentation for fluorescence images
+
+     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_segment_fluo
 
 .. raw:: html
 
@@ -392,14 +371,14 @@ Image
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the high resolution tissue images to segment nuclei.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show.">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
-     :alt: Cell-segmentation for fluorescence images
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_show_thumb.png
+     :alt: Show layers of the ImageContainer
 
-     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+     :ref:`sphx_glr_auto_examples_image_compute_show.py`
 
 .. raw:: html
 
@@ -409,7 +388,28 @@ Image
 .. toctree::
    :hidden:
 
-   /auto_examples/image/compute_segment_fluo
+   /auto_examples/image/compute_show
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
+     :alt: Extract custom features
+
+     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_custom_features
 
 .. raw:: html
 
@@ -431,6 +431,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_segment_hne
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+     :alt: Process a high-resolution image
+
+     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_process_hires
 
 .. raw:: html
 
@@ -473,6 +494,39 @@ Image
    :hidden:
 
    /auto_examples/image/compute_features
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_plotting:
+
+Plotting
+--------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.extract to plot features in anndata.AnnData.obsm.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_compute_extract_thumb.png
+     :alt: Plot features in adata.obsm
+
+     :ref:`sphx_glr_auto_examples_plotting_compute_extract.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plotting/compute_extract
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

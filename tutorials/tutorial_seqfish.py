@@ -56,14 +56,12 @@ sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
 #
 # Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 # We'll add a dendrogram to the heatmap computed with linkage method *ward*.
-
-sq.gr.spatial_neighbors(adata)
+sq.gr.spatial_neighbors(adata, coord_type="generic")
 sq.gr.nhood_enrichment(adata, cluster_key="celltype_mapped_refined")
 sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="ward")
 
 ###############################################################################
-# A similar analysis was performed in the
-# original publication :cite:`lohoff2020highly`,
+# A similar analysis was performed in the original publication :cite:`lohoff2020highly`,
 # and we can appreciate to what extent results overlap.
 # For instance, there seems to be an enrichment between the *Lateral plate mesoderm*,
 # the *Intermediate mesoderm* and a milder enrichment for *Allantois* cells.
@@ -71,15 +69,14 @@ sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="war
 # the *Haematoendothelial progenitors*.
 # Of course, results do not perfectly overlap, and this could be due to several factors:
 #
-# - the construction of the neighbors graph (which in our case is
-#   not informed by the radius, as we did not have access to this information) and by
-# - the number of permutation of the neighborhood enrichment
-#   (500 in the original publication against the default 1000 in our implementation).
+#   - the construction of the neighbors graph (which in our case is
+#     not informed by the radius, as we did not have access to this information).
+#   - the number of permutation of the neighborhood enrichment
+#     (500 in the original publication against the default 1000 in our implementation).
 #
 # We can also visualize the spatial organization of cells again,
 # and appreciate the proximity of specific cell clusters.
 # For this, we'll use :func:`scanpy.pl.spatial` again.
-
 sc.pl.spatial(
     adata,
     color="celltype_mapped_refined",
@@ -118,7 +115,6 @@ sc.pl.spatial(
 # and set the cluster annotation for the conditional probability with
 # the argument ``clusters``. Then, we visualize the results with
 # :func:`squidpy.pl.co_occurrence`.
-
 sq.gr.co_occurrence(adata, cluster_key="celltype_mapped_refined")
 sq.pl.co_occurrence(
     adata,
@@ -136,7 +132,7 @@ sq.pl.co_occurrence(
 # appreciate that these cell types seems to form a defined clusters relatively close
 # to the *Lateral plate mesoderm* cells.
 # It should be noted that the distance units corresponds to
-# the spatial coordinates saved in `adata.obsm["spatial"]`.
+# the spatial coordinates saved in `adata.obsm['spatial']`.
 
 ###############################################################################
 # Ligand-receptor interaction analysis
@@ -147,7 +143,7 @@ sq.pl.co_occurrence(
 # such cellular communication.
 # This naturally translates in doing a ligand-receptor interaction analysis.
 # In Squidpy, we provide a fast re-implementation the popular method CellPhoneDB :cite:`cellphonedb`
-# (`code <https://github.com/Teichlab/cellphonedb>`_ )
+# (`code <https://github.com/Teichlab/cellphonedb>`_)
 # and extended its database of annotated ligand-receptor interaction pairs with
 # the popular database *Omnipath* :cite:`omnipath`.
 # You can run the analysis for all clusters pairs, and all genes (in seconds,
@@ -158,9 +154,7 @@ sq.pl.co_occurrence(
 # *Intermediate mesoderm* and *Allantois*. For the visualization, we will
 # filter out annotations
 # with low-expressed genes (with the ``means_range`` argument)
-# and decreasing the threshold
-# for the adjusted p-value (with the ``alpha`` argument)
-
+# and decreasing the threshold for the adjusted p-value (with the ``alpha`` argument).
 sq.gr.ligrec(
     adata,
     n_perms=100,

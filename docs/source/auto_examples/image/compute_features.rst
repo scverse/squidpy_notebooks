@@ -64,6 +64,37 @@ the **obs x genes** spatial gene expression matrix.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
 
 
 
@@ -73,10 +104,9 @@ The high-resolution tissue image is contained in ``img['image']``,
 and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 We can plot the spots overlayed on a lower-resolution version of the tissue image contained in ``adata``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-53
+.. GENERATED FROM PYTHON SOURCE LINES 45-52
 
 .. code-block:: default
-
 
     np.set_printoptions(threshold=10)
     print(img)
@@ -111,27 +141,25 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-68
+.. GENERATED FROM PYTHON SOURCE LINES 53-66
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
 This function takes both ``adata`` and ``img`` as input, and will write the resulting ``obs x features`` matrix to
-``adata.obsm[key]``.
-It contains several arguments to modify its behavior.
-With these arguments you can
+``adata.obsm[<key>]``.
+It contains several arguments to modify its behavior. With these arguments you can:
 
-- specify the image used for feature calculation using ``layer``,
-- specify the type of features that should be calculated using ``features`` and ``features_kwargs``,
-- specify how the crops used for feature calculation look like using ``kwargs``,
-- specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``,
-- specify how the data is returned using ``key_added`` and ``copy``.
+  - specify the image used for feature calculation using ``layer``.
+  - specify the type of features that should be calculated using ``features`` and ``features_kwargs``.
+  - specify how the crops used for feature calculation look like using ``kwargs``.
+  - specify parallelization options using ``n_jobs``, ``backend``, and ``show_progress_bar``.
+  - specify how the data is returned using ``key_added`` and ``copy``.
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-74
+.. GENERATED FROM PYTHON SOURCE LINES 66-71
 
 .. code-block:: default
-
 
     sq.im.calculate_image_features(adata, img, features="summary", key_added="features", show_progress_bar=False)
 
@@ -141,15 +169,6 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 .. raw:: html
@@ -288,17 +307,16 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+.. GENERATED FROM PYTHON SOURCE LINES 72-76
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 
 Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-85
+.. GENERATED FROM PYTHON SOURCE LINES 76-81
 
 .. code-block:: default
-
 
     sc.pl.spatial(
         sq.pl.extract(adata, "features"),
@@ -316,7 +334,7 @@ Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-102
+.. GENERATED FROM PYTHON SOURCE LINES 82-101
 
 Specify crop appearance
 =======================
@@ -328,20 +346,20 @@ Visium spots is taken into account to compute the features.
 Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
 For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-- Use ``mask_circle=True, scale=1, spot_scale=1``, if you would like to get features that are calculated only from
-  tissue in a Visium spot
-- Use ``scale=X``, with `X < 1`, if you would like to downscale the crop before extracting the features
-- Use ``spot_scale=X``, with `X > 1`, if you would like to extract crops that are X-times the size of the Visium spot
+  - Use ``mask_circle = True, scale = 1, spot_scale = 1``, if you would like to get features that are calculated
+    only from tissue in a Visium spot.
+  - Use ``scale = X``, with `X < 1`, if you would like to downscale the crop before extracting the features.
+  - Use ``spot_scale = X``, with `X > 1`, if you want to extract crops that are X-times the size of the Visium spot.
 
-Let us extract masked and scaled features and compare them
+Let us extract masked and scaled features and compare them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-142
+We subset ``adata`` to the first 50 spots to make the computation of features fast.
+Skip this step if you want to calculate features from all spots.
+
+.. GENERATED FROM PYTHON SOURCE LINES 101-138
 
 .. code-block:: default
 
-
-    # We subset adata to the first 50 spots to make the computation of features fast.
-    # Skip this step if you want to calculate features from all spots
     adata_sml = adata[:50].copy()
 
     # calculate default features
@@ -387,31 +405,21 @@ Let us extract masked and scaled features and compare them
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 143-144
+.. GENERATED FROM PYTHON SOURCE LINES 139-140
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-151
+.. GENERATED FROM PYTHON SOURCE LINES 142-146
 
 Parallelization
 ===============
 Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
-extract features by using 4 jobs
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-152
+.. GENERATED FROM PYTHON SOURCE LINES 146-147
 
 .. code-block:: default
 
@@ -426,9 +434,9 @@ extract features by using 4 jobs
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  39.677 seconds)
+   **Total running time of the script:** ( 0 minutes  38.650 seconds)
 
-**Estimated memory usage:**  262 MB
+**Estimated memory usage:**  228 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

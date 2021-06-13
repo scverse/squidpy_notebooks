@@ -21,16 +21,16 @@
 Compute Moran's I score
 -----------------------
 
-This example shows how to compute the Moran's I global spatial autocorrelation statistics.
+This example shows how to compute the Moran's I global spatial auto-correlation statistics.
 
-The Moran's I global spatial autocorrelation statistics evaluates whether
+The Moran's I global spatial auto-correlation statistics evaluates whether
 features (i.e. genes) shows a pattern that is clustered, dispersed or random
 in the tissue are under consideration.
 
 .. seealso::
 
     - See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` and
-      :ref:`sphx_glr_auto_examples_graph_compute_ripley_k.py` for other scores to describe spatial patterns.
+      :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for other scores to describe spatial patterns.
     - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
       :func:`squidpy.gr.spatial_neighbors`.
 
@@ -54,7 +54,6 @@ in the tissue are under consideration.
 
  .. code-block:: none
 
-      0%|          | 0.00/314M [00:00<?, ?B/s]      0%|          | 8.00k/314M [00:00<1:20:31, 68.2kB/s]      0%|          | 56.0k/314M [00:00<20:38, 266kB/s]         0%|          | 88.0k/314M [00:00<20:36, 266kB/s]      0%|          | 192k/314M [00:00<10:51, 505kB/s]       0%|          | 392k/314M [00:00<05:55, 925kB/s]      0%|          | 800k/314M [00:00<03:05, 1.77MB/s]      1%|          | 1.59M/314M [00:00<01:34, 3.46MB/s]      1%|1         | 3.20M/314M [00:00<00:48, 6.74MB/s]      2%|1         | 5.84M/314M [00:01<00:27, 11.7MB/s]      3%|2         | 8.17M/314M [00:01<00:22, 14.2MB/s]      3%|3         | 10.8M/314M [00:01<00:19, 16.7MB/s]      4%|4         | 13.4M/314M [00:01<00:17, 18.4MB/s]      5%|5         | 16.2M/314M [00:01<00:15, 20.0MB/s]      6%|6         | 18.9M/314M [00:01<00:14, 20.9MB/s]      7%|6         | 21.9M/314M [00:01<00:13, 22.3MB/s]      8%|7         | 24.8M/314M [00:01<00:13, 23.1MB/s]      9%|8         | 27.6M/314M [00:02<00:12, 23.5MB/s]     10%|9         | 30.5M/314M [00:02<00:12, 23.8MB/s]     11%|#         | 33.2M/314M [00:02<00:12, 23.6MB/s]     11%|#1        | 35.9M/314M [00:02<00:12, 23.4MB/s]     12%|#2        | 38.8M/314M [00:02<00:12, 23.8MB/s]     13%|#3        | 41.7M/314M [00:02<00:11, 24.2MB/s]     14%|#4        | 44.6M/314M [00:02<00:11, 24.4MB/s]     15%|#5        | 47.5M/314M [00:02<00:11, 24.5MB/s]     16%|#6        | 50.4M/314M [00:03<00:11, 24.5MB/s]     17%|#6        | 53.3M/314M [00:03<00:11, 24.6MB/s]     18%|#7        | 56.3M/314M [00:03<00:10, 24.9MB/s]     19%|#8        | 59.3M/314M [00:03<00:10, 25.1MB/s]     20%|#9        | 62.2M/314M [00:03<00:10, 25.0MB/s]     21%|##        | 65.0M/314M [00:03<00:10, 24.7MB/s]     21%|##1       | 66.9M/314M [00:03<00:11, 22.1MB/s]     22%|##2       | 69.7M/314M [00:03<00:11, 22.7MB/s]     23%|##2       | 72.2M/314M [00:04<00:11, 22.4MB/s]     24%|##3       | 75.1M/314M [00:04<00:10, 23.2MB/s]     25%|##4       | 78.0M/314M [00:04<00:10, 23.7MB/s]     26%|##5       | 80.9M/314M [00:04<00:10, 24.0MB/s]     27%|##6       | 83.9M/314M [00:04<00:09, 24.4MB/s]     28%|##7       | 86.8M/314M [00:04<00:09, 24.6MB/s]     29%|##8       | 89.8M/314M [00:04<00:09, 24.8MB/s]     30%|##9       | 92.7M/314M [00:04<00:09, 24.8MB/s]     30%|###       | 95.6M/314M [00:05<00:09, 24.8MB/s]     31%|###1      | 98.5M/314M [00:05<00:09, 24.8MB/s]     32%|###2      | 101M/314M [00:05<00:08, 24.9MB/s]      33%|###3      | 104M/314M [00:05<00:08, 25.1MB/s]     34%|###4      | 107M/314M [00:05<00:08, 25.1MB/s]     35%|###5      | 110M/314M [00:05<00:08, 25.0MB/s]     36%|###6      | 113M/314M [00:05<00:08, 25.2MB/s]     37%|###6      | 116M/314M [00:05<00:08, 25.1MB/s]     38%|###7      | 119M/314M [00:06<00:08, 25.0MB/s]     39%|###8      | 122M/314M [00:06<00:08, 24.9MB/s]     40%|###9      | 125M/314M [00:06<00:08, 24.8MB/s]     41%|####      | 128M/314M [00:06<00:07, 24.7MB/s]     42%|####1     | 130M/314M [00:06<00:07, 24.6MB/s]     42%|####2     | 133M/314M [00:06<00:07, 24.7MB/s]     43%|####3     | 136M/314M [00:06<00:07, 24.8MB/s]     44%|####4     | 139M/314M [00:06<00:07, 24.9MB/s]     45%|####5     | 142M/314M [00:06<00:07, 24.9MB/s]     46%|####6     | 145M/314M [00:07<00:07, 24.8MB/s]     47%|####7     | 148M/314M [00:07<00:06, 24.9MB/s]     48%|####8     | 151M/314M [00:07<00:06, 25.0MB/s]     49%|####9     | 154M/314M [00:07<00:06, 25.0MB/s]     50%|####9     | 157M/314M [00:07<00:06, 24.9MB/s]     51%|#####     | 160M/314M [00:07<00:06, 24.8MB/s]     52%|#####1    | 163M/314M [00:07<00:06, 24.9MB/s]     53%|#####2    | 165M/314M [00:07<00:06, 24.6MB/s]     54%|#####3    | 168M/314M [00:08<00:06, 24.6MB/s]     55%|#####4    | 171M/314M [00:08<00:06, 24.6MB/s]     55%|#####5    | 174M/314M [00:08<00:05, 24.7MB/s]     56%|#####6    | 177M/314M [00:08<00:05, 24.9MB/s]     57%|#####7    | 180M/314M [00:08<00:05, 24.7MB/s]     58%|#####8    | 183M/314M [00:08<00:05, 25.0MB/s]     59%|#####9    | 186M/314M [00:08<00:05, 24.9MB/s]     60%|######    | 188M/314M [00:08<00:05, 24.3MB/s]     61%|######    | 191M/314M [00:09<00:05, 24.1MB/s]     62%|######1   | 194M/314M [00:09<00:05, 24.2MB/s]     63%|######2   | 197M/314M [00:09<00:05, 24.5MB/s]     64%|######3   | 200M/314M [00:09<00:04, 24.5MB/s]     65%|######4   | 203M/314M [00:09<00:04, 24.6MB/s]     65%|######5   | 206M/314M [00:09<00:04, 24.4MB/s]     66%|######6   | 209M/314M [00:09<00:04, 24.6MB/s]     67%|######7   | 211M/314M [00:09<00:04, 24.8MB/s]     68%|######8   | 214M/314M [00:10<00:04, 24.8MB/s]     69%|######9   | 217M/314M [00:10<00:04, 24.8MB/s]     70%|#######   | 220M/314M [00:10<00:03, 24.6MB/s]     71%|#######1  | 223M/314M [00:10<00:03, 24.7MB/s]     72%|#######1  | 226M/314M [00:10<00:03, 24.8MB/s]     73%|#######2  | 229M/314M [00:10<00:03, 24.9MB/s]     74%|#######3  | 232M/314M [00:10<00:03, 25.2MB/s]     75%|#######4  | 235M/314M [00:10<00:03, 25.0MB/s]     76%|#######5  | 238M/314M [00:11<00:03, 25.1MB/s]     77%|#######6  | 241M/314M [00:11<00:03, 25.1MB/s]     78%|#######7  | 244M/314M [00:11<00:02, 25.0MB/s]     78%|#######8  | 246M/314M [00:11<00:02, 24.9MB/s]     79%|#######9  | 249M/314M [00:11<00:02, 25.0MB/s]     80%|########  | 252M/314M [00:11<00:02, 25.0MB/s]     81%|########1 | 255M/314M [00:11<00:02, 25.0MB/s]     82%|########2 | 258M/314M [00:11<00:02, 24.8MB/s]     83%|########3 | 261M/314M [00:12<00:02, 24.6MB/s]     84%|########4 | 264M/314M [00:12<00:02, 24.6MB/s]     85%|########4 | 267M/314M [00:12<00:02, 24.8MB/s]     86%|########5 | 270M/314M [00:12<00:01, 24.8MB/s]     87%|########6 | 273M/314M [00:12<00:01, 24.7MB/s]     88%|########7 | 276M/314M [00:12<00:01, 24.9MB/s]     89%|########8 | 278M/314M [00:12<00:01, 24.9MB/s]     90%|########9 | 281M/314M [00:12<00:01, 25.1MB/s]     91%|######### | 284M/314M [00:13<00:01, 25.1MB/s]     91%|#########1| 287M/314M [00:13<00:01, 25.0MB/s]     92%|#########2| 290M/314M [00:13<00:01, 24.8MB/s]     93%|#########3| 293M/314M [00:13<00:00, 24.9MB/s]     94%|#########4| 296M/314M [00:13<00:00, 24.7MB/s]     95%|#########5| 299M/314M [00:13<00:00, 24.8MB/s]     96%|#########6| 302M/314M [00:13<00:00, 24.8MB/s]     97%|#########6| 305M/314M [00:13<00:00, 24.8MB/s]     98%|#########7| 308M/314M [00:13<00:00, 24.8MB/s]     99%|#########8| 310M/314M [00:14<00:00, 24.8MB/s]    100%|#########9| 313M/314M [00:14<00:00, 24.8MB/s]    100%|##########| 314M/314M [00:14<00:00, 23.1MB/s]
 
     AnnData object with n_obs × n_vars = 2688 × 18078
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_mt', 'log1p_total_counts_mt', 'pct_counts_mt', 'n_counts', 'leiden', 'cluster'
@@ -72,10 +71,9 @@ We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and 
 We first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
 We will also subset the number of genes to evaluate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-41
+.. GENERATED FROM PYTHON SOURCE LINES 29-40
 
 .. code-block:: default
-
 
     genes = adata[:, adata.var.highly_variable].var_names.values[:100]
     sq.gr.spatial_neighbors(adata)
@@ -141,7 +139,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000327</td>
+          <td>0.000222</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -153,7 +151,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000274</td>
+          <td>0.000190</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -165,7 +163,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000221</td>
+          <td>0.000234</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -177,7 +175,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000202</td>
+          <td>0.000179</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -189,7 +187,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000271</td>
+          <td>0.000233</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -201,7 +199,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000210</td>
+          <td>0.000203</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -213,7 +211,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000210</td>
+          <td>0.000218</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -225,7 +223,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000224</td>
+          <td>0.000193</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -237,7 +235,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000224</td>
+          <td>0.000189</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -249,7 +247,7 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000190</td>
+          <td>0.000249</td>
           <td>0.0</td>
           <td>0.0</td>
           <td>0.011929</td>
@@ -261,11 +259,11 @@ We will also subset the number of genes to evaluate.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
 
 .. code-block:: default
 
@@ -282,17 +280,17 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-48
+.. GENERATED FROM PYTHON SOURCE LINES 45-47
 
-We could've also passed ``mode = 'geary'`` to compute a closely related autocorrelation statistic, `Geary's C
+We could've also passed ``mode = 'geary'`` to compute a closely related auto-correlation statistic, `Geary's C
 <https://en.wikipedia.org/wiki/Geary%27s_C>`_. See :func:`squidpy.gr.spatial_autocorr` for more information.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  41.782 seconds)
+   **Total running time of the script:** ( 0 minutes  19.393 seconds)
 
-**Estimated memory usage:**  588 MB
+**Estimated memory usage:**  363 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_moran.py:

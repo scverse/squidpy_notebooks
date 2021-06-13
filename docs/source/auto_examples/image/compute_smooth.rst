@@ -42,7 +42,7 @@ This allows us to set the width of the Gaussian kernel, :math:`\\sigma`, used fo
 
     import matplotlib.pyplot as plt
 
-    # load H&E stained tissue image
+    # load the H&E stained tissue image
     img = sq.datasets.visium_hne_image_crop()
 
 
@@ -59,10 +59,9 @@ With the argument ``layer`` we can select the image layer that should be process
 By default, the resulting image is saved in the layer ``image_smooth``.
 This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-34
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
 
 .. code-block:: default
-
 
     sq.im.process(img, layer="image", method="smooth", sigma=2)
 
@@ -73,11 +72,11 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 Now we can look at the result on a cropped part of the image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-42
+.. GENERATED FROM PYTHON SOURCE LINES 35-41
 
 .. code-block:: default
 
@@ -101,9 +100,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  22.863 seconds)
+   **Total running time of the script:** ( 0 minutes  14.819 seconds)
 
-**Estimated memory usage:**  779 MB
+**Estimated memory usage:**  44 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

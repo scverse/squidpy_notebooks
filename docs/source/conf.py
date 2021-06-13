@@ -58,6 +58,7 @@ intersphinx_mapping = {
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/docs/dev/", None),
     "skimage": ("https://scikit-image.org/docs/stable/", None),
+    "dask": ("https://docs.dask.org/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,7 +80,9 @@ spelling_add_pypi_package_names = True
 spelling_show_suggestions = True
 spelling_exclude_patterns = ["references.rst"]
 # see: https://pyenchant.github.io/pyenchant/api/enchant.tokenize.html
-spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter"]
+spelling_filters = ["enchant.tokenize.URLFilter", "enchant.tokenize.EmailFilter", "enchant.tokenize.MentionFilter"]
+
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -89,6 +92,7 @@ exclude_patterns = [
     "auto_*/**.md5",
     "auto_*/**.py",
     "**.ipynb_checkpoints",
+    #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery
@@ -145,7 +149,7 @@ sphinx_gallery_conf = {
     "binder": {
         "org": "theislab",
         "repo": "squidpy_notebooks",
-        "branch": "master",
+        "branch": release,
         "binderhub_url": "https://mybinder.org",
         "dependencies": str(_root / "environment.yml"),
         "filepath_prefix": "docs",
@@ -157,7 +161,6 @@ sphinx_gallery_conf = {
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
     "external_tutorials/**": "_static/img/squidpy_vertical.png",
-    "external_tutorials/tutorial_cellprofiler": "_static/img/cellprofiler_icon.png",
 }
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize

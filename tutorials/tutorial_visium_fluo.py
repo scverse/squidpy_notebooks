@@ -15,12 +15,12 @@ tissue image in :class:`squidpy.im.ImageContainer` format.
 
 A couple of notes on pre-processing:
 
-- The pre-processing pipeline is the same as the one shown in the original
-  `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
-- The cluster annotation was performed using several resources, such as the
-  `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-  the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
-  from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
+    - The pre-processing pipeline is the same as the one shown in the original
+      `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
+    - The cluster annotation was performed using several resources, such as the
+      `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
+      the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
+      from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
 
 .. seealso::
 
@@ -53,7 +53,6 @@ adata = sq.datasets.visium_fluo_adata_crop()
 #
 # As you can see, this dataset is a smaller crop of the whole brain section.
 # We provide this crop to make the execution time of this tutorial a bit shorter.
-
 sc.pl.spatial(adata, color="cluster")
 
 
@@ -61,10 +60,7 @@ sc.pl.spatial(adata, color="cluster")
 # The fluorescence image provided with this dataset has three channels:
 # *DAPI* (specific to DNA), *anti-NEUN* (specific to neurons), *anti-GFAP* (specific to Glial cells).
 # We can directly visualize the channels with the method :meth:`squidpy.im.ImageContainer.show`.
-
-fig, axes = plt.subplots(1, 3)
-for i, ax in enumerate(axes):
-    img.show(channel=i, ax=ax)
+img.show(channelwise=True)
 
 ###############################################################################
 # Visium datasets contain high-resolution images of the tissue.
@@ -94,17 +90,16 @@ for i, ax in enumerate(axes):
 # To calculate `segmentation` features, we first need to segment the tissue image using :func:`squidpy.im.segment`.
 # But even before that, it's best practice to pre-process the image by e.g. smoothing it using
 # in :func:`squidpy.im.process`.
-# We will then use the *DAPI* channel of the fluorescence image (``channel_ids=0``).
+# We will then use the *DAPI* channel of the fluorescence image (``channel_id s= 0``).
 # Please refer to :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
 # for more details on how to calculate a segmented image.
-
 sq.im.process(
     img=img,
     layer="image",
     method="smooth",
 )
 
-sq.im.segment(img=img, layer="image_smooth", method="watershed", channel_ids=0, xs=1000, ys=1000)
+sq.im.segment(img=img, layer="image_smooth", method="watershed", channel=0, chunks=1000)
 
 # plot the resulting segmentation
 fig, ax = plt.subplots(1, 2)
@@ -132,7 +127,6 @@ img_crop.show(
 # For more details on how the segmentation features, you can have a look at
 # the docs of :func:`squidpy.im.calculate_image_features` or the example at
 # :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`.
-
 
 # define image layer to use for segmentation
 features_kwargs = {"segmentation": {"label_layer": "segmented_watershed"}}
@@ -183,10 +177,9 @@ sc.pl.spatial(
 # These features provide a useful compressed summary of the tissue image.
 # For more information on these features, refer to:
 #
-# - :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
-# - :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`.
-# - :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`.
-
+#   - :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`.
+#   - :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`.
+#   - :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`.
 
 # define different feature calculation combinations
 params = {
@@ -212,7 +205,6 @@ adata.obsm["features"] = pd.concat([adata.obsm[f] for f in params.keys()], axis=
 # make sure that we have no duplicated feature names in the combined table
 adata.obsm["features"].columns = ad.utils.make_index_unique(adata.obsm["features"].columns)
 
-
 ###############################################################################
 # We can use the extracted image features to compute a new cluster annotation.
 # This could be useful to gain insights in similarities across spots based on image morphology.
@@ -221,7 +213,8 @@ adata.obsm["features"].columns = ad.utils.make_index_unique(adata.obsm["features
 
 
 def cluster_features(features: pd.DataFrame, like=None):
-    """Calculate leiden clustering of features.
+    """
+    Calculate leiden clustering of features.
 
     Specify filter of features using `like`.
     """
@@ -241,8 +234,7 @@ def cluster_features(features: pd.DataFrame, like=None):
 
 
 ###############################################################################
-# Then, we calculate feature clusters using different features and compare them to gene clusters
-
+# Then, we calculate feature clusters using different features and compare them to gene clusters:
 adata.obs["features_summary_cluster"] = cluster_features(adata.obsm["features"], like="summary")
 adata.obs["features_histogram_cluster"] = cluster_features(adata.obsm["features"], like="histogram")
 adata.obs["features_texture_cluster"] = cluster_features(adata.obsm["features"], like="texture")
@@ -263,12 +255,11 @@ sc.pl.spatial(
 # Like the gene-space clusters (bottom middle), the feature space clusters are also spatially coherent.
 #
 # The feature clusters of the different feature extractors are quite diverse, but all of them reflect
-# the structure of the hippocampus by assigning different clusters to the different structural areas.
-# This is a higher level of detail than the gene-space clustering provides with only one cluster for the hippocampus.
+# the structure of the Hippocampus by assigning different clusters to the different structural areas.
+# This is a higher level of detail than the gene-space clustering provides with only one cluster for the Hippocampus.
 #
 # The feature clusters also show the layered structure of the cortex, but again subdividing it in more clusters
 # than the gene-space clustering.
 # It might be possible to re-cluster the gene expression counts with a higher resolution to also get
 # more fine-grained clusters, but nevertheless the image features seem to provide additional supporting
 # information to the gene-space clusters.
-#

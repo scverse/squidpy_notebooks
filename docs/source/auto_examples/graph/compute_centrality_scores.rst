@@ -57,7 +57,6 @@ All scores are descriptive statistics of the spatial graph.
 
  .. code-block:: none
 
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:03, 414kB/s]     10%|#         | 160k/1.50M [00:00<00:02, 617kB/s]      41%|####1     | 632k/1.50M [00:00<00:00, 1.91MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.20MB/s]
 
     AnnData object with n_obs × n_vars = 4668 × 34
         obs: 'cell type'
@@ -72,10 +71,9 @@ This dataset contains cell type annotations in :attr:`anndata.AnnData.obs`, whic
 centrality scores. First, we need to compute a connectivity matrix from spatial coordinates. We can use
 :func:`squidpy.gr.spatial_neighbors` for this purpose.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-35
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata)
 
@@ -86,14 +84,13 @@ centrality scores. First, we need to compute a connectivity matrix from spatial 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 .. code-block:: default
-
 
     sq.gr.centrality_scores(adata, "cell type")
 
@@ -104,14 +101,13 @@ Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-40
 
-and visualize results with :func:`squidpy.pl.centrality_scores`.
+And visualize results with :func:`squidpy.pl.centrality_scores`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-44
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 .. code-block:: default
-
 
     sq.pl.centrality_scores(adata, "cell type")
 
@@ -122,13 +118,44 @@ and visualize results with :func:`squidpy.pl.centrality_scores`.
     :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+      mpl_cm.register_cmap(_name, _cmap)
+    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+      mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.148 seconds)
+   **Total running time of the script:** ( 0 minutes  3.557 seconds)
 
 **Estimated memory usage:**  24 MB
 

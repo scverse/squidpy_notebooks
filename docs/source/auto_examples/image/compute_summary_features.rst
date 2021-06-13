@@ -24,11 +24,11 @@ Extract summary features
 This example shows how to extract summary features from the tissue image.
 
 Summary features give a good overview over the intensity of each image channels at the location of the Visium spots.
-They are calculated by using ``features = 'summary'``.
+They are calculated by using ``features = 'summary'``, which calls :func:`squidpy.im.ImageContainer.features_summary`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
-- ``quantiles`` - quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated.
+    - ``quantiles`` - quantiles that are computed. By default, the 0.9th, 0.5th, and 0.1th quantiles are calculated.
 
 .. seealso::
 
@@ -52,7 +52,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
-First, we load a fluorescence Visium dataset.
+First, let's load the fluorescence Visium dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-32
 
@@ -78,7 +78,7 @@ of the fluorescence channels 0 (DAPI) and 1 (GFAP).
 In order to get statistics of only the tissue underneath the spots, we use the argument ``mask_circle = True``.
 When not setting this flag, statistics are calculated using a square crop centered on the spot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-56
+.. GENERATED FROM PYTHON SOURCE LINES 37-54
 
 .. code-block:: default
 
@@ -90,9 +90,7 @@ When not setting this flag, statistics are calculated using a square crop center
         features="summary",
         features_kwargs={
             "summary": {
-                "quantiles": [
-                    0.1,
-                ],
+                "quantiles": [0.1],
                 "channels": [0, 1],
             }
         },
@@ -108,14 +106,13 @@ When not setting this flag, statistics are calculated using a square crop center
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
-The result is stored in ``adata.obsm['summary_features']``
+The result is stored in ``adata.obsm['summary_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-61
+.. GENERATED FROM PYTHON SOURCE LINES 56-58
 
 .. code-block:: default
-
 
     adata.obsm["summary_features"].head()
 
@@ -206,18 +203,17 @@ The result is stored in ``adata.obsm['summary_features']``
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-67
+.. GENERATED FROM PYTHON SOURCE LINES 59-64
 
 Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
-`our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+`our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 and 1 (GFAP stain).
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-69
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 .. code-block:: default
-
 
     sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], bw=True)
 
@@ -234,9 +230,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.626 seconds)
+   **Total running time of the script:** ( 1 minutes  0.408 seconds)
 
-**Estimated memory usage:**  362 MB
+**Estimated memory usage:**  374 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

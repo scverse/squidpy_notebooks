@@ -31,7 +31,6 @@ adata = sq.datasets.imc()
 ###############################################################################
 # First, let's visualize the cluster annotation in spatial context
 # with :func:`scanpy.pl.spatial`.
-
 sc.pl.spatial(adata, color="cell type", spot_size=10)
 
 ###############################################################################
@@ -66,7 +65,6 @@ sc.pl.spatial(adata, color="cell type", spot_size=10)
 # :func:`squidpy.pl.co_occurrence`.
 # We visualize the result for two conditional groups, namely
 # *basal CK tumor cell* and *T cells*.
-
 sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(
     adata,
@@ -102,7 +100,6 @@ sq.pl.co_occurrence(
 # of how this function works.
 #
 # Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
-
 sq.gr.spatial_neighbors(adata)
 sq.gr.nhood_enrichment(adata, cluster_key="cell type")
 sq.pl.nhood_enrichment(adata, cluster_key="cell type")
@@ -126,35 +123,30 @@ sq.pl.nhood_enrichment(adata, cluster_key="cell type")
 # that each cluster share with all the others.
 # This score can be computed with the function :func:`squidpy.gr.interaction_matrix`.
 # We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
-
-
 sq.gr.interaction_matrix(adata, cluster_key="cell type")
 sq.pl.interaction_matrix(adata, cluster_key="cell type")
-
 
 ###############################################################################
 # Finally, similar to the previous analysis,
 # we can investigate properties of the spatial graph by
 # computing different network centralities:
 #
-# - degree_centrality
-# - average_clustering
-# - closeness_centrality
+#   - degree_centrality.
+#   - average_clustering.
+#   - closeness_centrality.
 #
 # Squidpy provides a convenient function for all of them:
 # :func:`squidpy.gr.centrality_scores` and
 # :func:`squidpy.pl.centrality_scores` for visualization.
-
 sq.gr.centrality_scores(
     adata,
     cluster_key="cell type",
 )
 sq.pl.centrality_scores(adata, cluster_key="cell type", figsize=(20, 5), s=500)
 
-
 ###############################################################################
 # You can familiarize yourself with network centralities from the
-# excellent networkx
+# excellent :mod:`networkx`
 # `documentation <https://networkx.org/documentation/stable/reference/algorithms/centrality>`_ .
 # For the purpose of this analysis, we can appreciate that the *apoptotic tumor cell*
 # clusters shows high closeness centrality, indicating that nodes belonging to that group

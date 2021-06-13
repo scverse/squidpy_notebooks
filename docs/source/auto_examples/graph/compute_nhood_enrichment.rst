@@ -51,7 +51,6 @@ The number of observed events is compared against :math:`N` permutations and a *
 
  .. code-block:: none
 
-      0%|          | 0.00/242M [00:00<?, ?B/s]      0%|          | 56.0k/242M [00:00<10:12, 414kB/s]      0%|          | 176k/242M [00:00<06:09, 687kB/s]       0%|          | 632k/242M [00:00<02:13, 1.90MB/s]      1%|1         | 2.45M/242M [00:00<00:38, 6.56MB/s]      3%|3         | 7.85M/242M [00:00<00:13, 18.8MB/s]      6%|5         | 13.7M/242M [00:00<00:08, 27.2MB/s]      8%|8         | 19.6M/242M [00:00<00:07, 32.7MB/s]     11%|#         | 25.4M/242M [00:01<00:06, 36.2MB/s]     13%|#2        | 31.3M/242M [00:01<00:05, 38.5MB/s]     15%|#5        | 37.2M/242M [00:01<00:05, 40.2MB/s]     18%|#7        | 43.1M/242M [00:01<00:05, 41.4MB/s]     20%|##        | 49.0M/242M [00:01<00:04, 42.2MB/s]     23%|##2       | 54.8M/242M [00:01<00:04, 46.4MB/s]     24%|##3       | 57.9M/242M [00:01<00:04, 41.9MB/s]     26%|##6       | 63.7M/242M [00:01<00:03, 46.8MB/s]     28%|##7       | 66.7M/242M [00:02<00:04, 41.5MB/s]     30%|###       | 72.7M/242M [00:02<00:04, 42.5MB/s]     32%|###2      | 78.6M/242M [00:02<00:03, 43.2MB/s]     35%|###4      | 84.5M/242M [00:02<00:03, 43.5MB/s]     37%|###7      | 90.5M/242M [00:02<00:03, 43.8MB/s]     40%|###9      | 96.4M/242M [00:02<00:03, 43.9MB/s]     42%|####2     | 102M/242M [00:02<00:03, 44.0MB/s]      45%|####4     | 108M/242M [00:03<00:03, 43.9MB/s]     47%|####7     | 114M/242M [00:03<00:03, 43.8MB/s]     50%|####9     | 120M/242M [00:03<00:02, 43.9MB/s]     52%|#####2    | 126M/242M [00:03<00:02, 44.2MB/s]     54%|#####4    | 132M/242M [00:03<00:02, 47.7MB/s]     56%|#####5    | 135M/242M [00:03<00:02, 42.7MB/s]     58%|#####8    | 141M/242M [00:03<00:02, 43.2MB/s]     60%|######    | 146M/242M [00:03<00:02, 47.5MB/s]     62%|######1   | 149M/242M [00:04<00:02, 42.1MB/s]     64%|######4   | 155M/242M [00:04<00:02, 42.9MB/s]     67%|######6   | 161M/242M [00:04<00:01, 43.5MB/s]     69%|######8   | 167M/242M [00:04<00:01, 47.3MB/s]     70%|#######   | 170M/242M [00:04<00:01, 42.5MB/s]     73%|#######2  | 176M/242M [00:04<00:01, 47.2MB/s]     74%|#######3  | 179M/242M [00:04<00:01, 42.0MB/s]     76%|#######6  | 185M/242M [00:04<00:01, 47.1MB/s]     78%|#######7  | 188M/242M [00:04<00:01, 41.8MB/s]     80%|########  | 194M/242M [00:05<00:01, 47.1MB/s]     81%|########1 | 197M/242M [00:05<00:01, 41.7MB/s]     83%|########3 | 202M/242M [00:05<00:00, 45.6MB/s]     85%|########4 | 205M/242M [00:05<00:00, 41.0MB/s]     87%|########7 | 211M/242M [00:05<00:00, 46.1MB/s]     88%|########8 | 214M/242M [00:05<00:00, 41.3MB/s]     91%|######### | 220M/242M [00:05<00:00, 45.9MB/s]     92%|#########2| 223M/242M [00:05<00:00, 41.6MB/s]     94%|#########4| 229M/242M [00:05<00:00, 46.3MB/s]     96%|#########5| 232M/242M [00:06<00:00, 41.7MB/s]     98%|#########8| 238M/242M [00:06<00:00, 46.7MB/s]     99%|#########9| 241M/242M [00:06<00:00, 41.7MB/s]    100%|##########| 242M/242M [00:06<00:00, 40.5MB/s]
 
     AnnData object with n_obs × n_vars = 2800 × 16562
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
@@ -68,10 +67,9 @@ The number of observed events is compared against :math:`N` permutations and a *
 This dataset contains cell type annotations in :attr:`anndata.Anndata.obs` which are used for calculation of the
 neighborhood enrichment. First, we need to compute a connectivity matrix from spatial coordinates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-28
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata)
 
@@ -82,14 +80,13 @@ neighborhood enrichment. First, we need to compute a connectivity matrix from sp
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
-Then we can calculate the neighborhood enrichment score with :func:`squidpy.gr.nhood_enrichment`
+Then we can calculate the neighborhood enrichment score with :func:`squidpy.gr.nhood_enrichment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-33
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 .. code-block:: default
-
 
     sq.gr.nhood_enrichment(adata, cluster_key="cluster")
 
@@ -108,14 +105,13 @@ Then we can calculate the neighborhood enrichment score with :func:`squidpy.gr.n
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
-And visualize the results with :func:`squidpy.pl.nhood_enrichment`
+And visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-37
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 .. code-block:: default
-
 
     sq.pl.nhood_enrichment(adata, cluster_key="cluster")
 
@@ -126,24 +122,15 @@ And visualize the results with :func:`squidpy.pl.nhood_enrichment`
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
-
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.707 seconds)
+   **Total running time of the script:** ( 0 minutes  3.620 seconds)
 
-**Estimated memory usage:**  287 MB
+**Estimated memory usage:**  279 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_nhood_enrichment.py:

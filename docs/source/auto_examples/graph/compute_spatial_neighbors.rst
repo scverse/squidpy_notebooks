@@ -50,10 +50,9 @@ for different types of spatial datasets.
 
 First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-26
+.. GENERATED FROM PYTHON SOURCE LINES 22-25
 
 .. code-block:: default
-
 
     adata = sq.datasets.visium_fluo_adata()
     adata
@@ -79,7 +78,7 @@ First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-33
+.. GENERATED FROM PYTHON SOURCE LINES 26-32
 
 We use :func:`squidpy.gr.spatial_neighbors` for this.
 The function expects ``coord_type = 'visium'`` by default.
@@ -88,13 +87,11 @@ We set this parameter here explicitly for clarity.
 It specifies for each spot how many hexagonal rings of spots around
 will be considered neighbors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
 
-
-    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="visium")
-
+    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", neigh_grid=6)
 
 
 
@@ -102,16 +99,17 @@ will be considered neighbors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 The function builds a spatial graph and saves its adjacency matrix
 to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 ``adata.obsp['spatial_distances']`` by default.
+Note that it can also build a a graph from a square grid, just set ``neigh_grid = 4``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 .. code-block:: default
-
 
     adata.obsp["spatial_connectivities"]
 
@@ -131,16 +129,14 @@ to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
 
-For ``n_rings = 1`` there will be no ``adata.obsp['spatial_distances']``
 The weights of the weighted adjacency matrix are ordinal numbers of hexagonal rings
 in the case of ``coord_type = 'visium'``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-50
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 .. code-block:: default
-
 
     adata.obsp["spatial_distances"]
 
@@ -160,14 +156,13 @@ in the case of ``coord_type = 'visium'``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 We can visualize the neighbors of a point to better visualize what `n_rings` mean:
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-63
+.. GENERATED FROM PYTHON SOURCE LINES 48-58
 
 .. code-block:: default
-
 
     _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
     idx = np.append(idx, 420)
@@ -187,26 +182,16 @@ We can visualize the neighbors of a point to better visualize what `n_rings` mea
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
 
-Next, we show how to compute the spatial neighbors graph for a non-Visium dataset.
-
-.. GENERATED FROM PYTHON SOURCE LINES 65-69
+.. GENERATED FROM PYTHON SOURCE LINES 60-63
 
 .. code-block:: default
-
 
     adata = sq.datasets.imc()
     adata
@@ -229,16 +214,16 @@ Next, we show how to compute the spatial neighbors graph for a non-Visium datase
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-73
+.. GENERATED FROM PYTHON SOURCE LINES 64-68
 
 We use the same function for this with ``coord_type = 'generic'``.
 ``n_neigh`` and ``radius`` can be used for non-Visium datasets.
 ``n_neigh`` specifies a fixed number of the closest spots for each spot as neighbors.
+Alternatively, ``delaunay = True`` can be used, for a Delaunay triangulation graph.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-87
+.. GENERATED FROM PYTHON SOURCE LINES 68-81
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata, n_neigh=10, coord_type="generic")
     _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
@@ -261,27 +246,50 @@ We use the same function for this with ``coord_type = 'generic'``.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/pandas/core/arrays/categorical.py:2487: FutureWarning: The `inplace` parameter in pandas.Categorical.remove_unused_categories is deprecated and will be removed in a future version.
-      res = method(*args, **kwargs)
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 82-84
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-90
+We use the same function for this with ``coord_type = 'generic'`` and ``delaunay = True``.
+You can appreciate that the neighbor graph is slightly different than before.
+
+.. GENERATED FROM PYTHON SOURCE LINES 84-97
+
+.. code-block:: default
+
+    sq.gr.spatial_neighbors(adata, delaunay=True, coord_type="generic")
+    _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
+    idx = np.append(idx, 420)
+    sc.pl.spatial(
+        adata[idx, :],
+        color="cell type",
+        neighbors_key="spatial_neighbors",
+        spot_size=1,
+        edges=True,
+        edges_width=1,
+        img_key=None,
+    )
+
+
+
+
+.. image:: /auto_examples/graph/images/sphx_glr_compute_spatial_neighbors_003.png
+    :alt: cell type
+    :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 98-100
 
 In order to get all spots within a specified radius (in units of the spatial coordinates)
 from each spot as neighbors, the parameter ``radius`` should be used.
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-95
+.. GENERATED FROM PYTHON SOURCE LINES 100-104
 
 .. code-block:: default
-
 
     sq.gr.spatial_neighbors(adata, radius=0.3, coord_type="generic")
 
@@ -306,7 +314,7 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.746 seconds)
+   **Total running time of the script:** ( 0 minutes  10.595 seconds)
 
 **Estimated memory usage:**  234 MB
 
