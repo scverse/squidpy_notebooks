@@ -36,7 +36,7 @@ original resolution tiff images in the `ImageContainer`.
 Import Libraries and load individual image sections
 ---------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-44
+.. GENERATED FROM PYTHON SOURCE LINES 21-45
 
 .. code-block:: default
 
@@ -74,15 +74,15 @@ Import Libraries and load individual image sections
 
  .. code-block:: none
 
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]      5%|5         | 520k/9.26M [00:00<00:01, 5.24MB/s]     13%|#3        | 1.21M/9.26M [00:00<00:01, 6.43MB/s]     21%|##        | 1.90M/9.26M [00:00<00:01, 6.76MB/s]     28%|##8       | 2.59M/9.26M [00:00<00:01, 6.97MB/s]     35%|###5      | 3.27M/9.26M [00:00<00:00, 7.01MB/s]     42%|####2     | 3.90M/9.26M [00:00<00:00, 6.83MB/s]     50%|####9     | 4.60M/9.26M [00:00<00:00, 6.95MB/s]     57%|#####7    | 5.30M/9.26M [00:00<00:00, 7.07MB/s]     65%|######4   | 6.01M/9.26M [00:00<00:00, 7.12MB/s]     72%|#######2  | 6.71M/9.26M [00:01<00:00, 7.16MB/s]     80%|########  | 7.41M/9.26M [00:01<00:00, 7.18MB/s]     88%|########7 | 8.12M/9.26M [00:01<00:00, 7.19MB/s]     95%|#########5| 8.82M/9.26M [00:01<00:00, 7.19MB/s]    100%|##########| 9.26M/9.26M [00:01<00:00, 7.02MB/s]
-      0%|          | 0.00/20.1M [00:00<?, ?B/s]      0%|          | 16.0k/20.1M [00:00<04:23, 80.0kB/s]      0%|          | 96.0k/20.1M [00:00<01:40, 208kB/s]       2%|2         | 416k/20.1M [00:00<00:25, 822kB/s]       4%|4         | 880k/20.1M [00:00<00:12, 1.59MB/s]      8%|7         | 1.55M/20.1M [00:00<00:06, 2.91MB/s]     11%|#         | 2.12M/20.1M [00:01<00:05, 3.66MB/s]     14%|#4        | 2.83M/20.1M [00:01<00:03, 4.60MB/s]     18%|#7        | 3.53M/20.1M [00:01<00:03, 5.33MB/s]     21%|##        | 4.22M/20.1M [00:01<00:02, 5.85MB/s]     24%|##4       | 4.92M/20.1M [00:01<00:02, 6.25MB/s]     28%|##7       | 5.59M/20.1M [00:01<00:02, 6.47MB/s]     31%|###1      | 6.28M/20.1M [00:01<00:02, 6.68MB/s]     35%|###4      | 6.97M/20.1M [00:01<00:02, 6.83MB/s]     38%|###8      | 7.67M/20.1M [00:01<00:01, 6.95MB/s]     41%|####1     | 8.27M/20.1M [00:01<00:01, 6.72MB/s]     45%|####4     | 8.95M/20.1M [00:02<00:01, 6.85MB/s]     48%|####8     | 9.66M/20.1M [00:02<00:01, 6.96MB/s]     52%|#####1    | 10.4M/20.1M [00:02<00:01, 7.05MB/s]     55%|#####4    | 11.0M/20.1M [00:02<00:01, 6.78MB/s]     59%|#####8    | 11.8M/20.1M [00:02<00:01, 7.24MB/s]     62%|######2   | 12.5M/20.1M [00:02<00:01, 7.24MB/s]     66%|######5   | 13.2M/20.1M [00:02<00:00, 7.23MB/s]     69%|######9   | 14.0M/20.1M [00:02<00:00, 7.24MB/s]     73%|#######2  | 14.7M/20.1M [00:02<00:00, 7.24MB/s]     76%|#######6  | 15.3M/20.1M [00:02<00:00, 7.23MB/s]     80%|#######9  | 16.0M/20.1M [00:03<00:00, 7.24MB/s]     83%|########3 | 16.7M/20.1M [00:03<00:00, 7.23MB/s]     87%|########6 | 17.4M/20.1M [00:03<00:00, 7.21MB/s]     90%|######### | 18.1M/20.1M [00:03<00:00, 7.16MB/s]     94%|#########3| 18.8M/20.1M [00:03<00:00, 7.18MB/s]     97%|#########7| 19.5M/20.1M [00:03<00:00, 7.19MB/s]    100%|##########| 20.1M/20.1M [00:03<00:00, 5.78MB/s]
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]      0%|          | 32.0k/9.26M [00:00<01:29, 108kB/s]      2%|2         | 200k/9.26M [00:00<00:18, 511kB/s]       4%|4         | 416k/9.26M [00:00<00:10, 890kB/s]      9%|9         | 880k/9.26M [00:00<00:05, 1.73MB/s]     17%|#6        | 1.56M/9.26M [00:00<00:02, 3.15MB/s]     23%|##2       | 2.12M/9.26M [00:00<00:01, 3.87MB/s]     31%|###       | 2.83M/9.26M [00:01<00:01, 4.82MB/s]     38%|###7      | 3.52M/9.26M [00:01<00:01, 5.47MB/s]     46%|####5     | 4.22M/9.26M [00:01<00:00, 5.99MB/s]     53%|#####3    | 4.92M/9.26M [00:01<00:00, 6.37MB/s]     61%|######    | 5.62M/9.26M [00:01<00:00, 6.62MB/s]     68%|######8   | 6.32M/9.26M [00:01<00:00, 6.82MB/s]     76%|#######5  | 7.02M/9.26M [00:01<00:00, 6.92MB/s]     83%|########3 | 7.72M/9.26M [00:01<00:00, 7.01MB/s]     91%|######### | 8.41M/9.26M [00:01<00:00, 7.09MB/s]     98%|#########8| 9.11M/9.26M [00:01<00:00, 7.12MB/s]    100%|##########| 9.26M/9.26M [00:01<00:00, 4.89MB/s]
-      0%|          | 0.00/19.0M [00:00<?, ?B/s]      2%|2         | 416k/19.0M [00:00<00:05, 3.35MB/s]      6%|5         | 1.11M/19.0M [00:00<00:03, 5.45MB/s]     10%|9         | 1.80M/19.0M [00:00<00:02, 6.23MB/s]     13%|#3        | 2.49M/19.0M [00:00<00:02, 6.60MB/s]     17%|#6        | 3.20M/19.0M [00:00<00:02, 6.84MB/s]     20%|##        | 3.89M/19.0M [00:00<00:02, 6.99MB/s]     24%|##4       | 4.59M/19.0M [00:00<00:02, 7.04MB/s]     28%|##7       | 5.29M/19.0M [00:00<00:02, 7.09MB/s]     31%|###1      | 5.98M/19.0M [00:00<00:01, 7.12MB/s]     35%|###5      | 6.66M/19.0M [00:01<00:01, 7.14MB/s]     39%|###8      | 7.37M/19.0M [00:01<00:01, 7.17MB/s]     42%|####2     | 8.04M/19.0M [00:01<00:01, 7.12MB/s]     46%|####5     | 8.73M/19.0M [00:01<00:01, 7.10MB/s]     50%|####9     | 9.43M/19.0M [00:01<00:01, 7.13MB/s]     53%|#####3    | 10.1M/19.0M [00:01<00:01, 7.00MB/s]     57%|#####6    | 10.8M/19.0M [00:01<00:01, 7.06MB/s]     60%|######    | 11.5M/19.0M [00:01<00:01, 7.11MB/s]     64%|######4   | 12.2M/19.0M [00:01<00:00, 7.15MB/s]     68%|######7   | 12.9M/19.0M [00:01<00:00, 7.17MB/s]     72%|#######1  | 13.6M/19.0M [00:02<00:00, 7.20MB/s]     75%|#######5  | 14.3M/19.0M [00:02<00:00, 7.19MB/s]     79%|#######8  | 15.0M/19.0M [00:02<00:00, 7.22MB/s]     83%|########2 | 15.7M/19.0M [00:02<00:00, 7.23MB/s]     86%|########6 | 16.4M/19.0M [00:02<00:00, 7.21MB/s]     90%|######### | 17.1M/19.0M [00:02<00:00, 7.24MB/s]     94%|#########3| 17.8M/19.0M [00:02<00:00, 7.24MB/s]     97%|#########7| 18.5M/19.0M [00:02<00:00, 7.20MB/s]    100%|##########| 19.0M/19.0M [00:02<00:00, 7.02MB/s]
+      0%|          | 0.00/9.26M [00:00<?, ?B/s]     33%|###3      | 3.07M/9.26M [00:00<00:00, 32.2MB/s]     68%|######8   | 6.33M/9.26M [00:00<00:00, 30.6MB/s]     86%|########6 | 7.99M/9.26M [00:00<00:00, 21.8MB/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 26.5MB/s]
+      0%|          | 0.00/20.1M [00:00<?, ?B/s]     16%|#5        | 3.13M/20.1M [00:00<00:00, 32.7MB/s]     40%|###9      | 7.99M/20.1M [00:00<00:00, 28.7MB/s]     80%|#######9  | 16.0M/20.1M [00:00<00:00, 44.4MB/s]     90%|######### | 18.1M/20.1M [00:00<00:00, 31.6MB/s]    100%|##########| 20.1M/20.1M [00:00<00:00, 31.8MB/s]
+      0%|          | 0.00/9.26M [00:00<?, ?B/s]     35%|###4      | 3.20M/9.26M [00:00<00:00, 33.5MB/s]     86%|########6 | 7.99M/9.26M [00:00<00:00, 32.9MB/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 37.2MB/s]
+      0%|          | 0.00/19.0M [00:00<?, ?B/s]     13%|#2        | 2.42M/19.0M [00:00<00:00, 25.4MB/s]     42%|####2     | 7.99M/19.0M [00:00<00:00, 32.1MB/s]     84%|########4 | 16.0M/19.0M [00:00<00:00, 30.4MB/s]     95%|#########5| 18.1M/19.0M [00:00<00:00, 18.2MB/s]    100%|##########| 19.0M/19.0M [00:00<00:00, 22.4MB/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-58
+.. GENERATED FROM PYTHON SOURCE LINES 46-59
 
 Concatenate per-section data to a z-stack
 -----------------------------------------
@@ -98,7 +98,7 @@ To concatenate the individual :class:`squidpy.im.ImageContainer`,
 we will use :meth:`squidpy.im.ImageContainer.concat`, specifying
 ``library_ids = library_ids`` for associating each image with the correct observations in `adata`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-61
+.. GENERATED FROM PYTHON SOURCE LINES 59-62
 
 .. code-block:: default
 
@@ -112,11 +112,11 @@ we will use :meth:`squidpy.im.ImageContainer.concat`, specifying
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-63
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
 `adata` now contains a ``library_id`` column in ``adata.obs``, which maps observations to a unique `library_id`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: default
 
@@ -252,12 +252,12 @@ we will use :meth:`squidpy.im.ImageContainer.concat`, specifying
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-69
+.. GENERATED FROM PYTHON SOURCE LINES 68-70
 
 `img` contains the 2D images concatenated along the Z dimension in one image layer.
 The Z dimensions are named the same as the `library_id`'s in `adata` to allow a mapping from `adata` to `img`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 70-73
 
 .. code-block:: default
 
@@ -289,13 +289,13 @@ The Z dimensions are named the same as the `library_id`'s in `adata` to allow a 
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-76
+.. GENERATED FROM PYTHON SOURCE LINES 74-77
 
 It is also possible to initialize the `ImageContainer` with images that already contain the Z dimension.
 In this case you need to specify the ``library_id`` argument in the constructor.
 In addition, you might want to set ``dims`` to the correct ordering of dimensions manually for more control.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-81
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 .. code-block:: default
 
@@ -325,20 +325,20 @@ In addition, you might want to set ``dims`` to the correct ordering of dimension
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-86
+.. GENERATED FROM PYTHON SOURCE LINES 83-87
 
 Generally, an `ImageContainer` with more than one Z dimension can be used in the same way as an `ImageContainer`
 with only one Z dimension.
 In addition, we can specify `library_id` to cropping, pre-processing,
 and segmentation functions if we'd like to only process a specific `library_id`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 Visualization
 -------------
 For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_id`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-94
+.. GENERATED FROM PYTHON SOURCE LINES 92-95
 
 .. code-block:: default
 
@@ -356,12 +356,12 @@ For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-97
+.. GENERATED FROM PYTHON SOURCE LINES 96-98
 
 :meth:`squidpy.im.ImageContainer.show` works with z-stacks out of the box, by plotting them as separate images.
 Additionally, you can specify a `library_id` if you only want to plot one Z dimension.
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-99
+.. GENERATED FROM PYTHON SOURCE LINES 98-100
 
 .. code-block:: default
 
@@ -378,7 +378,7 @@ Additionally, you can specify a `library_id` if you only want to plot one Z dime
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-110
+.. GENERATED FROM PYTHON SOURCE LINES 101-111
 
 Interactive visualization of z-stacks is also possible.
 The Napari viewer will have a slider at the bottom, allowing you to choose the Z dimension to display.
@@ -391,13 +391,13 @@ which maps from observations to `library_ids`
 
    img.interactive(adata, library_key='library_id')
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-115
+.. GENERATED FROM PYTHON SOURCE LINES 113-116
 
 Cropping
 --------
 By default, the cropping functions will crop all Z dimensions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-118
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 .. code-block:: default
 
@@ -415,11 +415,11 @@ By default, the cropping functions will crop all Z dimensions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-120
+.. GENERATED FROM PYTHON SOURCE LINES 120-121
 
 You can also specify ``library_id``, as either a single or multiple Z dimensions to crop.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-123
+.. GENERATED FROM PYTHON SOURCE LINES 121-124
 
 .. code-block:: default
 
@@ -437,7 +437,7 @@ You can also specify ``library_id``, as either a single or multiple Z dimensions
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-131
+.. GENERATED FROM PYTHON SOURCE LINES 125-132
 
 Processing and segmenting
 -------------------------
@@ -447,7 +447,7 @@ As we would like to smooth only in x and y dimensions, and not in z, we need so 
 The internal dimensions of the image are ``y, x, z, channels``, as you can check with ``crop['image'].dims``.
 Therefore, to only smooth in x and y, we need to specify ``sigma = [10, 10, 0, 0]``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-134
+.. GENERATED FROM PYTHON SOURCE LINES 132-135
 
 .. code-block:: default
 
@@ -465,7 +465,7 @@ Therefore, to only smooth in x and y, we need to specify ``sigma = [10, 10, 0, 0
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-141
+.. GENERATED FROM PYTHON SOURCE LINES 136-142
 
 Now, let us just smooth one `library_id`.
 Specifying `library_id` means that the processing function will process each Z dimension separately.
@@ -474,7 +474,7 @@ we have to update `sigma` accordingly.
 If the number of channels does not change due to the processing, :func:`squidpy.im.process` implies the identity
 function for non-processed Z dimensions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-144
+.. GENERATED FROM PYTHON SOURCE LINES 142-145
 
 .. code-block:: default
 
@@ -492,7 +492,7 @@ function for non-processed Z dimensions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-150
+.. GENERATED FROM PYTHON SOURCE LINES 146-151
 
 None, only the first `library_id` is smoothed.
 For the second, the original image was used.
@@ -500,7 +500,7 @@ For the second, the original image was used.
 If the processing function changes the number of dimensions, non-processed Z dimensions will contain 0.
 Let's see this behavior with using ``method = 'gray'``, which moves from 3 channels (RGB) to one channel (gray).
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-153
+.. GENERATED FROM PYTHON SOURCE LINES 151-154
 
 .. code-block:: default
 
@@ -518,7 +518,7 @@ Let's see this behavior with using ``method = 'gray'``, which moves from 3 chann
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-167
+.. GENERATED FROM PYTHON SOURCE LINES 155-168
 
 :func:`squidpy.im.segment` works in the same way, just specify `library_id` if you only wish to
 segment specific Z dimensions.
@@ -534,7 +534,7 @@ As of now, features can only be extracted on 2D, meaning from the Z dimension th
 The following call extracts features for each observation in `adata`, automatically choosing the correct
 Z dimension in `img`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-171
+.. GENERATED FROM PYTHON SOURCE LINES 168-172
 
 .. code-block:: default
 
@@ -800,14 +800,14 @@ Z dimension in `img`.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-176
+.. GENERATED FROM PYTHON SOURCE LINES 173-177
 
 The calculated features can now be used in downstream Scanpy analyses, by e.g. using all Z dimensions
 to cluster spots based on image features and gene features.
 
 Here, we cluster genes and calculated features using a standard Scanpy workflow.
 
-.. GENERATED FROM PYTHON SOURCE LINES 176-185
+.. GENERATED FROM PYTHON SOURCE LINES 177-186
 
 .. code-block:: default
 
@@ -827,7 +827,7 @@ Here, we cluster genes and calculated features using a standard Scanpy workflow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-191
+.. GENERATED FROM PYTHON SOURCE LINES 187-192
 
 Visualize the result interactively using Napari, or statically using :func:`scanpy.pl.spatial`:
 
@@ -835,7 +835,7 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
    img.interactive(adata, library_key='library_id')
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-202
+.. GENERATED FROM PYTHON SOURCE LINES 192-203
 
 .. code-block:: default
 
@@ -875,9 +875,9 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  46.310 seconds)
+   **Total running time of the script:** ( 1 minutes  40.595 seconds)
 
-**Estimated memory usage:**  1581 MB
+**Estimated memory usage:**  1630 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container_zstacks.py:

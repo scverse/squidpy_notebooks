@@ -5,14 +5,14 @@ Examples using ``squidpy.pl.nhood_enrichment``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to run the neighbors enrichment analysis routine.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of 4i data.">
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_nhood_enrichment_thumb.png
-     :alt: Neighbors enrichment analysis
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_fouri_thumb.png
+     :alt: Analyze 4i data
 
-     :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
+     :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
 
 .. raw:: html
 
@@ -20,99 +20,4 @@ Examples using ``squidpy.pl.nhood_enrichment``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
-     :alt: Analyze Imaging Mass Cytometry data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
-     :alt: Analyze seqFISH data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
-     :alt: Analyze Slide-seqV2 data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
-     :alt: Analyze Merfish data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
-     :alt: Analyze Visium H&E data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+ * :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`

@@ -37,7 +37,7 @@ Import packages & data
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/theislab/squidpy_notebooks/blob/master/environment.yml>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-31
+.. GENERATED FROM PYTHON SOURCE LINES 22-32
 
 .. code-block:: default
 
@@ -55,10 +55,18 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/19.3M [00:00<?, ?B/s]      0%|          | 8.00k/19.3M [00:00<05:02, 67.0kB/s]      0%|          | 56.0k/19.3M [00:00<01:17, 262kB/s]       0%|          | 88.0k/19.3M [00:00<01:16, 263kB/s]      1%|          | 176k/19.3M [00:00<00:44, 447kB/s]       2%|1         | 328k/19.3M [00:00<00:27, 738kB/s]      3%|3         | 664k/19.3M [00:00<00:13, 1.43MB/s]      7%|6         | 1.30M/19.3M [00:00<00:06, 2.76MB/s]     14%|#3        | 2.62M/19.3M [00:00<00:03, 5.44MB/s]     27%|##7       | 5.23M/19.3M [00:01<00:01, 10.6MB/s]     42%|####1     | 8.05M/19.3M [00:01<00:00, 14.7MB/s]     54%|#####4    | 10.5M/19.3M [00:01<00:00, 16.5MB/s]     69%|######8   | 13.3M/19.3M [00:01<00:00, 18.8MB/s]     84%|########4 | 16.3M/19.3M [00:01<00:00, 20.7MB/s]     99%|#########9| 19.1M/19.3M [00:01<00:00, 21.8MB/s]    100%|##########| 19.3M/19.3M [00:01<00:00, 11.7MB/s]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-47
+
+.. GENERATED FROM PYTHON SOURCE LINES 33-48
 
 The subset of the data we consider here comprises three biopsies colorectal carcinoma biopsies
 from different donors, where MIBI-TOF was used to measure single-cell metabolic profiles.
@@ -76,7 +84,7 @@ Let us visualize the cluster annotations for each library using :func:`scanpy.pl
 For this, we need to subset `adata` to the desired `library_id`, using the mapping from `obs`
 to `library_id` provided by ``adata.obs['library_id']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-53
+.. GENERATED FROM PYTHON SOURCE LINES 48-54
 
 .. code-block:: default
 
@@ -114,7 +122,7 @@ to `library_id` provided by ``adata.obs['library_id']``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-59
+.. GENERATED FROM PYTHON SOURCE LINES 55-60
 
 Let us create an ImageContainer from the images contained in `adata`.
 As all three biopsies are already joined in `adata`, let us also create one ImageContainer for
@@ -122,7 +130,7 @@ all three biopsies using a z-stack.
 For more information on how to use `ImageContainer` with z-stacks, also have a look at
 :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-67
+.. GENERATED FROM PYTHON SOURCE LINES 60-68
 
 .. code-block:: default
 
@@ -141,13 +149,13 @@ For more information on how to use `ImageContainer` with z-stacks, also have a l
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 69-72
 
 Note that we also added the segmentation as an additional layer to `img`, and set the
 `segmentation` attribute in the ImageContainer.
 This allows visualization of the segmentation layer as a `labels` layer in Napari.
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-73
+.. GENERATED FROM PYTHON SOURCE LINES 72-74
 
 .. code-block:: default
 
@@ -166,7 +174,7 @@ This allows visualization of the segmentation layer as a `labels` layer in Napar
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-80
+.. GENERATED FROM PYTHON SOURCE LINES 75-81
 
 If you have Napari installed, you can have a look at the data using the interactive viewer:
 Note that you can load the segmentation layer as an overlay over the image.
@@ -175,11 +183,11 @@ Note that you can load the segmentation layer as an overlay over the image.
 
     img.interactive(adata, library_key='library_id')
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-83
+.. GENERATED FROM PYTHON SOURCE LINES 83-84
 
 Let us also statically visualize the data in `img`, using :func:`squidpy.im.ImageCntainer.show`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-86
+.. GENERATED FROM PYTHON SOURCE LINES 84-87
 
 .. code-block:: default
 
@@ -208,7 +216,7 @@ Let us also statically visualize the data in `img`, using :func:`squidpy.im.Imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-94
+.. GENERATED FROM PYTHON SOURCE LINES 88-95
 
 In the following we show how to use Squidpy to extract cellular mean intensity information using raw images
 and a provided segmentation mask.
@@ -218,7 +226,7 @@ The aim of this tutorial, however, is to showcase how the extraction of such fea
 As Squidpy is backed by :mod:`dask` and supports chunked image processing,
 also large images can be processed in this way.
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-103
+.. GENERATED FROM PYTHON SOURCE LINES 97-104
 
 Convert image to CMYK
 ---------------------
@@ -228,7 +236,7 @@ As the channel information is encoded in CMYK space, we first need to convert th
 
 For this, we can use :meth:`squidpy.im.ImageContainer.apply`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-120
+.. GENERATED FROM PYTHON SOURCE LINES 104-121
 
 .. code-block:: default
 
@@ -260,7 +268,7 @@ For this, we can use :meth:`squidpy.im.ImageContainer.apply`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-136
+.. GENERATED FROM PYTHON SOURCE LINES 122-137
 
 Extract per-cell mean intensity
 -------------------------------
@@ -278,7 +286,7 @@ We will achieve this by passing an ``additional_layers`` argument to the `custom
 This special argument will pass the values of every layer in `additional_layers`
 to the custom feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-163
+.. GENERATED FROM PYTHON SOURCE LINES 137-164
 
 .. code-block:: default
 
@@ -316,14 +324,14 @@ to the custom feature extraction function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-168
+.. GENERATED FROM PYTHON SOURCE LINES 165-169
 
 Now, use :func:`squidpy.im.calculate_image_features` with the `custom` feature extractor,
 specifying the function (``func``) to use, and the additional layers (``additional_layers``)
 to pass to the function.
 We will use ``spot_scale = 10`` to ensure that we also cover big segments fully by one crop.
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-178
+.. GENERATED FROM PYTHON SOURCE LINES 169-179
 
 .. code-block:: default
 
@@ -352,12 +360,12 @@ We will use ``spot_scale = 10`` to ensure that we also cover big segments fully 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-181
+.. GENERATED FROM PYTHON SOURCE LINES 180-182
 
 The resulting features are stored in ``adata.obs['img_features']``,
 with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_vimentin`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-183
+.. GENERATED FROM PYTHON SOURCE LINES 182-184
 
 .. code-block:: default
 
@@ -481,13 +489,13 @@ with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_v
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-187
+.. GENERATED FROM PYTHON SOURCE LINES 185-188
 
 As described in :cite:`hartmann2020multiplexed`, let us transformed using an
 inverse hyperbolic sine (`arcsinh`) co-factor of 0.05, to allow us to compare
 the computed mean intensities with the values contained in `adata`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-189
+.. GENERATED FROM PYTHON SOURCE LINES 188-190
 
 .. code-block:: default
 
@@ -500,11 +508,11 @@ the computed mean intensities with the values contained in `adata`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-191
+.. GENERATED FROM PYTHON SOURCE LINES 191-192
 
 Now, let's visualize the result:
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-203
+.. GENERATED FROM PYTHON SOURCE LINES 192-204
 
 .. code-block:: default
 
@@ -531,7 +539,7 @@ Now, let's visualize the result:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 204-214
+.. GENERATED FROM PYTHON SOURCE LINES 205-215
 
 We get high correlations between the original values and our computation using Squidpy.
 The remaining differences are probably due to more pre-processing applied by
@@ -547,9 +555,9 @@ For examples of this, please see our other Analysis tutorials, e.g.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  10.349 seconds)
+   **Total running time of the script:** ( 1 minutes  23.148 seconds)
 
-**Estimated memory usage:**  229 MB
+**Estimated memory usage:**  308 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_mibitof.py:

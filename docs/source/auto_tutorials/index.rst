@@ -11,6 +11,27 @@ Tutorials
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of 4i data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_fouri_thumb.png
+     :alt: Analyze 4i data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_fouri
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
 
 .. only:: html

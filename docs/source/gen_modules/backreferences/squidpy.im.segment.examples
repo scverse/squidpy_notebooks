@@ -5,82 +5,6 @@ Examples using ``squidpy.im.segment``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the high resolution tissue images to segment nuclei.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
-     :alt: Cell-segmentation for fluorescence images
-
-     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use processing and segmentation functions to segment images with H&amp;E ...">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_hne_thumb.png
-     :alt: Cell-segmentation for H&E stains
-
-     :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
-     :alt: Process a high-resolution image
-
-     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract segmentation features from the tissue image.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segmentation_features_thumb.png
-     :alt: Extract segmentation features
-
-     :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="It is possible to acquire several consecutive image slices from the same tissue. Squidpy&#x27;s Imag...">
 
 .. only:: html
@@ -97,22 +21,3 @@ Examples using ``squidpy.im.segment``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
-     :alt: Analyze Visium fluorescence data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`

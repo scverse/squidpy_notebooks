@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Analyze MIBI-TOF image data
 ===========================
