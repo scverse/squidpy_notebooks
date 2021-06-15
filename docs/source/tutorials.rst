@@ -22,7 +22,10 @@ to a diverse set of different spatial datasets.
 
 Advanced Tutorials
 ------------------
-This section contains tutorials showcasing advanced :mod:`squidpy` functionalities, like loading spatial data, interactive visualization, and dealing with multiple images along z-dimensions.
+This section contains tutorials showcasing advanced :mod:`squidpy` functionalities, like:
+- loading spatial data.
+- interactive visualization.
+- working with z-stacks.
 
 .. nbgallery::
     :glob:
