@@ -70,8 +70,8 @@ sq.pl.interaction_matrix(adata, cluster_key="cluster", method="ward", vmax=20000
 
 
 ###############################################################################
-# Additional analyses to gain quantitative understanding of spatial patterngin of
-# subcellular observations are:
+# Additional analyses to gain quantitative understanding of spatial patterning of
+# sub-cellular observations are:
 # - :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for Ripley's statistics.
 # - :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` for co-occurrence score.
 #
