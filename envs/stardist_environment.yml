@@ -1,4 +1,4 @@
-name: stardist_environment
+name: stardist
 channels:
 -   conda-forge
 dependencies:
