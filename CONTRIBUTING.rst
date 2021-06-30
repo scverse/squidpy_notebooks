@@ -87,6 +87,8 @@ Make sure to follow the following checklist before merging a new example/tutoria
   (to be more consistent with main docs).
 - ensure that .py examples/tutorials are executable (``chmod +x``) and
   have ``#!/usr/bin/env python`` shebang at the top.
+- lastly, add the example/tutorial to the appropriate place in ``docs/source/examples.rst`` or
+  ``docs/source/tutorials.rst`` both in this repository and the main repository.
 
 External tutorials
 ------------------
