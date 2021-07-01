@@ -269,12 +269,13 @@ sq.pl.ligrec(
 # Here, we provide a simple approach based on the well-known
 # `Moran's I statistics <https://en.wikipedia.org/wiki/Moran%27s_I>`_
 # which is in fact used also as a baseline method in the spatially variable gene papers listed above.
-# The function in Squidpy is called :func:`squidpy.gr.moran`, and
+# The function in Squidpy is called :func:`squidpy.gr.spatial_autocorr`, and
 # returns both test statistics and adjusted p-values in :attr:`anndata.AnnData.var` slot.
 # For time reasons, we will evaluate a subset of the highly variable genes only.
 genes = adata[:, adata.var.highly_variable].var_names.values[:1000]
-sq.gr.moran(
+sq.gr.spatial_autocorr(
     adata,
+    mode="moran",
     genes=genes,
     n_perms=100,
     n_jobs=1,
