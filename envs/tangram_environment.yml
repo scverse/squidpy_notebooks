@@ -1,0 +1,10 @@
+name: tangram
+channels:
+-   conda-forge
+dependencies:
+-   python=3.8
+-   pip
+-   pip:
+    -   squidpy>=1.1.0
+# TODO: pin the version once on PyPI
+    -   git+https://github.com/broadinstitute/tangram@ziq
