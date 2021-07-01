@@ -469,7 +469,7 @@ based on point processes or Gaussian process regression framework:
 Here, we provide a simple approach based on the well-known
 `Moran's I statistics <https://en.wikipedia.org/wiki/Moran%27s_I>`_
 which is in fact used also as a baseline method in the spatially variable gene papers listed above.
-The function in Squidpy is called :func:`squidpy.gr.spatial_autocorr`, and
+The function in Squidpy is called :func:`squidpy.gr.moran`, and
 returns both test statistics and adjusted p-values in :attr:`anndata.AnnData.var` slot.
 For time reasons, we will evaluate a subset of the highly variable genes only.
 
@@ -478,9 +478,8 @@ For time reasons, we will evaluate a subset of the highly variable genes only.
 .. code-block:: default
 
     genes = adata[:, adata.var.highly_variable].var_names.values[:1000]
-    sq.gr.spatial_autocorr(
+    sq.gr.moran(
         adata,
-        mode="moran",
         genes=genes,
         n_perms=100,
         n_jobs=1,
@@ -496,7 +495,10 @@ For time reasons, we will evaluate a subset of the highly variable genes only.
 
  .. code-block:: none
 
-      0%|          | 0/100 [00:00<?, ?/s]
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+     There are 3 disconnected components.
+      warnings.warn(message)
+      0%|          | 0/1000 [00:00<?, ?/s]
 
 
 
@@ -539,13 +541,8 @@ Genes have already been sorted by Moran's I statistic.
         <tr style="text-align: right;">
           <th></th>
           <th>I</th>
-          <th>pval_norm</th>
-          <th>var_norm</th>
-          <th>pval_z_sim</th>
           <th>pval_sim</th>
-          <th>var_sim</th>
-          <th>pval_norm_fdr_bh</th>
-          <th>pval_z_sim_fdr_bh</th>
+          <th>VI_sim</th>
           <th>pval_sim_fdr_bh</th>
         </tr>
       </thead>
@@ -566,7 +563,7 @@ Genes have already been sorted by Moran's I statistic.
           <th>Plp1</th>
           <td>0.747660</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000123</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000281</td>
@@ -614,7 +611,7 @@ Genes have already been sorted by Moran's I statistic.
           <th>Ppp3ca</th>
           <td>0.693320</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000113</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000244</td>

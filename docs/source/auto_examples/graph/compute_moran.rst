@@ -67,8 +67,8 @@ in the tissue are under consideration.
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-29
 
-We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and ``mode = 'moran'``.
-We first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
+We can compute the Moran's I score with :func:`squidpy.gr.moran`.
+We first need to compute a spatial graph with :func:`squidpy.gr.moran`.
 We will also subset the number of genes to evaluate.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-40
@@ -77,9 +77,8 @@ We will also subset the number of genes to evaluate.
 
     genes = adata[:, adata.var.highly_variable].var_names.values[:100]
     sq.gr.spatial_neighbors(adata)
-    sq.gr.spatial_autocorr(
+    sq.gr.moran(
         adata,
-        mode="moran",
         genes=genes,
         n_perms=100,
         n_jobs=1,
@@ -96,6 +95,9 @@ We will also subset the number of genes to evaluate.
 
  .. code-block:: none
 
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+     There are 3 disconnected components.
+      warnings.warn(message)
       0%|          | 0/100 [00:00<?, ?/s]
 
 
@@ -121,13 +123,8 @@ We will also subset the number of genes to evaluate.
         <tr style="text-align: right;">
           <th></th>
           <th>I</th>
-          <th>pval_norm</th>
-          <th>var_norm</th>
-          <th>pval_z_sim</th>
           <th>pval_sim</th>
-          <th>var_sim</th>
-          <th>pval_norm_fdr_bh</th>
-          <th>pval_z_sim_fdr_bh</th>
+          <th>VI_sim</th>
           <th>pval_sim_fdr_bh</th>
         </tr>
       </thead>
@@ -136,7 +133,7 @@ We will also subset the number of genes to evaluate.
           <th>3110035E14Rik</th>
           <td>0.665132</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000125</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000222</td>
@@ -154,13 +151,12 @@ We will also subset the number of genes to evaluate.
           <td>0.000190</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
         </tr>
         <tr>
           <th>1500015O10Rik</th>
           <td>0.605940</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000091</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000234</td>
@@ -177,8 +173,6 @@ We will also subset the number of genes to evaluate.
           <td>0.009901</td>
           <td>0.000179</td>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011929</td>
         </tr>
         <tr>
           <th>2010300C02Rik</th>
@@ -190,13 +184,12 @@ We will also subset the number of genes to evaluate.
           <td>0.000233</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
         </tr>
         <tr>
           <th>Scg2</th>
           <td>0.476060</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000179</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000203</td>
@@ -213,8 +206,6 @@ We will also subset the number of genes to evaluate.
           <td>0.009901</td>
           <td>0.000218</td>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011929</td>
         </tr>
         <tr>
           <th>Itm2c</th>
@@ -226,13 +217,12 @@ We will also subset the number of genes to evaluate.
           <td>0.000193</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
         </tr>
         <tr>
           <th>Tuba4a</th>
           <td>0.451810</td>
           <td>0.0</td>
-          <td>0.000131</td>
+          <td>0.000140</td>
           <td>0.0</td>
           <td>0.009901</td>
           <td>0.000189</td>
@@ -249,8 +239,6 @@ We will also subset the number of genes to evaluate.
           <td>0.009901</td>
           <td>0.000249</td>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.011929</td>
         </tr>
       </tbody>
     </table>
@@ -268,7 +256,6 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 .. code-block:: default
 
     sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
-
 
 
 
