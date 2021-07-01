@@ -23,13 +23,14 @@ adata = sq.datasets.visium_hne_adata()
 adata
 
 ###############################################################################
-# We can compute the Moran's I score with :func:`squidpy.gr.moran`.
-# We first need to compute a spatial graph with :func:`squidpy.gr.moran`.
+# We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and ``mode = 'moran'``.
+# We first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
 # We will also subset the number of genes to evaluate.
 genes = adata[:, adata.var.highly_variable].var_names.values[:100]
 sq.gr.spatial_neighbors(adata)
-sq.gr.moran(
+sq.gr.spatial_autocorr(
     adata,
+    mode="moran",
     genes=genes,
     n_perms=100,
     n_jobs=1,

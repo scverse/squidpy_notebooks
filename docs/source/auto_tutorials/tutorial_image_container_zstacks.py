@@ -15,7 +15,7 @@ original resolution tiff images in the `ImageContainer`.
 
     See :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` for a general introduction to the `ImageContainer`.
 
-Import Libraries and load individual image sections
+Import libraries and load individual image sections
 ---------------------------------------------------
 """
 

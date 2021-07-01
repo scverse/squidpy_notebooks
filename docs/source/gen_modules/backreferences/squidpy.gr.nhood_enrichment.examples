@@ -21,3 +21,98 @@ Examples using ``squidpy.gr.nhood_enrichment``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
+     :alt: Analyze Imaging Mass Cytometry data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
+     :alt: Analyze seqFISH data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
+     :alt: Analyze Slide-seqV2 data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
+     :alt: Analyze Merfish data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
+     :alt: Analyze Visium H&E data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
