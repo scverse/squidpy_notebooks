@@ -21,3 +21,22 @@ Examples using ``squidpy.pl.interaction_matrix``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to Imaging Mass Cytometry data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
+     :alt: Analyze Imaging Mass Cytometry data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`

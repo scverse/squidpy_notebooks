@@ -21,3 +21,22 @@ Examples using ``squidpy.im.segment``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+     :alt: Analyze Visium fluorescence data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
