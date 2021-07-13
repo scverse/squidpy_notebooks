@@ -60,7 +60,7 @@ jobs:
     test:
         needs: init
         runs-on: ubuntu-latest
-        timeout-minutes: 45
+        timeout-minutes: 60
         steps:
         -   name: Get the triggering event
             run: |
