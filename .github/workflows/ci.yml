@@ -116,6 +116,7 @@ jobs:
             if: github.event_name == 'repository_dispatch'
             with:
                 ref: ${{ github.event.client_payload.ref }}
+                token: ${{ secrets.REGENERATE_TOKEN }}
         -   uses: actions/checkout@v2
             if: github.event_name != 'repository_dispatch'
             with:
