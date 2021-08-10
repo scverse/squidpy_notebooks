@@ -121,6 +121,7 @@ jobs:
             if: github.event_name != 'repository_dispatch'
             with:
                 ref: ${{ github.head_ref }}
+                token: ${{ secrets.REGENERATE_TOKEN }}
         -   name: Get the current branch name
             id: branch
             run: |
@@ -163,7 +164,7 @@ jobs:
         -   name: Commit changes
             uses: stefanzweifel/git-auto-commit-action@v4.8.0
             with:
-                commit_message: '[auto] Regenerate tutorials/examples'
+                commit_message: '[auto][ci skip] Regenerate tutorials/examples'
                 file_pattern: docs/source/auto_* docs/source/gen_modules/backreferences/*
                 commit_user_name: CI
                 skip_dirty_check: false
