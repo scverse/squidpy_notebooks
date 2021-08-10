@@ -67,6 +67,7 @@ First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
  .. code-block:: none
 
+      0%|          | 0.00/242M [00:00<?, ?B/s]      0%|          | 56.0k/242M [00:00<09:39, 438kB/s]      0%|          | 160k/242M [00:00<06:31, 648kB/s]       0%|          | 704k/242M [00:00<01:52, 2.25MB/s]      1%|1         | 2.78M/242M [00:00<00:32, 7.83MB/s]      3%|3         | 8.09M/242M [00:00<00:12, 20.0MB/s]      6%|5         | 13.8M/242M [00:00<00:08, 28.4MB/s]      8%|8         | 19.8M/242M [00:00<00:06, 34.3MB/s]     11%|#         | 25.6M/242M [00:01<00:06, 37.8MB/s]     13%|#2        | 31.3M/242M [00:01<00:05, 40.0MB/s]     15%|#5        | 37.1M/242M [00:01<00:05, 41.6MB/s]     18%|#7        | 43.0M/242M [00:01<00:04, 43.0MB/s]     20%|##        | 48.5M/242M [00:01<00:04, 43.1MB/s]     22%|##2       | 54.2M/242M [00:01<00:04, 43.3MB/s]     25%|##4       | 60.0M/242M [00:01<00:04, 44.2MB/s]     27%|##7       | 65.7M/242M [00:01<00:03, 47.9MB/s]     28%|##8       | 68.5M/242M [00:02<00:04, 42.8MB/s]     31%|###       | 74.3M/242M [00:02<00:04, 43.6MB/s]     33%|###3      | 80.2M/242M [00:02<00:03, 44.3MB/s]     35%|###5      | 85.5M/242M [00:02<00:03, 47.1MB/s]     37%|###6      | 88.5M/242M [00:02<00:03, 42.7MB/s]     39%|###8      | 94.3M/242M [00:02<00:03, 43.4MB/s]     41%|####1     | 99.8M/242M [00:02<00:03, 47.2MB/s]     43%|####2     | 103M/242M [00:02<00:03, 43.1MB/s]      45%|####4     | 108M/242M [00:02<00:02, 47.2MB/s]     46%|####6     | 112M/242M [00:03<00:03, 42.6MB/s]     48%|####8     | 117M/242M [00:03<00:02, 46.4MB/s]     50%|####9     | 120M/242M [00:03<00:03, 42.5MB/s]     52%|#####1    | 126M/242M [00:03<00:02, 46.7MB/s]     53%|#####3    | 129M/242M [00:03<00:02, 42.5MB/s]     55%|#####5    | 134M/242M [00:03<00:02, 46.1MB/s]     57%|#####6    | 137M/242M [00:03<00:02, 42.5MB/s]     59%|#####9    | 143M/242M [00:03<00:02, 43.1MB/s]     61%|######1   | 149M/242M [00:03<00:02, 47.7MB/s]     63%|######2   | 152M/242M [00:04<00:02, 43.1MB/s]     65%|######4   | 157M/242M [00:04<00:01, 47.0MB/s]     66%|######6   | 160M/242M [00:04<00:02, 42.3MB/s]     68%|######8   | 166M/242M [00:04<00:01, 46.7MB/s]     70%|######9   | 169M/242M [00:04<00:01, 42.4MB/s]     72%|#######2  | 175M/242M [00:04<00:01, 43.6MB/s]     75%|#######4  | 181M/242M [00:04<00:01, 48.5MB/s]     76%|#######5  | 184M/242M [00:04<00:01, 43.6MB/s]     78%|#######7  | 189M/242M [00:04<00:01, 46.2MB/s]     79%|#######9  | 192M/242M [00:04<00:01, 42.5MB/s]     81%|########1 | 197M/242M [00:05<00:01, 46.2MB/s]     83%|########2 | 200M/242M [00:05<00:01, 42.7MB/s]     85%|########4 | 206M/242M [00:05<00:00, 46.5MB/s]     86%|########6 | 209M/242M [00:05<00:00, 42.9MB/s]     88%|########8 | 214M/242M [00:05<00:00, 45.3MB/s]     90%|########9 | 218M/242M [00:05<00:00, 43.1MB/s]     92%|#########1| 223M/242M [00:05<00:00, 45.2MB/s]     93%|#########3| 226M/242M [00:05<00:00, 42.7MB/s]     95%|#########5| 231M/242M [00:05<00:00, 45.4MB/s]     97%|#########6| 234M/242M [00:05<00:00, 42.2MB/s]     99%|#########8| 239M/242M [00:06<00:00, 44.9MB/s]    100%|##########| 242M/242M [00:06<00:00, 41.2MB/s]
 
     AnnData object with n_obs × n_vars = 2800 × 16562
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
@@ -91,7 +92,7 @@ will be considered neighbors.
 
 .. code-block:: default
 
-    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", neigh_grid=6)
+    sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", n_neighs=6)
 
 
 
@@ -105,7 +106,7 @@ will be considered neighbors.
 The function builds a spatial graph and saves its adjacency matrix
 to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 ``adata.obsp['spatial_distances']`` by default.
-Note that it can also build a a graph from a square grid, just set ``neigh_grid = 4``.
+Note that it can also build a a graph from a square grid, just set ``n_neighs = 4``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-41
 
@@ -206,6 +207,7 @@ Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
 
  .. code-block:: none
 
+      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:03, 438kB/s]      9%|9         | 144k/1.50M [00:00<00:02, 579kB/s]      36%|###5      | 552k/1.50M [00:00<00:00, 1.72MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.33MB/s]
 
     AnnData object with n_obs × n_vars = 4668 × 34
         obs: 'cell type'
@@ -217,15 +219,15 @@ Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
 .. GENERATED FROM PYTHON SOURCE LINES 64-68
 
 We use the same function for this with ``coord_type = 'generic'``.
-``n_neigh`` and ``radius`` can be used for non-Visium datasets.
-``n_neigh`` specifies a fixed number of the closest spots for each spot as neighbors.
+``n_neighs`` and ``radius`` can be used for non-Visium datasets.
+``n_neighs`` specifies a fixed number of the closest spots for each spot as neighbors.
 Alternatively, ``delaunay = True`` can be used, for a Delaunay triangulation graph.
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-81
 
 .. code-block:: default
 
-    sq.gr.spatial_neighbors(adata, n_neigh=10, coord_type="generic")
+    sq.gr.spatial_neighbors(adata, n_neighs=10, coord_type="generic")
     _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
     idx = np.append(idx, 420)
     sc.pl.spatial(
@@ -314,9 +316,9 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.595 seconds)
+   **Total running time of the script:** ( 0 minutes  16.377 seconds)
 
-**Estimated memory usage:**  234 MB
+**Estimated memory usage:**  293 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:
