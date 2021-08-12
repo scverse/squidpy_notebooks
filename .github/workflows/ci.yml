@@ -13,23 +13,7 @@ on:
         -   dev
 
 jobs:
-    init:
-        runs-on: ubuntu-latest
-        outputs:
-            skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
-        steps:
-        -   uses: actions/checkout@v2
-            with:
-                fetch-depth: 0
-        -   id: ci-skip-step
-            uses: mstachniuk/ci-skip@master
-            with:
-                commit-filter: '[ci skip];[ci-skip];[skip ci];[skip-ci]'
-                commit-filter-separator: ;
-
     lint:
-        needs: init
-        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || needs.init.outputs.skip == 'false')
         runs-on: ubuntu-latest
         steps:
         -   uses: actions/checkout@v2
@@ -58,7 +42,6 @@ jobs:
                 tox -e lint,check-docs
 
     test:
-        needs: init
         runs-on: ubuntu-latest
         steps:
         -   name: Get the triggering event
