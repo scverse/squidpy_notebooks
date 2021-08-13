@@ -76,7 +76,7 @@ We are happy about any contributions! Before you start, check out our `contribut
     :target: https://pepy.tech/project/squidpy
     :alt: Downloads
 
-.. _preprint: https://www.biorxiv.org/content/10.1101/2021.02.19.431994v1
+.. _preprint: https://www.biorxiv.org/content/10.1101/2021.02.19.431994v2
 .. _scanpy: https://scanpy.readthedocs.io/en/stable/
 .. _anndata: https://anndata.readthedocs.io/en/stable/
 .. _napari: https://napari.org/
