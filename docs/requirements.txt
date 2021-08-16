@@ -1,6 +1,6 @@
 -r ../requirements.txt
 memory_profiler>=0.57.0
-nbsphinx>=0.8.1
+nbsphinx>=0.8.1,<0.8.7
 pypandoc
 sphinx>=3.3.0
 sphinx_copybutton

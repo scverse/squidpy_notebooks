@@ -29,13 +29,13 @@ adata
 # ``n_rings`` should be used only for Visium datasets.
 # It specifies for each spot how many hexagonal rings of spots around
 # will be considered neighbors.
-sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", neigh_grid=6)
+sq.gr.spatial_neighbors(adata, n_rings=2, coord_type="grid", n_neighs=6)
 
 ###############################################################################
 # The function builds a spatial graph and saves its adjacency matrix
 # to ``adata.obsp['spatial_connectivities']`` and weighted adjacency matrix to
 # ``adata.obsp['spatial_distances']`` by default.
-# Note that it can also build a a graph from a square grid, just set ``neigh_grid = 4``.
+# Note that it can also build a a graph from a square grid, just set ``n_neighs = 4``.
 adata.obsp["spatial_connectivities"]
 
 ###############################################################################
@@ -62,10 +62,10 @@ adata
 
 ###############################################################################
 # We use the same function for this with ``coord_type = 'generic'``.
-# ``n_neigh`` and ``radius`` can be used for non-Visium datasets.
-# ``n_neigh`` specifies a fixed number of the closest spots for each spot as neighbors.
+# ``n_neighs`` and ``radius`` can be used for non-Visium datasets.
+# ``n_neighs`` specifies a fixed number of the closest spots for each spot as neighbors.
 # Alternatively, ``delaunay = True`` can be used, for a Delaunay triangulation graph.
-sq.gr.spatial_neighbors(adata, n_neigh=10, coord_type="generic")
+sq.gr.spatial_neighbors(adata, n_neighs=10, coord_type="generic")
 _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
 idx = np.append(idx, 420)
 sc.pl.spatial(

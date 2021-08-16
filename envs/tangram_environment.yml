@@ -6,5 +6,4 @@ dependencies:
 -   pip
 -   pip:
     -   squidpy>=1.1.0
-# TODO: pin the version once on PyPI
-    -   git+https://github.com/broadinstitute/tangram@ziq
+    -   tangram-sc==0.4.0
