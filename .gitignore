@@ -139,3 +139,6 @@ docs/source/data
 
 # vscode
 .DS_Store
+
+# data
+data
