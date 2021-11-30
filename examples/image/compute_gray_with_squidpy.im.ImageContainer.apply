@@ -1,47 +1,53 @@
 #!/usr/bin/env python
 """
-Convert to grayscale using squidpy.im.ImageContainer.apply
+Convert to grayscale using :meth:`squidpy.im.ImageContainer.apply`
 --------------------
-This example shows how to use :func:`squidpy.ImageContainer.apply` to convert an image layer to grayscale.
-
-We take the mean of all the three channels (RGB) using the defined function `rgb2gray` to convert the image to grayscale.
-The function `rgb2gray` calls numpy method mean to calculate the mean (average) of three channels (RGB) across axis 4.
-
+This example shows how to use :meth:`squidpy.ImageContainer.apply` to convert an image layer to grayscale.
+This calls :func:`squidpy.im.process` in the background.
+We take the mean of the three channels(RGB) using the defined function 'rgb2gray' to convert the image to grayscale.
+The function 'rgb2gray' calls numpy method 'mean' to calculate the mean(average) of three channels (RGB) across axis 3.
 .. seealso::
     - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
     - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
-
+    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`
 """
-
 import squidpy as sq
 
-import matplotlib.pyplot as plt
-
 import numpy as np
+
+import matplotlib.pyplot as plt
 
 ###############################################################################
 # First, we load the H&E stained tissue image.
 # Here, we only load a cropped dataset to speed things up.
-# In general, :func:`squidpy.im.ImageContainer.apply` can also process very large images
+# In general, :meth:`squidpy.im.ImageContainer.apply` can also process very large images.
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################
-# The method `squidpy.im.ImageContainer.apply` takes a fucntion as an input. The same function or a mapping of {'{library_id}': function} takes a numpy.ndarray as input and produces an image-like output.
-# Here, the function takes x, which is a numpy array as an input and returns the mean of three channels across axis 4 and produces image-like output.
+# The method :meth:`squidpy.im.ImageContainer.apply` takes a function as an input.
+# The same function or a mapping of ```{'{library_id}': function}``` takes a numpy.ndarray as input.
+# The function produces an image-like output.
+# Here, the function 'rgb2gray' takes 'x', which is a numpy array as an input.
+# 'rgb2gray' returns the mean of three channels across axis 3 and produces image-like output.
+
 
 def rgb2gray(x):
-    return np.mean(x, axis = 3)
+    """Return the mean of numpy array along axis 3"""
+    return np.mean(x, axis=3)
 
-# The H&E stained tissue image is of the file type: 'squidpy.im._container.ImageContainer'. So, we add .apply and pass the previously defined function as an input.
+
+###############################################################################
+# The H&E stained tissue image is an image layer of :class:`squidpy.im.ImageContainer`.
+# So, we add .apply and pass the previously defined function as an input.
 
 gray = img.apply(rgb2gray)
-
+###############################################################################
 # Then, we convert the image to grayscale and plot the result, using matplotlib.
 
-fig, axes = plt.subplots(1, 3)
+fig, axes = plt.subplots(1, 2)
 img.show(ax=axes[0])
 _ = axes[0].set_title("Original")
 gray.show(cmap="gray", ax=axes[1])
-_ = axes[1].set_title("Greyscale")
+_ = axes[1].set_title("Grayscale")
 plt.show()
