@@ -19,7 +19,7 @@ A couple of notes on pre-processing:
       `Scanpy tutorial <https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html>`_ .
     - The cluster annotation was performed using several resources, such as the
       `Allen Brain Atlas <http://mouse.brain-map.org/experiment/thumbnails/100048576?image_type=atlas>`_ ,
-      the `Mouse Brain gene expression atlas <http://mousebrain.org/genesearch.html>`_
+      the `Mouse Brain gene expression atlas <http://mousebrain.org/>`_
       from the Linnarson lab and this recent pre-print :cite:`linnarson2020`.
 
 .. seealso::
