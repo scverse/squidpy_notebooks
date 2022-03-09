@@ -157,6 +157,7 @@ sphinx_gallery_conf = {
         "use_jupyter_lab": False,
     },
     "default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
+    "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
