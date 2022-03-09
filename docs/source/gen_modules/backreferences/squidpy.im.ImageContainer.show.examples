@@ -5,25 +5,6 @@ Examples using ``squidpy.im.ImageContainer.show``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="It is possible to acquire several consecutive image slices from the same tissue. Squidpy&#x27;s Imag...">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
-     :alt: Use z-stacks with ImageContainer
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy image analysis features for the analysis of Visium dat...">
 
 .. only:: html
