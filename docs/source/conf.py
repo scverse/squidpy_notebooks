@@ -56,7 +56,7 @@ intersphinx_mapping = {
     "squidpy": ("https://squidpy.readthedocs.io/en/latest/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
-    "napari": ("https://napari.org/docs/dev/", None),
+    "napari": ("https://napari.org/", None),
     "skimage": ("https://scikit-image.org/docs/stable/", None),
     "dask": ("https://docs.dask.org/en/latest/", None),
 }
