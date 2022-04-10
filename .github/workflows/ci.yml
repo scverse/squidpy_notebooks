@@ -4,13 +4,9 @@ on:
     repository_dispatch:
         types: [rebuild]
     pull_request:
-        branches:
-        -   master
-        -   dev
+        branches: [master]
     push:
-        branches:
-        -   master
-        -   dev
+        branches: [master]
 
 jobs:
     lint:
@@ -22,22 +18,20 @@ jobs:
         -   name: Set up Python
             uses: actions/setup-python@v2
             with:
-                python-version: 3.8
+                python-version: 3.9
 
         -   uses: actions/cache@v2
             with:
                 path: ~/.cache/pre-commit
                 key: precommit-${{ env.pythonLocation }}-${{ hashFiles('.pre-commit-config.yaml') }}
-                restore-keys: |
-                    precommit-${{ env.pythonLocation }}-
 
         -   name: Install dependencies
             run: |
+                sudo apt install pandoc optipng
                 python -m pip install --upgrade pip
                 pip install tox
-                sudo apt install pandoc optipng
 
-        -   name: Linting
+        -   name: Lint
             run: |
                 tox -e lint,check-docs
 
@@ -46,14 +40,15 @@ jobs:
         steps:
         -   name: Get the triggering event
             run: |
-                echo "${{ github.event_name }} ${{ github.event.action }}"
+                echo "Event: ${{ github.event_name }}, action: ${{ github.event.action }}"
         -   uses: actions/checkout@v2
             with:
                 fetch-depth: 0
-        -   name: Set up Python 3.8
+
+        -   name: Set up Python 3.9
             uses: actions/setup-python@v2
             with:
-                python-version: 3.8
+                python-version: 3.9
 
         -   name: Get pip cache dir
             id: pip-cache-dir
@@ -64,7 +59,7 @@ jobs:
             uses: actions/cache@v2
             with:
                 path: ${{ steps.pip-cache-dir.outputs.dir }}
-                key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+                key: pip-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('**/requirements.txt') }}
 
         -   name: Install dependencies
             run: |
@@ -79,19 +74,20 @@ jobs:
                     ~/.cache/squidpy/*.tiff
                     ~/.cache/squidpy/*.h5ad
                 key: data-${{ hashFiles('**/download_data.py') }}
+
         -   name: Download datasets
             if: steps.data-cache.outputs.cache-hit != 'true'
             run: |
                 tox -e download-data
 
-        -   name: Testing
-            run: |
-                tox
+        -   name: Test
             env:
                 PLATFORM: ubuntu-latest
+            run: |
+                tox -vv
 
     regenerate:
-        if: ((github.event_name == 'repository_dispatch' && github.event.action == 'rebuild') || github.event_name == 'push') && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
+        if: ${{ (github.event_name == 'push' || (github.event_name == 'repository_dispatch' && github.event.action == 'rebuild')) && startsWith(github.ref, 'refs/heads/master') }}
         needs: [lint, test]
         runs-on: ubuntu-latest
         steps:
@@ -110,27 +106,27 @@ jobs:
             run: |
                 echo "::set-output name=branch_name::$(git branch --show-current)"
 
-        -   name: Set up Python 3.8
+        -   name: Set up Python 3.9
             uses: actions/setup-python@v2
             with:
-                python-version: 3.8
+                python-version: 3.9
 
         -   name: Get pip cache dir
             id: pip-cache-dir
             run: |
                 echo "::set-output name=dir::$(pip cache dir)"
 
-        -   name: Cache pip
+        -   name: Restore pip cache
             uses: actions/cache@v2
             with:
                 path: ${{ steps.pip-cache-dir.outputs.dir }}
-                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+                key: pip-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('**/requirements.txt') }}
 
         -   name: Install dependencies
             run: |
+                sudo apt install pandoc optipng
                 python -m pip install --upgrade pip
                 pip install tox tox-gh-actions
-                sudo apt install pandoc optipng
 
         -   name: Regenerate documentation
             run: |
@@ -156,6 +152,6 @@ jobs:
         -   name: Request documentation rebuild
             # if: steps.auto-commit-action.outputs.changes_detected == 'true'
             # does not seem to work with the above hack
-            if: ${{ steps.branch.outputs.branch_name == 'master' || steps.branch.outputs.branch_name == 'dev' }}
+            if: ${{ steps.branch.outputs.branch_name == 'master' }}
             run: |
                 curl -X POST -d "branches=${{ steps.branch.outputs.branch_name }}" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"

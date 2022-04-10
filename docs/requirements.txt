@@ -1,4 +1,6 @@
 -r ../requirements.txt
+ipython_genutils
+Jinja2<3.1.0  # https://github.com/spatialaudio/nbsphinx/issues/641
 memory_profiler>=0.57.0
 nbsphinx>=0.8.1,<0.8.7
 pypandoc
