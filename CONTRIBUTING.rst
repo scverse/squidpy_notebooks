@@ -1,7 +1,7 @@
 How to write examples and tutorials for Squidpy
 ===============================================
 Examples and tutorials are created using `sphinx-gallery <https://sphinx-gallery.github.io/stable/index.html>`_.
-They are automatically run by CI every time a PR is merged to mater/dev in the
+They are automatically run by CI every time a PR is merged to mater in the
 `Squidpy repository <https://github.com/theislab/squidpy>`_.
 
 We distinguish between three types of examples and tutorials:
@@ -25,17 +25,17 @@ Datasets for examples/tutorials
 For showcasing functions, please use one of the datasets shipped with Squidpy.
 Remember that only the Visium datasets contain tissue images.
 
-- ``sq.datasets.imc()`` - good for graph
-- ``sq.datasets.seqfish()`` - good for graph
-- ``sq.datasets.four_i()`` - good for graph
-- ``sq.datasets.four_i()`` - good for graph
-- ``sq.datasets.visium_fluo_adata()`` - good for graph and image
-- ``sq.datasets.visium_hne_adata()`` - good for graph and image
-- ``sq.datasets.visium_fluo_adata_crop()`` - good for graph and image (cropped)
-- ``sq.datasets.visium_hne_adata_crop()`` - good for graph and image (cropped)
-- ``sq.datasets.visium_fluo_image_crop()`` - good for image container (cropped)
-- ``sq.datasets.visium_hne_image_crop()`` - good for image container (cropped)
-- ``sq.datasets.visium_hne_image()`` - good for image container (cropped)
+- ``squidpy.datasets.imc()`` - good for graph
+- ``squidpy.datasets.seqfish()`` - good for graph
+- ``squidpy.datasets.four_i()`` - good for graph
+- ``squidpy.datasets.four_i()`` - good for graph
+- ``squidpy.datasets.visium_fluo_adata()`` - good for graph and image
+- ``squidpy.datasets.visium_hne_adata()`` - good for graph and image
+- ``squidpy.datasets.visium_fluo_adata_crop()`` - good for graph and image (cropped)
+- ``squidpy.datasets.visium_hne_adata_crop()`` - good for graph and image (cropped)
+- ``squidpy.datasets.visium_fluo_image_crop()`` - good for image container (cropped)
+- ``squidpy.datasets.visium_hne_image_crop()`` - good for image container (cropped)
+- ``squidpy.datasets.visium_hne_image()`` - good for image container (cropped)
 
 Main examples and tutorials
 ---------------------------
