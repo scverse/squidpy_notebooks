@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 """
-Convert to grayscale using :meth:`squidpy.im.ImageContainer.apply`
---------------------
+Convert to grayscale using the apply method
+-------------------------------------------
+
 This example shows how to use :meth:`squidpy.ImageContainer.apply` to convert an image layer to grayscale.
 This calls :func:`squidpy.im.process` in the background.
-We take the mean of the three channels(RGB) using the defined function 'rgb2gray' to convert the image to grayscale.
+
+We take the mean of the three channels(RGB) using the user-defined function 'rgb2gray'
+to convert the image to grayscale.
 The function 'rgb2gray' calls numpy method 'mean' to calculate the mean(average) of three channels (RGB) across axis 3.
+The purpose of this example is to show how the ```apply``` method :meth:`squidpy.ImageContainer.apply` can be used.
+
 .. seealso::
     - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
     - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
@@ -18,16 +23,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ###############################################################################
-# First, we load the H&E stained tissue image.
-# Here, we only load a cropped dataset to speed things up.
+# First, we load the H&E stained tissue image. Here, we only load a cropped dataset to speed things up.
 # In general, :meth:`squidpy.im.ImageContainer.apply` can also process very large images.
 # (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################
 # The method :meth:`squidpy.im.ImageContainer.apply` takes a function as an input.
-# The same function or a mapping of ```{'{library_id}': function}``` takes a numpy.ndarray as input.
-# The function produces an image-like output.
+# Such function, or a mapping of ```{'{library_id}': function}``` takes a
+# :class:`numpy.ndarray` as input and returns an image-like output.
 # Here, the function 'rgb2gray' takes 'x', which is a numpy array as an input.
 # 'rgb2gray' returns the mean of three channels across axis 3 and produces image-like output.
 
