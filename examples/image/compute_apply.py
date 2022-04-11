@@ -6,9 +6,9 @@ Convert to grayscale using the apply method
 This example shows how to use :meth:`squidpy.ImageContainer.apply` to convert an image layer to grayscale.
 This calls :func:`squidpy.im.process` in the background.
 
-We take the mean of the three channels(RGB) using the user-defined function 'rgb2gray'
+We take the mean of the three channels(RGB) using the user-defined function ```rgb2gray```
 to convert the image to grayscale.
-The function 'rgb2gray' calls numpy method 'mean' to calculate the mean(average) of three channels (RGB) across axis 3.
+The function ```rgb2gray``` computes the mean of the three channels (RGB) across axis 3.
 The purpose of this example is to show how the ```apply``` method :meth:`squidpy.ImageContainer.apply` can be used.
 
 .. seealso::
@@ -32,8 +32,8 @@ img = sq.datasets.visium_hne_image_crop()
 # The method :meth:`squidpy.im.ImageContainer.apply` takes a function as an input.
 # Such function, or a mapping of ```{'{library_id}': function}``` takes a
 # :class:`numpy.ndarray` as input and returns an image-like output.
-# Here, the function 'rgb2gray' takes 'x', which is a numpy array as an input.
-# 'rgb2gray' returns the mean of three channels across axis 3 and produces image-like output.
+# Here, the function takes ```x````, which is a numpy array as an input and
+# returns the mean of three channels across axis 3 and produces image-like output.
 
 
 def rgb2gray(x):
