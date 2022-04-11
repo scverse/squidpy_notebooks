@@ -5,14 +5,14 @@ Examples using ``squidpy.im.ImageContainer.apply``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to MIBI-TOF data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.ImageContainer.apply to convert an image layer to graysca...">
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
-     :alt: Analyze MIBI-TOF image data
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_apply_thumb.png
+     :alt: Convert to grayscale using the apply method
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
+     :ref:`sphx_glr_auto_examples_image_compute_apply.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``squidpy.im.ImageContainer.apply``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
+ * :ref:`sphx_glr_auto_examples_image_compute_apply.py`
