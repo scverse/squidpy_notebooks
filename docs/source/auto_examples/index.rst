@@ -287,6 +287,27 @@ Image
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.ImageContainer.apply to convert an image layer to graysca...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_apply_thumb.png
+     :alt: Convert to grayscale using the apply method
+
+     :ref:`sphx_glr_auto_examples_image_compute_apply.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_apply
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract texture features from the tissue image.">
 
 .. only:: html
@@ -473,6 +494,27 @@ Image
    :hidden:
 
    /auto_examples/image/compute_segmentation_features
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.generate_spot_crops.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_generate_spot_crops_thumb.png
+     :alt: Generate cropped images from spots
+
+     :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_generate_spot_crops
 
 .. raw:: html
 

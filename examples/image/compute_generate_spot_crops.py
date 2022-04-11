@@ -33,7 +33,7 @@ adata = sq.datasets.visium_hne_adata_crop()
 
 ###############################################################################
 # Next, we use :meth:`squidpy.im.ImageContainer.generate_spot_crops` to make a generator that generates cropped images.
-# The argument ``as_array`` specify the type in which the crop is returned. If we specificy a specific
+# The argument ``as_array`` specify the type in which the crop is returned. If we pass a specific
 # layer in the :class:`squidpy.im.ImageContainer` then it will return a plain :class:`numpy.ndarray`.
 # Check the documentation of the method :meth:`squidpy.im.ImageContainer.generate_spot_crops`.
 gen = img.generate_spot_crops(adata, scale=0.5, as_array="image", squeeze=True)
