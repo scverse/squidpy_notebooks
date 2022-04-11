@@ -5,10 +5,12 @@
 
 Computation times
 =================
-**00:15.381** total execution time for **auto_examples_image** files:
+**00:14.886** total execution time for **auto_examples_image** files:
 
 +-------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_image_compute_crops.py` (``compute_crops.py``)                                 | 00:15.381 | 199.9 MB |
+| :ref:`sphx_glr_auto_examples_image_compute_apply.py` (``compute_apply.py``)                                 | 00:14.886 | 676.1 MB |
++-------------------------------------------------------------------------------------------------------------+-----------+----------+
+| :ref:`sphx_glr_auto_examples_image_compute_crops.py` (``compute_crops.py``)                                 | 00:00.000 | 0.0 MB   |
 +-------------------------------------------------------------------------------------------------------------+-----------+----------+
 | :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` (``compute_custom_features.py``)             | 00:00.000 | 0.0 MB   |
 +-------------------------------------------------------------------------------------------------------------+-----------+----------+
