@@ -354,9 +354,10 @@ for Scanpy plotting.
 
 
 
-.. image:: /auto_examples/plotting/images/sphx_glr_compute_extract_001.png
-    :alt: Astrocytes, Mural, CA1_CA2_CA3_Subiculum
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_compute_extract_001.png
+   :alt: Astrocytes, Mural, CA1_CA2_CA3_Subiculum
+   :srcset: /auto_examples/plotting/images/sphx_glr_compute_extract_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -365,9 +366,9 @@ for Scanpy plotting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.980 seconds)
+   **Total running time of the script:** ( 0 minutes  23.387 seconds)
 
-**Estimated memory usage:**  443 MB
+**Estimated memory usage:**  700 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_compute_extract.py:

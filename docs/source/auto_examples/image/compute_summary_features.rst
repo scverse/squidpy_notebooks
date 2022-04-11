@@ -219,9 +219,10 @@ and 1 (GFAP stain).
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_summary_features_001.png
-    :alt: summary_ch-0_mean, summary_ch-1_mean
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_summary_features_001.png
+   :alt: summary_ch-0_mean, summary_ch-1_mean
+   :srcset: /auto_examples/image/images/sphx_glr_compute_summary_features_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -230,9 +231,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  0.408 seconds)
+   **Total running time of the script:** ( 3 minutes  0.869 seconds)
 
-**Estimated memory usage:**  374 MB
+**Estimated memory usage:**  380 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

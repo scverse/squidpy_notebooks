@@ -533,9 +533,10 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_texture_features_001.png
-    :alt: texture_ch-0_contrast_dist-1_angle-0.00, texture_ch-1_contrast_dist-1_angle-0.00
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_texture_features_001.png
+   :alt: texture_ch-0_contrast_dist-1_angle-0.00, texture_ch-1_contrast_dist-1_angle-0.00
+   :srcset: /auto_examples/image/images/sphx_glr_compute_texture_features_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -544,9 +545,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  21.163 seconds)
+   **Total running time of the script:** ( 3 minutes  44.757 seconds)
 
-**Estimated memory usage:**  676 MB
+**Estimated memory usage:**  394 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

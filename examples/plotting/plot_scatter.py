@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Plot scatter plot in spatial coordinates
----------------------------------------
+----------------------------------------
 
 This example shows how to use :func:`squidpy.pl.spatial_scatter` to plot annotations and features
 stored in :class:`anndata.AnnData`.

@@ -92,9 +92,10 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_gray_001.png
-    :alt: original, grayscale
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_gray_001.png
+   :alt: original, grayscale
+   :srcset: /auto_examples/image/images/sphx_glr_compute_gray_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -103,9 +104,9 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.630 seconds)
+   **Total running time of the script:** ( 0 minutes  10.711 seconds)
 
-**Estimated memory usage:**  626 MB
+**Estimated memory usage:**  701 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

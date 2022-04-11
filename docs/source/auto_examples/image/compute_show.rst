@@ -84,21 +84,24 @@ We can briefly visualize the data to understand the type of images we have.
 
     *
 
-      .. image:: /auto_examples/image/images/sphx_glr_compute_show_001.png
-          :alt: point16
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_001.png
+         :alt: point16
+         :srcset: /auto_examples/image/images/sphx_glr_compute_show_001.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/image/images/sphx_glr_compute_show_002.png
-          :alt: point23
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_002.png
+         :alt: point23
+         :srcset: /auto_examples/image/images/sphx_glr_compute_show_002.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/image/images/sphx_glr_compute_show_003.png
-          :alt: point8
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_003.png
+         :alt: point8
+         :srcset: /auto_examples/image/images/sphx_glr_compute_show_003.png
+         :class: sphx-glr-multi-img
 
 
 
@@ -142,9 +145,10 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_show_004.png
-    :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_004.png
+   :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
+   :srcset: /auto_examples/image/images/sphx_glr_compute_show_004.png
+   :class: sphx-glr-single-img
 
 
 
@@ -162,9 +166,10 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_show_005.png
-    :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_005.png
+   :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
+   :srcset: /auto_examples/image/images/sphx_glr_compute_show_005.png
+   :class: sphx-glr-single-img
 
 
 
@@ -173,9 +178,9 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  20.192 seconds)
+   **Total running time of the script:** ( 0 minutes  21.007 seconds)
 
-**Estimated memory usage:**  235 MB
+**Estimated memory usage:**  260 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_show.py:
