@@ -45,7 +45,7 @@ sq.pl.spatial_segment(
 
 ###############################################################################
 # It's also possible to add an outline to better distinguish segmentation
-# masks' boundaries. Furthermore, the underlying image can be removed, grayscaled
+# masks' boundaries. Furthermore, the underlying image can be removed, gray scaled
 # or single channels can be plotted.
 sq.pl.spatial_segment(
     adata,
