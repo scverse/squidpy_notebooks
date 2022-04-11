@@ -1,7 +1,7 @@
 
 
-Examples using ``squidpy.datasets.visium_hne_image_crop``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Examples using ``squidpy.im.ImageContainer.generate_spot_crops``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
