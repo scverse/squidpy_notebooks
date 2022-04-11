@@ -10,7 +10,7 @@ This plotting is useful when segmentation masks and underlying image are availab
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_plotting_plot_scatter.py` for scatterplot.
+    See :ref:`sphx_glr_auto_examples_plotting_plot_scatter.py` for scatter plot.
 """
 import squidpy as sq
 
