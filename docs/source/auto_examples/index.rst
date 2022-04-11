@@ -497,6 +497,27 @@ Image
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.generate_spot_crops.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_generate_spot_crops_thumb.png
+     :alt: Generate cropped images from spots
+
+     :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/image/compute_generate_spot_crops
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows the computation of spot-wise features from Visium images.">
 
 .. only:: html

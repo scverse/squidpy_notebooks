@@ -5,14 +5,14 @@ Examples using ``squidpy.datasets.visium_hne_adata_crop``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract features from the tissue image using a custom function.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.generate_spot_crops.">
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
-     :alt: Extract custom features
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_generate_spot_crops_thumb.png
+     :alt: Generate cropped images from spots
 
-     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
+     :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
 
 .. raw:: html
 
@@ -20,23 +20,4 @@ Examples using ``squidpy.datasets.visium_hne_adata_crop``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the computation of spot-wise features from Visium images.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_features_thumb.png
-     :alt: Extract image features
-
-     :ref:`sphx_glr_auto_examples_image_compute_features.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_features.py`
+ * :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
