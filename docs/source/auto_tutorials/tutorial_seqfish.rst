@@ -62,9 +62,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.8.0 anndata==0.7.6 umap==0.5.1 numpy==1.21.0 scipy==1.7.0 pandas==1.2.5 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.6 pynndescent==0.5.2
-    squidpy==1.0.1
-      0%|          | 0.00/30.7M [00:00<?, ?B/s]      0%|          | 56.0k/30.7M [00:00<01:18, 411kB/s]      1%|          | 176k/30.7M [00:00<00:46, 683kB/s]       2%|2         | 632k/30.7M [00:00<00:16, 1.89MB/s]      8%|7         | 2.45M/30.7M [00:00<00:04, 6.52MB/s]     25%|##5       | 7.74M/30.7M [00:00<00:01, 19.7MB/s]     36%|###6      | 11.1M/30.7M [00:00<00:00, 24.1MB/s]     53%|#####2    | 16.3M/30.7M [00:00<00:00, 31.5MB/s]     66%|######5   | 20.1M/30.7M [00:00<00:00, 34.0MB/s]     81%|########1 | 24.9M/30.7M [00:01<00:00, 37.6MB/s]     94%|#########4| 28.9M/30.7M [00:01<00:00, 38.8MB/s]    100%|##########| 30.7M/30.7M [00:01<00:00, 26.4MB/s]
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.2 numpy==1.21.5 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.9 pynndescent==0.5.6
+    squidpy==1.1.2
 
 
 
@@ -83,9 +82,10 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_001.png
-    :alt: celltype_mapped_refined
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_001.png
+   :alt: celltype_mapped_refined
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_seqfish_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -125,9 +125,10 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_002.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_002.png
+   :alt: Neighborhood enrichment
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_seqfish_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -136,11 +137,7 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scipy/sparse/_index.py:125: SparseEfficiencyWarning: Changing the sparsity structure of a csr_matrix is expensive. lil_matrix is more efficient.
-      self._set_arrayXarray(i, j, x)
-      0%|          | 0/1000 [00:00<?, ?/s]      3%|3         | 31/1000 [00:00<00:03, 298.57/s]      7%|6         | 67/1000 [00:00<00:02, 331.64/s]     10%|#         | 102/1000 [00:00<00:02, 335.13/s]     15%|#4        | 147/1000 [00:00<00:02, 374.39/s]     18%|#8        | 185/1000 [00:00<00:02, 356.34/s]     22%|##2       | 221/1000 [00:00<00:02, 344.99/s]     26%|##5       | 256/1000 [00:00<00:02, 333.59/s]     29%|##9       | 293/1000 [00:00<00:02, 343.75/s]     33%|###3      | 331/1000 [00:00<00:01, 353.54/s]     37%|###6      | 367/1000 [00:01<00:01, 351.97/s]     40%|####      | 403/1000 [00:01<00:01, 341.15/s]     44%|####3     | 439/1000 [00:01<00:01, 344.60/s]     48%|####7     | 478/1000 [00:01<00:01, 351.29/s]     51%|#####1    | 514/1000 [00:01<00:01, 352.05/s]     55%|#####5    | 550/1000 [00:01<00:01, 327.37/s]     59%|#####8    | 590/1000 [00:01<00:01, 345.09/s]     62%|######2   | 625/1000 [00:01<00:01, 328.43/s]     87%|########6 | 868/1000 [00:01<00:00, 909.47/s]    100%|##########| 1000/1000 [00:01<00:00, 513.35/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
-      col_ax = divider.append_axes("top", size="5%")
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:14:33,  4.48s/]      8%|7         | 79/1000 [00:04<00:37, 24.33/s]      16%|#6        | 161/1000 [00:04<00:14, 57.96/s]     24%|##4       | 243/1000 [00:04<00:07, 101.34/s]     32%|###2      | 325/1000 [00:04<00:04, 155.27/s]     40%|####      | 401/1000 [00:04<00:02, 213.73/s]     48%|####8     | 482/1000 [00:05<00:01, 285.82/s]     57%|#####6    | 566/1000 [00:05<00:01, 367.24/s]     65%|######4   | 647/1000 [00:05<00:00, 444.25/s]     73%|#######2  | 727/1000 [00:05<00:00, 514.37/s]     81%|########  | 807/1000 [00:05<00:00, 573.56/s]     89%|########8 | 887/1000 [00:05<00:00, 625.87/s]     97%|#########6| 966/1000 [00:05<00:00, 666.57/s]    100%|##########| 1000/1000 [00:05<00:00, 174.48/s]
 
 
 
@@ -185,10 +182,20 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_003.png
-    :alt: celltype_mapped_refined
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_003.png
+   :alt: celltype_mapped_refined
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_seqfish_003.png
+   :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
+      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
@@ -234,9 +241,10 @@ the argument ``clusters``. Then, we visualize the results with
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_004.png
-    :alt: $\frac{p(exp|Lateral plate mesoderm)}{p(exp)}$
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_004.png
+   :alt: $\frac{p(exp|Lateral plate mesoderm)}{p(exp)}$
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_seqfish_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -245,30 +253,30 @@ the argument ``clusters``. Then, we visualize the results with
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:43<00:00, 43.47s/]    100%|##########| 1/1 [00:43<00:00, 43.48s/]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:52<00:00, 52.19s/]    100%|##########| 1/1 [00:52<00:00, 52.31s/]
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -331,9 +339,10 @@ and decreasing the threshold for the adjusted p-value (with the ``alpha`` argume
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_005.png
-    :alt: Receptor-ligand test, $-\log_{10} ~ P$, significant $p=0.0001$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_seqfish_005.png
+   :alt: Receptor-ligand test, $-\log_{10} ~ P$, significant $p=0.0001$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_seqfish_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -342,14 +351,7 @@ and decreasing the threshold for the adjusted p-value (with the ``alpha`` argume
 
  .. code-block:: none
 
-      0%|          | 0.00/8.93M [00:00<?, ?B/s]      1%|          | 80.0k/8.93M [00:00<00:17, 524kB/s]      4%|4         | 368k/8.93M [00:00<00:06, 1.32MB/s]     16%|#5        | 1.39M/8.93M [00:00<00:02, 3.85MB/s]     57%|#####6    | 5.06M/8.93M [00:00<00:00, 12.0MB/s]    100%|##########| 8.93M/8.93M [00:00<00:00, 13.0MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/interactions/_interactions.py:377: DtypeWarning: Columns (8) have mixed types.Specify dtype option on import or set low_memory=False.
-      return cls(include, exclude=exclude)._get(**kwargs)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
-      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-      0%|          | 0.00/1.42M [00:00<?, ?B/s]      6%|5         | 80.0k/1.42M [00:00<00:02, 516kB/s]     25%|##5       | 368k/1.42M [00:00<00:00, 1.30MB/s]     83%|########2 | 1.17M/1.42M [00:00<00:00, 3.15MB/s]    100%|##########| 1.42M/1.42M [00:00<00:00, 3.09MB/s]
-      0%|          | 0.00/2.63M [00:00<?, ?B/s]      3%|2         | 80.0k/2.63M [00:00<00:05, 523kB/s]     14%|#4        | 384k/2.63M [00:00<00:01, 1.38MB/s]     59%|#####9    | 1.56M/2.63M [00:00<00:00, 4.35MB/s]    100%|##########| 2.63M/2.63M [00:00<00:00, 5.76MB/s]
-      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:08<14:10,  8.59s/permutation]     45%|####5     | 45/100 [00:08<00:07,  7.31permutation/s]     81%|########1 | 81/100 [00:08<00:01, 15.35permutation/s]    100%|##########| 100/100 [00:08<00:00, 11.35permutation/s]
+      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:04<06:59,  4.24s/permutation]     61%|######1   | 61/100 [00:04<00:01, 19.78permutation/s]    100%|##########| 100/100 [00:04<00:00, 22.71permutation/s]
 
 
 
@@ -365,9 +367,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  46.666 seconds)
+   **Total running time of the script:** ( 1 minutes  35.995 seconds)
 
-**Estimated memory usage:**  1784 MB
+**Estimated memory usage:**  2506 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:

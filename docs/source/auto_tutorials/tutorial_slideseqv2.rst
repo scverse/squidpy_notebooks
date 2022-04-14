@@ -63,9 +63,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.8.0 anndata==0.7.6 umap==0.5.1 numpy==1.21.0 scipy==1.7.0 pandas==1.2.5 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.6 pynndescent==0.5.2
-    squidpy==1.0.1
-      0%|          | 0.00/251M [00:00<?, ?B/s]      0%|          | 56.0k/251M [00:00<10:40, 411kB/s]      0%|          | 208k/251M [00:00<04:45, 924kB/s]       0%|          | 888k/251M [00:00<01:31, 2.88MB/s]      1%|1         | 2.52M/251M [00:00<00:34, 7.67MB/s]      3%|2         | 6.35M/251M [00:00<00:14, 17.4MB/s]      4%|4         | 10.3M/251M [00:00<00:10, 24.8MB/s]      6%|5         | 14.9M/251M [00:00<00:08, 30.8MB/s]      8%|7         | 19.1M/251M [00:00<00:06, 34.8MB/s]      9%|9         | 23.5M/251M [00:01<00:06, 36.9MB/s]     11%|#         | 27.6M/251M [00:01<00:06, 38.4MB/s]     13%|#2        | 32.1M/251M [00:01<00:05, 39.6MB/s]     14%|#4        | 36.2M/251M [00:01<00:05, 40.7MB/s]     16%|#6        | 40.8M/251M [00:01<00:05, 41.6MB/s]     18%|#7        | 44.9M/251M [00:01<00:05, 42.0MB/s]     20%|#9        | 49.6M/251M [00:01<00:04, 42.6MB/s]     21%|##1       | 53.8M/251M [00:01<00:04, 42.8MB/s]     23%|##3       | 58.5M/251M [00:01<00:04, 43.4MB/s]     25%|##4       | 62.3M/251M [00:01<00:04, 42.3MB/s]     27%|##6       | 67.0M/251M [00:02<00:04, 43.1MB/s]     28%|##8       | 71.0M/251M [00:02<00:04, 42.8MB/s]     30%|###       | 75.8M/251M [00:02<00:04, 43.4MB/s]     32%|###1      | 79.8M/251M [00:02<00:04, 42.8MB/s]     34%|###3      | 84.5M/251M [00:02<00:04, 43.5MB/s]     35%|###5      | 88.6M/251M [00:02<00:03, 43.1MB/s]     37%|###7      | 93.4M/251M [00:02<00:03, 43.9MB/s]     39%|###8      | 97.4M/251M [00:02<00:03, 43.3MB/s]     41%|####      | 102M/251M [00:02<00:03, 43.7MB/s]      42%|####2     | 106M/251M [00:03<00:03, 43.5MB/s]     44%|####4     | 111M/251M [00:03<00:03, 43.8MB/s]     46%|####5     | 115M/251M [00:03<00:03, 43.3MB/s]     48%|####7     | 120M/251M [00:03<00:03, 44.0MB/s]     49%|####9     | 124M/251M [00:03<00:03, 43.6MB/s]     51%|#####1    | 129M/251M [00:03<00:02, 44.3MB/s]     53%|#####2    | 133M/251M [00:03<00:02, 43.6MB/s]     55%|#####4    | 138M/251M [00:03<00:02, 44.4MB/s]     56%|#####6    | 141M/251M [00:03<00:02, 42.8MB/s]     58%|#####8    | 146M/251M [00:03<00:02, 44.4MB/s]     60%|#####9    | 150M/251M [00:04<00:02, 42.9MB/s]     62%|######1   | 155M/251M [00:04<00:02, 44.6MB/s]     63%|######3   | 159M/251M [00:04<00:02, 43.1MB/s]     65%|######5   | 164M/251M [00:04<00:02, 44.5MB/s]     67%|######6   | 168M/251M [00:04<00:02, 42.9MB/s]     69%|######8   | 173M/251M [00:04<00:01, 45.2MB/s]     70%|#######   | 177M/251M [00:04<00:01, 42.8MB/s]     72%|#######2  | 181M/251M [00:04<00:01, 45.1MB/s]     74%|#######3  | 185M/251M [00:04<00:01, 42.9MB/s]     76%|#######5  | 190M/251M [00:05<00:01, 45.0MB/s]     77%|#######7  | 194M/251M [00:05<00:01, 42.9MB/s]     79%|#######9  | 199M/251M [00:05<00:01, 45.0MB/s]     81%|########  | 203M/251M [00:05<00:01, 44.3MB/s]     82%|########2 | 207M/251M [00:05<00:01, 43.1MB/s]     84%|########4 | 212M/251M [00:05<00:00, 44.6MB/s]     86%|########5 | 215M/251M [00:05<00:00, 42.7MB/s]     88%|########7 | 220M/251M [00:05<00:00, 44.6MB/s]     89%|########9 | 224M/251M [00:05<00:00, 43.4MB/s]     91%|#########1| 229M/251M [00:05<00:00, 45.1MB/s]     93%|#########2| 233M/251M [00:06<00:00, 43.7MB/s]     94%|#########4| 237M/251M [00:06<00:00, 43.5MB/s]     96%|#########5| 241M/251M [00:06<00:00, 44.3MB/s]     97%|#########7| 245M/251M [00:06<00:00, 42.9MB/s]     99%|#########9| 249M/251M [00:06<00:00, 43.9MB/s]    100%|##########| 251M/251M [00:06<00:00, 40.5MB/s]
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.2 numpy==1.21.5 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.9 pynndescent==0.5.6
+    squidpy==1.1.2
 
     AnnData object with n_obs × n_vars = 41786 × 4000
         obs: 'barcode', 'x', 'y', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
@@ -91,9 +90,10 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_001.png
-    :alt: cluster
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_001.png
+   :alt: cluster
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -135,9 +135,10 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_002.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_002.png
+   :alt: Neighborhood enrichment
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -146,11 +147,7 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scipy/sparse/_index.py:125: SparseEfficiencyWarning: Changing the sparsity structure of a csr_matrix is expensive. lil_matrix is more efficient.
-      self._set_arrayXarray(i, j, x)
-      0%|          | 0/1000 [00:00<?, ?/s]      1%|1         | 14/1000 [00:00<00:07, 136.97/s]      4%|4         | 40/1000 [00:00<00:04, 205.19/s]      6%|6         | 61/1000 [00:00<00:04, 189.79/s]      8%|8         | 81/1000 [00:00<00:04, 189.57/s]     11%|#         | 109/1000 [00:00<00:04, 220.13/s]     14%|#3        | 139/1000 [00:00<00:03, 246.22/s]     16%|#6        | 164/1000 [00:00<00:03, 238.36/s]     19%|#8        | 189/1000 [00:00<00:03, 230.62/s]     22%|##1       | 218/1000 [00:00<00:03, 244.07/s]     24%|##4       | 243/1000 [00:01<00:03, 236.60/s]     27%|##6       | 267/1000 [00:01<00:03, 222.76/s]     30%|##9       | 296/1000 [00:01<00:02, 240.62/s]     33%|###3      | 331/1000 [00:01<00:02, 270.98/s]     37%|###6      | 369/1000 [00:01<00:02, 302.04/s]     41%|####      | 408/1000 [00:01<00:01, 327.59/s]     44%|####4     | 442/1000 [00:01<00:01, 293.38/s]     47%|####7     | 473/1000 [00:01<00:02, 256.44/s]     50%|#####     | 501/1000 [00:02<00:02, 225.21/s]     55%|#####4    | 548/1000 [00:02<00:01, 282.61/s]     58%|#####8    | 583/1000 [00:02<00:01, 298.10/s]     62%|######1   | 619/1000 [00:02<00:01, 311.61/s]     65%|######5   | 652/1000 [00:02<00:01, 312.32/s]     69%|######9   | 692/1000 [00:02<00:00, 334.65/s]     73%|#######2  | 727/1000 [00:02<00:00, 314.06/s]     76%|#######6  | 760/1000 [00:02<00:00, 289.96/s]     79%|#######9  | 790/1000 [00:03<00:00, 248.95/s]     82%|########1 | 817/1000 [00:03<00:00, 244.59/s]     85%|########5 | 850/1000 [00:03<00:00, 263.49/s]     88%|########7 | 878/1000 [00:03<00:00, 231.87/s]     90%|######### | 903/1000 [00:03<00:00, 220.05/s]     93%|#########2| 927/1000 [00:03<00:00, 222.88/s]    100%|##########| 1000/1000 [00:03<00:00, 270.71/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
-      col_ax = divider.append_axes("top", size="5%")
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:18:54,  4.74s/]      3%|3         | 33/1000 [00:04<01:41,  9.57/s]       7%|7         | 71/1000 [00:04<00:38, 24.41/s]     11%|#1        | 110/1000 [00:05<00:20, 44.16/s]     15%|#4        | 148/1000 [00:05<00:12, 68.24/s]     19%|#8        | 186/1000 [00:05<00:08, 97.15/s]     22%|##2       | 224/1000 [00:05<00:05, 130.10/s]     26%|##6       | 262/1000 [00:05<00:04, 165.27/s]     30%|###       | 300/1000 [00:05<00:03, 201.58/s]     34%|###3      | 339/1000 [00:05<00:02, 237.37/s]     38%|###7      | 378/1000 [00:05<00:02, 269.54/s]     42%|####1     | 417/1000 [00:05<00:01, 297.51/s]     46%|####5     | 456/1000 [00:05<00:01, 319.90/s]     50%|####9     | 495/1000 [00:06<00:01, 335.36/s]     53%|#####3    | 534/1000 [00:06<00:01, 348.88/s]     57%|#####7    | 573/1000 [00:06<00:01, 359.44/s]     61%|######1   | 612/1000 [00:06<00:01, 364.18/s]     65%|######5   | 651/1000 [00:06<00:00, 369.89/s]     69%|######9   | 690/1000 [00:06<00:00, 372.94/s]     73%|#######2  | 729/1000 [00:06<00:00, 375.64/s]     77%|#######6  | 768/1000 [00:06<00:00, 377.46/s]     81%|########  | 807/1000 [00:06<00:00, 378.74/s]     85%|########4 | 846/1000 [00:06<00:00, 376.80/s]     88%|########8 | 884/1000 [00:07<00:00, 348.06/s]     92%|#########2| 923/1000 [00:07<00:00, 358.42/s]     96%|#########6| 962/1000 [00:07<00:00, 366.22/s]    100%|##########| 1000/1000 [00:07<00:00, 134.97/s]
 
 
 
@@ -177,10 +174,20 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_003.png
-    :alt: cluster
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_003.png
+   :alt: cluster
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_003.png
+   :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
+      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
@@ -210,9 +217,10 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for more details.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_004.png
-    :alt: Ripley's L
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_004.png
+   :alt: Ripley's L
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -221,29 +229,29 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for more details.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -270,10 +278,20 @@ selectively visualize again their spatial organization.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_005.png
-    :alt: cluster
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_005.png
+   :alt: cluster
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_005.png
+   :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
+      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
@@ -324,9 +342,10 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py` for more details.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_006.png
-    :alt: Receptor-ligand test, $-\log_{10} ~ P$, significant $p=0.001$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_006.png
+   :alt: Receptor-ligand test, $-\log_{10} ~ P$, significant $p=0.001$, $log_2(\frac{molecule_1 + molecule_2}{2} + 1)$
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_006.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -335,15 +354,19 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py` for more details.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/omnipath/_core/requests/_utils.py:155: FutureWarning: The default value of regex will change from True to False in a future version.
-      _split_unique_join(data.str.replace(r"[-\w]*:?(\d+)", r"\1")), func=func
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/gr/_ligrec.py:393: SettingWithCopyWarning: 
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/squidpy/gr/_ligrec.py:391: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame.
     Try using .loc[row_indexer,col_indexer] = value instead
 
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       data["clusters"] = data["clusters"].cat.remove_unused_categories()
-      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:01<01:48,  1.09s/permutation]     25%|##5       | 25/100 [00:01<00:02, 28.46permutation/s]     39%|###9      | 39/100 [00:01<00:01, 43.08permutation/s]     77%|#######7  | 77/100 [00:01<00:00, 97.51permutation/s]    100%|##########| 100/100 [00:01<00:00, 69.21permutation/s]
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/squidpy/gr/_ligrec.py:400: SettingWithCopyWarning: 
+    A value is trying to be set on a copy of a slice from a DataFrame.
+    Try using .loc[row_indexer,col_indexer] = value instead
+
+    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+      data["clusters"] = cat.rename_categories(cluster_mapper)
+      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:06<10:28,  6.34s/permutation]     40%|####      | 40/100 [00:06<00:06,  8.74permutation/s]     79%|#######9  | 79/100 [00:06<00:01, 20.36permutation/s]    100%|##########| 100/100 [00:06<00:00, 15.15permutation/s]
 
 
 
@@ -502,9 +525,10 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_007.png
-    :alt: Ttr, Plp1, Mbp, Hpca, Enpp2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_007.png
+   :alt: Ttr, Plp1, Mbp, Hpca, Enpp2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_slideseqv2_007.png
+   :class: sphx-glr-single-img
 
 
 
@@ -513,9 +537,9 @@ with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 4 minutes  5.424 seconds)
+   **Total running time of the script:** ( 2 minutes  47.113 seconds)
 
-**Estimated memory usage:**  1693 MB
+**Estimated memory usage:**  1945 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_slideseqv2.py:

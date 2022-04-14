@@ -272,7 +272,7 @@ image-structured arrays using their names:
     }
 
     .xr-wrap {
-      display: block;
+      display: block !important;
       min-width: 300px;
       max-width: 700px;
     }
@@ -624,7 +624,7 @@ image-structured arrays using their names:
             [[1., 1., 1.]]]])
     Coordinates:
       * z        (z) &lt;U1 &#x27;0&#x27;
-    Dimensions without coordinates: y, x, channels</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'img1'</div><ul class='xr-dim-list'><li><span>y</span>: 100</li><li><span>x</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li><li><span>channels</span>: 3</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-89e1d93e-fccd-4d0b-8bb5-7b8ba1c52e7e' class='xr-array-in' type='checkbox' checked><label for='section-89e1d93e-fccd-4d0b-8bb5-7b8ba1c52e7e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</span></div><div class='xr-array-data'><pre>array([[[[1., 1., 1.]],
+    Dimensions without coordinates: y, x, channels</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'img1'</div><ul class='xr-dim-list'><li><span>y</span>: 100</li><li><span>x</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li><li><span>channels</span>: 3</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-0e47f047-2f55-46ed-b1ed-6767a2cf8550' class='xr-array-in' type='checkbox' checked><label for='section-0e47f047-2f55-46ed-b1ed-6767a2cf8550' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</span></div><div class='xr-array-data'><pre>array([[[[1., 1., 1.]],
 
             [[1., 1., 1.]],
 
@@ -664,7 +664,7 @@ image-structured arrays using their names:
 
             [[1., 1., 1.]],
 
-            [[1., 1., 1.]]]])</pre></div></div></li><li class='xr-section-item'><input id='section-e59a0d7b-cf35-40de-9d66-f474c4534379' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e59a0d7b-cf35-40de-9d66-f474c4534379' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-82f1d89e-028a-4e45-a603-edb4a258bf04' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-82f1d89e-028a-4e45-a603-edb4a258bf04' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-698f5320-2713-4d15-bd6f-9ff2db1512a3' class='xr-var-data-in' type='checkbox'><label for='data-698f5320-2713-4d15-bd6f-9ff2db1512a3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8cf37f35-f35b-4f6c-be7d-54fb3d72a914' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8cf37f35-f35b-4f6c-be7d-54fb3d72a914' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div>
+            [[1., 1., 1.]]]])</pre></div></div></li><li class='xr-section-item'><input id='section-f41be829-825f-4c36-870a-de3a6f731f52' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f41be829-825f-4c36-870a-de3a6f731f52' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-1aecaaeb-51f0-4bee-90db-5adbc24d9535' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1aecaaeb-51f0-4bee-90db-5adbc24d9535' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-403a970f-605c-4c84-9cd3-a45575ba23ac' class='xr-var-data-in' type='checkbox'><label for='data-403a970f-605c-4c84-9cd3-a45575ba23ac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3f012fcd-7be2-4d73-a428-d82a3442d5a7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3f012fcd-7be2-4d73-a428-d82a3442d5a7' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div>
     </div>
     <br />
     <br />
@@ -712,9 +712,10 @@ See `Interactive visualization with Napari <../external_tutorials/tutorial_napar
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_001.png
-    :alt: img1
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_001.png
+   :alt: img1
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -746,15 +747,17 @@ See :ref:`sphx_glr_auto_examples_image_compute_crops.py` for more details.
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_002.png
-          :alt: img1
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_002.png
+         :alt: img1
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_002.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_003.png
-          :alt: img1
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_003.png
+         :alt: img1
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_003.png
+         :class: sphx-glr-multi-img
 
 
 
@@ -788,15 +791,17 @@ Note that ``uncrop`` only undoes the cropping, not the scaling.
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_004.png
-          :alt: img1
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_004.png
+         :alt: img1
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_004.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_005.png
-          :alt: img1
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_005.png
+         :alt: img1
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_005.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -909,7 +914,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
     }
 
     .xr-wrap {
-      display: block;
+      display: block !important;
       min-width: 300px;
       max-width: 700px;
     }
@@ -1218,10 +1223,10 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
       fill: currentColor;
     }
     </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-    Dimensions:   (channels: 3, channels_0: 1, channels_1: 1, x: 100, y: 100, z: 1)
+    Dimensions:   (z: 1, y: 100, x: 100, channels: 3, channels_0: 1, channels_1: 1)
     Coordinates:
       * z         (z) &lt;U1 &#x27;0&#x27;
-    Dimensions without coordinates: channels, channels_0, channels_1, x, y
+    Dimensions without coordinates: y, x, channels, channels_0, channels_1
     Data variables:
         img1      (y, x, z, channels) float64 1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0
         seg1      (y, x, z, channels_0) float64 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0
@@ -1230,7 +1235,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
         coords:       CropCoords(x0=0, y0=0, x1=0, y1=0)
         padding:      CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)
         scale:        1.0
-        mask_circle:  False</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-88dfad0f-f874-4035-a58f-898f70f91334' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-88dfad0f-f874-4035-a58f-898f70f91334' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>channels</span>: 3</li><li><span>channels_0</span>: 1</li><li><span>channels_1</span>: 1</li><li><span>x</span>: 100</li><li><span>y</span>: 100</li><li><span class='xr-has-index'>z</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7ca689f2-c315-4d3a-8c14-f2550ebc83ec' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7ca689f2-c315-4d3a-8c14-f2550ebc83ec' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-6a0d9d9c-a41f-4680-aca9-8ee8d846646f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6a0d9d9c-a41f-4680-aca9-8ee8d846646f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c45bad4f-d0d2-4c50-9f05-33e89498b653' class='xr-var-data-in' type='checkbox'><label for='data-c45bad4f-d0d2-4c50-9f05-33e89498b653' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3f0b7901-7c80-44a3-a275-1813ffb26aaa' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3f0b7901-7c80-44a3-a275-1813ffb26aaa' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>img1</span></div><div class='xr-var-dims'>(y, x, z, channels)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0</div><input id='attrs-31f9f46e-ccaa-47cd-8d1a-43d32456690e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-31f9f46e-ccaa-47cd-8d1a-43d32456690e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fae2ab17-844a-441e-a00c-c4b04c687074' class='xr-var-data-in' type='checkbox'><label for='data-fae2ab17-844a-441e-a00c-c4b04c687074' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[1., 1., 1.]],
+        mask_circle:  False</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-80098c2f-0b9e-464d-82f0-96b4546514e6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-80098c2f-0b9e-464d-82f0-96b4546514e6' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>z</span>: 1</li><li><span>y</span>: 100</li><li><span>x</span>: 100</li><li><span>channels</span>: 3</li><li><span>channels_0</span>: 1</li><li><span>channels_1</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-9a1b1c3d-43d4-47e7-9b5c-02e7d605e8f8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9a1b1c3d-43d4-47e7-9b5c-02e7d605e8f8' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;0&#x27;</div><input id='attrs-f46a6193-c675-49ee-ab16-fe89a64245d5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f46a6193-c675-49ee-ab16-fe89a64245d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d41dd1c5-51be-48b2-99d3-75234f05f06c' class='xr-var-data-in' type='checkbox'><label for='data-d41dd1c5-51be-48b2-99d3-75234f05f06c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;0&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-69fecb52-b64c-4399-9357-1dfd4beca7b4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-69fecb52-b64c-4399-9357-1dfd4beca7b4' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>img1</span></div><div class='xr-var-dims'>(y, x, z, channels)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.0 1.0 1.0 1.0 ... 1.0 1.0 1.0 1.0</div><input id='attrs-fb001830-5e39-4ed7-aaa0-745458a53bc1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fb001830-5e39-4ed7-aaa0-745458a53bc1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-117e3d68-c527-47e1-8eb2-5874eaa6ecd8' class='xr-var-data-in' type='checkbox'><label for='data-117e3d68-c527-47e1-8eb2-5874eaa6ecd8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[1., 1., 1.]],
 
             [[1., 1., 1.]],
 
@@ -1270,7 +1275,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[1., 1., 1.]],
 
-            [[1., 1., 1.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seg1</span></div><div class='xr-var-dims'>(y, x, z, channels_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-bcdc2ebb-b0b5-4444-8ca6-5d6443ed59ea' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bcdc2ebb-b0b5-4444-8ca6-5d6443ed59ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-84b44591-a171-454f-b2e0-a4d716a984c7' class='xr-var-data-in' type='checkbox'><label for='data-84b44591-a171-454f-b2e0-a4d716a984c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
+            [[1., 1., 1.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seg1</span></div><div class='xr-var-dims'>(y, x, z, channels_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-3308c1c6-ba7d-4608-b351-43e2dfdb883f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3308c1c6-ba7d-4608-b351-43e2dfdb883f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-051396a5-b4e1-46cd-90cd-7c94f4ac9d46' class='xr-var-data-in' type='checkbox'><label for='data-051396a5-b4e1-46cd-90cd-7c94f4ac9d46' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
 
             [[0.]],
 
@@ -1310,7 +1315,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[0.]],
 
-            [[0.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>new-name</span></div><div class='xr-var-dims'>(y, x, z, channels_1)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-d6d46347-6cd1-42c0-bcbf-d7968be720db' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d6d46347-6cd1-42c0-bcbf-d7968be720db' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7018e42b-f5c5-4e2c-bc89-7f9bf7e4bb25' class='xr-var-data-in' type='checkbox'><label for='data-7018e42b-f5c5-4e2c-bc89-7f9bf7e4bb25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
+            [[0.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>new-name</span></div><div class='xr-var-dims'>(y, x, z, channels_1)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-1ce1879f-ea86-475b-ad1a-2446aa9ff1e7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1ce1879f-ea86-475b-ad1a-2446aa9ff1e7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b65ad8a-b485-4251-8819-55c7ba4d0f43' class='xr-var-data-in' type='checkbox'><label for='data-2b65ad8a-b485-4251-8819-55c7ba4d0f43' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[[0.]],
 
             [[0.]],
 
@@ -1350,7 +1355,7 @@ Internally, the images are represented in a :class:`xarray.Dataset`. You can acc
 
             [[0.]],
 
-            [[0.]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ac00d5da-3055-425d-a3c0-76053a15a7c1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ac00d5da-3055-425d-a3c0-76053a15a7c1' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coords :</span></dt><dd>CropCoords(x0=0, y0=0, x1=0, y1=0)</dd><dt><span>padding :</span></dt><dd>CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)</dd><dt><span>scale :</span></dt><dd>1.0</dd><dt><span>mask_circle :</span></dt><dd>False</dd></dl></div></li></ul></div></div>
+            [[0.]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-74627651-60b0-44c9-a85f-9d6af7aad895' class='xr-section-summary-in' type='checkbox'  checked><label for='section-74627651-60b0-44c9-a85f-9d6af7aad895' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>coords :</span></dt><dd>CropCoords(x0=0, y0=0, x1=0, y1=0)</dd><dt><span>padding :</span></dt><dd>CropPadding(x_pre=0, x_post=0, y_pre=0, y_post=0)</dd><dt><span>scale :</span></dt><dd>1.0</dd><dt><span>mask_circle :</span></dt><dd>False</dd></dl></div></li></ul></div></div>
     </div>
     <br />
     <br />
@@ -1419,9 +1424,9 @@ ImageContainers can be saved and loaded from a *Zarr* store, using :meth:`squidp
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.331 seconds)
+   **Total running time of the script:** ( 0 minutes  56.106 seconds)
 
-**Estimated memory usage:**  423 MB
+**Estimated memory usage:**  438 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container.py:

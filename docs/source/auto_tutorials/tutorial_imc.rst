@@ -60,9 +60,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.8.0 anndata==0.7.6 umap==0.5.1 numpy==1.21.0 scipy==1.7.0 pandas==1.2.5 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.6 pynndescent==0.5.2
-    squidpy==1.0.1
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:03, 413kB/s]      9%|9         | 144k/1.50M [00:00<00:02, 548kB/s]      35%|###4      | 536k/1.50M [00:00<00:00, 1.60MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.19MB/s]
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.2 numpy==1.21.5 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.9 pynndescent==0.5.6
+    squidpy==1.1.2
 
 
 
@@ -81,9 +80,10 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_001.png
-    :alt: cell type
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_imc_001.png
+   :alt: cell type
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_imc_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -139,9 +139,10 @@ We visualize the result for two conditional groups, namely
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_002.png
-    :alt: $\frac{p(exp|T cells)}{p(exp)}$, $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_imc_002.png
+   :alt: $\frac{p(exp|T cells)}{p(exp)}$, $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_imc_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -150,30 +151,30 @@ We visualize the result for two conditional groups, namely
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:02<00:00,  2.43s/]    100%|##########| 1/1 [00:02<00:00,  2.43s/]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:07<00:00,  7.55s/]    100%|##########| 1/1 [00:07<00:00,  7.56s/]
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -220,9 +221,10 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_003.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_imc_003.png
+   :alt: Neighborhood enrichment
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_imc_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -231,9 +233,7 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scipy/sparse/_index.py:125: SparseEfficiencyWarning: Changing the sparsity structure of a csr_matrix is expensive. lil_matrix is more efficient.
-      self._set_arrayXarray(i, j, x)
-      0%|          | 0/1000 [00:00<?, ?/s]      9%|8         | 89/1000 [00:00<00:01, 878.07/s]     18%|#8        | 185/1000 [00:00<00:00, 920.27/s]     28%|##8       | 283/1000 [00:00<00:00, 945.54/s]     40%|####      | 403/1000 [00:00<00:00, 1040.05/s]     66%|######6   | 665/1000 [00:00<00:00, 1601.01/s]     93%|#########3| 933/1000 [00:00<00:00, 1964.88/s]    100%|##########| 1000/1000 [00:00<00:00, 1633.00/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:06<1:42:34,  6.16s/]     31%|###       | 306/1000 [00:06<00:10, 69.28/s]     63%|######2   | 626/1000 [00:06<00:02, 167.45/s]     94%|#########4| 941/1000 [00:06<00:00, 295.30/s]    100%|##########| 1000/1000 [00:06<00:00, 154.33/s]
 
 
 
@@ -270,9 +270,10 @@ We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_004.png
-    :alt: Interaction matrix
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_imc_004.png
+   :alt: Interaction matrix
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_imc_004.png
+   :class: sphx-glr-single-img
 
 
 
@@ -305,9 +306,10 @@ Squidpy provides a convenient function for all of them:
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_imc_005.png
-    :alt: Average clustering, Closeness centrality, Degree centrality
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_imc_005.png
+   :alt: Average clustering, Closeness centrality, Degree centrality
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_imc_005.png
+   :class: sphx-glr-single-img
 
 
 
@@ -325,9 +327,9 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  27.050 seconds)
+   **Total running time of the script:** ( 0 minutes  39.632 seconds)
 
-**Estimated memory usage:**  12 MB
+**Estimated memory usage:**  102 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_imc.py:

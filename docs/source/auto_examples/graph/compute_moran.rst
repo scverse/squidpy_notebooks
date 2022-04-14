@@ -67,8 +67,8 @@ in the tissue are under consideration.
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-29
 
-We can compute the Moran's I score with :func:`squidpy.gr.moran`.
-We first need to compute a spatial graph with :func:`squidpy.gr.moran`.
+We can compute the Moran's I score with :func:`squidpy.gr.spatial_autocorr` and ``mode = 'moran'``.
+We first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.
 We will also subset the number of genes to evaluate.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-40
@@ -77,8 +77,9 @@ We will also subset the number of genes to evaluate.
 
     genes = adata[:, adata.var.highly_variable].var_names.values[:100]
     sq.gr.spatial_neighbors(adata)
-    sq.gr.moran(
+    sq.gr.spatial_autocorr(
         adata,
+        mode="moran",
         genes=genes,
         n_perms=100,
         n_jobs=1,
@@ -95,10 +96,7 @@ We will also subset the number of genes to evaluate.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
-     There are 3 disconnected components.
-      warnings.warn(message)
-      0%|          | 0/100 [00:00<?, ?/s]
+      0%|          | 0/100 [00:00<?, ?/s]      1%|1         | 1/100 [00:04<07:31,  4.56s/]      3%|3         | 3/100 [00:04<02:00,  1.24s/]      5%|5         | 5/100 [00:04<01:00,  1.56/s]      7%|7         | 7/100 [00:05<00:37,  2.48/s]      9%|9         | 9/100 [00:05<00:25,  3.57/s]     11%|#1        | 11/100 [00:05<00:18,  4.77/s]     13%|#3        | 13/100 [00:05<00:14,  6.03/s]     15%|#5        | 15/100 [00:05<00:11,  7.25/s]     17%|#7        | 17/100 [00:05<00:09,  8.38/s]     19%|#9        | 19/100 [00:05<00:08,  9.35/s]     21%|##1       | 21/100 [00:06<00:07, 10.06/s]     23%|##3       | 23/100 [00:06<00:07, 10.84/s]     25%|##5       | 25/100 [00:06<00:06, 11.48/s]     27%|##7       | 27/100 [00:06<00:06, 11.88/s]     29%|##9       | 29/100 [00:06<00:05, 12.22/s]     31%|###1      | 31/100 [00:06<00:05, 12.46/s]     33%|###3      | 33/100 [00:07<00:05, 12.63/s]     35%|###5      | 35/100 [00:07<00:05, 12.76/s]     37%|###7      | 37/100 [00:07<00:04, 12.90/s]     39%|###9      | 39/100 [00:07<00:04, 13.00/s]     41%|####1     | 41/100 [00:07<00:04, 12.92/s]     43%|####3     | 43/100 [00:07<00:04, 13.05/s]     45%|####5     | 45/100 [00:07<00:04, 12.85/s]     47%|####6     | 47/100 [00:08<00:04, 12.99/s]     49%|####9     | 49/100 [00:08<00:03, 13.14/s]     51%|#####1    | 51/100 [00:08<00:03, 13.26/s]     53%|#####3    | 53/100 [00:08<00:03, 12.94/s]     55%|#####5    | 55/100 [00:08<00:03, 12.82/s]     57%|#####6    | 57/100 [00:08<00:03, 12.97/s]     59%|#####8    | 59/100 [00:09<00:03, 13.01/s]     61%|######1   | 61/100 [00:09<00:02, 13.14/s]     63%|######3   | 63/100 [00:09<00:02, 13.23/s]     65%|######5   | 65/100 [00:09<00:02, 13.20/s]     67%|######7   | 67/100 [00:09<00:02, 13.22/s]     69%|######9   | 69/100 [00:09<00:02, 13.35/s]     71%|#######1  | 71/100 [00:09<00:02, 13.11/s]     73%|#######3  | 73/100 [00:10<00:02, 13.15/s]     75%|#######5  | 75/100 [00:10<00:01, 13.16/s]     77%|#######7  | 77/100 [00:10<00:01, 13.15/s]     79%|#######9  | 79/100 [00:10<00:01, 12.94/s]     81%|########1 | 81/100 [00:10<00:01, 12.86/s]     83%|########2 | 83/100 [00:10<00:01, 12.83/s]     85%|########5 | 85/100 [00:11<00:01, 12.85/s]     87%|########7 | 87/100 [00:11<00:01, 12.85/s]     89%|########9 | 89/100 [00:11<00:00, 12.94/s]     91%|#########1| 91/100 [00:11<00:00, 13.15/s]     93%|#########3| 93/100 [00:11<00:00, 13.18/s]     95%|#########5| 95/100 [00:11<00:00, 13.07/s]     97%|#########7| 97/100 [00:11<00:00, 12.96/s]     99%|#########9| 99/100 [00:12<00:00, 13.04/s]    100%|##########| 100/100 [00:12<00:00,  8.21/s]
 
 
 .. raw:: html
@@ -123,8 +121,13 @@ We will also subset the number of genes to evaluate.
         <tr style="text-align: right;">
           <th></th>
           <th>I</th>
+          <th>pval_norm</th>
+          <th>var_norm</th>
+          <th>pval_z_sim</th>
           <th>pval_sim</th>
-          <th>VI_sim</th>
+          <th>var_sim</th>
+          <th>pval_norm_fdr_bh</th>
+          <th>pval_z_sim_fdr_bh</th>
           <th>pval_sim_fdr_bh</th>
         </tr>
       </thead>
@@ -133,13 +136,13 @@ We will also subset the number of genes to evaluate.
           <th>3110035E14Rik</th>
           <td>0.665132</td>
           <td>0.0</td>
-          <td>0.000125</td>
+          <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000222</td>
+          <td>0.000253</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Resp18</th>
@@ -148,21 +151,22 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000190</td>
+          <td>0.000242</td>
           <td>0.0</td>
           <td>0.0</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>1500015O10Rik</th>
           <td>0.605940</td>
           <td>0.0</td>
-          <td>0.000091</td>
+          <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000234</td>
+          <td>0.000233</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Ecel1</th>
@@ -171,8 +175,10 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000179</td>
+          <td>0.000244</td>
           <td>0.0</td>
+          <td>0.0</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>2010300C02Rik</th>
@@ -181,21 +187,22 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000233</td>
+          <td>0.000196</td>
           <td>0.0</td>
           <td>0.0</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Scg2</th>
           <td>0.476060</td>
           <td>0.0</td>
-          <td>0.000179</td>
+          <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000203</td>
+          <td>0.000198</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Ogfrl1</th>
@@ -204,8 +211,10 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000218</td>
+          <td>0.000190</td>
           <td>0.0</td>
+          <td>0.0</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Itm2c</th>
@@ -214,21 +223,22 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000193</td>
+          <td>0.000190</td>
           <td>0.0</td>
           <td>0.0</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Tuba4a</th>
           <td>0.451810</td>
           <td>0.0</td>
-          <td>0.000140</td>
+          <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000189</td>
+          <td>0.000178</td>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.011929</td>
+          <td>0.012074</td>
         </tr>
         <tr>
           <th>Satb2</th>
@@ -237,8 +247,10 @@ We will also subset the number of genes to evaluate.
           <td>0.000131</td>
           <td>0.0</td>
           <td>0.009901</td>
-          <td>0.000249</td>
+          <td>0.000170</td>
           <td>0.0</td>
+          <td>0.0</td>
+          <td>0.012074</td>
         </tr>
       </tbody>
     </table>
@@ -259,9 +271,11 @@ We can visualize some of those genes with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_examples/graph/images/sphx_glr_compute_moran_001.png
-    :alt: Resp18, Tuba4a
-    :class: sphx-glr-single-img
+
+.. image-sg:: /auto_examples/graph/images/sphx_glr_compute_moran_001.png
+   :alt: Resp18, Tuba4a
+   :srcset: /auto_examples/graph/images/sphx_glr_compute_moran_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -275,9 +289,9 @@ We could've also passed ``mode = 'geary'`` to compute a closely related auto-cor
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.393 seconds)
+   **Total running time of the script:** ( 0 minutes  26.583 seconds)
 
-**Estimated memory usage:**  363 MB
+**Estimated memory usage:**  294 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_moran.py:

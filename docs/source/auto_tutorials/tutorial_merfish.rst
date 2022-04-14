@@ -62,9 +62,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.8.0 anndata==0.7.6 umap==0.5.1 numpy==1.21.0 scipy==1.7.0 pandas==1.2.5 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.6 pynndescent==0.5.2
-    squidpy==1.0.1
-      0%|          | 0.00/49.2M [00:00<?, ?B/s]      0%|          | 48.0k/49.2M [00:00<02:26, 351kB/s]      0%|          | 184k/49.2M [00:00<01:10, 725kB/s]       2%|1         | 808k/49.2M [00:00<00:20, 2.46MB/s]      7%|6         | 3.21M/49.2M [00:00<00:05, 8.57MB/s]     18%|#8        | 8.90M/49.2M [00:00<00:02, 20.7MB/s]     29%|##9       | 14.3M/49.2M [00:00<00:01, 27.3MB/s]     40%|####      | 19.9M/49.2M [00:00<00:00, 31.8MB/s]     52%|#####1    | 25.4M/49.2M [00:01<00:00, 34.8MB/s]     63%|######3   | 31.2M/49.2M [00:01<00:00, 37.3MB/s]     75%|#######5  | 37.1M/49.2M [00:01<00:00, 39.2MB/s]     87%|########7 | 42.9M/49.2M [00:01<00:00, 40.5MB/s]     99%|#########9| 48.8M/49.2M [00:01<00:00, 41.5MB/s]    100%|##########| 49.2M/49.2M [00:01<00:00, 30.3MB/s]
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.2 numpy==1.21.5 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.9 pynndescent==0.5.6
+    squidpy==1.1.2
 
     AnnData object with n_obs × n_vars = 73655 × 161
         obs: 'Cell_ID', 'Animal_ID', 'Animal_sex', 'Behavior', 'Bregma', 'Centroid_X', 'Centroid_Y', 'Cell_class', 'Neuron_cluster_ID', 'batch'
@@ -89,9 +88,10 @@ using :func:`scanpy.pl.embedding`:
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_001.png
-    :alt: Cell_class
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_001.png
+   :alt: Cell_class
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -112,9 +112,10 @@ is stored in `adata.obs["Bregma"]`, see original paper for definition.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_002.png
-    :alt: Cell_class
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_002.png
+   :alt: Cell_class
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -147,9 +148,10 @@ it with :func:`squidpy.gr.nhood_enrichment`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_003.png
-    :alt: Neighborhood enrichment
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_003.png
+   :alt: Neighborhood enrichment
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -158,11 +160,7 @@ it with :func:`squidpy.gr.nhood_enrichment`.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scipy/sparse/_index.py:125: SparseEfficiencyWarning: Changing the sparsity structure of a csr_matrix is expensive. lil_matrix is more efficient.
-      self._set_arrayXarray(i, j, x)
-      0%|          | 0/1000 [00:00<?, ?/s]      1%|          | 6/1000 [00:00<00:16, 59.60/s]      2%|2         | 23/1000 [00:00<00:07, 124.35/s]      4%|4         | 41/1000 [00:00<00:06, 146.82/s]      6%|5         | 58/1000 [00:00<00:06, 154.19/s]      8%|7         | 75/1000 [00:00<00:05, 156.23/s]      9%|9         | 92/1000 [00:00<00:05, 157.60/s]     11%|#         | 109/1000 [00:00<00:05, 160.13/s]     13%|#2        | 126/1000 [00:00<00:05, 161.82/s]     14%|#4        | 143/1000 [00:00<00:05, 162.28/s]     16%|#6        | 160/1000 [00:01<00:05, 161.09/s]     18%|#7        | 177/1000 [00:01<00:05, 157.81/s]     19%|#9        | 193/1000 [00:01<00:05, 152.17/s]     21%|##        | 209/1000 [00:01<00:05, 143.36/s]     22%|##2       | 225/1000 [00:01<00:05, 146.39/s]     24%|##4       | 241/1000 [00:01<00:05, 148.63/s]     26%|##5       | 258/1000 [00:01<00:04, 153.59/s]     28%|##7       | 276/1000 [00:01<00:04, 158.67/s]     29%|##9       | 293/1000 [00:01<00:04, 160.03/s]     31%|###1      | 310/1000 [00:02<00:04, 160.81/s]     33%|###2      | 327/1000 [00:02<00:04, 160.35/s]     34%|###4      | 344/1000 [00:02<00:04, 161.61/s]     36%|###6      | 361/1000 [00:02<00:03, 160.15/s]     38%|###7      | 378/1000 [00:02<00:03, 156.71/s]     39%|###9      | 394/1000 [00:02<00:03, 156.51/s]     41%|####1     | 410/1000 [00:02<00:03, 157.44/s]     43%|####2     | 427/1000 [00:02<00:03, 158.74/s]     44%|####4     | 444/1000 [00:02<00:03, 159.44/s]     46%|####6     | 462/1000 [00:02<00:03, 162.76/s]     48%|####7     | 479/1000 [00:03<00:03, 162.62/s]     50%|####9     | 496/1000 [00:03<00:03, 164.38/s]     51%|#####1    | 514/1000 [00:03<00:02, 166.63/s]     53%|#####3    | 531/1000 [00:03<00:02, 166.86/s]     55%|#####4    | 548/1000 [00:03<00:02, 166.71/s]     56%|#####6    | 565/1000 [00:03<00:02, 166.33/s]     58%|#####8    | 583/1000 [00:03<00:02, 167.06/s]     60%|######    | 601/1000 [00:03<00:02, 169.26/s]     62%|######1   | 618/1000 [00:03<00:02, 168.51/s]     64%|######3   | 635/1000 [00:04<00:02, 165.98/s]     65%|######5   | 652/1000 [00:04<00:02, 159.09/s]     67%|######6   | 669/1000 [00:04<00:02, 161.20/s]     69%|######8   | 687/1000 [00:04<00:01, 164.13/s]     70%|#######   | 705/1000 [00:04<00:01, 167.15/s]     72%|#######2  | 722/1000 [00:04<00:01, 167.64/s]     74%|#######3  | 739/1000 [00:04<00:01, 166.30/s]     76%|#######5  | 756/1000 [00:04<00:01, 166.87/s]     77%|#######7  | 773/1000 [00:04<00:01, 165.84/s]     79%|#######9  | 793/1000 [00:04<00:01, 174.26/s]     81%|########1 | 811/1000 [00:05<00:01, 167.62/s]     83%|########2 | 828/1000 [00:05<00:01, 166.57/s]     84%|########4 | 845/1000 [00:05<00:00, 164.34/s]     86%|########6 | 862/1000 [00:05<00:00, 163.19/s]     88%|########8 | 880/1000 [00:05<00:00, 166.73/s]     90%|########9 | 899/1000 [00:05<00:00, 167.72/s]     92%|#########1| 916/1000 [00:05<00:00, 166.91/s]     93%|#########3| 933/1000 [00:05<00:00, 166.93/s]     95%|#########5| 950/1000 [00:05<00:00, 167.76/s]     97%|#########6| 967/1000 [00:05<00:00, 166.45/s]     98%|#########8| 984/1000 [00:06<00:00, 163.66/s]    100%|##########| 1000/1000 [00:06<00:00, 161.31/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/squidpy/pl/_utils.py:573: MatplotlibDeprecationWarning: In a future version, 'pad' will default to rcParams['figure.subplot.hspace'].  Set pad=0 to keep the old behavior.
-      col_ax = divider.append_axes("top", size="5%")
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:05<1:32:33,  5.56s/]      2%|2         | 24/1000 [00:05<02:44,  5.93/s]       5%|4         | 47/1000 [00:05<01:09, 13.66/s]      7%|7         | 70/1000 [00:05<00:39, 23.81/s]      9%|9         | 93/1000 [00:05<00:24, 36.71/s]     12%|#1        | 115/1000 [00:06<00:17, 51.67/s]     14%|#3        | 138/1000 [00:06<00:12, 70.11/s]     16%|#6        | 161/1000 [00:06<00:09, 90.51/s]     18%|#8        | 184/1000 [00:06<00:07, 112.27/s]     21%|##        | 207/1000 [00:06<00:05, 132.87/s]     23%|##3       | 230/1000 [00:06<00:05, 151.76/s]     25%|##5       | 253/1000 [00:06<00:04, 169.40/s]     28%|##7       | 276/1000 [00:06<00:03, 182.97/s]     30%|##9       | 299/1000 [00:06<00:03, 189.50/s]     32%|###2      | 321/1000 [00:06<00:03, 197.48/s]     34%|###4      | 344/1000 [00:07<00:03, 204.43/s]     37%|###6      | 367/1000 [00:07<00:03, 209.99/s]     39%|###9      | 390/1000 [00:07<00:02, 214.44/s]     41%|####1     | 413/1000 [00:07<00:02, 217.58/s]     44%|####3     | 436/1000 [00:07<00:02, 218.81/s]     46%|####5     | 459/1000 [00:07<00:02, 220.59/s]     48%|####8     | 482/1000 [00:07<00:02, 222.22/s]     50%|#####     | 505/1000 [00:07<00:02, 223.94/s]     53%|#####2    | 528/1000 [00:07<00:02, 221.68/s]     55%|#####5    | 551/1000 [00:08<00:02, 215.25/s]     57%|#####7    | 573/1000 [00:08<00:01, 214.19/s]     60%|#####9    | 596/1000 [00:08<00:01, 217.65/s]     62%|######1   | 619/1000 [00:08<00:01, 219.65/s]     64%|######4   | 642/1000 [00:08<00:01, 222.12/s]     67%|######6   | 666/1000 [00:08<00:01, 224.84/s]     69%|######8   | 689/1000 [00:08<00:01, 226.16/s]     71%|#######1  | 712/1000 [00:08<00:01, 224.15/s]     74%|#######3  | 735/1000 [00:08<00:01, 223.70/s]     76%|#######5  | 758/1000 [00:08<00:01, 224.60/s]     78%|#######8  | 781/1000 [00:09<00:00, 224.85/s]     80%|########  | 804/1000 [00:09<00:00, 223.37/s]     83%|########2 | 827/1000 [00:09<00:00, 223.99/s]     85%|########5 | 850/1000 [00:09<00:00, 224.74/s]     87%|########7 | 873/1000 [00:09<00:00, 223.72/s]     90%|########9 | 896/1000 [00:09<00:00, 223.28/s]     92%|#########1| 919/1000 [00:09<00:00, 223.83/s]     94%|#########4| 942/1000 [00:09<00:00, 224.21/s]     96%|#########6| 965/1000 [00:09<00:00, 225.08/s]     99%|#########8| 988/1000 [00:09<00:00, 226.34/s]    100%|##########| 1000/1000 [00:10<00:00, 99.65/s]
 
 
 
@@ -189,10 +187,20 @@ in order to better visualize the clusters of interests across z-stacks.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_004.png
-    :alt: Cell_class
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_004.png
+   :alt: Cell_class
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_004.png
+   :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
+      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
@@ -212,9 +220,10 @@ expression testing with :func:`scanpy.tl.rank_genes_groups` and visualize the re
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_005.png
-    :alt: Ambiguous vs. rest, Astrocyte vs. rest, Endothelial 1 vs. rest, Endothelial 2 vs. rest, Endothelial 3 vs. rest, Ependymal vs. rest, Excitatory vs. rest, Inhibitory vs. rest, Microglia vs. rest, OD Immature 1 vs. rest, OD Immature 2 vs. rest, OD Mature 1 vs. rest, OD Mature 2 vs. rest, OD Mature 3 vs. rest, OD Mature 4 vs. rest, Pericytes vs. rest
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_005.png
+   :alt: Ambiguous vs. rest, Astrocyte vs. rest, Endothelial 1 vs. rest, Endothelial 2 vs. rest, Endothelial 3 vs. rest, Ependymal vs. rest, Excitatory vs. rest, Inhibitory vs. rest, Microglia vs. rest, OD Immature 1 vs. rest, OD Immature 2 vs. rest, OD Mature 1 vs. rest, OD Mature 2 vs. rest, OD Mature 3 vs. rest, OD Mature 4 vs. rest, Pericytes vs. rest
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_005.png
+   :class: sphx-glr-single-img
 
 
 
@@ -233,9 +242,10 @@ and the expression in 3D.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_006.png
-    :alt: Gad1, Mlc1
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_006.png
+   :alt: Gad1, Mlc1
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_006.png
+   :class: sphx-glr-single-img
 
 
 
@@ -264,9 +274,10 @@ a standard 2D spatial data object.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_007.png
-    :alt: Cell_class
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_007.png
+   :alt: Cell_class
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_007.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -275,9 +286,9 @@ a standard 2D spatial data object.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scipy/sparse/_index.py:125: SparseEfficiencyWarning: Changing the sparsity structure of a csr_matrix is expensive. lil_matrix is more efficient.
-      self._set_arrayXarray(i, j, x)
-      0%|          | 0/1000 [00:00<?, ?/s]      1%|          | 7/1000 [00:00<00:14, 67.44/s]      2%|2         | 24/1000 [00:00<00:07, 124.69/s]      4%|4         | 41/1000 [00:00<00:06, 141.47/s]      6%|5         | 58/1000 [00:00<00:06, 150.14/s]      8%|7         | 75/1000 [00:00<00:05, 154.89/s]      9%|9         | 91/1000 [00:00<00:05, 156.34/s]     11%|#         | 108/1000 [00:00<00:05, 157.74/s]     12%|#2        | 125/1000 [00:00<00:05, 157.51/s]     14%|#4        | 142/1000 [00:00<00:05, 159.74/s]     16%|#5        | 158/1000 [00:01<00:05, 159.69/s]     17%|#7        | 174/1000 [00:01<00:05, 159.29/s]     19%|#9        | 192/1000 [00:01<00:04, 162.84/s]     21%|##        | 209/1000 [00:01<00:04, 164.88/s]     23%|##2       | 226/1000 [00:01<00:04, 164.62/s]     24%|##4       | 243/1000 [00:01<00:04, 162.97/s]     26%|##6       | 261/1000 [00:01<00:04, 166.45/s]     28%|##8       | 280/1000 [00:01<00:04, 168.04/s]     30%|##9       | 297/1000 [00:01<00:04, 166.92/s]     31%|###1      | 314/1000 [00:01<00:04, 165.91/s]     33%|###3      | 331/1000 [00:02<00:04, 164.20/s]     35%|###4      | 348/1000 [00:02<00:03, 163.19/s]     36%|###6      | 365/1000 [00:02<00:03, 163.03/s]     38%|###8      | 382/1000 [00:02<00:03, 162.96/s]     40%|###9      | 399/1000 [00:02<00:03, 164.92/s]     42%|####1     | 416/1000 [00:02<00:03, 165.27/s]     43%|####3     | 434/1000 [00:02<00:03, 166.47/s]     45%|####5     | 451/1000 [00:02<00:03, 166.78/s]     47%|####6     | 469/1000 [00:02<00:03, 168.91/s]     49%|####8     | 486/1000 [00:03<00:03, 158.59/s]     50%|#####     | 503/1000 [00:03<00:03, 161.46/s]     52%|#####2    | 520/1000 [00:03<00:02, 162.32/s]     54%|#####3    | 537/1000 [00:03<00:02, 163.29/s]     56%|#####5    | 555/1000 [00:03<00:02, 164.81/s]     57%|#####7    | 572/1000 [00:03<00:02, 164.36/s]     59%|#####8    | 589/1000 [00:03<00:02, 164.46/s]     61%|######    | 606/1000 [00:03<00:02, 163.92/s]     62%|######2   | 623/1000 [00:03<00:02, 163.90/s]     64%|######4   | 640/1000 [00:03<00:02, 162.42/s]     66%|######5   | 657/1000 [00:04<00:02, 161.70/s]     67%|######7   | 674/1000 [00:04<00:02, 160.81/s]     69%|######9   | 691/1000 [00:04<00:01, 160.67/s]     71%|#######   | 708/1000 [00:04<00:01, 161.81/s]     72%|#######2  | 725/1000 [00:04<00:01, 163.37/s]     74%|#######4  | 743/1000 [00:04<00:01, 166.36/s]     76%|#######6  | 760/1000 [00:04<00:01, 167.32/s]     78%|#######7  | 779/1000 [00:04<00:01, 168.60/s]     80%|#######9  | 796/1000 [00:04<00:01, 168.63/s]     81%|########1 | 813/1000 [00:05<00:01, 168.52/s]     83%|########2 | 830/1000 [00:05<00:01, 168.18/s]     85%|########4 | 847/1000 [00:05<00:00, 160.43/s]     86%|########6 | 864/1000 [00:05<00:00, 162.52/s]     88%|########8 | 881/1000 [00:05<00:00, 163.30/s]     90%|########9 | 899/1000 [00:05<00:00, 160.77/s]     92%|#########1| 917/1000 [00:05<00:00, 164.18/s]     93%|#########3| 934/1000 [00:05<00:00, 162.44/s]     95%|#########5| 951/1000 [00:05<00:00, 159.14/s]     97%|#########6| 968/1000 [00:05<00:00, 160.84/s]     98%|#########8| 985/1000 [00:06<00:00, 160.91/s]    100%|##########| 1000/1000 [00:06<00:00, 162.11/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:16:48,  4.61s/]      2%|2         | 24/1000 [00:04<02:17,  7.11/s]       5%|4         | 46/1000 [00:04<01:00, 15.86/s]      7%|6         | 68/1000 [00:04<00:34, 27.16/s]      9%|9         | 90/1000 [00:05<00:22, 41.26/s]     11%|#1        | 113/1000 [00:05<00:15, 58.94/s]     14%|#3        | 135/1000 [00:05<00:11, 78.03/s]     16%|#5        | 158/1000 [00:05<00:08, 99.44/s]     18%|#8        | 181/1000 [00:05<00:06, 120.99/s]     20%|##        | 203/1000 [00:05<00:05, 134.78/s]     22%|##2       | 225/1000 [00:05<00:05, 152.71/s]     25%|##4       | 248/1000 [00:05<00:04, 169.15/s]     27%|##7       | 270/1000 [00:05<00:04, 174.46/s]     29%|##9       | 292/1000 [00:05<00:03, 185.49/s]     32%|###1      | 315/1000 [00:06<00:03, 196.07/s]     34%|###3      | 338/1000 [00:06<00:03, 203.53/s]     36%|###6      | 361/1000 [00:06<00:03, 208.94/s]     38%|###8      | 384/1000 [00:06<00:02, 213.06/s]     41%|####      | 407/1000 [00:06<00:02, 216.93/s]     43%|####3     | 430/1000 [00:06<00:02, 216.45/s]     45%|####5     | 452/1000 [00:06<00:02, 213.23/s]     48%|####7     | 475/1000 [00:06<00:02, 216.47/s]     50%|####9     | 498/1000 [00:06<00:02, 218.43/s]     52%|#####2    | 521/1000 [00:07<00:02, 220.23/s]     54%|#####4    | 544/1000 [00:07<00:02, 220.56/s]     57%|#####6    | 567/1000 [00:07<00:01, 221.67/s]     59%|#####8    | 590/1000 [00:07<00:01, 221.09/s]     61%|######1   | 613/1000 [00:07<00:01, 218.90/s]     64%|######3   | 636/1000 [00:07<00:01, 220.31/s]     66%|######5   | 659/1000 [00:07<00:01, 218.50/s]     68%|######8   | 682/1000 [00:07<00:01, 220.13/s]     70%|#######   | 705/1000 [00:07<00:01, 221.78/s]     73%|#######2  | 728/1000 [00:07<00:01, 222.94/s]     75%|#######5  | 751/1000 [00:08<00:01, 223.42/s]     77%|#######7  | 774/1000 [00:08<00:01, 222.59/s]     80%|#######9  | 797/1000 [00:08<00:00, 223.23/s]     82%|########2 | 820/1000 [00:08<00:00, 223.44/s]     84%|########4 | 843/1000 [00:08<00:00, 223.76/s]     87%|########6 | 866/1000 [00:08<00:00, 220.57/s]     89%|########8 | 889/1000 [00:08<00:00, 218.77/s]     91%|#########1| 912/1000 [00:08<00:00, 219.57/s]     94%|#########3| 935/1000 [00:08<00:00, 220.82/s]     96%|#########5| 958/1000 [00:09<00:00, 206.45/s]     98%|#########8| 981/1000 [00:09<00:00, 210.70/s]    100%|##########| 1000/1000 [00:09<00:00, 108.74/s]
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
+      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
@@ -310,9 +321,10 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_merfish_008.png
-    :alt: Cd24a, Necab1, Mlc1
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_merfish_008.png
+   :alt: Cd24a, Necab1, Mlc1
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_merfish_008.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -321,7 +333,7 @@ with :func:`scanpy.pl.spatial`.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/scanpy/metrics/_gearys_c.py:293: UserWarning: 1 variables were constant, will return nan for these.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/metrics/_gearys_c.py:293: UserWarning: 1 variables were constant, will return nan for these.
       warnings.warn(
 
 
@@ -330,9 +342,9 @@ with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  34.885 seconds)
+   **Total running time of the script:** ( 0 minutes  58.904 seconds)
 
-**Estimated memory usage:**  8 MB
+**Estimated memory usage:**  164 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_merfish.py:

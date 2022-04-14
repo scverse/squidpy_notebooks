@@ -90,9 +90,10 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 
 
 
-.. image:: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
-    :alt: Interaction matrix
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
+   :alt: Interaction matrix
+   :srcset: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -101,9 +102,9 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.204 seconds)
+   **Total running time of the script:** ( 0 minutes  13.139 seconds)
 
-**Estimated memory usage:**  15 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_interaction_matrix.py:

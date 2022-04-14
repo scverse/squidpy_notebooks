@@ -74,10 +74,10 @@ Import libraries and load individual image sections
 
  .. code-block:: none
 
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]     90%|########9 | 8.31M/9.26M [00:00<00:00, 82.0MB/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 87.0MB/s]
-      0%|          | 0.00/20.1M [00:00<?, ?B/s]     38%|###8      | 7.70M/20.1M [00:00<00:00, 76.9MB/s]     70%|######9   | 14.0M/20.1M [00:00<00:00, 67.7MB/s]    100%|##########| 20.1M/20.1M [00:00<00:00, 77.6MB/s]
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]     89%|########9 | 8.25M/9.26M [00:00<00:00, 85.2MB/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 88.6MB/s]
-      0%|          | 0.00/19.0M [00:00<?, ?B/s]     43%|####3     | 8.19M/19.0M [00:00<00:00, 85.6MB/s]     87%|########7 | 16.5M/19.0M [00:00<00:00, 86.8MB/s]    100%|##########| 19.0M/19.0M [00:00<00:00, 86.5MB/s]
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+      utils.warn_names_duplicates("var")
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+      utils.warn_names_duplicates("var")
 
 
 
@@ -348,9 +348,10 @@ For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_001.png
-    :alt: in_tissue
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_001.png
+   :alt: in_tissue
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -370,9 +371,10 @@ Additionally, you can specify a `library_id` if you only want to plot one Z dime
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_002.png
-    :alt: image, library_id:V1_Mouse_Brain_Sagittal_Posterior, image, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_002.png
+   :alt: image, library_id:V1_Mouse_Brain_Sagittal_Posterior, image, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -407,9 +409,10 @@ By default, the cropping functions will crop all Z dimensions.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_003.png
-    :alt: image, library_id:V1_Mouse_Brain_Sagittal_Posterior, image, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_003.png
+   :alt: image, library_id:V1_Mouse_Brain_Sagittal_Posterior, image, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -429,9 +432,10 @@ You can also specify ``library_id``, as either a single or multiple Z dimensions
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_004.png
-    :alt: image
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_004.png
+   :alt: image
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_004.png
+   :class: sphx-glr-single-img
 
 
 
@@ -457,9 +461,10 @@ Therefore, to only smooth in x and y, we need to specify ``sigma = [10, 10, 0, 0
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_005.png
-    :alt: smooth1, library_id:V1_Mouse_Brain_Sagittal_Posterior, smooth1, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_005.png
+   :alt: smooth1, library_id:V1_Mouse_Brain_Sagittal_Posterior, smooth1, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_005.png
+   :class: sphx-glr-single-img
 
 
 
@@ -484,9 +489,10 @@ function for non-processed Z dimensions.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_006.png
-    :alt: smooth2, library_id:V1_Mouse_Brain_Sagittal_Posterior, smooth2, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_006.png
+   :alt: smooth2, library_id:V1_Mouse_Brain_Sagittal_Posterior, smooth2, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_006.png
+   :class: sphx-glr-single-img
 
 
 
@@ -510,9 +516,10 @@ Let's see this behavior with using ``method = 'gray'``, which moves from 3 chann
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_007.png
-    :alt: gray, library_id:V1_Mouse_Brain_Sagittal_Posterior, gray, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_007.png
+   :alt: gray, library_id:V1_Mouse_Brain_Sagittal_Posterior, gray, library_id:V1_Mouse_Brain_Sagittal_Posterior_Section_2
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_007.png
+   :class: sphx-glr-single-img
 
 
 
@@ -552,7 +559,7 @@ Z dimension in `img`.
 
  .. code-block:: none
 
-      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:11<2:21:58, 11.02s/]      2%|1         | 13/774 [00:11<07:48,  1.62/s]       3%|3         | 27/774 [00:11<03:01,  4.11/s]      6%|5         | 45/774 [00:11<01:25,  8.49/s]      9%|8         | 66/774 [00:11<00:45, 15.41/s]     11%|#1        | 88/774 [00:11<00:27, 24.91/s]     15%|#4        | 114/774 [00:11<00:16, 39.52/s]     18%|#7        | 136/774 [00:11<00:11, 54.19/s]     21%|##        | 160/774 [00:11<00:08, 73.22/s]     24%|##3       | 184/774 [00:11<00:06, 94.18/s]     27%|##6       | 207/774 [00:12<00:04, 114.37/s]     30%|##9       | 232/774 [00:12<00:03, 137.40/s]     33%|###3      | 256/774 [00:12<00:03, 157.06/s]     36%|###6      | 280/774 [00:12<00:02, 174.54/s]     39%|###9      | 303/774 [00:12<00:02, 186.96/s]     42%|####2     | 326/774 [00:12<00:02, 197.80/s]     45%|####5     | 351/774 [00:12<00:02, 208.10/s]     48%|####8     | 375/774 [00:12<00:01, 213.18/s]     52%|#####1    | 399/774 [00:12<00:01, 218.03/s]     55%|#####4    | 423/774 [00:12<00:01, 221.94/s]     58%|#####7    | 448/774 [00:13<00:01, 226.36/s]     61%|######    | 472/774 [00:13<00:01, 224.62/s]     64%|######3   | 495/774 [00:13<00:01, 224.00/s]     67%|######7   | 521/774 [00:13<00:01, 229.12/s]     70%|#######   | 545/774 [00:13<00:00, 230.16/s]     74%|#######3  | 570/774 [00:13<00:00, 231.87/s]     77%|#######6  | 595/774 [00:13<00:00, 233.81/s]     80%|#######9  | 619/774 [00:13<00:00, 232.95/s]     83%|########3 | 644/774 [00:13<00:00, 237.16/s]     86%|########6 | 668/774 [00:14<00:00, 234.84/s]     89%|########9 | 692/774 [00:14<00:00, 236.09/s]     93%|#########2| 716/774 [00:14<00:00, 232.58/s]     96%|#########5| 740/774 [00:14<00:00, 229.45/s]     99%|#########8| 763/774 [00:14<00:00, 177.33/s]    100%|##########| 774/774 [00:14<00:00, 52.71/s] 
+      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:15<3:19:32, 15.49s/]      6%|6         | 50/774 [00:15<02:39,  4.54/s]      13%|#3        | 101/774 [00:15<01:00, 11.05/s]     20%|#9        | 151/774 [00:15<00:31, 19.85/s]     28%|##7       | 216/774 [00:15<00:15, 35.68/s]     36%|###5      | 278/774 [00:16<00:08, 55.89/s]     45%|####4     | 346/774 [00:16<00:05, 85.29/s]     55%|#####4    | 425/774 [00:16<00:02, 129.66/s]     65%|######4   | 502/774 [00:16<00:01, 182.51/s]     74%|#######3  | 572/774 [00:16<00:00, 236.59/s]     83%|########2 | 642/774 [00:16<00:00, 293.11/s]     92%|#########1| 710/774 [00:16<00:00, 343.53/s]    100%|##########| 774/774 [00:16<00:00, 46.17/s] 
 
 
 .. raw:: html
@@ -858,16 +865,29 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_008.png
-          :alt: leiden, leiden_features
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_008.png
+         :alt: leiden, leiden_features
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_008.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_009.png
-          :alt: leiden, leiden_features
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_009.png
+         :alt: leiden, leiden_features
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_image_container_zstacks_009.png
+         :class: sphx-glr-multi-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+      self.data[key] = value
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+      self.data[key] = value
 
 
 
@@ -875,9 +895,9 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  42.169 seconds)
+   **Total running time of the script:** ( 1 minutes  24.297 seconds)
 
-**Estimated memory usage:**  1583 MB
+**Estimated memory usage:**  1660 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container_zstacks.py:

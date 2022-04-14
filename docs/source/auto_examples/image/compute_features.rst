@@ -70,29 +70,29 @@ the **obs x genes** spatial gene expression matrix.
 
  .. code-block:: none
 
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /opt/projects/helmholtz/squidpy_notebooks/.tox/docs/lib/python3.8/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -118,9 +118,10 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_features_001.png
-    :alt: compute features
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_features_001.png
+   :alt: compute features
+   :srcset: /auto_examples/image/images/sphx_glr_compute_features_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -326,9 +327,10 @@ Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_features_002.png
-    :alt: summary_ch-0_quantile-0.5, summary_ch-0_quantile-0.5, summary_ch-2_quantile-0.5
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_features_002.png
+   :alt: summary_ch-0_quantile-0.5, summary_ch-0_quantile-0.5, summary_ch-2_quantile-0.5
+   :srcset: /auto_examples/image/images/sphx_glr_compute_features_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -400,9 +402,10 @@ Skip this step if you want to calculate features from all spots.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_features_003.png
-    :alt: compute features
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_features_003.png
+   :alt: compute features
+   :srcset: /auto_examples/image/images/sphx_glr_compute_features_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -434,9 +437,9 @@ Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  38.650 seconds)
+   **Total running time of the script:** ( 0 minutes  56.967 seconds)
 
-**Estimated memory usage:**  228 MB
+**Estimated memory usage:**  318 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

@@ -209,9 +209,10 @@ how to use our interactive :mod:`napari` plugin.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_custom_features_001.png
-    :alt: mean_fn_0
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_custom_features_001.png
+   :alt: mean_fn_0
+   :srcset: /auto_examples/image/images/sphx_glr_compute_custom_features_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -257,9 +258,9 @@ Here, we show this behavior by defining a feature extraction function that sums 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  28.075 seconds)
+   **Total running time of the script:** ( 0 minutes  40.469 seconds)
 
-**Estimated memory usage:**  299 MB
+**Estimated memory usage:**  201 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

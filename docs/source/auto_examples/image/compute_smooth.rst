@@ -89,9 +89,10 @@ Now we can look at the result on a cropped part of the image.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
-    :alt: image, image_smooth
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
+   :alt: image, image_smooth
+   :srcset: /auto_examples/image/images/sphx_glr_compute_smooth_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -100,9 +101,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.819 seconds)
+   **Total running time of the script:** ( 0 minutes  11.590 seconds)
 
-**Estimated memory usage:**  44 MB
+**Estimated memory usage:**  43 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

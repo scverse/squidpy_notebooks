@@ -127,9 +127,10 @@ Now we can look at the result on a cropped part of the image.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
-    :alt: original, grayscale
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
+   :alt: original, grayscale
+   :srcset: /auto_examples/image/images/sphx_glr_compute_process_hires_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -199,9 +200,10 @@ Using overlapping blocks with ``depth = 1`` removes the artifacts at the borders
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_process_hires_002.png
-    :alt: original, non-overlapping crops, overlapping crops
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_process_hires_002.png
+   :alt: original, non-overlapping crops, overlapping crops
+   :srcset: /auto_examples/image/images/sphx_glr_compute_process_hires_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -210,9 +212,9 @@ Using overlapping blocks with ``depth = 1`` removes the artifacts at the borders
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.139 seconds)
+   **Total running time of the script:** ( 0 minutes  19.986 seconds)
 
-**Estimated memory usage:**  2106 MB
+**Estimated memory usage:**  1988 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_process_hires.py:

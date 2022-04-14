@@ -90,9 +90,10 @@ In addition, you can specify a scaling factor for the crop.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
-    :alt: image, image
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_crops_001.png
+   :alt: image, image
+   :srcset: /auto_examples/image/images/sphx_glr_compute_crops_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -196,9 +197,9 @@ Visualize the result in Napari:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.381 seconds)
+   **Total running time of the script:** ( 0 minutes  19.034 seconds)
 
-**Estimated memory usage:**  200 MB
+**Estimated memory usage:**  226 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

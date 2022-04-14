@@ -100,9 +100,10 @@ The first one is DAPI, which we will use for the nuclei-segmentation.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_001.png
-    :alt: image:0, image:1, image:2
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_001.png
+   :alt: image:0, image:1, image:2
+   :srcset: /auto_examples/image/images/sphx_glr_compute_segment_fluo_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -162,9 +163,10 @@ number of cells from the image.
 
 
 
-.. image:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_002.png
-    :alt: DAPI, segmentation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_segment_fluo_002.png
+   :alt: DAPI, segmentation
+   :srcset: /auto_examples/image/images/sphx_glr_compute_segment_fluo_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -182,9 +184,9 @@ number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.161 seconds)
+   **Total running time of the script:** ( 0 minutes  16.269 seconds)
 
-**Estimated memory usage:**  305 MB
+**Estimated memory usage:**  286 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

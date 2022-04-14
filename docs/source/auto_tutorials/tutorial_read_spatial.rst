@@ -62,8 +62,8 @@ details that you should take care of in order to exploit the full functionality 
 
  .. code-block:: none
 
-    scanpy==1.8.0.dev93+g4dd8de9e anndata==0.7.6 umap==0.5.1 numpy==1.20.3 scipy==1.6.3 pandas==1.2.4 scikit-learn==0.24.2 statsmodels==0.12.2 python-igraph==0.9.4 pynndescent==0.5.2
-    squidpy==1.0.0
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.2 numpy==1.21.5 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.9 pynndescent==0.5.6
+    squidpy==1.1.2
 
 
 
@@ -110,6 +110,15 @@ but will save you a lot of typing since it's the default for both Squidpy and Sc
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/tutorials/tutorial_read_spatial.py:51: FutureWarning: X.dtype being converted to np.float32 from int64. In the next version of anndata (0.9) conversion will not be automatic. Pass dtype explicitly to avoid this warning. Pass `AnnData(X, dtype=X.dtype, ...)` to get the future behavour.
+      adata = AnnData(counts, obsm={"spatial": coordinates})
 
 
 
@@ -163,9 +172,10 @@ We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_001.png
-    :alt: leiden
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_001.png
+   :alt: leiden
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -190,9 +200,10 @@ based on a fixed neighbor radius that is informative given your experimental set
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_002.png
-    :alt: leiden
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_002.png
+   :alt: leiden
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -213,9 +224,10 @@ First, let's visualize the mock image from before.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_003.png
-    :alt: tutorial read spatial
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_003.png
+   :alt: tutorial read spatial
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -225,7 +237,7 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7ffb3176dcd0>
+    <matplotlib.image.AxesImage object at 0x139f94a60>
 
 
 
@@ -281,9 +293,10 @@ But for now, if all such key are correct, :func:`scanpy.pl.spatial` works out of
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_004.png
-    :alt: leiden
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_004.png
+   :alt: leiden
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_004.png
+   :class: sphx-glr-single-img
 
 
 
@@ -304,9 +317,10 @@ For instance, let's change `tissue_hires_scalef` to half the previous value.
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_005.png
-    :alt: leiden
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_005.png
+   :alt: leiden
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_005.png
+   :class: sphx-glr-single-img
 
 
 
@@ -329,9 +343,10 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 
 
-.. image:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_006.png
-    :alt: image
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_006.png
+   :alt: image
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_read_spatial_006.png
+   :class: sphx-glr-single-img
 
 
 
@@ -340,9 +355,9 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.202 seconds)
+   **Total running time of the script:** ( 0 minutes  46.597 seconds)
 
-**Estimated memory usage:**  11 MB
+**Estimated memory usage:**  95 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:

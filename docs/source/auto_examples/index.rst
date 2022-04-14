@@ -569,6 +569,48 @@ Plotting
    :hidden:
 
    /auto_examples/plotting/compute_extract
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.spatial_segment to plot segmentation masks and feature...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_plot_segment_thumb.png
+     :alt: Plot segmentation masks
+
+     :ref:`sphx_glr_auto_examples_plotting_plot_segment.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plotting/plot_segment
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.spatial_scatter to plot annotations and features store...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_plot_scatter_thumb.png
+     :alt: Plot scatter plot in spatial coordinates
+
+     :ref:`sphx_glr_auto_examples_plotting_plot_scatter.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plotting/plot_scatter
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
