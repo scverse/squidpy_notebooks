@@ -34,7 +34,7 @@ sq.pl.spatial_scatter(adata, color=["Sox8", "cluster"])
 sq.pl.spatial_scatter(
     adata,
     color=["Sox8", "cluster"],
-    crop_coord=[(1000, 1000, 7000, 5000)],
+    crop_coord=[(1500, 1500, 3000, 3000)],
     scalebar_dx=3.0,
     scalebar_kwargs={"scale_loc": "bottom", "location": "lower right"},
 )
@@ -59,7 +59,7 @@ sq.pl.spatial_scatter(
     library_key="library_id",
     connectivity_key="spatial_connectivities",
     edges_width=2,
-    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
+    crop_coord=[(1500, 1500, 3000, 3000), (1500, 1500, 3000, 3000)],
 )
 
 ###############################################################################
@@ -77,7 +77,7 @@ sq.pl.spatial_scatter(
     library_first=False,
     connectivity_key="spatial_connectivities",
     edges_width=2,
-    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
+    crop_coord=[(1500, 1500, 3000, 3000), (1500, 1500, 3000, 3000)],
     outline=True,
     outline_width=[0.05, 0.05],
     size=[1, 0.5],
@@ -103,7 +103,7 @@ sq.pl.spatial_scatter(
     library_first=False,
     connectivity_key="spatial_connectivities",
     edges_width=2,
-    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
+    crop_coord=[(1500, 1500, 3000, 3000), (1500, 1500, 3000, 3000)],
     outline=True,
     outline_width=[0.05, 0.05],
     size=[1, 0.5],
