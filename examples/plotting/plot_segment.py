@@ -27,7 +27,7 @@ adata.obs
 ###############################################################################
 # Specifically, the key ```library_id``` in :attr:`adata.obs` contains the same unique values
 # contained in :attr:`adata.uns`. We can visualize the 3 spatial dataset with :func:`squidpy.pl.spatial_segment`.
-sq.pl.spatial_segment(adata, color="Cluster", library_key="library_id", cell_id_key="cell_id")
+sq.pl.spatial_segment(adata, color="Cluster", library_key="library_id", seg_cell_id="cell_id")
 
 ###############################################################################
 # There are several parameters that can be controlled. For instance, it is possible to plot
@@ -38,9 +38,9 @@ sq.pl.spatial_segment(
     color="Cluster",
     library_key="library_id",
     library_id="point8",
-    cell_id_key="cell_id",
+    seg_cell_id="cell_id",
     seg_contourpx=10,
-    crop_coord=[[0, 300, 0, 300]],
+    crop_coord=[(0, 0, 300, 300)],
 )
 
 ###############################################################################
@@ -53,7 +53,7 @@ sq.pl.spatial_segment(
     groups=["Fibroblast", "Epithelial"],
     library_key="library_id",
     library_id=["point8", "point16"],
-    cell_id_key="cell_id",
+    seg_cell_id="cell_id",
     seg_outline=True,
     img_channel=0,
     img_cmap="magma",
@@ -69,10 +69,9 @@ sq.pl.spatial_segment(
     color="Cluster",
     groups=["Fibroblast", "Epithelial"],
     library_key="library_id",
-    cell_id_key="cell_id",
+    seg_cell_id="cell_id",
     seg_outline=True,
     img=False,
-    na_color="lightgrey",
     frameon=False,
 )
 
@@ -83,7 +82,7 @@ sq.pl.spatial_segment(
     adata,
     color="CD68",
     library_key="library_id",
-    cell_id_key="cell_id",
+    seg_cell_id="cell_id",
     img=False,
     cmap="inferno",
     scalebar_dx=2.0,

@@ -34,7 +34,7 @@ sq.pl.spatial_scatter(adata, color=["Sox8", "cluster"])
 sq.pl.spatial_scatter(
     adata,
     color=["Sox8", "cluster"],
-    crop_coord=[[1500, 2800, 1500, 2800]],
+    crop_coord=[(1000, 1000, 7000, 5000)],
     scalebar_dx=3.0,
     scalebar_kwargs={"scale_loc": "bottom", "location": "lower right"},
 )
@@ -47,19 +47,19 @@ sq.gr.spatial_neighbors(adata)
 adata2 = sc.pp.subsample(adata, fraction=0.5, copy=True)
 adata2.uns["spatial"] = {}
 adata2.uns["spatial"]["V2_Adult_Mouse_Brain"] = adata.uns["spatial"]["V1_Adult_Mouse_Brain"]
-adata = ad.concat(
+adata_concat = ad.concat(
     {"V1_Adult_Mouse_Brain": adata, "V2_Adult_Mouse_Brain": adata2},
     label="library_id",
     uns_merge="unique",
     pairwise=True,
 )
 sq.pl.spatial_scatter(
-    adata,
+    adata_concat,
     color=["Sox8", "cluster"],
     library_key="library_id",
-    edges=True,
-    edges_width=3,
-    crop_coord=[[1500, 2800, 1500, 2800], [1500, 2800, 1500, 2800]],
+    connectivity_key="spatial_connectivities",
+    edges_width=2,
+    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
 )
 
 ###############################################################################
@@ -71,12 +71,13 @@ sq.pl.spatial_scatter(
 # the Visium slides to be plotted. This applies to all elements which could be dataset specific,
 # such as ```title```, ```outline_width```, ```size``` etc.
 sq.pl.spatial_scatter(
-    adata,
+    adata_concat,
     color=["Sox8", "cluster"],
     library_key="library_id",
-    edges=True,
     library_first=False,
-    edges_width=5,
+    connectivity_key="spatial_connectivities",
+    edges_width=2,
+    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
     outline=True,
     outline_width=[0.05, 0.05],
     size=[1, 0.5],
@@ -86,7 +87,6 @@ sq.pl.spatial_scatter(
         "cluster_first_library",
         "cluster_second_library",
     ],
-    crop_coord=[[1500, 2800, 1500, 2800], [2500, 2800, 2500, 2800]],
 )
 
 ###############################################################################
@@ -96,21 +96,21 @@ sq.pl.spatial_scatter(
 # represents the actual size of the dot, instead of a scaling factor of the diameter
 # as in the previous plot. See :func:`squidpy.pl.spatial_scatter` for documentation.
 sq.pl.spatial_scatter(
-    adata,
+    adata_concat,
     shape=None,
     color=["Sox8", "cluster"],
     library_key="library_id",
-    edges=True,
     library_first=False,
-    edges_width=5,
+    connectivity_key="spatial_connectivities",
+    edges_width=2,
+    crop_coord=[(2000, 2000, 7000, 5000), (2000, 2000, 7000, 5000)],
     outline=True,
-    outline_width=[0.5, 0.5],
-    size=[80, 60],
+    outline_width=[0.05, 0.05],
+    size=[1, 0.5],
     title=[
         "sox8_first_library",
         "sox8_second_library",
         "cluster_first_library",
         "cluster_second_library",
     ],
-    crop_coord=[[1500, 2800, 1500, 2800], [2500, 2800, 2500, 2800]],
 )
