@@ -1,0 +1,23 @@
+
+
+Examples using ``squidpy.im.ImageContainer.crop_center``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use squidpy.im.ImageContainer to interact with image structured data...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_thumb.png
+     :alt: ImageContainer object
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`

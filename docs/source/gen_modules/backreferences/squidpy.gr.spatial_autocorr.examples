@@ -1,0 +1,99 @@
+
+
+Examples using ``squidpy.gr.spatial_autocorr``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_moran_thumb.png
+     :alt: Compute Moran's I score
+
+     :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of 4i data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_fouri_thumb.png
+     :alt: Analyze 4i data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
+     :alt: Analyze Slide-seqV2 data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
+     :alt: Analyze Merfish data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
+     :alt: Analyze Visium H&E data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
