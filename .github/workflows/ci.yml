@@ -92,19 +92,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         -   uses: actions/checkout@v2
-            if: github.event_name == 'repository_dispatch'
             with:
-                ref: ${{ github.event.client_payload.ref }}
                 token: ${{ secrets.REGENERATE_TOKEN }}
-        -   uses: actions/checkout@v2
-            if: github.event_name != 'repository_dispatch'
-            with:
-                ref: ${{ github.head_ref }}
-                token: ${{ secrets.REGENERATE_TOKEN }}
-        -   name: Get the current branch name
-            id: branch
-            run: |
-                echo "::set-output name=branch_name::$(git branch --show-current)"
+                fetch-depth: 0
 
         -   name: Set up Python 3.9
             uses: actions/setup-python@v2
@@ -152,6 +142,5 @@ jobs:
         -   name: Request documentation rebuild
             # if: steps.auto-commit-action.outputs.changes_detected == 'true'
             # does not seem to work with the above hack
-            if: ${{ steps.branch.outputs.branch_name == 'master' }}
             run: |
-                curl -X POST -d "branches=${{ steps.branch.outputs.branch_name }}" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+                curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
