@@ -120,7 +120,7 @@ sphinx_gallery_conf = {
         "seaborn",
         reset_matplotlib,
     ),
-    "filename_pattern": f"{os.path.sep}(compute_|tutorial_)",
+    "filename_pattern": f"{os.path.sep}(compute_|plot_|tutorial_)",
     "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
