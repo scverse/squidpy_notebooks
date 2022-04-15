@@ -5,25 +5,6 @@ Examples using ``squidpy.datasets.mibitof``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show.">
-
-.. only:: html
-
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_show_thumb.png
-     :alt: Show layers of the ImageContainer
-
-     :ref:`sphx_glr_auto_examples_image_compute_show.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_image_compute_show.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.spatial_segment to plot segmentation masks and feature...">
 
 .. only:: html
@@ -40,22 +21,3 @@ Examples using ``squidpy.datasets.mibitof``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_plotting_plot_segment.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy to MIBI-TOF data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
-     :alt: Analyze MIBI-TOF image data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`

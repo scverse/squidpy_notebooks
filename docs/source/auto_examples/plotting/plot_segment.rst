@@ -40,6 +40,21 @@ This plotting is useful when segmentation masks and underlying image are availab
     adata.uns["spatial"].keys()
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/19.3M [00:00<?, ?B/s]      0%|          | 56.0k/19.3M [00:00<00:49, 412kB/s]      1%|          | 176k/19.3M [00:00<00:29, 677kB/s]       4%|3         | 736k/19.3M [00:00<00:08, 2.21MB/s]     15%|#4        | 2.88M/19.3M [00:00<00:02, 7.60MB/s]     43%|####3     | 8.36M/19.3M [00:00<00:00, 19.4MB/s]     73%|#######3  | 14.2M/19.3M [00:00<00:00, 27.3MB/s]    100%|##########| 19.3M/19.3M [00:00<00:00, 21.5MB/s]
+
+    dict_keys(['point16', 'point23', 'point8'])
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 21-25
 
 In this dataset we have 3 unique keys, which means that there are 3 unique ```library_id```.
@@ -54,6 +69,219 @@ The information to link the library ids to the observations are stored in :attr:
     adata.obs
 
 
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>row_num</th>
+          <th>point</th>
+          <th>cell_id</th>
+          <th>X1</th>
+          <th>center_rowcoord</th>
+          <th>center_colcoord</th>
+          <th>cell_size</th>
+          <th>category</th>
+          <th>donor</th>
+          <th>Cluster</th>
+          <th>batch</th>
+          <th>library_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>3034-0</th>
+          <td>3086</td>
+          <td>23</td>
+          <td>2</td>
+          <td>60316.0</td>
+          <td>269.0</td>
+          <td>7.0</td>
+          <td>408.0</td>
+          <td>carcinoma</td>
+          <td>21d7</td>
+          <td>Epithelial</td>
+          <td>0</td>
+          <td>point23</td>
+        </tr>
+        <tr>
+          <th>3035-0</th>
+          <td>3087</td>
+          <td>23</td>
+          <td>3</td>
+          <td>60317.0</td>
+          <td>294.0</td>
+          <td>6.0</td>
+          <td>408.0</td>
+          <td>carcinoma</td>
+          <td>21d7</td>
+          <td>Epithelial</td>
+          <td>0</td>
+          <td>point23</td>
+        </tr>
+        <tr>
+          <th>3036-0</th>
+          <td>3088</td>
+          <td>23</td>
+          <td>4</td>
+          <td>60318.0</td>
+          <td>338.0</td>
+          <td>4.0</td>
+          <td>304.0</td>
+          <td>carcinoma</td>
+          <td>21d7</td>
+          <td>Imm_other</td>
+          <td>0</td>
+          <td>point23</td>
+        </tr>
+        <tr>
+          <th>3037-0</th>
+          <td>3089</td>
+          <td>23</td>
+          <td>6</td>
+          <td>60320.0</td>
+          <td>372.0</td>
+          <td>6.0</td>
+          <td>219.0</td>
+          <td>carcinoma</td>
+          <td>21d7</td>
+          <td>Myeloid_CD11c</td>
+          <td>0</td>
+          <td>point23</td>
+        </tr>
+        <tr>
+          <th>3038-0</th>
+          <td>3090</td>
+          <td>23</td>
+          <td>8</td>
+          <td>60322.0</td>
+          <td>417.0</td>
+          <td>5.0</td>
+          <td>303.0</td>
+          <td>carcinoma</td>
+          <td>21d7</td>
+          <td>Myeloid_CD11c</td>
+          <td>0</td>
+          <td>point23</td>
+        </tr>
+        <tr>
+          <th>...</th>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <th>47342-2</th>
+          <td>48953</td>
+          <td>16</td>
+          <td>1103</td>
+          <td>2779.0</td>
+          <td>143.0</td>
+          <td>1016.0</td>
+          <td>283.0</td>
+          <td>carcinoma</td>
+          <td>90de</td>
+          <td>Fibroblast</td>
+          <td>2</td>
+          <td>point16</td>
+        </tr>
+        <tr>
+          <th>47343-2</th>
+          <td>48954</td>
+          <td>16</td>
+          <td>1104</td>
+          <td>2780.0</td>
+          <td>814.0</td>
+          <td>1017.0</td>
+          <td>147.0</td>
+          <td>carcinoma</td>
+          <td>90de</td>
+          <td>Fibroblast</td>
+          <td>2</td>
+          <td>point16</td>
+        </tr>
+        <tr>
+          <th>47344-2</th>
+          <td>48955</td>
+          <td>16</td>
+          <td>1105</td>
+          <td>2781.0</td>
+          <td>874.0</td>
+          <td>1018.0</td>
+          <td>142.0</td>
+          <td>carcinoma</td>
+          <td>90de</td>
+          <td>Imm_other</td>
+          <td>2</td>
+          <td>point16</td>
+        </tr>
+        <tr>
+          <th>47345-2</th>
+          <td>48956</td>
+          <td>16</td>
+          <td>1106</td>
+          <td>2782.0</td>
+          <td>257.0</td>
+          <td>1019.0</td>
+          <td>108.0</td>
+          <td>carcinoma</td>
+          <td>90de</td>
+          <td>Fibroblast</td>
+          <td>2</td>
+          <td>point16</td>
+        </tr>
+        <tr>
+          <th>47346-2</th>
+          <td>48957</td>
+          <td>16</td>
+          <td>1107</td>
+          <td>2783.0</td>
+          <td>533.0</td>
+          <td>1019.0</td>
+          <td>111.0</td>
+          <td>carcinoma</td>
+          <td>90de</td>
+          <td>Fibroblast</td>
+          <td>2</td>
+          <td>point16</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>3309 rows × 12 columns</p>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 Specifically, the key ```library_id``` in :attr:`adata.obs` contains the same unique values
@@ -64,6 +292,17 @@ contained in :attr:`adata.uns`. We can visualize the 3 spatial dataset with :fun
 .. code-block:: default
 
     sq.pl.spatial_segment(adata, color="Cluster", library_key="library_id", seg_cell_id="cell_id")
+
+
+
+
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_plot_segment_001.png
+   :alt: Cluster, Cluster, Cluster
+   :srcset: /auto_examples/plotting/images/sphx_glr_plot_segment_001.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-36
@@ -85,6 +324,17 @@ Let's visualize it for one specific cropped FOV.
         seg_contourpx=10,
         crop_coord=[(0, 0, 300, 300)],
     )
+
+
+
+
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_plot_segment_002.png
+   :alt: Cluster
+   :srcset: /auto_examples/plotting/images/sphx_glr_plot_segment_002.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-50
@@ -110,6 +360,17 @@ or single channels can be plotted.
     )
 
 
+
+
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_plot_segment_003.png
+   :alt: Cluster, Cluster
+   :srcset: /auto_examples/plotting/images/sphx_glr_plot_segment_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 63-67
 
 If groups of observations are plotted (as above), it's possible to modify
@@ -133,6 +394,17 @@ it can be useful to visualize them nonetheless
     )
 
 
+
+
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_plot_segment_004.png
+   :alt: Cluster, Cluster, Cluster
+   :srcset: /auto_examples/plotting/images/sphx_glr_plot_segment_004.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 Finally, a scale bar can be added, where size and pixel units must be passed.
@@ -154,11 +426,22 @@ The size for this example are not the real values and are for purely visualizati
     )
 
 
+
+.. image-sg:: /auto_examples/plotting/images/sphx_glr_plot_segment_005.png
+   :alt: CD68, CD68, CD68
+   :srcset: /auto_examples/plotting/images/sphx_glr_plot_segment_005.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  53.633 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  494 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_plot_segment.py:
