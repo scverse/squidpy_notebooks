@@ -32,7 +32,7 @@ needs_sphinx = "3.0"
 project = "Squidpy"
 author = squidpy.__author__
 copyright = f"{datetime.now():%Y}, {author}."
-release = "master"
+release = "main"
 version = f"{release} ({squidpy.__version__})"
 
 
