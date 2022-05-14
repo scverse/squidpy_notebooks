@@ -1,4 +1,4 @@
-|PyPI| |Downloads| |CI| |Notebooks| |Docs| |Coverage|
+|PyPI| |Downloads| |CI| |Notebooks| |Docs| |Coverage| |Discourse| |Zulip|
 
 Squidpy - Spatial Single Cell Analysis in Python
 ================================================
@@ -31,14 +31,14 @@ Visit our `documentation`_ for installation, tutorials, examples and more.
 
 Manuscript
 ----------
-Please see our manuscript `Palla et al. (2022)`_ in **Nature Methods** to learn more.
+Please see our manuscript `Palla, Spitzer et al. (2022)`_ in **Nature Methods** to learn more.
 
 Squidpy's key applications
 --------------------------
 - Build and analyze the neighborhood graph from spatial coordinates.
 - Compute spatial statistics for cell-types and genes.
 - Efficiently store, analyze and visualize large tissue images, leveraging `skimage`_.
-- Explore `anndata`_ and the large tissue image in `napari`_.
+- Interactively explore `anndata`_ and large tissue images in `napari`_.
 
 Installation
 ------------
@@ -56,11 +56,11 @@ We are happy about any contributions! Before you start, check out our `contribut
     :target: https://pypi.org/project/squidpy/
     :alt: PyPI
 
-.. |CI| image:: https://img.shields.io/github/workflow/status/theislab/squidpy/Test/master
+.. |CI| image:: https://img.shields.io/github/workflow/status/theislab/squidpy/Test/main
     :target: https://github.com/theislab/squidpy/actions
     :alt: CI
 
-.. |Notebooks| image:: https://img.shields.io/github/workflow/status/theislab/squidpy_notebooks/CI/master?label=notebooks
+.. |Notebooks| image:: https://img.shields.io/github/workflow/status/theislab/squidpy_notebooks/CI/main?label=notebooks
     :target: https://github.com/theislab/squidpy_notebooks/actions
     :alt: Notebooks CI
 
@@ -68,7 +68,7 @@ We are happy about any contributions! Before you start, check out our `contribut
     :target: https://squidpy.readthedocs.io/en/stable/
     :alt: Documentation
 
-.. |Coverage| image:: https://codecov.io/gh/theislab/squidpy/branch/master/graph/badge.svg
+.. |Coverage| image:: https://codecov.io/gh/theislab/squidpy/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/theislab/squidpy
     :alt: Coverage
 
@@ -76,7 +76,15 @@ We are happy about any contributions! Before you start, check out our `contribut
     :target: https://pepy.tech/project/squidpy
     :alt: Downloads
 
-.. _Palla et al. (2022): https://doi.org/10.1038/s41592-021-01358-2
+.. |Discourse| image:: https://img.shields.io/discourse/posts?color=yellow&logo=discourse&server=https%3A%2F%2Fdiscourse.scverse.org
+    :target: https://discourse.scverse.org/
+    :alt: Discourse
+
+.. |Zulip| image:: https://img.shields.io/badge/zulip-join_chat-%2367b08f.svg
+    :target: https://scverse.zulipchat.com
+    :alt: Zulip
+
+.. _Palla, Spitzer et al. (2022): https://doi.org/10.1038/s41592-021-01358-2
 .. _scanpy: https://scanpy.readthedocs.io/en/stable/
 .. _anndata: https://anndata.readthedocs.io/en/stable/
 .. _napari: https://napari.org/
