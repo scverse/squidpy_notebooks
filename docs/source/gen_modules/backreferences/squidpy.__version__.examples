@@ -81,25 +81,6 @@ Examples using ``squidpy.__version__``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to store spatial datasets in anndata.AnnData.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
-     :alt: Import spatial data in AnnData and Squidpy
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Merfish data.">
 
 .. only:: html
