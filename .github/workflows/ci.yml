@@ -4,9 +4,9 @@ on:
     repository_dispatch:
         types: [rebuild]
     pull_request:
-        branches: [master]
+        branches: [main]
     push:
-        branches: [master]
+        branches: [main]
 
 jobs:
     lint:
@@ -87,7 +87,7 @@ jobs:
                 tox -vv
 
     regenerate:
-        if: ${{ (github.event_name == 'push' || (github.event_name == 'repository_dispatch' && github.event.action == 'rebuild')) && startsWith(github.ref, 'refs/heads/master') }}
+        if: ${{ (github.event_name == 'push' || (github.event_name == 'repository_dispatch' && github.event.action == 'rebuild')) && startsWith(github.ref, 'refs/heads/main') }}
         needs: [lint, test]
         runs-on: ubuntu-latest
         steps:
@@ -143,4 +143,4 @@ jobs:
             # if: steps.auto-commit-action.outputs.changes_detected == 'true'
             # does not seem to work with the above hack
             run: |
-                curl -X POST -d "branches=master" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
+                curl -X POST -d "branches=main" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"
