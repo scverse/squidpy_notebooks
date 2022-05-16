@@ -2,7 +2,7 @@ How to write examples and tutorials for Squidpy
 ===============================================
 Examples and tutorials are created using `sphinx-gallery <https://sphinx-gallery.github.io/stable/index.html>`_.
 They are automatically run by CI every time a PR is merged to mater in the
-`Squidpy repository <https://github.com/theislab/squidpy>`_.
+`Squidpy repository <https://github.com/scverse/squidpy>`_.
 
 We distinguish between three types of examples and tutorials:
 

@@ -16,7 +16,7 @@ def _html_page_context(app, _pagename, templatename, context, doctree):
 
     # For sphinx_rtd_theme.
     context["display_github"] = True
-    context["github_user"] = "theislab"
+    context["github_user"] = "scverse"
     context["github_version"] = "main"
     context["github_repo"] = app.config.github_repo
     context["conf_py_path"] = "/docs/source/"

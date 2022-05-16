@@ -147,7 +147,7 @@ sphinx_gallery_conf = {
         "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
     },
     "binder": {
-        "org": "theislab",
+        "org": "scverse",
         "repo": "squidpy_notebooks",
         "branch": release,
         "binderhub_url": "https://mybinder.org",
@@ -175,7 +175,7 @@ _nbsphinx_prolog = r"""
 
     <div class="binder-badge docutils container">
         <a class="reference external image-reference"
-           href="https://mybinder.org/v2/gh/theislab/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}">
+           href="https://mybinder.org/v2/gh/scverse/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}">
         <img alt="Launch binder" src="https://mybinder.org/badge_logo.svg" width="150px">
         </a>
     </div>
