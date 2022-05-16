@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/main?filepath=docs/source/auto_tutorials/tutorial_imc.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_tutorials/tutorial_imc.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -34,7 +34,7 @@ For details on how it was pre-processed, please refer to the original paper.
 Import packages & data
 ----------------------
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
-`environment.yml <https://github.com/theislab/squidpy_notebooks/blob/main/environment.yml>`_.
+`environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-31
 
@@ -61,8 +61,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
  .. code-block:: none
 
     scanpy==1.9.1 anndata==0.8.0 umap==0.5.3 numpy==1.21.6 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.1.0 statsmodels==0.13.2 python-igraph==0.9.10 pynndescent==0.5.7
-    squidpy==1.2.0
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:05, 298kB/s]     10%|#         | 160k/1.50M [00:00<00:03, 446kB/s]      39%|###9      | 600k/1.50M [00:00<00:00, 1.30MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.39MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 2.31MB/s]
+    squidpy==1.2.1
+      0%|          | 0.00/1.50M [00:00<?, ?B/s]      3%|3         | 48.0k/1.50M [00:00<00:04, 351kB/s]      9%|9         | 144k/1.50M [00:00<00:02, 551kB/s]      36%|###5      | 552k/1.50M [00:00<00:00, 1.64MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.14MB/s]
 
 
 
@@ -152,7 +152,7 @@ We visualize the result for two conditional groups, namely
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:02<00:00,  2.50s/]    100%|##########| 1/1 [00:02<00:00,  2.50s/]
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:02<00:00,  2.72s/]    100%|##########| 1/1 [00:02<00:00,  2.72s/]
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
     /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
@@ -234,7 +234,7 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
  .. code-block:: none
 
-      0%|          | 0/1000 [00:00<?, ?/s]     13%|#3        | 133/1000 [00:00<00:00, 1326.61/s]     36%|###5      | 355/1000 [00:00<00:00, 1850.76/s]     56%|#####6    | 562/1000 [00:00<00:00, 1947.50/s]     79%|#######9  | 790/1000 [00:00<00:00, 2078.55/s]    100%|#########9| 998/1000 [00:00<00:00, 1967.68/s]    100%|##########| 1000/1000 [00:00<00:00, 1928.98/s]
+      0%|          | 0/1000 [00:00<?, ?/s]     10%|9         | 96/1000 [00:00<00:00, 958.02/s]     27%|##6       | 268/1000 [00:00<00:00, 1402.70/s]     42%|####2     | 425/1000 [00:00<00:00, 1478.93/s]     59%|#####8    | 590/1000 [00:00<00:00, 1546.04/s]     74%|#######4  | 745/1000 [00:00<00:00, 1490.99/s]     90%|########9 | 895/1000 [00:00<00:00, 1465.66/s]    100%|##########| 1000/1000 [00:00<00:00, 1596.66/s]
 
 
 
@@ -328,7 +328,7 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.487 seconds)
+   **Total running time of the script:** ( 0 minutes  29.515 seconds)
 
 **Estimated memory usage:**  97 MB
 

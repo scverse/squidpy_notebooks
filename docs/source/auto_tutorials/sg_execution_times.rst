@@ -5,24 +5,24 @@
 
 Computation times
 =================
-**26:23.134** total execution time for **auto_tutorials** files:
+**29:44.025** total execution time for **auto_tutorials** files:
 
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` (``tutorial_visium_fluo.py``)                         | 09:55.686 | 2269.1 MB |
+| :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py` (``tutorial_visium_fluo.py``)                         | 10:55.545 | 2275.5 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py` (``tutorial_visium_hne.py``)                           | 05:53.113 | 975.2 MB  |
+| :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py` (``tutorial_visium_hne.py``)                           | 06:42.555 | 1040.8 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py` (``tutorial_slideseqv2.py``)                           | 03:49.553 | 1857.3 MB |
+| :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py` (``tutorial_slideseqv2.py``)                           | 04:23.301 | 1856.9 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py` (``tutorial_fouri.py``)                                     | 02:08.865 | 1247.3 MB |
+| :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py` (``tutorial_fouri.py``)                                     | 02:21.951 | 1256.6 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py` (``tutorial_seqfish.py``)                                 | 01:48.542 | 1811.1 MB |
+| :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py` (``tutorial_seqfish.py``)                                 | 02:04.398 | 1811.1 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py` (``tutorial_merfish.py``)                                 | 01:26.568 | 9.4 MB    |
+| :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py` (``tutorial_merfish.py``)                                 | 01:42.296 | 9.3 MB    |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py` (``tutorial_mibitof.py``)                                 | 00:55.319 | 233.8 MB  |
+| :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py` (``tutorial_mibitof.py``)                                 | 01:04.464 | 281.6 MB  |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_tutorials_tutorial_imc.py` (``tutorial_imc.py``)                                         | 00:25.487 | 96.7 MB   |
+| :ref:`sphx_glr_auto_tutorials_tutorial_imc.py` (``tutorial_imc.py``)                                         | 00:29.515 | 96.6 MB   |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+
 | :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py` (``tutorial_image_container.py``)                 | 00:00.000 | 0.0 MB    |
 +--------------------------------------------------------------------------------------------------------------+-----------+-----------+

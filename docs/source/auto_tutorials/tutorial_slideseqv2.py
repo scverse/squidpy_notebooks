@@ -18,7 +18,7 @@ For details on how it was pre-processed, please refer to the original paper.
 Import packages & data
 ----------------------
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
-`environment.yml <https://github.com/theislab/squidpy_notebooks/blob/main/environment.yml>`_.
+`environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 """
 
 import scanpy as sc
