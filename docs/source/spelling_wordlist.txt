@@ -53,6 +53,7 @@ modularity
 moran
 Moran's I
 Napari
+Nanostring
 NEUN
 obsm
 omics
