@@ -19,10 +19,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 """
 
-import scanpy as sc
 import squidpy as sq
 
-sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
 # load the pre-processed dataset
@@ -30,8 +28,8 @@ adata = sq.datasets.imc()
 
 ###############################################################################
 # First, let's visualize the cluster annotation in spatial context
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="cell type", spot_size=10)
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, shape=None, color="cell type", size=10)
 
 ###############################################################################
 # We can appreciate how the majority of the tissue seems
