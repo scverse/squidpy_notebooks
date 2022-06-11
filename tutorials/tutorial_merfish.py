@@ -38,10 +38,10 @@ adata
 sc.pl.embedding(adata, basis="spatial3d", projection="3d", color="Cell_class")
 
 ###############################################################################
-# Or visualize a single slide with :func:`scanpy.pl.spatial`. Here the slide identifier
+# Or visualize a single slide with :func:`squidpy.pl.spatial_scatter`. Here the slide identifier
 # is stored in `adata.obs["Bregma"]`, see original paper for definition.
 
-sc.pl.spatial(adata[adata.obs.Bregma == -9], color="Cell_class", spot_size=0.01)
+sq.pl.spatial_scatter(adata[adata.obs.Bregma == -9], shape=None, color="Cell_class", size=1)
 
 ###############################################################################
 # Neighborhood enrichment analysis in 3D
@@ -91,11 +91,16 @@ sc.pl.embedding(adata, basis="spatial3d", projection="3d", color=["Gad1", "Mlc1"
 adata_slice = adata[adata.obs.Bregma == -9].copy()
 sq.gr.spatial_neighbors(adata_slice, coord_type="generic")
 sq.gr.nhood_enrichment(adata, cluster_key="Cell_class")
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     adata_slice,
     color="Cell_class",
-    groups=["Ependymal", "Pericytes", "Endothelial 2"],
-    spot_size=0.01,
+    shape=None,
+    groups=[
+        "Ependymal",
+        "Pericytes",
+        "Endothelial 2",
+    ],
+    size=10,
 )
 
 ###############################################################################
@@ -109,11 +114,7 @@ sc.pl.spatial(
 # The statistic as well as the p-value are computed for each gene, and FDR correction
 # is performed. For the purpose of this tutorial, let's compute the *Moran's I* score.
 # The results are stored in `adata.uns['moranI']` and we can visualize selected genes
-# with :func:`scanpy.pl.spatial`.
+# with :func:`squidpy.pl.spatial_scatter`.
 sq.gr.spatial_autocorr(adata_slice, mode="moran")
 adata_slice.uns["moranI"].head()
-sc.pl.spatial(
-    adata_slice,
-    color=["Cd24a", "Necab1", "Mlc1"],
-    spot_size=0.01,
-)
+sq.pl.spatial_scatter(adata_slice, shape=None, color=["Cd24a", "Necab1", "Mlc1"], size=3)
