@@ -46,8 +46,8 @@ adata = sq.datasets.visium_hne_adata()
 
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="cluster")
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color="cluster")
 
 ###############################################################################
 # Image features
@@ -124,8 +124,7 @@ def cluster_features(features: pd.DataFrame, like=None) -> pd.Series:
 adata.obs["features_cluster"] = cluster_features(adata.obsm["features"], like="summary")
 
 # compare feature and gene clusters
-sc.set_figure_params(facecolor="white", figsize=(8, 8))
-sc.pl.spatial(adata, color=["features_cluster", "cluster"])
+sq.pl.spatial_scatter(adata, color=["features_cluster", "cluster"])
 
 ###############################################################################
 # Comparing gene and feature clusters, we notice that in some regions,
@@ -287,8 +286,8 @@ sq.gr.spatial_autocorr(
 adata.uns["moranI"].head(10)
 
 ###############################################################################
-# We can select few genes and visualize their expression levels in the tissue with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color=["Olfm1", "Plp1", "Itpka", "cluster"])
+# We can select few genes and visualize their expression levels in the tissue with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color=["Olfm1", "Plp1", "Itpka", "cluster"])
 
 ###############################################################################
 # Interestingly, some of these genes seems to be related to the *pyramidal* layers and the *fiber tract*.
