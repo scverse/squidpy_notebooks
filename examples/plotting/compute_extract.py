@@ -25,10 +25,9 @@ adata.obsm["deconvolution_results"].head(10)
 
 ###############################################################################
 # Squidpy provides an easy wrapper that creates a temporary copy of the
-# feature matrix and pass it to :attr:`anndata.AnnData.obs` and makes it therefore accessible
-# for Scanpy plotting.
-sc.pl.spatial(
-    sq.pl.extract(adata, "deconvolution_results"),
+# feature matrix and pass it to :attr:`anndata.AnnData.obs`.
+sq.pl.spatial_scatter(
+    sq.pl.extract(adata, "deconvolution_results"), shape=None,
     color=["Astrocytes", "Mural", "CA1_CA2_CA3_Subiculum"],
-    spot_size=30,
+    size=4,
 )
