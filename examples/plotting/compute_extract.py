@@ -12,7 +12,6 @@ are therefore not accessible via standard :mod:`scanpy` plotting.
 
     See :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` for computing an example of such features.
 """
-import scanpy as sc
 import squidpy as sq
 
 adata = sq.datasets.slideseqv2()
@@ -27,7 +26,8 @@ adata.obsm["deconvolution_results"].head(10)
 # Squidpy provides an easy wrapper that creates a temporary copy of the
 # feature matrix and pass it to :attr:`anndata.AnnData.obs`.
 sq.pl.spatial_scatter(
-    sq.pl.extract(adata, "deconvolution_results"), shape=None,
+    sq.pl.extract(adata, "deconvolution_results"),
+    shape=None,
     color=["Astrocytes", "Mural", "CA1_CA2_CA3_Subiculum"],
     size=4,
 )

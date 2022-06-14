@@ -141,14 +141,17 @@ sq.im.calculate_image_features(
     features_kwargs=features_kwargs,
 )
 # plot results and compare with gene-space clustering
-sq.pl.spatial_scatter(sq.pl.extract(adata, "features_segmentation"), color=[
+sq.pl.spatial_scatter(
+    sq.pl.extract(adata, "features_segmentation"),
+    color=[
         "segmentation_label",
         "cluster",
         "segmentation_ch-0_mean_intensity_mean",
         "segmentation_ch-1_mean_intensity_mean",
     ],
     frameon=False,
-    ncols=2,)
+    ncols=2,
+)
 
 ###############################################################################
 # Above, we made use of :func:`squidpy.pl.extract`, a method to extract

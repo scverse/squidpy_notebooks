@@ -72,7 +72,15 @@ sq.pl.spatial_scatter(adata, shape=None, color="leiden", size=50)
 # For instance, you can compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`
 # based on a fixed neighbor radius that is informative given your experimental settings.
 sq.gr.spatial_neighbors(adata, radius=3.0)
-sq.pl.spatial_scatter(adata, color="leiden", connectivity_key="spatial_connectivities" ,edges_color="black", shape=None, edges_width=1, size=3000)
+sq.pl.spatial_scatter(
+    adata,
+    color="leiden",
+    connectivity_key="spatial_connectivities",
+    edges_color="black",
+    shape=None,
+    edges_width=1,
+    size=3000,
+)
 
 ###############################################################################
 # In case you do have an image of the tissue (or multiple, at different resolutions)
@@ -114,7 +122,7 @@ sq.pl.spatial_scatter(adata, color="leiden")
 # You can fiddle around with the settings to see what changes.
 # For instance, let's change `tissue_hires_scalef` to half the previous value.
 adata.uns[spatial_key][library_id]["scalefactors"] = {"tissue_hires_scalef": 0.5, "spot_diameter_fullres": 0.5}
-sq.pl.spatial_scatter(adata, color="leiden", size = 2)
+sq.pl.spatial_scatter(adata, color="leiden", size=2)
 
 ###############################################################################
 # As you can see, the spatial coordinates have been scaled down, and the image

@@ -33,7 +33,7 @@ adata = sq.datasets.seqfish()
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
 # with :func:`squidpy.pl.spatial_scatter`.
-sq.pl.spatial_scatter(adata, color="celltype_mapped_refined", shape=None, figsize=(10,10))
+sq.pl.spatial_scatter(adata, color="celltype_mapped_refined", shape=None, figsize=(10, 10))
 
 ###############################################################################
 # Neighborhood enrichment analysis
@@ -87,7 +87,8 @@ sq.pl.spatial_scatter(
         "Lateral plate mesoderm",
         "Intermediate mesoderm",
         "Presomitic mesoderm",
-    ], shape=None,
+    ],
+    shape=None,
     size=2,
 )
 
