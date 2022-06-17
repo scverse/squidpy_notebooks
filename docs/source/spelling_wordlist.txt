@@ -76,6 +76,7 @@ RGB
 sagittal
 sc
 scalability
+scalebars
 Scanpy
 scalebars
 segmentations
@@ -93,4 +94,5 @@ tori
 transcriptomics
 uncommenting
 Visium
+Vizgen
 zscore

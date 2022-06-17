@@ -17,6 +17,7 @@ to a diverse set of different spatial datasets.
     auto_tutorials/tutorial_mibitof
     auto_tutorials/tutorial_fouri
     external_tutorials/tutorial_nanostring
+    external_tutorials/tutorial_vizgen
 
 Advanced Tutorials
 ------------------
