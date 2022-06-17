@@ -76,6 +76,7 @@ RGB
 sagittal
 sc
 scalability
+scalebars
 Scanpy
 segmentations
 seqFISH
