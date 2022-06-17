@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/plotting/plot_scatter.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/plotting/plot_scatter.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -43,14 +43,6 @@ This plotting is useful when points and underlying image are available.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/314M [00:00<?, ?B/s]      0%|          | 56.0k/314M [00:00<13:21, 411kB/s]      0%|          | 176k/314M [00:00<08:06, 677kB/s]       0%|          | 632k/314M [00:00<02:58, 1.84MB/s]      1%|          | 2.42M/314M [00:00<00:50, 6.42MB/s]      2%|2         | 7.14M/314M [00:00<00:17, 18.7MB/s]      3%|3         | 10.8M/314M [00:00<00:13, 23.5MB/s]      5%|5         | 16.1M/314M [00:00<00:09, 32.7MB/s]      6%|6         | 19.8M/314M [00:00<00:09, 32.9MB/s]      8%|7         | 24.9M/314M [00:01<00:07, 38.8MB/s]      9%|9         | 28.6M/314M [00:01<00:07, 37.5MB/s]     11%|#         | 33.9M/314M [00:01<00:06, 42.5MB/s]     12%|#1        | 37.5M/314M [00:01<00:07, 39.6MB/s]     14%|#3        | 42.9M/314M [00:01<00:06, 44.3MB/s]     15%|#4        | 46.0M/314M [00:01<00:07, 39.7MB/s]     16%|#6        | 51.6M/314M [00:01<00:06, 45.0MB/s]     18%|#7        | 55.0M/314M [00:01<00:06, 40.6MB/s]     19%|#9        | 60.4M/314M [00:01<00:05, 45.4MB/s]     20%|##        | 63.8M/314M [00:02<00:06, 41.0MB/s]     22%|##2       | 69.2M/314M [00:02<00:05, 45.4MB/s]     23%|##3       | 72.8M/314M [00:02<00:06, 41.5MB/s]     25%|##4       | 78.1M/314M [00:02<00:05, 45.7MB/s]     26%|##5       | 81.6M/314M [00:02<00:05, 41.3MB/s]     28%|##7       | 86.9M/314M [00:02<00:05, 45.4MB/s]     29%|##8       | 90.4M/314M [00:02<00:05, 41.3MB/s]     31%|###       | 96.0M/314M [00:02<00:04, 46.1MB/s]     32%|###1      | 99.3M/314M [00:02<00:05, 41.4MB/s]     33%|###3      | 105M/314M [00:03<00:04, 46.1MB/s]      34%|###4      | 108M/314M [00:03<00:05, 41.4MB/s]     36%|###6      | 114M/314M [00:03<00:04, 45.5MB/s]     37%|###7      | 117M/314M [00:03<00:05, 41.0MB/s]     39%|###9      | 123M/314M [00:03<00:04, 46.1MB/s]     40%|####      | 126M/314M [00:03<00:04, 40.9MB/s]     42%|####1     | 131M/314M [00:03<00:04, 45.0MB/s]     43%|####2     | 135M/314M [00:03<00:04, 41.5MB/s]     45%|####4     | 140M/314M [00:03<00:04, 44.7MB/s]     46%|####5     | 144M/314M [00:03<00:04, 41.9MB/s]     47%|####7     | 148M/314M [00:04<00:03, 44.3MB/s]     49%|####8     | 153M/314M [00:04<00:04, 42.2MB/s]     50%|#####     | 157M/314M [00:04<00:03, 44.6MB/s]     51%|#####1    | 161M/314M [00:04<00:03, 42.4MB/s]     53%|#####2    | 165M/314M [00:04<00:03, 42.1MB/s]     54%|#####4    | 170M/314M [00:04<00:03, 43.3MB/s]     56%|#####5    | 174M/314M [00:04<00:03, 42.9MB/s]     57%|#####7    | 179M/314M [00:04<00:03, 43.2MB/s]     58%|#####8    | 183M/314M [00:04<00:03, 43.3MB/s]     60%|#####9    | 188M/314M [00:05<00:03, 43.5MB/s]     61%|######1   | 192M/314M [00:05<00:02, 43.1MB/s]     63%|######2   | 197M/314M [00:05<00:02, 43.9MB/s]     64%|######4   | 201M/314M [00:05<00:02, 43.3MB/s]     66%|######5   | 206M/314M [00:05<00:02, 43.9MB/s]     67%|######6   | 210M/314M [00:05<00:02, 43.4MB/s]     68%|######8   | 215M/314M [00:05<00:02, 43.9MB/s]     70%|######9   | 219M/314M [00:05<00:02, 43.4MB/s]     71%|#######1  | 224M/314M [00:05<00:02, 43.9MB/s]     73%|#######2  | 228M/314M [00:06<00:02, 43.6MB/s]     74%|#######4  | 233M/314M [00:06<00:01, 44.0MB/s]     75%|#######5  | 237M/314M [00:06<00:01, 43.6MB/s]     77%|#######6  | 241M/314M [00:06<00:01, 44.0MB/s]     78%|#######8  | 246M/314M [00:06<00:01, 43.6MB/s]     80%|#######9  | 250M/314M [00:06<00:01, 43.9MB/s]     81%|########1 | 254M/314M [00:06<00:01, 43.5MB/s]     83%|########2 | 259M/314M [00:06<00:01, 44.0MB/s]     84%|########3 | 263M/314M [00:06<00:01, 43.3MB/s]     85%|########5 | 268M/314M [00:06<00:01, 43.9MB/s]     87%|########6 | 272M/314M [00:07<00:01, 43.4MB/s]     88%|########8 | 277M/314M [00:07<00:00, 44.0MB/s]     90%|########9 | 281M/314M [00:07<00:00, 43.3MB/s]     91%|######### | 286M/314M [00:07<00:00, 43.7MB/s]     92%|#########2| 290M/314M [00:07<00:00, 43.4MB/s]     94%|#########3| 295M/314M [00:07<00:00, 43.7MB/s]     95%|#########5| 299M/314M [00:07<00:00, 43.5MB/s]     97%|#########6| 304M/314M [00:07<00:00, 43.8MB/s]     98%|#########8| 308M/314M [00:07<00:00, 43.6MB/s]     99%|#########9| 312M/314M [00:08<00:00, 43.7MB/s]    100%|##########| 314M/314M [00:08<00:00, 40.8MB/s]
 
 
 
@@ -156,7 +148,7 @@ two Visium slides. We'll also build the spatial graph, to show the edge plotting
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1828: UserWarning: Observation names are not unique. To make them unique, call `.obs_names_make_unique`.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1828: UserWarning: Observation names are not unique. To make them unique, call `.obs_names_make_unique`.
       utils.warn_names_duplicates("obs")
 
 
@@ -253,9 +245,9 @@ as in the previous plot. See :func:`squidpy.pl.spatial_scatter` for documentatio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  7.578 seconds)
+   **Total running time of the script:** ( 0 minutes  32.215 seconds)
 
-**Estimated memory usage:**  1001 MB
+**Estimated memory usage:**  843 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_plot_scatter.py:

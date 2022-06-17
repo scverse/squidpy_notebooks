@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_show.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_show.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -59,14 +59,6 @@ Load the Mibitof dataset.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/19.3M [00:00<?, ?B/s]      0%|          | 56.0k/19.3M [00:00<00:49, 411kB/s]      1%|1         | 240k/19.3M [00:00<00:21, 952kB/s]       5%|5         | 0.98M/19.3M [00:00<00:06, 3.05MB/s]     21%|##        | 4.00M/19.3M [00:00<00:01, 10.6MB/s]     50%|#####     | 9.69M/19.3M [00:00<00:00, 21.9MB/s]     80%|#######9  | 15.5M/19.3M [00:00<00:00, 29.0MB/s]    100%|##########| 19.3M/19.3M [00:00<00:00, 21.9MB/s]
 
 
 
@@ -186,9 +178,9 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.702 seconds)
+   **Total running time of the script:** ( 0 minutes  24.877 seconds)
 
-**Estimated memory usage:**  228 MB
+**Estimated memory usage:**  257 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_show.py:

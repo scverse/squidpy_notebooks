@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_custom_features.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_custom_features.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -72,14 +72,6 @@ Let's load the H&E Visium dataset.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/89.9M [00:00<?, ?B/s]      0%|          | 48.0k/89.9M [00:00<04:27, 352kB/s]      0%|          | 168k/89.9M [00:00<02:23, 656kB/s]       1%|          | 728k/89.9M [00:00<00:42, 2.20MB/s]      3%|3         | 2.85M/89.9M [00:00<00:12, 7.54MB/s]      9%|9         | 8.16M/89.9M [00:00<00:04, 18.9MB/s]     15%|#5        | 13.5M/89.9M [00:00<00:03, 25.9MB/s]     21%|##1       | 19.0M/89.9M [00:00<00:02, 30.6MB/s]     27%|##7       | 24.6M/89.9M [00:01<00:02, 33.9MB/s]     33%|###3      | 30.0M/89.9M [00:01<00:01, 35.8MB/s]     39%|###9      | 35.4M/89.9M [00:01<00:01, 37.1MB/s]     46%|####5     | 41.1M/89.9M [00:01<00:01, 38.7MB/s]     52%|#####2    | 47.0M/89.9M [00:01<00:01, 40.0MB/s]     58%|#####8    | 52.6M/89.9M [00:01<00:00, 40.2MB/s]     65%|######4   | 58.3M/89.9M [00:01<00:00, 40.8MB/s]     71%|#######1  | 63.9M/89.9M [00:02<00:00, 41.0MB/s]     77%|#######7  | 69.6M/89.9M [00:02<00:00, 41.1MB/s]     84%|########3 | 75.2M/89.9M [00:02<00:00, 41.2MB/s]     90%|########9 | 80.5M/89.9M [00:02<00:00, 40.6MB/s]     96%|#########6| 86.3M/89.9M [00:02<00:00, 41.3MB/s]    100%|##########| 89.9M/89.9M [00:02<00:00, 33.9MB/s]
 
 
 
@@ -266,9 +258,9 @@ Here, we show this behavior by defining a feature extraction function that sums 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.596 seconds)
+   **Total running time of the script:** ( 0 minutes  56.130 seconds)
 
-**Estimated memory usage:**  259 MB
+**Estimated memory usage:**  182 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:
