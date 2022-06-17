@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/graph/compute_spatial_neighbors.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/graph/compute_spatial_neighbors.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -317,9 +317,9 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.873 seconds)
+   **Total running time of the script:** ( 0 minutes  52.946 seconds)
 
-**Estimated memory usage:**  234 MB
+**Estimated memory usage:**  207 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:

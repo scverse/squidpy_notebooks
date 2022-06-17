@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/graph/compute_centrality_scores.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/graph/compute_centrality_scores.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -57,7 +57,6 @@ All scores are descriptive statistics of the spatial graph.
 
  .. code-block:: none
 
-      0%|          | 0.00/1.50M [00:00<?, ?B/s]      4%|3         | 56.0k/1.50M [00:00<00:03, 412kB/s]     10%|#         | 160k/1.50M [00:00<00:02, 615kB/s]      35%|###5      | 544k/1.50M [00:00<00:00, 1.61MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.19MB/s]
 
     AnnData object with n_obs × n_vars = 4668 × 34
         obs: 'cell type'
@@ -126,29 +125,29 @@ And visualize results with :func:`squidpy.pl.centrality_scores`.
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'mako' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'mako_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'icefire' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'icefire_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'vlag' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'vlag_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'flare' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'flare_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'crest' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'crest_r' which already exists.
       mpl_cm.register_cmap(_name + "_r", _cmap_r)
 
 
@@ -157,9 +156,9 @@ And visualize results with :func:`squidpy.pl.centrality_scores`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.221 seconds)
+   **Total running time of the script:** ( 0 minutes  16.153 seconds)
 
-**Estimated memory usage:**  28 MB
+**Estimated memory usage:**  22 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_centrality_scores.py:

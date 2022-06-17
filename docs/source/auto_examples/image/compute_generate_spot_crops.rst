@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_generate_spot_crops.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_generate_spot_crops.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -210,7 +210,7 @@ values are ``numpy.ndarray``. In this case, there is only one layer: ``'image'``
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fe54c717fd0>
+    <matplotlib.image.AxesImage object at 0x13c4b88b0>
 
 
 
@@ -309,9 +309,9 @@ as the image is needed.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.164 seconds)
+   **Total running time of the script:** ( 0 minutes  24.686 seconds)
 
-**Estimated memory usage:**  79 MB
+**Estimated memory usage:**  291 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_generate_spot_crops.py:

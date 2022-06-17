@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_summary_features.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_summary_features.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -231,9 +231,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.305 seconds)
+   **Total running time of the script:** ( 2 minutes  59.553 seconds)
 
-**Estimated memory usage:**  361 MB
+**Estimated memory usage:**  378 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/plotting/plot_segment.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/plotting/plot_segment.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -49,7 +49,6 @@ This plotting is useful when segmentation masks and underlying image are availab
 
  .. code-block:: none
 
-      0%|          | 0.00/19.3M [00:00<?, ?B/s]      0%|          | 56.0k/19.3M [00:00<00:49, 412kB/s]      1%|          | 176k/19.3M [00:00<00:29, 677kB/s]       4%|3         | 736k/19.3M [00:00<00:08, 2.21MB/s]     15%|#4        | 2.88M/19.3M [00:00<00:02, 7.60MB/s]     43%|####3     | 8.36M/19.3M [00:00<00:00, 19.4MB/s]     73%|#######3  | 14.2M/19.3M [00:00<00:00, 27.3MB/s]    100%|##########| 19.3M/19.3M [00:00<00:00, 21.5MB/s]
 
     dict_keys(['point16', 'point23', 'point8'])
 
@@ -439,9 +438,9 @@ The size for this example are not the real values and are for purely visualizati
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  53.633 seconds)
+   **Total running time of the script:** ( 0 minutes  43.972 seconds)
 
-**Estimated memory usage:**  494 MB
+**Estimated memory usage:**  526 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_plot_segment.py:

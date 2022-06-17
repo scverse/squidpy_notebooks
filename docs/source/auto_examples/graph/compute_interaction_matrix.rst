@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/graph/compute_interaction_matrix.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/graph/compute_interaction_matrix.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -102,9 +102,9 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.149 seconds)
+   **Total running time of the script:** ( 0 minutes  13.076 seconds)
 
-**Estimated memory usage:**  15 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_interaction_matrix.py:

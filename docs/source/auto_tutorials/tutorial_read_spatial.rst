@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_tutorials/tutorial_read_spatial.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_tutorials/tutorial_read_spatial.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -62,8 +62,8 @@ details that you should take care of in order to exploit the full functionality 
 
  .. code-block:: none
 
-    scanpy==1.9.1 anndata==0.8.0 umap==0.5.3 numpy==1.21.6 scipy==1.8.0 pandas==1.4.2 scikit-learn==1.0.2 statsmodels==0.13.2 python-igraph==0.9.10 pynndescent==0.5.6
-    squidpy==1.1.2
+    scanpy==1.9.1 anndata==0.8.0 umap==0.5.3 numpy==1.22.4 scipy==1.8.1 pandas==1.4.2 scikit-learn==1.1.1 statsmodels==0.13.2 python-igraph==0.9.11 pynndescent==0.5.7
+    squidpy==1.2.2
 
 
 
@@ -117,7 +117,7 @@ but will save you a lot of typing since it's the default for both Squidpy and Sc
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/tutorials/tutorial_read_spatial.py:51: FutureWarning: X.dtype being converted to np.float32 from int64. In the next version of anndata (0.9) conversion will not be automatic. Pass dtype explicitly to avoid this warning. Pass `AnnData(X, dtype=X.dtype, ...)` to get the future behavour.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/tutorials/tutorial_read_spatial.py:51: FutureWarning: X.dtype being converted to np.float32 from int64. In the next version of anndata (0.9) conversion will not be automatic. Pass dtype explicitly to avoid this warning. Pass `AnnData(X, dtype=X.dtype, ...)` to get the future behavour.
       adata = AnnData(counts, obsm={"spatial": coordinates})
 
 
@@ -237,7 +237,7 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fe55f2b3f70>
+    <matplotlib.image.AxesImage object at 0x140056a00>
 
 
 
@@ -355,9 +355,9 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.501 seconds)
+   **Total running time of the script:** ( 0 minutes  42.207 seconds)
 
-**Estimated memory usage:**  12 MB
+**Estimated memory usage:**  83 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:

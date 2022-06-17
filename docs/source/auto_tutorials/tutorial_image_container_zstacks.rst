@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_tutorials/tutorial_image_container_zstacks.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_tutorials/tutorial_image_container_zstacks.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -74,13 +74,9 @@ Import libraries and load individual image sections
 
  .. code-block:: none
 
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 112MB/s]
-      0%|          | 0.00/20.1M [00:00<?, ?B/s]     60%|######    | 12.1M/20.1M [00:00<00:00, 127MB/s]    100%|##########| 20.1M/20.1M [00:00<00:00, 154MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
       utils.warn_names_duplicates("var")
-      0%|          | 0.00/9.26M [00:00<?, ?B/s]    100%|##########| 9.26M/9.26M [00:00<00:00, 97.8MB/s]
-      0%|          | 0.00/19.0M [00:00<?, ?B/s]     79%|#######9  | 15.0M/19.0M [00:00<00:00, 157MB/s]    100%|##########| 19.0M/19.0M [00:00<00:00, 144MB/s]
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1830: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
       utils.warn_names_duplicates("var")
 
 
@@ -563,7 +559,7 @@ Z dimension in `img`.
 
  .. code-block:: none
 
-      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:09<1:57:31,  9.12s/]      3%|3         | 27/774 [00:09<03:01,  4.11/s]       7%|7         | 55/774 [00:09<01:11, 10.05/s]     11%|#         | 83/774 [00:09<00:38, 18.10/s]     14%|#4        | 111/774 [00:09<00:23, 28.77/s]     18%|#8        | 140/774 [00:09<00:14, 43.12/s]     22%|##1       | 168/774 [00:09<00:10, 60.31/s]     25%|##5       | 197/774 [00:09<00:07, 81.76/s]     32%|###1      | 246/774 [00:09<00:04, 129.91/s]     39%|###8      | 298/774 [00:10<00:02, 186.24/s]     45%|####5     | 350/774 [00:10<00:01, 242.23/s]     52%|#####1    | 402/774 [00:10<00:01, 295.46/s]     59%|#####8    | 453/774 [00:10<00:00, 341.56/s]     65%|######5   | 506/774 [00:10<00:00, 386.11/s]     72%|#######1  | 555/774 [00:10<00:00, 398.24/s]     78%|#######7  | 602/774 [00:10<00:00, 393.38/s]     84%|########3 | 647/774 [00:10<00:00, 385.55/s]     89%|########9 | 690/774 [00:10<00:00, 391.27/s]     96%|#########5| 742/774 [00:11<00:00, 424.95/s]    100%|##########| 774/774 [00:11<00:00, 69.60/s] 
+      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:15<3:21:53, 15.67s/]     10%|#         | 81/774 [00:15<01:35,  7.29/s]      21%|##1       | 166/774 [00:15<00:33, 18.02/s]     32%|###2      | 249/774 [00:15<00:16, 32.52/s]     43%|####2     | 331/774 [00:16<00:08, 51.88/s]     54%|#####3    | 416/774 [00:16<00:04, 79.13/s]     66%|######5   | 508/774 [00:16<00:02, 118.07/s]     77%|#######7  | 596/774 [00:16<00:01, 165.45/s]     88%|########7 | 681/774 [00:16<00:00, 220.61/s]     99%|#########8| 765/774 [00:16<00:00, 278.03/s]    100%|##########| 774/774 [00:16<00:00, 46.47/s] 
 
 
 .. raw:: html
@@ -888,9 +884,9 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
  .. code-block:: none
 
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
       self.data[key] = value
-    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
       self.data[key] = value
 
 
@@ -899,9 +895,9 @@ Visualize the result interactively using Napari, or statically using :func:`scan
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  28.679 seconds)
+   **Total running time of the script:** ( 1 minutes  19.138 seconds)
 
-**Estimated memory usage:**  1623 MB
+**Estimated memory usage:**  1751 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container_zstacks.py:
