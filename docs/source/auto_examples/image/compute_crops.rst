@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_crops.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_crops.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -62,14 +62,6 @@ Let's load the fluorescence Visium image.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/303M [00:00<?, ?B/s]      0%|          | 56.0k/303M [00:00<12:54, 410kB/s]      0%|          | 208k/303M [00:00<06:29, 814kB/s]       0%|          | 784k/303M [00:00<02:15, 2.34MB/s]      1%|1         | 3.07M/303M [00:00<00:38, 8.15MB/s]      3%|2         | 8.85M/303M [00:00<00:14, 20.6MB/s]      5%|4         | 14.7M/303M [00:00<00:10, 28.2MB/s]      7%|6         | 20.5M/303M [00:00<00:08, 33.1MB/s]      9%|8         | 26.4M/303M [00:01<00:07, 36.4MB/s]     11%|#         | 32.2M/303M [00:01<00:07, 38.4MB/s]     13%|#2        | 38.0M/303M [00:01<00:06, 39.7MB/s]     15%|#4        | 43.9M/303M [00:01<00:06, 41.0MB/s]     16%|#6        | 49.7M/303M [00:01<00:06, 41.6MB/s]     18%|#8        | 55.6M/303M [00:01<00:06, 42.0MB/s]     20%|##        | 61.5M/303M [00:01<00:05, 42.7MB/s]     22%|##2       | 67.4M/303M [00:02<00:05, 42.6MB/s]     24%|##4       | 73.2M/303M [00:02<00:05, 42.9MB/s]     26%|##6       | 79.1M/303M [00:02<00:05, 43.0MB/s]     28%|##8       | 84.9M/303M [00:02<00:05, 43.1MB/s]     30%|###       | 90.8M/303M [00:02<00:05, 43.1MB/s]     32%|###1      | 96.7M/303M [00:02<00:04, 43.2MB/s]     34%|###3      | 103M/303M [00:02<00:04, 43.3MB/s]      36%|###5      | 108M/303M [00:03<00:04, 43.5MB/s]     38%|###7      | 114M/303M [00:03<00:04, 42.8MB/s]     40%|###9      | 120M/303M [00:03<00:04, 43.1MB/s]     42%|####1     | 126M/303M [00:03<00:04, 43.1MB/s]     44%|####3     | 132M/303M [00:03<00:04, 43.0MB/s]     46%|####5     | 138M/303M [00:03<00:03, 43.3MB/s]     47%|####7     | 144M/303M [00:03<00:03, 43.1MB/s]     49%|####9     | 149M/303M [00:04<00:03, 43.3MB/s]     51%|#####1    | 155M/303M [00:04<00:03, 43.1MB/s]     53%|#####3    | 161M/303M [00:04<00:03, 43.0MB/s]     55%|#####5    | 167M/303M [00:04<00:03, 47.0MB/s]     56%|#####6    | 170M/303M [00:04<00:03, 41.7MB/s]     58%|#####7    | 175M/303M [00:04<00:02, 46.0MB/s]     59%|#####8    | 178M/303M [00:04<00:03, 41.0MB/s]     61%|######    | 184M/303M [00:04<00:02, 45.9MB/s]     62%|######1   | 187M/303M [00:05<00:02, 40.6MB/s]     64%|######3   | 193M/303M [00:05<00:02, 41.4MB/s]     66%|######5   | 199M/303M [00:05<00:02, 45.9MB/s]     67%|######6   | 202M/303M [00:05<00:02, 40.7MB/s]     68%|######8   | 207M/303M [00:05<00:02, 44.7MB/s]     70%|######9   | 210M/303M [00:05<00:02, 40.9MB/s]     71%|#######1  | 215M/303M [00:05<00:02, 43.5MB/s]     72%|#######2  | 219M/303M [00:05<00:02, 41.0MB/s]     74%|#######3  | 224M/303M [00:05<00:01, 43.3MB/s]     75%|#######5  | 228M/303M [00:06<00:01, 41.6MB/s]     77%|#######6  | 232M/303M [00:06<00:01, 42.4MB/s]     78%|#######8  | 236M/303M [00:06<00:01, 41.6MB/s]     79%|#######9  | 240M/303M [00:06<00:01, 42.0MB/s]     81%|########  | 245M/303M [00:06<00:01, 41.9MB/s]     82%|########2 | 249M/303M [00:06<00:01, 42.4MB/s]     84%|########3 | 254M/303M [00:06<00:01, 42.0MB/s]     85%|########5 | 258M/303M [00:06<00:01, 43.8MB/s]     87%|########6 | 262M/303M [00:06<00:01, 42.0MB/s]     88%|########8 | 267M/303M [00:06<00:00, 44.4MB/s]     90%|########9 | 271M/303M [00:07<00:00, 42.0MB/s]     91%|#########1| 276M/303M [00:07<00:00, 44.8MB/s]     92%|#########2| 280M/303M [00:07<00:00, 41.7MB/s]     94%|#########4| 285M/303M [00:07<00:00, 45.2MB/s]     95%|#########5| 289M/303M [00:07<00:00, 41.8MB/s]     97%|#########6| 294M/303M [00:07<00:00, 44.7MB/s]     98%|#########8| 297M/303M [00:07<00:00, 41.8MB/s]    100%|#########9| 302M/303M [00:07<00:00, 45.1MB/s]    100%|##########| 303M/303M [00:07<00:00, 40.4MB/s]
 
 
 
@@ -151,7 +143,6 @@ You can subset the associated ``adata`` to the cropped image using :meth:`squidp
 
  .. code-block:: none
 
-      0%|          | 0.00/65.5M [00:00<?, ?B/s]      0%|          | 48.0k/65.5M [00:00<03:16, 350kB/s]      0%|          | 248k/65.5M [00:00<01:08, 995kB/s]       2%|1         | 1.04M/65.5M [00:00<00:20, 3.24MB/s]      6%|6         | 4.25M/65.5M [00:00<00:05, 11.3MB/s]     15%|#5        | 10.0M/65.5M [00:00<00:02, 22.6MB/s]     24%|##4       | 15.8M/65.5M [00:00<00:01, 29.4MB/s]     33%|###3      | 21.6M/65.5M [00:00<00:01, 33.9MB/s]     42%|####1     | 27.5M/65.5M [00:01<00:01, 36.9MB/s]     51%|#####     | 33.4M/65.5M [00:01<00:00, 38.9MB/s]     60%|#####9    | 39.2M/65.5M [00:01<00:00, 40.1MB/s]     69%|######8   | 45.0M/65.5M [00:01<00:00, 40.8MB/s]     77%|#######7  | 50.7M/65.5M [00:01<00:00, 41.2MB/s]     86%|########6 | 56.6M/65.5M [00:01<00:00, 42.0MB/s]     95%|#########5| 62.4M/65.5M [00:01<00:00, 42.2MB/s]    100%|##########| 65.5M/65.5M [00:02<00:00, 33.3MB/s]
 
     AnnData object with n_obs × n_vars = 704 × 16562
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
@@ -185,7 +176,7 @@ Note the number of observations in ``adata`` before and after subsetting.
  .. code-block:: none
 
 
-    AnnData object with n_obs × n_vars = 7 × 16562
+    View of AnnData object with n_obs × n_vars = 7 × 16562
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
         var: 'gene_ids', 'feature_types', 'genome', 'MT', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm'
         uns: 'cluster_colors', 'hvg', 'leiden', 'leiden_colors', 'neighbors', 'pca', 'spatial', 'umap'
@@ -206,9 +197,9 @@ Visualize the result in Napari:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.831 seconds)
+   **Total running time of the script:** ( 0 minutes  36.273 seconds)
 
-**Estimated memory usage:**  137 MB
+**Estimated memory usage:**  268 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

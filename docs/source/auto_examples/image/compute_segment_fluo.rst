@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_segment_fluo.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_segment_fluo.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -184,9 +184,9 @@ number of cells from the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.918 seconds)
+   **Total running time of the script:** ( 0 minutes  20.650 seconds)
 
-**Estimated memory usage:**  372 MB
+**Estimated memory usage:**  289 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_segment_fluo.py:

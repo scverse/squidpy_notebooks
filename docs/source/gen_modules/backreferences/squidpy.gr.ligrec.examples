@@ -5,6 +5,25 @@ Examples using ``squidpy.gr.ligrec``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to run the receptor-ligand analysis.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ligrec_thumb.png
+     :alt: Receptor-ligand analysis
+
+     :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py`
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
 
 .. only:: html

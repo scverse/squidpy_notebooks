@@ -78,6 +78,7 @@ sc
 scalability
 scalebars
 Scanpy
+scalebars
 segmentations
 seqFISH
 seqV
