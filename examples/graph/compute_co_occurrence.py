@@ -21,7 +21,6 @@ The score is computed across increasing radii size around each cell in the tissu
     See :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for
     another score to describe spatial patterns with :func:`squidpy.gr.ripley`.
 """
-import scanpy as sc
 import squidpy as sq
 
 adata = sq.datasets.imc()
@@ -34,5 +33,5 @@ sq.gr.co_occurrence(adata, cluster_key="cell type")
 sq.pl.co_occurrence(adata, cluster_key="cell type", clusters="basal CK tumor cell")
 
 ###############################################################################
-# We can further visualize tissue organization in spatial coordinates with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="cell type", spot_size=10)
+# We can further visualize tissue organization in spatial coordinates with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color="cell type", size=10)

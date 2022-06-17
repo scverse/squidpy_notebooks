@@ -49,7 +49,7 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 ###############################################################################
 # First, let's visualize the cluster annotation in the spatial context
-# with :func:`scanpy.pl.spatial`.
+# with :func:`squidpy.pl.spatial_scatter`.
 #
 # As you can see, this dataset is a smaller crop of the whole brain section.
 # We provide this crop to make the execution time of this tutorial a bit shorter.
