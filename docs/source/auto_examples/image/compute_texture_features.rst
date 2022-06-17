@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_texture_features.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_texture_features.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -545,9 +545,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  38.978 seconds)
+   **Total running time of the script:** ( 4 minutes  13.000 seconds)
 
-**Estimated memory usage:**  332 MB
+**Estimated memory usage:**  272 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

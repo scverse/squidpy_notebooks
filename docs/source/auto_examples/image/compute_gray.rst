@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_gray.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_gray.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -65,14 +65,6 @@ In general, :func:`squidpy.im.process` can also process very large images
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-      0%|          | 0.00/35.6M [00:00<?, ?B/s]      0%|          | 56.0k/35.6M [00:00<01:31, 406kB/s]      1%|          | 192k/35.6M [00:00<00:50, 739kB/s]       2%|2         | 800k/35.6M [00:00<00:15, 2.38MB/s]      9%|8         | 3.20M/35.6M [00:00<00:04, 8.44MB/s]     25%|##5       | 8.94M/35.6M [00:00<00:01, 20.5MB/s]     41%|####1     | 14.6M/35.6M [00:00<00:00, 27.7MB/s]     57%|#####7    | 20.5M/35.6M [00:01<00:00, 32.6MB/s]     73%|#######3  | 26.1M/35.6M [00:01<00:00, 35.3MB/s]     89%|########9 | 31.8M/35.6M [00:01<00:00, 37.3MB/s]    100%|##########| 35.6M/35.6M [00:01<00:00, 27.3MB/s]
-
 
 
 
@@ -112,9 +104,9 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.957 seconds)
+   **Total running time of the script:** ( 0 minutes  13.630 seconds)
 
-**Estimated memory usage:**  650 MB
+**Estimated memory usage:**  707 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_gray.py:

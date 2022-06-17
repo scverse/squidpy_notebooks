@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_smooth.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_smooth.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -101,9 +101,9 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.731 seconds)
+   **Total running time of the script:** ( 0 minutes  14.608 seconds)
 
-**Estimated memory usage:**  81 MB
+**Estimated memory usage:**  43 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_smooth.py:

@@ -17,6 +17,7 @@ connectivities
 convolutional
 CP
 Crofton
+cytokeratin
 Cytometry
 dataframe
 dataset
@@ -46,6 +47,7 @@ leiden
 ligand
 ligands
 Linnarson
+Logarithmize
 Merfish
 mesenchymal
 Mibitof
@@ -53,6 +55,7 @@ modularity
 moran
 Moran's I
 Napari
+Nanostring
 NEUN
 obsm
 omics
@@ -75,6 +78,7 @@ sc
 scalability
 scalebars
 Scanpy
+scalebars
 segmentations
 seqFISH
 seqV
@@ -90,4 +94,5 @@ tori
 transcriptomics
 uncommenting
 Visium
+Vizgen
 zscore

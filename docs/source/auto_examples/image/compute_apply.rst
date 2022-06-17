@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/image/compute_apply.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/image/compute_apply.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -144,9 +144,9 @@ Then, we convert the image to grayscale and plot the result, using matplotlib.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.891 seconds)
+   **Total running time of the script:** ( 0 minutes  23.716 seconds)
 
-**Estimated memory usage:**  686 MB
+**Estimated memory usage:**  1180 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_apply.py:

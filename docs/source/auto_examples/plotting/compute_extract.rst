@@ -10,7 +10,7 @@
   .. container:: binder-badge
 
     .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/theislab/squidpy_notebooks/master?filepath=docs/source/auto_examples/plotting/compute_extract.ipynb
+      :target: https://mybinder.org/v2/gh/scverse/squidpy_notebooks/main?filepath=docs/source/auto_examples/plotting/compute_extract.ipynb
       :alt: Launch binder
       :width: 150 px
 
@@ -366,9 +366,9 @@ for Scanpy plotting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.620 seconds)
+   **Total running time of the script:** ( 0 minutes  29.887 seconds)
 
-**Estimated memory usage:**  324 MB
+**Estimated memory usage:**  685 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_compute_extract.py:
