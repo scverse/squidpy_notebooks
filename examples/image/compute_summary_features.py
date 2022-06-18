@@ -18,7 +18,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     :func:`squidpy.im.calculate_image_features`.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -61,4 +60,6 @@ adata.obsm["summary_features"].head()
 # how to use our interactive :mod:`napari` plugin.
 # Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 # and 1 (GFAP stain).
-sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], bw=True)
+sq.pl.spatial_scatter(
+    sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], img_cmap="gray"
+)
