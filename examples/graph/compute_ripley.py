@@ -30,7 +30,7 @@ sq.pl.ripley(adata, cluster_key="cluster", mode=mode)
 ###############################################################################
 # We can further visualize tissue organization in spatial coordinates
 # with :func:`squidpy.pl.spatial_scatter`.
-sq.pl.spatial(adata, color="cluster", size=20, shape=None)
+sq.pl.spatial_scatter(adata, color="cluster", size=20, shape=None)
 
 ###############################################################################
 # There are also 2 other Ripley's statistics available (that are closely related):

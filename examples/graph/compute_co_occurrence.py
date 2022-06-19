@@ -34,4 +34,4 @@ sq.pl.co_occurrence(adata, cluster_key="cell type", clusters="basal CK tumor cel
 
 ###############################################################################
 # We can further visualize tissue organization in spatial coordinates with :func:`squidpy.pl.spatial_scatter`.
-sq.pl.spatial_scatter(adata, color="cell type", size=10)
+sq.pl.spatial_scatter(adata, color="cell type", size=10, shape=None)
