@@ -26,7 +26,6 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
     :func:`squidpy.im.calculate_image_features`.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -60,8 +59,8 @@ adata.obsm["texture_features"].head()
 # how to use our interactive :mod:`napari` plugin.
 # Here, we show the contrast feature for channels 0 and 1.
 # The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     sq.pl.extract(adata, "texture_features"),
     color=[None, "texture_ch-0_contrast_dist-1_angle-0.00", "texture_ch-1_contrast_dist-1_angle-0.00"],
-    bw=True,
+    img_cmap="gray",
 )

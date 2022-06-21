@@ -12,7 +12,6 @@ Different approach of defining a neighborhood relation among observations are us
 for different types of spatial datasets.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 import numpy as np
@@ -47,13 +46,7 @@ adata.obsp["spatial_distances"]
 # We can visualize the neighbors of a point to better visualize what `n_rings` mean:
 _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
 idx = np.append(idx, 420)
-sc.pl.spatial(
-    adata[idx, :],
-    neighbors_key="spatial_neighbors",
-    edges=True,
-    edges_width=1,
-    img_key=None,
-)
+sq.pl.spatial_scatter(adata[idx, :], shape=None, connectivity_key="spatial_connectivities")
 
 ###############################################################################
 # Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
@@ -68,15 +61,7 @@ adata
 sq.gr.spatial_neighbors(adata, n_neighs=10, coord_type="generic")
 _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
 idx = np.append(idx, 420)
-sc.pl.spatial(
-    adata[idx, :],
-    color="cell type",
-    neighbors_key="spatial_neighbors",
-    spot_size=1,
-    edges=True,
-    edges_width=1,
-    img_key=None,
-)
+sq.pl.spatial_scatter(adata[idx, :], shape=None, color="cell type", connectivity_key="spatial_connectivities", size=100)
 
 ###############################################################################
 # We use the same function for this with ``coord_type = 'generic'`` and ``delaunay = True``.
@@ -84,14 +69,12 @@ sc.pl.spatial(
 sq.gr.spatial_neighbors(adata, delaunay=True, coord_type="generic")
 _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
 idx = np.append(idx, 420)
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     adata[idx, :],
+    shape=None,
     color="cell type",
-    neighbors_key="spatial_neighbors",
-    spot_size=1,
-    edges=True,
-    edges_width=1,
-    img_key=None,
+    connectivity_key="spatial_connectivities",
+    size=100,
 )
 
 ###############################################################################

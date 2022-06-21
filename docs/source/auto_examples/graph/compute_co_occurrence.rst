@@ -39,11 +39,10 @@ The score is computed across increasing radii size around each cell in the tissu
     See :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for
     another score to describe spatial patterns with :func:`squidpy.gr.ripley`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-30
+.. GENERATED FROM PYTHON SOURCE LINES 24-29
 
 .. code-block:: default
 
-    import scanpy as sc
     import squidpy as sq
 
     adata = sq.datasets.imc()
@@ -67,12 +66,12 @@ The score is computed across increasing radii size around each cell in the tissu
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-33
+.. GENERATED FROM PYTHON SOURCE LINES 30-32
 
 We can compute the co-occurrence score with :func:`squidpy.gr.co_occurrence`.
 Results can be visualized with :func:`squidpy.pl.co_occurrence`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 32-35
 
 .. code-block:: default
 
@@ -94,7 +93,7 @@ Results can be visualized with :func:`squidpy.pl.co_occurrence`.
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:11<00:00, 11.14s/]    100%|##########| 1/1 [00:11<00:00, 11.15s/]
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:07<00:00,  7.51s/]    100%|##########| 1/1 [00:07<00:00,  7.52s/]
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
@@ -123,15 +122,15 @@ Results can be visualized with :func:`squidpy.pl.co_occurrence`.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 36-37
+
+We can further visualize tissue organization in spatial coordinates with :func:`squidpy.pl.spatial_scatter`.
+
 .. GENERATED FROM PYTHON SOURCE LINES 37-38
-
-We can further visualize tissue organization in spatial coordinates with :func:`scanpy.pl.spatial`.
-
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="cell type", spot_size=10)
+    sq.pl.spatial_scatter(adata, color="cell type", size=10, shape=None)
 
 
 
@@ -147,9 +146,9 @@ We can further visualize tissue organization in spatial coordinates with :func:`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.722 seconds)
+   **Total running time of the script:** ( 0 minutes  20.592 seconds)
 
-**Estimated memory usage:**  156 MB
+**Estimated memory usage:**  154 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_co_occurrence.py:

@@ -40,12 +40,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-29
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
 
@@ -55,11 +54,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-31
+.. GENERATED FROM PYTHON SOURCE LINES 29-30
 
 Let's load the H&E Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-37
+.. GENERATED FROM PYTHON SOURCE LINES 30-36
 
 .. code-block:: default
 
@@ -76,11 +75,11 @@ Let's load the H&E Visium dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 Define a custom feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-46
+.. GENERATED FROM PYTHON SOURCE LINES 38-45
 
 .. code-block:: default
 
@@ -98,11 +97,11 @@ Define a custom feature extraction function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-48
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 Now we can extract features using `mean_fn` by providing it within ``features_kwargs``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-57
+.. GENERATED FROM PYTHON SOURCE LINES 47-56
 
 .. code-block:: default
 
@@ -122,11 +121,11 @@ Now we can extract features using `mean_fn` by providing it within ``features_kw
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-59
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 The result is stored in ``adata.obsm['custom_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 .. code-block:: default
 
@@ -189,21 +188,17 @@ The result is stored in ``adata.obsm['custom_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-65
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 how to use our interactive :mod:`napari` plugin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: default
 
-    sc.pl.spatial(
-        sq.pl.extract(adata, "custom_features"),
-        color=[None, "mean_fn_0"],
-        bw=True,
-    )
+    sq.pl.spatial_scatter(sq.pl.extract(adata, "custom_features"), color=[None, "mean_fn_0"], img_cmap="gray")
 
 
 
@@ -218,7 +213,7 @@ how to use our interactive :mod:`napari` plugin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-78
+.. GENERATED FROM PYTHON SOURCE LINES 68-73
 
 You can also pass more than one image layer to the custom feature extraction function.
 For this, specify the necessary additional layer names using ``additional_layers`` in ``features_kwargs``.
@@ -226,7 +221,7 @@ The specified image layers will be passed to the custom feature extraction funct
 
 Here, we show this behavior by defining a feature extraction function that sums two image layers:
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-96
+.. GENERATED FROM PYTHON SOURCE LINES 73-91
 
 .. code-block:: default
 
@@ -258,9 +253,9 @@ Here, we show this behavior by defining a feature extraction function that sums 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  56.130 seconds)
+   **Total running time of the script:** ( 0 minutes  45.713 seconds)
 
-**Estimated memory usage:**  182 MB
+**Estimated memory usage:**  179 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_custom_features.py:

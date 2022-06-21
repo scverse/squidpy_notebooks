@@ -32,8 +32,8 @@ adata = sq.datasets.seqfish()
 
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color="celltype_mapped_refined", shape=None, figsize=(10, 10))
 
 ###############################################################################
 # Neighborhood enrichment analysis
@@ -76,8 +76,8 @@ sq.pl.nhood_enrichment(adata, cluster_key="celltype_mapped_refined", method="war
 #
 # We can also visualize the spatial organization of cells again,
 # and appreciate the proximity of specific cell clusters.
-# For this, we'll use :func:`scanpy.pl.spatial` again.
-sc.pl.spatial(
+# For this, we'll use :func:`squidpy.pl.spatial_scatter` again.
+sq.pl.spatial_scatter(
     adata,
     color="celltype_mapped_refined",
     groups=[
@@ -88,7 +88,8 @@ sc.pl.spatial(
         "Intermediate mesoderm",
         "Presomitic mesoderm",
     ],
-    spot_size=0.03,
+    shape=None,
+    size=2,
 )
 
 ###############################################################################

@@ -19,8 +19,6 @@ Import packages & data
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 """
-
-import scanpy as sc
 import squidpy as sq
 
 import numpy as np
@@ -42,14 +40,8 @@ adata = sq.datasets.mibitof()
 #
 # The `adata` object contains three different libraries, one for each biopsy.
 # The images are contained in ``adata.uns['spatial'][<library_id>]['images']``.
-# Let us visualize the cluster annotations for each library using :func:`scanpy.pl.spatial`.
-# For this, we need to subset `adata` to the desired `library_id`, using the mapping from `obs`
-# to `library_id` provided by ``adata.obs['library_id']``.
-
-for library_id in adata.uns["spatial"].keys():
-    sc.pl.spatial(
-        adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
-    )
+# Let us visualize the cluster annotations for each library using :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_segment(adata, color="Cluster", library_key="library_id", seg_cell_id="cell_id")
 
 ###############################################################################
 # Let us create an ImageContainer from the images contained in `adata`.

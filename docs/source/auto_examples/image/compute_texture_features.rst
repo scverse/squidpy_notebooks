@@ -43,12 +43,11 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
     See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-32
+.. GENERATED FROM PYTHON SOURCE LINES 28-31
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
 
@@ -58,7 +57,7 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-39
+.. GENERATED FROM PYTHON SOURCE LINES 32-38
 
 Let's load the fluorescence Visium dataset and calculate texture features with default ``features_kwargs``.
 
@@ -67,7 +66,7 @@ e.g., ``spot_scale = 2`` or ``spit_scale = 4`` which will extract crops with dou
 than the original Visium spot size.
 For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-53
+.. GENERATED FROM PYTHON SOURCE LINES 38-52
 
 .. code-block:: default
 
@@ -92,11 +91,11 @@ For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_c
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
 
 The result is stored in ``adata.obsm['texture_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-57
+.. GENERATED FROM PYTHON SOURCE LINES 54-56
 
 .. code-block:: default
 
@@ -513,7 +512,7 @@ The result is stored in ``adata.obsm['texture_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-63
+.. GENERATED FROM PYTHON SOURCE LINES 57-62
 
 Use :func:`squidpy.pl.extract` to plot the texture features on the tissue image or have a look at
 `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
@@ -521,14 +520,14 @@ how to use our interactive :mod:`napari` plugin.
 Here, we show the contrast feature for channels 0 and 1.
 The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions of high contrast.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-68
+.. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 .. code-block:: default
 
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         sq.pl.extract(adata, "texture_features"),
         color=[None, "texture_ch-0_contrast_dist-1_angle-0.00", "texture_ch-1_contrast_dist-1_angle-0.00"],
-        bw=True,
+        img_cmap="gray",
     )
 
 
@@ -545,9 +544,9 @@ The two stains, DAPI in channel 0, and GFAP in channel 1 show different regions 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 4 minutes  13.000 seconds)
+   **Total running time of the script:** ( 3 minutes  40.118 seconds)
 
-**Estimated memory usage:**  272 MB
+**Estimated memory usage:**  268 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_texture_features.py:

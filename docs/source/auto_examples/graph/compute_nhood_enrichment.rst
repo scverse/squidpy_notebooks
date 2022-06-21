@@ -100,7 +100,7 @@ Then we can calculate the neighborhood enrichment score with :func:`squidpy.gr.n
 
  .. code-block:: none
 
-      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:07<2:08:42,  7.73s/]     33%|###3      | 333/1000 [00:07<00:11, 60.37/s]     67%|######7   | 673/1000 [00:07<00:02, 144.73/s]     98%|#########8| 981/1000 [00:08<00:00, 246.97/s]    100%|##########| 1000/1000 [00:08<00:00, 124.42/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:05<1:28:50,  5.34s/]     42%|####2     | 421/1000 [00:05<00:05, 109.69/s]     84%|########4 | 841/1000 [00:05<00:00, 256.57/s]    100%|##########| 1000/1000 [00:05<00:00, 179.41/s]
 
 
 
@@ -129,9 +129,9 @@ And visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  30.249 seconds)
+   **Total running time of the script:** ( 0 minutes  23.378 seconds)
 
-**Estimated memory usage:**  293 MB
+**Estimated memory usage:**  265 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_nhood_enrichment.py:

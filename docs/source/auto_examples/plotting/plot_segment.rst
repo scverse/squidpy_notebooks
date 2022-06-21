@@ -438,9 +438,9 @@ The size for this example are not the real values and are for purely visualizati
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  43.972 seconds)
+   **Total running time of the script:** ( 0 minutes  30.072 seconds)
 
-**Estimated memory usage:**  526 MB
+**Estimated memory usage:**  563 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_plot_segment.py:

@@ -23,7 +23,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     :func:`squidpy.im.calculate_image_features`.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -62,11 +61,7 @@ adata.obsm["custom_features"].head()
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
 # `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
 # how to use our interactive :mod:`napari` plugin.
-sc.pl.spatial(
-    sq.pl.extract(adata, "custom_features"),
-    color=[None, "mean_fn_0"],
-    bw=True,
-)
+sq.pl.spatial_scatter(sq.pl.extract(adata, "custom_features"), color=[None, "mean_fn_0"], img_cmap="gray")
 
 
 ###############################################################################

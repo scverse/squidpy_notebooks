@@ -88,9 +88,9 @@ img2
 ###############################################################################
 # Visualization
 # -------------
-# For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_id`.
+# For using :func:`squidpy.pl.spatial_scatter`, subset the `adata` to the desired `library_id`.
 library_id = library_ids[0]
-sc.pl.spatial(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
+sq.pl.spatial_scatter(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
 
 ###############################################################################
 # :meth:`squidpy.im.ImageContainer.show` works with z-stacks out of the box, by plotting them as separate images.
@@ -184,19 +184,23 @@ sc.pp.neighbors(adata_crop, use_rep="img_features", key_added="neigh_features")
 sc.tl.leiden(adata_crop, neighbors_key="neigh_features", key_added="leiden_features")
 
 ###############################################################################
-# Visualize the result interactively using Napari, or statically using :func:`scanpy.pl.spatial`:
+# Visualize the result interactively using Napari, or statically using :func:`squidpy.pl.spatial_scatter`:
 #
 # .. code-block:: python
 #
 #    img.interactive(adata, library_key='library_id')
-sc.pl.spatial(
-    adata_crop[adata_crop.obs["library_id"] == library_ids[0]],
+sq.pl.spatial_scatter(
+    adata_crop,
+    library_key="library_id",
+    crop_coord=(5700, 2700, 9000, 6000),
     library_id=library_ids[0],
     color=["leiden", "leiden_features"],
 )
 
-sc.pl.spatial(
-    adata_crop[adata_crop.obs["library_id"] == library_ids[1]],
+sq.pl.spatial_scatter(
+    adata_crop,
+    library_key="library_id",
+    crop_coord=(5700, 3500, 9000, 6000),
     library_id=library_ids[1],
     color=["leiden", "leiden_features"],
 )

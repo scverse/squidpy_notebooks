@@ -144,7 +144,7 @@ Then, we convert the image to grayscale and plot the result, using matplotlib.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.716 seconds)
+   **Total running time of the script:** ( 0 minutes  14.348 seconds)
 
 **Estimated memory usage:**  1180 MB
 

@@ -44,12 +44,11 @@ the **obs x genes** spatial gene expression matrix.
     - See :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` on how to calculate custom features
       by providing any feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-41
+.. GENERATED FROM PYTHON SOURCE LINES 29-40
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
     import numpy as np
@@ -98,13 +97,13 @@ the **obs x genes** spatial gene expression matrix.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-45
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 The high-resolution tissue image is contained in ``img['image']``,
 and the spot locations coordinates are stored in ``adata.obsm['spatial']``.
 We can plot the spots overlayed on a lower-resolution version of the tissue image contained in ``adata``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-52
+.. GENERATED FROM PYTHON SOURCE LINES 44-50
 
 .. code-block:: default
 
@@ -112,8 +111,7 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
     print(img)
     print(adata.obsm["spatial"])
 
-    sc.set_figure_params(figsize=(4, 4))
-    sc.pl.spatial(adata, add_outline=True)
+    sq.pl.spatial_scatter(adata, outline=True, size=0.3)
 
 
 
@@ -142,7 +140,7 @@ We can plot the spots overlayed on a lower-resolution version of the tissue imag
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-66
+.. GENERATED FROM PYTHON SOURCE LINES 51-64
 
 Using this information, we can now extract features from the tissue underneath each spot by calling
 :func:`squidpy.im.calculate_image_features`.
@@ -158,7 +156,7 @@ It contains several arguments to modify its behavior. With these arguments you c
 
 Let us first calculate summary features and save the result in ``adata.obsm['features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-71
+.. GENERATED FROM PYTHON SOURCE LINES 64-69
 
 .. code-block:: default
 
@@ -308,18 +306,18 @@ Let us first calculate summary features and save the result in ``adata.obsm['fea
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-76
+.. GENERATED FROM PYTHON SOURCE LINES 70-74
 
 To visualize the features, we can use :func:`squidpy.pl.extract` to plot the texture features on the tissue image.
 
 Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-81
+.. GENERATED FROM PYTHON SOURCE LINES 74-79
 
 .. code-block:: default
 
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         sq.pl.extract(adata, "features"),
         color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
     )
@@ -336,7 +334,7 @@ Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-101
+.. GENERATED FROM PYTHON SOURCE LINES 80-99
 
 Specify crop appearance
 =======================
@@ -358,7 +356,7 @@ Let us extract masked and scaled features and compare them.
 We subset ``adata`` to the first 50 spots to make the computation of features fast.
 Skip this step if you want to calculate features from all spots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-138
+.. GENERATED FROM PYTHON SOURCE LINES 99-136
 
 .. code-block:: default
 
@@ -411,18 +409,18 @@ Skip this step if you want to calculate features from all spots.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-140
+.. GENERATED FROM PYTHON SOURCE LINES 137-138
 
 The masked features have lower median values, because the area outside the circle is masked with zeros.
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-146
+.. GENERATED FROM PYTHON SOURCE LINES 140-144
 
 Parallelization
 ===============
 Speeding up the feature extraction is easy.
 Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-147
+.. GENERATED FROM PYTHON SOURCE LINES 144-145
 
 .. code-block:: default
 
@@ -437,9 +435,9 @@ Just set the ``n_jobs`` flag to the number of jobs that should be used by :func:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  1.975 seconds)
+   **Total running time of the script:** ( 0 minutes  50.520 seconds)
 
-**Estimated memory usage:**  335 MB
+**Estimated memory usage:**  322 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_features.py:

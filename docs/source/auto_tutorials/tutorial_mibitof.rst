@@ -37,12 +37,10 @@ Import packages & data
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-32
+.. GENERATED FROM PYTHON SOURCE LINES 22-30
 
 .. code-block:: default
 
-
-    import scanpy as sc
     import squidpy as sq
 
     import numpy as np
@@ -58,7 +56,7 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-48
+.. GENERATED FROM PYTHON SOURCE LINES 31-44
 
 The subset of the data we consider here comprises three biopsies colorectal carcinoma biopsies
 from different donors, where MIBI-TOF was used to measure single-cell metabolic profiles.
@@ -72,52 +70,27 @@ and a cell segmentation mask provided by the authors of the original paper.
 
 The `adata` object contains three different libraries, one for each biopsy.
 The images are contained in ``adata.uns['spatial'][<library_id>]['images']``.
-Let us visualize the cluster annotations for each library using :func:`scanpy.pl.spatial`.
-For this, we need to subset `adata` to the desired `library_id`, using the mapping from `obs`
-to `library_id` provided by ``adata.obs['library_id']``.
+Let us visualize the cluster annotations for each library using :func:`squidpy.pl.spatial_scatter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-54
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 .. code-block:: default
 
-
-    for library_id in adata.uns["spatial"].keys():
-        sc.pl.spatial(
-            adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
-        )
+    sq.pl.spatial_segment(adata, color="Cluster", library_key="library_id", seg_cell_id="cell_id")
 
 
 
 
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_001.png
-         :alt: point16
-         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_002.png
-         :alt: point23
-         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_002.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_003.png
-         :alt: point8
-         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_003.png
-         :class: sphx-glr-multi-img
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_001.png
+   :alt: Cluster, Cluster, Cluster
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_001.png
+   :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-60
+.. GENERATED FROM PYTHON SOURCE LINES 47-52
 
 Let us create an ImageContainer from the images contained in `adata`.
 As all three biopsies are already joined in `adata`, let us also create one ImageContainer for
@@ -125,7 +98,7 @@ all three biopsies using a z-stack.
 For more information on how to use `ImageContainer` with z-stacks, also have a look at
 :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-68
+.. GENERATED FROM PYTHON SOURCE LINES 52-60
 
 .. code-block:: default
 
@@ -144,13 +117,13 @@ For more information on how to use `ImageContainer` with z-stacks, also have a l
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 Note that we also added the segmentation as an additional layer to `img`, and set the
 `segmentation` attribute in the ImageContainer.
 This allows visualization of the segmentation layer as a `labels` layer in Napari.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 64-66
 
 .. code-block:: default
 
@@ -169,7 +142,7 @@ This allows visualization of the segmentation layer as a `labels` layer in Napar
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 67-73
 
 If you have Napari installed, you can have a look at the data using the interactive viewer:
 Note that you can load the segmentation layer as an overlay over the image.
@@ -178,11 +151,11 @@ Note that you can load the segmentation layer as an overlay over the image.
 
     img.interactive(adata, library_key='library_id')
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-84
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
 Let us also statically visualize the data in `img`, using :func:`squidpy.im.ImageCntainer.show`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-87
+.. GENERATED FROM PYTHON SOURCE LINES 76-79
 
 .. code-block:: default
 
@@ -197,23 +170,23 @@ Let us also statically visualize the data in `img`, using :func:`squidpy.im.Imag
 
     *
 
-      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_004.png
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_002.png
          :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_004.png
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_002.png
          :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_005.png
+      .. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_003.png
          :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_005.png
+         :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_003.png
          :class: sphx-glr-multi-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-95
+.. GENERATED FROM PYTHON SOURCE LINES 80-87
 
 In the following we show how to use Squidpy to extract cellular mean intensity information using raw images
 and a provided segmentation mask.
@@ -223,7 +196,7 @@ The aim of this tutorial, however, is to showcase how the extraction of such fea
 As Squidpy is backed by :mod:`dask` and supports chunked image processing,
 also large images can be processed in this way.
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-104
+.. GENERATED FROM PYTHON SOURCE LINES 89-96
 
 Convert image to CMYK
 ---------------------
@@ -233,7 +206,7 @@ As the channel information is encoded in CMYK space, we first need to convert th
 
 For this, we can use :meth:`squidpy.im.ImageContainer.apply`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-121
+.. GENERATED FROM PYTHON SOURCE LINES 96-113
 
 .. code-block:: default
 
@@ -257,16 +230,16 @@ For this, we can use :meth:`squidpy.im.ImageContainer.apply`.
 
 
 
-.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_006.png
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_004.png
    :alt: image_cmyk:0, library_id:point16, image_cmyk:1, library_id:point16, image_cmyk:2, library_id:point16, image_cmyk:3, library_id:point16, image_cmyk:0, library_id:point23, image_cmyk:1, library_id:point23, image_cmyk:2, library_id:point23, image_cmyk:3, library_id:point23, image_cmyk:0, library_id:point8, image_cmyk:1, library_id:point8, image_cmyk:2, library_id:point8, image_cmyk:3, library_id:point8
-   :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_006.png
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_004.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-137
+.. GENERATED FROM PYTHON SOURCE LINES 114-129
 
 Extract per-cell mean intensity
 -------------------------------
@@ -284,7 +257,7 @@ We will achieve this by passing an ``additional_layers`` argument to the `custom
 This special argument will pass the values of every layer in `additional_layers`
 to the custom feature extraction function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-164
+.. GENERATED FROM PYTHON SOURCE LINES 129-156
 
 .. code-block:: default
 
@@ -322,14 +295,14 @@ to the custom feature extraction function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-169
+.. GENERATED FROM PYTHON SOURCE LINES 157-161
 
 Now, use :func:`squidpy.im.calculate_image_features` with the `custom` feature extractor,
 specifying the function (``func``) to use, and the additional layers (``additional_layers``)
 to pass to the function.
 We will use ``spot_scale = 10`` to ensure that we also cover big segments fully by one crop.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-179
+.. GENERATED FROM PYTHON SOURCE LINES 161-171
 
 .. code-block:: default
 
@@ -353,17 +326,17 @@ We will use ``spot_scale = 10`` to ensure that we also cover big segments fully 
 
  .. code-block:: none
 
-      0%|          | 0/3309 [00:00<?, ?/s]      0%|          | 1/3309 [00:04<4:22:28,  4.76s/]      1%|          | 19/3309 [00:04<10:04,  5.44/s]       1%|1         | 35/3309 [00:04<04:42, 11.60/s]      2%|1         | 53/3309 [00:05<02:37, 20.63/s]      2%|2         | 71/3309 [00:05<01:41, 31.98/s]      3%|2         | 89/3309 [00:05<01:10, 45.50/s]      3%|3         | 109/3309 [00:05<00:50, 63.19/s]      4%|3         | 129/3309 [00:05<00:38, 82.03/s]      5%|4         | 149/3309 [00:05<00:31, 101.12/s]      5%|5         | 169/3309 [00:05<00:26, 119.37/s]      6%|5         | 188/3309 [00:05<00:23, 134.23/s]      6%|6         | 208/3309 [00:05<00:20, 148.54/s]      7%|6         | 228/3309 [00:05<00:19, 160.54/s]      7%|7         | 248/3309 [00:06<00:18, 167.19/s]      8%|8         | 268/3309 [00:06<00:17, 174.25/s]      9%|8         | 288/3309 [00:06<00:16, 179.02/s]      9%|9         | 308/3309 [00:06<00:16, 183.35/s]     10%|9         | 328/3309 [00:06<00:16, 184.37/s]     11%|#         | 348/3309 [00:06<00:15, 186.63/s]     11%|#1        | 368/3309 [00:06<00:15, 188.18/s]     12%|#1        | 388/3309 [00:06<00:15, 188.54/s]     12%|#2        | 408/3309 [00:06<00:15, 189.87/s]     13%|#2        | 428/3309 [00:07<00:15, 187.85/s]     14%|#3        | 448/3309 [00:07<00:15, 189.61/s]     14%|#4        | 468/3309 [00:07<00:14, 189.77/s]     15%|#4        | 488/3309 [00:07<00:14, 191.05/s]     15%|#5        | 508/3309 [00:07<00:14, 191.79/s]     16%|#5        | 528/3309 [00:07<00:14, 190.86/s]     17%|#6        | 548/3309 [00:07<00:14, 188.93/s]     17%|#7        | 567/3309 [00:07<00:14, 189.23/s]     18%|#7        | 587/3309 [00:07<00:14, 190.09/s]     18%|#8        | 607/3309 [00:07<00:14, 189.65/s]     19%|#8        | 626/3309 [00:08<00:14, 188.22/s]     20%|#9        | 646/3309 [00:08<00:14, 188.59/s]     20%|##        | 665/3309 [00:08<00:14, 186.27/s]     21%|##        | 685/3309 [00:08<00:13, 187.95/s]     21%|##1       | 704/3309 [00:08<00:13, 187.82/s]     22%|##1       | 724/3309 [00:08<00:13, 189.52/s]     22%|##2       | 744/3309 [00:08<00:13, 190.43/s]     23%|##3       | 764/3309 [00:08<00:13, 189.92/s]     24%|##3       | 784/3309 [00:08<00:13, 191.00/s]     24%|##4       | 804/3309 [00:09<00:13, 190.82/s]     25%|##4       | 824/3309 [00:09<00:13, 189.17/s]     26%|##5       | 844/3309 [00:09<00:12, 189.66/s]     26%|##6       | 864/3309 [00:09<00:12, 190.85/s]     27%|##6       | 884/3309 [00:09<00:12, 191.56/s]     27%|##7       | 904/3309 [00:09<00:12, 189.64/s]     28%|##7       | 924/3309 [00:09<00:12, 191.28/s]     29%|##8       | 944/3309 [00:09<00:12, 190.38/s]     29%|##9       | 964/3309 [00:09<00:12, 191.45/s]     30%|##9       | 984/3309 [00:09<00:12, 191.74/s]     30%|###       | 1004/3309 [00:10<00:12, 186.47/s]     31%|###       | 1024/3309 [00:10<00:12, 188.56/s]     32%|###1      | 1043/3309 [00:10<00:12, 188.29/s]     32%|###2      | 1063/3309 [00:10<00:11, 189.72/s]     33%|###2      | 1083/3309 [00:10<00:11, 190.23/s]     33%|###3      | 1103/3309 [00:10<00:11, 189.59/s]     34%|###3      | 1123/3309 [00:10<00:11, 191.15/s]     35%|###4      | 1143/3309 [00:10<00:11, 188.75/s]     35%|###5      | 1162/3309 [00:10<00:11, 188.53/s]     36%|###5      | 1181/3309 [00:11<00:11, 184.49/s]     36%|###6      | 1200/3309 [00:11<00:11, 182.71/s]     37%|###6      | 1219/3309 [00:11<00:11, 181.51/s]     37%|###7      | 1238/3309 [00:11<00:11, 182.34/s]     38%|###7      | 1257/3309 [00:11<00:11, 183.09/s]     39%|###8      | 1276/3309 [00:11<00:11, 180.59/s]     39%|###9      | 1295/3309 [00:11<00:11, 181.29/s]     40%|###9      | 1314/3309 [00:11<00:10, 181.52/s]     40%|####      | 1334/3309 [00:11<00:10, 184.70/s]     41%|####      | 1354/3309 [00:11<00:10, 186.55/s]     41%|####1     | 1373/3309 [00:12<00:10, 184.86/s]     42%|####2     | 1393/3309 [00:12<00:10, 186.79/s]     43%|####2     | 1412/3309 [00:12<00:10, 187.07/s]     43%|####3     | 1432/3309 [00:12<00:09, 188.20/s]     44%|####3     | 1451/3309 [00:12<00:09, 187.85/s]     44%|####4     | 1471/3309 [00:12<00:09, 189.29/s]     45%|####5     | 1491/3309 [00:12<00:09, 190.88/s]     46%|####5     | 1511/3309 [00:12<00:09, 189.35/s]     46%|####6     | 1530/3309 [00:12<00:09, 185.94/s]     47%|####6     | 1549/3309 [00:13<00:09, 186.46/s]     47%|####7     | 1568/3309 [00:13<00:09, 185.24/s]     48%|####7     | 1588/3309 [00:13<00:09, 187.54/s]     49%|####8     | 1607/3309 [00:13<00:09, 187.94/s]     49%|####9     | 1627/3309 [00:13<00:08, 189.33/s]     50%|####9     | 1646/3309 [00:13<00:08, 189.20/s]     50%|#####     | 1666/3309 [00:13<00:08, 189.66/s]     51%|#####     | 1686/3309 [00:13<00:08, 189.54/s]     52%|#####1    | 1705/3309 [00:13<00:08, 181.24/s]     52%|#####2    | 1724/3309 [00:13<00:08, 181.95/s]     53%|#####2    | 1743/3309 [00:14<00:08, 183.75/s]     53%|#####3    | 1762/3309 [00:14<00:08, 185.19/s]     54%|#####3    | 1781/3309 [00:14<00:08, 186.54/s]     54%|#####4    | 1801/3309 [00:14<00:07, 189.06/s]     55%|#####5    | 1821/3309 [00:14<00:07, 189.56/s]     56%|#####5    | 1840/3309 [00:14<00:08, 182.61/s]     56%|#####6    | 1860/3309 [00:14<00:07, 186.57/s]     57%|#####6    | 1879/3309 [00:14<00:07, 186.76/s]     57%|#####7    | 1899/3309 [00:14<00:07, 188.61/s]     58%|#####7    | 1919/3309 [00:14<00:07, 189.66/s]     59%|#####8    | 1938/3309 [00:15<00:07, 184.54/s]     59%|#####9    | 1957/3309 [00:15<00:07, 185.69/s]     60%|#####9    | 1977/3309 [00:15<00:07, 187.49/s]     60%|######    | 1997/3309 [00:15<00:06, 188.86/s]     61%|######    | 2016/3309 [00:15<00:06, 188.44/s]     61%|######1   | 2035/3309 [00:15<00:06, 187.38/s]     62%|######2   | 2055/3309 [00:15<00:06, 188.82/s]     63%|######2   | 2074/3309 [00:15<00:06, 188.61/s]     63%|######3   | 2093/3309 [00:15<00:06, 187.00/s]     64%|######3   | 2112/3309 [00:16<00:06, 186.99/s]     64%|######4   | 2131/3309 [00:16<00:06, 187.03/s]     65%|######5   | 2151/3309 [00:16<00:06, 188.24/s]     66%|######5   | 2170/3309 [00:16<00:06, 186.83/s]     66%|######6   | 2189/3309 [00:16<00:06, 186.22/s]     67%|######6   | 2208/3309 [00:16<00:05, 186.13/s]     67%|######7   | 2227/3309 [00:16<00:05, 183.37/s]     68%|######7   | 2246/3309 [00:16<00:05, 181.19/s]     68%|######8   | 2265/3309 [00:16<00:05, 181.40/s]     69%|######9   | 2284/3309 [00:16<00:05, 180.74/s]     70%|######9   | 2303/3309 [00:17<00:05, 181.47/s]     70%|#######   | 2322/3309 [00:17<00:05, 181.68/s]     71%|#######   | 2341/3309 [00:17<00:05, 180.68/s]     71%|#######1  | 2360/3309 [00:17<00:05, 181.68/s]     72%|#######1  | 2379/3309 [00:17<00:05, 180.60/s]     72%|#######2  | 2398/3309 [00:17<00:05, 180.00/s]     73%|#######3  | 2418/3309 [00:17<00:04, 183.07/s]     74%|#######3  | 2437/3309 [00:17<00:04, 183.89/s]     74%|#######4  | 2457/3309 [00:17<00:04, 186.83/s]     75%|#######4  | 2477/3309 [00:18<00:04, 188.59/s]     75%|#######5  | 2497/3309 [00:18<00:04, 188.93/s]     76%|#######6  | 2517/3309 [00:18<00:04, 190.04/s]     77%|#######6  | 2537/3309 [00:18<00:04, 189.70/s]     77%|#######7  | 2557/3309 [00:18<00:03, 190.63/s]     78%|#######7  | 2577/3309 [00:18<00:03, 187.19/s]     78%|#######8  | 2597/3309 [00:18<00:03, 189.05/s]     79%|#######9  | 2617/3309 [00:18<00:03, 189.42/s]     80%|#######9  | 2636/3309 [00:18<00:03, 189.41/s]     80%|########  | 2656/3309 [00:18<00:03, 190.55/s]     81%|########  | 2676/3309 [00:19<00:03, 189.61/s]     81%|########1 | 2696/3309 [00:19<00:03, 190.33/s]     82%|########2 | 2716/3309 [00:19<00:03, 189.44/s]     83%|########2 | 2736/3309 [00:19<00:03, 189.89/s]     83%|########3 | 2756/3309 [00:19<00:02, 190.13/s]     84%|########3 | 2776/3309 [00:19<00:02, 189.31/s]     84%|########4 | 2796/3309 [00:19<00:02, 190.44/s]     85%|########5 | 2816/3309 [00:19<00:02, 190.31/s]     86%|########5 | 2836/3309 [00:19<00:02, 186.35/s]     86%|########6 | 2855/3309 [00:20<00:02, 186.27/s]     87%|########6 | 2875/3309 [00:20<00:02, 188.48/s]     87%|########7 | 2895/3309 [00:20<00:02, 189.81/s]     88%|########8 | 2914/3309 [00:20<00:02, 189.36/s]     89%|########8 | 2934/3309 [00:20<00:01, 189.90/s]     89%|########9 | 2953/3309 [00:20<00:01, 189.07/s]     90%|########9 | 2972/3309 [00:20<00:01, 187.40/s]     90%|######### | 2992/3309 [00:20<00:01, 188.43/s]     91%|######### | 3011/3309 [00:20<00:01, 188.24/s]     92%|#########1| 3031/3309 [00:20<00:01, 189.83/s]     92%|#########2| 3050/3309 [00:21<00:01, 189.37/s]     93%|#########2| 3069/3309 [00:21<00:01, 188.66/s]     93%|#########3| 3089/3309 [00:21<00:01, 189.78/s]     94%|#########3| 3109/3309 [00:21<00:01, 190.55/s]     95%|#########4| 3129/3309 [00:21<00:00, 190.52/s]     95%|#########5| 3149/3309 [00:21<00:00, 189.20/s]     96%|#########5| 3169/3309 [00:21<00:00, 190.42/s]     96%|#########6| 3189/3309 [00:21<00:00, 189.95/s]     97%|#########6| 3209/3309 [00:21<00:00, 190.72/s]     98%|#########7| 3229/3309 [00:21<00:00, 191.17/s]     98%|#########8| 3249/3309 [00:22<00:00, 187.69/s]     99%|#########8| 3268/3309 [00:22<00:00, 186.11/s]     99%|#########9| 3287/3309 [00:22<00:00, 184.31/s]    100%|#########9| 3306/3309 [00:22<00:00, 184.80/s]    100%|##########| 3309/3309 [00:22<00:00, 147.59/s]
+      0%|          | 0/3309 [00:00<?, ?/s]      0%|          | 1/3309 [00:05<4:55:43,  5.36s/]      1%|          | 17/3309 [00:05<12:40,  4.33/s]       1%|          | 32/3309 [00:05<05:43,  9.53/s]      1%|1         | 49/3309 [00:05<03:08, 17.31/s]      2%|1         | 66/3309 [00:05<01:59, 27.13/s]      3%|2         | 83/3309 [00:05<01:22, 39.00/s]      3%|3         | 100/3309 [00:05<01:00, 52.88/s]      4%|3         | 118/3309 [00:06<00:46, 69.20/s]      4%|4         | 135/3309 [00:06<00:37, 85.05/s]      5%|4         | 152/3309 [00:06<00:31, 100.52/s]      5%|5         | 169/3309 [00:06<00:27, 114.18/s]      6%|5         | 186/3309 [00:06<00:24, 126.53/s]      6%|6         | 203/3309 [00:06<00:22, 135.61/s]      7%|6         | 220/3309 [00:06<00:21, 143.07/s]      7%|7         | 237/3309 [00:06<00:20, 150.23/s]      8%|7         | 254/3309 [00:06<00:19, 154.10/s]      8%|8         | 271/3309 [00:07<00:19, 158.16/s]      9%|8         | 289/3309 [00:07<00:18, 162.97/s]      9%|9         | 306/3309 [00:07<00:18, 164.49/s]     10%|9         | 324/3309 [00:07<00:17, 167.86/s]     10%|#         | 342/3309 [00:07<00:17, 170.17/s]     11%|#         | 360/3309 [00:07<00:17, 172.05/s]     11%|#1        | 378/3309 [00:07<00:16, 172.98/s]     12%|#1        | 396/3309 [00:07<00:16, 174.73/s]     13%|#2        | 414/3309 [00:07<00:16, 174.55/s]     13%|#3        | 432/3309 [00:07<00:16, 175.12/s]     14%|#3        | 450/3309 [00:08<00:16, 174.17/s]     14%|#4        | 468/3309 [00:08<00:16, 174.91/s]     15%|#4        | 486/3309 [00:08<00:16, 175.64/s]     15%|#5        | 504/3309 [00:08<00:15, 175.83/s]     16%|#5        | 522/3309 [00:08<00:15, 175.65/s]     16%|#6        | 540/3309 [00:08<00:15, 174.78/s]     17%|#6        | 558/3309 [00:08<00:15, 174.77/s]     17%|#7        | 577/3309 [00:08<00:15, 176.44/s]     18%|#7        | 595/3309 [00:08<00:15, 174.93/s]     19%|#8        | 613/3309 [00:08<00:15, 169.05/s]     19%|#9        | 630/3309 [00:09<00:16, 165.18/s]     20%|#9        | 647/3309 [00:09<00:16, 165.57/s]     20%|##        | 665/3309 [00:09<00:15, 167.36/s]     21%|##        | 682/3309 [00:09<00:16, 154.77/s]     21%|##1       | 698/3309 [00:09<00:17, 152.13/s]     22%|##1       | 715/3309 [00:09<00:16, 155.77/s]     22%|##2       | 733/3309 [00:09<00:15, 161.17/s]     23%|##2       | 751/3309 [00:09<00:15, 164.73/s]     23%|##3       | 768/3309 [00:09<00:15, 165.33/s]     24%|##3       | 786/3309 [00:10<00:15, 167.87/s]     24%|##4       | 804/3309 [00:10<00:14, 168.99/s]     25%|##4       | 822/3309 [00:10<00:14, 169.34/s]     25%|##5       | 839/3309 [00:10<00:14, 169.03/s]     26%|##5       | 857/3309 [00:10<00:14, 171.23/s]     26%|##6       | 875/3309 [00:10<00:14, 170.72/s]     27%|##6       | 893/3309 [00:10<00:14, 171.00/s]     28%|##7       | 911/3309 [00:10<00:14, 170.58/s]     28%|##8       | 929/3309 [00:10<00:13, 170.82/s]     29%|##8       | 947/3309 [00:10<00:13, 171.13/s]     29%|##9       | 965/3309 [00:11<00:13, 171.83/s]     30%|##9       | 983/3309 [00:11<00:13, 171.83/s]     30%|###       | 1001/3309 [00:11<00:13, 172.49/s]     31%|###       | 1019/3309 [00:11<00:13, 172.44/s]     31%|###1      | 1037/3309 [00:11<00:13, 172.72/s]     32%|###1      | 1055/3309 [00:11<00:13, 172.86/s]     32%|###2      | 1073/3309 [00:11<00:12, 172.60/s]     33%|###2      | 1091/3309 [00:11<00:12, 173.22/s]     34%|###3      | 1109/3309 [00:11<00:12, 173.40/s]     34%|###4      | 1127/3309 [00:12<00:12, 173.79/s]     35%|###4      | 1145/3309 [00:12<00:12, 173.75/s]     35%|###5      | 1163/3309 [00:12<00:12, 173.77/s]     36%|###5      | 1181/3309 [00:12<00:12, 170.88/s]     36%|###6      | 1199/3309 [00:12<00:12, 170.00/s]     37%|###6      | 1217/3309 [00:12<00:12, 165.61/s]     37%|###7      | 1234/3309 [00:12<00:12, 166.74/s]     38%|###7      | 1251/3309 [00:12<00:12, 166.80/s]     38%|###8      | 1268/3309 [00:12<00:12, 164.63/s]     39%|###8      | 1285/3309 [00:12<00:12, 163.77/s]     39%|###9      | 1302/3309 [00:13<00:12, 164.30/s]     40%|###9      | 1320/3309 [00:13<00:11, 167.19/s]     40%|####      | 1337/3309 [00:13<00:11, 166.89/s]     41%|####      | 1354/3309 [00:13<00:11, 167.49/s]     41%|####1     | 1371/3309 [00:13<00:11, 167.57/s]     42%|####1     | 1389/3309 [00:13<00:11, 169.03/s]     43%|####2     | 1407/3309 [00:13<00:11, 170.58/s]     43%|####3     | 1425/3309 [00:13<00:10, 171.37/s]     44%|####3     | 1443/3309 [00:13<00:10, 170.19/s]     44%|####4     | 1461/3309 [00:14<00:10, 170.79/s]     45%|####4     | 1479/3309 [00:14<00:10, 169.73/s]     45%|####5     | 1497/3309 [00:14<00:10, 170.51/s]     46%|####5     | 1515/3309 [00:14<00:10, 170.69/s]     46%|####6     | 1533/3309 [00:14<00:10, 170.01/s]     47%|####6     | 1551/3309 [00:14<00:10, 169.60/s]     47%|####7     | 1568/3309 [00:14<00:10, 169.58/s]     48%|####7     | 1585/3309 [00:14<00:10, 169.68/s]     48%|####8     | 1603/3309 [00:14<00:10, 170.55/s]     49%|####8     | 1621/3309 [00:14<00:09, 170.19/s]     50%|####9     | 1639/3309 [00:15<00:09, 170.42/s]     50%|#####     | 1657/3309 [00:15<00:09, 171.61/s]     51%|#####     | 1675/3309 [00:15<00:09, 171.84/s]     51%|#####1    | 1693/3309 [00:15<00:09, 171.74/s]     52%|#####1    | 1711/3309 [00:15<00:09, 172.29/s]     52%|#####2    | 1729/3309 [00:15<00:09, 172.32/s]     53%|#####2    | 1747/3309 [00:15<00:09, 172.79/s]     53%|#####3    | 1765/3309 [00:15<00:08, 171.75/s]     54%|#####3    | 1783/3309 [00:15<00:08, 172.00/s]     54%|#####4    | 1801/3309 [00:15<00:08, 173.07/s]     55%|#####4    | 1819/3309 [00:16<00:08, 172.91/s]     56%|#####5    | 1837/3309 [00:16<00:08, 172.84/s]     56%|#####6    | 1855/3309 [00:16<00:08, 173.83/s]     57%|#####6    | 1873/3309 [00:16<00:08, 173.76/s]     57%|#####7    | 1891/3309 [00:16<00:08, 171.88/s]     58%|#####7    | 1909/3309 [00:16<00:08, 171.71/s]     58%|#####8    | 1927/3309 [00:16<00:07, 173.04/s]     59%|#####8    | 1945/3309 [00:16<00:07, 173.01/s]     59%|#####9    | 1963/3309 [00:16<00:07, 172.65/s]     60%|#####9    | 1981/3309 [00:17<00:07, 173.07/s]     60%|######    | 1999/3309 [00:17<00:07, 172.09/s]     61%|######    | 2017/3309 [00:17<00:07, 172.93/s]     61%|######1   | 2035/3309 [00:17<00:07, 171.61/s]     62%|######2   | 2053/3309 [00:17<00:07, 172.03/s]     63%|######2   | 2071/3309 [00:17<00:07, 172.06/s]     63%|######3   | 2089/3309 [00:17<00:07, 172.57/s]     64%|######3   | 2107/3309 [00:17<00:06, 173.57/s]     64%|######4   | 2125/3309 [00:17<00:06, 173.74/s]     65%|######4   | 2143/3309 [00:17<00:06, 171.90/s]     65%|######5   | 2161/3309 [00:18<00:06, 172.40/s]     66%|######5   | 2179/3309 [00:18<00:06, 172.68/s]     66%|######6   | 2197/3309 [00:18<00:06, 174.30/s]     67%|######6   | 2215/3309 [00:18<00:06, 173.35/s]     67%|######7   | 2233/3309 [00:18<00:06, 169.64/s]     68%|######7   | 2250/3309 [00:18<00:06, 163.37/s]     69%|######8   | 2267/3309 [00:18<00:06, 162.51/s]     69%|######9   | 2284/3309 [00:18<00:06, 163.55/s]     70%|######9   | 2302/3309 [00:18<00:06, 165.64/s]     70%|#######   | 2319/3309 [00:19<00:06, 164.79/s]     71%|#######   | 2336/3309 [00:19<00:05, 165.90/s]     71%|#######1  | 2353/3309 [00:19<00:05, 165.43/s]     72%|#######1  | 2370/3309 [00:19<00:05, 164.74/s]     72%|#######2  | 2388/3309 [00:19<00:05, 166.77/s]     73%|#######2  | 2406/3309 [00:19<00:05, 170.03/s]     73%|#######3  | 2424/3309 [00:19<00:05, 169.53/s]     74%|#######3  | 2441/3309 [00:19<00:05, 161.98/s]     74%|#######4  | 2458/3309 [00:19<00:05, 163.66/s]     75%|#######4  | 2475/3309 [00:19<00:05, 162.99/s]     75%|#######5  | 2493/3309 [00:20<00:04, 166.33/s]     76%|#######5  | 2510/3309 [00:20<00:04, 162.08/s]     76%|#######6  | 2527/3309 [00:20<00:04, 160.52/s]     77%|#######6  | 2545/3309 [00:20<00:04, 164.76/s]     77%|#######7  | 2563/3309 [00:20<00:04, 166.76/s]     78%|#######7  | 2580/3309 [00:20<00:04, 166.79/s]     79%|#######8  | 2598/3309 [00:20<00:04, 168.43/s]     79%|#######9  | 2616/3309 [00:20<00:04, 170.15/s]     80%|#######9  | 2634/3309 [00:20<00:03, 171.15/s]     80%|########  | 2652/3309 [00:21<00:03, 171.70/s]     81%|########  | 2670/3309 [00:21<00:03, 172.69/s]     81%|########1 | 2688/3309 [00:21<00:03, 173.70/s]     82%|########1 | 2706/3309 [00:21<00:03, 174.56/s]     82%|########2 | 2724/3309 [00:21<00:03, 173.93/s]     83%|########2 | 2742/3309 [00:21<00:03, 174.26/s]     83%|########3 | 2760/3309 [00:21<00:03, 174.57/s]     84%|########3 | 2778/3309 [00:21<00:03, 174.76/s]     84%|########4 | 2796/3309 [00:21<00:02, 174.02/s]     85%|########5 | 2814/3309 [00:21<00:02, 174.46/s]     86%|########5 | 2832/3309 [00:22<00:02, 174.68/s]     86%|########6 | 2850/3309 [00:22<00:02, 175.01/s]     87%|########6 | 2868/3309 [00:22<00:02, 176.23/s]     87%|########7 | 2886/3309 [00:22<00:02, 177.18/s]     88%|########7 | 2904/3309 [00:22<00:02, 176.51/s]     88%|########8 | 2922/3309 [00:22<00:02, 175.38/s]     89%|########8 | 2940/3309 [00:22<00:02, 175.01/s]     89%|########9 | 2958/3309 [00:22<00:02, 171.93/s]     90%|########9 | 2976/3309 [00:22<00:01, 171.50/s]     90%|######### | 2994/3309 [00:22<00:01, 172.34/s]     91%|#########1| 3012/3309 [00:23<00:01, 173.74/s]     92%|#########1| 3030/3309 [00:23<00:01, 173.12/s]     92%|#########2| 3048/3309 [00:23<00:01, 172.76/s]     93%|#########2| 3066/3309 [00:23<00:01, 172.84/s]     93%|#########3| 3084/3309 [00:23<00:01, 173.21/s]     94%|#########3| 3102/3309 [00:23<00:01, 174.17/s]     94%|#########4| 3120/3309 [00:23<00:01, 174.47/s]     95%|#########4| 3138/3309 [00:23<00:00, 174.57/s]     95%|#########5| 3156/3309 [00:23<00:00, 175.47/s]     96%|#########5| 3174/3309 [00:24<00:00, 174.17/s]     96%|#########6| 3192/3309 [00:24<00:00, 174.15/s]     97%|#########7| 3210/3309 [00:24<00:00, 174.34/s]     98%|#########7| 3228/3309 [00:24<00:00, 175.80/s]     98%|#########8| 3246/3309 [00:24<00:00, 174.66/s]     99%|#########8| 3264/3309 [00:24<00:00, 172.75/s]     99%|#########9| 3282/3309 [00:24<00:00, 170.44/s]    100%|#########9| 3300/3309 [00:24<00:00, 170.25/s]    100%|##########| 3309/3309 [00:24<00:00, 133.40/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-182
+.. GENERATED FROM PYTHON SOURCE LINES 172-174
 
 The resulting features are stored in ``adata.obs['img_features']``,
 with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_vimentin`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-184
+.. GENERATED FROM PYTHON SOURCE LINES 174-176
 
 .. code-block:: default
 
@@ -487,13 +460,13 @@ with channel 0 representing `145_CD45`, channel 1 `174_CK`, and channel 2 `113_v
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-188
+.. GENERATED FROM PYTHON SOURCE LINES 177-180
 
 As described in :cite:`hartmann2020multiplexed`, let us transformed using an
 inverse hyperbolic sine (`arcsinh`) co-factor of 0.05, to allow us to compare
 the computed mean intensities with the values contained in `adata`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-190
+.. GENERATED FROM PYTHON SOURCE LINES 180-182
 
 .. code-block:: default
 
@@ -506,11 +479,11 @@ the computed mean intensities with the values contained in `adata`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-192
+.. GENERATED FROM PYTHON SOURCE LINES 183-184
 
 Now, let's visualize the result:
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-204
+.. GENERATED FROM PYTHON SOURCE LINES 184-196
 
 .. code-block:: default
 
@@ -529,16 +502,16 @@ Now, let's visualize the result:
 
 
 
-.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_007.png
+.. image-sg:: /auto_tutorials/images/sphx_glr_tutorial_mibitof_005.png
    :alt: CD45, corr: 0.84, CK, corr: 0.85, vimentin, corr: 0.70
-   :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_007.png
+   :srcset: /auto_tutorials/images/sphx_glr_tutorial_mibitof_005.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-215
+.. GENERATED FROM PYTHON SOURCE LINES 197-207
 
 We get high correlations between the original values and our computation using Squidpy.
 The remaining differences are probably due to more pre-processing applied by
@@ -554,9 +527,9 @@ For examples of this, please see our other Analysis tutorials, e.g.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  55.450 seconds)
+   **Total running time of the script:** ( 1 minutes  2.671 seconds)
 
-**Estimated memory usage:**  473 MB
+**Estimated memory usage:**  802 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_mibitof.py:

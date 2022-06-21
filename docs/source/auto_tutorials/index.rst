@@ -74,27 +74,6 @@ Tutorials
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
-     :alt: Analyze seqFISH data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_tutorials/tutorial_seqfish
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
 
 .. only:: html
@@ -113,6 +92,27 @@ Tutorials
    :hidden:
 
    /auto_tutorials/tutorial_slideseqv2
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
+     :alt: Analyze seqFISH data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_seqfish
 
 .. raw:: html
 
@@ -158,27 +158,6 @@ Tutorials
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="It is possible to acquire several consecutive image slices from the same tissue. Squidpy&#x27;s Imag...">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
-     :alt: Use z-stacks with ImageContainer
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_tutorials/tutorial_image_container_zstacks
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Visium spatial transcriptomics dat...">
 
 .. only:: html
@@ -197,6 +176,27 @@ Tutorials
    :hidden:
 
    /auto_tutorials/tutorial_visium_hne
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="It is possible to acquire several consecutive image slices from the same tissue. Squidpy&#x27;s Imag...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
+     :alt: Use z-stacks with ImageContainer
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tutorial_image_container_zstacks
 
 .. raw:: html
 

@@ -102,7 +102,7 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.076 seconds)
+   **Total running time of the script:** ( 0 minutes  13.326 seconds)
 
 **Estimated memory usage:**  11 MB
 

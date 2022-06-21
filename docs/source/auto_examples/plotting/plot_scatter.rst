@@ -245,9 +245,9 @@ as in the previous plot. See :func:`squidpy.pl.spatial_scatter` for documentatio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.215 seconds)
+   **Total running time of the script:** ( 0 minutes  22.078 seconds)
 
-**Estimated memory usage:**  843 MB
+**Estimated memory usage:**  833 MB
 
 
 .. _sphx_glr_download_auto_examples_plotting_plot_scatter.py:

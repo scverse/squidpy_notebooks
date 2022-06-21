@@ -20,7 +20,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     :func:`squidpy.im.calculate_image_features`.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -49,8 +48,8 @@ adata.obsm["histogram_features"].head()
 # learn how to use our interactive :mod:`napari` plugin.
 # With these features we can e.g. appreciate the detailed distribution of
 # intensity values of channel 0 (DAPI stain) on the different bins.
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     sq.pl.extract(adata, "histogram_features"),
     color=[None, "histogram_ch-0_bin-0", "histogram_ch-0_bin-1", "histogram_ch-0_bin-2"],
-    bw=True,
+    img_cmap="gray",
 )

@@ -71,13 +71,13 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 .. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 First, let's visualize cluster annotation in spatial context
-with :func:`scanpy.pl.spatial`.
+with :func:`squidpy.pl.spatial_scatter`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="celltype_mapped_refined", spot_size=0.03)
+    sq.pl.spatial_scatter(adata, color="celltype_mapped_refined", shape=None, figsize=(10, 10))
 
 
 
@@ -137,7 +137,7 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
  .. code-block:: none
 
-      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:22:20,  4.95s/]      8%|7         | 79/1000 [00:05<00:41, 22.09/s]      16%|#5        | 155/1000 [00:05<00:16, 50.52/s]     23%|##3       | 234/1000 [00:05<00:08, 89.05/s]     31%|###1      | 313/1000 [00:05<00:04, 137.56/s]     39%|###9      | 390/1000 [00:05<00:03, 194.43/s]     46%|####6     | 464/1000 [00:05<00:02, 256.37/s]     54%|#####4    | 543/1000 [00:05<00:01, 330.83/s]     62%|######2   | 624/1000 [00:05<00:00, 409.77/s]     70%|#######   | 702/1000 [00:05<00:00, 480.01/s]     78%|#######7  | 779/1000 [00:05<00:00, 536.78/s]     86%|########5 | 859/1000 [00:06<00:00, 596.72/s]     94%|#########3| 938/1000 [00:06<00:00, 643.82/s]    100%|##########| 1000/1000 [00:06<00:00, 160.33/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:05<1:29:18,  5.36s/]      8%|8         | 80/1000 [00:05<00:44, 20.67/s]      16%|#6        | 160/1000 [00:05<00:17, 48.51/s]     24%|##4       | 241/1000 [00:05<00:08, 85.48/s]     32%|###2      | 321/1000 [00:05<00:05, 131.78/s]     40%|####      | 402/1000 [00:05<00:03, 189.17/s]     48%|####8     | 483/1000 [00:05<00:02, 256.00/s]     56%|#####6    | 563/1000 [00:06<00:01, 328.24/s]     64%|######4   | 644/1000 [00:06<00:00, 404.51/s]     72%|#######2  | 725/1000 [00:06<00:00, 479.70/s]     81%|########  | 806/1000 [00:06<00:00, 548.75/s]     89%|########8 | 887/1000 [00:06<00:00, 607.99/s]     97%|#########6| 968/1000 [00:06<00:00, 657.10/s]    100%|##########| 1000/1000 [00:06<00:00, 151.29/s]
 
 
 
@@ -159,13 +159,13 @@ Of course, results do not perfectly overlap, and this could be due to several fa
 
 We can also visualize the spatial organization of cells again,
 and appreciate the proximity of specific cell clusters.
-For this, we'll use :func:`scanpy.pl.spatial` again.
+For this, we'll use :func:`squidpy.pl.spatial_scatter` again.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-94
+.. GENERATED FROM PYTHON SOURCE LINES 80-95
 
 .. code-block:: default
 
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         adata,
         color="celltype_mapped_refined",
         groups=[
@@ -176,7 +176,8 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
             "Intermediate mesoderm",
             "Presomitic mesoderm",
         ],
-        spot_size=0.03,
+        shape=None,
+        size=2,
     )
 
 
@@ -188,19 +189,10 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
-      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 95-118
+.. GENERATED FROM PYTHON SOURCE LINES 96-119
 
 Co-occurrence across spatial dimensions
 ---------------------------------------
@@ -226,7 +218,7 @@ and set the cluster annotation for the conditional probability with
 the argument ``clusters``. Then, we visualize the results with
 :func:`squidpy.pl.co_occurrence`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-126
+.. GENERATED FROM PYTHON SOURCE LINES 119-127
 
 .. code-block:: default
 
@@ -253,7 +245,7 @@ the argument ``clusters``. Then, we visualize the results with
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:52<00:00, 52.66s/]    100%|##########| 1/1 [00:52<00:00, 52.77s/]
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:54<00:00, 54.61s/]    100%|##########| 1/1 [00:54<00:00, 54.73s/]
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
@@ -282,7 +274,7 @@ the argument ``clusters``. Then, we visualize the results with
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-136
+.. GENERATED FROM PYTHON SOURCE LINES 128-137
 
 It seems to recapitulate a previous observation, that there is a co-occurrence between the
 conditional cell type annotation *Lateral plate mesoderm* and the clusters
@@ -294,7 +286,7 @@ to the *Lateral plate mesoderm* cells.
 It should be noted that the distance units corresponds to
 the spatial coordinates saved in `adata.obsm['spatial']`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-158
+.. GENERATED FROM PYTHON SOURCE LINES 139-159
 
 Ligand-receptor interaction analysis
 ------------------------------------
@@ -317,7 +309,7 @@ filter out annotations
 with low-expressed genes (with the ``means_range`` argument)
 and decreasing the threshold for the adjusted p-value (with the ``alpha`` argument).
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-173
+.. GENERATED FROM PYTHON SOURCE LINES 159-174
 
 .. code-block:: default
 
@@ -351,12 +343,12 @@ and decreasing the threshold for the adjusted p-value (with the ``alpha`` argume
 
  .. code-block:: none
 
-      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:04<07:20,  4.45s/permutation]     62%|######2   | 62/100 [00:04<00:01, 19.17permutation/s]    100%|##########| 100/100 [00:04<00:00, 21.67permutation/s]
+      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:04<07:27,  4.52s/permutation]     63%|######3   | 63/100 [00:04<00:01, 19.21permutation/s]    100%|##########| 100/100 [00:04<00:00, 21.39permutation/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 174-179
+.. GENERATED FROM PYTHON SOURCE LINES 175-180
 
 The dotplot visualization provides an interesting set of candidate interactions
 that could be involved in the tissue organization of the cell types of interest.
@@ -367,9 +359,9 @@ and should be interpreted accordingly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.436 seconds)
+   **Total running time of the script:** ( 1 minutes  48.024 seconds)
 
-**Estimated memory usage:**  2612 MB
+**Estimated memory usage:**  2512 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_seqfish.py:
