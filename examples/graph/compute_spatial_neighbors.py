@@ -46,7 +46,7 @@ adata.obsp["spatial_distances"]
 # We can visualize the neighbors of a point to better visualize what `n_rings` mean:
 _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
 idx = np.append(idx, 420)
-sq.pl.spatial_scatter(adata[idx, :], shape=None, connectivity_key="spatial_connectivities")
+sq.pl.spatial_scatter(adata[idx, :], connectivity_key="spatial_connectivities", img=False, na_color="lightgrey")
 
 ###############################################################################
 # Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
