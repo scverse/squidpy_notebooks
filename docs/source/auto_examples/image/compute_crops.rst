@@ -197,9 +197,9 @@ Visualize the result in Napari:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  36.273 seconds)
+   **Total running time of the script:** ( 0 minutes  18.710 seconds)
 
-**Estimated memory usage:**  268 MB
+**Estimated memory usage:**  261 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_crops.py:

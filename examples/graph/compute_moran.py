@@ -16,7 +16,6 @@ in the tissue are under consideration.
     - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
       :func:`squidpy.gr.spatial_neighbors`.
 """
-import scanpy as sc
 import squidpy as sq
 
 adata = sq.datasets.visium_hne_adata()
@@ -38,8 +37,8 @@ sq.gr.spatial_autocorr(
 adata.uns["moranI"].head(10)
 
 ###############################################################################
-# We can visualize some of those genes with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color=["Resp18", "Tuba4a"])
+# We can visualize some of those genes with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color=["Resp18", "Tuba4a"])
 
 ###############################################################################
 # We could've also passed ``mode = 'geary'`` to compute a closely related auto-correlation statistic, `Geary's C

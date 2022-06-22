@@ -38,15 +38,13 @@ Import packages & data
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-34
+.. GENERATED FROM PYTHON SOURCE LINES 23-32
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
-    sc.logging.print_header()
     print(f"squidpy=={sq.__version__}")
 
     # load the pre-processed dataset
@@ -63,7 +61,6 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.9.1 anndata==0.8.0 umap==0.5.3 numpy==1.22.4 scipy==1.8.1 pandas==1.4.2 scikit-learn==1.1.1 statsmodels==0.13.2 python-igraph==0.9.11 pynndescent==0.5.7
     squidpy==1.2.2
 
     AnnData object with n_obs × n_vars = 41786 × 4000
@@ -76,16 +73,16 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-37
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 First, let's visualize cluster annotation in spatial context
-with :func:`scanpy.pl.spatial`.
+with :func:`squidpy.pl.spatial_scatter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. GENERATED FROM PYTHON SOURCE LINES 35-37
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="cluster", spot_size=30)
+    sq.pl.spatial_scatter(adata, color="cluster", size=1, shape=None)
 
 
 
@@ -99,7 +96,7 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-61
+.. GENERATED FROM PYTHON SOURCE LINES 38-59
 
 Neighborhood enrichment analysis
 --------------------------------
@@ -123,7 +120,7 @@ of how these functions works.
 Finally, we'll directly visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-66
+.. GENERATED FROM PYTHON SOURCE LINES 59-64
 
 .. code-block:: default
 
@@ -147,28 +144,29 @@ We'll add a dendrogram to the heatmap computed with linkage method *ward*.
 
  .. code-block:: none
 
-      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:16:27,  4.59s/]      4%|4         | 41/1000 [00:04<01:18, 12.28/s]       8%|8         | 82/1000 [00:04<00:31, 28.71/s]     12%|#2        | 123/1000 [00:04<00:17, 49.95/s]     16%|#6        | 164/1000 [00:04<00:10, 76.40/s]     20%|##        | 205/1000 [00:05<00:07, 107.94/s]     25%|##4       | 246/1000 [00:05<00:05, 143.75/s]     29%|##8       | 287/1000 [00:05<00:03, 182.41/s]     33%|###2      | 328/1000 [00:05<00:03, 220.75/s]     37%|###6      | 368/1000 [00:05<00:02, 255.32/s]     41%|####      | 409/1000 [00:05<00:02, 288.99/s]     45%|####4     | 449/1000 [00:05<00:01, 314.84/s]     49%|####8     | 489/1000 [00:05<00:01, 327.36/s]     53%|#####2    | 529/1000 [00:05<00:01, 345.54/s]     57%|#####6    | 569/1000 [00:06<00:01, 357.11/s]     61%|######1   | 611/1000 [00:06<00:01, 372.26/s]     65%|######5   | 652/1000 [00:06<00:00, 381.58/s]     69%|######9   | 693/1000 [00:06<00:00, 388.34/s]     73%|#######3  | 734/1000 [00:06<00:00, 394.04/s]     78%|#######7  | 775/1000 [00:06<00:00, 386.28/s]     82%|########1 | 817/1000 [00:06<00:00, 394.31/s]     86%|########5 | 858/1000 [00:06<00:00, 398.04/s]     90%|########9 | 899/1000 [00:06<00:00, 400.93/s]     94%|#########3| 940/1000 [00:06<00:00, 401.78/s]     98%|#########8| 981/1000 [00:07<00:00, 403.07/s]    100%|##########| 1000/1000 [00:07<00:00, 141.05/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:05<1:29:57,  5.40s/]      4%|4         | 41/1000 [00:05<01:31, 10.48/s]       8%|8         | 81/1000 [00:05<00:37, 24.29/s]     12%|#2        | 122/1000 [00:05<00:20, 42.87/s]     16%|#6        | 163/1000 [00:05<00:12, 66.44/s]     20%|##        | 203/1000 [00:05<00:08, 94.41/s]     24%|##4       | 242/1000 [00:06<00:06, 126.07/s]     28%|##8       | 281/1000 [00:06<00:04, 160.79/s]     32%|###2      | 320/1000 [00:06<00:03, 196.50/s]     36%|###6      | 361/1000 [00:06<00:02, 234.76/s]     40%|####      | 401/1000 [00:06<00:02, 268.82/s]     44%|####4     | 442/1000 [00:06<00:01, 299.69/s]     48%|####8     | 482/1000 [00:06<00:01, 323.78/s]     52%|#####2    | 523/1000 [00:06<00:01, 345.76/s]     56%|#####6    | 563/1000 [00:06<00:01, 359.51/s]     60%|######    | 603/1000 [00:06<00:01, 369.53/s]     64%|######4   | 643/1000 [00:07<00:00, 376.42/s]     68%|######8   | 683/1000 [00:07<00:00, 380.88/s]     72%|#######2  | 723/1000 [00:07<00:00, 386.13/s]     76%|#######6  | 763/1000 [00:07<00:00, 388.98/s]     80%|########  | 803/1000 [00:07<00:00, 364.34/s]     84%|########4 | 841/1000 [00:07<00:00, 352.80/s]     88%|########7 | 877/1000 [00:07<00:00, 353.89/s]     91%|#########1| 913/1000 [00:07<00:00, 354.79/s]     95%|#########5| 950/1000 [00:07<00:00, 358.41/s]     99%|#########8| 988/1000 [00:07<00:00, 362.10/s]    100%|##########| 1000/1000 [00:08<00:00, 124.94/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-71
+.. GENERATED FROM PYTHON SOURCE LINES 65-69
 
 Interestingly, there seems to be an enrichment between the *Endothelial_Tip*,
 the *Ependymal* cells. Another putative enrichment is between the *Oligodendrocytes*
 and *Polydendrocytes* cells. We can visualize the spatial organization of such clusters.
-For this, we'll use :func:`scanpy.pl.spatial` again.
+For this, we'll use :func:`squidpy.pl.spatial_scatter` again.
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-79
+.. GENERATED FROM PYTHON SOURCE LINES 69-78
 
 .. code-block:: default
 
 
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         adata,
+        shape=None,
         color="cluster",
         groups=["Endothelial_Tip", "Ependymal", "Oligodendrocytes", "Polydendrocytes"],
-        spot_size=30,
+        size=3,
     )
 
 
@@ -180,19 +178,10 @@ For this, we'll use :func:`scanpy.pl.spatial` again.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
-      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 80-91
+.. GENERATED FROM PYTHON SOURCE LINES 79-90
 
 Ripley's statistics
 -------------------
@@ -206,7 +195,7 @@ which is a variance-stabilized version of the Ripley's K statistics.
 We'll visualize the results with :func:`squidpy.pl.ripley`.
 Check :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-95
+.. GENERATED FROM PYTHON SOURCE LINES 90-94
 
 .. code-block:: default
 
@@ -257,23 +246,18 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for more details.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-100
+.. GENERATED FROM PYTHON SOURCE LINES 95-99
 
 The plot highlight how some cell-types have a more clustered pattern,
 like *Astrocytes* and *CA11_CA2_CA3_Subiculum* cells, whereas other have a more
 dispersed pattern, like *Mural* cells. To confirm such interpretation, we can
 selectively visualize again their spatial organization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-107
+.. GENERATED FROM PYTHON SOURCE LINES 99-101
 
 .. code-block:: default
 
-    sc.pl.spatial(
-        adata,
-        color="cluster",
-        groups=["Mural", "CA1_CA2_CA3_Subiculum"],
-        spot_size=30,
-    )
+    sq.pl.spatial_scatter(adata, color="cluster", groups=["Mural", "CA1_CA2_CA3_Subiculum"], size=3, shape=None)
 
 
 
@@ -284,19 +268,10 @@ selectively visualize again their spatial organization.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/scanpy/plotting/_tools/scatterplots.py:1171: FutureWarning: Categorical.replace is deprecated and will be removed in a future version. Use Series.replace directly instead.
-      values = values.replace(values.categories.difference(groups), np.nan)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 108-129
+.. GENERATED FROM PYTHON SOURCE LINES 102-123
 
 Ligand-receptor interaction analysis
 ------------------------------------
@@ -320,7 +295,7 @@ and decreasing the threshold
 for the adjusted p-value (with the ``alpha`` argument)
 Check :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py` for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-144
+.. GENERATED FROM PYTHON SOURCE LINES 123-138
 
 .. code-block:: default
 
@@ -366,12 +341,12 @@ Check :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py` for more details.
 
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       data["clusters"] = cat.rename_categories(cluster_mapper)
-      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:05<09:36,  5.82s/permutation]     32%|###2      | 32/100 [00:05<00:08,  7.59permutation/s]     60%|######    | 60/100 [00:06<00:02, 16.58permutation/s]     90%|######### | 90/100 [00:06<00:00, 29.34permutation/s]    100%|##########| 100/100 [00:06<00:00, 16.24permutation/s]
+      0%|          | 0/100 [00:00<?, ?permutation/s]      1%|1         | 1/100 [00:06<10:42,  6.49s/permutation]     31%|###1      | 31/100 [00:06<00:10,  6.61permutation/s]     60%|######    | 60/100 [00:06<00:02, 15.06permutation/s]     89%|########9 | 89/100 [00:06<00:00, 26.28permutation/s]    100%|##########| 100/100 [00:06<00:00, 14.64permutation/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-150
+.. GENERATED FROM PYTHON SOURCE LINES 139-144
 
 The dotplot visualization provides an interesting set of candidate interactions
 that could be involved in the tissue organization of the cell types of interest.
@@ -379,7 +354,7 @@ It should be noted that this method is a pure re-implementation of the original
 permutation-based test, and therefore retains all its caveats
 and should be interpreted accordingly.
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-161
+.. GENERATED FROM PYTHON SOURCE LINES 146-155
 
 Spatially variable genes with spatial autocorrelation statistics
 ----------------------------------------------------------------
@@ -391,7 +366,7 @@ The statistic as well as the p-value are computed for each gene, and FDR correct
 is performed. For the purpose of this tutorial, let's compute the *Moran's I* score.
 See :ref:`sphx_glr_auto_examples_graph_compute_moran.py` for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-164
+.. GENERATED FROM PYTHON SOURCE LINES 155-158
 
 .. code-block:: default
 
@@ -508,19 +483,20 @@ See :ref:`sphx_glr_auto_examples_graph_compute_moran.py` for more details.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-167
+.. GENERATED FROM PYTHON SOURCE LINES 159-161
 
 The results are stored in `adata.uns["moranI"]` and we can visualize selected genes
-with :func:`scanpy.pl.spatial`.
+with :func:`squidpy.pl.spatial_scatter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-172
+.. GENERATED FROM PYTHON SOURCE LINES 161-167
 
 .. code-block:: default
 
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         adata,
+        shape=None,
         color=["Ttr", "Plp1", "Mbp", "Hpca", "Enpp2"],
-        spot_size=30,
+        size=0.1,
     )
 
 
@@ -537,9 +513,9 @@ with :func:`scanpy.pl.spatial`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  40.072 seconds)
+   **Total running time of the script:** ( 2 minutes  21.566 seconds)
 
-**Estimated memory usage:**  1918 MB
+**Estimated memory usage:**  1931 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_slideseqv2.py:

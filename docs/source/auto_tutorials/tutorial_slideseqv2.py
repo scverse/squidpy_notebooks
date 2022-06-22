@@ -21,10 +21,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 """
 
-import scanpy as sc
 import squidpy as sq
 
-sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
 # load the pre-processed dataset
@@ -33,8 +31,8 @@ adata
 
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="cluster", spot_size=30)
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color="cluster", size=1, shape=None)
 
 ###############################################################################
 # Neighborhood enrichment analysis
@@ -67,13 +65,14 @@ sq.pl.nhood_enrichment(adata, cluster_key="cluster", method="single", cmap="infe
 # Interestingly, there seems to be an enrichment between the *Endothelial_Tip*,
 # the *Ependymal* cells. Another putative enrichment is between the *Oligodendrocytes*
 # and *Polydendrocytes* cells. We can visualize the spatial organization of such clusters.
-# For this, we'll use :func:`scanpy.pl.spatial` again.
+# For this, we'll use :func:`squidpy.pl.spatial_scatter` again.
 
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     adata,
+    shape=None,
     color="cluster",
     groups=["Endothelial_Tip", "Ependymal", "Oligodendrocytes", "Polydendrocytes"],
-    spot_size=30,
+    size=3,
 )
 
 ###############################################################################
@@ -97,12 +96,7 @@ sq.pl.ripley(adata, cluster_key="cluster", mode=mode)
 # like *Astrocytes* and *CA11_CA2_CA3_Subiculum* cells, whereas other have a more
 # dispersed pattern, like *Mural* cells. To confirm such interpretation, we can
 # selectively visualize again their spatial organization.
-sc.pl.spatial(
-    adata,
-    color="cluster",
-    groups=["Mural", "CA1_CA2_CA3_Subiculum"],
-    spot_size=30,
-)
+sq.pl.spatial_scatter(adata, color="cluster", groups=["Mural", "CA1_CA2_CA3_Subiculum"], size=3, shape=None)
 
 ###############################################################################
 # Ligand-receptor interaction analysis
@@ -163,9 +157,10 @@ adata.uns["moranI"].head(10)
 
 ###############################################################################
 # The results are stored in `adata.uns["moranI"]` and we can visualize selected genes
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(
     adata,
+    shape=None,
     color=["Ttr", "Plp1", "Mbp", "Hpca", "Enpp2"],
-    spot_size=30,
+    size=0.1,
 )

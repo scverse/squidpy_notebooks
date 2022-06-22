@@ -24,7 +24,6 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
       :func:`squidpy.im.calculate_image_features`.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 import matplotlib.pyplot as plt
@@ -81,7 +80,7 @@ for i, ax in enumerate(axes):
     ax.set_title(f"ch{i}")
 
 # plot segmentation features
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     sq.pl.extract(adata, "segmentation_features"),
     color=[
         "segmentation_label",
@@ -89,10 +88,8 @@ sc.pl.spatial(
         "segmentation_ch-1_mean_intensity_mean",
         "segmentation_ch-2_mean_intensity_mean",
     ],
-    bw=True,
+    img_cmap="gray",
     ncols=2,
-    vmin="p1",
-    vmax="p99",
 )
 
 ###############################################################################

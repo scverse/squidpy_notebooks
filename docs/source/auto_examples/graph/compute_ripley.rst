@@ -33,11 +33,10 @@ The Ripley's L is a variance-normalized version of the Ripley's K statistic.
     See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` for
     another score to describe spatial patterns with :func:`squidpy.gr.co_occurrence`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-24
+.. GENERATED FROM PYTHON SOURCE LINES 18-23
 
 .. code-block:: default
 
-    import scanpy as sc
     import squidpy as sq
 
     adata = sq.datasets.slideseqv2()
@@ -64,12 +63,12 @@ The Ripley's L is a variance-normalized version of the Ripley's K statistic.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 We can compute the Ripley's L function with :func:`squidpy.gr.ripley`.
 Results can be visualized with :func:`squidpy.pl.ripley`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-31
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 .. code-block:: default
 
@@ -120,16 +119,16 @@ Results can be visualized with :func:`squidpy.pl.ripley`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
 
 We can further visualize tissue organization in spatial coordinates
-with :func:`scanpy.pl.spatial`.
+with :func:`squidpy.pl.spatial_scatter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-36
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="cluster", spot_size=20)
+    sq.pl.spatial_scatter(adata, color="cluster", size=20, shape=None)
 
 
 
@@ -143,7 +142,7 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 There are also 2 other Ripley's statistics available (that are closely related):
 ``mode = 'F'`` and ``mode = 'G'``.
@@ -151,9 +150,9 @@ There are also 2 other Ripley's statistics available (that are closely related):
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  30.937 seconds)
+   **Total running time of the script:** ( 0 minutes  26.213 seconds)
 
-**Estimated memory usage:**  1781 MB
+**Estimated memory usage:**  1521 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_ripley.py:

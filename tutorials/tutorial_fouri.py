@@ -19,10 +19,8 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 """
 
-import scanpy as sc
 import squidpy as sq
 
-sc.logging.print_header()
 print(f"squidpy=={sq.__version__}")
 
 # load the pre-processed dataset
@@ -30,8 +28,8 @@ adata = sq.datasets.four_i()
 
 ###############################################################################
 # First, let's visualize cluster annotation in spatial context
-# with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color="cluster", spot_size=1)
+# with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, shape=None, color="cluster", size=1)
 
 
 ###############################################################################
@@ -92,6 +90,6 @@ adata.uns["moranI"].head(10)
 
 ###############################################################################
 # The results are stored in `adata.uns['moranI']` and we can visualize selected genes
-# with :func:`scanpy.pl.spatial`.
+# with :func:`squidpy.pl.spatial_scatter`.
 
-sc.pl.spatial(adata, color="Yap/Taz", spot_size=1)
+sq.pl.spatial_scatter(adata, shape=None, color="Yap/Taz", size=1)

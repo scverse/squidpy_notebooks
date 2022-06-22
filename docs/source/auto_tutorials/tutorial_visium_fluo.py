@@ -49,11 +49,11 @@ adata = sq.datasets.visium_fluo_adata_crop()
 
 ###############################################################################
 # First, let's visualize the cluster annotation in the spatial context
-# with :func:`scanpy.pl.spatial`.
+# with :func:`squidpy.pl.spatial_scatter`.
 #
 # As you can see, this dataset is a smaller crop of the whole brain section.
 # We provide this crop to make the execution time of this tutorial a bit shorter.
-sc.pl.spatial(adata, color="cluster")
+sq.pl.spatial_scatter(adata, color="cluster")
 
 
 ###############################################################################
@@ -141,7 +141,7 @@ sq.im.calculate_image_features(
     features_kwargs=features_kwargs,
 )
 # plot results and compare with gene-space clustering
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     sq.pl.extract(adata, "features_segmentation"),
     color=[
         "segmentation_label",
@@ -240,7 +240,7 @@ adata.obs["features_histogram_cluster"] = cluster_features(adata.obsm["features"
 adata.obs["features_texture_cluster"] = cluster_features(adata.obsm["features"], like="texture")
 
 sc.set_figure_params(facecolor="white", figsize=(8, 8))
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     adata,
     color=[
         "features_summary_cluster",

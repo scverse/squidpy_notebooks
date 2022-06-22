@@ -210,7 +210,7 @@ values are ``numpy.ndarray``. In this case, there is only one layer: ``'image'``
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x13c4b88b0>
+    <matplotlib.image.AxesImage object at 0x1351148b0>
 
 
 
@@ -309,9 +309,9 @@ as the image is needed.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.686 seconds)
+   **Total running time of the script:** ( 0 minutes  24.281 seconds)
 
-**Estimated memory usage:**  291 MB
+**Estimated memory usage:**  295 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_generate_spot_crops.py:

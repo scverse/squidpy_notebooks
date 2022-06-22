@@ -14,7 +14,6 @@ This function is useful to visualize statically different layers of the
       :ref:`sphx_glr_auto_examples_image_compute_smooth.py` for additional
       examples on methods of the :class:`squidpy.im.ImageContainer`.
 """
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -23,10 +22,14 @@ adata = sq.datasets.mibitof()
 
 ###############################################################################
 # We can briefly visualize the data to understand the type of images we have.
-for library_id in adata.uns["spatial"].keys():
-    sc.pl.spatial(
-        adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
-    )
+sq.pl.spatial_segment(
+    adata,
+    library_id=["point16", "point23", "point8"],
+    seg_cell_id="cell_id",
+    color="Cluster",
+    library_key="library_id",
+    title=["point16", "point23", "point8"],
+)
 
 ###############################################################################
 # We have three different tissue samples. We also have segmentation masks for each tissue sample.

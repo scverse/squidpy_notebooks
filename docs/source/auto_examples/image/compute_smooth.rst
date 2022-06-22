@@ -101,7 +101,7 @@ Now we can look at the result on a cropped part of the image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.608 seconds)
+   **Total running time of the script:** ( 0 minutes  9.585 seconds)
 
 **Estimated memory usage:**  43 MB
 

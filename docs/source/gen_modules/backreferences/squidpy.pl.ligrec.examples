@@ -24,25 +24,6 @@ Examples using ``squidpy.pl.ligrec``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
-
-.. only:: html
-
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
-     :alt: Analyze seqFISH data
-
-     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of Slide-seqV2 data.">
 
 .. only:: html
@@ -59,6 +40,25 @@ Examples using ``squidpy.pl.ligrec``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to apply Squidpy for the analysis of seqFISH data.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
+     :alt: Analyze seqFISH data
+
+     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
 
 .. raw:: html
 

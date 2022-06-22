@@ -336,14 +336,14 @@ and segmentation functions if we'd like to only process a specific `library_id`.
 
 Visualization
 -------------
-For using :func:`scanpy.pl.spatial`, subset the `adata` to the desired `library_id`.
+For using :func:`squidpy.pl.spatial_scatter`, subset the `adata` to the desired `library_id`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 92-95
 
 .. code-block:: default
 
     library_id = library_ids[0]
-    sc.pl.spatial(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
+    sq.pl.spatial_scatter(adata[adata.obs["library_id"] == library_id], library_id=library_id, color="in_tissue")
 
 
 
@@ -559,7 +559,7 @@ Z dimension in `img`.
 
  .. code-block:: none
 
-      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:15<3:21:53, 15.67s/]     10%|#         | 81/774 [00:15<01:35,  7.29/s]      21%|##1       | 166/774 [00:15<00:33, 18.02/s]     32%|###2      | 249/774 [00:15<00:16, 32.52/s]     43%|####2     | 331/774 [00:16<00:08, 51.88/s]     54%|#####3    | 416/774 [00:16<00:04, 79.13/s]     66%|######5   | 508/774 [00:16<00:02, 118.07/s]     77%|#######7  | 596/774 [00:16<00:01, 165.45/s]     88%|########7 | 681/774 [00:16<00:00, 220.61/s]     99%|#########8| 765/774 [00:16<00:00, 278.03/s]    100%|##########| 774/774 [00:16<00:00, 46.47/s] 
+      0%|          | 0/774 [00:00<?, ?/s]      0%|          | 1/774 [00:08<1:48:37,  8.43s/]      8%|8         | 64/774 [00:08<01:06, 10.61/s]      15%|#5        | 119/774 [00:08<00:28, 23.15/s]     24%|##4       | 186/774 [00:08<00:13, 43.92/s]     33%|###2      | 252/774 [00:08<00:07, 70.96/s]     41%|####      | 316/774 [00:08<00:04, 104.50/s]     51%|#####     | 391/774 [00:09<00:02, 154.58/s]     59%|#####9    | 457/774 [00:09<00:01, 204.82/s]     69%|######8   | 531/774 [00:09<00:00, 271.21/s]     78%|#######7  | 600/774 [00:09<00:00, 334.45/s]     86%|########6 | 668/774 [00:09<00:00, 372.47/s]     94%|#########4| 731/774 [00:09<00:00, 334.58/s]    100%|##########| 774/774 [00:09<00:00, 78.82/s] 
 
 
 .. raw:: html
@@ -836,24 +836,28 @@ Here, we cluster genes and calculated features using a standard Scanpy workflow.
 
 .. GENERATED FROM PYTHON SOURCE LINES 187-192
 
-Visualize the result interactively using Napari, or statically using :func:`scanpy.pl.spatial`:
+Visualize the result interactively using Napari, or statically using :func:`squidpy.pl.spatial_scatter`:
 
 .. code-block:: python
 
    img.interactive(adata, library_key='library_id')
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-203
+.. GENERATED FROM PYTHON SOURCE LINES 192-207
 
 .. code-block:: default
 
-    sc.pl.spatial(
-        adata_crop[adata_crop.obs["library_id"] == library_ids[0]],
+    sq.pl.spatial_scatter(
+        adata_crop,
+        library_key="library_id",
+        crop_coord=(5700, 2700, 9000, 6000),
         library_id=library_ids[0],
         color=["leiden", "leiden_features"],
     )
 
-    sc.pl.spatial(
-        adata_crop[adata_crop.obs["library_id"] == library_ids[1]],
+    sq.pl.spatial_scatter(
+        adata_crop,
+        library_key="library_id",
+        crop_coord=(5700, 3500, 9000, 6000),
         library_id=library_ids[1],
         color=["leiden", "leiden_features"],
     )
@@ -878,26 +882,15 @@ Visualize the result interactively using Napari, or statically using :func:`scan
          :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
-      self.data[key] = value
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
-      self.data[key] = value
-
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  19.138 seconds)
+   **Total running time of the script:** ( 1 minutes  15.836 seconds)
 
-**Estimated memory usage:**  1751 MB
+**Estimated memory usage:**  1510 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_image_container_zstacks.py:

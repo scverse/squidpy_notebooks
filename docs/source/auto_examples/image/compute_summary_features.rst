@@ -35,12 +35,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
     See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-24
+.. GENERATED FROM PYTHON SOURCE LINES 20-23
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
 
@@ -50,11 +49,11 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+.. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 First, let's load the fluorescence Visium dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-32
+.. GENERATED FROM PYTHON SOURCE LINES 25-31
 
 .. code-block:: default
 
@@ -71,14 +70,14 @@ First, let's load the fluorescence Visium dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-37
+.. GENERATED FROM PYTHON SOURCE LINES 32-36
 
 Then, we calculate the 0.1th quantile, mean and standard deviation for the Visium spots
 of the fluorescence channels 0 (DAPI) and 1 (GFAP).
 In order to get statistics of only the tissue underneath the spots, we use the argument ``mask_circle = True``.
 When not setting this flag, statistics are calculated using a square crop centered on the spot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-54
+.. GENERATED FROM PYTHON SOURCE LINES 36-53
 
 .. code-block:: default
 
@@ -106,11 +105,11 @@ When not setting this flag, statistics are calculated using a square crop center
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-56
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 The result is stored in ``adata.obsm['summary_features']``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 .. code-block:: default
 
@@ -203,7 +202,7 @@ The result is stored in ``adata.obsm['summary_features']``.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 58-63
 
 Use :func:`squidpy.pl.extract` to plot the summary features on the tissue image or have a look at
 `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
@@ -211,11 +210,13 @@ how to use our interactive :mod:`napari` plugin.
 Note how the spatial distribution of channel means is different for fluorescence channels 0 (DAPI stain)
 and 1 (GFAP stain).
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+.. GENERATED FROM PYTHON SOURCE LINES 63-66
 
 .. code-block:: default
 
-    sc.pl.spatial(sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], bw=True)
+    sq.pl.spatial_scatter(
+        sq.pl.extract(adata, "summary_features"), color=[None, "summary_ch-0_mean", "summary_ch-1_mean"], img_cmap="gray"
+    )
 
 
 
@@ -231,9 +232,9 @@ and 1 (GFAP stain).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  59.553 seconds)
+   **Total running time of the script:** ( 2 minutes  55.149 seconds)
 
-**Estimated memory usage:**  378 MB
+**Estimated memory usage:**  384 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_summary_features.py:

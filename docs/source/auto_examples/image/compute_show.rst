@@ -32,11 +32,10 @@ This function is useful to visualize statically different layers of the
       :ref:`sphx_glr_auto_examples_image_compute_smooth.py` for additional
       examples on methods of the :class:`squidpy.im.ImageContainer`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-19
 
 .. code-block:: default
 
-    import scanpy as sc
     import squidpy as sq
 
 
@@ -46,11 +45,11 @@ This function is useful to visualize statically different layers of the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-22
+.. GENERATED FROM PYTHON SOURCE LINES 20-21
 
 Load the Mibitof dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-24
+.. GENERATED FROM PYTHON SOURCE LINES 21-23
 
 .. code-block:: default
 
@@ -63,16 +62,16 @@ Load the Mibitof dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+.. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 We can briefly visualize the data to understand the type of images we have.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-31
+.. GENERATED FROM PYTHON SOURCE LINES 25-30
 
 .. code-block:: default
 
     for library_id in adata.uns["spatial"].keys():
-        sc.pl.spatial(
+        sq.pl.spatial_scatter(
             adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
         )
 
@@ -104,16 +103,29 @@ We can briefly visualize the data to understand the type of images we have.
          :class: sphx-glr-multi-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+      self.data[key] = value
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+      self.data[key] = value
+    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+      self.data[key] = value
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-35
+
+.. GENERATED FROM PYTHON SOURCE LINES 31-34
 
 We have three different tissue samples. We also have segmentation masks for each tissue sample.
 Let's extract the image from the :class:`anndata.AnnData` object and create a
 :class:`squidpy.im.ImageContainer` object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-43
+.. GENERATED FROM PYTHON SOURCE LINES 34-42
 
 .. code-block:: default
 
@@ -132,11 +144,11 @@ Let's extract the image from the :class:`anndata.AnnData` object and create a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.show`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 .. code-block:: default
 
@@ -154,11 +166,11 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 :meth:`squidpy.im.ImageContainer.show` also allows to overlay the results of segmentation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 48-49
 
 .. code-block:: default
 
@@ -178,9 +190,9 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.877 seconds)
+   **Total running time of the script:** ( 0 minutes  18.952 seconds)
 
-**Estimated memory usage:**  257 MB
+**Estimated memory usage:**  304 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_show.py:

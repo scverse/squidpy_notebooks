@@ -27,7 +27,6 @@ the **obs x genes** spatial gene expression matrix.
       by providing any feature extraction function.
 """
 
-import scanpy as sc
 import squidpy as sq
 
 import numpy as np
@@ -46,8 +45,7 @@ np.set_printoptions(threshold=10)
 print(img)
 print(adata.obsm["spatial"])
 
-sc.set_figure_params(figsize=(4, 4))
-sc.pl.spatial(adata, add_outline=True)
+sq.pl.spatial_scatter(adata, outline=True, size=0.3)
 
 ###############################################################################
 # Using this information, we can now extract features from the tissue underneath each spot by calling
@@ -73,7 +71,7 @@ adata.obsm["features"].head()
 #
 # Here, we plot the median values of all channels (`summary_ch-0_quantile-0.5`,
 # `summary_ch-0_quantile-0.5`, and `summary_ch-2_quantile-0.5`).
-sc.pl.spatial(
+sq.pl.spatial_scatter(
     sq.pl.extract(adata, "features"),
     color=["summary_ch-0_quantile-0.5", "summary_ch-0_quantile-0.5", "summary_ch-2_quantile-0.5"],
 )

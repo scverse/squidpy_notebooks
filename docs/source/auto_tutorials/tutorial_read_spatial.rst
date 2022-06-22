@@ -167,7 +167,7 @@ We can visualize the dummy cluster annotation ``adata.obs['leiden']`` in space.
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="leiden", spot_size=1)
+    sq.pl.spatial_scatter(adata, shape=None, color="leiden", size=50)
 
 
 
@@ -190,12 +190,20 @@ to start using Scanpy/Squidpy for your analysis.
 For instance, you can compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`
 based on a fixed neighbor radius that is informative given your experimental settings.
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-77
+.. GENERATED FROM PYTHON SOURCE LINES 74-85
 
 .. code-block:: default
 
     sq.gr.spatial_neighbors(adata, radius=3.0)
-    sc.pl.spatial(adata, color="leiden", neighbors_key="spatial_neighbors", spot_size=1, edges=True, edges_width=2)
+    sq.pl.spatial_scatter(
+        adata,
+        color="leiden",
+        connectivity_key="spatial_connectivities",
+        edges_color="black",
+        shape=None,
+        edges_width=1,
+        size=3000,
+    )
 
 
 
@@ -209,13 +217,13 @@ based on a fixed neighbor radius that is informative given your experimental set
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-81
+.. GENERATED FROM PYTHON SOURCE LINES 86-89
 
 In case you do have an image of the tissue (or multiple, at different resolutions)
 this is what you need to know to correctly store it in AnnData.
 First, let's visualize the mock image from before.
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-83
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 .. code-block:: default
 
@@ -237,11 +245,11 @@ First, let's visualize the mock image from before.
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x140056a00>
+    <matplotlib.image.AxesImage object at 0x134f7e5e0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-98
+.. GENERATED FROM PYTHON SOURCE LINES 92-106
 
 The image and its metadata are stored in the `uns` slot of :class:`anndata.AnnData`.
 Specifically, in the ``adata.uns['spatial'][<library_id>]`` slot, where `library_id`
@@ -258,7 +266,7 @@ For now, we will assume that there is only one image. This is the necessary meta
 
 Here, we will set it to 0.5.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-105
+.. GENERATED FROM PYTHON SOURCE LINES 106-113
 
 .. code-block:: default
 
@@ -276,19 +284,19 @@ Here, we will set it to 0.5.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-111
+.. GENERATED FROM PYTHON SOURCE LINES 114-119
 
 We don't provide the flexibility (yet) to change the values of such keys.
 These are the keys provided by the Space Ranger output from 10x Genomics Visium
 and therefore were the first to be adopted. In the future, we might settle to
 a sightly different structure.
-But for now, if all such key are correct, :func:`scanpy.pl.spatial` works out of the box.
+But for now, if all such key are correct, :func:`squidpy.pl.spatial_scatter` works out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-113
+.. GENERATED FROM PYTHON SOURCE LINES 119-121
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="leiden")
+    sq.pl.spatial_scatter(adata, color="leiden")
 
 
 
@@ -302,17 +310,17 @@ But for now, if all such key are correct, :func:`scanpy.pl.spatial` works out of
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-116
+.. GENERATED FROM PYTHON SOURCE LINES 122-124
 
 You can fiddle around with the settings to see what changes.
 For instance, let's change `tissue_hires_scalef` to half the previous value.
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-119
+.. GENERATED FROM PYTHON SOURCE LINES 124-127
 
 .. code-block:: default
 
     adata.uns[spatial_key][library_id]["scalefactors"] = {"tissue_hires_scalef": 0.5, "spot_diameter_fullres": 0.5}
-    sc.pl.spatial(adata, color="leiden")
+    sq.pl.spatial_scatter(adata, color="leiden", size=2)
 
 
 
@@ -326,7 +334,7 @@ For instance, let's change `tissue_hires_scalef` to half the previous value.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-125
+.. GENERATED FROM PYTHON SOURCE LINES 128-133
 
 As you can see, the spatial coordinates have been scaled down, and the image
 was "zoomed in".
@@ -334,7 +342,7 @@ was "zoomed in".
 Of course, you might want to "analyze" such image. :class:`squidpy.im.ImageContainer`
 comes to the rescue! Just instantiate a new object and it will work out of the box.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-127
+.. GENERATED FROM PYTHON SOURCE LINES 133-135
 
 .. code-block:: default
 
@@ -355,9 +363,9 @@ comes to the rescue! Just instantiate a new object and it will work out of the b
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  42.207 seconds)
+   **Total running time of the script:** ( 0 minutes  44.063 seconds)
 
-**Estimated memory usage:**  83 MB
+**Estimated memory usage:**  43 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_read_spatial.py:

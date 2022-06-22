@@ -36,15 +36,13 @@ Import packages & data
 To run the notebook locally, create a conda environment as *conda env create -f environment.yml* using this
 `environment.yml <https://github.com/scverse/squidpy_notebooks/blob/main/environment.yml>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-31
+.. GENERATED FROM PYTHON SOURCE LINES 21-29
 
 .. code-block:: default
 
 
-    import scanpy as sc
     import squidpy as sq
 
-    sc.logging.print_header()
     print(f"squidpy=={sq.__version__}")
 
     # load the pre-processed dataset
@@ -60,22 +58,21 @@ To run the notebook locally, create a conda environment as *conda env create -f 
 
  .. code-block:: none
 
-    scanpy==1.9.1 anndata==0.8.0 umap==0.5.3 numpy==1.22.4 scipy==1.8.1 pandas==1.4.2 scikit-learn==1.1.1 statsmodels==0.13.2 python-igraph==0.9.11 pynndescent==0.5.7
     squidpy==1.2.2
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 30-32
 
 First, let's visualize the cluster annotation in spatial context
-with :func:`scanpy.pl.spatial`.
+with :func:`squidpy.pl.spatial_scatter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-36
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
 
-    sc.pl.spatial(adata, color="cell type", spot_size=10)
+    sq.pl.spatial_scatter(adata, shape=None, color="cell type", size=10)
 
 
 
@@ -89,7 +86,7 @@ with :func:`scanpy.pl.spatial`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-43
+.. GENERATED FROM PYTHON SOURCE LINES 35-41
 
 We can appreciate how the majority of the tissue seems
 to consist of *apoptotic tumor cells*. There also seem to be other
@@ -98,7 +95,7 @@ cell types scattered across the tissue, annotated as *T cells*,
 appreciate how a subset of tumor cell, *basal CK tumor cells* seems
 to be located in the lower part of the tissue.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-68
+.. GENERATED FROM PYTHON SOURCE LINES 43-66
 
 Co-occurrence across spatial dimensions
 +++++++++++++++++++++++++++++++++++++++
@@ -124,7 +121,7 @@ the argument ``clusters``. Then, we visualize the results with
 We visualize the result for two conditional groups, namely
 *basal CK tumor cell* and *T cells*.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-76
+.. GENERATED FROM PYTHON SOURCE LINES 66-74
 
 .. code-block:: default
 
@@ -151,7 +148,7 @@ We visualize the result for two conditional groups, namely
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:11<00:00, 11.96s/]    100%|##########| 1/1 [00:11<00:00, 11.97s/]
+      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:07<00:00,  7.74s/]    100%|##########| 1/1 [00:07<00:00,  7.75s/]
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
     /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/seaborn/cm.py:1583: UserWarning: Trying to register the cmap 'rocket_r' which already exists.
@@ -180,7 +177,7 @@ We visualize the result for two conditional groups, namely
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-82
+.. GENERATED FROM PYTHON SOURCE LINES 75-80
 
 We can observe that *T cells* seems to co-occur
 with *endothelial* and *vimentin hi stromal cells*,
@@ -188,7 +185,7 @@ whereas *basal CK tumor cell* seem to largely cluster
 together, except for the presence of a type of stromal
 cells (*small elongated stromal cell*) at close distance.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-103
+.. GENERATED FROM PYTHON SOURCE LINES 82-101
 
 Neighborhood enrichment
 +++++++++++++++++++++++
@@ -210,7 +207,7 @@ of how this function works.
 
 Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 101-105
 
 .. code-block:: default
 
@@ -233,12 +230,12 @@ Finally, we visualize the results with :func:`squidpy.pl.nhood_enrichment`.
 
  .. code-block:: none
 
-      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:13:38,  4.42s/]     32%|###2      | 323/1000 [00:04<00:06, 100.96/s]     65%|######5   | 653/1000 [00:04<00:01, 237.79/s]     98%|#########7| 979/1000 [00:04<00:00, 411.82/s]    100%|##########| 1000/1000 [00:04<00:00, 211.41/s]
+      0%|          | 0/1000 [00:00<?, ?/s]      0%|          | 1/1000 [00:04<1:15:15,  4.52s/]     31%|###       | 309/1000 [00:04<00:07, 94.57/s]     62%|######2   | 621/1000 [00:04<00:01, 221.42/s]     94%|#########3| 938/1000 [00:04<00:00, 388.01/s]    100%|##########| 1000/1000 [00:04<00:00, 206.60/s]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-117
+.. GENERATED FROM PYTHON SOURCE LINES 106-115
 
 Interestingly, *T cells* shows an enrichment with *stromal* and
 *endothelial cells*, as well as *macrophages*. Another interesting
@@ -250,7 +247,7 @@ being uniformly spread across the tissue, and in high number, it's
 more likely to be enriched with cell types from the same class,
 rather than different one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-126
+.. GENERATED FROM PYTHON SOURCE LINES 117-124
 
 Interaction matrix and network centralities
 +++++++++++++++++++++++++++++++++++++++++++
@@ -260,7 +257,7 @@ that each cluster share with all the others.
 This score can be computed with the function :func:`squidpy.gr.interaction_matrix`.
 We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-129
+.. GENERATED FROM PYTHON SOURCE LINES 124-127
 
 .. code-block:: default
 
@@ -279,7 +276,7 @@ We can visualize the results with  :func:`squidpy.pl.interaction_matrix`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-141
+.. GENERATED FROM PYTHON SOURCE LINES 128-139
 
 Finally, similar to the previous analysis,
 we can investigate properties of the spatial graph by
@@ -293,7 +290,7 @@ Squidpy provides a convenient function for all of them:
 :func:`squidpy.gr.centrality_scores` and
 :func:`squidpy.pl.centrality_scores` for visualization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-147
+.. GENERATED FROM PYTHON SOURCE LINES 139-145
 
 .. code-block:: default
 
@@ -315,7 +312,7 @@ Squidpy provides a convenient function for all of them:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-154
+.. GENERATED FROM PYTHON SOURCE LINES 146-152
 
 You can familiarize yourself with network centralities from the
 excellent :mod:`networkx`
@@ -327,9 +324,9 @@ are often close to each other in the spatial graph.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  43.253 seconds)
+   **Total running time of the script:** ( 0 minutes  34.991 seconds)
 
-**Estimated memory usage:**  105 MB
+**Estimated memory usage:**  141 MB
 
 
 .. _sphx_glr_download_auto_tutorials_tutorial_imc.py:

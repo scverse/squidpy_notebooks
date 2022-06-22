@@ -15,7 +15,6 @@ See :cite:`andersson2021` for reference.
     - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
       :func:`squidpy.gr.spatial_neighbors`.
 """
-import scanpy as sc
 import squidpy as sq
 
 adata = sq.datasets.visium_hne_adata()
@@ -44,5 +43,5 @@ sq.gr.sepal(adata, max_neighs=6, genes=genes, n_jobs=1)
 adata.uns["sepal_score"].head(10)
 
 ###############################################################################
-# We can visualize some of those genes with :func:`scanpy.pl.spatial`.
-sc.pl.spatial(adata, color=["Lct", "Ecel1", "Cfap65"])
+# We can visualize some of those genes with :func:`squidpy.pl.spatial_scatter`.
+sq.pl.spatial_scatter(adata, color=["Lct", "Ecel1", "Cfap65"])

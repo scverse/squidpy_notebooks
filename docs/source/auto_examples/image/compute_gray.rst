@@ -104,7 +104,7 @@ This behavior can be changed with the arguments ``copy`` and ``layer_added``.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.630 seconds)
+   **Total running time of the script:** ( 0 minutes  9.123 seconds)
 
 **Estimated memory usage:**  707 MB
 

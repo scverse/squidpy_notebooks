@@ -14,7 +14,6 @@ This function is useful to visualize statically different layers of the
       :ref:`sphx_glr_auto_examples_image_compute_smooth.py` for additional
       examples on methods of the :class:`squidpy.im.ImageContainer`.
 """
-import scanpy as sc
 import squidpy as sq
 
 ###############################################################################
@@ -24,7 +23,7 @@ adata = sq.datasets.mibitof()
 ###############################################################################
 # We can briefly visualize the data to understand the type of images we have.
 for library_id in adata.uns["spatial"].keys():
-    sc.pl.spatial(
+    sq.pl.spatial_scatter(
         adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
     )
 
