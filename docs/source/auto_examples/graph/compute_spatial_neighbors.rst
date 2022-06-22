@@ -66,6 +66,7 @@ First, we show how to compute the spatial neighbors graph for a Visium dataset.
 
  .. code-block:: none
 
+      0%|          | 0.00/242M [00:00<?, ?B/s]      0%|          | 56.0k/242M [00:00<09:50, 430kB/s]      0%|          | 256k/242M [00:00<03:57, 1.07MB/s]      0%|          | 1.06M/242M [00:00<01:13, 3.45MB/s]      2%|1         | 4.33M/242M [00:00<00:20, 12.0MB/s]      4%|4         | 9.94M/242M [00:00<00:10, 23.2MB/s]      6%|6         | 15.6M/242M [00:00<00:07, 30.0MB/s]      9%|8         | 21.4M/242M [00:00<00:06, 34.9MB/s]     11%|#1        | 27.0M/242M [00:01<00:06, 37.4MB/s]     13%|#3        | 32.5M/242M [00:01<00:05, 38.8MB/s]     16%|#5        | 38.2M/242M [00:01<00:05, 40.5MB/s]     18%|#8        | 43.9M/242M [00:01<00:04, 45.3MB/s]     19%|#9        | 47.0M/242M [00:01<00:05, 40.4MB/s]     22%|##1       | 52.7M/242M [00:01<00:04, 41.6MB/s]     24%|##4       | 58.6M/242M [00:01<00:04, 42.7MB/s]     26%|##6       | 64.2M/242M [00:01<00:04, 42.7MB/s]     29%|##8       | 69.9M/242M [00:02<00:03, 47.0MB/s]     30%|###       | 72.9M/242M [00:02<00:04, 41.9MB/s]     32%|###2      | 78.3M/242M [00:02<00:03, 45.7MB/s]     34%|###3      | 81.4M/242M [00:02<00:04, 41.7MB/s]     36%|###5      | 86.6M/242M [00:02<00:03, 45.3MB/s]     37%|###7      | 90.0M/242M [00:02<00:03, 42.1MB/s]     39%|###9      | 95.1M/242M [00:02<00:03, 45.2MB/s]     41%|####      | 98.5M/242M [00:02<00:03, 42.0MB/s]     43%|####2     | 103M/242M [00:02<00:03, 44.6MB/s]      44%|####4     | 107M/242M [00:03<00:03, 42.5MB/s]     46%|####5     | 111M/242M [00:03<00:03, 43.2MB/s]     48%|####7     | 116M/242M [00:03<00:03, 42.7MB/s]     50%|####9     | 120M/242M [00:03<00:02, 44.4MB/s]     51%|#####1    | 124M/242M [00:03<00:02, 41.9MB/s]     53%|#####3    | 129M/242M [00:03<00:02, 44.6MB/s]     55%|#####4    | 132M/242M [00:03<00:02, 42.6MB/s]     57%|#####6    | 137M/242M [00:03<00:02, 45.5MB/s]     58%|#####8    | 141M/242M [00:03<00:02, 42.7MB/s]     60%|######    | 146M/242M [00:03<00:02, 44.2MB/s]     62%|######1   | 150M/242M [00:04<00:02, 43.7MB/s]     64%|######3   | 154M/242M [00:04<00:02, 45.3MB/s]     65%|######5   | 159M/242M [00:04<00:01, 44.1MB/s]     67%|######7   | 163M/242M [00:04<00:01, 43.8MB/s]     69%|######9   | 168M/242M [00:04<00:01, 44.6MB/s]     71%|#######1  | 172M/242M [00:04<00:01, 44.2MB/s]     73%|#######2  | 176M/242M [00:04<00:01, 43.6MB/s]     74%|#######4  | 180M/242M [00:04<00:01, 43.6MB/s]     76%|#######6  | 185M/242M [00:04<00:01, 44.5MB/s]     78%|#######8  | 189M/242M [00:04<00:01, 44.2MB/s]     80%|#######9  | 194M/242M [00:05<00:01, 45.0MB/s]     82%|########1 | 197M/242M [00:05<00:01, 42.8MB/s]     83%|########3 | 202M/242M [00:05<00:00, 43.2MB/s]     85%|########5 | 207M/242M [00:05<00:00, 44.7MB/s]     87%|########7 | 211M/242M [00:05<00:00, 43.8MB/s]     89%|########8 | 215M/242M [00:05<00:00, 44.2MB/s]     91%|######### | 219M/242M [00:05<00:00, 43.7MB/s]     92%|#########2| 224M/242M [00:05<00:00, 43.8MB/s]     94%|#########4| 228M/242M [00:05<00:00, 44.4MB/s]     96%|#########5| 232M/242M [00:05<00:00, 43.4MB/s]     98%|#########7| 237M/242M [00:06<00:00, 44.6MB/s]     99%|#########9| 241M/242M [00:06<00:00, 43.9MB/s]    100%|##########| 242M/242M [00:06<00:00, 40.8MB/s]
 
     AnnData object with n_obs × n_vars = 2800 × 16562
         obs: 'in_tissue', 'array_row', 'array_col', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_MT', 'log1p_total_counts_MT', 'pct_counts_MT', 'n_counts', 'leiden', 'cluster'
@@ -165,7 +166,7 @@ We can visualize the neighbors of a point to better visualize what `n_rings` mea
 
     _, idx = adata.obsp["spatial_connectivities"][420, :].nonzero()
     idx = np.append(idx, 420)
-    sq.pl.spatial_scatter(adata[idx, :], shape=None, connectivity_key="spatial_connectivities")
+    sq.pl.spatial_scatter(adata[idx, :], connectivity_key="spatial_connectivities", img=False, na_color="lightgrey")
 
 
 
@@ -200,6 +201,7 @@ Next, we show how to compute the spatial neighbors graph for a non-grid dataset.
 
  .. code-block:: none
 
+      0%|          | 0.00/1.50M [00:00<?, ?B/s]      3%|3         | 48.0k/1.50M [00:00<00:04, 372kB/s]     16%|#6        | 248k/1.50M [00:00<00:01, 1.05MB/s]     61%|######1   | 944k/1.50M [00:00<00:00, 3.00MB/s]    100%|##########| 1.50M/1.50M [00:00<00:00, 3.87MB/s]
 
     AnnData object with n_obs × n_vars = 4668 × 34
         obs: 'cell type'
@@ -239,7 +241,7 @@ Alternatively, ``delaunay = True`` can be used, for a Delaunay triangulation gra
 
  .. code-block:: none
 
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
       self.data[key] = value
 
 
@@ -280,7 +282,7 @@ You can appreciate that the neighbor graph is slightly different than before.
 
  .. code-block:: none
 
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
+    /home/runner/work/squidpy_notebooks/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
       self.data[key] = value
 
 
@@ -318,9 +320,9 @@ from each spot as neighbors, the parameter ``radius`` should be used.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  41.295 seconds)
+   **Total running time of the script:** ( 0 minutes  16.534 seconds)
 
-**Estimated memory usage:**  207 MB
+**Estimated memory usage:**  289 MB
 
 
 .. _sphx_glr_download_auto_examples_graph_compute_spatial_neighbors.py:

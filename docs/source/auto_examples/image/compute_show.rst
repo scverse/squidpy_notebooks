@@ -59,6 +59,14 @@ Load the Mibitof dataset.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+      0%|          | 0.00/19.3M [00:00<?, ?B/s]      0%|          | 56.0k/19.3M [00:00<00:47, 430kB/s]      1%|          | 160k/19.3M [00:00<00:31, 639kB/s]       3%|3         | 616k/19.3M [00:00<00:10, 1.92MB/s]     12%|#2        | 2.37M/19.3M [00:00<00:02, 6.56MB/s]     39%|###9      | 7.59M/19.3M [00:00<00:00, 18.7MB/s]     69%|######8   | 13.3M/19.3M [00:00<00:00, 27.3MB/s]     98%|#########8| 19.0M/19.3M [00:00<00:00, 32.8MB/s]    100%|##########| 19.3M/19.3M [00:00<00:00, 21.2MB/s]
+
 
 
 
@@ -66,66 +74,38 @@ Load the Mibitof dataset.
 
 We can briefly visualize the data to understand the type of images we have.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-30
+.. GENERATED FROM PYTHON SOURCE LINES 25-34
 
 .. code-block:: default
 
-    for library_id in adata.uns["spatial"].keys():
-        sq.pl.spatial_scatter(
-            adata[adata.obs["library_id"] == library_id], color="Cluster", library_id=library_id, title=library_id
-        )
+    sq.pl.spatial_segment(
+        adata,
+        library_id=["point16", "point23", "point8"],
+        seg_cell_id="cell_id",
+        color="Cluster",
+        library_key="library_id",
+        title=["point16", "point23", "point8"],
+    )
 
 
 
 
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_001.png
-         :alt: point16
-         :srcset: /auto_examples/image/images/sphx_glr_compute_show_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_002.png
-         :alt: point23
-         :srcset: /auto_examples/image/images/sphx_glr_compute_show_002.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_003.png
-         :alt: point8
-         :srcset: /auto_examples/image/images/sphx_glr_compute_show_003.png
-         :class: sphx-glr-multi-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
-      self.data[key] = value
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
-      self.data[key] = value
-    /Users/giovanni.palla/Projects/squidpy_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/compat/_overloaded_dict.py:106: ImplicitModificationWarning: Trying to modify attribute `._uns` of view, initializing view as actual.
-      self.data[key] = value
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_001.png
+   :alt: point16, point23, point8
+   :srcset: /auto_examples/image/images/sphx_glr_compute_show_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-34
+
+.. GENERATED FROM PYTHON SOURCE LINES 35-38
 
 We have three different tissue samples. We also have segmentation masks for each tissue sample.
 Let's extract the image from the :class:`anndata.AnnData` object and create a
 :class:`squidpy.im.ImageContainer` object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-42
+.. GENERATED FROM PYTHON SOURCE LINES 38-46
 
 .. code-block:: default
 
@@ -144,11 +124,11 @@ Let's extract the image from the :class:`anndata.AnnData` object and create a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.show`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-46
+.. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 .. code-block:: default
 
@@ -157,20 +137,20 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 
 
-.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_004.png
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_002.png
    :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-   :srcset: /auto_examples/image/images/sphx_glr_compute_show_004.png
+   :srcset: /auto_examples/image/images/sphx_glr_compute_show_002.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-48
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 :meth:`squidpy.im.ImageContainer.show` also allows to overlay the results of segmentation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 .. code-block:: default
 
@@ -178,9 +158,9 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 
 
-.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_005.png
+.. image-sg:: /auto_examples/image/images/sphx_glr_compute_show_003.png
    :alt: image, library_id:point16, image, library_id:point23, image, library_id:point8
-   :srcset: /auto_examples/image/images/sphx_glr_compute_show_005.png
+   :srcset: /auto_examples/image/images/sphx_glr_compute_show_003.png
    :class: sphx-glr-single-img
 
 
@@ -190,9 +170,9 @@ We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.952 seconds)
+   **Total running time of the script:** ( 0 minutes  24.429 seconds)
 
-**Estimated memory usage:**  304 MB
+**Estimated memory usage:**  370 MB
 
 
 .. _sphx_glr_download_auto_examples_image_compute_show.py:
