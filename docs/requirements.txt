@@ -5,6 +5,7 @@ memory_profiler>=0.57.0
 nbsphinx>=0.8.1,<0.8.7
 pypandoc
 sphinx>=3.3.0
+sphinx.ext.mathjax
 sphinx_copybutton
 sphinx_gallery>=0.9.2
 sphinx_last_updated_by_git
