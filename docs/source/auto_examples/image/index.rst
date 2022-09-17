@@ -1,185 +1,6 @@
-:orphan:
 
-Gallery
-=======
 
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbnails">
-
-
-.. raw:: html
-
-    </div>
-
-Graph
------
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbnails">
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute centrality scores, given a spatial graph and cell type annota...">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_centrality_scores_thumb.png
-    :alt: Compute centrality scores
-
-  :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute centrality scores</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the interaction matrix.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_interaction_matrix_thumb.png
-    :alt: Compute interaction matrix
-
-  :ref:`sphx_glr_auto_examples_graph_compute_interaction_matrix.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute interaction matrix</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to run the neighbors enrichment analysis routine.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_nhood_enrichment_thumb.png
-    :alt: Neighbors enrichment analysis
-
-  :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Neighbors enrichment analysis</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Ripley&#x27;s L function.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_thumb.png
-    :alt: Compute Ripley's statistics
-
-  :ref:`sphx_glr_auto_examples_graph_compute_ripley.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute Ripley's statistics</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the co-occurrence probability.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_co_occurrence_thumb.png
-    :alt: Compute co-occurrence probability
-
-  :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute co-occurrence probability</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Sepal score for spatially variable genes identification.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_sepal_thumb.png
-    :alt: Compute Sepal score
-
-  :ref:`sphx_glr_auto_examples_graph_compute_sepal.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute Sepal score</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the Moran&#x27;s I global spatial auto-correlation statistics.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_moran_thumb.png
-    :alt: Compute Moran's I score
-
-  :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Compute Moran's I score</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to run the receptor-ligand analysis.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_ligrec_thumb.png
-    :alt: Receptor-ligand analysis
-
-  :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Receptor-ligand analysis</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute a spatial neighbors graph.">
-
-.. only:: html
-
-  .. image:: /auto_examples/graph/images/thumb/sphx_glr_compute_spatial_neighbors_thumb.png
-    :alt: Building spatial neighbors graph
-
-  :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Building spatial neighbors graph</div>
-    </div>
-
-
-.. raw:: html
-
-    </div>
+.. _sphx_glr_auto_examples_image:
 
 Image
 -----
@@ -450,77 +271,23 @@ Image
 
     </div>
 
-Plotting
---------
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbnails">
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.extract to plot features in anndata.AnnData.obsm.">
-
-.. only:: html
-
-  .. image:: /auto_examples/plotting/images/thumb/sphx_glr_compute_extract_thumb.png
-    :alt: Plot features in adata.obsm
-
-  :ref:`sphx_glr_auto_examples_plotting_compute_extract.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Plot features in adata.obsm</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.spatial_segment to plot segmentation masks and feature...">
-
-.. only:: html
-
-  .. image:: /auto_examples/plotting/images/thumb/sphx_glr_plot_segment_thumb.png
-    :alt: Plot segmentation masks
-
-  :ref:`sphx_glr_auto_examples_plotting_plot_segment.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Plot segmentation masks</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.pl.spatial_scatter to plot annotations and features store...">
-
-.. only:: html
-
-  .. image:: /auto_examples/plotting/images/thumb/sphx_glr_plot_scatter_thumb.png
-    :alt: Plot scatter plot in spatial coordinates
-
-  :ref:`sphx_glr_auto_examples_plotting_plot_scatter.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Plot scatter plot in spatial coordinates</div>
-    </div>
-
-
-.. raw:: html
-
-    </div>
-
 
 .. toctree::
    :hidden:
-   :includehidden:
 
-   /auto_examples/graph/index.rst
-   /auto_examples/image/index.rst
-   /auto_examples/plotting/index.rst
+   /auto_examples/image/compute_gray
+   /auto_examples/image/compute_smooth
+   /auto_examples/image/compute_crops
+   /auto_examples/image/compute_apply
+   /auto_examples/image/compute_texture_features
+   /auto_examples/image/compute_segment_fluo
+   /auto_examples/image/compute_histogram_features
+   /auto_examples/image/compute_summary_features
+   /auto_examples/image/compute_show
+   /auto_examples/image/compute_custom_features
+   /auto_examples/image/compute_segment_hne
+   /auto_examples/image/compute_process_hires
+   /auto_examples/image/compute_segmentation_features
+   /auto_examples/image/compute_generate_spot_crops
+   /auto_examples/image/compute_features
 
