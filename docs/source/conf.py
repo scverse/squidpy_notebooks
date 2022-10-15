@@ -95,6 +95,7 @@ exclude_patterns = [
     #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
 
+suppress_warnings = ["epub.duplicated_toc_entry"]
 # -- sphinx gallery
 
 
