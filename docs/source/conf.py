@@ -91,6 +91,7 @@ exclude_patterns = [
     "auto_*/**.ipynb",
     "auto_*/**.md5",
     "auto_*/**.py",
+    "auto_*/**/index.rst",
     "**.ipynb_checkpoints",
     #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
