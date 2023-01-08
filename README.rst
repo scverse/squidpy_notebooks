@@ -48,6 +48,10 @@ Install Squidpy via PyPI by running::
     # or with napari included
     pip install 'squidpy[interactive]'
 
+or via Conda as::
+
+    conda install -c conda-forge squidpy
+
 Contributing to Squidpy
 -----------------------
 We are happy about any contributions! Before you start, check out our `contributing guide <CONTRIBUTING.rst>`_.
@@ -56,11 +60,11 @@ We are happy about any contributions! Before you start, check out our `contribut
     :target: https://pypi.org/project/squidpy/
     :alt: PyPI
 
-.. |CI| image:: https://img.shields.io/github/workflow/status/scverse/squidpy/Test/main
+.. |CI| image:: https://img.shields.io/github/actions/workflow/status/scverse/squidpy/test.yml?branch=main
     :target: https://github.com/scverse/squidpy/actions
     :alt: CI
 
-.. |Notebooks| image:: https://img.shields.io/github/workflow/status/scverse/squidpy_notebooks/CI/main?label=notebooks
+.. |Notebooks| image:: https://img.shields.io/github/actions/workflow/status/scverse/squidpy_notebooks/ci.yml?branch=main&label=notebooks
     :target: https://github.com/scverse/squidpy_notebooks/actions
     :alt: Notebooks CI
 
