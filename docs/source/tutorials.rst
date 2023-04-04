@@ -14,6 +14,7 @@ to a diverse set of different spatial datasets.
     tutorials/tutorial_slideseqv2
     tutorials/tutorial_visium_fluo
     tutorials/tutorial_visium_hne
+    tutorials/tutorial_merfish
     tutorials/tutorial_mibitof
     tutorials/tutorial_fouri
     tutorials/tutorial_nanostring
@@ -35,6 +36,7 @@ This section contains tutorials showcasing advanced :mod:`squidpy` functionaliti
     tutorials/tutorial_image_container
     tutorials/tutorial_napari
     tutorials/tutorial_image_container_zstacks
+
 
 External tutorials
 ------------------

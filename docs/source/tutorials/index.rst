@@ -2,7 +2,7 @@
 
 
 
-.. _sphx_glr_auto_tutorials:
+.. _sphx_glr_tutorials:
 
 Tutorials
 =========
@@ -15,10 +15,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_fouri_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_fouri_thumb.png
      :alt: Analyze 4i data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_fouri.py`
+     :ref:`sphx_glr_tutorials_tutorial_fouri.py`
 
 .. raw:: html
 
@@ -28,7 +28,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_fouri
+   /tutorials/tutorial_fouri
 
 .. raw:: html
 
@@ -36,10 +36,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_imc_thumb.png
      :alt: Analyze Imaging Mass Cytometry data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_imc.py`
+     :ref:`sphx_glr_tutorials_tutorial_imc.py`
 
 .. raw:: html
 
@@ -49,7 +49,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_imc
+   /tutorials/tutorial_imc
 
 .. raw:: html
 
@@ -57,10 +57,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_image_container_thumb.png
      :alt: ImageContainer object
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_image_container.py`
+     :ref:`sphx_glr_tutorials_tutorial_image_container.py`
 
 .. raw:: html
 
@@ -70,7 +70,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_image_container
+   /tutorials/tutorial_image_container
 
 .. raw:: html
 
@@ -78,10 +78,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_slideseqv2_thumb.png
      :alt: Analyze Slide-seqV2 data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_slideseqv2.py`
+     :ref:`sphx_glr_tutorials_tutorial_slideseqv2.py`
 
 .. raw:: html
 
@@ -91,7 +91,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_slideseqv2
+   /tutorials/tutorial_slideseqv2
 
 .. raw:: html
 
@@ -99,10 +99,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_seqfish_thumb.png
      :alt: Analyze seqFISH data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py`
+     :ref:`sphx_glr_tutorials_tutorial_seqfish.py`
 
 .. raw:: html
 
@@ -112,7 +112,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_seqfish
+   /tutorials/tutorial_seqfish
 
 .. raw:: html
 
@@ -120,10 +120,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_read_spatial_thumb.png
      :alt: Import spatial data in AnnData and Squidpy
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_read_spatial.py`
+     :ref:`sphx_glr_tutorials_tutorial_read_spatial.py`
 
 .. raw:: html
 
@@ -133,7 +133,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_read_spatial
+   /tutorials/tutorial_read_spatial
 
 .. raw:: html
 
@@ -141,10 +141,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_merfish_thumb.png
      :alt: Analyze Merfish data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_merfish.py`
+     :ref:`sphx_glr_tutorials_tutorial_merfish.py`
 
 .. raw:: html
 
@@ -154,7 +154,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_merfish
+   /tutorials/tutorial_merfish
 
 .. raw:: html
 
@@ -162,10 +162,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_visium_hne_thumb.png
      :alt: Analyze Visium H&E data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_hne.py`
+     :ref:`sphx_glr_tutorials_tutorial_visium_hne.py`
 
 .. raw:: html
 
@@ -175,7 +175,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_visium_hne
+   /tutorials/tutorial_visium_hne
 
 .. raw:: html
 
@@ -183,10 +183,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_image_container_zstacks_thumb.png
      :alt: Use z-stacks with ImageContainer
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_image_container_zstacks.py`
+     :ref:`sphx_glr_tutorials_tutorial_image_container_zstacks.py`
 
 .. raw:: html
 
@@ -196,7 +196,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_image_container_zstacks
+   /tutorials/tutorial_image_container_zstacks
 
 .. raw:: html
 
@@ -204,10 +204,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_mibitof_thumb.png
      :alt: Analyze MIBI-TOF image data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_mibitof.py`
+     :ref:`sphx_glr_tutorials_tutorial_mibitof.py`
 
 .. raw:: html
 
@@ -217,7 +217,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_mibitof
+   /tutorials/tutorial_mibitof
 
 .. raw:: html
 
@@ -225,10 +225,10 @@ Tutorials
 
 .. only:: html
 
- .. figure:: /auto_tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
+ .. figure:: /tutorials/images/thumb/sphx_glr_tutorial_visium_fluo_thumb.png
      :alt: Analyze Visium fluorescence data
 
-     :ref:`sphx_glr_auto_tutorials_tutorial_visium_fluo.py`
+     :ref:`sphx_glr_tutorials_tutorial_visium_fluo.py`
 
 .. raw:: html
 
@@ -238,7 +238,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /auto_tutorials/tutorial_visium_fluo
+   /tutorials/tutorial_visium_fluo
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
