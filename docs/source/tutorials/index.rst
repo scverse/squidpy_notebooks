@@ -242,4 +242,3 @@ Tutorials
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
-

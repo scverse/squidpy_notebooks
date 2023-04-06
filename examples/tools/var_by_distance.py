@@ -3,28 +3,31 @@
 Calculate distances to a user-defined anchor point
 ---------------------------
 
-This example shows how to use :func:`squidpy.tl.exp_dist` to calculate the minimum distances of all observations
-to a user-defined anchor point and store the results in :attr:`anndata.AnnData.obsm`.
-For plotting expression by distance, see :func:`squidpy.pl.exp_dist`
+This example shows how to use :func:`squidpy.pl.var_by_distance` to plot gene expression by distance
+to a user-defined anchor point, which is computed by :func:`squidpy.tl.var_by_distance`.
 """
 
 import squidpy as sq
 
+###############################################################################
+# Load the data set
 adata = sq.datasets.mibitof()
 
-###############################################################################
-# This data set contains a cell type annotation in :attr:`anndata.AnnData.obs["Cluster"]` and a slide annotation in :attr:`anndata.AnnData.obs["library_id"]`
-adata.obs
+# compute the distances to the closest Epithelial cell for each observation in the data set and include some covariates.
+sq.tl.var_by_distance(
+    adata=adata, groups="Epithelial", cluster_key="Cluster", library_key="library_id", covariates=["category", "donor"]
+)
 
 ###############################################################################
-# For each slide we now want to calculate the distance of all observations to the closest Epithelial cell.
-# In addition we want to include the condition of the donors and the donor id in the resulting design matrix
-sq.tl.exp_dist(adata=adata, groups="Epithelial", cluster_key="Cluster", library_key="library_id", covariates=["category","donor"])
+# Plot the expression of CD98 by distance to the closest Epithelial cell for each donor.
 
-###############################################################################
-# Since we didn't specify a name, the resulting data frame is stored as "design_matrix" in :attr:`anndata.AnnData.obsm`.
-adata.obsm["design_matrix"]
-
-###############################################################################
-# NaN values indicate, that the observation belongs to an anchor point. 
-# If NaN values are present in the "_raw" distances column as well, then the coordinates for this observation weren't available from the beginning.
+sq.pl.var_by_distance(
+    adata=adata,
+    design_matrix_key="design_matrix",
+    var="CD98",
+    anchor_key="Epithelial",
+    covariate="donor",
+    line_palette=["blue", "orange"],
+    show_scatter=False,
+    figsize=(5, 4),
+)
