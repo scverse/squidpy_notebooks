@@ -162,7 +162,7 @@ sphinx_gallery_conf = {
 }
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
-    "external_tutorials/**": "_static/img/squidpy_vertical.png",
+    "tutorials/**": "_static/img/squidpy_vertical.png",
 }
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize

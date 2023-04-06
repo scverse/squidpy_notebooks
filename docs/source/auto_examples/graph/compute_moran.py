@@ -32,7 +32,7 @@ sq.gr.spatial_autocorr(
     mode="moran",
     genes=genes,
     n_perms=100,
-    n_jobs=1,
+    n_jobs=2,
 )
 adata.uns["moranI"].head(10)
 
