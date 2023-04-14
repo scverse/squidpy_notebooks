@@ -37,6 +37,7 @@ Delaunay
 dendrogram
 Dentate
 dev
+differentialy
 dimensionality
 Dimensionality
 DL
@@ -53,6 +54,7 @@ gyrus
 heatmap
 hypothalamic
 ImageNet
+immunofluorescence
 intercellular
 interpretable
 KNN
@@ -77,6 +79,7 @@ Moran's I
 morphologies
 Nanostring
 Napari
+NegPrb
 NEUN
 neutrophil
 Neutrophils
@@ -93,6 +96,7 @@ pre
 pre-trained
 preoptic
 prepend
+qc
 Qt
 quantile
 quantiles
@@ -106,6 +110,7 @@ scalability
 scalebar
 scalebars
 Scanpy
+scRNA
 seg
 segmentations
 semibold
@@ -132,3 +137,6 @@ zonation
 Zonation
 zscore
 zulip
+func
+attr
+img
