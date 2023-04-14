@@ -3,9 +3,9 @@
 Calculate distances to a user-defined anchor point
 ---------------------------
 
-This example shows how to use :func:`squidpy.tl.exp_dist` to calculate the minimum distances of all observations
+This example shows how to use :func:`squidpy.tl.var_by_distance` to calculate the minimum distances of all observations
 to a user-defined anchor point, store the results in :attr:`anndata.AnnData.obsm` and plot the expression by distance.
-using :func:`squidpy.pl.exp_dist`.
+using :func:`squidpy.pl.var_by_distance`.
 """
 
 import squidpy as sq
@@ -21,7 +21,7 @@ adata.obs
 # For each slide we now want to calculate the distance of all observations to the closest Epithelial cell.
 # In addition we want to include the condition of the donors and the donor id in the resulting design matrix
 # As we don't create a copy, the result will be stored in :attr:`anndata.AnnData.obsm`.
-sq.tl.exp_dist(
+sq.tl.var_by_distance(
     adata=adata, groups="Epithelial", cluster_key="Cluster", library_key="library_id", covariates=["category", "donor"]
 )
 
