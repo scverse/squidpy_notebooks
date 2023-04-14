@@ -11,7 +11,7 @@ def _html_page_context(app, _pagename, templatename, context, doctree):
         return
 
     if not app.config.github_repo:
-        warnings.warn("`github_repo` not specified")
+        warnings.warn("`github_repo` not specified", stacklevel=2)
         return
 
     # For sphinx_rtd_theme.

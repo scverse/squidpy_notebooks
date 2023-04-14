@@ -16,13 +16,10 @@ from datetime import datetime
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import squidpy
-import sphinx_gallery.gen_rst
 from sphinx.application import Sphinx
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent.parent))  # this way, we don't have to install squidpy
-
-from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "3.0"
@@ -122,7 +119,7 @@ sphinx_gallery_conf = {
         reset_matplotlib,
     ),
     "filename_pattern": f"{os.path.sep}(compute_|plot_|tutorial_)",
-    "examples_dirs": [_root / "examples", _root / "tutorials"],
+    "examples_dirs": [_root / "examples"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
     "show_memory": True,
@@ -147,40 +144,17 @@ sphinx_gallery_conf = {
         ],
         "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
     },
-    "binder": {
-        "org": "scverse",
-        "repo": "squidpy_notebooks",
-        "branch": release,
-        "binderhub_url": "https://mybinder.org",
-        "dependencies": str(_root / "environment.yml"),
-        "filepath_prefix": "docs",
-        "notebooks_dir": "source",  # trick sphinx-gallery into producing the correct binder links
-        "use_jupyter_lab": False,
-    },
     "default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
 nbsphinx_thumbnails = {
     "auto_**": "_static/img/squidpy_vertical.png",
-    "external_tutorials/**": "_static/img/squidpy_vertical.png",
+    "tutorials/**": "_static/img/squidpy_vertical.png",
 }
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
     "--InlineBackend.rc={'figure.dpi': 96}",
 ]
-
-# we ignore this because external tutorials require some heavy libraries (tensorflow/pytorch/pyqt5)
-_nbsphinx_prolog = r"""
-{% set docname = 'docs/source/' + env.doc2path(env.docname, base=None) %}
-.. raw:: html
-
-    <div class="binder-badge docutils container">
-        <a class="reference external image-reference"
-           href="https://mybinder.org/v2/gh/scverse/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}">
-        <img alt="Launch binder" src="https://mybinder.org/badge_logo.svg" width="150px">
-        </a>
-    </div>
-"""  # noqa: E501
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -198,8 +172,6 @@ html_show_sphinx = False
 
 github_repo = "squidpy"
 github_repo_nb = "squidpy_notebooks"
-
-sphinx_gallery.gen_rst.save_rst_example = save_rst_example
 
 
 def setup(app: Sphinx) -> None:
