@@ -137,3 +137,6 @@ zonation
 Zonation
 zscore
 zulip
+func
+attr
+img

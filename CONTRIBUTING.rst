@@ -12,7 +12,7 @@ We distinguish between three types of examples and tutorials:
 - *Tutorials* are longer vignettes, e.g., showing entire workflows.
   See `here <https://squidpy.readthedocs.io/en/stable/auto_tutorials/tutorial_imc.html>`__ for an example.
 - *External tutorials* are tutorials that use external python packages that should be excluded from CI.
-  They should be placed in ``docs/source/external_tutorials/`` and prefixed with ``tutorial_``.
+  They should be placed in ``docs/source/tutorials/`` and prefixed with ``tutorial_``.
 
 Set up environment
 ------------------

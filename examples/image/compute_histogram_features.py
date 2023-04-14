@@ -44,7 +44,7 @@ adata.obsm["histogram_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-# `our interactive visualisation tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to
+# `our interactive visualisation tutorial <../../tutorials/tutorial_napari.ipynb>`_ to
 # learn how to use our interactive :mod:`napari` plugin.
 # With these features we can e.g. appreciate the detailed distribution of
 # intensity values of channel 0 (DAPI stain) on the different bins.

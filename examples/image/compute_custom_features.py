@@ -59,7 +59,7 @@ adata.obsm["custom_features"].head()
 
 ###############################################################################
 # Use :func:`squidpy.pl.extract` to plot the histogram features on the tissue image or have a look at
-# `our interactive visualization tutorial <../../external_tutorials/tutorial_napari.ipynb>`_ to learn
+# `our interactive visualization tutorial <../../tutorials/tutorial_napari.ipynb>`_ to learn
 # how to use our interactive :mod:`napari` plugin.
 sq.pl.spatial_scatter(sq.pl.extract(adata, "custom_features"), color=[None, "mean_fn_0"], img_cmap="gray")
 
