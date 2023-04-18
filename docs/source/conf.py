@@ -120,7 +120,7 @@ sphinx_gallery_conf = {
     ),
     "filename_pattern": f"{os.path.sep}(compute_|plot_|tutorial_)",
     "examples_dirs": [_root / "examples"],
-    "gallery_dirs": ["auto_examples", "auto_tutorials"],
+    "gallery_dirs": ["auto_examples", "tutorials"],
     "abort_on_example_error": True,
     "show_memory": True,
     "reference_url": {

@@ -10,7 +10,7 @@ We distinguish between three types of examples and tutorials:
   See `here <https://squidpy.readthedocs.io/en/stable/auto_examples/graph/compute_interaction_matrix.html>`__
   for an example.
 - *Tutorials* are longer vignettes, e.g., showing entire workflows.
-  See `here <https://squidpy.readthedocs.io/en/stable/auto_tutorials/tutorial_imc.html>`__ for an example.
+  See `here <https://squidpy.readthedocs.io/en/stable/tutorials/tutorial_imc.html>`__ for an example.
 - *External tutorials* are tutorials that use external python packages that should be excluded from CI.
   They should be placed in ``docs/source/tutorials/`` and prefixed with ``tutorial_``.
 
@@ -60,7 +60,7 @@ Make sure to follow the following checklist before merging a new example/tutoria
 - make sure we're referring to the package always the same, e.g. *Squidpy*.
 - use the ``.. seealso::`` directive to highlight the prominence of other examples in the introductory text.
 - ensure examples/tutorials are properly linked (sphinx will throw warnings if not).
-  Link to examples using the following syntax ``:ref:`sphx_glr_auto_tutorials_tutorial_seqfish.py```.
+  Link to examples using the following syntax ``:ref:`sphx_glr_tutorials_tutorial_seqfish.py```.
 - ensure that in ``.py`` files, first line after the title is of the following format::
 
     """
