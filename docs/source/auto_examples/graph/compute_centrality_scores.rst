@@ -114,9 +114,9 @@ And visualize results with {func}`squidpy.pl.centrality_scores`.
 
 
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_centrality_scores_001.png
-   {alt} Average clustering, Closeness centrality, Degree centrality
+   :alt: Average clustering, Closeness centrality, Degree centrality
    :srcset: /auto_examples/graph/images/sphx_glr_compute_centrality_scores_001.png
-   {class} sphx-glr-single-img
+   :class: sphx-glr-single-img
 
 
 
