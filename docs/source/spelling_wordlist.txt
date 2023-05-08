@@ -1,6 +1,7 @@
 adata
 Aldh
 AnnData
+anndata
 artifactual
 autocorrelation
 Axin
@@ -48,6 +49,7 @@ geary
 Geary
 GFAP
 Glial
+glr
 grayscale
 grey
 gyrus
@@ -96,6 +98,7 @@ pre
 pre-trained
 preoptic
 prepend
+py
 qc
 Qt
 quantile
@@ -104,14 +107,17 @@ reproducibility
 Rescale
 ResNet
 RGB
+ripley
 sagittal
 sc
 scalability
 scalebar
 scalebars
 Scanpy
+scanpy
 scRNA
 seg
+seealso
 segmentations
 semibold
 seqFISH
@@ -119,6 +125,8 @@ seqV
 Sfrp
 spaceranger
 Squidpy
+squidpy
+sphx
 StarDist
 stromal
 subsetting
