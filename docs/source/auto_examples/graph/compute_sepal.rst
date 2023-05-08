@@ -24,7 +24,7 @@ Compute Sepal score
 This example shows how to compute the Sepal score for spatially variable genes identification.
 
 The Sepal score is a method that simulates a diffusion process to quantify spatial structure in tissue.
-See :cite:`andersson2021` for reference.
+See {cite}`andersson2021` for reference.
 
 :::{seealso}
 

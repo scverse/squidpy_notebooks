@@ -82,7 +82,7 @@ Results can be visualized with {func}`squidpy.pl.co_occurrence`.
 
 
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_001.png
-   :alt: $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
+   {alt} $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
    :srcset: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_001.png
    {class} sphx-glr-single-img
 
