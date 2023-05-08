@@ -14,10 +14,12 @@ following properties:
 
 All scores are descriptive statistics of the spatial graph.
 
-.. seealso::
+:::{seealso}
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
-    :func:`squidpy.gr.spatial_neighbors`.
+    See {doc}`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    {func}`squidpy.gr.spatial_neighbors`.
+
+:::
 """
 
 import squidpy as sq
@@ -26,15 +28,15 @@ adata = sq.datasets.imc()
 adata
 
 ###############################################################################
-# This dataset contains cell type annotations in :attr:`anndata.AnnData.obs`, which are used for calculation of
+# This dataset contains cell type annotations in {attr}`anndata.AnnData.obs`, which are used for calculation of
 # centrality scores. First, we need to compute a connectivity matrix from spatial coordinates. We can use
-# :func:`squidpy.gr.spatial_neighbors` for this purpose.
+# {func}`squidpy.gr.spatial_neighbors` for this purpose.
 sq.gr.spatial_neighbors(adata)
 
 ###############################################################################
-# Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
+# Centrality scores are calculated with {func}`squidpy.gr.centrality_scores`.
 sq.gr.centrality_scores(adata, "cell type")
 
 ###############################################################################
-# And visualize results with :func:`squidpy.pl.centrality_scores`.
+# And visualize results with {func}`squidpy.pl.centrality_scores`.
 sq.pl.centrality_scores(adata, "cell type")

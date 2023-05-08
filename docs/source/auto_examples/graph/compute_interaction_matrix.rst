@@ -26,10 +26,10 @@ This example shows how to compute the interaction matrix.
 The interaction matrix quantifies the number of edges that nodes belonging to a given annotation shares with the other
 annotations. It's a descriptive statistics of the spatial graph.
 
-.. seealso::
+:::{seealso}
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
-    :func:`squidpy.gr.spatial_neighbors`.
+    See {doc}`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    {func}`squidpy.gr.spatial_neighbors`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 16-21
 
@@ -61,7 +61,7 @@ annotations. It's a descriptive statistics of the spatial graph.
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 First, we need to compute a connectivity matrix from spatial coordinates. We can use
-:func:`squidpy.gr.spatial_neighbors` for this purpose.
+{func}`squidpy.gr.spatial_neighbors` for this purpose.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
 
@@ -78,8 +78,8 @@ First, we need to compute a connectivity matrix from spatial coordinates. We can
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-29
 
-We can compute the interaction matrix with :func:`squidpy.gr.interaction_matrix`. Specify ``normalized = True``
-if you want a row-normalized matrix. Results can be visualized with :func:`squidpy.pl.interaction_matrix`.
+We can compute the interaction matrix with {func}`squidpy.gr.interaction_matrix`. Specify ``normalized = True``
+if you want a row-normalized matrix. Results can be visualized with {func}`squidpy.pl.interaction_matrix`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-31
 
@@ -93,7 +93,7 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
    :alt: Interaction matrix
    :srcset: /auto_examples/graph/images/sphx_glr_compute_interaction_matrix_001.png
-   :class: sphx-glr-single-img
+   {class} sphx-glr-single-img
 
 
 
@@ -111,7 +111,7 @@ if you want a row-normalized matrix. Results can be visualized with :func:`squid
 .. only :: html
 
  .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    {class} sphx-glr-footer-example
 
 
 

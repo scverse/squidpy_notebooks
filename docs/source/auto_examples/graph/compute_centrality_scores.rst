@@ -32,10 +32,10 @@ following properties:
 
 All scores are descriptive statistics of the spatial graph.
 
-.. seealso::
+:::{seealso}
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
-    :func:`squidpy.gr.spatial_neighbors`.
+    See {doc}`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    {func}`squidpy.gr.spatial_neighbors`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-28
 
@@ -67,9 +67,9 @@ All scores are descriptive statistics of the spatial graph.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-32
 
-This dataset contains cell type annotations in :attr:`anndata.AnnData.obs`, which are used for calculation of
+This dataset contains cell type annotations in {attr}`anndata.AnnData.obs`, which are used for calculation of
 centrality scores. First, we need to compute a connectivity matrix from spatial coordinates. We can use
-:func:`squidpy.gr.spatial_neighbors` for this purpose.
+{func}`squidpy.gr.spatial_neighbors` for this purpose.
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
@@ -86,7 +86,7 @@ centrality scores. First, we need to compute a connectivity matrix from spatial 
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-36
 
-Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
+Centrality scores are calculated with {func}`squidpy.gr.centrality_scores`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
 
@@ -103,7 +103,7 @@ Centrality scores are calculated with :func:`squidpy.gr.centrality_scores`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-40
 
-And visualize results with :func:`squidpy.pl.centrality_scores`.
+And visualize results with {func}`squidpy.pl.centrality_scores`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 40-41
 
@@ -116,7 +116,7 @@ And visualize results with :func:`squidpy.pl.centrality_scores`.
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_centrality_scores_001.png
    :alt: Average clustering, Closeness centrality, Degree centrality
    :srcset: /auto_examples/graph/images/sphx_glr_compute_centrality_scores_001.png
-   :class: sphx-glr-single-img
+   {class} sphx-glr-single-img
 
 
 
@@ -134,7 +134,7 @@ And visualize results with :func:`squidpy.pl.centrality_scores`.
 .. only :: html
 
  .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    {class} sphx-glr-footer-example
 
 
 
