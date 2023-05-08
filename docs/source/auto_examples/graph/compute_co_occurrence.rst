@@ -34,10 +34,10 @@ of a cluster :math:`cond`, whereas :math:`p(exp)` is the probability of observin
 radius size of interest.
 The score is computed across increasing radii size around each cell in the tissue.
 
-.. seealso::
+:::{seealso}
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for
-    another score to describe spatial patterns with :func:`squidpy.gr.ripley`.
+    See {doc}`sphx_glr_auto_examples_graph_compute_ripley.py` for
+    another score to describe spatial patterns with {func}`squidpy.gr.ripley`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-29
 
@@ -68,8 +68,8 @@ The score is computed across increasing radii size around each cell in the tissu
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
 
-We can compute the co-occurrence score with :func:`squidpy.gr.co_occurrence`.
-Results can be visualized with :func:`squidpy.pl.co_occurrence`.
+We can compute the co-occurrence score with {func}`squidpy.gr.co_occurrence`.
+Results can be visualized with {func}`squidpy.pl.co_occurrence`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-35
 
@@ -84,7 +84,7 @@ Results can be visualized with :func:`squidpy.pl.co_occurrence`.
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_001.png
    :alt: $\frac{p(exp|basal CK tumor cell)}{p(exp)}$
    :srcset: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_001.png
-   :class: sphx-glr-single-img
+   {class} sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -93,11 +93,14 @@ Results can be visualized with :func:`squidpy.pl.co_occurrence`.
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?/s]    100%|##########| 1/1 [00:15<00:00, 15.48s/]    100%|##########| 1/1 [00:15<00:00, 15.49s/]
+
+      0%|          | 0/1 [00:00<?, ?/s]
+    100%|##########| 1/1 [00:15<00:00, 15.48s/]
+    100%|##########| 1/1 [00:15<00:00, 15.49s/]
 
 
 
-
+{func}
 .. GENERATED FROM PYTHON SOURCE LINES 36-37
 
 We can further visualize tissue organization in spatial coordinates with :func:`squidpy.pl.spatial_scatter`.
@@ -113,7 +116,7 @@ We can further visualize tissue organization in spatial coordinates with :func:`
 .. image-sg:: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_002.png
    :alt: cell type
    :srcset: /auto_examples/graph/images/sphx_glr_compute_co_occurrence_002.png
-   :class: sphx-glr-single-img
+   {class} sphx-glr-single-img
 
 
 
@@ -131,7 +134,7 @@ We can further visualize tissue organization in spatial coordinates with :func:`
 .. only :: html
 
  .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    {class} sphx-glr-footer-example
 
 
 
