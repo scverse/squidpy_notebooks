@@ -1,0 +1,137 @@
+
+
+Examples using ``squidpy.im.ImageContainer``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to convert an image layer to grayscale.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_gray_thumb.png
+     :alt: Convert to grayscale
+
+     :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process to smooth an image layer of squidpy.im.ImageCo...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_smooth_thumb.png
+     :alt: Smooth an image
+
+     :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how crop images from squidpy.im.ImageContainer.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+     :alt: Crop images with ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.ImageContainer.apply to convert an image layer to graysca...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_apply_thumb.png
+     :alt: Convert to grayscale using the apply method
+
+     :ref:`sphx_glr_auto_examples_image_compute_apply.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_apply.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.show.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_show_thumb.png
+     :alt: Show layers of the ImageContainer
+
+     :ref:`sphx_glr_auto_examples_image_compute_show.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_show.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.process with tiling.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+     :alt: Process a high-resolution image
+
+     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use squidpy.im.ImageContainer.generate_spot_crops.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_generate_spot_crops_thumb.png
+     :alt: Generate cropped images from spots
+
+     :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
