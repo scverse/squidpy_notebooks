@@ -2,7 +2,7 @@
 
 
 
-.. _sphx_glr_auto_examples:
+.. _auto_examples:
 
 Gallery
 =======
@@ -14,7 +14,7 @@ Gallery
 
 
 
-.. _sphx_glr_auto_examples_graph:
+.. _auto_examples_graph:
 
 Graph
 -----
@@ -27,10 +27,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_centrality_scores_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_centrality_scores_thumb.png
      :alt: Compute centrality scores
 
-     :ref:`sphx_glr_auto_examples_graph_compute_centrality_scores.py`
+     {ref}`auto_examples_graph_compute_centrality_scores.py`
 
 .. raw:: html
 
@@ -48,10 +48,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_interaction_matrix_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_interaction_matrix_thumb.png
      :alt: Compute interaction matrix
 
-     :ref:`sphx_glr_auto_examples_graph_compute_interaction_matrix.py`
+     {ref}`auto_examples_graph_compute_interaction_matrix.py`
 
 .. raw:: html
 
@@ -69,10 +69,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_nhood_enrichment_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_nhood_enrichment_thumb.png
      :alt: Neighbors enrichment analysis
 
-     :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py`
+     {ref}`auto_examples_graph_compute_nhood_enrichment.py`
 
 .. raw:: html
 
@@ -90,10 +90,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ripley_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_ripley_thumb.png
      :alt: Compute Ripley's statistics
 
-     :ref:`sphx_glr_auto_examples_graph_compute_ripley.py`
+     {ref}`auto_examples_graph_compute_ripley.py`
 
 .. raw:: html
 
@@ -111,10 +111,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_co_occurrence_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_co_occurrence_thumb.png
      :alt: Compute co-occurrence probability
 
-     :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py`
+     {ref}`auto_examples_graph_compute_co_occurrence.py`
 
 .. raw:: html
 
@@ -132,10 +132,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_sepal_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_sepal_thumb.png
      :alt: Compute Sepal score
 
-     :ref:`sphx_glr_auto_examples_graph_compute_sepal.py`
+     {ref}`auto_examples_graph_compute_sepal.py`
 
 .. raw:: html
 
@@ -153,10 +153,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_moran_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_moran_thumb.png
      :alt: Compute Moran's I score
 
-     :ref:`sphx_glr_auto_examples_graph_compute_moran.py`
+     {ref}`auto_examples_graph_compute_moran.py`
 
 .. raw:: html
 
@@ -174,10 +174,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_ligrec_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_ligrec_thumb.png
      :alt: Receptor-ligand analysis
 
-     :ref:`sphx_glr_auto_examples_graph_compute_ligrec.py`
+     {ref}`auto_examples_graph_compute_ligrec.py`
 
 .. raw:: html
 
@@ -195,10 +195,10 @@ Graph
 
 .. only:: html
 
- .. figure:: /auto_examples/graph/images/thumb/sphx_glr_compute_spatial_neighbors_thumb.png
+ .. figure:: /auto_examples/graph/images/thumb/compute_spatial_neighbors_thumb.png
      :alt: Building spatial neighbors graph
 
-     :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py`
+     {ref}`auto_examples_graph_compute_spatial_neighbors.py`
 
 .. raw:: html
 
@@ -215,7 +215,7 @@ Graph
 
 
 
-.. _sphx_glr_auto_examples_image:
+.. _auto_examples_image:
 
 Image
 -----
@@ -228,10 +228,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_gray_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_gray_thumb.png
      :alt: Convert to grayscale
 
-     :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+     {ref}`auto_examples_image_compute_gray.py`
 
 .. raw:: html
 
@@ -249,10 +249,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_smooth_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_smooth_thumb.png
      :alt: Smooth an image
 
-     :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
+     {ref}`auto_examples_image_compute_smooth.py`
 
 .. raw:: html
 
@@ -270,10 +270,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_crops_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_crops_thumb.png
      :alt: Crop images with ImageContainer
 
-     :ref:`sphx_glr_auto_examples_image_compute_crops.py`
+     {ref}`auto_examples_image_compute_crops.py`
 
 .. raw:: html
 
@@ -291,10 +291,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_apply_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_apply_thumb.png
      :alt: Convert to grayscale using the apply method
 
-     :ref:`sphx_glr_auto_examples_image_compute_apply.py`
+     {ref}`auto_examples_image_compute_apply.py`
 
 .. raw:: html
 
@@ -312,10 +312,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_texture_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_texture_features_thumb.png
      :alt: Extract texture features
 
-     :ref:`sphx_glr_auto_examples_image_compute_texture_features.py`
+     {ref}`auto_examples_image_compute_texture_features.py`
 
 .. raw:: html
 
@@ -333,10 +333,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_fluo_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_segment_fluo_thumb.png
      :alt: Cell-segmentation for fluorescence images
 
-     :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`
+     {ref}`auto_examples_image_compute_segment_fluo.py`
 
 .. raw:: html
 
@@ -354,10 +354,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_histogram_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_histogram_features_thumb.png
      :alt: Extract histogram features
 
-     :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py`
+     {ref}`auto_examples_image_compute_histogram_features.py`
 
 .. raw:: html
 
@@ -375,10 +375,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_summary_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_summary_features_thumb.png
      :alt: Extract summary features
 
-     :ref:`sphx_glr_auto_examples_image_compute_summary_features.py`
+     {ref}`auto_examples_image_compute_summary_features.py`
 
 .. raw:: html
 
@@ -396,10 +396,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_show_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_show_thumb.png
      :alt: Show layers of the ImageContainer
 
-     :ref:`sphx_glr_auto_examples_image_compute_show.py`
+     {ref}`auto_examples_image_compute_show.py`
 
 .. raw:: html
 
@@ -417,10 +417,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_custom_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_custom_features_thumb.png
      :alt: Extract custom features
 
-     :ref:`sphx_glr_auto_examples_image_compute_custom_features.py`
+     {ref}`auto_examples_image_compute_custom_features.py`
 
 .. raw:: html
 
@@ -438,10 +438,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segment_hne_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_segment_hne_thumb.png
      :alt: Cell-segmentation for H&E stains
 
-     :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
+     {ref}`auto_examples_image_compute_segment_hne.py`
 
 .. raw:: html
 
@@ -459,10 +459,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_process_hires_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_process_hires_thumb.png
      :alt: Process a high-resolution image
 
-     :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+     {ref}`auto_examples_image_compute_process_hires.py`
 
 .. raw:: html
 
@@ -480,10 +480,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_segmentation_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_segmentation_features_thumb.png
      :alt: Extract segmentation features
 
-     :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`
+     {ref}`auto_examples_image_compute_segmentation_features.py`
 
 .. raw:: html
 
@@ -501,10 +501,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_generate_spot_crops_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_generate_spot_crops_thumb.png
      :alt: Generate cropped images from spots
 
-     :ref:`sphx_glr_auto_examples_image_compute_generate_spot_crops.py`
+     {ref}`auto_examples_image_compute_generate_spot_crops.py`
 
 .. raw:: html
 
@@ -522,10 +522,10 @@ Image
 
 .. only:: html
 
- .. figure:: /auto_examples/image/images/thumb/sphx_glr_compute_features_thumb.png
+ .. figure:: /auto_examples/image/images/thumb/compute_features_thumb.png
      :alt: Extract image features
 
-     :ref:`sphx_glr_auto_examples_image_compute_features.py`
+     {ref}`auto_examples_image_compute_features.py`
 
 .. raw:: html
 
@@ -542,7 +542,7 @@ Image
 
 
 
-.. _sphx_glr_auto_examples_plotting:
+.. _auto_examples_plotting:
 
 Plotting
 --------
@@ -555,10 +555,10 @@ Plotting
 
 .. only:: html
 
- .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_compute_extract_thumb.png
+ .. figure:: /auto_examples/plotting/images/thumb/compute_extract_thumb.png
      :alt: Plot features in adata.obsm
 
-     :ref:`sphx_glr_auto_examples_plotting_compute_extract.py`
+     {ref}`auto_examples_plotting_compute_extract.py`
 
 .. raw:: html
 
@@ -576,10 +576,10 @@ Plotting
 
 .. only:: html
 
- .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_plot_segment_thumb.png
+ .. figure:: /auto_examples/plotting/images/thumb/plot_segment_thumb.png
      :alt: Plot segmentation masks
 
-     :ref:`sphx_glr_auto_examples_plotting_plot_segment.py`
+     {ref}`auto_examples_plotting_plot_segment.py`
 
 .. raw:: html
 
@@ -597,10 +597,10 @@ Plotting
 
 .. only:: html
 
- .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_plot_scatter_thumb.png
+ .. figure:: /auto_examples/plotting/images/thumb/plot_scatter_thumb.png
      :alt: Plot scatter plot in spatial coordinates
 
-     :ref:`sphx_glr_auto_examples_plotting_plot_scatter.py`
+     {ref}`auto_examples_plotting_plot_scatter.py`
 
 .. raw:: html
 
