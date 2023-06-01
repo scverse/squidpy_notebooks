@@ -6,7 +6,7 @@ Extract histogram features
 This example shows how to extract histogram features from tissue image.
 
 Histogram features give a more detailed view than summary features
-(:ref:`sphx_glr_auto_examples_image_compute_summary_features.py`)
+(:ref:`sphx_glr_examples_image_compute_summary_features.py`)
 by computing a histogram of each image channel and returning bin-counts for each Visium spot.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
@@ -16,7 +16,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    See :ref:`sphx_glr_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 """
 

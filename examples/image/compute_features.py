@@ -15,15 +15,15 @@ the **obs x genes** spatial gene expression matrix.
 
     We provide different feature extractors that are described in more detail in the following examples:
 
-    - See :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` on how to calculate summary statistics
+    - See :ref:`sphx_glr_examples_image_compute_summary_features.py` on how to calculate summary statistics
       of each color channel.
-    - See :ref:`sphx_glr_auto_examples_image_compute_texture_features.py` on how to calculate texture features based
+    - See :ref:`sphx_glr_examples_image_compute_texture_features.py` on how to calculate texture features based
       on repeating patterns.
-    - See :ref:`sphx_glr_auto_examples_image_compute_histogram_features.py` on how to calculate
+    - See :ref:`sphx_glr_examples_image_compute_histogram_features.py` on how to calculate
       color histogram features.
-    - See :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py` on how to calculate
+    - See :ref:`sphx_glr_examples_image_compute_segmentation_features.py` on how to calculate
       number and size of objects from a binary segmentation layer.
-    - See :ref:`sphx_glr_auto_examples_image_compute_custom_features.py` on how to calculate custom features
+    - See :ref:`sphx_glr_examples_image_compute_custom_features.py` on how to calculate custom features
       by providing any feature extraction function.
 """
 
@@ -80,12 +80,12 @@ sq.pl.spatial_scatter(
 # Specify crop appearance
 # =======================
 # Features are extracted from image crops that capture the Visium spots
-# (see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`).
+# (see also :ref:`sphx_glr_examples_image_compute_crops.py`).
 # By default, the crops have the same size as the spot, are not scaled and square.
 # We can use the ``mask_circle`` argument to mask a circle and ensure that only tissue underneath the round
 # Visium spots is taken into account to compute the features.
 # Further, we can set ``scale`` and ``spot_scale`` arguments to change how the crops are generated.
-# For more details on the crop computation, see also :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+# For more details on the crop computation, see also :ref:`sphx_glr_examples_image_compute_crops.py`.
 #
 #   - Use ``mask_circle = True, scale = 1, spot_scale = 1``, if you would like to get features that are calculated
 #     only from tissue in a Visium spot.

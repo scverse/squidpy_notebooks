@@ -10,7 +10,7 @@ pairs (100k+) and cluster combinations (100+).
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_nhood_enrichment.py` for
+    See :ref:`sphx_glr_examples_graph_compute_nhood_enrichment.py` for
     finding cluster neighborhood with :func:`squidpy.gr.nhood_enrichment`.
 """
 import squidpy as sq

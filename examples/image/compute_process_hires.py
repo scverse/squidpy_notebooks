@@ -30,9 +30,9 @@ border effects.
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`.
-    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
+    - :ref:`sphx_glr_examples_image_compute_smooth.py`.
+    - :ref:`sphx_glr_examples_image_compute_gray.py`.
+    - :ref:`sphx_glr_examples_image_compute_segment_fluo.py`.
 """
 
 import squidpy as sq

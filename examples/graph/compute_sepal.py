@@ -10,9 +10,9 @@ See :cite:`andersson2021` for reference.
 
 .. seealso::
 
-    - See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` and
-      :ref:`sphx_glr_auto_examples_graph_compute_moran.py` for other scores to identify spatially variable genes.
-    - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    - See :ref:`sphx_glr_examples_graph_compute_co_occurrence.py` and
+      :ref:`sphx_glr_examples_graph_compute_moran.py` for other scores to identify spatially variable genes.
+    - See :ref:`sphx_glr_examples_graph_compute_spatial_neighbors.py` for general usage of
       :func:`squidpy.gr.spatial_neighbors`.
 """
 import squidpy as sq
@@ -32,7 +32,7 @@ adata
 #   pre-processing with Scanpy, there is a convenient function that can be used BEFORE
 #   normalization :func:`scanpy.pp.calculate_qc_metrics`. It computes several useful
 #   summary statistics on both observation and feature axis. We will be using the
-#   ``n_cells`` columns in `adata.var` to filter out genes that are expressed in
+#   ``n_cells`` columns in {attr}`adata.var` to filter out genes that are expressed in
 #   less than 100 observations.
 #
 # Before computing the Sepal score, we first need to compute a spatial graph with :func:`squidpy.gr.spatial_neighbors`.

@@ -3,15 +3,15 @@
 Show layers of the ImageContainer
 ---------------------------------
 
-This example shows how to use :meth:`squidpy.im.ImageContainer.show`.
+This example shows how to use :meth:{func}`squidpy.im.ImageContainer.show`.
 
 This function is useful to visualize statically different layers of the
 :class:`squidpy.im.ImageContainer` class.
 
 .. seealso::
 
-    - See :ref:`sphx_glr_auto_examples_image_compute_crops.py` and
-      :ref:`sphx_glr_auto_examples_image_compute_smooth.py` for additional
+    - See :ref:`sphx_glr_examples_image_compute_crops.py` and
+      :ref:`sphx_glr_examples_image_compute_smooth.py` for additional
       examples on methods of the :class:`squidpy.im.ImageContainer`.
 """
 import squidpy as sq
@@ -44,9 +44,9 @@ for library_id in adata.uns["spatial"].keys():
 img = sq.im.ImageContainer.concat(imgs)
 
 ###############################################################################
-# We can visualize each image of the object with :meth:`squidpy.im.ImageContainer.show`.
+# We can visualize each image of the object with :meth:{func}`squidpy.im.ImageContainer.show`.
 img.show("image")
 
 ###############################################################################
-# :meth:`squidpy.im.ImageContainer.show` also allows to overlay the results of segmentation.
+# :meth:{func}`squidpy.im.ImageContainer.show` also allows to overlay the results of segmentation.
 img.show("image", segmentation_layer="segmentation", segmentation_alpha=0.5)

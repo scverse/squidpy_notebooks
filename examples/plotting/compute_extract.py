@@ -7,7 +7,7 @@ This example shows how to use :func:`squidpy.pl.extract` to plot features in :at
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_summary_features.py` for computing an example of such features.
+    See :ref:`sphx_glr_examples_image_compute_summary_features.py` for computing an example of such features.
 """
 import squidpy as sq
 

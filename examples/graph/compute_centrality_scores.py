@@ -16,7 +16,7 @@ All scores are descriptive statistics of the spatial graph.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    See :ref:`sphx_glr_examples_graph_compute_spatial_neighbors.py` for general usage of
     :func:`squidpy.gr.spatial_neighbors`.
 """
 

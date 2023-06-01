@@ -12,9 +12,9 @@ The function ```rgb2gray``` computes the mean of the three channels (RGB) across
 The purpose of this example is to show how the ```apply``` method :meth:`squidpy.ImageContainer.apply` can be used.
 
 .. seealso::
-    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
-    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
-    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`
+    - :ref:`sphx_glr_examples_image_compute_smooth.py`
+    - :ref:`sphx_glr_examples_image_compute_process_hires.py`
+    - :ref:`sphx_glr_examples_image_compute_gray.py`
 """
 import squidpy as sq
 
@@ -24,12 +24,12 @@ import matplotlib.pyplot as plt
 
 ###############################################################################
 # First, we load the H&E stained tissue image. Here, we only load a cropped dataset to speed things up.
-# In general, :meth:`squidpy.im.ImageContainer.apply` can also process very large images.
-# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
+# In general, :meth:{func}`squidpy.im.ImageContainer.apply` can also process very large images.
+# (see :ref:`sphx_glr_examples_image_compute_process_hires.py`).
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################
-# The method :meth:`squidpy.im.ImageContainer.apply` takes a function as an input.
+# The method :meth:{func}`squidpy.im.ImageContainer.apply` takes a function as an input.
 # Such function, or a mapping of ```{'{library_id}': function}``` takes a
 # :class:`numpy.ndarray` as input and returns an image-like output.
 # Here, the function takes ```x````, which is a numpy array as an input and

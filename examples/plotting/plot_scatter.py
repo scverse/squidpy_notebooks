@@ -10,7 +10,7 @@ This plotting is useful when points and underlying image are available.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_plotting_plot_segment.py` for segmentation masks.
+    See :ref:`sphx_glr_examples_plotting_plot_segment.py` for segmentation masks.
 """
 import scanpy as sc
 import anndata as ad

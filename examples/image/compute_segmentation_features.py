@@ -9,7 +9,7 @@ Features extracted from a nucleus segmentation range from the number of nuclei p
 over nuclei shapes and sizes, to the intensity of the input channels within the segmented objects.
 They are very interpretable features and provide valuable additional information.
 Segmentation features are calculated by using ``features = 'segmentation'``,
-which calls :func:`squidpy.im.ImageContainer.features_segmentation`.
+which calls :func:{func}`squidpy.im.ImageContainer.features_segmentation`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -18,9 +18,9 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for more details
+    - :ref:`sphx_glr_examples_image_compute_segment_fluo.py` for more details
       on calculating a cell-segmentation.
-    - :ref:`sphx_glr_auto_examples_image_compute_features.py` for the general usage of
+    - :ref:`sphx_glr_examples_image_compute_features.py` for the general usage of
       :func:`squidpy.im.calculate_image_features`.
 """
 
@@ -46,7 +46,7 @@ sq.im.segment(img=img, layer="image", layer_added="segmented_watershed", method=
 #   - mean intensity of channels 1 (anti-NEUN) and 2 (anti-GFAP) within nuclei ``mean_intensity``.
 #
 # We use ``mask_cicle = True`` to ensure that we are only extracting features from the tissue underneath
-# each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+# each Visium spot. For more details on the image cropping, see :ref:`sphx_glr_examples_image_compute_crops.py`.
 sq.im.calculate_image_features(
     adata,
     img,

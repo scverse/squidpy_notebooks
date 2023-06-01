@@ -13,7 +13,7 @@ From this data, different features (``props``) are calculated.
 See also :func:`skimage.feature.greycomatrix`.
 
 Texture features are calculated by using ``features = 'texture'``, which calls
-:func:`squidpy.im.ImageContainer.features_texture`.
+:func:{func}`squidpy.im.ImageContainer.features_texture`.
 In addition to ``feature_name`` and ``channels``, we can also specify the following ``features_kwargs``:
 
     - ``distances`` - distances that are taken into account for finding repeating patterns.
@@ -22,7 +22,7 @@ In addition to ``feature_name`` and ``channels``, we can also specify the follow
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    See :ref:`sphx_glr_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 """
 
@@ -34,7 +34,7 @@ import squidpy as sq
 # Note that for texture features it may make sense to compute them over a larger crop size to include more context,
 # e.g., ``spot_scale = 2`` or ``spit_scale = 4`` which will extract crops with double or four times the radius
 # than the original Visium spot size.
-# For more details on the image cropping, see :ref:`sphx_glr_auto_examples_image_compute_crops.py`.
+# For more details on the image cropping, see :ref:`sphx_glr_examples_image_compute_crops.py`.
 
 # get spatial dataset including high-resolution tissue image
 img = sq.datasets.visium_fluo_image_crop()

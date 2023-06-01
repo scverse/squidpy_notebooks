@@ -11,9 +11,9 @@ in the tissue are under consideration.
 
 .. seealso::
 
-    - See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` and
-      :ref:`sphx_glr_auto_examples_graph_compute_ripley.py` for other scores to describe spatial patterns.
-    - See :ref:`sphx_glr_auto_examples_graph_compute_spatial_neighbors.py` for general usage of
+    - See :ref:`sphx_glr_examples_graph_compute_co_occurrence.py` and
+      :ref:`sphx_glr_examples_graph_compute_ripley.py` for other scores to describe spatial patterns.
+    - See :ref:`sphx_glr_examples_graph_compute_spatial_neighbors.py` for general usage of
       :func:`squidpy.gr.spatial_neighbors`.
 """
 import squidpy as sq

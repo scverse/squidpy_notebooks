@@ -6,7 +6,7 @@ Cell-segmentation for fluorescence images
 This example shows how to use the high resolution tissue images to segment nuclei.
 
 This information can be used to compute additional image features like cell count and cell size per spot
-(see :ref:`sphx_glr_auto_examples_image_compute_segmentation_features.py`).
+(see :ref:`sphx_glr_examples_image_compute_segmentation_features.py`).
 This example shows how to use :func:`squidpy.im.segment` and explains the parameters you can use.
 
 We provide a built-in segmentation model :class:`squidpy.im.SegmentationWatershed`.
@@ -20,7 +20,7 @@ For harder cases, you may want to provide your own pre-trained segmentation mode
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py` for an example on how to
+    - :ref:`sphx_glr_examples_image_compute_segment_hne.py` for an example on how to
       calculate a cell-segmentation of an H&E stain.
     - `Nuclei Segmentation using Cellpose <../../tutorials/tutorial_cellpose_segmentation.ipynb>`_
       for a tutorial on using Cellpose as a custom segmentation function.
@@ -41,7 +41,7 @@ img = sq.datasets.visium_fluo_image_crop()
 ###############################################################################
 # We crop the image to a smaller segment.
 # This is only to speed things up, :func:`squidpy.im.segment` can also process very large images
-# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
+# (see :ref:`sphx_glr_examples_image_compute_process_hires.py`).
 crop = img.crop_corner(1000, 1000, size=1000)
 
 ###############################################################################
@@ -60,7 +60,7 @@ crop.show("image", channelwise=True)
 # You can either set a manual threshold, or use automated
 # `Otsu thresholding <https://en.wikipedia.org/wiki/Otsu%27s_method>`_.
 # For this fluorescence image example, Otsu's thresh works very well, thus we will use ``thresh = None``.
-# See :ref:`sphx_glr_auto_examples_image_compute_segment_hne.py`
+# See :ref:`sphx_glr_examples_image_compute_segment_hne.py`
 # for an example where we use a manually defined threshold.
 #
 # In addition, we can specify if the values greater or equal than

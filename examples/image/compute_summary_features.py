@@ -6,7 +6,7 @@ Extract summary features
 This example shows how to extract summary features from the tissue image.
 
 Summary features give a good overview over the intensity of each image channels at the location of the Visium spots.
-They are calculated by using ``features = 'summary'``, which calls :func:`squidpy.im.ImageContainer.features_summary`.
+They are calculated by using ``features = 'summary'``, which calls :func:{func}`squidpy.im.ImageContainer.features_summary`.
 
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
@@ -14,7 +14,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    See :ref:`sphx_glr_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 """
 

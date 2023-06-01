@@ -6,7 +6,7 @@ Cell-segmentation for H&E stains
 This example shows how to use processing and segmentation functions to segment images with H&E stains.
 
 For a general example of how to use :func:`squidpy.im.segment`,
-see :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py`.
+see :ref:`sphx_glr_examples_image_compute_segment_fluo.py`.
 
 Note that we only provide a basic built-in segmentation model.
 If you require precise cell-segmentation and cell-counts, you might want to add more pre-processing
@@ -14,7 +14,7 @@ and/or use a pre-trained model to do the segmentation (using :class:`squidpy.im.
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_segment_fluo.py` for an example on
+    - :ref:`sphx_glr_examples_image_compute_segment_fluo.py` for an example on
       how to calculate a cell-segmentation of a fluorescence image.
     - `Nuclei Segmentation using Cellpose <../../tutorials/tutorial_cellpose_segmentation.ipynb>`_
       for a tutorial on using Cellpose as a custom segmentation function.

@@ -11,8 +11,8 @@ This calls :func:`skimage.color.rgb2gray` in the background.
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_smooth.py`
-    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`
+    - :ref:`sphx_glr_examples_image_compute_smooth.py`
+    - :ref:`sphx_glr_examples_image_compute_process_hires.py`
 """
 
 import squidpy as sq
@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 # First, we load the H&E stained tissue image.
 # Here, we only load a cropped dataset to speed things up.
 # In general, :func:`squidpy.im.process` can also process very large images
-# (see :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`).
+# (see :ref:`sphx_glr_examples_image_compute_process_hires.py`).
 img = sq.datasets.visium_hne_image_crop()
 
 ###############################################################################

@@ -7,8 +7,8 @@ This example shows how crop images from :class:`squidpy.im.ImageContainer`.
 
 Specifically, it shows how to use:
 
-    - :meth:`squidpy.im.ImageContainer.crop_corner()`
-    - :meth:`squidpy.im.ImageContainer.crop_center()`
+    - :meth:{func}`squidpy.im.ImageContainer.crop_corner()`
+    - :meth:{func}`squidpy.im.ImageContainer.crop_center()`
 
 .. seealso::
 
@@ -44,7 +44,7 @@ crop_center.show(ax=axes[1])
 crop_corner
 
 ###############################################################################
-# You can subset the associated ``adata`` to the cropped image using :meth:`squidpy.im.ImageContainer.subset`:
+# You can subset the associated ``adata`` to the cropped image using :meth:{func}`squidpy.im.ImageContainer.subset`:
 adata = sq.datasets.visium_fluo_adata_crop()
 adata
 

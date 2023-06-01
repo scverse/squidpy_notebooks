@@ -10,7 +10,7 @@ returns a list of features.
 Here, we show a simple example by defining a function to calculate the mean of the images.
 
 Custom features are calculated by using ``features = 'custom'``, which calls
-:func:`squidpy.im.ImageContainer.features_custom`.
+:func:{func}`squidpy.im.ImageContainer.features_custom`.
 In addition to ``feature_name`` and ``channels`` we can specify the following ``features_kwargs``:
 
     - ``func`` - custom feature extraction function.
@@ -19,7 +19,7 @@ In addition to ``feature_name`` and ``channels`` we can specify the following ``
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_image_compute_features.py` for general usage of
+    See :ref:`sphx_glr_examples_image_compute_features.py` for general usage of
     :func:`squidpy.im.calculate_image_features`.
 """
 

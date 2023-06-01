@@ -12,8 +12,8 @@ This allows us to set the width of the Gaussian kernel, :math:`\\sigma`, used fo
 
 .. seealso::
 
-    - :ref:`sphx_glr_auto_examples_image_compute_gray.py`.
-    - :ref:`sphx_glr_auto_examples_image_compute_process_hires.py`.
+    - :ref:`sphx_glr_examples_image_compute_gray.py`.
+    - :ref:`sphx_glr_examples_image_compute_process_hires.py`.
 """
 
 import squidpy as sq

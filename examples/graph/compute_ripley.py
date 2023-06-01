@@ -12,7 +12,7 @@ The Ripley's L is a variance-normalized version of the Ripley's K statistic.
 
 .. seealso::
 
-    See :ref:`sphx_glr_auto_examples_graph_compute_co_occurrence.py` for
+    See :ref:`sphx_glr_examples_graph_compute_co_occurrence.py` for
     another score to describe spatial patterns with :func:`squidpy.gr.co_occurrence`.
 """
 import squidpy as sq
