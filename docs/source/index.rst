@@ -9,5 +9,4 @@ This documentation is for testing purposes only. It will not correctly display t
     :hidden:
 
     tutorials
-    examples
     references

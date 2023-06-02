@@ -60,7 +60,7 @@ Make sure to follow the following checklist before merging a new example/tutoria
 - make sure we're referring to the package always the same, e.g. *Squidpy*.
 - use the ``.. seealso::`` directive to highlight the prominence of other examples in the introductory text.
 - ensure examples/tutorials are properly linked (sphinx will throw warnings if not).
-  Link to examples using the following syntax ``:ref:`sphx_glr_tutorials_tutorial_seqfish.py```.
+  Link to examples using the following syntax ``{doc}`tutorials/tutorial_seqfish.py```.
 - ensure that in ``.py`` files, first line after the title is of the following format::
 
     """
@@ -76,11 +76,11 @@ Make sure to follow the following checklist before merging a new example/tutoria
 
   The first line after title should be short, since this is the hover info displayed when hovering over the tutorial.
 - ensure that citations are in ``docs/source/references.bib`` and are used within the examples/tutorials.
-  Cite in .rst using the ``:cite:`` directive and in .ipynb files using ``<cite data-cite="...">...</cite>``.
+  Cite in .rst using the ``{cite}`` directive and in .ipynb files using ``<cite data-cite="...">...</cite>``.
   In ``references.bib``, remove the ``url`` and ``eprint`` tags, just leave the ``DOI``.
   The problem is that for ``url``, it gets incorrectly prefixed with ``https://arxiv.org``.
 - ensure when referencing functions/classes/packages/etc., we use RST roles, such as:
-  ``:func:`squidpy.im.process_img```, ``:class:`squidpy.im.ImageContainer```, etc.
+  ``{func}`squidpy.im.process_img```, ``:class:`squidpy.im.ImageContainer```, etc.
 - ensure that example/tutorial titles are capitalized, but do not follow Camel Case style
   (i.e. Process image is good, Process Image is bad).
 - for example values, use ``foo = 'bar'`` instead of ``foo='bar'`` or ``foo = "bar"``
