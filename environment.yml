@@ -1,8 +1,0 @@
-name: squidpy
-channels:
--   conda-forge
-dependencies:
--   python=3.8
--   pip
--   pip:
-    -   squidpy>=1.2.0
