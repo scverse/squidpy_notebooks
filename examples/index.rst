@@ -42,6 +42,8 @@ data structure for the :mod:`squidpy.im` module.
 
     image/compute_show
     image/compute_crops
+    image/compute_apply
+    image/compute_generate_spot_crops
 
 Tools
 -----
