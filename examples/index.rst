@@ -48,6 +48,7 @@ This section contains various examples from the :mod:`squidpy.tl` module.
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
     tools/compute_*
 
