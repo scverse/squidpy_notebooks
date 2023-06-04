@@ -42,6 +42,15 @@ data structure for the :mod:`squidpy.im` module.
     image/compute_show
     image/compute_crops
 
+Tools
+-----
+This section contains various examples from the :mod:`squidpy.tl` module.
+
+.. toctree::
+    :maxdepth: 1
+
+    tools/compute_*
+
 Plotting
 --------
 This section contains various examples from the :mod:`squidpy.pl` module.
