@@ -8,6 +8,7 @@ This section contains various examples from the :mod:`squidpy.gr` module.
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
     graph/compute_*
 
