@@ -80,7 +80,7 @@ Make sure to follow the following checklist before merging a new example/tutoria
   In ``references.bib``, remove the ``url`` and ``eprint`` tags, just leave the ``DOI``.
   The problem is that for ``url``, it gets incorrectly prefixed with ``https://arxiv.org``.
 - ensure when referencing functions/classes/packages/etc., we use RST roles, such as:
-  ``{func}`squidpy.im.process_img```, ``:class:`squidpy.im.ImageContainer```, etc.
+  ``{func}`squidpy.im.process_img```, ``{class}`squidpy.im.ImageContainer```, etc.
 - ensure that example/tutorial titles are capitalized, but do not follow Camel Case style
   (i.e. Process image is good, Process Image is bad).
 - for example values, use ``foo = 'bar'`` instead of ``foo='bar'`` or ``foo = "bar"``
