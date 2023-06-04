@@ -41,7 +41,7 @@ Main examples and tutorials
 ---------------------------
 Examples and Tutorials are represented as an executable **Python file**.
 The general structure is described `here <https://sphinx-gallery.github.io/stable/syntax.html>`_ .
-You can work on a jupyter notebook to develop the example, but the file needs to be pushed as a ``.py`` file.
+You can work on a jupyter notebook to develop the example, but the file needs to be pushed as a ``.ipynb`` file.
 You can conveniently go back and forth with ``jupytext`` (install it with pip):
 
 .. code-block::
@@ -60,8 +60,8 @@ Make sure to follow the following checklist before merging a new example/tutoria
 - make sure we're referring to the package always the same, e.g. *Squidpy*.
 - use the ``.. seealso::`` directive to highlight the prominence of other examples in the introductory text.
 - ensure examples/tutorials are properly linked (sphinx will throw warnings if not).
-  Link to examples using the following syntax ``{doc}`tutorials/tutorial_seqfish.py```.
-- ensure that in ``.py`` files, first line after the title is of the following format::
+  Link to examples using the following syntax ``{doc}`tutorials/tutorial_seqfish.ipynb```.
+- ensure that in ``.ipynb`` files, first line after the title is of the following format::
 
     """
     Super tutorial title
