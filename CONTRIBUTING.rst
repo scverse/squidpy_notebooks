@@ -56,7 +56,7 @@ Remember that the text cells in examples will be rendered with rst, so checkout 
 
 Make sure to follow the following checklist before merging a new example/tutorial:
 
-- if using math expressions, ensure they render properly (e.g. using the ``:math:`` directive for rst).
+- if using math expressions, ensure they render properly (e.g. using the ``{math}`` directive for rst).
 - make sure we're referring to the package always the same, e.g. *Squidpy*.
 - use the ``.. seealso::`` directive to highlight the prominence of other examples in the introductory text.
 - ensure examples/tutorials are properly linked (sphinx will throw warnings if not).
