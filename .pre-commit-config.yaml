@@ -17,14 +17,14 @@ repos:
       - id: trailing-whitespace
       - id: check-added-large-files
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.6.3
+    rev: 1.7.0
     hooks:
       - id: nbqa-pyupgrade
         args: [--py38-plus]
       - id: nbqa-black
       - id: nbqa-isort
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.7.1
+    rev: v3.0.3
     hooks:
       - id: prettier
         types_or: [yaml]
