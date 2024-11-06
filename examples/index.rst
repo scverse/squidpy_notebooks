@@ -54,6 +54,7 @@ This section contains various examples from the :mod:`squidpy.tl` module.
     :glob:
 
     tools/compute_*
+    tools/sliding_windows.ipynb
 
 Plotting
 --------
