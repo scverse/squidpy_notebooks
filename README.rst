@@ -7,7 +7,7 @@ Squidpy - Spatial Single Cell Analysis in Python
 
     <p align="center">
         <a href="https://squidpy.readthedocs.io/en/stable/">
-            <img src="https://raw.githubusercontent.com/scverse/squidpy/main/docs/source/_static/img/squidpy_horizontal.png"
+            <img src="https://github.com/scverse/squidpy/tree/main/docs/_static/imgsquidpy_horizontal.png?raw=true"
              width="400px" alt="Squidpy logo">
         </a>
     </p>
@@ -94,3 +94,19 @@ We are happy about any contributions! Before you start, check out our `contribut
 .. _napari: https://napari.org/
 .. _skimage: https://scikit-image.org/
 .. _documentation: https://squidpy.readthedocs.io/en/stable/
+.. _website: https://scverse.org/
+.. _governance: https://scverse.org/about/roles/
+.. _NumFOCUS: https://numfocus.org/
+.. _donation: https://numfocus.org/donate-to-scverse/
+
+Squidpy is part of the scverse® project (`website`_, `governance`_) and is fiscally sponsored by `NumFOCUS`_.
+Please consider making a tax-deductible `donation`_ to help the project pay for developer time, professional services, travel, workshops, and a variety of other needs.
+
+.. raw:: html
+
+   <p align="center">
+       <a href="https://numfocus.org/project/scverse">
+           <img src="https://raw.githubusercontent.com/numfocus/templates/master/images/numfocus-logo.png" width="200">
+       </a>
+   </p>
+
