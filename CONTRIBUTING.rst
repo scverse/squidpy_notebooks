@@ -114,18 +114,18 @@ Put this in the metadata of the cell that produces the image that should be used
 
 Generating documentation
 ------------------------
-To download the examples/tutorials data, you can run ``tox -e download-data``. You can use
-``tox -e download-data -- --dry-run`` to see what data would be downloaded. By default, everything in
+To download the examples/tutorials data, you can run ``hatch run data:download``. You can use
+``hatch run data:download -- --dry-run`` to see what data would be downloaded. By default, everything in
 ``squidpy.datasets`` that is not already present in the destination directory will be downloaded.
 Note that downloading the data needs to happen only once.
 
-You can locally generate the docs to check that everything looks good by running ``tox -e docs``.
+You can locally generate the docs to check that everything looks good by running ``hatch run docs:build``.
 
-In order to see how the documentation would look online, you can run ``tox -e docs`` from Squidpy's repo and set the
+In order to see how the documentation would look online, you can run ``hatch run docs:build`` from Squidpy's repo and set the
 ``SQUIDPY_NOTEBOOKS_PATH`` appropriately to point to the root of the notebooks repo (by default, this may not be needed
 since we assume that both Squidpy and the notebooks repo are sibling directories in the filesystem).
 If the notebooks' repo is not found and  ``SQUIDPY_DOWNLOAD_NOTEBOOKS != 0``,
 we fetch the examples/tutorials from GitHub.
 
-To clean documentation, you can run ``tox -e clean-docs`` and to check whether spelling/links are correct,
-you can run ``tox -e check-docs``.
+To clean documentation, you can run ``hatch run docs:clean`` and to check whether spelling/links are correct,
+you can run ``hatch run docs:check``.
