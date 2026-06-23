@@ -145,3 +145,5 @@ docs/source/data
 data
 tutorial_data
 /notebooks/*
+
+mouse_liver.zarr
