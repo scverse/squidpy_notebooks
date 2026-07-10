@@ -22,6 +22,7 @@ to a diverse set of different spatial datasets.
     tutorial_vizgen
     tutorial_vizgen_mouse_liver
     tutorial_xenium
+    tutorial_cpmeasure
 
 Advanced Tutorials
 ------------------
